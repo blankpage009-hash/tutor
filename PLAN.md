@@ -222,6 +222,19 @@
   - **음성 파일 생성**: Piper(미국 남성 음성 1종)로 문장·변형·롤플레잉 튜터 대사·단어 음성 생성 → ffmpeg로 압축. JSON에는 파일 경로를 넣고, 문장을 고치면 해당 파일만 다시 만드는 스크립트로 만든다. (도구 설치 전 승인)
 - 완료 기준: `content/*.json` 400~600문장, 스키마 검증 통과, 사용자가 샘플 20문장을 읽고 승인. 음성 파일 전체 50MB 이하, 사용자가 샘플 음성 10개를 아이폰에서 듣고 승인.
 - 참고: Phase 3과 **병행 가능** (서로 파일이 겹치지 않음).
+- **진행 (2026-11-15, 1세션째: 뼈대 + 초급 코스)**
+  - 확정: 수업당 핵심 문장 3개(전체 600), 롤플레잉 수업마다 1개(내 대사는 핵심 문장 id 참조), 변형 3종(상황/주어·목적어/시제).
+  - 형식 설명: `content/schema.md`. 코스 목록 `content/manifest.json`, 초급 `content/courses/beginner.json`(20수업·60문장, 검사 오류·경고 0).
+  - 검사: `node scripts/content/validate.mjs`(형식. 핵심 규칙은 `validate-core.mjs` 순수 함수 → Phase 5 코스 불러오기에서 재사용), `node scripts/content/check-quality.mjs`(중복·난이도 역전·음성 인식 주의).
+  - 음성: Piper `en_US-ryan-high`(사용자 선택), `.venv\Scripts\python.exe scripts\audio\make_audio.py`. AAC 모노 32kbps m4a, 파일명에 글자 지문(해시) → 고친 문장만 다시 생성, 안 쓰는 파일 자동 삭제. 초급 409개 3.56MB(약 2분) → 10코스 예상 약 36MB.
+  - 도구 위치: 파이썬 가상환경 `.venv/`, 음성 모델 `.voices/`(둘 다 저장소 제외), ffmpeg는 winget 설치.
+  - 아이폰 확인 페이지: `docs/phase2/` → 임시 공개 저장소 `tutor-phase2`(https://blankpage009-hash.github.io/tutor-phase2/). 확인 후 삭제 예정.
+  - **사용자 승인 (2026-11-15)**: 초급 샘플 20문장·음성 아이폰 확인 완료.
+  - 참고: 비공개 저장소는 무료 요금제에서 GitHub Pages를 쓸 수 없음 → Phase 3 배포 방식 결정 필요.
+  - Phase 3·4가 지킬 점은 `content/schema.md` 7절 (content/ 복사 방법, 음성은 runtime cache, 축약 양방향 정규화).
+  - 나눠 쓴 수업 합치기 `scripts/content/merge-lessons.mjs`, 샘플 페이지 `scripts/content/make-sample-page.mjs`.
+  - 알려진 작은 문제: `beg-12-s1-v3`("I wasn't feeling well yesterday.") 생성 때 Piper가 발음 기호 하나를 몰라 경고. 들어보고 이상하면 문장을 바꿔 다시 생성.
+  - 다음 세션: 코스 2~10 생성(세션당 3~5개), manifest에 한 줄씩 추가 후 음성 생성.
 
 ### Phase 3 — 프로젝트 뼈대
 - **모델** Sonnet · **노력** medium · **예상** 1세션

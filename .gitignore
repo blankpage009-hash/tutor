@@ -1,3 +1,8 @@
 node_modules
 dist
 .omc/
+# 음성 생성 도구(PC 전용). 음성 모델은 용량이 커서(60~120MB) 저장소에 올리지 않는다
+.venv/
+.voices/
+.audio-tmp/
+__pycache__/

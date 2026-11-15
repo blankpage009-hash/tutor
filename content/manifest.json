@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "courses": [
+    { "id": "beginner", "file": "courses/beginner.json", "order": 1, "title": "Beginner", "titleKo": "초급", "level": 1 }
+  ]
+}
