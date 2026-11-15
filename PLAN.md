@@ -204,6 +204,13 @@
   - 개발 핸드오프 문서(토큰 값, 컴포넌트 상태, 반응형 기준) 출력.
 - 완료 기준: 사용자가 디자인을 승인. 토큰이 CSS 변수로 옮길 수 있는 형태로 정리됨.
 - 대안 경로: 사용자가 디자인을 승인하지 않으면, 사용자가 Claude Design(Modernist)으로 만든 HTML 파일을 `design/` 폴더에 넣고, 그 파일에서 토큰·레이아웃을 추출해 핸드오프 문서를 만든다.
+- **결과 (2026-11-15, 2세션, 사용자 승인)**
+  - 방향: 흑백 + 진한 파랑(`#0f31b8`) 한 가지 강조색, Modernist. 성공색(초록)은 두지 않고 통과=파랑, 틀림=주황(`--danger`).
+  - 디자인 시스템 "Tutor": https://claude.ai/artifact/Wsv6sCyGW3KRP5dHrxVGuM (토큰 라이트/다크, 부품 9개).
+  - 화면 캔버스 "Tutor Screens": https://claude.ai/artifact/WfJAVshVvyP19XTH6pWJe5 — iPhone 15장(13개 화면 + 쉐도잉 실패·통과 상태), iPad 2컬럼 3장(홈, 쉐도잉, 보관함; 가로 1180×820 가정).
+  - 토큰: `design/tokens.json`이 유일한 원본 → `design/scripts/make-tokens-css.js`로 `design/tokens.css` 생성(라이트/다크/시스템 테마). `design/scripts/contrast.js` 명도 대비 검사 전부 통과.
+  - 핸드오프: `design/handoff.md` (토큰 값, 부품 상태, 반응형 기준 768px·왼쪽 칸 360px, 그리지 않은 화면 규칙).
+  - 미정: 화면에서만 그린 새 부품(TextField, SegmentedControl, Stepper, ChatBubble 등, handoff.md 3절)을 디자인 시스템에 정식 등록할지. 앱 구현은 handoff.md 기준으로 진행.
 
 ### Phase 2 — 콘텐츠 설계 · 생성
 - **모델** Opus · **노력** high · **예상** 2~3세션 (코스 3~4개씩 나눠 생성)
