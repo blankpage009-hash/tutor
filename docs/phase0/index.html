@@ -45,6 +45,9 @@
   <select id="voiceSel"></select>
   <button id="btnTts">선택한 음성으로 재생</button>
   <button id="btnVoices">음성 목록 새로고침</button>
+  <button id="btnTtsDef">기본 음성으로 재생</button>
+  <button id="btnBeep">비프음(삐-) 테스트</button>
+  <button id="btnWarm">② 삐 소리 후 음성 재생</button>
   <div class="status wait" id="stTts">미확인</div>
   <pre id="voiceList"></pre>
 </section>
@@ -83,11 +86,12 @@ log('UA: ' + navigator.userAgent);
 log('standalone: ' + standalone);
 
 // 1. 마이크
-let micStream = null;
 $('btnMic').onclick = async () => {
   try {
-    micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    mark('stMic', true, '마이크 권한 받음');
+    const st = await navigator.mediaDevices.getUserMedia({ audio: true });
+    // iOS는 마이크를 열어 둔 채 음성 인식/녹음을 시작하면 충돌(audio-capture)하므로 바로 반납한다
+    st.getTracks().forEach((t) => t.stop());
+    mark('stMic', true, '마이크 권한 받음 (반납함)');
   } catch (e) {
     mark('stMic', false, e.name + ' ' + e.message);
   }
@@ -107,6 +111,8 @@ $('btnStt').onclick = () => {
     if (r.isFinal) mark('stStt', true, '인식됨: ' + r[0].transcript);
   };
   rec.onerror = (ev) => mark('stStt', false, 'error=' + ev.error);
+  rec.onaudiostart = () => log('stt: 오디오 입력 시작');
+  rec.onspeechstart = () => log('stt: 말소리 감지');
   rec.onend = () => log('stt: 종료');
   try { rec.start(); $('stStt').textContent = '듣는 중... 영어로 말하세요'; }
   catch (e) { mark('stStt', false, e.name + ' ' + e.message); }
@@ -137,34 +143,94 @@ $('btnTts').onclick = () => {
   u.voice = all[Number($('voiceSel').value)] || null;
   u.lang = 'en-US';
   u.onstart = () => mark('stTts', true, '재생 시작 (소리가 들리는지 직접 확인)');
+  u.onend = () => log('tts: 재생 끝');
   u.onerror = (e) => mark('stTts', false, e.error);
+  log('tts: 시도 voice=' + (u.voice ? u.voice.name : '기본'));
+  u.volume = 1;
+  speechSynthesis.cancel();
+  // iOS는 합성기가 paused 상태로 굳는 경우가 있어 resume을 먼저 호출한다
+  speechSynthesis.resume();
+  speechSynthesis.speak(u);
+  setTimeout(() => log('tts 상태: speaking=' + speechSynthesis.speaking + ' pending=' + speechSynthesis.pending + ' paused=' + speechSynthesis.paused), 1000);
+};
+
+// 음성 선택 없이(기기 기본 음성) 재생 — 선택한 음성이 원인인지 가르기 위한 테스트
+$('btnTtsDef').onclick = () => {
+  const u = new SpeechSynthesisUtterance('This is the default voice.');
+  u.lang = 'en-US';
+  u.onstart = () => log('기본음성: 재생 시작');
+  u.onend = () => log('기본음성: 재생 끝');
+  u.onerror = (e) => log('기본음성: 오류 ' + e.error);
   speechSynthesis.cancel();
   speechSynthesis.speak(u);
 };
 
+// 우회 테스트: <audio> 태그는 소리가 나므로, 이걸 먼저 재생해 iOS 오디오 세션을 '재생' 상태로 깨운 뒤 음성 합성을 시도한다
+function makeBeepWavUrl() {
+  const rate = 8000; const n = rate * 0.4;
+  const buf = new ArrayBuffer(44 + n * 2); const v = new DataView(buf);
+  const w = (o, s) => { for (let i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+  w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVEfmt ');
+  v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+  v.setUint32(24, rate, true); v.setUint32(28, rate * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true);
+  w(36, 'data'); v.setUint32(40, n * 2, true);
+  for (let i = 0; i < n; i++) v.setInt16(44 + i * 2, Math.sin(2 * Math.PI * 440 * i / rate) * 12000, true);
+  return URL.createObjectURL(new Blob([buf], { type: 'audio/wav' }));
+}
+$('btnWarm').onclick = async () => {
+  const a = new Audio(makeBeepWavUrl());
+  try { await a.play(); log('warm: audio 태그 비프 재생됨'); } catch (e) { log('warm: audio 재생 실패 ' + e.message); }
+  a.onended = () => {
+    const u = new SpeechSynthesisUtterance('Hello, can you hear me now?');
+    u.lang = 'en-US';
+    const all = speechSynthesis.getVoices().filter((v) => v.lang.startsWith('en'));
+    u.voice = all[Number($('voiceSel').value)] || null;
+    u.onstart = () => log('warm: 음성 시작');
+    u.onend = () => log('warm: 음성 끝');
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+  };
+};
+
+// 합성과 무관하게 기기가 웹 소리를 내는지 확인하는 비프음
+$('btnBeep').onclick = () => {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    ctx.resume();
+    const osc = ctx.createOscillator();
+    osc.frequency.value = 440;
+    osc.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.6);
+    log('beep: 재생 요청 (ctx=' + ctx.state + ')');
+  } catch (e) { log('beep 오류: ' + e.message); }
+};
+
 // 4. 녹음 (iOS는 webm이 아니라 mp4/aac를 쓰므로 지원 형식을 직접 골라야 한다)
-let recorder = null; let chunks = [];
+let recorder = null; let chunks = []; let recStream = null;
 $('btnRec').onclick = async () => {
   try {
-    const stream = micStream || await navigator.mediaDevices.getUserMedia({ audio: true });
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    recStream = stream;
     const mime = ['audio/mp4', 'audio/webm', 'audio/aac'].find((m) => window.MediaRecorder && MediaRecorder.isTypeSupported(m));
     recorder = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
     chunks = [];
-    recorder.ondataavailable = (e) => chunks.push(e.data);
+    recorder.ondataavailable = (e) => { log('rec: 조각 ' + e.data.size + 'B'); chunks.push(e.data); };
     recorder.onstop = () => {
       const blob = new Blob(chunks, { type: recorder.mimeType });
+      if (recStream) recStream.getTracks().forEach((t) => t.stop());
       $('player').src = URL.createObjectURL(blob);
       $('player').play().catch(() => {});
       mark('stRec', blob.size > 0, '형식=' + recorder.mimeType + ', 크기=' + blob.size + 'B (재생되는지 직접 확인)');
     };
-    recorder.start();
+    // iOS는 stop 때 한꺼번에 주면 0B가 나오는 경우가 있어 조각 단위로 받는다
+    recorder.start(250);
     $('btnStop').disabled = false;
     $('stRec').textContent = '녹음 중...';
   } catch (e) {
     mark('stRec', false, e.name + ' ' + e.message);
   }
 };
-$('btnStop').onclick = () => { if (recorder) recorder.stop(); $('btnStop').disabled = true; };
+$('btnStop').onclick = () => { if (recorder) { recorder.requestData(); recorder.stop(); } $('btnStop').disabled = true; };
 </script>
 </body>
 </html>
