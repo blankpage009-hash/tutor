@@ -115,6 +115,7 @@ content/
    - 숫자는 글자로 (`3` → `three`)
    - 하이픈 단어, `uh-huh`·`hmm` 같은 감탄 소리, 드문 고유명사는 피한다
    - 축약은 `casual` 코스만. `gonna`, `wanna` 정도는 OK
+   - `formal`(비즈니스) 코스도 `I'm`, `I'd`, `we're`, `let's` 같은 표준 축약은 쓴다 (미국 직장 말투에서 자연스러움). `gonna`·`wanna`·`gotta`·`kinda` 같은 구어 축약만 금지
 
 ## 5. 음성 파일 이름
 

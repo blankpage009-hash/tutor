@@ -1,6 +1,10 @@
 {
   "schemaVersion": 1,
   "courses": [
-    { "id": "beginner", "file": "courses/beginner.json", "order": 1, "title": "Beginner", "titleKo": "초급", "level": 1 }
+    { "id": "beginner", "file": "courses/beginner.json", "order": 1, "title": "Beginner", "titleKo": "초급", "level": 1 },
+    { "id": "intermediate", "file": "courses/intermediate.json", "order": 2, "title": "Intermediate", "titleKo": "중급", "level": 2 },
+    { "id": "advanced", "file": "courses/advanced.json", "order": 3, "title": "Advanced", "titleKo": "고급", "level": 3 },
+    { "id": "master", "file": "courses/master.json", "order": 4, "title": "Master", "titleKo": "마스터", "level": 4 },
+    { "id": "business", "file": "courses/business.json", "order": 5, "title": "Business English", "titleKo": "비즈니스 영어", "level": 3 }
   ]
 }
