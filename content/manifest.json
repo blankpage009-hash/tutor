@@ -6,6 +6,7 @@
     { "id": "advanced", "file": "courses/advanced.json", "order": 3, "title": "Advanced", "titleKo": "고급", "level": 3 },
     { "id": "master", "file": "courses/master.json", "order": 4, "title": "Master", "titleKo": "마스터", "level": 4 },
     { "id": "business", "file": "courses/business.json", "order": 5, "title": "Business English", "titleKo": "비즈니스 영어", "level": 3 },
-    { "id": "travel", "file": "courses/travel.json", "order": 7, "title": "Travel", "titleKo": "여행", "level": 1 }
+    { "id": "travel", "file": "courses/travel.json", "order": 7, "title": "Travel", "titleKo": "여행", "level": 1 },
+    { "id": "out-and-about", "file": "courses/out-and-about.json", "order": 10, "title": "Restaurants, Shopping & Calls", "titleKo": "식당·쇼핑·전화", "level": 1 }
   ]
 }
