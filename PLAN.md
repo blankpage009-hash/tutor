@@ -228,7 +228,7 @@
   - 검사: `node scripts/content/validate.mjs`(형식. 핵심 규칙은 `validate-core.mjs` 순수 함수 → Phase 5 코스 불러오기에서 재사용), `node scripts/content/check-quality.mjs`(중복·난이도 역전·음성 인식 주의).
   - 음성: Piper `en_US-ryan-high`(사용자 선택), `.venv\Scripts\python.exe scripts\audio\make_audio.py`. AAC 모노 32kbps m4a, 파일명에 글자 지문(해시) → 고친 문장만 다시 생성, 안 쓰는 파일 자동 삭제. 초급 409개 3.56MB(약 2분) → 10코스 예상 약 36MB.
   - 도구 위치: 파이썬 가상환경 `.venv/`, 음성 모델 `.voices/`(둘 다 저장소 제외), ffmpeg는 winget 설치.
-  - 아이폰 확인 페이지: `docs/phase2/` → 임시 공개 저장소 `tutor-phase2`(https://blankpage009-hash.github.io/tutor-phase2/). 확인 후 삭제 예정.
+  - 아이폰 확인 페이지: `docs/phase2/` → 임시 공개 저장소 `tutor-phase2`로 확인 후 저장소 삭제함(2026-11-15). 다시 확인할 땐 `make-sample-page.mjs`로 만들어 임시 저장소에 올린다.
   - **사용자 승인 (2026-11-15)**: 초급 샘플 20문장·음성 아이폰 확인 완료.
   - 참고: 비공개 저장소는 무료 요금제에서 GitHub Pages를 쓸 수 없음 → Phase 3 배포 방식 결정 필요.
   - Phase 3·4가 지킬 점은 `content/schema.md` 7절 (content/ 복사 방법, 음성은 runtime cache, 축약 양방향 정규화).
