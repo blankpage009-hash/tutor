@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tutor 기술검증</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon.png">
+<!-- iOS는 manifest만으로는 독립 실행 모드가 안 될 수 있어서 이 메타 태그를 같이 둔다 -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Tutor">
+<style>
+  body { font-family: -apple-system, sans-serif; margin: 0; padding: 16px; padding-top: calc(16px + env(safe-area-inset-top)); background: #f5f5f7; color: #111; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .mode { font-size: 14px; padding: 8px 10px; border-radius: 8px; background: #fff; margin-bottom: 12px; }
+  section { background: #fff; border-radius: 12px; padding: 12px; margin-bottom: 12px; }
+  h2 { font-size: 16px; margin: 0 0 8px; }
+  button { font-size: 16px; padding: 10px 14px; border-radius: 10px; border: 1px solid #888; background: #fff; margin: 4px 4px 4px 0; }
+  .status { font-weight: bold; margin: 6px 0; }
+  .pass { color: #0a7d2c; } .fail { color: #c0392b; } .wait { color: #888; }
+  pre { white-space: pre-wrap; word-break: break-all; font-size: 12px; background: #f0f0f2; padding: 8px; border-radius: 8px; max-height: 220px; overflow: auto; }
+  select { font-size: 16px; width: 100%; padding: 8px; }
+</style>
+</head>
+<body>
+<h1>Tutor 기술검증 (Phase 0)</h1>
+<div class="mode" id="mode"></div>
+
+<section>
+  <h2>1. 마이크 권한</h2>
+  <button id="btnMic">마이크 허용 요청</button>
+  <div class="status wait" id="stMic">미확인</div>
+</section>
+
+<section>
+  <h2>2. 음성 인식 (영어)</h2>
+  <button id="btnStt">말하기 시작</button>
+  <div class="status wait" id="stStt">미확인</div>
+  <pre id="sttOut">"How are you doing today" 라고 말해 보세요.</pre>
+</section>
+
+<section>
+  <h2>3. 음성 재생 (영어 남성 음성)</h2>
+  <select id="voiceSel"></select>
+  <button id="btnTts">선택한 음성으로 재생</button>
+  <button id="btnVoices">음성 목록 새로고침</button>
+  <div class="status wait" id="stTts">미확인</div>
+  <pre id="voiceList"></pre>
+</section>
+
+<section>
+  <h2>4. 녹음 / 재생</h2>
+  <button id="btnRec">녹음 시작</button>
+  <button id="btnStop" disabled>멈추고 재생</button>
+  <div class="status wait" id="stRec">미확인</div>
+  <audio id="player" controls style="width:100%"></audio>
+</section>
+
+<section>
+  <h2>결과 로그</h2>
+  <pre id="log"></pre>
+</section>
+
+<script>
+'use strict';
+const $ = (id) => document.getElementById(id);
+const log = (m) => { $('log').textContent += m + '\n'; };
+const mark = (id, ok, msg) => {
+  const el = $(id);
+  el.className = 'status ' + (ok ? 'pass' : 'fail');
+  el.textContent = (ok ? '통과: ' : '실패: ') + msg;
+  log(id + ' → ' + (ok ? 'PASS ' : 'FAIL ') + msg);
+};
+
+// 홈화면 앱 모드인지 알려줘야 "어느 모드에서 테스트했는지" 결과가 신뢰된다
+const standalone = window.navigator.standalone === true ||
+  window.matchMedia('(display-mode: standalone)').matches;
+$('mode').textContent = standalone
+  ? '현재: 홈화면 앱 모드 (독립 실행) ✅ 이 모드에서 테스트하세요'
+  : '현재: Safari 브라우저 모드 — 홈화면에 추가한 뒤 앱 아이콘으로 다시 열어 테스트하세요';
+log('UA: ' + navigator.userAgent);
+log('standalone: ' + standalone);
+
+// 1. 마이크
+let micStream = null;
+$('btnMic').onclick = async () => {
+  try {
+    micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    mark('stMic', true, '마이크 권한 받음');
+  } catch (e) {
+    mark('stMic', false, e.name + ' ' + e.message);
+  }
+};
+
+// 2. 음성 인식 (iOS Safari는 접두사 붙은 webkitSpeechRecognition만 있다)
+$('btnStt').onclick = () => {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) { mark('stStt', false, '이 환경에는 SpeechRecognition이 없음'); return; }
+  const rec = new SR();
+  rec.lang = 'en-US';
+  rec.interimResults = true;
+  rec.continuous = false;
+  rec.onresult = (ev) => {
+    const r = ev.results[ev.results.length - 1];
+    $('sttOut').textContent = r[0].transcript + (r.isFinal ? '  (확정, 신뢰도 ' + r[0].confidence.toFixed(2) + ')' : '  ...');
+    if (r.isFinal) mark('stStt', true, '인식됨: ' + r[0].transcript);
+  };
+  rec.onerror = (ev) => mark('stStt', false, 'error=' + ev.error);
+  rec.onend = () => log('stt: 종료');
+  try { rec.start(); $('stStt').textContent = '듣는 중... 영어로 말하세요'; }
+  catch (e) { mark('stStt', false, e.name + ' ' + e.message); }
+};
+
+// 3. 음성 재생
+function loadVoices() {
+  const all = speechSynthesis.getVoices().filter((v) => v.lang.startsWith('en'));
+  $('voiceSel').innerHTML = '';
+  all.forEach((v, i) => {
+    const o = document.createElement('option');
+    o.value = i; o.textContent = v.name + ' (' + v.lang + ')';
+    $('voiceSel').appendChild(o);
+  });
+  $('voiceList').textContent = all.length
+    ? all.map((v) => v.name + ' | ' + v.lang + ' | ' + (v.localService ? '기기내장' : '온라인')).join('\n')
+    : '영어 음성이 아직 없음 — "새로고침"을 눌러 보세요';
+  log('영어 음성 ' + all.length + '개: ' + all.map((v) => v.name).join(', '));
+  return all;
+}
+// iOS는 음성 목록이 늦게 채워지는 경우가 있어 이벤트와 버튼 둘 다 쓴다
+speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
+$('btnVoices').onclick = loadVoices;
+$('btnTts').onclick = () => {
+  const all = speechSynthesis.getVoices().filter((v) => v.lang.startsWith('en'));
+  const u = new SpeechSynthesisUtterance('Hey, how are you doing today? Let us practice some English.');
+  u.voice = all[Number($('voiceSel').value)] || null;
+  u.lang = 'en-US';
+  u.onstart = () => mark('stTts', true, '재생 시작 (소리가 들리는지 직접 확인)');
+  u.onerror = (e) => mark('stTts', false, e.error);
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+};
+
+// 4. 녹음 (iOS는 webm이 아니라 mp4/aac를 쓰므로 지원 형식을 직접 골라야 한다)
+let recorder = null; let chunks = [];
+$('btnRec').onclick = async () => {
+  try {
+    const stream = micStream || await navigator.mediaDevices.getUserMedia({ audio: true });
+    const mime = ['audio/mp4', 'audio/webm', 'audio/aac'].find((m) => window.MediaRecorder && MediaRecorder.isTypeSupported(m));
+    recorder = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
+    chunks = [];
+    recorder.ondataavailable = (e) => chunks.push(e.data);
+    recorder.onstop = () => {
+      const blob = new Blob(chunks, { type: recorder.mimeType });
+      $('player').src = URL.createObjectURL(blob);
+      $('player').play().catch(() => {});
+      mark('stRec', blob.size > 0, '형식=' + recorder.mimeType + ', 크기=' + blob.size + 'B (재생되는지 직접 확인)');
+    };
+    recorder.start();
+    $('btnStop').disabled = false;
+    $('stRec').textContent = '녹음 중...';
+  } catch (e) {
+    mark('stRec', false, e.name + ' ' + e.message);
+  }
+};
+$('btnStop').onclick = () => { if (recorder) recorder.stop(); $('btnStop').disabled = true; };
+</script>
+</body>
+</html>
