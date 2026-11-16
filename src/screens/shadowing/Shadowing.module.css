@@ -8,6 +8,13 @@
   color: var(--ink-muted);
 }
 
+/* 진단 패널을 여는 5번 누르기 자리. 빠르게 여러 번 눌러도 아이폰이 확대하거나 글자를 선택하지 않게 */
+.secretTap {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .lessonTitle {
   margin: 0;
   font-family: var(--type-title-family);

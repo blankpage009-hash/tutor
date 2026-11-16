@@ -12,6 +12,7 @@ import { SentenceList } from './shadowing/SentenceList';
 import styles from './shadowing/Shadowing.module.css';
 import { ShadowingStage, type HandsFreeView } from './shadowing/ShadowingStage';
 import { useHandsFree } from './shadowing/useHandsFree';
+import { useSecretTaps } from './shadowing/useSecretTaps';
 import { useAutoAdvance, useLessonSteps } from './shadowing/useLessonSteps';
 import { useSavedSentences } from './shadowing/useSavedSentences';
 import { useShadowingAttempt, type AttemptStatus } from './shadowing/useShadowingAttempt';
@@ -54,12 +55,14 @@ function useDiagnostics() {
   // 아이폰 결과 10·11차: 앱 안 인식(Vosk)은 연속으로 잘 된다 → 기본. 끄면 내장 인식(비교용)
   const [vosk, setVosk] = useState(true);
   const [secondOpinion, setSecondOpinion] = useState(true);
+  // ⑧ 켬 = 마이크 소리 처리(에코 제거·잡음 억제) 끄기. 아이폰 비교 전까지 지금처럼 처리 켬을 기본으로
+  const [rawMic, setRawMic] = useState(false);
   const { logs, log } = useLog();
   useEffect(() => setAudioSessionEnabled(sessionOn), [sessionOn]);
   useEffect(() => setAudioDebug(log), [log]);
   return {
     recordWhile, setRecordWhile, sessionOn, setSessionOn, pcm, setPcm, warmUp, setWarmUp,
-    ios27Fix, setIos27Fix, vosk, setVosk, secondOpinion, setSecondOpinion, logs, log
+    ios27Fix, setIos27Fix, vosk, setVosk, secondOpinion, setSecondOpinion, rawMic, setRawMic, logs, log
   };
 }
 
@@ -90,6 +93,9 @@ export function ShadowingScreen() {
     if (status === 'passed' && steps.recordPass(id) && autoOn) auto.schedule();
   };
   const { attempt, hf } = useSpeaking(sentence, lesson, steps, diag, vosk.model, onResult);
+  // 진단 패널은 평소 숨긴다. 숨겨도 기록은 계속 모아서, 열었을 때 바로 "기록 복사"할 수 있다
+  const [showDiag, setShowDiag] = useState(false);
+  const secretTap = useSecretTaps(() => setShowDiag((v) => !v));
 
   if (error) return <p className={styles.ko} lang="ko">{error}</p>;
   if (!lesson || !sentence) return <p className={styles.ko} lang="ko">불러오는 중…</p>;
@@ -109,8 +115,8 @@ export function ShadowingScreen() {
         onMic={() => { auto.cancel(); attempt.start(); }}
         saved={saved.saved.has(sentence.id)} saveError={saved.error} onSave={() => saved.save(sentence)}
         autoOn={autoOn} onAutoOn={setAutoOn} autoPending={auto.pending}
-        engineNote={MODEL_NOTE[vosk.state]} micLocked={diag.vosk && vosk.state !== 'ready'} handsFree={handsFree} />
-      <Diagnostics diag={diag} voskState={vosk.state} locked={listening} />
+        engineNote={MODEL_NOTE[vosk.state]} micLocked={diag.vosk && vosk.state !== 'ready'} handsFree={handsFree} onSecretTap={secretTap} />
+      {showDiag && <Diagnostics diag={diag} voskState={vosk.state} locked={listening} />}
     </TwoColumn>
   );
 }
@@ -128,11 +134,13 @@ function useSpeaking(
     threshold: settings.passThreshold, failFeedback: settings.failFeedback,
     recordWhileListening: diag.recordWhile, pcmFallback: diag.pcm, warmUpMic: diag.warmUp,
     ios27Fix: diag.ios27Fix, slowRate: SLOW_RATE, log, onResult, handsFreeActive,
-    engine: diag.vosk ? 'vosk' : 'builtin', voskModel, secondOpinion: diag.secondOpinion
+    engine: diag.vosk ? 'vosk' : 'builtin', voskModel, secondOpinion: diag.secondOpinion,
+    micProcessing: !diag.rawMic
   });
   const hf = useHandsFree({
     lesson, index: steps.index, cleared: steps.cleared, recordPass: steps.recordPass, next: steps.next,
-    attempt, active: handsFreeActive, slowRate: SLOW_RATE, failFeedback: settings.failFeedback, log
+    attempt, active: handsFreeActive, slowRate: SLOW_RATE, failFeedback: settings.failFeedback,
+    micProcessing: !diag.rawMic, log
   });
   return { attempt, hf };
 }
@@ -141,6 +149,7 @@ function Diagnostics({ diag, voskState, locked }: { diag: Diag; voskState: VoskM
   return (
     <DiagnosticsPanel vosk={diag.vosk} onVosk={diag.setVosk} voskState={voskState}
       secondOpinion={diag.secondOpinion} onSecondOpinion={diag.setSecondOpinion} locked={locked}
+      rawMic={diag.rawMic} onRawMic={diag.setRawMic}
       recordWhileListening={diag.recordWhile} onRecordWhileListening={diag.setRecordWhile}
       audioSessionOn={diag.sessionOn} onAudioSessionOn={diag.setSessionOn}
       pcmFallback={diag.pcm} onPcmFallback={diag.setPcm} warmUpMic={diag.warmUp} onWarmUpMic={diag.setWarmUp}

@@ -30,6 +30,7 @@ export type HandsFreeInput = {
   active: MutableRefObject<boolean>; // useShadowingAttempt와 같이 보는 "이어 말하기 중" 표시
   slowRate: number;
   failFeedback: boolean;
+  micProcessing: boolean;
   log: (m: string) => void;
 };
 

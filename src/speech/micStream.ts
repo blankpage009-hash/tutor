@@ -17,12 +17,19 @@ export type MicStream = {
 
 // ctx는 사용자가 누른 순간(await 전)에 만든 것을 넘겨야 한다 — iOS는 그때 만든 것만 소리를 흘려 준다
 // (src/speech/pcmCapture.ts의 createCaptureContext). ctx를 닫는 것은 부른 쪽 책임이다.
-export async function openMicStream(ctx: AudioContext, log: Log = () => {}): Promise<MicStream> {
+// processing: 에코 제거·잡음 억제·자동 음량. 켜면 튜터 소리가 스피커로 나올 때 마이크가 덜 주워듣지만,
+// 아이폰 결과 13차에서 마이크를 켜 둔 채 튜터 소리를 틀면 잡음이 섞였다(iOS가 통화용 처리로 바꾸는 것으로 추정).
+// 튜터가 읽는 동안은 인식기에 소리를 넣지 않으므로 꺼도 될 수 있어, 아이폰에서 비교하려고 고를 수 있게 한다
+export type MicOptions = { processing?: boolean };
+
+export async function openMicStream(ctx: AudioContext, log: Log = () => {}, opts: MicOptions = {}): Promise<MicStream> {
+  const on = opts.processing ?? true;
   const stream = await navigator.mediaDevices.getUserMedia({
-    // echoCancellation: 튜터 소리가 스피커로 나올 때 마이크가 그 소리를 덜 주워듣게
-    audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true }
+    audio: { channelCount: 1, echoCancellation: on, noiseSuppression: on, autoGainControl: on }
   });
   const track = stream.getAudioTracks()[0];
+  const applied = track?.getSettings?.() ?? {};
+  const processingText = `에코 제거 ${String(applied.echoCancellation ?? '?')}, 잡음 억제 ${String(applied.noiseSuppression ?? '?')}`;
   if (track) {
     track.onmute = () => log('마이크: 무음으로 바뀜');
     track.onunmute = () => log('마이크: 무음 풀림');
@@ -52,7 +59,7 @@ export async function openMicStream(ctx: AudioContext, log: Log = () => {}): Pro
       peak = 0;
       return p;
     },
-    info: () => `마이크 ${track?.readyState ?? '없음'}${track?.muted ? '(무음)' : ''}, 장치 ${ctx.state} ${ctx.sampleRate}Hz`,
+    info: () => `마이크 ${track?.readyState ?? '없음'}${track?.muted ? '(무음)' : ''}, 장치 ${ctx.state} ${ctx.sampleRate}Hz, ${processingText}`,
     close() {
       proc.onaudioprocess = null;
       source.disconnect();

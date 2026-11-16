@@ -31,6 +31,7 @@ type Props = {
   engineNote: string | null; // 앱 안 인식 준비 상태 안내 (준비 중·실패)
   micLocked: boolean; // 인식 준비가 끝나기 전에는 마이크를 못 누르게
   handsFree: HandsFreeView;
+  onSecretTap: () => void; // 맨 위 "문장 1 / 3" 글자 누름 (5번이면 진단 패널 열기/닫기)
 };
 
 export type HandsFreeView = {
@@ -125,7 +126,7 @@ export function ShadowingStage(p: Props) {
   const final = o?.status === 'passed' || o?.status === 'failed';
   return (
     <div className={styles.stage}>
-      <p className={styles.eyebrow} lang="ko">쉐도잉 · {p.position} · 통과 {Math.min(p.passes, p.required)}/{p.required}</p>
+      <p className={`${styles.eyebrow} ${styles.secretTap}`} lang="ko" onClick={p.onSecretTap}>쉐도잉 · {p.position} · 통과 {Math.min(p.passes, p.required)}/{p.required}</p>
       <ProgressBar value={o?.judgement.ratio ?? 0} label="맞힌 단어 비율" />
       {o && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} />}
       <p className={styles.ko} lang="ko">{p.sentence.ko}</p>
