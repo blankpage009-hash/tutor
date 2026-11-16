@@ -1,17 +1,42 @@
-// 실행: node scripts/content/make-sample-page.mjs
-// 샘플 20문장으로 아이폰 확인 페이지(docs/phase2/)를 만든다. 다른 코스를 확인할 땐 PICK과 코스 파일을 바꾼다.
+// 실행: node scripts/content/make-sample-page.mjs [코스id ...]
+// 샘플 20문장으로 아이폰 확인 페이지(docs/phase2/)를 만든다.
+// 코스id를 안 주면 처음 승인받은 초급 샘플(PICK)을 그대로 만든다.
+// 코스id를 여러 개 주면 20문장을 코스마다 나눠, 각 코스 안에서 고르게 띄엄띄엄 뽑는다.
 import { copyFileSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const OUT = join(ROOT, 'docs/phase2');
+const TOTAL = 20;
 const PICK = ['01-s1', '01-s2', '02-s3', '03-s1', '03-s3', '04-s2', '05-s3', '06-s2', '07-s2', '08-s2',
   '09-s2', '10-s1', '11-s3', '12-s2', '13-s1', '14-s1', '15-s1', '17-s2', '19-s1', '20-s3'];
 
-const course = JSON.parse(readFileSync(join(ROOT, 'content/courses/beginner.json'), 'utf8'));
-const all = course.lessons.flatMap((l) => l.sentences.map((s) => ({ ...s, lesson: l.titleKo })));
-const picked = PICK.map((p) => all.find((s) => s.id === `beg-${p}`));
+function loadSentences(id) {
+  const course = JSON.parse(readFileSync(join(ROOT, `content/courses/${id}.json`), 'utf8'));
+  return course.lessons.flatMap((l) => l.sentences.map((s) => ({ ...s, lesson: `${course.titleKo} · ${l.titleKo}` })));
+}
+
+// 코스마다 앞쪽 수업만 뽑히지 않도록 간격을 두고 가운데 지점을 고른다.
+// shift: 코스마다 한 칸씩 밀어서 모든 코스가 같은 순번(s1)만 뽑히지 않게 한다
+function spread(list, n, shift) {
+  const step = list.length / n;
+  return Array.from({ length: n }, (_, i) => list[(Math.floor(i * step + step / 2) + shift) % list.length]);
+}
+
+function pickSentences(ids) {
+  if (ids.length === 0) {
+    const all = loadSentences('beginner');
+    return PICK.map((p) => all.find((s) => s.id === `beg-${p}`));
+  }
+  return ids.flatMap((id, i) => {
+    const n = Math.floor(TOTAL / ids.length) + (i < TOTAL % ids.length ? 1 : 0);
+    return spread(loadSentences(id), n, i % 3);
+  });
+}
+
+const courseIds = process.argv.slice(2);
+const picked = pickSentences(courseIds);
 
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(join(OUT, 'audio'), { recursive: true });
@@ -28,6 +53,7 @@ writeFileSync(join(OUT, 'manifest.webmanifest'), JSON.stringify({
 }, null, 2));
 
 const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const scope = courseIds.length === 0 ? '초급 코스' : `${[...new Set(picked.map((s) => s.lesson.split(' · ')[0]))].join(', ')} 코스`;
 const cards = items.map((it) => `
   <article>
     <div class="meta">${it.n}. ${esc(it.lesson)} · ${it.id}</div>
@@ -71,7 +97,7 @@ writeFileSync(join(OUT, 'index.html'), `<!doctype html>
 </head>
 <body>
 <h1>Tutor 샘플 20문장</h1>
-<p class="lead">초급 코스 샘플이에요. 홈화면에 추가한 뒤 앱 모드에서 소리를 들어보고, 문장·뜻·메모·발음이 자연스러운지 확인해주세요.</p>
+<p class="lead">${esc(scope)} 샘플이에요. 홈화면에 추가한 뒤 앱 모드에서 소리를 들어보고, 문장·뜻·메모·발음이 자연스러운지 확인해주세요.</p>
 ${cards}
 <audio id="player" preload="none"></audio>
 <script>
