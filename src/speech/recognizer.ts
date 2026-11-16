@@ -16,6 +16,7 @@ type SpeechRecognitionLike = {
   onerror: ((e: SRErrorEvent) => void) | null;
   onend: (() => void) | null;
   onaudiostart: (() => void) | null;
+  onstart: (() => void) | null;
   start(): void;
   stop(): void;
   abort(): void;
@@ -30,6 +31,8 @@ export type ListenResult = {
 export type ListenOptions = {
   onInterim?: (alternatives: string[]) => void;
   onAudioStart?: () => void;
+  // 진단 기록용: 인식기가 보낸 신호(start, audiostart, error, end, 강제 종료)를 알려준다
+  onDebug?: (msg: string) => void;
   // iOS는 가끔 끝 신호(onend)를 안 보내고 멈춘다. 이 시간이 지나면 강제로 끝낸다
   timeoutMs?: number;
 };
@@ -60,41 +63,67 @@ function collect(e: SREvent): string[] {
   return out.filter(Boolean);
 }
 
+// 아이폰 시험(2026-11-16)에서 녹음이 마이크를 쥔 동안 인식을 시작하면 끝 신호 없이 멈추고,
+// 그 뒤로는 인식이 계속 안 되는 일이 있었다. 그래서 (1) 인식기는 한 번에 하나만 두고 새로 시작할 때
+// 남은 것을 강제로 끝내며, (2) 끝 신호가 안 와도 정해진 시간이 지나면 우리 쪽에서 끝낸 것으로 친다.
+let active: { forceEnd(reason: string): void } | null = null;
+const STOP_GRACE_MS = 1500;
+
 export function listen(opts: ListenOptions = {}): Listening {
   const Ctor = getCtor();
   if (!Ctor) return { stop() {}, result: Promise.resolve({ alternatives: [], error: 'unsupported' }) };
+  active?.forceEnd('새 듣기 시작');
   const rec = new Ctor();
   rec.lang = 'en-US';
   rec.interimResults = true;
   rec.continuous = false;
   rec.maxAlternatives = 3;
-  let latest: string[] = [];
-  let error: string | undefined;
-  let finish: (r: ListenResult) => void = () => {};
-  const result = new Promise<ListenResult>((resolve) => { finish = resolve; });
-  const timer = window.setTimeout(() => rec.abort(), opts.timeoutMs ?? 15000);
-  let ended = false;
-  const end = () => {
-    if (ended) return;
-    ended = true;
-    window.clearTimeout(timer);
-    releaseMic();
-    // 확정 결과 없이 끝나도 마지막 중간 결과로 판정한다 (iOS가 확정 신호를 빼먹는 경우 대비)
-    finish({ alternatives: latest, error: latest.length ? undefined : error });
-  };
-  rec.onresult = (e) => {
-    latest = collect(e);
-    opts.onInterim?.(latest);
-  };
-  rec.onerror = (e) => { error = e.error; };
-  rec.onend = end;
-  rec.onaudiostart = () => opts.onAudioStart?.();
+  const session = wire(rec, opts);
+  active = session;
   acquireMic();
   try {
     rec.start();
   } catch (e) {
-    error = String(e);
-    end();
+    session.fail(String(e));
   }
-  return { stop: () => rec.stop(), result };
+  return { stop: session.stop, result: session.result };
+}
+
+function wire(rec: SpeechRecognitionLike, opts: ListenOptions) {
+  const debug = (m: string) => opts.onDebug?.(`인식 ${m}`);
+  let latest: string[] = [];
+  let error: string | undefined;
+  let ended = false;
+  let finish: (r: ListenResult) => void = () => {};
+  const result = new Promise<ListenResult>((resolve) => { finish = resolve; });
+  const timers: number[] = [];
+  const end = () => {
+    if (ended) return;
+    ended = true;
+    timers.forEach((t) => window.clearTimeout(t));
+    releaseMic();
+    if (active === session) active = null;
+    // 확정 결과 없이 끝나도 마지막 중간 결과로 판정한다 (iOS가 확정 신호를 빼먹는 경우 대비)
+    finish({ alternatives: latest, error: latest.length ? undefined : error });
+  };
+  const forceEnd = (reason: string) => {
+    if (ended) return;
+    debug(`강제 종료 (${reason})`);
+    error ??= 'stuck';
+    try { rec.abort(); } catch { /* 이미 멈춘 인식기 */ }
+    end();
+  };
+  rec.onstart = () => debug('start');
+  rec.onaudiostart = () => { debug('audiostart'); opts.onAudioStart?.(); };
+  rec.onresult = (e) => { latest = collect(e); opts.onInterim?.(latest); };
+  rec.onerror = (e) => { error = e.error; debug(`error ${e.error}`); };
+  rec.onend = () => { debug('end'); end(); };
+  timers.push(window.setTimeout(() => forceEnd('시간 초과'), opts.timeoutMs ?? 15000));
+  const stop = () => {
+    try { rec.stop(); } catch { /* 이미 멈춘 인식기 */ }
+    timers.push(window.setTimeout(() => forceEnd('멈춤 뒤 응답 없음'), STOP_GRACE_MS));
+  };
+  const fail = (msg: string) => { error = msg; debug(`시작 실패 ${msg}`); end(); };
+  const session = { forceEnd, stop, fail, result };
+  return session;
 }

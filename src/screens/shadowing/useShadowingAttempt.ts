@@ -25,7 +25,8 @@ const ERROR_TEXT: Record<string, string> = {
   'not-allowed': '음성 인식 권한이 꺼져 있어요. 설정 > Safari에서 허용해 주세요.',
   'audio-capture': '마이크를 쓸 수 없어요. 다른 앱이 마이크를 쓰고 있는지 확인해 주세요.',
   network: '음성 인식은 인터넷이 필요해요. 연결을 확인해 주세요.',
-  aborted: '듣기가 멈췄어요. 다시 눌러 주세요.'
+  aborted: '듣기가 멈췄어요. 다시 눌러 주세요.',
+  stuck: '음성 인식이 응답하지 않아요. 다시 눌러 보고, 계속 안 되면 앱을 완전히 닫았다 다시 열어 주세요.'
 };
 
 // 녹음을 시작해 두고, 실패해도 인식은 계속되게 한다 (녹음은 부가 기능)
@@ -101,9 +102,9 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     const l = listen({
       onInterim: (alts) => setOutcome({ judgement: judge(sentence, alts), status: 'listening', message: null }),
       onAudioStart: () => {
-        o.log('인식 시작');
         if (o.recordWhileListening) rec = beginRecording(o.log);
-      }
+      },
+      onDebug: o.log
     });
     listening.current = l;
     const res = await l.result;
