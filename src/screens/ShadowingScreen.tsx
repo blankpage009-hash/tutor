@@ -38,12 +38,13 @@ function useLog() {
 
 // 진단 패널의 스위치와 기록
 function useDiagnostics() {
-  // 아이폰 시험(2026-11-16): 인식이 끝난 뒤 따로 녹음하면 무음만 녹음되고, 말하는 동안 같이 녹음하면
-  // 인식·녹음 모두 된다. 그래서 같이 녹음이 기본이다 (PLAN 5.3 "시도마다 녹음"과도 같다)
-  const [recordWhile, setRecordWhile] = useState(true);
+  // 아이폰 결과 6·7차(2026-11-16): 같이 녹음하면 앱을 켠 뒤 첫 시도만 되고, 두 번째부터 마이크가
+  // 무음(최대 소리 0.000)이 되어 인식까지 안 된다. 한 번 그렇게 되면 녹음을 꺼도 앱을 다시 열 때까지
+  // 안 풀린다. 그래서 녹음은 기본으로 끄고(사용자 결정: 인식이 우선, 내 목소리 녹음은 없어도 됨)
+  // 마이크는 음성 인식만 쓰게 한다. 스위치는 원인 확인용으로만 남긴다
+  const [recordWhile, setRecordWhile] = useState(false);
   const [sessionOn, setSessionOn] = useState(false);
-  // 아이폰 결과 6차: 두 번째 시도부터 마이크가 무음. 원인을 가리려고 하나씩 켜고 꺼 본다
-  const [pcm, setPcm] = useState(true);
+  const [pcm, setPcm] = useState(false);
   const [warmUp, setWarmUp] = useState(false);
   const { logs, log } = useLog();
   useEffect(() => setAudioSessionEnabled(sessionOn), [sessionOn]);

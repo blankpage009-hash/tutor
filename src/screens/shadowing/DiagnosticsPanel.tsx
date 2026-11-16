@@ -67,7 +67,7 @@ export function DiagnosticsPanel(p: Props) {
       </ul>
       <Switch label="① 말하는 동안 내 목소리 같이 녹음" on={p.recordWhileListening} onChange={p.onRecordWhileListening} />
       <Switch label="② 직접 녹음도 같이 (Web Audio)" on={p.pcmFallback} onChange={p.onPcmFallback} />
-      <Switch label="③ 말하기 전마다 마이크 준비 운동" on={p.warmUpMic} onChange={p.onWarmUpMic} />
+      <Switch label="③ 말하기 전마다 마이크 따로 열었다 닫기" on={p.warmUpMic} onChange={p.onWarmUpMic} />
       <Switch label="④ 녹음 뒤 소리 크기 되돌리기 (오디오 세션 조정)" on={p.audioSessionOn} onChange={p.onAudioSessionOn} />
       <div className={styles.diagRow}>
         <Button size="sm" onClick={() => copyLogs(facts, p.logs).then(setCopyMsg)}>기록 복사</Button>

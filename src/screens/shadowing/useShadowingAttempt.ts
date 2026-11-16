@@ -4,7 +4,7 @@ import type { Sentence } from '../../content/types';
 import { isPass, type Judgement } from '../../scoring/types';
 import { wordMatchJudge } from '../../scoring/wordMatchJudge';
 import { playAudio, preloadAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
-import { ensureMicPermission } from '../../speech/micPermission';
+import { ensureMicPermission, type MicCheck } from '../../speech/micPermission';
 import { createCaptureContext } from '../../speech/pcmCapture';
 import { listen, type Listening, type ListenResult } from '../../speech/recognizer';
 import { startRecording, type ActiveRecording } from '../../speech/recorder';
@@ -60,6 +60,12 @@ function evaluate(sentence: Sentence, res: ListenResult, threshold: number): Out
     return { judgement, status: 'idle', message };
   }
   return { judgement, status: isPass(judgement, threshold) ? 'passed' : 'failed', message: null };
+}
+
+// 기본은 마이크를 따로 열지 않는다(getUserMedia 없음). 권한은 음성 인식이 직접 묻고, 거절되면
+// not-allowed 오류로 안내한다. 따로 연 마이크가 인식을 무음으로 만드는 것으로 의심돼서다 (아이폰 결과 7차)
+function checkMic(openSeparately: boolean): Promise<MicCheck> {
+  return openSeparately ? ensureMicPermission(true) : Promise.resolve({ ok: true });
 }
 
 // 인식하면서(소리가 들어오기 시작하면) 같이 녹음하고, 둘 다 끝날 때까지 기다린다
@@ -137,7 +143,7 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     // 덜 끝나 인식이 실패할 수 있어 잠깐 기다린다 (아이폰 시험에서 3번째 문장 인식 실패 대응)
     if (wasPlaying) await new Promise((r) => window.setTimeout(r, 400));
     const setOutcome = (o: Outcome) => setStored({ id: sentence.id, o });
-    const mic = await ensureMicPermission(o.warmUpMic);
+    const mic = await checkMic(o.warmUpMic);
     if (stale() || !mic.ok) {
       captureCtx?.close().catch(() => undefined);
       if (!mic.ok && !stale()) {
