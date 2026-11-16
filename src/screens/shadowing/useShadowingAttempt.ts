@@ -17,6 +17,8 @@ export type AttemptOptions = {
   recordWhileListening: boolean; // Phase 4 진단: 인식과 녹음을 동시에 해도 되는지 아이폰에서 확인
   slowRate: number;
   log: (msg: string) => void;
+  // 통과 횟수 세기·자동 넘기기는 화면이 맡는다. 판정이 끝난 그 순간에만 알려 준다
+  onResult?: (sentenceId: string, status: AttemptStatus) => void;
 };
 
 const judge = (s: Sentence, alts: string[]) => wordMatchJudge.judge(s.en, alts);
@@ -57,6 +59,30 @@ function evaluate(sentence: Sentence, res: ListenResult, threshold: number): Out
   return { judgement, status: isPass(judgement, threshold) ? 'passed' : 'failed', message: null };
 }
 
+// 인식하면서(소리가 들어오기 시작하면) 같이 녹음하고, 둘 다 끝날 때까지 기다린다
+async function listenAndRecord(
+  sentence: Sentence, o: AttemptOptions, captureCtx: AudioContext | null,
+  setOutcome: (o: Outcome) => void, listening: MutableRefObject<Listening | null>
+) {
+  setOutcome({ judgement: judge(sentence, []), status: 'listening', message: null });
+  let rec: Promise<ActiveRecording | null> | null = null;
+  const l = listen({
+    onInterim: (alts) => setOutcome({ judgement: judge(sentence, alts), status: 'listening', message: null }),
+    onAudioStart: () => {
+      if (o.recordWhileListening) rec = beginRecording(o.log, captureCtx);
+    },
+    onDebug: o.log
+  });
+  listening.current = l;
+  const res = await l.result;
+  listening.current = null;
+  // 인식이 소리를 받기 전에 끝나 녹음이 시작되지 않았으면 미리 만든 장치를 닫는다
+  if (!rec) captureCtx?.close().catch(() => undefined);
+  // 문장이 바뀌었어도 녹음은 끝까지 마쳐야 마이크가 반납된다
+  const voice = await finishRecording(rec, o.log);
+  return { res, voice };
+}
+
 // 튜터 음성: 문장이 바뀌면 미리 받아 두고(탭하자마자 재생되게), 재생 함수를 돌려준다
 function useTutorAudio(sentence: Sentence | null, opts: MutableRefObject<AttemptOptions>) {
   useEffect(() => {
@@ -76,14 +102,23 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     : stored?.id === sentence.id ? stored.o
     : { judgement: judge(sentence, []), status: 'idle', message: null };
   const [myVoice, setMyVoice] = useState<string | null>(null);
+  const [replaying, setReplaying] = useState(false);
   const listening = useRef<Listening | null>(null);
   const optsRef = useRef(opts);
   optsRef.current = opts;
+  // await 사이에 문장이 바뀌었는지 알아보는 용도. 바뀌었으면 앞 문장의 결과·녹음·느린 재생을 버린다
+  // (듣는 중 문장을 바꾸면 느린 다시 듣기가 이전 문장을 틀던 문제)
+  const currentId = useRef(sentence?.id);
+  currentId.current = sentence?.id;
   const playTutor = useTutorAudio(sentence, optsRef);
 
   useEffect(() => {
     setMyVoice(null);
-    return () => listening.current?.stop();
+    setReplaying(false);
+    return () => {
+      listening.current?.stop();
+      stopAudio();
+    };
   }, [sentence]);
 
   const start = useCallback(async () => {
@@ -91,6 +126,7 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     const wasPlaying = stopAudio();
     const o = optsRef.current;
     if (!sentence) return;
+    const stale = () => currentId.current !== sentence.id;
     // 같이 녹음할 때 쓸 직접 녹음 장치는 탭한 지금(await 전) 만들어야 iOS가 소리를 넘겨준다
     const captureCtx = o.recordWhileListening ? createCaptureContext() : null;
     // 튜터 소리(특히 실패 후 느린 다시 듣기)가 나오는 중에 바로 마이크를 켜면 iOS 오디오 전환이
@@ -98,36 +134,35 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     if (wasPlaying) await new Promise((r) => window.setTimeout(r, 400));
     const setOutcome = (o: Outcome) => setStored({ id: sentence.id, o });
     const mic = await ensureMicPermission();
+    if (stale()) {
+      captureCtx?.close().catch(() => undefined);
+      return;
+    }
     if (!mic.ok) {
       captureCtx?.close().catch(() => undefined);
       o.log(`마이크 권한: ${mic.reason}`);
       setOutcome({ judgement: judge(sentence, []), status: 'idle', message: mic.message });
       return;
     }
-    setOutcome({ judgement: judge(sentence, []), status: 'listening', message: null });
-    let rec: Promise<ActiveRecording | null> | null = null;
-    const l = listen({
-      onInterim: (alts) => setOutcome({ judgement: judge(sentence, alts), status: 'listening', message: null }),
-      onAudioStart: () => {
-        if (o.recordWhileListening) rec = beginRecording(o.log, captureCtx);
-      },
-      onDebug: o.log
-    });
-    listening.current = l;
-    const res = await l.result;
-    listening.current = null;
-    // 인식이 소리를 받기 전에 끝나 녹음이 시작되지 않았으면 미리 만든 장치를 닫는다
-    if (!rec) captureCtx?.close().catch(() => undefined);
-    const voice = await finishRecording(rec, o.log);
+    const { res, voice } = await listenAndRecord(sentence, o, captureCtx, setOutcome, listening);
+    if (stale()) {
+      o.log('문장이 바뀌어 앞 문장 결과를 버림');
+      return;
+    }
     const out = evaluate(sentence, res, o.threshold);
     o.log(`판정 ${Math.round(out.judgement.ratio * 100)}% · 들린 말 "${out.judgement.heard}"${res.error ? ` · 오류 ${res.error}` : ''}`);
     setOutcome(out);
     if (voice) setMyVoice(voice);
+    o.onResult?.(sentence.id, out.status);
     // 실패 피드백: 문장 전체를 느리게 다시 들려준다 (탭 없이 재생 — iOS가 허락하는지 확인 대상)
-    if (out.status === 'failed' && o.failFeedback) await playTutor(o.slowRate);
+    if (out.status === 'failed' && o.failFeedback) {
+      setReplaying(true);
+      await playTutor(o.slowRate);
+      if (!stale()) setReplaying(false);
+    }
   }, [sentence, playTutor]);
 
   const stop = useCallback(() => listening.current?.stop(), []);
 
-  return { outcome, myVoice, setMyVoice, start, stop, playTutor };
+  return { outcome, myVoice, setMyVoice, start, stop, playTutor, replaying };
 }

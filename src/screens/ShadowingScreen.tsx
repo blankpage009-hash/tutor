@@ -10,19 +10,21 @@ import { DiagnosticsPanel } from './shadowing/DiagnosticsPanel';
 import { SentenceList } from './shadowing/SentenceList';
 import styles from './shadowing/Shadowing.module.css';
 import { ShadowingStage } from './shadowing/ShadowingStage';
-import { useShadowingAttempt } from './shadowing/useShadowingAttempt';
+import { useAutoAdvance, useLessonSteps } from './shadowing/useLessonSteps';
+import { useSavedSentences } from './shadowing/useSavedSentences';
+import { useShadowingAttempt, type AttemptStatus } from './shadowing/useShadowingAttempt';
 
 // 실패 피드백의 "느린 속도". 너무 느리면 iOS 재생 속도 변환이 뭉개져서 0.75로 둔다
 const SLOW_RATE = 0.75;
 
 function useLesson(lessonId: string) {
-  const [lesson, setLesson] = useState<Lesson | null>(null);
+  const [data, setData] = useState<{ lesson: Lesson; courseId: string } | null>(null);
   const [error, setError] = useState<string | null>(null);
   useEffect(() => {
-    setLesson(null);
-    loadLesson(lessonId).then((r) => setLesson(r.lesson), (e) => setError(String(e)));
+    setData(null);
+    loadLesson(lessonId).then((r) => setData({ lesson: r.lesson, courseId: r.course.id }), (e) => setError(String(e)));
   }, [lessonId]);
-  return { lesson, error };
+  return { lesson: data?.lesson ?? null, courseId: data?.courseId ?? null, error };
 }
 
 function useLog() {
@@ -34,51 +36,55 @@ function useLog() {
   return { logs, log };
 }
 
-// 수업 안에서 지금 몇 번째 문장인지, 어떤 문장을 통과했는지
-function useLessonSteps(lesson: Lesson | null) {
-  const [index, setIndex] = useState(0);
-  const [passed, setPassed] = useState<Set<string>>(new Set());
-  const [finished, setFinished] = useState(false);
-  const total = lesson?.sentences.length ?? 0;
-  const markPassed = useCallback((id: string) => setPassed((s) => (s.has(id) ? s : new Set(s).add(id))), []);
-  const next = () => (index < total - 1 ? setIndex(index + 1) : setFinished(true));
-  return { index, setIndex, passed, markPassed, finished, total, next };
-}
-
-export function ShadowingScreen() {
-  const { lessonId = 'beg-01' } = useParams();
-  const { lesson, error } = useLesson(lessonId);
-  const steps = useLessonSteps(lesson);
+// 진단 패널의 스위치와 기록
+function useDiagnostics() {
   // 아이폰 시험(2026-11-16): 인식이 끝난 뒤 따로 녹음하면 무음만 녹음되고, 말하는 동안 같이 녹음하면
   // 인식·녹음 모두 된다. 그래서 같이 녹음이 기본이다 (PLAN 5.3 "시도마다 녹음"과도 같다)
   const [recordWhile, setRecordWhile] = useState(true);
   const [sessionOn, setSessionOn] = useState(false);
   const { logs, log } = useLog();
-  const settings = DEFAULT_SETTINGS;
-  const sentence = lesson?.sentences[steps.index] ?? null;
-  const attempt = useShadowingAttempt(sentence, {
-    threshold: settings.passThreshold, failFeedback: settings.failFeedback,
-    recordWhileListening: recordWhile, slowRate: SLOW_RATE, log
-  });
-  const { markPassed } = steps;
-
   useEffect(() => setAudioSessionEnabled(sessionOn), [sessionOn]);
   useEffect(() => setAudioDebug(log), [log]);
-  useEffect(() => {
-    if (sentence && attempt.outcome?.status === 'passed') markPassed(sentence.id);
-  }, [attempt.outcome?.status, sentence, markPassed]);
+  return { recordWhile, setRecordWhile, sessionOn, setSessionOn, logs, log };
+}
+
+export function ShadowingScreen() {
+  const { lessonId = 'beg-01' } = useParams();
+  const { lesson, courseId, error } = useLesson(lessonId);
+  // 설정 화면은 Phase 7. 그 전까지는 기본값을 쓴다
+  const settings = DEFAULT_SETTINGS;
+  const steps = useLessonSteps(lesson, settings.repeatCount);
+  const diag = useDiagnostics();
+  const { log } = diag;
+  // 앱을 다시 열면 꺼짐으로 돌아간다 (기억은 설정 화면과 함께 Phase 7)
+  const [autoOn, setAutoOn] = useState(settings.autoAdvance);
+  const sentence = lesson?.sentences[steps.index] ?? null;
+  const auto = useAutoAdvance(autoOn, sentence?.id, steps.next);
+  const saved = useSavedSentences(lesson, courseId, log);
+  const onResult = (id: string, status: AttemptStatus) => {
+    if (status === 'passed' && steps.recordPass(id) && autoOn) auto.schedule();
+  };
+  const attempt = useShadowingAttempt(sentence, {
+    threshold: settings.passThreshold, failFeedback: settings.failFeedback,
+    recordWhileListening: diag.recordWhile, slowRate: SLOW_RATE, log, onResult
+  });
 
   if (error) return <p className={styles.ko} lang="ko">{error}</p>;
   if (!lesson || !sentence) return <p className={styles.ko} lang="ko">불러오는 중…</p>;
-  const { index, total, passed } = steps;
+  const { index, total, cleared } = steps;
+  const listening = attempt.outcome?.status === 'listening';
   return (
-    <TwoColumn list={<SentenceList lesson={lesson} index={index} passed={passed} onPick={steps.setIndex} />}>
+    <TwoColumn list={<SentenceList lesson={lesson} index={index} cleared={cleared} locked={listening} onPick={steps.setIndex} />}>
       {steps.finished && <p className={styles.pass} lang="ko">이 수업의 문장 {total}개를 모두 통과했어요!</p>}
       <ShadowingStage sentence={sentence} position={`문장 ${index + 1} / ${total}`} attempt={attempt}
         threshold={settings.passThreshold} slowRate={SLOW_RATE}
-        canNext={passed.has(sentence.id)} isLast={index === total - 1} onNext={steps.next} />
-      <DiagnosticsPanel recordWhileListening={recordWhile} onRecordWhileListening={setRecordWhile}
-        audioSessionOn={sessionOn} onAudioSessionOn={setSessionOn} logs={logs} />
+        passes={steps.counts.get(sentence.id) ?? 0} required={settings.repeatCount}
+        canNext={cleared.has(sentence.id)} isLast={index === total - 1} onNext={steps.next}
+        onMic={() => { auto.cancel(); attempt.start(); }}
+        saved={saved.saved.has(sentence.id)} saveError={saved.error} onSave={() => saved.save(sentence)}
+        autoOn={autoOn} onAutoOn={setAutoOn} autoPending={auto.pending} />
+      <DiagnosticsPanel recordWhileListening={diag.recordWhile} onRecordWhileListening={diag.setRecordWhile}
+        audioSessionOn={diag.sessionOn} onAudioSessionOn={diag.setSessionOn} logs={diag.logs} />
     </TwoColumn>
   );
 }
