@@ -5,6 +5,7 @@ import { isPass, type Judgement } from '../../scoring/types';
 import { wordMatchJudge } from '../../scoring/wordMatchJudge';
 import { playAudio, preloadAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
 import { ensureMicPermission } from '../../speech/micPermission';
+import { createCaptureContext } from '../../speech/pcmCapture';
 import { listen, type Listening, type ListenResult } from '../../speech/recognizer';
 import { startRecording, type ActiveRecording } from '../../speech/recorder';
 
@@ -30,8 +31,8 @@ const ERROR_TEXT: Record<string, string> = {
 };
 
 // 녹음을 시작해 두고, 실패해도 인식은 계속되게 한다 (녹음은 부가 기능)
-export function beginRecording(log: (m: string) => void): Promise<ActiveRecording | null> {
-  return startRecording(log).then(
+export function beginRecording(log: (m: string) => void, ctx?: AudioContext | null): Promise<ActiveRecording | null> {
+  return (ctx === undefined ? startRecording(log) : startRecording(log, ctx)).then(
     (r) => { log('녹음 시작'); return r; },
     (e) => { log(`녹음 시작 실패: ${String(e)}`); return null; }
   );
@@ -90,12 +91,15 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     const wasPlaying = stopAudio();
     const o = optsRef.current;
     if (!sentence) return;
+    // 같이 녹음할 때 쓸 직접 녹음 장치는 탭한 지금(await 전) 만들어야 iOS가 소리를 넘겨준다
+    const captureCtx = o.recordWhileListening ? createCaptureContext() : null;
     // 튜터 소리(특히 실패 후 느린 다시 듣기)가 나오는 중에 바로 마이크를 켜면 iOS 오디오 전환이
     // 덜 끝나 인식이 실패할 수 있어 잠깐 기다린다 (아이폰 시험에서 3번째 문장 인식 실패 대응)
     if (wasPlaying) await new Promise((r) => window.setTimeout(r, 400));
     const setOutcome = (o: Outcome) => setStored({ id: sentence.id, o });
     const mic = await ensureMicPermission();
     if (!mic.ok) {
+      captureCtx?.close().catch(() => undefined);
       o.log(`마이크 권한: ${mic.reason}`);
       setOutcome({ judgement: judge(sentence, []), status: 'idle', message: mic.message });
       return;
@@ -105,13 +109,15 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     const l = listen({
       onInterim: (alts) => setOutcome({ judgement: judge(sentence, alts), status: 'listening', message: null }),
       onAudioStart: () => {
-        if (o.recordWhileListening) rec = beginRecording(o.log);
+        if (o.recordWhileListening) rec = beginRecording(o.log, captureCtx);
       },
       onDebug: o.log
     });
     listening.current = l;
     const res = await l.result;
     listening.current = null;
+    // 인식이 소리를 받기 전에 끝나 녹음이 시작되지 않았으면 미리 만든 장치를 닫는다
+    if (!rec) captureCtx?.close().catch(() => undefined);
     const voice = await finishRecording(rec, o.log);
     const out = evaluate(sentence, res, o.threshold);
     o.log(`판정 ${Math.round(out.judgement.ratio * 100)}% · 들린 말 "${out.judgement.heard}"${res.error ? ` · 오류 ${res.error}` : ''}`);

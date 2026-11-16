@@ -76,14 +76,15 @@ function startMediaRecorder(stream: MediaStream, log: Log): MediaRec | null {
 function report(m: MediaRecResult | null, p: PcmResult | null, log: Log): void {
   const a = m ? `녹음기 ${m.blob?.size ?? 0}바이트 (조각 이벤트 ${m.events}개, 빈 조각 ${m.empty}개)` : '녹음기 없음';
   const b = p
-    ? `직접 녹음 ${p.wav?.size ?? 0}바이트, ${p.seconds.toFixed(1)}초, 최대 소리 ${p.peak.toFixed(3)}`
+    ? `직접 녹음 ${p.wav?.size ?? 0}바이트, ${p.seconds.toFixed(1)}초, 최대 소리 ${p.peak.toFixed(3)}, 장치 ${p.state}`
     : '직접 녹음 없음';
   log(`녹음 결과: ${a} · ${b}`);
 }
 
-export async function startRecording(log: Log = () => {}): Promise<ActiveRecording> {
-  // await 전에(탭 처리 안에서) 만들어야 iOS가 소리를 받게 해 준다
-  const ctx = createCaptureContext();
+// ctx: 직접 녹음용 AudioContext. await 전에(탭 처리 안에서) 만들어야 iOS가 소리를 받게 해 주므로,
+// 탭보다 늦게 녹음을 시작하는 경우(말하는 동안 같이 녹음)는 탭할 때 미리 만들어 넘긴다
+export async function startRecording(log: Log = () => {}, ctx = createCaptureContext()): Promise<ActiveRecording> {
+  log(`직접 녹음 장치: ${ctx ? ctx.state : '없음'}, ${ctx?.sampleRate ?? 0}Hz`);
   let stream: MediaStream;
   try {
     stream = await openMic(log);

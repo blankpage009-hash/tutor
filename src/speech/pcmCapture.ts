@@ -3,7 +3,7 @@ import { downsample, encodeWav, mergeChunks, WAV_RATE } from './wav';
 // 마이크 소리를 Web Audio로 직접 받아 모으는 두 번째 녹음 방법 (MediaRecorder가 빈손일 때 대비).
 // ScriptProcessor는 오래된 방식이지만 별도 파일 없이 Safari에서 바로 동작해서 쓴다.
 
-export type PcmResult = { wav: Blob | null; peak: number; seconds: number };
+export type PcmResult = { wav: Blob | null; peak: number; seconds: number; state: string };
 export type PcmCapture = { stop(): PcmResult };
 
 type WebkitWindow = Window & { webkitAudioContext?: typeof AudioContext };
@@ -33,15 +33,16 @@ export function startPcmCapture(ctx: AudioContext, stream: MediaStream): PcmCapt
   proc.connect(ctx.destination);
   return {
     stop() {
+      const state = ctx.state;
       proc.onaudioprocess = null;
       source.disconnect();
       proc.disconnect();
       ctx.close().catch(() => undefined);
       const all = mergeChunks(chunks);
       const seconds = all.length / ctx.sampleRate;
-      if (!all.length) return { wav: null, peak, seconds };
+      if (!all.length) return { wav: null, peak, seconds, state };
       const wav = encodeWav(downsample(all, ctx.sampleRate, WAV_RATE), WAV_RATE);
-      return { wav: new Blob([wav], { type: 'audio/wav' }), peak, seconds };
+      return { wav: new Blob([wav], { type: 'audio/wav' }), peak, seconds, state };
     }
   };
 }
