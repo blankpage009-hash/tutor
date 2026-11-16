@@ -12,6 +12,7 @@ import { ReviewScreen } from './screens/ReviewScreen';
 import { RoleplayScreen } from './screens/RoleplayScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { ShadowingScreen } from './screens/ShadowingScreen';
+import { SttLabScreen } from './screens/SttLabScreen';
 import { VariationScreen } from './screens/VariationScreen';
 import { VocabQuizScreen } from './screens/VocabQuizScreen';
 import { VocabScreen } from './screens/VocabScreen';
@@ -39,6 +40,8 @@ export function App() {
           <Route path="/review" element={<ReviewScreen />} />
           <Route path="/vocab/quiz" element={<VocabQuizScreen />} />
           <Route path="/roleplay" element={<RoleplayScreen />} />
+          {/* 임시 검증 화면 (Phase 4 연장): 앱 안 음성 인식 확인이 끝나면 지운다 */}
+          <Route path="/lab/stt" element={<SttLabScreen />} />
         </Route>
       </Routes>
     </HashRouter>

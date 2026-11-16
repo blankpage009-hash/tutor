@@ -16,7 +16,11 @@ export default defineConfig({
         // 서비스 워커로 음성을 보관하지 않는 이유: iOS의 <audio>는 파일을 조각(Range)으로 요청해서
         // 조각 응답(206)은 보관이 안 되고 재생도 깨질 수 있다.
         globPatterns: ['**/*.{js,css,html,png,svg,webmanifest}', 'content/**/*.json'],
-        globIgnores: ['content/audio/**']
+        globIgnores: ['content/audio/**'],
+        // 앱 안 음성 인식 엔진(vosk, 약 6MB짜리 JS)도 설치 때 미리 받아 둔다 — 인터넷 없이도 인식되게.
+        // 기본 한도(2MB)로는 빠지므로 한도를 올린다. 인식 모델(models/*.tar.gz, 약 40MB)은 여기 넣지 않고
+        // 엔진이 처음 쓸 때 직접 받아 기기에 보관한다
+        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024
       },
       manifest: {
         name: 'Tutor',
