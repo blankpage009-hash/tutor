@@ -13,6 +13,7 @@ import { listen, type Listening, type ListenResult } from '../../speech/recogniz
 import { startRecording, type ActiveRecording } from '../../speech/recorder';
 import { speakPrimer } from '../../speech/speechPrimer';
 import { listenVosk } from '../../speech/voskListener';
+import type { HearStatus } from './handsFreeLoop';
 
 export type AttemptStatus = 'idle' | 'listening' | 'passed' | 'failed';
 
@@ -25,6 +26,9 @@ export type AttemptOptions = {
   voskModel: Model | null;
   // 떨어졌을 때 방금 들은 소리를 "문장 단어만 허용" 방식에 한 번 더 들려 볼지 (사용자 결정 2026-11-16)
   secondOpinion: boolean;
+  // 손 안 대고 이어 말하기 중인가. 그동안은 손으로 누르는 듣기를 막고, 이어 말하기가 스스로 문장을
+  // 넘길 때 막 시작한 튜터 재생을 끊지 않는다 (ref라서 문장이 바뀌는 그 순간에도 최신 값)
+  handsFreeActive?: MutableRefObject<boolean>;
   recordWhileListening: boolean; // Phase 4 진단: 인식과 녹음을 동시에 해도 되는지 아이폰에서 확인
   // Phase 4 진단: 두 번째 시도부터 마이크가 무음이 되는 원인 가리기 (아이폰 결과 6차)
   pcmFallback: boolean; // 직접 녹음(Web Audio)도 같이 돌릴지
@@ -139,7 +143,7 @@ function micErrorText(e: unknown): string {
 }
 
 // 앱 안 인식용 마이크를 연다. 실패하면 화면에 보일 안내 문구를 돌려준다
-async function openVoskMic(o: AttemptOptions, ctx: AudioContext): Promise<MicStream | string> {
+export async function openVoskMic(o: Pick<AttemptOptions, 'log'>, ctx: AudioContext): Promise<MicStream | string> {
   acquireMic();
   try {
     const mic = await openMicStream(ctx, o.log);
@@ -183,11 +187,11 @@ async function runVosk(
 
 async function hearWithVosk(
   sentence: Sentence, o: AttemptOptions, model: Model, mic: MicStream,
-  setOutcome: SetOutcome, listening: MutableRefObject<Listening | null>
+  setOutcome: SetOutcome, listening: MutableRefObject<Listening | null>, noSpeechMs?: number
 ): Promise<ListenResult> {
   setOutcome({ judgement: judge(sentence, []), status: 'listening', message: null });
   const l = listenVosk({
-    model, mic, sentenceEn: sentence.en, secondOpinion: o.secondOpinion,
+    model, mic, sentenceEn: sentence.en, secondOpinion: o.secondOpinion, noSpeechMs,
     // 중간 결과는 말하는 도중의 앞부분이라 80%로 끊으면 마지막 단어를 말하는 중에 끝나 버린다. 다 맞을 때만
     isComplete: (alts) => isPass(judge(sentence, alts), 1),
     isPass: (alts) => isPass(judge(sentence, alts), o.threshold),
@@ -225,6 +229,28 @@ async function runBuiltin(
 // 듣는 중에 끊어도 되는가. 내장 인식 + iOS 27 대응 중에는 끊으면 그 뒤 인식이 모두 먹통이 된다
 const mayCut = (o: AttemptOptions) => o.engine === 'vosk' || !o.ios27Fix;
 
+const toHearStatus = (out: Outcome, res: ListenResult): HearStatus =>
+  out.status === 'passed' ? 'passed' : out.status === 'failed' ? 'failed'
+    : res.error === 'no-speech' ? 'no-speech' : 'error';
+
+// 이어 말하기용: 이미 열어 둔 마이크로 한 문장 듣고 판정해 화면에 보여 준다.
+// 손으로 누를 때와 달리 자동 넘기기 예약(onResult)은 하지 않는다 — 이어 말하기가 직접 넘긴다
+function useHearFor(
+  opts: MutableRefObject<AttemptOptions>, listening: MutableRefObject<Listening | null>,
+  setStored: (v: { id: string; o: Outcome }) => void
+) {
+  return useCallback(async (s: Sentence, mic: MicStream, noSpeechMs: number): Promise<HearStatus> => {
+    const o = opts.current;
+    if (!o.voskModel) return 'error';
+    const setOutcome = (out: Outcome) => setStored({ id: s.id, o: out });
+    const res = await hearWithVosk(s, o, o.voskModel, mic, setOutcome, listening, noSpeechMs);
+    const out = evaluate(s, res, o.threshold);
+    o.log(`이어 말하기 판정 ${Math.round(out.judgement.ratio * 100)}% · 들린 말 "${out.judgement.heard}"`);
+    setOutcome(out);
+    return toHearStatus(out, res);
+  }, [opts, listening, setStored]);
+}
+
 // 튜터 음성: 문장이 바뀌면 미리 받아 두고(탭하자마자 재생되게), 재생 함수를 돌려준다
 function useTutorAudio(sentence: Sentence | null, opts: MutableRefObject<AttemptOptions>) {
   useEffect(() => {
@@ -259,6 +285,8 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     setMyVoice(null);
     setReplaying(false);
     return () => {
+      // 이어 말하기가 스스로 다음 문장으로 넘길 때는 막 시작한 튜터 재생을 끊으면 안 된다
+      if (optsRef.current.handsFreeActive?.current) return;
       // iOS 27 대응 중에는 인식을 끊지 않는다(끊으면 그 뒤 인식이 모두 먹통). 결과는 stale()이 버린다
       if (mayCut(optsRef.current)) listening.current?.stop();
       stopAudio();
@@ -267,8 +295,8 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
 
   const start = useCallback(async () => {
     const o = optsRef.current;
-    // 준비 말이 나오는 1~2초 사이에 또 누르면 인식이 두 개 겹친다
-    if (!sentence || preparing.current || listening.current) return;
+    // 준비 말이 나오는 1~2초 사이에 또 누르면 인식이 두 개 겹친다. 이어 말하기 중에도 마이크를 따로 열지 않는다
+    if (!sentence || preparing.current || listening.current || o.handsFreeActive?.current) return;
     unlockAudio();
     const wasPlaying = stopAudio();
     const stale = () => currentId.current !== sentence.id;
@@ -299,5 +327,6 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     if (mayCut(optsRef.current)) listening.current?.stop();
   }, []);
 
-  return { outcome, myVoice, setMyVoice, start, stop, playTutor, replaying };
+  const hearFor = useHearFor(optsRef, listening, setStored);
+  return { outcome, myVoice, setMyVoice, start, stop, playTutor, replaying, setReplaying, hearFor };
 }

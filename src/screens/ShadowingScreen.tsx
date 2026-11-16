@@ -1,15 +1,17 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { TwoColumn } from '../components/TwoColumn';
 import { loadLesson } from '../content/loader';
-import type { Lesson } from '../content/types';
+import type { Model } from 'vosk-browser';
+import type { Lesson, Sentence } from '../content/types';
 import { DEFAULT_SETTINGS } from '../db/types';
 import { setAudioDebug } from '../speech/audioPlayer';
 import { setAudioSessionEnabled } from '../speech/audioSession';
 import { DiagnosticsPanel } from './shadowing/DiagnosticsPanel';
 import { SentenceList } from './shadowing/SentenceList';
 import styles from './shadowing/Shadowing.module.css';
-import { ShadowingStage } from './shadowing/ShadowingStage';
+import { ShadowingStage, type HandsFreeView } from './shadowing/ShadowingStage';
+import { useHandsFree } from './shadowing/useHandsFree';
 import { useAutoAdvance, useLessonSteps } from './shadowing/useLessonSteps';
 import { useSavedSentences } from './shadowing/useSavedSentences';
 import { useShadowingAttempt, type AttemptStatus } from './shadowing/useShadowingAttempt';
@@ -87,17 +89,16 @@ export function ShadowingScreen() {
   const onResult = (id: string, status: AttemptStatus) => {
     if (status === 'passed' && steps.recordPass(id) && autoOn) auto.schedule();
   };
-  const attempt = useShadowingAttempt(sentence, {
-    threshold: settings.passThreshold, failFeedback: settings.failFeedback,
-    recordWhileListening: diag.recordWhile, pcmFallback: diag.pcm, warmUpMic: diag.warmUp,
-    ios27Fix: diag.ios27Fix, slowRate: SLOW_RATE, log, onResult,
-    engine: diag.vosk ? 'vosk' : 'builtin', voskModel: vosk.model, secondOpinion: diag.secondOpinion
-  });
+  const { attempt, hf } = useSpeaking(sentence, lesson, steps, diag, vosk.model, onResult);
 
   if (error) return <p className={styles.ko} lang="ko">{error}</p>;
   if (!lesson || !sentence) return <p className={styles.ko} lang="ko">불러오는 중…</p>;
   const { index, total, cleared } = steps;
-  const listening = attempt.outcome?.status === 'listening';
+  const listening = attempt.outcome?.status === 'listening' || hf.running;
+  const handsFree: HandsFreeView = {
+    available: diag.vosk && vosk.state === 'ready', running: hf.running, step: hf.step, notice: hf.notice,
+    onToggle: () => { auto.cancel(); if (hf.running) hf.stop(); else hf.start(); }
+  };
   return (
     <TwoColumn list={<SentenceList lesson={lesson} index={index} cleared={cleared} locked={listening} onPick={steps.setIndex} />}>
       {steps.finished && <p className={styles.pass} lang="ko">이 수업의 문장 {total}개를 모두 통과했어요!</p>}
@@ -108,10 +109,32 @@ export function ShadowingScreen() {
         onMic={() => { auto.cancel(); attempt.start(); }}
         saved={saved.saved.has(sentence.id)} saveError={saved.error} onSave={() => saved.save(sentence)}
         autoOn={autoOn} onAutoOn={setAutoOn} autoPending={auto.pending}
-        engineNote={MODEL_NOTE[vosk.state]} micLocked={diag.vosk && vosk.state !== 'ready'} />
+        engineNote={MODEL_NOTE[vosk.state]} micLocked={diag.vosk && vosk.state !== 'ready'} handsFree={handsFree} />
       <Diagnostics diag={diag} voskState={vosk.state} locked={listening} />
     </TwoColumn>
   );
+}
+
+// 말하기 두 가지: 마이크를 눌러 한 번 듣기(attempt)와 손 안 대고 이어 말하기(hf).
+// 같은 "이어 말하기 중" 표시를 함께 봐서 둘이 동시에 마이크를 열지 않는다
+function useSpeaking(
+  sentence: Sentence | null, lesson: Lesson | null, steps: ReturnType<typeof useLessonSteps>,
+  diag: Diag, voskModel: Model | null, onResult: (id: string, status: AttemptStatus) => void
+) {
+  const settings = DEFAULT_SETTINGS;
+  const { log } = diag;
+  const handsFreeActive = useRef(false);
+  const attempt = useShadowingAttempt(sentence, {
+    threshold: settings.passThreshold, failFeedback: settings.failFeedback,
+    recordWhileListening: diag.recordWhile, pcmFallback: diag.pcm, warmUpMic: diag.warmUp,
+    ios27Fix: diag.ios27Fix, slowRate: SLOW_RATE, log, onResult, handsFreeActive,
+    engine: diag.vosk ? 'vosk' : 'builtin', voskModel, secondOpinion: diag.secondOpinion
+  });
+  const hf = useHandsFree({
+    lesson, index: steps.index, cleared: steps.cleared, recordPass: steps.recordPass, next: steps.next,
+    attempt, active: handsFreeActive, slowRate: SLOW_RATE, failFeedback: settings.failFeedback, log
+  });
+  return { attempt, hf };
 }
 
 function Diagnostics({ diag, voskState, locked }: { diag: Diag; voskState: VoskModelState; locked: boolean }) {

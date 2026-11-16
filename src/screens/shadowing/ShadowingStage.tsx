@@ -4,6 +4,7 @@ import { ProgressBar } from '../../components/ProgressBar';
 import { WordHighlight } from '../../components/WordHighlight';
 import type { Sentence } from '../../content/types';
 import { playSource, unlockAudio } from '../../speech/audioPlayer';
+import type { HandsFreeStep } from './handsFreeLoop';
 import styles from './Shadowing.module.css';
 import type { useShadowingAttempt } from './useShadowingAttempt';
 
@@ -29,9 +30,25 @@ type Props = {
   autoPending: boolean;
   engineNote: string | null; // 앱 안 인식 준비 상태 안내 (준비 중·실패)
   micLocked: boolean; // 인식 준비가 끝나기 전에는 마이크를 못 누르게
+  handsFree: HandsFreeView;
+};
+
+export type HandsFreeView = {
+  available: boolean; // 앱 안 인식이 준비됐을 때만
+  running: boolean;
+  step: HandsFreeStep | null;
+  notice: string | null; // 멈춘 이유
+  onToggle: () => void;
+};
+
+const STEP_TEXT: Record<HandsFreeStep, string> = {
+  reading: '튜터가 읽어요… 듣고 바로 따라 말해 보세요',
+  listening: '따라 말해 보세요 · 듣는 중',
+  slow: '느리게 다시 들려줄게요… 끝나면 다시 말해 보세요'
 };
 
 function micStatus(p: Props, status: string, message: string | null): string {
+  if (p.handsFree.running) return STEP_TEXT[p.handsFree.step ?? 'reading'];
   if (status === 'listening') return '듣는 중… 다 말하면 저절로 멈춰요';
   if (message) return message;
   if (p.micLocked && p.engineNote) return p.engineNote;
@@ -87,9 +104,24 @@ function Extras({ p, listening }: { p: Props; listening: boolean }) {
   );
 }
 
+// 손 안 대고 이어 말하기 버튼과 멈춘 이유
+function HandsFreeControl({ hf }: { hf: HandsFreeView }) {
+  if (!hf.available && !hf.running) return null;
+  return (
+    <>
+      <Button variant={hf.running ? 'secondary' : 'primary'} block onClick={hf.onToggle}>
+        {hf.running ? '이어 말하기 멈추기' : '손 안 대고 이어 말하기'}
+      </Button>
+      {!hf.running && hf.notice && <p className={styles.hint} lang="ko">{hf.notice}</p>}
+    </>
+  );
+}
+
 export function ShadowingStage(p: Props) {
   const o = p.attempt.outcome;
-  const listening = o?.status === 'listening';
+  const hf = p.handsFree;
+  // 이어 말하기 중에는 튜터가 읽는 동안에도 다른 버튼을 잠근다 (재생이 바뀌면 순서가 꼬인다)
+  const listening = o?.status === 'listening' || hf.running;
   const final = o?.status === 'passed' || o?.status === 'failed';
   return (
     <div className={styles.stage}>
@@ -98,8 +130,11 @@ export function ShadowingStage(p: Props) {
       {o && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} />}
       <p className={styles.ko} lang="ko">{p.sentence.ko}</p>
       <ResultLine p={p} />
-      <MicButton listening={listening} status={micStatus(p, o?.status ?? 'idle', o?.message ?? null)}
-        disabled={p.micLocked && !listening} onClick={listening ? p.attempt.stop : p.onMic} />
+      <MicButton listening={hf.running ? hf.step === 'listening' : listening}
+        status={micStatus(p, o?.status ?? 'idle', o?.message ?? null)}
+        disabled={p.micLocked && !listening}
+        onClick={hf.running ? hf.onToggle : listening ? p.attempt.stop : p.onMic} />
+      <HandsFreeControl hf={hf} />
       <Extras p={p} listening={listening} />
       <Button variant="primary" block disabled={!p.canNext || listening} onClick={p.onNext}>
         {p.isLast ? '수업 마치기' : '다음 문장'}

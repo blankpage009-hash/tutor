@@ -14,6 +14,7 @@ export type VoskListenOptions = {
   isComplete: (alts: string[]) => boolean; // 문장 전체를 다 말했나 (중간 결과로 바로 끝낼 때)
   isPass: (alts: string[]) => boolean; // 통과 기준을 넘었나 (확정 결과·두 번째 의견에 씀)
   secondOpinion: boolean;
+  noSpeechMs?: number; // 이만큼 말이 없으면 끝낸다 (기본 12초, 이어 말하기는 8초 — 사용자 결정)
   onInterim?: (alts: string[]) => void;
   onDebug?: (msg: string) => void;
   // 시험에서 가짜 엔진으로 바꿔 끼우기 위한 자리
@@ -108,7 +109,7 @@ export function listenVosk(o: VoskListenOptions): Listening {
     onError: (m) => { s.debug(`오류 ${m}`); s.end('엔진 오류'); }
   });
   const unsubscribe = o.mic.subscribe((data) => { keep(s, data); session.feed(data); });
-  timers.push(setTimeout(() => { if (!s.lastHeard) s.end('말소리 없음'); }, NO_SPEECH_MS));
+  timers.push(setTimeout(() => { if (!s.lastHeard) s.end('말소리 없음'); }, o.noSpeechMs ?? NO_SPEECH_MS));
   timers.push(setTimeout(() => s.end('시간 초과'), MAX_LISTEN_MS));
   const stop = () => {
     if (s.ended || s.stopping) return;
