@@ -267,7 +267,8 @@
   - 만든 것: Vite+React+TS, PWA(`vite.config.ts`, base `/tutor/`), 토큰·테마(`src/theme/`), 탭/연습 레이아웃 + 768px 2컬럼(`TwoColumn`), 빈 화면 13개 + 더보기(HashRouter), Dexie 6개 표(`src/db/`), 배포 워크플로(`.github/workflows/deploy.yml`).
   - PC 확인: `npm test`·`npm run build` 통과, 13개 화면 이동·다크 전환·2컬럼 확인. 홈의 "임시 이동 목록"은 Phase 5에서 진짜 진입로로 대체.
   - 설치한 타입 패키지 `@types/react`, `@types/react-dom`(8절 목록의 typescript에 딸린 것으로 보고함). `npm audit` 경고는 빌드 도구(vite-plugin-pwa) 쪽이라 앱 실행과 무관.
-  - **남은 것**: 저장소 공개 전환 + Pages 설정 + 첫 배포 → 사용자의 아이폰 홈화면 설치·이동·다크 전환 확인 → 승인.
+  - 배포 완료 (2026-11-16): 저장소 공개 전환, Pages(Actions 방식) 켬, 첫 배포 성공. 주소: https://blankpage009-hash.github.io/tutor/
+  - **남은 것**: 사용자의 아이폰 홈화면 설치·이동·다크 전환 확인 → 승인.
 
 ### Phase 4 — 쉐도잉 엔진 (앱의 심장)
 - **모델** Opus · **노력** high · **예상** 2세션
