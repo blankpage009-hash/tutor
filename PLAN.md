@@ -262,6 +262,12 @@
   - 화면 라우팅 틀(빈 화면 13개), Dexie 데이터 모델(저장 문장, 단어장, 진도, 설정, SRS 상태, 녹음).
   - GitHub Pages 자동 배포(Actions).
 - 완료 기준: 아이폰 홈화면에서 설치되고 빈 화면들 사이를 이동할 수 있음. 다크 모드 전환 동작.
+- **진행 (2026-11-16, 1세션째: 뼈대 작성)**
+  - 결정: 배포는 저장소를 공개로 전환해 GitHub Pages 사용(A안). 임시 아이콘(파랑 바탕 "T", `scripts/app/make-icons.mjs`로 생성)은 나중에 `public/icons/` 파일만 교체. content/*.json은 이번에 앱에 복사하지 않음.
+  - 만든 것: Vite+React+TS, PWA(`vite.config.ts`, base `/tutor/`), 토큰·테마(`src/theme/`), 탭/연습 레이아웃 + 768px 2컬럼(`TwoColumn`), 빈 화면 13개 + 더보기(HashRouter), Dexie 6개 표(`src/db/`), 배포 워크플로(`.github/workflows/deploy.yml`).
+  - PC 확인: `npm test`·`npm run build` 통과, 13개 화면 이동·다크 전환·2컬럼 확인. 홈의 "임시 이동 목록"은 Phase 5에서 진짜 진입로로 대체.
+  - 설치한 타입 패키지 `@types/react`, `@types/react-dom`(8절 목록의 typescript에 딸린 것으로 보고함). `npm audit` 경고는 빌드 도구(vite-plugin-pwa) 쪽이라 앱 실행과 무관.
+  - **남은 것**: 저장소 공개 전환 + Pages 설정 + 첫 배포 → 사용자의 아이폰 홈화면 설치·이동·다크 전환 확인 → 승인.
 
 ### Phase 4 — 쉐도잉 엔진 (앱의 심장)
 - **모델** Opus · **노력** high · **예상** 2세션

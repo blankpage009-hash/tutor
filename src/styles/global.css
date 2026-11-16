@@ -1,0 +1,26 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root { margin: 0; min-height: 100%; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--type-body-family);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+  /* iOS에서 가로로 돌릴 때 글자가 제멋대로 커지는 것을 막는다 */
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button { font: inherit; color: inherit; }
+a { color: var(--accent-ink); }
+
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* 한국어는 단어 중간에서 줄이 바뀌지 않도록 */
+:lang(ko), [lang='ko'] { word-break: keep-all; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

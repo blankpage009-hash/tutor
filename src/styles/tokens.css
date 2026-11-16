@@ -1,0 +1,217 @@
+/* Tutor 디자인 토큰 — 디자인 시스템(claude.ai)의 tokens.json에서 생성. 직접 고치지 말고 tokens.json을 고친 뒤 다시 생성한다. */
+/* 생성: 2026-11-15 */
+
+/* 라이트 테마가 기본값. 설정의 "시스템"은 data-theme 없음, "라이트"/"다크"는 <html data-theme="...">로 고정한다. */
+:root {
+  color-scheme: light;
+  --paper: #f4f5f8;
+  --surface: #ffffff;
+  --surface-sunk: #e9ebf0;
+  --ink: #0b0d12;
+  --ink-muted: #4b5162;
+  --line: #d6d9e0;
+  --line-strong: #0b0d12;
+  --accent: #0f31b8;
+  --accent-press: #0a2490;
+  --accent-tint: #e6ecff;
+  --accent-ink: #0f31b8;
+  --on-accent: #ffffff;
+  --danger: #b23a0a;
+  --danger-tint: #fdebe2;
+  --focus: var(--accent);
+}
+
+/* "시스템" 설정일 때 기기가 다크 모드면 다크 값으로 바뀐다. 사용자가 "라이트"를 고르면(data-theme="light") 적용 안 됨. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #0d0f14;
+    --surface: #171a21;
+    --surface-sunk: #22262f;
+    --ink: #f2f4f8;
+    --ink-muted: #a6adbb;
+    --line: #2c313c;
+    --line-strong: #f2f4f8;
+    --accent: #6d8ef7;
+    --accent-press: #9bb2ff;
+    --accent-tint: #1b2547;
+    --accent-ink: #9db4ff;
+    --on-accent: #0d0f14;
+    --danger: #ff9466;
+    --danger-tint: #3a1d10;
+    --focus: var(--accent);
+  }
+}
+
+/* 사용자가 설정에서 "다크"를 고른 경우 */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0d0f14;
+  --surface: #171a21;
+  --surface-sunk: #22262f;
+  --ink: #f2f4f8;
+  --ink-muted: #a6adbb;
+  --line: #2c313c;
+  --line-strong: #f2f4f8;
+  --accent: #6d8ef7;
+  --accent-press: #9bb2ff;
+  --accent-tint: #1b2547;
+  --accent-ink: #9db4ff;
+  --on-accent: #0d0f14;
+  --danger: #ff9466;
+  --danger-tint: #3a1d10;
+  --focus: var(--accent);
+}
+
+/* 글꼴 · 간격 · 모서리 · 크기 (테마와 무관) */
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Apple SD Gothic Neo", "Segoe UI", "Malgun Gothic", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Apple SD Gothic Neo", "Malgun Gothic", monospace;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --radius-0: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 999px;
+  --tap-min: 44px;
+  --mic-size: 72px;
+  --tabbar-height: 56px;
+  --rule-weight: 2px;
+  --progress-height: 4px;
+  --column-list: 360px;
+  --bp-ipad: 768px;
+}
+
+/* 글자 스타일: 변수 + 클래스. CSS Modules에서는 composes 대신 변수를 직접 쓴다. */
+:root {
+  --type-display-family: var(--font-sans);
+  --type-display-size: 34px;
+  --type-display-line: 40px;
+  --type-display-weight: 700;
+  --type-display-tracking: -0.02em;
+  --type-sentence-family: var(--font-sans);
+  --type-sentence-size: 28px;
+  --type-sentence-line: 36px;
+  --type-sentence-weight: 600;
+  --type-sentence-tracking: -0.01em;
+  --type-numeral-family: var(--font-sans);
+  --type-numeral-size: 48px;
+  --type-numeral-line: 48px;
+  --type-numeral-weight: 700;
+  --type-numeral-tracking: -0.03em;
+  --type-title-family: var(--font-sans);
+  --type-title-size: 22px;
+  --type-title-line: 28px;
+  --type-title-weight: 700;
+  --type-title-tracking: -0.01em;
+  --type-headline-family: var(--font-sans);
+  --type-headline-size: 17px;
+  --type-headline-line: 24px;
+  --type-headline-weight: 600;
+  --type-headline-tracking: 0;
+  --type-body-family: var(--font-sans);
+  --type-body-size: 17px;
+  --type-body-line: 26px;
+  --type-body-weight: 400;
+  --type-body-tracking: 0;
+  --type-body-kr-family: var(--font-sans);
+  --type-body-kr-size: 16px;
+  --type-body-kr-line: 26px;
+  --type-body-kr-weight: 400;
+  --type-body-kr-tracking: 0;
+  --type-caption-family: var(--font-sans);
+  --type-caption-size: 13px;
+  --type-caption-line: 18px;
+  --type-caption-weight: 500;
+  --type-caption-tracking: 0;
+  --type-tab-family: var(--font-sans);
+  --type-tab-size: 11px;
+  --type-tab-line: 13px;
+  --type-tab-weight: 600;
+  --type-tab-tracking: 0;
+  --type-label-family: var(--font-mono);
+  --type-label-size: 12px;
+  --type-label-line: 16px;
+  --type-label-weight: 600;
+  --type-label-tracking: 0.08em;
+}
+
+.type-display {
+  font-family: var(--type-display-family);
+  font-size: var(--type-display-size);
+  line-height: var(--type-display-line);
+  font-weight: var(--type-display-weight);
+  letter-spacing: var(--type-display-tracking);
+}
+.type-sentence {
+  font-family: var(--type-sentence-family);
+  font-size: var(--type-sentence-size);
+  line-height: var(--type-sentence-line);
+  font-weight: var(--type-sentence-weight);
+  letter-spacing: var(--type-sentence-tracking);
+}
+.type-numeral {
+  font-family: var(--type-numeral-family);
+  font-size: var(--type-numeral-size);
+  line-height: var(--type-numeral-line);
+  font-weight: var(--type-numeral-weight);
+  letter-spacing: var(--type-numeral-tracking);
+}
+.type-title {
+  font-family: var(--type-title-family);
+  font-size: var(--type-title-size);
+  line-height: var(--type-title-line);
+  font-weight: var(--type-title-weight);
+  letter-spacing: var(--type-title-tracking);
+}
+.type-headline {
+  font-family: var(--type-headline-family);
+  font-size: var(--type-headline-size);
+  line-height: var(--type-headline-line);
+  font-weight: var(--type-headline-weight);
+  letter-spacing: var(--type-headline-tracking);
+}
+.type-body {
+  font-family: var(--type-body-family);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+  font-weight: var(--type-body-weight);
+  letter-spacing: var(--type-body-tracking);
+}
+.type-body-kr {
+  font-family: var(--type-body-kr-family);
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+  font-weight: var(--type-body-kr-weight);
+  letter-spacing: var(--type-body-kr-tracking);
+}
+.type-caption {
+  font-family: var(--type-caption-family);
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  font-weight: var(--type-caption-weight);
+  letter-spacing: var(--type-caption-tracking);
+}
+.type-tab {
+  font-family: var(--type-tab-family);
+  font-size: var(--type-tab-size);
+  line-height: var(--type-tab-line);
+  font-weight: var(--type-tab-weight);
+  letter-spacing: var(--type-tab-tracking);
+}
+.type-label {
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  line-height: var(--type-label-line);
+  font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
+  text-transform: uppercase;
+}
+
+/* 주의: CSS 변수는 미디어 쿼리 조건 안에서 쓸 수 없다. iPad 2컬럼은 @media (min-width: 768px)처럼 숫자를 직접 적는다 (--bp-ipad와 같은 값). */

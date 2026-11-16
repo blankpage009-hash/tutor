@@ -6,3 +6,4 @@ dist
 .voices/
 .audio-tmp/
 __pycache__/
+.claude/

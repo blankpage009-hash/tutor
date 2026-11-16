@@ -1,0 +1,15 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 60px;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.text { display: flex; flex-direction: column; }
+.name { font-size: var(--type-body-size); line-height: var(--type-body-line); }
+.hint { font-size: var(--type-caption-size); line-height: var(--type-caption-line); color: var(--ink-muted); }

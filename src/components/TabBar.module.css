@@ -1,0 +1,35 @@
+.bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  /* 홈 막대 자리는 기기가 알려 주는 만큼만 비운다 */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tab {
+  flex: 1;
+  min-height: var(--tabbar-height);
+  min-width: var(--tap-min);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: var(--type-tab-size);
+  line-height: var(--type-tab-line);
+  font-weight: var(--type-tab-weight);
+}
+
+.active { color: var(--accent-ink); }
+
+@media (min-width: 768px) {
+  .bar { justify-content: center; }
+  .tab { flex: 0 0 120px; }
+}

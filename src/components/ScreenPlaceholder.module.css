@@ -1,0 +1,6 @@
+.note {
+  margin: 0;
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+  color: var(--ink-muted);
+}

@@ -1,0 +1,28 @@
+.shell {
+  min-height: 100dvh;
+  /* 노치 자리는 기기가 알려 주는 값으로 비운다(viewport-fit=cover 필요) */
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.withTabs {
+  padding-bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom));
+}
+
+.content {
+  padding: 0 var(--space-4) var(--space-6);
+  margin: 0 auto;
+  max-width: 1180px;
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  margin-left: calc(var(--space-2) * -1);
+  color: var(--ink);
+}
