@@ -44,7 +44,8 @@ type State = {
   segments: string[];
   chunks: Float32Array[];
   samples: number;
-  lastHeard: string;
+  lastHeard: string; // 지금까지 들린 말 전체 (말소리가 있었는지 보는 용도)
+  lastPartial: string; // 마지막 중간 결과까지 이어 붙인 것. 확정 결과가 이보다 못할 때를 위한 후보
   ended: boolean;
   stopping: boolean;
   afterFinal?: ReturnType<typeof setTimeout>;
@@ -55,6 +56,7 @@ function onPartial(s: State, t: string): void {
   if (!t || s.ended) return;
   clearTimeout(s.afterFinal);
   s.lastHeard = joinHeard(s.segments, t);
+  s.lastPartial = s.lastHeard;
   s.o.onInterim?.([s.lastHeard]);
   if (s.o.isComplete([s.lastHeard])) s.end('중간 결과로 바로 통과');
 }
@@ -70,7 +72,7 @@ function onFinal(s: State, t: string): void {
   s.debug(`확정 "${t}"`);
   s.lastHeard = joinHeard(s.segments);
   s.o.onInterim?.([s.lastHeard]);
-  if (s.stopping || s.o.isPass(candidatesOf(s.segments, s.lastHeard))) return s.end('확정 결과');
+  if (s.stopping || s.o.isPass(candidatesOf(s.segments, s.lastPartial))) return s.end('확정 결과');
   s.debug('통과 못 해 조금 더 듣기');
   s.afterFinal = setTimeout(() => s.end('확정 뒤 조용함'), AFTER_FINAL_MS);
 }
@@ -89,7 +91,7 @@ export function listenVosk(o: VoskListenOptions): Listening {
   const timers: ReturnType<typeof setTimeout>[] = [];
   const s: State = {
     o, debug: (m) => o.onDebug?.(`앱 인식 ${m}`), segments: [], chunks: [], samples: 0,
-    lastHeard: '', ended: false, stopping: false,
+    lastHeard: '', lastPartial: '', ended: false, stopping: false,
     end: (reason) => {
       if (s.ended) return;
       s.ended = true;
@@ -97,7 +99,7 @@ export function listenVosk(o: VoskListenOptions): Listening {
       unsubscribe();
       session.close();
       s.debug(`끝 (${reason})`);
-      void conclude(o, candidatesOf(s.segments, s.lastHeard), s.chunks, s.debug).then(finish);
+      void conclude(o, candidatesOf(s.segments, s.lastPartial), s.chunks, s.debug).then(finish);
     }
   };
   const session = make(o.model, o.mic.sampleRate, null, {

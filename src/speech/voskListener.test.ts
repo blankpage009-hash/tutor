@@ -82,6 +82,16 @@ describe('앱 인식: 언제 끝내나', () => {
     expect(r.alternatives).toEqual(['good the she okay', 'good to see you again']);
   });
 
+  it('확정 결과가 마지막 중간 결과보다 못하면 중간 결과로 통과한다 (10차 "good to [unk]")', async () => {
+    const t = setup();
+    t.sound();
+    t.h().onPartial?.('good to see you');
+    t.h().onFinal?.('good to');
+    const r = await t.l.result;
+    expect(r.alternatives).toContain('good to see you');
+    expect(t.recognize).not.toHaveBeenCalled();
+  });
+
   it('두 번째 의견을 끄면 묻지 않는다', async () => {
     const t = setup({ secondOpinion: false });
     t.sound();
