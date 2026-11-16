@@ -6,6 +6,12 @@ import { setAudioSession } from './audioSession';
 let el: HTMLAudioElement | null = null;
 let unlocked = false;
 let currentEnd: (() => void) | null = null;
+let debug: (m: string) => void = () => {};
+
+// 진단 기록용: 재생 시작·끝·오류를 알려준다
+export function setAudioDebug(fn: (m: string) => void): void {
+  debug = fn;
+}
 
 // 0.1초짜리 무음 WAV. 첫 탭 때 이것을 재생해 재생기의 "허락"을 받아 둔다 (Phase 0 테스트 페이지와 같은 방식)
 function silentWavUrl(): string {
@@ -48,10 +54,15 @@ export function unlockAudio(): void {
   a.play().then(() => { unlocked = true; }).catch(() => undefined);
 }
 
-export function stopAudio(): void {
+// 재생 중이었으면 true를 돌려준다 (바로 이어서 마이크를 켜도 되는지 판단용)
+export function stopAudio(): boolean {
   const a = player();
+  // 허락받기용 무음은 "재생 중"으로 치지 않는다
+  const wasPlaying = !a.paused && !a.ended && a.src !== silentUrl;
   a.pause();
   currentEnd?.();
+  if (wasPlaying) debug('재생 멈춤');
+  return wasPlaying;
 }
 
 // 미리 받아 두면 탭했을 때 기다림 없이 바로 재생된다 (기다리는 사이 iOS가 탭의 허락을 잊는 것도 막음)
@@ -72,8 +83,10 @@ export function playSource(src: string, rate = 1): Promise<void> {
   a.src = src;
   a.playbackRate = rate;
   a.defaultPlaybackRate = rate;
+  debug(`재생 시작 (속도 ${rate})`);
   return new Promise<void>((resolve, reject) => {
     const done = () => {
+      if (a.ended) debug('재생 끝');
       a.onended = null;
       a.onerror = null;
       currentEnd = null;
@@ -82,6 +95,7 @@ export function playSource(src: string, rate = 1): Promise<void> {
     currentEnd = done;
     a.onended = done;
     a.onerror = () => {
+      debug(`재생 오류 (코드 ${a.error?.code ?? '?'})`);
       currentEnd = null;
       reject(new Error('음성 재생 오류'));
     };

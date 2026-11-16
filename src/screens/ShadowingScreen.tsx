@@ -4,6 +4,7 @@ import { TwoColumn } from '../components/TwoColumn';
 import { loadLesson } from '../content/loader';
 import type { Lesson } from '../content/types';
 import { DEFAULT_SETTINGS } from '../db/types';
+import { setAudioDebug } from '../speech/audioPlayer';
 import { setAudioSessionEnabled } from '../speech/audioSession';
 import { DiagnosticsPanel } from './shadowing/DiagnosticsPanel';
 import { SentenceList } from './shadowing/SentenceList';
@@ -29,7 +30,7 @@ function useLog() {
   const [logs, setLogs] = useState<string[]>([]);
   const log = useCallback((m: string) => {
     const t = new Date().toLocaleTimeString('ko-KR', { hour12: false });
-    setLogs((prev) => [`${t} ${m}`, ...prev].slice(0, 40));
+    setLogs((prev) => [`${t} ${m}`, ...prev].slice(0, 120));
   }, []);
   return { logs, log };
 }
@@ -63,6 +64,7 @@ export function ShadowingScreen() {
   const { markPassed } = steps;
 
   useEffect(() => setAudioSessionEnabled(sessionOn), [sessionOn]);
+  useEffect(() => setAudioDebug(log), [log]);
   useEffect(() => {
     if (sentence && attempt.outcome?.status === 'passed') markPassed(sentence.id);
   }, [attempt.outcome?.status, sentence, markPassed]);
