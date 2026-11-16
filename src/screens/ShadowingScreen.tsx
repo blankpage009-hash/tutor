@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { TwoColumn } from '../components/TwoColumn';
 import { loadLesson } from '../content/loader';
@@ -7,7 +7,10 @@ import type { Lesson, Sentence } from '../content/types';
 import { DEFAULT_SETTINGS } from '../db/types';
 import { setAudioDebug } from '../speech/audioPlayer';
 import { setAudioSessionEnabled } from '../speech/audioSession';
+import { toVariationLesson, type PracticeKind } from '../lessonFlow';
 import { DiagnosticsPanel } from './shadowing/DiagnosticsPanel';
+import { FinishPanel } from './shadowing/FinishPanel';
+import { useStageProgress } from './shadowing/useStageProgress';
 import { SentenceList } from './shadowing/SentenceList';
 import styles from './shadowing/Shadowing.module.css';
 import { ShadowingStage, type HandsFreeView } from './shadowing/ShadowingStage';
@@ -75,9 +78,20 @@ const MODEL_NOTE: Record<VoskModelState, string | null> = {
   error: '음성 인식 준비에 실패했어요. 인터넷 연결을 확인하고 앱을 다시 열어 주세요.'
 };
 
-export function ShadowingScreen() {
+const KIND_TEXT: Record<PracticeKind, { label: string; lastLabel: string }> = {
+  shadowing: { label: '쉐도잉', lastLabel: '쉐도잉 마치기' },
+  variation: { label: '변형 연습', lastLabel: '변형 연습 마치기' },
+  review: { label: '복습', lastLabel: '수업 마치기' }
+};
+
+// 같은 말하기 엔진으로 세 단계를 돌린다: 쉐도잉(핵심 문장) → 변형 연습(변형 문장) → 복습(핵심 문장 다시)
+export function ShadowingScreen({ kind = 'shadowing' }: { kind?: PracticeKind }) {
   const { lessonId = 'beg-01' } = useParams();
-  const { lesson, courseId, error } = useLesson(lessonId);
+  const { lesson: fullLesson, courseId, error } = useLesson(lessonId);
+  const lesson = useMemo(
+    () => (fullLesson && kind === 'variation' ? toVariationLesson(fullLesson) : fullLesson),
+    [fullLesson, kind]
+  );
   // 설정 화면은 Phase 7. 그 전까지는 기본값을 쓴다
   const settings = DEFAULT_SETTINGS;
   const steps = useLessonSteps(lesson, settings.repeatCount);
@@ -89,6 +103,7 @@ export function ShadowingScreen() {
   const sentence = lesson?.sentences[steps.index] ?? null;
   const auto = useAutoAdvance(autoOn, sentence?.id, steps.next);
   const saved = useSavedSentences(lesson, courseId, log);
+  useStageProgress(lessonId, courseId, kind, steps.finished);
   const onResult = (id: string, status: AttemptStatus) => {
     if (status === 'passed' && steps.recordPass(id) && autoOn) auto.schedule();
   };
@@ -107,8 +122,8 @@ export function ShadowingScreen() {
   };
   return (
     <TwoColumn list={<SentenceList lesson={lesson} index={index} cleared={cleared} locked={listening} onPick={steps.setIndex} />}>
-      {steps.finished && <p className={styles.pass} lang="ko">이 수업의 문장 {total}개를 모두 통과했어요!</p>}
-      <ShadowingStage sentence={sentence} position={`문장 ${index + 1} / ${total}`} attempt={attempt}
+      {steps.finished && <FinishPanel kind={kind} lessonId={lessonId} courseId={courseId} total={total} />}
+      <ShadowingStage sentence={sentence} {...KIND_TEXT[kind]} saveable={kind !== 'variation'} position={`문장 ${index + 1} / ${total}`} attempt={attempt}
         threshold={settings.passThreshold} slowRate={SLOW_RATE}
         passes={steps.counts.get(sentence.id) ?? 0} required={settings.repeatCount}
         canNext={cleared.has(sentence.id)} isLast={index === total - 1} onNext={steps.next}

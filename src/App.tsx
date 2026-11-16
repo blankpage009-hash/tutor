@@ -1,6 +1,7 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { PracticeLayout } from './layouts/PracticeLayout';
 import { TabLayout } from './layouts/TabLayout';
+import { CourseDetailScreen } from './screens/CourseDetailScreen';
 import { CoursesScreen } from './screens/CoursesScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { LessonScreen } from './screens/LessonScreen';
@@ -25,6 +26,7 @@ export function App() {
         <Route element={<TabLayout />}>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/courses" element={<CoursesScreen />} />
+          <Route path="/courses/:courseId" element={<CourseDetailScreen />} />
           <Route path="/library" element={<LibraryScreen />} />
           <Route path="/vocab" element={<VocabScreen />} />
           <Route path="/more" element={<MoreScreen />} />
@@ -34,8 +36,10 @@ export function App() {
         </Route>
         <Route element={<PracticeLayout />}>
           <Route path="/lesson/:lessonId" element={<LessonScreen />} />
-          <Route path="/shadowing/:lessonId" element={<ShadowingScreen />} />
-          <Route path="/variation/:lessonId" element={<VariationScreen />} />
+          {/* key가 다르면 단계가 바뀔 때 화면이 새로 만들어져 이전 단계의 통과 기록이 남지 않는다 */}
+          <Route path="/shadowing/:lessonId" element={<ShadowingScreen key="shadowing" />} />
+          <Route path="/variation/:lessonId" element={<VariationScreen key="variation" />} />
+          <Route path="/lesson-review/:lessonId" element={<ShadowingScreen key="review" kind="review" />} />
           <Route path="/review" element={<ReviewScreen />} />
           <Route path="/vocab/quiz" element={<VocabQuizScreen />} />
           <Route path="/roleplay" element={<RoleplayScreen />} />

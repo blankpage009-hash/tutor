@@ -12,6 +12,9 @@ type Attempt = ReturnType<typeof useShadowingAttempt>;
 
 type Props = {
   sentence: Sentence;
+  label: string; // 단계 이름 (쉐도잉·변형 연습·복습)
+  saveable: boolean; // 변형 문장은 보관함에 저장하지 않는다 (보관함은 핵심 문장 id 기준)
+  lastLabel: string; // 마지막 문장의 "다음" 버튼 글자
   position: string; // "문장 1 / 3"
   attempt: Attempt;
   threshold: number;
@@ -95,7 +98,7 @@ function Extras({ p, listening }: { p: Props; listening: boolean }) {
         <Button size="sm" onClick={() => p.attempt.playTutor(1)} disabled={listening}>문장 다시 듣기</Button>
         <Button size="sm" onClick={() => p.attempt.playTutor(p.slowRate)} disabled={listening}>느리게 듣기</Button>
         {p.attempt.myVoice && <Button size="sm" onClick={playMine} disabled={listening}>내 목소리 듣기</Button>}
-        <Button size="sm" onClick={p.onSave} disabled={p.saved}>{p.saved ? '저장됨' : '문장 저장'}</Button>
+        {p.saveable && <Button size="sm" onClick={p.onSave} disabled={p.saved}>{p.saved ? '저장됨' : '문장 저장'}</Button>}
       </div>
       {p.saveError && <p className={styles.hint} lang="ko">{p.saveError}</p>}
       <label className={styles.toggle} lang="ko">
@@ -127,7 +130,7 @@ export function ShadowingStage(p: Props) {
   const final = o?.status === 'passed' || o?.status === 'failed';
   return (
     <div className={styles.stage}>
-      <p className={`${styles.eyebrow} ${styles.secretTap}`} lang="ko" onClick={p.onSecretTap}>쉐도잉 · {p.position} · 통과 {Math.min(p.passes, p.required)}/{p.required}</p>
+      <p className={`${styles.eyebrow} ${styles.secretTap}`} lang="ko" onClick={p.onSecretTap}>{p.label} ·{p.position} · 통과 {Math.min(p.passes, p.required)}/{p.required}</p>
       <ProgressBar value={o?.judgement.ratio ?? 0} label="맞힌 단어 비율" />
       {o && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} />}
       <p className={styles.ko} lang="ko">{p.sentence.ko}</p>
@@ -139,7 +142,7 @@ export function ShadowingStage(p: Props) {
       <HandsFreeControl hf={hf} />
       <Extras p={p} listening={listening} />
       <Button variant="primary" block disabled={!p.canNext || listening} onClick={p.onNext}>
-        {p.isLast ? '수업 마치기' : '다음 문장'}
+        {p.isLast ? p.lastLabel : '다음 문장'}
       </Button>
       {/* 이미 통과했으면 "다음 문장"이 같은 일을 하고, 마지막 문장은 갈 곳이 없어 숨긴다 */}
       {!p.canNext && !p.isLast && (
