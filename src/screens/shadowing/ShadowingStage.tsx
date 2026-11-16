@@ -21,6 +21,7 @@ type Props = {
   canNext: boolean;
   isLast: boolean;
   onNext: () => void;
+  onSkip: () => void; // 통과하지 않고 다음 문장으로 (통과로 세지 않음)
   onMic: () => void;
   saved: boolean;
   saveError: string | null;
@@ -140,6 +141,10 @@ export function ShadowingStage(p: Props) {
       <Button variant="primary" block disabled={!p.canNext || listening} onClick={p.onNext}>
         {p.isLast ? '수업 마치기' : '다음 문장'}
       </Button>
+      {/* 이미 통과했으면 "다음 문장"이 같은 일을 하고, 마지막 문장은 갈 곳이 없어 숨긴다 */}
+      {!p.canNext && !p.isLast && (
+        <Button variant="ghost" size="sm" block disabled={listening} onClick={p.onSkip}>건너뛰기 (통과 안 함)</Button>
+      )}
     </div>
   );
 }

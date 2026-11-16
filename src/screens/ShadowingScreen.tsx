@@ -112,6 +112,7 @@ export function ShadowingScreen() {
         threshold={settings.passThreshold} slowRate={SLOW_RATE}
         passes={steps.counts.get(sentence.id) ?? 0} required={settings.repeatCount}
         canNext={cleared.has(sentence.id)} isLast={index === total - 1} onNext={steps.next}
+        onSkip={() => { auto.cancel(); steps.skip(); }}
         onMic={() => { auto.cancel(); attempt.start(); }}
         saved={saved.saved.has(sentence.id)} saveError={saved.error} onSave={() => saved.save(sentence)}
         autoOn={autoOn} onAutoOn={setAutoOn} autoPending={auto.pending}

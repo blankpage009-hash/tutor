@@ -36,8 +36,14 @@ export function useLessonSteps(lesson: Lesson | null, required: number) {
     else setFinished(true);
   }, [total]);
 
+  // 건너뛰기: 통과로 세지 않고 번호만 옮긴다 (사용자 결정 2026-11-16 — 뒤 문장을 먼저 보고 싶을 때).
+  // 마지막 문장에서는 "모두 통과"가 되면 안 되므로 아무것도 하지 않는다
+  const skip = useCallback(() => {
+    if (indexRef.current < total - 1) setIndex(indexRef.current + 1);
+  }, [total]);
+
   const cleared = useMemo(() => clearedIds(counts, required), [counts, required]);
-  return { index, setIndex, counts, cleared, recordPass, finished, total, next };
+  return { index, setIndex, counts, cleared, recordPass, finished, total, next, skip };
 }
 
 // 통과 뒤 잠깐 기다렸다 다음 문장으로. 문장이 바뀌거나, 스위치를 끄거나, 마이크를 누르거나,
