@@ -10,7 +10,10 @@ let enabled = true;
 // 인식과 녹음이 동시에 마이크를 쓸 수 있어서, 마지막 사용자가 반납할 때만 재생 모드로 돌린다
 let micUsers = 0;
 
+// 끌 때는 먼저 'auto'(브라우저 기본)로 되돌린다. 그냥 끄기만 하면 마지막에 바꾼 모드에 고정돼서
+// "조정 안 함"과 비교하는 시험이 의미가 없어진다
 export function setAudioSessionEnabled(on: boolean): void {
+  if (!on) setAudioSession('auto');
   enabled = on;
 }
 

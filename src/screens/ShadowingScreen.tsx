@@ -49,8 +49,9 @@ export function ShadowingScreen() {
   const { lessonId = 'beg-01' } = useParams();
   const { lesson, error } = useLesson(lessonId);
   const steps = useLessonSteps(lesson);
-  const [recordWhile, setRecordWhile] = useState(true);
-  const [sessionOn, setSessionOn] = useState(true);
+  // 진단 스위치는 꺼진 채 시작한다: Phase 0에서 검증된 조건부터 확인하고 하나씩 켜 보기 위해서
+  const [recordWhile, setRecordWhile] = useState(false);
+  const [sessionOn, setSessionOn] = useState(false);
   const { logs, log } = useLog();
   const settings = DEFAULT_SETTINGS;
   const sentence = lesson?.sentences[steps.index] ?? null;
