@@ -13,6 +13,7 @@ import { ShadowingStage } from './shadowing/ShadowingStage';
 import { useAutoAdvance, useLessonSteps } from './shadowing/useLessonSteps';
 import { useSavedSentences } from './shadowing/useSavedSentences';
 import { useShadowingAttempt, type AttemptStatus } from './shadowing/useShadowingAttempt';
+import { useVoskModel, type VoskModelState } from './shadowing/useVoskModel';
 
 // 실패 피드백의 "느린 속도". 너무 느리면 iOS 재생 속도 변환이 뭉개져서 0.75로 둔다
 const SLOW_RATE = 0.75;
@@ -48,14 +49,26 @@ function useDiagnostics() {
   const [warmUp, setWarmUp] = useState(false);
   // 아이폰 결과 8차: 녹음을 다 빼도 두 번째 인식부터 먹통 → iOS 27 버그(WebKit 321436). 우회를 기본으로 켠다
   const [ios27Fix, setIos27Fix] = useState(true);
+  // 아이폰 결과 10·11차: 앱 안 인식(Vosk)은 연속으로 잘 된다 → 기본. 끄면 내장 인식(비교용)
+  const [vosk, setVosk] = useState(true);
+  const [secondOpinion, setSecondOpinion] = useState(true);
   const { logs, log } = useLog();
   useEffect(() => setAudioSessionEnabled(sessionOn), [sessionOn]);
   useEffect(() => setAudioDebug(log), [log]);
   return {
     recordWhile, setRecordWhile, sessionOn, setSessionOn, pcm, setPcm, warmUp, setWarmUp,
-    ios27Fix, setIos27Fix, logs, log
+    ios27Fix, setIos27Fix, vosk, setVosk, secondOpinion, setSecondOpinion, logs, log
   };
 }
+
+type Diag = ReturnType<typeof useDiagnostics>;
+
+const MODEL_NOTE: Record<VoskModelState, string | null> = {
+  off: null,
+  loading: '음성 인식 준비 중… 처음 한 번만 약 40MB를 받아서 1~2분 걸릴 수 있어요',
+  ready: null,
+  error: '음성 인식 준비에 실패했어요. 인터넷 연결을 확인하고 앱을 다시 열어 주세요.'
+};
 
 export function ShadowingScreen() {
   const { lessonId = 'beg-01' } = useParams();
@@ -65,6 +78,7 @@ export function ShadowingScreen() {
   const steps = useLessonSteps(lesson, settings.repeatCount);
   const diag = useDiagnostics();
   const { log } = diag;
+  const vosk = useVoskModel(diag.vosk, log);
   // 앱을 다시 열면 꺼짐으로 돌아간다 (기억은 설정 화면과 함께 Phase 7)
   const [autoOn, setAutoOn] = useState(settings.autoAdvance);
   const sentence = lesson?.sentences[steps.index] ?? null;
@@ -76,7 +90,8 @@ export function ShadowingScreen() {
   const attempt = useShadowingAttempt(sentence, {
     threshold: settings.passThreshold, failFeedback: settings.failFeedback,
     recordWhileListening: diag.recordWhile, pcmFallback: diag.pcm, warmUpMic: diag.warmUp,
-    ios27Fix: diag.ios27Fix, slowRate: SLOW_RATE, log, onResult
+    ios27Fix: diag.ios27Fix, slowRate: SLOW_RATE, log, onResult,
+    engine: diag.vosk ? 'vosk' : 'builtin', voskModel: vosk.model, secondOpinion: diag.secondOpinion
   });
 
   if (error) return <p className={styles.ko} lang="ko">{error}</p>;
@@ -92,12 +107,21 @@ export function ShadowingScreen() {
         canNext={cleared.has(sentence.id)} isLast={index === total - 1} onNext={steps.next}
         onMic={() => { auto.cancel(); attempt.start(); }}
         saved={saved.saved.has(sentence.id)} saveError={saved.error} onSave={() => saved.save(sentence)}
-        autoOn={autoOn} onAutoOn={setAutoOn} autoPending={auto.pending} />
-      <DiagnosticsPanel recordWhileListening={diag.recordWhile} onRecordWhileListening={diag.setRecordWhile}
-        audioSessionOn={diag.sessionOn} onAudioSessionOn={diag.setSessionOn}
-        pcmFallback={diag.pcm} onPcmFallback={diag.setPcm} warmUpMic={diag.warmUp} onWarmUpMic={diag.setWarmUp}
-        ios27Fix={diag.ios27Fix} onIos27Fix={diag.setIos27Fix}
-        logs={diag.logs} />
+        autoOn={autoOn} onAutoOn={setAutoOn} autoPending={auto.pending}
+        engineNote={MODEL_NOTE[vosk.state]} micLocked={diag.vosk && vosk.state !== 'ready'} />
+      <Diagnostics diag={diag} voskState={vosk.state} locked={listening} />
     </TwoColumn>
+  );
+}
+
+function Diagnostics({ diag, voskState, locked }: { diag: Diag; voskState: VoskModelState; locked: boolean }) {
+  return (
+    <DiagnosticsPanel vosk={diag.vosk} onVosk={diag.setVosk} voskState={voskState}
+      secondOpinion={diag.secondOpinion} onSecondOpinion={diag.setSecondOpinion} locked={locked}
+      recordWhileListening={diag.recordWhile} onRecordWhileListening={diag.setRecordWhile}
+      audioSessionOn={diag.sessionOn} onAudioSessionOn={diag.setSessionOn}
+      pcmFallback={diag.pcm} onPcmFallback={diag.setPcm} warmUpMic={diag.warmUp} onWarmUpMic={diag.setWarmUp}
+      ios27Fix={diag.ios27Fix} onIos27Fix={diag.setIos27Fix}
+      logs={diag.logs} />
   );
 }

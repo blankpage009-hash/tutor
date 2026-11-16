@@ -1,20 +1,30 @@
 import { useCallback, useEffect, useRef, useState, type MutableRefObject } from 'react';
+import type { Model } from 'vosk-browser';
 import { contentUrl } from '../../content/loader';
 import type { Sentence } from '../../content/types';
 import { isPass, type Judgement } from '../../scoring/types';
 import { wordMatchJudge } from '../../scoring/wordMatchJudge';
 import { playAudio, preloadAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
+import { acquireMic, releaseMic } from '../../speech/audioSession';
 import { ensureMicPermission, type MicCheck } from '../../speech/micPermission';
+import { openMicStream, type MicStream } from '../../speech/micStream';
 import { createCaptureContext } from '../../speech/pcmCapture';
 import { listen, type Listening, type ListenResult } from '../../speech/recognizer';
 import { startRecording, type ActiveRecording } from '../../speech/recorder';
 import { speakPrimer } from '../../speech/speechPrimer';
+import { listenVosk } from '../../speech/voskListener';
 
 export type AttemptStatus = 'idle' | 'listening' | 'passed' | 'failed';
 
 export type AttemptOptions = {
   threshold: number;
   failFeedback: boolean;
+  // 'vosk' = 앱 안 인식(기본), 'builtin' = 아이폰 내장 인식(iOS 27에서 두 번째부터 먹통, 비교용으로만 남김).
+  // 둘은 마이크를 다투므로 한 번에 하나만 쓴다
+  engine: 'vosk' | 'builtin';
+  voskModel: Model | null;
+  // 떨어졌을 때 방금 들은 소리를 "문장 단어만 허용" 방식에 한 번 더 들려 볼지 (사용자 결정 2026-11-16)
+  secondOpinion: boolean;
   recordWhileListening: boolean; // Phase 4 진단: 인식과 녹음을 동시에 해도 되는지 아이폰에서 확인
   // Phase 4 진단: 두 번째 시도부터 마이크가 무음이 되는 원인 가리기 (아이폰 결과 6차)
   pcmFallback: boolean; // 직접 녹음(Web Audio)도 같이 돌릴지
@@ -119,6 +129,102 @@ async function listenAndRecord(
   return { res, voice };
 }
 
+type Heard = { res: ListenResult; voice: string | null };
+type SetOutcome = (o: Outcome) => void;
+
+function micErrorText(e: unknown): string {
+  const name = (e as { name?: string })?.name;
+  if (name === 'NotAllowedError') return '마이크 권한이 꺼져 있어요. 설정 > Safari > 마이크에서 허용해 주세요.';
+  return '마이크를 열 수 없어요. 다른 앱이 마이크를 쓰고 있는지 확인해 주세요.';
+}
+
+// 앱 안 인식용 마이크를 연다. 실패하면 화면에 보일 안내 문구를 돌려준다
+async function openVoskMic(o: AttemptOptions, ctx: AudioContext): Promise<MicStream | string> {
+  acquireMic();
+  try {
+    const mic = await openMicStream(ctx, o.log);
+    o.log(`마이크 열림 · ${mic.info()}`);
+    return mic;
+  } catch (e) {
+    releaseMic();
+    o.log(`마이크 열기 실패: ${String(e)}`);
+    return micErrorText(e);
+  }
+}
+
+// 앱 안 인식(Vosk)으로 한 문장 듣기. 마이크는 탭할 때마다 열고 닫는다
+// (아이폰 결과 10차: 25번 열고 닫아도 무음 0회)
+async function runVosk(
+  sentence: Sentence, o: AttemptOptions, setOutcome: SetOutcome,
+  listening: MutableRefObject<Listening | null>, preparing: MutableRefObject<boolean>
+): Promise<Heard | null> {
+  // iOS는 사용자가 누른 순간(await 전)에 만든 오디오 장치에만 마이크 소리를 흘려 준다
+  const ctx = createCaptureContext();
+  const idle = (message: string) => setOutcome({ judgement: judge(sentence, []), status: 'idle', message });
+  if (!ctx || !o.voskModel) {
+    ctx?.close().catch(() => undefined);
+    idle(ctx ? '음성 인식을 준비하고 있어요. 잠시 뒤 다시 눌러 주세요.' : '이 기기에서는 마이크 소리를 받을 수 없어요.');
+    return null;
+  }
+  preparing.current = true;
+  const mic = await openVoskMic(o, ctx);
+  preparing.current = false;
+  if (typeof mic === 'string') {
+    ctx.close().catch(() => undefined);
+    idle(mic);
+    return null;
+  }
+  const res = await hearWithVosk(sentence, o, o.voskModel, mic, setOutcome, listening);
+  mic.close();
+  releaseMic();
+  ctx.close().catch(() => undefined);
+  return { res, voice: null };
+}
+
+async function hearWithVosk(
+  sentence: Sentence, o: AttemptOptions, model: Model, mic: MicStream,
+  setOutcome: SetOutcome, listening: MutableRefObject<Listening | null>
+): Promise<ListenResult> {
+  setOutcome({ judgement: judge(sentence, []), status: 'listening', message: null });
+  const l = listenVosk({
+    model, mic, sentenceEn: sentence.en, secondOpinion: o.secondOpinion,
+    // 중간 결과는 말하는 도중의 앞부분이라 80%로 끊으면 마지막 단어를 말하는 중에 끝나 버린다. 다 맞을 때만
+    isComplete: (alts) => isPass(judge(sentence, alts), 1),
+    isPass: (alts) => isPass(judge(sentence, alts), o.threshold),
+    onInterim: (alts) => setOutcome({ judgement: judge(sentence, alts), status: 'listening', message: null }),
+    onDebug: o.log
+  });
+  listening.current = l;
+  const res = await l.result;
+  listening.current = null;
+  o.log(`최대 소리 ${mic.takePeak().toFixed(3)} · 후보 ${res.alternatives.map((a) => `"${a}"`).join(', ') || '없음'}`);
+  return res;
+}
+
+// 내장 인식 길: 준비 말·같이 녹음 등 진단 스위치를 따른다
+async function runBuiltin(
+  sentence: Sentence, o: AttemptOptions, wasPlaying: boolean, setOutcome: SetOutcome,
+  listening: MutableRefObject<Listening | null>, preparing: MutableRefObject<boolean>, stale: () => boolean
+): Promise<Heard | null> {
+  preparing.current = true;
+  const { captureCtx, ready } = prepare(o, wasPlaying);
+  if (o.ios27Fix) setOutcome({ judgement: judge(sentence, []), status: 'idle', message: PREPARING_TEXT });
+  const mic = await ready;
+  preparing.current = false;
+  if (stale() || !mic.ok) {
+    captureCtx?.close().catch(() => undefined);
+    if (!mic.ok && !stale()) {
+      o.log(`마이크 권한: ${mic.reason}`);
+      setOutcome({ judgement: judge(sentence, []), status: 'idle', message: mic.message });
+    }
+    return null;
+  }
+  return listenAndRecord(sentence, o, captureCtx, setOutcome, listening);
+}
+
+// 듣는 중에 끊어도 되는가. 내장 인식 + iOS 27 대응 중에는 끊으면 그 뒤 인식이 모두 먹통이 된다
+const mayCut = (o: AttemptOptions) => o.engine === 'vosk' || !o.ios27Fix;
+
 // 튜터 음성: 문장이 바뀌면 미리 받아 두고(탭하자마자 재생되게), 재생 함수를 돌려준다
 function useTutorAudio(sentence: Sentence | null, opts: MutableRefObject<AttemptOptions>) {
   useEffect(() => {
@@ -154,7 +260,7 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     setReplaying(false);
     return () => {
       // iOS 27 대응 중에는 인식을 끊지 않는다(끊으면 그 뒤 인식이 모두 먹통). 결과는 stale()이 버린다
-      if (!optsRef.current.ios27Fix) listening.current?.stop();
+      if (mayCut(optsRef.current)) listening.current?.stop();
       stopAudio();
     };
   }, [sentence]);
@@ -167,20 +273,11 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     const wasPlaying = stopAudio();
     const stale = () => currentId.current !== sentence.id;
     const setOutcome = (o: Outcome) => setStored({ id: sentence.id, o });
-    preparing.current = true;
-    const { captureCtx, ready } = prepare(o, wasPlaying);
-    if (o.ios27Fix) setOutcome({ judgement: judge(sentence, []), status: 'idle', message: PREPARING_TEXT });
-    const mic = await ready;
-    preparing.current = false;
-    if (stale() || !mic.ok) {
-      captureCtx?.close().catch(() => undefined);
-      if (!mic.ok && !stale()) {
-        o.log(`마이크 권한: ${mic.reason}`);
-        setOutcome({ judgement: judge(sentence, []), status: 'idle', message: mic.message });
-      }
-      return;
-    }
-    const { res, voice } = await listenAndRecord(sentence, o, captureCtx, setOutcome, listening);
+    const heard = o.engine === 'vosk'
+      ? await runVosk(sentence, o, setOutcome, listening, preparing)
+      : await runBuiltin(sentence, o, wasPlaying, setOutcome, listening, preparing, stale);
+    if (!heard) return;
+    const { res, voice } = heard;
     if (stale()) {
       o.log('문장이 바뀌어 앞 문장 결과를 버림');
       return;
@@ -199,7 +296,7 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
   }, [sentence, playTutor]);
 
   const stop = useCallback(() => {
-    if (!optsRef.current.ios27Fix) listening.current?.stop();
+    if (mayCut(optsRef.current)) listening.current?.stop();
   }, []);
 
   return { outcome, myVoice, setMyVoice, start, stop, playTutor, replaying };

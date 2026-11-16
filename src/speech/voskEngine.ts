@@ -50,6 +50,46 @@ export type VoskSession = {
   close(): void;
 };
 
+// 이미 모아 둔 소리를 새 인식기에 한 번에 넣고, 들린 말 전체를 돌려준다 (두 번째 의견용).
+// 넣는 도중 엔진이 쉼에서 끊어 확정 결과가 여러 번 올 수 있어 빈 것 빼고 이어 붙인다.
+// 마지막 확정 결과가 언제 오는지 알려 주는 신호가 없어서, 마지막으로 확정 결과를 달라고 한 뒤
+// 결과가 하나 오고 잠깐(QUIET_MS) 아무 소식이 없으면 끝난 것으로 본다
+const QUIET_MS = 250;
+
+export function recognizeChunks(
+  model: Model, sampleRate: number, grammar: string[] | null, chunks: Float32Array[], timeoutMs: number
+): Promise<string | null> {
+  return new Promise((resolve) => {
+    const parts: string[] = [];
+    let asked = false;
+    let gotFinal = false;
+    let quiet = 0;
+    const done = (text: string | null) => {
+      window.clearTimeout(quiet);
+      window.clearTimeout(limit);
+      session.close();
+      resolve(text);
+    };
+    const bump = () => {
+      window.clearTimeout(quiet);
+      if (gotFinal) quiet = window.setTimeout(() => done(parts.join(' ')), QUIET_MS);
+    };
+    const session = createVoskSession(model, sampleRate, grammar, {
+      onPartial: bump,
+      onFinal: (t) => {
+        if (t) parts.push(t);
+        if (asked) gotFinal = true;
+        bump();
+      },
+      onError: () => done(null)
+    });
+    const limit = window.setTimeout(() => done(parts.length ? parts.join(' ') : null), timeoutMs);
+    chunks.forEach((c) => session.feed(c));
+    asked = true;
+    session.flush();
+  });
+}
+
 export function createVoskSession(
   model: Model, sampleRate: number, grammar: string[] | null, h: VoskHandlers
 ): VoskSession {

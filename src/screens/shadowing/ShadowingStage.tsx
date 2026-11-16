@@ -27,12 +27,14 @@ type Props = {
   autoOn: boolean;
   onAutoOn: (on: boolean) => void;
   autoPending: boolean;
+  engineNote: string | null; // 앱 안 인식 준비 상태 안내 (준비 중·실패)
+  micLocked: boolean; // 인식 준비가 끝나기 전에는 마이크를 못 누르게
 };
 
-function micStatus(status: string, message: string | null): string {
-  // "탭하면 멈춰요"는 뺐다: iOS 27에서 인식을 중간에 끊으면 그 뒤 인식이 모두 먹통이 된다
+function micStatus(p: Props, status: string, message: string | null): string {
   if (status === 'listening') return '듣는 중… 다 말하면 저절로 멈춰요';
   if (message) return message;
+  if (p.micLocked && p.engineNote) return p.engineNote;
   return '탭하고 영어로 따라 말해 보세요';
 }
 
@@ -96,8 +98,8 @@ export function ShadowingStage(p: Props) {
       {o && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} />}
       <p className={styles.ko} lang="ko">{p.sentence.ko}</p>
       <ResultLine p={p} />
-      <MicButton listening={listening} status={micStatus(o?.status ?? 'idle', o?.message ?? null)}
-        onClick={listening ? p.attempt.stop : p.onMic} />
+      <MicButton listening={listening} status={micStatus(p, o?.status ?? 'idle', o?.message ?? null)}
+        disabled={p.micLocked && !listening} onClick={listening ? p.attempt.stop : p.onMic} />
       <Extras p={p} listening={listening} />
       <Button variant="primary" block disabled={!p.canNext || listening} onClick={p.onNext}>
         {p.isLast ? '수업 마치기' : '다음 문장'}
