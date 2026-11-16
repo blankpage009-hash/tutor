@@ -1,5 +1,7 @@
 node_modules
 dist
+# content/의 복사본 (scripts/app/copy-content.mjs가 dev·build 전에 만든다). 원본은 content/
+public/content/
 .omc/
 # 음성 생성 도구(PC 전용). 음성 모델은 용량이 커서(60~120MB) 저장소에 올리지 않는다
 .venv/

@@ -16,7 +16,8 @@ export const SCREENS: ScreenMeta[] = [
   { id: 'prompt', path: '/more/prompt', title: '프롬프트 만들기', kind: 'sub', phase: 'Phase 6' },
   { id: 'settings', path: '/more/settings', title: '설정', kind: 'sub', phase: 'Phase 7' },
   { id: 'lesson', path: '/lesson/sample', title: '수업', kind: 'practice', phase: 'Phase 5' },
-  { id: 'shadowing', path: '/shadowing/sample', title: '쉐도잉', kind: 'practice', phase: 'Phase 4' },
+  // Phase 5에서 수업 흐름이 생기기 전까지는 초급 1과로 바로 연결해 아이폰에서 시험한다
+  { id: 'shadowing', path: '/shadowing/beg-01', title: '쉐도잉', kind: 'practice', phase: 'Phase 4' },
   { id: 'variation', path: '/variation/sample', title: '변형 연습', kind: 'practice', phase: 'Phase 5' },
   { id: 'review', path: '/review', title: '복습', kind: 'practice', phase: 'Phase 5' },
   { id: 'quiz', path: '/vocab/quiz', title: '단어 퀴즈', kind: 'practice', phase: 'Phase 5' },

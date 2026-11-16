@@ -1,0 +1,39 @@
+.sentence {
+  margin: 0;
+  font-family: var(--type-sentence-family);
+  font-size: var(--type-sentence-size);
+  line-height: var(--type-sentence-line);
+  font-weight: var(--type-sentence-weight);
+  letter-spacing: var(--type-sentence-tracking);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.word {
+  /* 칩 배경이 생겨도 글자 위치가 흔들리지 않게 안쪽 여백을 늘 같은 값으로 둔다 */
+  padding: 0 var(--space-1);
+  margin: 0 calc(var(--space-1) * -1);
+  border-radius: var(--radius-sm);
+  transition: background-color 120ms ease-out, color 120ms ease-out;
+}
+
+.next {
+  text-decoration: underline;
+  text-decoration-thickness: var(--rule-weight);
+  text-underline-offset: 6px;
+}
+
+.matched {
+  background: var(--accent-tint);
+  color: var(--accent-ink);
+}
+
+.wrong {
+  color: var(--danger);
+  text-decoration: underline wavy var(--danger);
+  text-underline-offset: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word { transition: none; }
+}

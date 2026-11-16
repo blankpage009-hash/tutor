@@ -1,0 +1,52 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mic {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--mic-size);
+  height: var(--mic-size);
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--accent);
+  color: var(--on-accent);
+  cursor: pointer;
+}
+
+.mic:active { background: var(--accent-press); }
+.mic:disabled { opacity: 0.4; cursor: default; }
+.mic:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 4px; }
+
+/* 듣는 중: 바깥 고리가 숨 쉬듯 커졌다 작아진다 */
+.listening::after {
+  content: '';
+  position: absolute;
+  inset: calc(var(--space-2) * -1);
+  border: var(--rule-weight) solid var(--accent);
+  border-radius: var(--radius-full);
+  animation: breathe 1.4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.12); opacity: 0.3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listening::after { animation: none; }
+}
+
+.status {
+  margin: 0;
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  font-weight: var(--type-caption-weight);
+  color: var(--ink-muted);
+  text-align: center;
+}

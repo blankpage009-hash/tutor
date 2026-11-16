@@ -65,7 +65,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   speechRate: 1,
   passThreshold: 0.8,
   repeatCount: 1,
-  autoAdvance: true,
+  autoAdvance: false, // PLAN 5.3: 기본 꺼짐 (Phase 4에서 바로잡음)
   failFeedback: true,
   dailyGoal: 10,
   theme: 'system'

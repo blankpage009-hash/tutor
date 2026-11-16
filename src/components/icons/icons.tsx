@@ -16,6 +16,8 @@ export const IconMore = () => <Svg><path d="M5 12h.01M12 12h.01M19 12h.01" strok
 export const IconClose = () => <Svg><path d="M6 6l12 12M18 6L6 18" /></Svg>;
 export const IconChevronLeft = () => <Svg><path d="M15 5l-7 7 7 7" /></Svg>;
 export const IconChevronRight = () => <Svg><path d="M9 5l7 7-7 7" /></Svg>;
+export const IconMic = () => <Svg><rect x="9" y="3" width="6" height="11" /><path d="M5 11a7 7 0 0 0 14 0M12 18v3" /></Svg>;
+export const IconStop = () => <Svg><rect x="7" y="7" width="10" height="10" fill="currentColor" /></Svg>;
 
 export const TAB_ICONS = {
   today: IconToday,
