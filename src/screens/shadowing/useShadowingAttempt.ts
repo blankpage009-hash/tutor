@@ -15,6 +15,9 @@ export type AttemptOptions = {
   threshold: number;
   failFeedback: boolean;
   recordWhileListening: boolean; // Phase 4 진단: 인식과 녹음을 동시에 해도 되는지 아이폰에서 확인
+  // Phase 4 진단: 두 번째 시도부터 마이크가 무음이 되는 원인 가리기 (아이폰 결과 6차)
+  pcmFallback: boolean; // 직접 녹음(Web Audio)도 같이 돌릴지
+  warmUpMic: boolean; // 말하기 전마다 마이크를 한 번 열었다 닫을지
   slowRate: number;
   log: (msg: string) => void;
   // 통과 횟수 세기·자동 넘기기는 화면이 맡는다. 판정이 끝난 그 순간에만 알려 준다
@@ -128,20 +131,19 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     if (!sentence) return;
     const stale = () => currentId.current !== sentence.id;
     // 같이 녹음할 때 쓸 직접 녹음 장치는 탭한 지금(await 전) 만들어야 iOS가 소리를 넘겨준다
-    const captureCtx = o.recordWhileListening ? createCaptureContext() : null;
+    const captureCtx = o.recordWhileListening && o.pcmFallback ? createCaptureContext() : null;
+    o.log(`말하기 탭${wasPlaying ? ' (재생 중이었음)' : ''}`);
     // 튜터 소리(특히 실패 후 느린 다시 듣기)가 나오는 중에 바로 마이크를 켜면 iOS 오디오 전환이
     // 덜 끝나 인식이 실패할 수 있어 잠깐 기다린다 (아이폰 시험에서 3번째 문장 인식 실패 대응)
     if (wasPlaying) await new Promise((r) => window.setTimeout(r, 400));
     const setOutcome = (o: Outcome) => setStored({ id: sentence.id, o });
-    const mic = await ensureMicPermission();
-    if (stale()) {
+    const mic = await ensureMicPermission(o.warmUpMic);
+    if (stale() || !mic.ok) {
       captureCtx?.close().catch(() => undefined);
-      return;
-    }
-    if (!mic.ok) {
-      captureCtx?.close().catch(() => undefined);
-      o.log(`마이크 권한: ${mic.reason}`);
-      setOutcome({ judgement: judge(sentence, []), status: 'idle', message: mic.message });
+      if (!mic.ok && !stale()) {
+        o.log(`마이크 권한: ${mic.reason}`);
+        setOutcome({ judgement: judge(sentence, []), status: 'idle', message: mic.message });
+      }
       return;
     }
     const { res, voice } = await listenAndRecord(sentence, o, captureCtx, setOutcome, listening);

@@ -11,8 +11,21 @@ type Props = {
   onRecordWhileListening: (on: boolean) => void;
   audioSessionOn: boolean;
   onAudioSessionOn: (on: boolean) => void;
+  pcmFallback: boolean;
+  onPcmFallback: (on: boolean) => void;
+  warmUpMic: boolean;
+  onWarmUpMic: (on: boolean) => void;
   logs: string[];
 };
+
+function Switch({ label, on, onChange }: { label: string; on: boolean; onChange: (on: boolean) => void }) {
+  return (
+    <label className={styles.diagRow}>
+      <input type="checkbox" checked={on} onChange={(e) => onChange(e.target.checked)} />
+      {label}
+    </label>
+  );
+}
 
 function isStandalone(): boolean {
   const nav = navigator as Navigator & { standalone?: boolean };
@@ -39,6 +52,7 @@ export function DiagnosticsPanel(p: Props) {
   const facts = [
     `홈화면 앱 모드: ${isStandalone() ? '예' : '아니요'}`,
     `동시 녹음: ${p.recordWhileListening ? '켬' : '끔'}, 오디오 세션 조정: ${p.audioSessionOn ? '켬' : '끔'}`,
+    `직접 녹음: ${p.pcmFallback ? '켬' : '끔'}, 마이크 준비 운동: ${p.warmUpMic ? '켬' : '끔'}`,
     `보관된 음성 파일: ${cached}개`
   ];
 
@@ -51,16 +65,10 @@ export function DiagnosticsPanel(p: Props) {
         <li>오디오 세션 기능: {hasAudioSession() ? '있음' : '없음'}</li>
         <li>보관된 음성 파일: {cached}개</li>
       </ul>
-      <label className={styles.diagRow}>
-        <input type="checkbox" checked={p.recordWhileListening}
-          onChange={(e) => p.onRecordWhileListening(e.target.checked)} />
-        말하는 동안 내 목소리 같이 녹음
-      </label>
-      <label className={styles.diagRow}>
-        <input type="checkbox" checked={p.audioSessionOn}
-          onChange={(e) => p.onAudioSessionOn(e.target.checked)} />
-        녹음 뒤 소리 크기 되돌리기 (오디오 세션 조정)
-      </label>
+      <Switch label="① 말하는 동안 내 목소리 같이 녹음" on={p.recordWhileListening} onChange={p.onRecordWhileListening} />
+      <Switch label="② 직접 녹음도 같이 (Web Audio)" on={p.pcmFallback} onChange={p.onPcmFallback} />
+      <Switch label="③ 말하기 전마다 마이크 준비 운동" on={p.warmUpMic} onChange={p.onWarmUpMic} />
+      <Switch label="④ 녹음 뒤 소리 크기 되돌리기 (오디오 세션 조정)" on={p.audioSessionOn} onChange={p.onAudioSessionOn} />
       <div className={styles.diagRow}>
         <Button size="sm" onClick={() => copyLogs(facts, p.logs).then(setCopyMsg)}>기록 복사</Button>
         <span lang="ko">{copyMsg}</span>

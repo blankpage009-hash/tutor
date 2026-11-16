@@ -42,10 +42,13 @@ function useDiagnostics() {
   // 인식·녹음 모두 된다. 그래서 같이 녹음이 기본이다 (PLAN 5.3 "시도마다 녹음"과도 같다)
   const [recordWhile, setRecordWhile] = useState(true);
   const [sessionOn, setSessionOn] = useState(false);
+  // 아이폰 결과 6차: 두 번째 시도부터 마이크가 무음. 원인을 가리려고 하나씩 켜고 꺼 본다
+  const [pcm, setPcm] = useState(true);
+  const [warmUp, setWarmUp] = useState(false);
   const { logs, log } = useLog();
   useEffect(() => setAudioSessionEnabled(sessionOn), [sessionOn]);
   useEffect(() => setAudioDebug(log), [log]);
-  return { recordWhile, setRecordWhile, sessionOn, setSessionOn, logs, log };
+  return { recordWhile, setRecordWhile, sessionOn, setSessionOn, pcm, setPcm, warmUp, setWarmUp, logs, log };
 }
 
 export function ShadowingScreen() {
@@ -66,7 +69,8 @@ export function ShadowingScreen() {
   };
   const attempt = useShadowingAttempt(sentence, {
     threshold: settings.passThreshold, failFeedback: settings.failFeedback,
-    recordWhileListening: diag.recordWhile, slowRate: SLOW_RATE, log, onResult
+    recordWhileListening: diag.recordWhile, pcmFallback: diag.pcm, warmUpMic: diag.warmUp,
+    slowRate: SLOW_RATE, log, onResult
   });
 
   if (error) return <p className={styles.ko} lang="ko">{error}</p>;
@@ -84,7 +88,9 @@ export function ShadowingScreen() {
         saved={saved.saved.has(sentence.id)} saveError={saved.error} onSave={() => saved.save(sentence)}
         autoOn={autoOn} onAutoOn={setAutoOn} autoPending={auto.pending} />
       <DiagnosticsPanel recordWhileListening={diag.recordWhile} onRecordWhileListening={diag.setRecordWhile}
-        audioSessionOn={diag.sessionOn} onAudioSessionOn={diag.setSessionOn} logs={diag.logs} />
+        audioSessionOn={diag.sessionOn} onAudioSessionOn={diag.setSessionOn}
+        pcmFallback={diag.pcm} onPcmFallback={diag.setPcm} warmUpMic={diag.warmUp} onWarmUpMic={diag.setWarmUp}
+        logs={diag.logs} />
     </TwoColumn>
   );
 }
