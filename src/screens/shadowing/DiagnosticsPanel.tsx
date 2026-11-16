@@ -15,6 +15,8 @@ type Props = {
   onPcmFallback: (on: boolean) => void;
   warmUpMic: boolean;
   onWarmUpMic: (on: boolean) => void;
+  ios27Fix: boolean;
+  onIos27Fix: (on: boolean) => void;
   logs: string[];
 };
 
@@ -53,6 +55,7 @@ export function DiagnosticsPanel(p: Props) {
     `홈화면 앱 모드: ${isStandalone() ? '예' : '아니요'}`,
     `동시 녹음: ${p.recordWhileListening ? '켬' : '끔'}, 오디오 세션 조정: ${p.audioSessionOn ? '켬' : '끔'}`,
     `직접 녹음: ${p.pcmFallback ? '켬' : '끔'}, 마이크 준비 운동: ${p.warmUpMic ? '켬' : '끔'}`,
+    `준비 말(iOS 27 대응): ${p.ios27Fix ? '켬' : '끔'}`,
     `보관된 음성 파일: ${cached}개`
   ];
 
@@ -69,6 +72,7 @@ export function DiagnosticsPanel(p: Props) {
       <Switch label="② 직접 녹음도 같이 (Web Audio)" on={p.pcmFallback} onChange={p.onPcmFallback} />
       <Switch label="③ 말하기 전마다 마이크 따로 열었다 닫기" on={p.warmUpMic} onChange={p.onWarmUpMic} />
       <Switch label="④ 녹음 뒤 소리 크기 되돌리기 (오디오 세션 조정)" on={p.audioSessionOn} onChange={p.onAudioSessionOn} />
+      <Switch label="⑤ 말하기 전 준비 말 + 중간에 안 끊기 (iOS 27 대응)" on={p.ios27Fix} onChange={p.onIos27Fix} />
       <div className={styles.diagRow}>
         <Button size="sm" onClick={() => copyLogs(facts, p.logs).then(setCopyMsg)}>기록 복사</Button>
         <span lang="ko">{copyMsg}</span>

@@ -30,7 +30,8 @@ type Props = {
 };
 
 function micStatus(status: string, message: string | null): string {
-  if (status === 'listening') return '듣는 중… 다 말하면 저절로 멈춰요. 탭하면 멈춰요';
+  // "탭하면 멈춰요"는 뺐다: iOS 27에서 인식을 중간에 끊으면 그 뒤 인식이 모두 먹통이 된다
+  if (status === 'listening') return '듣는 중… 다 말하면 저절로 멈춰요';
   if (message) return message;
   return '탭하고 영어로 따라 말해 보세요';
 }

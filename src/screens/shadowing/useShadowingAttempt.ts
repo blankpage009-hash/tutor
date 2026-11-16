@@ -8,6 +8,7 @@ import { ensureMicPermission, type MicCheck } from '../../speech/micPermission';
 import { createCaptureContext } from '../../speech/pcmCapture';
 import { listen, type Listening, type ListenResult } from '../../speech/recognizer';
 import { startRecording, type ActiveRecording } from '../../speech/recorder';
+import { speakPrimer } from '../../speech/speechPrimer';
 
 export type AttemptStatus = 'idle' | 'listening' | 'passed' | 'failed';
 
@@ -18,6 +19,8 @@ export type AttemptOptions = {
   // Phase 4 진단: 두 번째 시도부터 마이크가 무음이 되는 원인 가리기 (아이폰 결과 6차)
   pcmFallback: boolean; // 직접 녹음(Web Audio)도 같이 돌릴지
   warmUpMic: boolean; // 말하기 전마다 마이크를 한 번 열었다 닫을지
+  // iOS 27 대응(WebKit 버그 321436): 인식 직전에 음성 합성 한마디 + 인식을 중간에 끊지 않기
+  ios27Fix: boolean;
   slowRate: number;
   log: (msg: string) => void;
   // 통과 횟수 세기·자동 넘기기는 화면이 맡는다. 판정이 끝난 그 순간에만 알려 준다
@@ -68,6 +71,29 @@ function checkMic(openSeparately: boolean): Promise<MicCheck> {
   return openSeparately ? ensureMicPermission(true) : Promise.resolve({ ok: true });
 }
 
+const PREPARING_TEXT = '준비 중… 곧 듣기 시작해요';
+
+// 끊지 않기로 한 인식이 끝내 안 끝날 때만 쓰는 마지막 수단. 끊으면 그 뒤 인식이 모두 먹통이 될 수 있어 길게 둔다
+const NO_CUT_TIMEOUT_MS = 25000;
+
+// 탭한 순간에(await 전에) 해야 하는 준비를 하고, 인식을 시작해도 될 때 끝나는 약속을 돌려준다
+function prepare(o: AttemptOptions, wasPlaying: boolean) {
+  // 같이 녹음할 때 쓸 직접 녹음 장치는 탭한 지금 만들어야 iOS가 소리를 넘겨준다
+  const captureCtx = o.recordWhileListening && o.pcmFallback ? createCaptureContext() : null;
+  const primed = o.ios27Fix ? speakPrimer(o.log) : null;
+  o.log(`말하기 탭${wasPlaying ? ' (재생 중이었음)' : ''}`);
+  const ready = (async () => {
+    // 튜터 소리(특히 실패 후 느린 다시 듣기)가 나오는 중에 바로 마이크를 켜면 iOS 오디오 전환이
+    // 덜 끝나 인식이 실패할 수 있어 잠깐 기다린다. 준비 말을 할 때는 그 말이 기다림을 대신한다
+    if (wasPlaying && !primed) await new Promise((r) => window.setTimeout(r, 400));
+    const mic = await checkMic(o.warmUpMic);
+    // 준비 말이 끝나자마자 인식을 시작해야 한다 (버그 보고에서 확인된 순서)
+    await primed;
+    return mic;
+  })();
+  return { captureCtx, ready };
+}
+
 // 인식하면서(소리가 들어오기 시작하면) 같이 녹음하고, 둘 다 끝날 때까지 기다린다
 async function listenAndRecord(
   sentence: Sentence, o: AttemptOptions, captureCtx: AudioContext | null,
@@ -80,7 +106,8 @@ async function listenAndRecord(
     onAudioStart: () => {
       if (o.recordWhileListening) rec = beginRecording(o.log, captureCtx);
     },
-    onDebug: o.log
+    onDebug: o.log,
+    timeoutMs: o.ios27Fix ? NO_CUT_TIMEOUT_MS : undefined
   });
   listening.current = l;
   const res = await l.result;
@@ -113,6 +140,7 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
   const [myVoice, setMyVoice] = useState<string | null>(null);
   const [replaying, setReplaying] = useState(false);
   const listening = useRef<Listening | null>(null);
+  const preparing = useRef(false);
   const optsRef = useRef(opts);
   optsRef.current = opts;
   // await 사이에 문장이 바뀌었는지 알아보는 용도. 바뀌었으면 앞 문장의 결과·녹음·느린 재생을 버린다
@@ -125,25 +153,25 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     setMyVoice(null);
     setReplaying(false);
     return () => {
-      listening.current?.stop();
+      // iOS 27 대응 중에는 인식을 끊지 않는다(끊으면 그 뒤 인식이 모두 먹통). 결과는 stale()이 버린다
+      if (!optsRef.current.ios27Fix) listening.current?.stop();
       stopAudio();
     };
   }, [sentence]);
 
   const start = useCallback(async () => {
+    const o = optsRef.current;
+    // 준비 말이 나오는 1~2초 사이에 또 누르면 인식이 두 개 겹친다
+    if (!sentence || preparing.current || listening.current) return;
     unlockAudio();
     const wasPlaying = stopAudio();
-    const o = optsRef.current;
-    if (!sentence) return;
     const stale = () => currentId.current !== sentence.id;
-    // 같이 녹음할 때 쓸 직접 녹음 장치는 탭한 지금(await 전) 만들어야 iOS가 소리를 넘겨준다
-    const captureCtx = o.recordWhileListening && o.pcmFallback ? createCaptureContext() : null;
-    o.log(`말하기 탭${wasPlaying ? ' (재생 중이었음)' : ''}`);
-    // 튜터 소리(특히 실패 후 느린 다시 듣기)가 나오는 중에 바로 마이크를 켜면 iOS 오디오 전환이
-    // 덜 끝나 인식이 실패할 수 있어 잠깐 기다린다 (아이폰 시험에서 3번째 문장 인식 실패 대응)
-    if (wasPlaying) await new Promise((r) => window.setTimeout(r, 400));
     const setOutcome = (o: Outcome) => setStored({ id: sentence.id, o });
-    const mic = await checkMic(o.warmUpMic);
+    preparing.current = true;
+    const { captureCtx, ready } = prepare(o, wasPlaying);
+    if (o.ios27Fix) setOutcome({ judgement: judge(sentence, []), status: 'idle', message: PREPARING_TEXT });
+    const mic = await ready;
+    preparing.current = false;
     if (stale() || !mic.ok) {
       captureCtx?.close().catch(() => undefined);
       if (!mic.ok && !stale()) {
@@ -170,7 +198,9 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     }
   }, [sentence, playTutor]);
 
-  const stop = useCallback(() => listening.current?.stop(), []);
+  const stop = useCallback(() => {
+    if (!optsRef.current.ios27Fix) listening.current?.stop();
+  }, []);
 
   return { outcome, myVoice, setMyVoice, start, stop, playTutor, replaying };
 }

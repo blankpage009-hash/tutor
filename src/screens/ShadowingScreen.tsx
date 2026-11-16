@@ -46,10 +46,15 @@ function useDiagnostics() {
   const [sessionOn, setSessionOn] = useState(false);
   const [pcm, setPcm] = useState(false);
   const [warmUp, setWarmUp] = useState(false);
+  // 아이폰 결과 8차: 녹음을 다 빼도 두 번째 인식부터 먹통 → iOS 27 버그(WebKit 321436). 우회를 기본으로 켠다
+  const [ios27Fix, setIos27Fix] = useState(true);
   const { logs, log } = useLog();
   useEffect(() => setAudioSessionEnabled(sessionOn), [sessionOn]);
   useEffect(() => setAudioDebug(log), [log]);
-  return { recordWhile, setRecordWhile, sessionOn, setSessionOn, pcm, setPcm, warmUp, setWarmUp, logs, log };
+  return {
+    recordWhile, setRecordWhile, sessionOn, setSessionOn, pcm, setPcm, warmUp, setWarmUp,
+    ios27Fix, setIos27Fix, logs, log
+  };
 }
 
 export function ShadowingScreen() {
@@ -71,7 +76,7 @@ export function ShadowingScreen() {
   const attempt = useShadowingAttempt(sentence, {
     threshold: settings.passThreshold, failFeedback: settings.failFeedback,
     recordWhileListening: diag.recordWhile, pcmFallback: diag.pcm, warmUpMic: diag.warmUp,
-    slowRate: SLOW_RATE, log, onResult
+    ios27Fix: diag.ios27Fix, slowRate: SLOW_RATE, log, onResult
   });
 
   if (error) return <p className={styles.ko} lang="ko">{error}</p>;
@@ -91,6 +96,7 @@ export function ShadowingScreen() {
       <DiagnosticsPanel recordWhileListening={diag.recordWhile} onRecordWhileListening={diag.setRecordWhile}
         audioSessionOn={diag.sessionOn} onAudioSessionOn={diag.setSessionOn}
         pcmFallback={diag.pcm} onPcmFallback={diag.setPcm} warmUpMic={diag.warmUp} onWarmUpMic={diag.setWarmUp}
+        ios27Fix={diag.ios27Fix} onIos27Fix={diag.setIos27Fix}
         logs={diag.logs} />
     </TwoColumn>
   );

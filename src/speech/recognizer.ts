@@ -18,6 +18,8 @@ type SpeechRecognitionLike = {
   onaudiostart: (() => void) | null;
   onstart: (() => void) | null;
   onspeechstart: (() => void) | null;
+  onspeechend: (() => void) | null;
+  onaudioend: (() => void) | null;
   onnomatch: (() => void) | null;
   start(): void;
   stop(): void;
@@ -117,6 +119,8 @@ function wire(rec: SpeechRecognitionLike, opts: ListenOptions) {
   };
   rec.onstart = () => debug('start');
   rec.onspeechstart = () => debug('말소리 감지');
+  rec.onspeechend = () => debug('말소리 끝');
+  rec.onaudioend = () => debug('audioend');
   rec.onnomatch = () => debug('nomatch');
   rec.onaudiostart = () => { debug('audiostart'); opts.onAudioStart?.(); };
   rec.onresult = (e) => { latest = collect(e); opts.onInterim?.(latest); };
