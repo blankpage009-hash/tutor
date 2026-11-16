@@ -18,11 +18,9 @@ type Props = {
   canNext: boolean;
   isLast: boolean;
   onNext: () => void;
-  separate: { show: boolean; active: boolean; toggle: () => void };
 };
 
-function micStatus(status: string, message: string | null, recording: boolean): string {
-  if (recording) return '녹음 중에는 말하기를 할 수 없어요. 녹음을 먼저 멈춰 주세요';
+function micStatus(status: string, message: string | null): string {
   if (status === 'listening') return '듣는 중… 다 말하면 저절로 멈춰요. 탭하면 멈춰요';
   if (message) return message;
   return '탭하고 영어로 따라 말해 보세요';
@@ -52,18 +50,11 @@ export function ShadowingStage(p: Props) {
       {o && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} />}
       <p className={styles.ko} lang="ko">{p.sentence.ko}</p>
       <ResultLine attempt={p.attempt} threshold={p.threshold} />
-      {/* 아이폰 시험에서 녹음이 마이크를 쥔 채 인식을 시작하면 인식이 멈췄다. 그래서 녹음 중엔 마이크를 잠근다 */}
-      <MicButton listening={listening} disabled={p.separate.active}
-        status={micStatus(o?.status ?? 'idle', o?.message ?? null, p.separate.active)}
+      <MicButton listening={listening} status={micStatus(o?.status ?? 'idle', o?.message ?? null)}
         onClick={listening ? p.attempt.stop : p.attempt.start} />
       <div className={styles.actions}>
-        <Button size="sm" onClick={() => p.attempt.playTutor(1)} disabled={listening || p.separate.active}>문장 다시 듣기</Button>
-        <Button size="sm" onClick={() => p.attempt.playTutor(p.slowRate)} disabled={listening || p.separate.active}>느리게 듣기</Button>
-        {p.separate.show && (
-          <Button size="sm" onClick={p.separate.toggle} disabled={listening}>
-            {p.separate.active ? '녹음 멈추기' : '내 목소리 녹음'}
-          </Button>
-        )}
+        <Button size="sm" onClick={() => p.attempt.playTutor(1)} disabled={listening}>문장 다시 듣기</Button>
+        <Button size="sm" onClick={() => p.attempt.playTutor(p.slowRate)} disabled={listening}>느리게 듣기</Button>
         {p.attempt.myVoice && <Button size="sm" onClick={playMine} disabled={listening}>내 목소리 듣기</Button>}
       </div>
       <Button variant="primary" block disabled={!p.canNext || listening} onClick={p.onNext}>

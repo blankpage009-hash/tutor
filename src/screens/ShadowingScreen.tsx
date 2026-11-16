@@ -10,7 +10,6 @@ import { DiagnosticsPanel } from './shadowing/DiagnosticsPanel';
 import { SentenceList } from './shadowing/SentenceList';
 import styles from './shadowing/Shadowing.module.css';
 import { ShadowingStage } from './shadowing/ShadowingStage';
-import { useSeparateRecording } from './shadowing/useSeparateRecording';
 import { useShadowingAttempt } from './shadowing/useShadowingAttempt';
 
 // 실패 피드백의 "느린 속도". 너무 느리면 iOS 재생 속도 변환이 뭉개져서 0.75로 둔다
@@ -50,8 +49,9 @@ export function ShadowingScreen() {
   const { lessonId = 'beg-01' } = useParams();
   const { lesson, error } = useLesson(lessonId);
   const steps = useLessonSteps(lesson);
-  // 진단 스위치는 꺼진 채 시작한다: Phase 0에서 검증된 조건부터 확인하고 하나씩 켜 보기 위해서
-  const [recordWhile, setRecordWhile] = useState(false);
+  // 아이폰 시험(2026-11-16): 인식이 끝난 뒤 따로 녹음하면 무음만 녹음되고, 말하는 동안 같이 녹음하면
+  // 인식·녹음 모두 된다. 그래서 같이 녹음이 기본이다 (PLAN 5.3 "시도마다 녹음"과도 같다)
+  const [recordWhile, setRecordWhile] = useState(true);
   const [sessionOn, setSessionOn] = useState(false);
   const { logs, log } = useLog();
   const settings = DEFAULT_SETTINGS;
@@ -60,7 +60,6 @@ export function ShadowingScreen() {
     threshold: settings.passThreshold, failFeedback: settings.failFeedback,
     recordWhileListening: recordWhile, slowRate: SLOW_RATE, log
   });
-  const separate = useSeparateRecording(log, attempt.setMyVoice);
   const { markPassed } = steps;
 
   useEffect(() => setAudioSessionEnabled(sessionOn), [sessionOn]);
@@ -77,8 +76,7 @@ export function ShadowingScreen() {
       {steps.finished && <p className={styles.pass} lang="ko">이 수업의 문장 {total}개를 모두 통과했어요!</p>}
       <ShadowingStage sentence={sentence} position={`문장 ${index + 1} / ${total}`} attempt={attempt}
         threshold={settings.passThreshold} slowRate={SLOW_RATE}
-        canNext={passed.has(sentence.id)} isLast={index === total - 1} onNext={steps.next}
-        separate={{ show: !recordWhile, active: separate.active, toggle: separate.toggle }} />
+        canNext={passed.has(sentence.id)} isLast={index === total - 1} onNext={steps.next} />
       <DiagnosticsPanel recordWhileListening={recordWhile} onRecordWhileListening={setRecordWhile}
         audioSessionOn={sessionOn} onAudioSessionOn={setSessionOn} logs={logs} />
     </TwoColumn>
