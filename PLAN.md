@@ -391,7 +391,19 @@
 - **진행 (2026-11-16, 1세션째: 수업 흐름 + 진도)**
   - 흐름: 코스(`/courses`, 완료 수업 수) → 코스 상세(`/courses/:id`, 수업 20개·진행 단계 표시) → 짧은 수업(`/lesson/:id`) → 쉐도잉(`/shadowing/:id`) → 변형 연습(`/variation/:id`, 변형 문장을 같은 말하기 화면으로, 저장 버튼 없음) → 복습(`/lesson-review/:id`, 핵심 문장 다시 + 저장) → 완료. 단계를 마치면 "다음 단계" 버튼.
   - 진도: `src/db/progress.ts`(`markStage`, 가장 멀리 간 단계만 남김), 순수 계산 `src/lessonFlow.ts`(+테스트). 홈의 임시 이동 목록을 "이어서 할 수업"으로 교체.
-  - PC 확인: 타입·테스트 56개·빌드 통과, 코스 상세·수업·변형 연습 9문장·진도 저장·홈 이어하기 확인. 마이크가 필요한 통과→다음 단계 이동은 **아이폰 확인 필요**.
+  - PC 확인: 타입·테스트 56개·빌드 통과, 코스 상세·수업·변형 연습 9문장·진도 저장·홈 이어하기 확인. 마이크가 필요한 통과→다음 단계 이동은 아이폰에서 확인.
+  - **사용자 확인 (2026-11-16)**: 1세션 아이폰 확인 완료. 2세션(보관함+복습·SRS)은 다음 날 새 세션에서 시작 전 승인 후 진행.
+  - **보류 (2026-11-17)**: 커리큘럼 전면 교체로 2·3세션은 Phase 5.5 뒤로 미룸. 보관함·SRS는 새 레슨 id(`INT1-U01-L01-d1` 등)를 쓰도록 다시 정리한 뒤 진행.
+
+### Phase 5.5 — 새 커리큘럼 연결 (2026-11-17 계획 승인)
+- **왜**: 커리큘럼을 새로 바꿈 — 377레슨(과정 6 → 레벨 20 → 유닛 → 레슨). 레슨 원고는 `new curriculum/`(규칙 `new curriculum/CLAUDE.md`, 검사 `new curriculum/tools/check_lessons.py`). 새 레슨 = 핵심 문장 1 + 설명·발음·실수 + 대화문 6줄 + 드릴 6문장×10회 + 자유 응답 롤플레이. 지금 앱은 이 형식을 못 읽음.
+- **결정 (사용자)**: 드릴은 바퀴 방식(6문장 한 바퀴씩: 따라 3 → 보고 3 → 기억 2 → 상황 응답 2 = 60회) · 전환 기간엔 기존 10코스와 새 커리큘럼 둘 다 표시(숨기기·삭제는 나중에 승인) · 안 만든 레슨은 "준비 중" 회색 · 느린 음성은 재생 속도 0.75배(따로 안 만듦) · 한국어 번역은 기본 존댓말, 친구·가족은 반말 · 새 라이브러리 없음 · 이 Phase 동안 아이폰 확인용 커밋·푸시 허락.
+- **구조 (원고 → 인쇄소 → 앱)**: 원고 `new curriculum/lessons/**.json` → `scripts/audio/make_lesson_audio.py`(검사 통과해야 진행, Piper로 `content/audio/lessons/<lessonId>/<이름>-<지문8자>.m4a`, 앱용 복사본 `content/lessons/<레벨코드>/<id>.json`에 실제 음성 경로·영어 cue 음성 채움, CSV로 목차 `content/curriculum.json`(레슨마다 ready) 생성, 레벨 코드 미정은 `level-07` 같은 임시 이름) → 앱은 `content/curriculum.json`·`content/lessons/`만 읽음.
+- **세션 1 — 통로 + 코스 화면 + STEP 1**: 샘플을 `new curriculum/lessons/INT1/U03/`에 복사, `make_lesson_audio.py`, `src/content/lessonTypes.ts`, `src/content/curriculumLoader.ts`, `src/newLessonFlow.ts`(+테스트, learn→dialogue→drill→roleplay→done), `LessonProgress.stage`에 새 단계 추가(DB 버전 그대로), `CoursesScreen`(위 새 커리큘럼·아래 기존 코스), `CurriculumLevelScreen`(`/curriculum/:levelKey`), `LearnScreen`(`/n/:lessonId/learn`: 핵심 문장·강세·듣기·설명·발음·실수).
+- **세션 2 — STEP 2 대화문 + STEP 3 드릴**: `DialogueScreen`(전체 듣기 1회 → 내 줄에서 멈추고 따라 말하기, 역할 바꾸기는 나중), `src/drillPlan.ts`(+테스트, 60회 순서), 드릴은 쉐도잉 엔진 재사용(`ShadowingStage` 모드별 보이기/숨기기·cue 표시와 음성, `useHandsFree` 무음 회차는 먼저 읽기 생략, 3번 연속 실패 → 0.75배속 들려주고 다시 — 드릴에서만), `DrillList`(문장 6개 + 회차), 드릴 문장 저장. 기존 쉐도잉·변형·복습 동작은 그대로.
+- **세션 3 — STEP 4 롤플레이 + 완료·홈**: `src/scoring/keywordJudge.ts`(+테스트, `normalize.ts` 재사용), `NewRolePlayScreen`(`listenVosk`, 두 번째 의견 끔 — 자유 답변 인식은 아이폰에서 먼저 확인), 완료·홈 이어하기에 새 레슨, PLAN 5.1·5.2와 Phase 5 남은 세션 정리.
+- **안 하는 것**: 기존 코스 숨기기·삭제, 나머지 레슨 제작(유닛 단위로 따로), AI 채점·역할 바꾸기·다음 날 복습.
+- **완료 기준**: 새 레슨 1개를 아이폰 홈화면 앱에서 STEP 1~4 끝까지(약 10분) 진행하고 진도가 '완료'로 남는다. 각 세션 끝에 check_lessons·`npm test`·타입·빌드·PC 미리보기 확인 후 아이폰 확인.
 
 ### Phase 6 — 롤플레잉 · 프롬프트 생성 · Gemini 연동(선택)
 - **모델** Sonnet · **노력** medium · **예상** 1~2세션
