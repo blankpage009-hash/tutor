@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U01-L04",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 1,
+  "unitTitle": "선택지 비교하기",
+  "lessonNo": 4,
+  "lessonTitle": "선호도 묻기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Which one do you like better?",
+    "ko": "어느 게 더 좋으세요?",
+    "stress": "WHICH one do you like BETter?",
+    "audio": { "normal": "audio/lessons/INT1-U01-L04/key-e9b5b199.m4a", "slow": "audio/lessons/INT1-U01-L04/key-e9b5b199.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "두 가지를 보여 주고 상대의 취향을 물을 때 쓰는 가장 기본적인 질문입니다.",
+      "선택지가 정해져 있을 때는 what이 아니라 which를 씁니다. which one = '(이것들 중) 어느 것'.",
+      "둘 중에서는 better, 셋 이상 중에서는 best를 씁니다. (Which one do you like best?)",
+      "\"Which one do you prefer?\"도 같은 뜻이지만 조금 더 격식 있게 들립니다. 친구나 손님에게 편하게 물을 때는 like better가 자연스럽습니다.",
+      "대답할 때도 같은 틀을 씁니다. (I like this one better.)"
+    ],
+    "en": "Use \"Which one do you like better?\" when you show someone two options and want to know their preference. Use \"which\" because the choices are limited. For three or more options, say \"best\" instead of \"better.\"",
+    "enKo": "두 가지를 보여 주고 상대가 어느 쪽을 더 좋아하는지 알고 싶을 때 \"Which one do you like better?\"라고 합니다. 선택지가 정해져 있으니 which를 씁니다. 선택지가 셋 이상이면 better 대신 best라고 합니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "WHICH one do you like BETter — which와 better를 세게, 나머지는 가볍게 말합니다." },
+    { "focus": "약화", "tip": "do you는 '듀'나 '쥬'처럼 하나로 줄여서 빠르게 말합니다." },
+    { "focus": "연음", "tip": "better의 tt는 미국식으로 부드럽게 굴려 '베러'처럼 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "which의 wh는 입술을 둥글게 모았다가 '위치'로 엽니다. '휘치'처럼 h를 세게 내지 않습니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "What do you like more?", "right": "Which one do you like better?", "note": "정해진 선택지 중에서 고를 때는 what보다 which one이 자연스럽습니다." },
+    { "wrong": "Which one is your favorite between the two?", "right": "Which one do you like better?", "note": "favorite은 '가장 좋아하는 것'이라, 둘을 비교할 때는 like better가 간단하고 자연스럽습니다." },
+    { "wrong": "Which one you like better?", "right": "Which one do you like better?", "note": "질문이므로 do를 빼면 안 됩니다." }
+  ],
+  "dialogue": {
+    "situation": "샌프란시스코의 우리 집에 이웃을 초대했습니다. 마실 것을 고르게 해 줍니다.",
+    "partnerRole": "이웃",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Thanks for having me over. Your place looks great!", "ko": "초대해 주셔서 감사해요. 집이 정말 멋지네요!", "audio": "audio/lessons/INT1-U01-L04/dlg-01-3ff476bb.m4a" },
+      { "no": 2, "speaker": "me", "en": "Thanks for coming! Can I get you something to drink?", "ko": "와 주셔서 고마워요! 마실 것 좀 드릴까요?", "audio": "audio/lessons/INT1-U01-L04/dlg-02-46799a23.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Sure, what do you have?", "ko": "좋죠, 뭐가 있어요?", "audio": "audio/lessons/INT1-U01-L04/dlg-03-2b85f2ac.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "I have lemonade and iced tea. Which one do you like better?",
+        "ko": "레모네이드랑 아이스티가 있어요. 어느 게 더 좋으세요?",
+        "audio": "audio/lessons/INT1-U01-L04/dlg-04-8bd2ad94.m4a",
+        "hasKeySentence": true
+      },
+      { "no": 5, "speaker": "partner", "en": "Hmm, I'll have the iced tea, please.", "ko": "음, 아이스티로 할게요.", "audio": "audio/lessons/INT1-U01-L04/dlg-05-5075cf7b.m4a" },
+      { "no": 6, "speaker": "me", "en": "Coming right up. Would you like some lemon with it?", "ko": "금방 드릴게요. 레몬도 좀 넣어 드릴까요?", "audio": "audio/lessons/INT1-U01-L04/dlg-06-f1e7dd28.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "Thanks for having me over.", "ko": "'초대해 주셔서 감사해요.' 남의 집에 갔을 때 들어서며 하는 인사입니다. have ~ over = ~를 집에 초대하다." },
+      { "en": "Coming right up.", "ko": "'금방 드릴게요.' 음료나 음식을 곧 가져다준다고 할 때 쓰는 가볍고 친근한 말입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Which one do you like better?",
+      "ko": "어느 게 더 좋으세요?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "두 가지를 보여 주며, 상대에게 어느 쪽이 더 좋은지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-01-e9b5b199.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-01-e9b5b199.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "Which color do you like better?",
+      "ko": "어느 색이 더 좋으세요?",
+      "point": "명사 교체 (one → color)",
+      "cue": { "lang": "ko", "text": "파란색과 초록색 중 어느 색이 더 좋은지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-02-1a18a215.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-02-1a18a215.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "Which one does your son like better?",
+      "ko": "아드님은 어느 걸 더 좋아하세요?",
+      "point": "주어 변경 (you → your son, does)",
+      "cue": { "lang": "ko", "text": "아들 선물을 고르는 이웃에게, 아들이 어느 쪽을 더 좋아하는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-03-f9c4aa08.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-03-f9c4aa08.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Which one do you like best?",
+      "ko": "어느 게 제일 좋으세요?",
+      "point": "최상급 (better → best)",
+      "cue": { "lang": "ko", "text": "메뉴 세 가지를 보여 주고 어느 게 제일 좋은지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-04-57d00b7d.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-04-57d00b7d.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Which one would you prefer?",
+      "ko": "어느 쪽이 좋으시겠어요?",
+      "point": "공손형 (would prefer)",
+      "cue": { "lang": "ko", "text": "손님에게 두 가지 중 어느 쪽이 좋을지 공손하게 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-05-74a0834e.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-05-74a0834e.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "Which one did you like better?",
+      "ko": "어느 게 더 좋았어요?",
+      "point": "과거형 (do → did)",
+      "cue": { "lang": "ko", "text": "상대가 영화 두 편을 다 봤대요. 어느 쪽이 더 좋았는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-06-9f1fff8e.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-06-9f1fff8e.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "회사에서 동료와 함께 다른 동료의 생일 케이크를 고릅니다. 대본 없이 내 말로 대답합니다.",
+    "partnerRole": "직장 동료",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "We're getting a cake for Jen's birthday. Chocolate or strawberry?", "ko": "젠 생일 케이크를 사려고 해요. 초콜릿이 좋을까요, 딸기가 좋을까요?", "audio": "audio/lessons/INT1-U01-L04/rp-01-abd2a187.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm not sure. Which one do you think she'd like better?",
+        "exampleKo": "잘 모르겠어요. 젠이 어느 쪽을 더 좋아할 것 같아요?",
+        "requiredKeywords": ["which", "better"]
+      },
+      { "no": 3, "speaker": "partner", "en": "I think she loves chocolate.", "ko": "젠은 초콜릿을 엄청 좋아하는 것 같아요.", "audio": "audio/lessons/INT1-U01-L04/rp-03-cd4ab70b.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Then let's get the chocolate one.",
+        "exampleKo": "그럼 초콜릿으로 사요.",
+        "requiredKeywords": []
+      }
+    ],
+    "passRule": "requiredKeywords가 있는 줄은 답변에 키워드가 모두 들어가면 통과. 키워드가 없는 줄은 말하기만 하면 통과."
+  }
+}

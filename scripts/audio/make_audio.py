@@ -102,7 +102,11 @@ class Builder:
 def prune(used):
   removed = 0
   for f in (CONTENT / 'audio').rglob('*.m4a'):
-    if f.relative_to(CONTENT).as_posix() not in used:
+    rel = f.relative_to(CONTENT).as_posix()
+    # 새 커리큘럼 음성(audio/lessons/)은 make_lesson_audio.py가 관리하므로 여기서 지우지 않는다
+    if rel.startswith('audio/lessons/'):
+      continue
+    if rel not in used:
       f.unlink()
       removed += 1
   return removed

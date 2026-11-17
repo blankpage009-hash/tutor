@@ -39,7 +39,12 @@ export const STAGE_LABEL: Record<Stage, string> = {
   shadowing: '쉐도잉',
   variation: '변형 연습',
   review: '복습',
-  done: '완료'
+  done: '완료',
+  // 새 커리큘럼 단계 (기존 수업에는 나오지 않음, 이름표만 맞춰 둔다)
+  learn: '설명',
+  dialogue: '대화문',
+  drill: '드릴',
+  roleplay: '롤플레이'
 };
 
 // 변형 연습용: 핵심 문장 대신 변형 문장들을 한 줄로 이어 같은 쉐도잉 화면에 태운다

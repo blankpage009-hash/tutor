@@ -1,0 +1,38 @@
+/* 새 커리큘럼 목록용. 줄 모양(.row 등)은 courses/Courses.module.css를 같이 쓴다 */
+
+.section {
+  margin: var(--space-6) 0 0;
+  padding-bottom: var(--space-2);
+  border-bottom: var(--rule-weight) solid var(--line-strong);
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  line-height: var(--type-label-line);
+  font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
+  color: var(--ink-muted);
+}
+
+.section:first-of-type { margin-top: var(--space-2); }
+
+.group {
+  margin: var(--space-5) 0 0;
+  font-size: var(--type-title-size);
+  line-height: var(--type-title-line);
+  font-weight: var(--type-title-weight);
+  letter-spacing: var(--type-title-tracking);
+}
+
+.badge {
+  flex: none;
+  font-size: var(--type-label-size);
+  color: var(--accent-ink);
+}
+
+/* 아직 안 만든 레슨: 누를 수 없고 회색으로 보인다 */
+.disabled {
+  color: var(--ink-muted);
+  cursor: default;
+}
+
+.disabled .badge,
+.badge.disabled { color: var(--ink-muted); }

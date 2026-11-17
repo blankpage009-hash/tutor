@@ -1,0 +1,174 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U01-L05",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 1,
+  "unitTitle": "선택지 비교하기",
+  "lessonNo": 5,
+  "lessonTitle": "결정 도와주기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "If I were you, I'd get this one.",
+    "ko": "저라면 이걸로 할 것 같아요.",
+    "stress": "If I were YOU, I'd GET THIS one.",
+    "audio": { "normal": "audio/lessons/INT1-U01-L05/key-5aa46549.m4a", "slow": "audio/lessons/INT1-U01-L05/key-5aa46549.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "If I were you는 '제가 당신이라면 = 저라면'이라는 뜻입니다. 고민하는 사람에게 내 의견을 부드럽게 말할 때 씁니다.",
+      "\"You should get this one.\"보다 덜 지시하는 느낌이라, 상대가 결정권을 가진 채로 조언을 들을 수 있습니다.",
+      "현실이 아닌 가정이라 I was가 아니라 I were를 씁니다. 실제 대화에서 I was라고 하는 원어민도 있지만, were가 표준입니다.",
+      "뒤 문장은 I'd(I would) + 동사원형입니다. (I'd get, I'd take, I'd wait)",
+      "더 짧게 \"I'd get this one.\"이라고만 해도 같은 뜻으로 통합니다."
+    ],
+    "en": "\"If I were you, I'd...\" is a polite way to give advice. You imagine yourself in the other person's situation and say what you would do. It sounds helpful, not bossy.",
+    "enKo": "\"If I were you, I'd...\"는 예의 바르게 조언하는 말입니다. 내가 상대의 상황에 있다고 상상하고, 나라면 어떻게 할지 말합니다. 지시하는 느낌이 아니라 도와주는 느낌으로 들립니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "If I were YOU, I'd GET THIS one — you, get, this를 세게 말합니다." },
+    { "focus": "연음", "tip": "If I는 '이파이'처럼 f와 I를 이어서 말합니다." },
+    { "focus": "약화", "tip": "were는 '워'처럼 약하고 짧게, I'd는 '아잇'처럼 d를 거의 삼킵니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "were의 w-r은 입술을 둥글게 모은 채 혀를 뒤로 말아 한 번에 냅니다. '웨어'로 벌어지지 않게 합니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "If I am you, I will buy this.", "right": "If I were you, I'd get this one.", "note": "현실이 아닌 가정이라 am/will이 아니라 were/would를 씁니다." },
+    { "wrong": "In my opinion, you must buy this.", "right": "If I were you, I'd get this one.", "note": "must는 강요처럼 들립니다. If I were you가 훨씬 부드럽습니다." },
+    { "wrong": "If I were you, I'd to get this one.", "right": "If I were you, I'd get this one.", "note": "would 뒤에는 to 없이 동사원형이 옵니다." }
+  ],
+  "dialogue": {
+    "situation": "샌프란시스코의 회사에서 동료가 휴대폰으로 헬스장 두 곳을 보여 주며 어디에 등록할지 의견을 묻습니다.",
+    "partnerRole": "직장 동료",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "I can't decide which gym to join. Can I get your opinion?", "ko": "어느 헬스장에 등록할지 못 정하겠어요. 의견 좀 들어도 될까요?", "audio": "audio/lessons/INT1-U01-L05/dlg-01-1e6fd7a2.m4a" },
+      { "no": 2, "speaker": "me", "en": "Sure. What are you choosing between?", "ko": "그럼요. 어떤 곳들 중에서 고르고 계세요?", "audio": "audio/lessons/INT1-U01-L05/dlg-02-5f1dad5f.m4a" },
+      { "no": 3, "speaker": "partner", "en": "This one is closer to home, and that one has a pool.", "ko": "이곳은 집에서 더 가깝고, 저곳은 수영장이 있어요.", "audio": "audio/lessons/INT1-U01-L05/dlg-03-bdc1be6f.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "You hate driving, right? If I were you, I'd get this one.",
+        "ko": "운전하는 거 싫어하시잖아요? 저라면 이걸로 할 것 같아요.",
+        "audio": "audio/lessons/INT1-U01-L05/dlg-04-33987821.m4a",
+        "hasKeySentence": true
+      },
+      { "no": 5, "speaker": "partner", "en": "That makes sense. I probably wouldn't use the pool much anyway.", "ko": "그렇네요. 어차피 수영장은 별로 안 쓸 것 같아요.", "audio": "audio/lessons/INT1-U01-L05/dlg-05-256f5e59.m4a" },
+      { "no": 6, "speaker": "me", "en": "Exactly. And you can always switch later if you want.", "ko": "그렇죠. 그리고 원하면 나중에 언제든 바꿀 수 있잖아요.", "audio": "audio/lessons/INT1-U01-L05/dlg-06-22c36461.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "Can I get your opinion?", "ko": "'의견 좀 들어도 될까요?' 고민을 털어놓으며 조언을 구할 때 쓰는 말입니다." },
+      { "en": "That makes sense.", "ko": "'그렇네요, 일리 있네요.' 상대의 말에 납득했을 때 아주 자주 쓰는 맞장구입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "If I were you, I'd get this one.",
+      "ko": "저라면 이걸로 할 것 같아요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "I can't decide which phone to buy.", "audio": "audio/lessons/INT1-U01-L05/cue-01-915c1c2d.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-01-5aa46549.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-01-5aa46549.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "If I were you, I'd take the earlier flight.",
+      "ko": "저라면 더 이른 비행기를 탈 것 같아요.",
+      "point": "동사·대상 교체 (take the earlier flight)",
+      "cue": { "lang": "en", "text": "The morning flight is cheaper, but it's so early.", "audio": "audio/lessons/INT1-U01-L05/cue-02-bfab2e63.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-02-cfeaf61c.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-02-cfeaf61c.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "If I were you, I wouldn't sign that lease.",
+      "ko": "저라면 그 임대 계약은 안 할 것 같아요.",
+      "point": "부정형 (wouldn't)",
+      "cue": { "lang": "en", "text": "The rent is really high, but the apartment is nice.", "audio": "audio/lessons/INT1-U01-L05/cue-03-0b376676.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-03-1166f093.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-03-1166f093.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "If I were her, I'd take the job.",
+      "ko": "제가 그분이라면 그 일을 맡을 것 같아요.",
+      "point": "주어 변경 (you → her)",
+      "cue": { "lang": "en", "text": "My friend got a great job offer, but she's nervous.", "audio": "audio/lessons/INT1-U01-L05/cue-04-116e77cb.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-04-6fb8052a.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-04-6fb8052a.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "What would you do if you were me?",
+      "ko": "제 입장이라면 어떻게 하시겠어요?",
+      "point": "질문형 (상대 의견 묻기)",
+      "cue": { "lang": "ko", "text": "고민을 털어놓은 뒤, 상대가 내 입장이라면 어떻게 할지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-05-7d953226.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-05-7d953226.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "If I were you, I'd get the cheaper one.",
+      "ko": "저라면 더 싼 걸로 할 것 같아요.",
+      "point": "비교급 넣기 (the cheaper one)",
+      "cue": { "lang": "en", "text": "They look almost the same, but one costs a lot more.", "audio": "audio/lessons/INT1-U01-L05/cue-06-387fdb3f.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-06-e6fab996.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-06-e6fab996.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "동네 파머스 마켓에서 이웃이 파티에 가져갈 파이를 못 고르고 있습니다. 대본 없이 내 말로 대답합니다.",
+    "partnerRole": "이웃",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I can't pick between these two pies for the party. What do you think?",
+        "ko": "파티에 가져갈 파이를 이 두 개 중에 못 고르겠어요. 어떻게 생각하세요?",
+        "audio": "audio/lessons/INT1-U01-L05/rp-01-0b1f3a23.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If I were you, I'd get the apple pie. Everyone loves it.",
+        "exampleKo": "저라면 사과 파이로 할 것 같아요. 다들 좋아하잖아요.",
+        "requiredKeywords": ["if I were you"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Good call. Should I get one or two?", "ko": "좋은 생각이에요. 하나 살까요, 두 개 살까요?", "audio": "audio/lessons/INT1-U01-L05/rp-03-929e34be.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'd get two, just in case.",
+        "exampleKo": "혹시 모르니까 저라면 두 개 살 것 같아요.",
+        "requiredKeywords": []
+      }
+    ],
+    "passRule": "requiredKeywords가 있는 줄은 답변에 키워드가 모두 들어가면 통과. 키워드가 없는 줄은 말하기만 하면 통과."
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U01-L01",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 1,
+  "unitTitle": "선택지 비교하기",
+  "lessonNo": 1,
+  "lessonTitle": "선택지 비교하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I'm torn between these two.",
+    "ko": "이 두 개 중에 고민돼요.",
+    "stress": "I'm TORN between these TWO.",
+    "audio": { "normal": "audio/lessons/INT1-U01-L01/key-1f7aeada.m4a", "slow": "audio/lessons/INT1-U01-L01/key-1f7aeada.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "torn은 tear(찢다)에서 온 말로, 마음이 두 쪽으로 찢어진 것처럼 '둘 중에 못 고르겠다'는 뜻입니다.",
+      "메뉴·옷 고르기 같은 작은 선택부터 이사·이직 같은 큰 결정까지 두루 씁니다.",
+      "\"I can't decide.\"는 그냥 '못 정했어요'지만, torn between은 '둘 다 괜찮아서 고민'이라는 느낌이 들어갑니다.",
+      "상태를 말하는 표현이라 be동사와 함께 씁니다. I'm torn (O) / I torn (X). 지난 일은 I was torn.",
+      "between 뒤에는 보통 두 가지(A and B, these two)가 옵니다."
+    ],
+    "en": "When you like two options and can't pick one, you can say you're \"torn between\" them. It's very common in everyday conversation, from shopping to big life decisions.",
+    "enKo": "두 가지가 다 마음에 들어서 하나를 못 고를 때 \"torn between\"이라고 말할 수 있습니다. 쇼핑부터 인생의 큰 결정까지, 일상 대화에서 아주 흔히 씁니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "I'm TORN between these TWO — torn과 two를 또렷하고 길게 말합니다." },
+    { "focus": "연음", "tip": "between these는 n과 th를 끊지 않고 '비트윈디즈'처럼 한 덩어리로 이어 말합니다." },
+    { "focus": "약화", "tip": "I'm은 '암'처럼 짧게 말합니다. I am으로 풀어 말하면 딱딱하게 들립니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "torn의 or는 입을 둥글게 하고 혀끝을 뒤로 말아 r 소리를 살립니다. '톤'으로 끝나지 않게 합니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I'm worrying between these two.", "right": "I'm torn between these two.", "note": "'고민하다'를 worry로 직역하면 '걱정하다'가 됩니다. 고를 때의 고민은 torn between입니다." },
+    { "wrong": "I can't choose what is better.", "right": "I can't decide which one is better.", "note": "정해진 몇 개 중 '어느 것'은 what이 아니라 which one입니다." },
+    { "wrong": "I'm torn between this and this.", "right": "I'm torn between this one and that one.", "note": "같은 this를 두 번 쓰면 어색합니다. this one과 that one으로 나눠 말합니다." }
+  ],
+  "dialogue": {
+    "situation": "샌프란시스코의 전자제품 매장에서 노트북 두 대를 놓고 고민하는데 직원이 말을 겁니다.",
+    "partnerRole": "매장 직원",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hi there! Are you finding everything okay?", "ko": "안녕하세요! 찾으시는 건 잘 보고 계세요?", "audio": "audio/lessons/INT1-U01-L01/dlg-01-1fdcfc22.m4a" },
+      { "no": 2, "speaker": "me", "en": "Yeah, thanks. I'm just looking at these two laptops.", "ko": "네, 고마워요. 이 노트북 두 대를 보고 있어요.", "audio": "audio/lessons/INT1-U01-L01/dlg-02-78256114.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Great choices. Do you know which one you want?", "ko": "둘 다 좋은 제품이에요. 어떤 걸로 하실지 정하셨어요?", "audio": "audio/lessons/INT1-U01-L01/dlg-03-b7d43ef6.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Not yet. I'm torn between these two. They're both really nice.",
+        "ko": "아직이요. 이 두 개 중에 고민돼요. 둘 다 정말 괜찮아서요.",
+        "audio": "audio/lessons/INT1-U01-L01/dlg-04-8b02eab6.m4a",
+        "hasKeySentence": true
+      },
+      { "no": 5, "speaker": "partner", "en": "Well, this one's lighter, but that one has a bigger screen.", "ko": "음, 이건 더 가볍고, 저건 화면이 더 커요.", "audio": "audio/lessons/INT1-U01-L01/dlg-05-c48e8cec.m4a" },
+      { "no": 6, "speaker": "me", "en": "Good point. Let me think it over for a minute.", "ko": "그렇네요. 잠깐 더 생각해 볼게요.", "audio": "audio/lessons/INT1-U01-L01/dlg-06-eb3fc4ff.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "Do you know which one you want?", "ko": "'어떤 걸로 하실지 정하셨어요?' 매장 직원이 자주 묻는 말입니다. which one은 '(정해진 것들 중) 어느 것'." },
+      { "en": "Let me think it over.", "ko": "'좀 더 생각해 볼게요.' 바로 결정하지 않고 시간을 벌 때 쓰는 부드러운 말입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I'm torn between these two.",
+      "ko": "이 두 개 중에 고민돼요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "So, which one are you getting?", "audio": "audio/lessons/INT1-U01-L01/cue-01-c60ce533.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L01/drill-01-1f7aeada.m4a", "slow": "audio/lessons/INT1-U01-L01/drill-01-1f7aeada.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I'm torn between the pasta and the burger.",
+      "ko": "파스타랑 버거 중에 고민돼요.",
+      "point": "선택지 단어 교체 (A and B)",
+      "cue": { "lang": "en", "text": "What are you going to order?", "audio": "audio/lessons/INT1-U01-L01/cue-02-6abf6bea.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L01/drill-02-99e4f41a.m4a", "slow": "audio/lessons/INT1-U01-L01/drill-02-99e4f41a.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "We're torn between two apartments.",
+      "ko": "저희는 아파트 두 곳을 두고 고민 중이에요.",
+      "point": "주어 변경 (I → We)",
+      "cue": { "lang": "en", "text": "Have you two found a new place yet?", "audio": "audio/lessons/INT1-U01-L01/cue-03-28372c71.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L01/drill-03-8469a193.m4a", "slow": "audio/lessons/INT1-U01-L01/drill-03-8469a193.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "I was torn between two job offers.",
+      "ko": "일자리 제안 두 개를 두고 고민했었어요.",
+      "point": "과거형 (I'm → I was)",
+      "cue": { "lang": "en", "text": "Why did it take you so long to accept the job?", "audio": "audio/lessons/INT1-U01-L01/cue-04-8e5a841d.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L01/drill-04-90432c77.m4a", "slow": "audio/lessons/INT1-U01-L01/drill-04-90432c77.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Are you torn between these two?",
+      "ko": "이 두 개 중에 고민 중이세요?",
+      "point": "질문형",
+      "cue": { "lang": "ko", "text": "친구가 물건 두 개를 들고 망설이고 있어요. 둘 중에 고민 중인지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U01-L01/drill-05-98b58e7b.m4a", "slow": "audio/lessons/INT1-U01-L01/drill-05-98b58e7b.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I'm not torn anymore. I'll take this one.",
+      "ko": "이제 고민 안 해요. 이걸로 할게요.",
+      "point": "부정형 (not ~ anymore)",
+      "cue": { "lang": "en", "text": "Are you still trying to decide?", "audio": "audio/lessons/INT1-U01-L01/cue-06-a662b46d.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L01/drill-06-cf351ab6.m4a", "slow": "audio/lessons/INT1-U01-L01/drill-06-cf351ab6.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "회사 휴게실에서 동료가 이사 갈 집을 정했는지 묻습니다. 대본 없이 내 말로 대답합니다.",
+    "partnerRole": "직장 동료",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "So, did you finally pick an apartment?", "ko": "그래서, 아파트는 드디어 정하셨어요?", "audio": "audio/lessons/INT1-U01-L01/rp-01-8135b772.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Not yet. I'm torn between a place downtown and one near the beach.",
+        "exampleKo": "아직이요. 시내에 있는 집이랑 바닷가 근처 집 중에 고민 중이에요.",
+        "requiredKeywords": ["torn", "between"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Those both sound great. What's the hard part?", "ko": "둘 다 좋은데요. 뭐가 제일 고민이에요?", "audio": "audio/lessons/INT1-U01-L01/rp-03-7e270a2b.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "The downtown one is closer to work, but it's smaller.",
+        "exampleKo": "시내 집이 회사랑 더 가까운데, 좀 작아요.",
+        "requiredKeywords": []
+      }
+    ],
+    "passRule": "requiredKeywords가 있는 줄은 답변에 키워드가 모두 들어가면 통과. 키워드가 없는 줄은 말하기만 하면 통과."
+  }
+}

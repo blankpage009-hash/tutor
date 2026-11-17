@@ -18,10 +18,14 @@ export type VocabWord = {
   savedAt: number;
 };
 
+// 새 커리큘럼(Phase 5.5) 레슨의 단계. 'done'은 기존 수업과 같이 쓴다.
+// 칸 모양만 넓혔고 색인은 그대로라 DB 버전을 올리지 않아도 된다
+export type NewLessonStage = 'learn' | 'dialogue' | 'drill' | 'roleplay' | 'done';
+
 export type LessonProgress = {
   lessonId: string;
-  courseId: string;
-  stage: 'intro' | 'shadowing' | 'variation' | 'review' | 'done';
+  courseId: string; // 새 레슨은 레벨 key(예: INT1)
+  stage: 'intro' | 'shadowing' | 'variation' | 'review' | NewLessonStage;
   updatedAt: number;
   completedAt?: number;
 };

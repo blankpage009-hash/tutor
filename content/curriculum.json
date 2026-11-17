@@ -1,0 +1,1110 @@
+{
+  "schemaVersion": 1,
+  "courses": [
+    {
+      "name": "초급",
+      "levels": [
+        {
+          "key": "level-01",
+          "code": null,
+          "name": "초급 1",
+          "units": [
+            {
+              "no": 1,
+              "title": "과거",
+              "lessons": [
+                { "no": 1, "title": "과거에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 2, "title": "불규칙 과거 동사", "id": null, "ready": false},
+                { "no": 3, "title": "과거에 하지 않은 일 말하기", "id": null, "ready": false},
+                { "no": 4, "title": "과거에 한 일에 대해 묻기", "id": null, "ready": false},
+                { "no": 5, "title": "무엇을, 어디서, 왜 했는지 묻기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "현재",
+              "lessons": [
+                { "no": 1, "title": "현재 활동에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 2, "title": "하고 있는 일에 대해 묻기", "id": null, "ready": false},
+                { "no": 3, "title": "더 자세히 물어보기", "id": null, "ready": false},
+                { "no": 4, "title": "방금 전에 대해 말하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "티켓 구매하기",
+              "lessons": [
+                { "no": 1, "title": "티켓 구매하기", "id": null, "ready": false},
+                { "no": 2, "title": "가격과 세부 사항 묻기", "id": null, "ready": false},
+                { "no": 3, "title": "주변 환경에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 4, "title": "수량 확인하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "미래 계획",
+              "lessons": [
+                { "no": 1, "title": "미래 계획 이야기하기", "id": null, "ready": false},
+                { "no": 2, "title": "여행 세부 사항 이야기하기", "id": null, "ready": false},
+                { "no": 3, "title": "계획하고 있는 일에 대해 묻기", "id": null, "ready": false},
+                { "no": 4, "title": "예측하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 5,
+              "title": "친구와 약속 잡기",
+              "lessons": [
+                { "no": 1, "title": "자신의 능력 이야기하기", "id": null, "ready": false},
+                { "no": 2, "title": "허락 구하기 또는 요청하기", "id": null, "ready": false},
+                { "no": 3, "title": "하고 싶은 일 묻기", "id": null, "ready": false},
+                { "no": 4, "title": "관찰한 내용 말하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 6,
+              "title": "약속과 다짐",
+              "lessons": [
+                { "no": 1, "title": "무언가를 하겠다고 제안하기", "id": null, "ready": false},
+                { "no": 2, "title": "언제 할지 말하기", "id": null, "ready": false},
+                { "no": 3, "title": "약속하기", "id": null, "ready": false},
+                { "no": 4, "title": "예상하기", "id": null, "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "level-02",
+          "code": null,
+          "name": "초급 2",
+          "units": [
+            {
+              "no": 1,
+              "title": "관심사 & 취미",
+              "lessons": [
+                { "no": 1, "title": "관심사 공유하기", "id": null, "ready": false},
+                { "no": 2, "title": "취미에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 3, "title": "함께 놀 계획 세우기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "일상 생활",
+              "lessons": [
+                { "no": 1, "title": "하루 일과 공유하기", "id": null, "ready": false},
+                { "no": 2, "title": "주말과 평일 루틴 공유하기", "id": null, "ready": false},
+                { "no": 3, "title": "활동 빈도 이야기하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "약속 잡기",
+              "lessons": [
+                { "no": 1, "title": "초대하기", "id": null, "ready": false},
+                { "no": 2, "title": "초대 거절하기", "id": null, "ready": false},
+                { "no": 3, "title": "초대 수락하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "일 & 학교",
+              "lessons": [
+                { "no": 1, "title": "일과 학업 이야기하기", "id": null, "ready": false},
+                { "no": 2, "title": "과거 경험 나누기", "id": null, "ready": false},
+                { "no": 3, "title": "미래 계획 이야기하기", "id": null, "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "level-03",
+          "code": null,
+          "name": "초급 3",
+          "units": [
+            {
+              "no": 1,
+              "title": "관심사 & 재능",
+              "lessons": [
+                { "no": 1, "title": "관심사 나누기", "id": null, "ready": false},
+                { "no": 2, "title": "다른 사람의 관심사 묻기", "id": null, "ready": false},
+                { "no": 3, "title": "재능에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 4, "title": "기분 표현하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "고향 & 학교",
+              "lessons": [
+                { "no": 1, "title": "출신지 말하기", "id": null, "ready": false},
+                { "no": 2, "title": "학업에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 3, "title": "자신에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 4, "title": "하는 일에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 5, "title": "사는 곳 말하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "하루 일과",
+              "lessons": [
+                { "no": 1, "title": "하루 루틴에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 2, "title": "일정에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 3, "title": "항상 또는 드물게 하는 일", "id": null, "ready": false},
+                { "no": 4, "title": "매일 하는 일", "id": null, "ready": false},
+                { "no": 5, "title": "하루 공부 습관", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "주말 계획",
+              "lessons": [
+                { "no": 1, "title": "같이 놀자고 초대하기", "id": null, "ready": false},
+                { "no": 2, "title": "계획 이야기하기", "id": null, "ready": false},
+                { "no": 3, "title": "초대 수락 및 거절하기", "id": null, "ready": false},
+                { "no": 4, "title": "추천 부탁하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 5,
+              "title": "식당에서 식사하기",
+              "lessons": [
+                { "no": 1, "title": "예약하기", "id": null, "ready": false},
+                { "no": 2, "title": "먹고 싶은 것 말하기", "id": null, "ready": false},
+                { "no": 3, "title": "음식 주문하기", "id": null, "ready": false},
+                { "no": 4, "title": "계산서 요청하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 6,
+              "title": "쇼핑하기",
+              "lessons": [
+                { "no": 1, "title": "쇼핑하기", "id": null, "ready": false},
+                { "no": 2, "title": "의견 물어보기", "id": null, "ready": false},
+                { "no": 3, "title": "사이즈 말하기", "id": null, "ready": false},
+                { "no": 4, "title": "시착 요청하기", "id": null, "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "level-04",
+          "code": null,
+          "name": "초급 4",
+          "units": [
+            {
+              "no": 1,
+              "title": "일상적인 대화",
+              "lessons": [
+                { "no": 1, "title": "친구와 약속 잡기", "id": null, "ready": false},
+                { "no": 2, "title": "도착 시간 확인하기", "id": null, "ready": false},
+                { "no": 3, "title": "친구와 근황 나누기", "id": null, "ready": false},
+                { "no": 4, "title": "응원해주기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "도시에서",
+              "lessons": [
+                { "no": 1, "title": "길 묻기", "id": null, "ready": false},
+                { "no": 2, "title": "지하철 길찾기", "id": null, "ready": false},
+                { "no": 3, "title": "쇼핑하기", "id": null, "ready": false},
+                { "no": 4, "title": "물건 반품하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "어려운 대화",
+              "lessons": [
+                { "no": 1, "title": "사과하기", "id": null, "ready": false},
+                { "no": 2, "title": "부드럽게 거절하기", "id": null, "ready": false},
+                { "no": 3, "title": "선택지 비교하기", "id": null, "ready": false},
+                { "no": 4, "title": "물건 빌리기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "업무 대화",
+              "lessons": [
+                { "no": 1, "title": "면접 성공하기", "id": null, "ready": false},
+                { "no": 2, "title": "설명 요청하기", "id": null, "ready": false},
+                { "no": 3, "title": "진행 상황 공유하기", "id": null, "ready": false},
+                { "no": 4, "title": "사무실에서 스몰토크하기", "id": null, "ready": false}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "중급",
+      "levels": [
+        {
+          "key": "INT1",
+          "code": "INT1",
+          "name": "중급 1",
+          "units": [
+            {
+              "no": 1,
+              "title": "선택지 비교하기",
+              "lessons": [
+                { "no": 1, "title": "선택지 비교하기", "id": "INT1-U01-L01", "ready": true, "file": "lessons/INT1/INT1-U01-L01.json" },
+                { "no": 2, "title": "비교해서 말하기", "id": "INT1-U01-L02", "ready": true, "file": "lessons/INT1/INT1-U01-L02.json" },
+                { "no": 3, "title": "제안하기", "id": "INT1-U01-L03", "ready": true, "file": "lessons/INT1/INT1-U01-L03.json" },
+                { "no": 4, "title": "선호도 묻기", "id": "INT1-U01-L04", "ready": true, "file": "lessons/INT1/INT1-U01-L04.json" },
+                { "no": 5, "title": "결정 도와주기", "id": "INT1-U01-L05", "ready": true, "file": "lessons/INT1/INT1-U01-L05.json" }
+              ]
+            },
+            {
+              "no": 2,
+              "title": "컨디션이 안좋아",
+              "lessons": [
+                { "no": 1, "title": "몸이 아프다고 말하기", "id": "INT1-U02-L01", "ready": false},
+                { "no": 2, "title": "안부 묻기", "id": "INT1-U02-L02", "ready": false},
+                { "no": 3, "title": "회복에 대해 이야기하기", "id": "INT1-U02-L03", "ready": false},
+                { "no": 4, "title": "다쳤다고 말하기", "id": "INT1-U02-L04", "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "병원 & 약국",
+              "lessons": [
+                { "no": 1, "title": "예약하기", "id": "INT1-U03-L01", "ready": false},
+                { "no": 2, "title": "가능한 시간 묻기", "id": "INT1-U03-L02", "ready": false},
+                { "no": 3, "title": "선호하는 시간 말하기", "id": "INT1-U03-L03", "ready": true, "file": "lessons/INT1/INT1-U03-L03.json" },
+                { "no": 4, "title": "처방약 찾아오기", "id": "INT1-U03-L04", "ready": false},
+                { "no": 5, "title": "약 요청하기", "id": "INT1-U03-L05", "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "일이 안 풀릴때",
+              "lessons": [
+                { "no": 1, "title": "힘든 하루에 대해 이야기하기", "id": "INT1-U04-L01", "ready": false},
+                { "no": 2, "title": "문제에 대해 도움받기", "id": "INT1-U04-L02", "ready": false},
+                { "no": 3, "title": "안 좋은 일 나누기", "id": "INT1-U04-L03", "ready": false},
+                { "no": 4, "title": "주방에서의 실수", "id": "INT1-U04-L04", "ready": false}
+              ]
+            },
+            {
+              "no": 5,
+              "title": "집안일 & 볼일",
+              "lessons": [
+                { "no": 1, "title": "집안일에 대해 이야기하기", "id": "INT1-U05-L01", "ready": false},
+                { "no": 2, "title": "도움 요청하기", "id": "INT1-U05-L02", "ready": false},
+                { "no": 3, "title": "볼일에 대해 이야기하기", "id": "INT1-U05-L03", "ready": false},
+                { "no": 4, "title": "부탁하기", "id": "INT1-U05-L04", "ready": false}
+              ]
+            },
+            {
+              "no": 6,
+              "title": "친구와 근황 이야기하기",
+              "lessons": [
+                { "no": 1, "title": "옛 친구에 대해 묻기", "id": "INT1-U06-L01", "ready": false},
+                { "no": 2, "title": "예전 모습에 대해 이야기하기", "id": "INT1-U06-L02", "ready": false},
+                { "no": 3, "title": "어떻게 변했는지 이야기하기", "id": "INT1-U06-L03", "ready": false},
+                { "no": 4, "title": "근황과 소문", "id": "INT1-U06-L04", "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "INT2",
+          "code": "INT2",
+          "name": "중급 2",
+          "units": [
+            {
+              "no": 1,
+              "title": "여행 경험",
+              "lessons": [
+                { "no": 1, "title": "여행 경험 공유하기", "id": "INT2-U01-L01", "ready": false},
+                { "no": 2, "title": "현지에서 꼭 해야 할 것들 공유하기", "id": "INT2-U01-L02", "ready": false},
+                { "no": 3, "title": "다시 방문하고 싶은지 말하기", "id": "INT2-U01-L03", "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "커리어 방향과 계획",
+              "lessons": [
+                { "no": 1, "title": "직무와 경력 이야기하기", "id": "INT2-U02-L01", "ready": false},
+                { "no": 2, "title": "커리어 목표 공유하기", "id": "INT2-U02-L02", "ready": false},
+                { "no": 3, "title": "커리어 조언하기", "id": "INT2-U02-L03", "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "영화 이야기하기",
+              "lessons": [
+                { "no": 1, "title": "줄거리 요약하기", "id": "INT2-U03-L01", "ready": false},
+                { "no": 2, "title": "감상 공유하기", "id": "INT2-U03-L02", "ready": false},
+                { "no": 3, "title": "아쉬운 점과 평점 말하기", "id": "INT2-U03-L03", "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "항공편 변경하기",
+              "lessons": [
+                { "no": 1, "title": "예약 변경하기", "id": "INT2-U04-L01", "ready": false},
+                { "no": 2, "title": "변경 사유 설명하기", "id": "INT2-U04-L02", "ready": false},
+                { "no": 3, "title": "환불 및 대안 문의하기", "id": "INT2-U04-L03", "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "level-07",
+          "code": null,
+          "name": "중급 3",
+          "units": [
+            {
+              "no": 1,
+              "title": "과거 경험",
+              "lessons": [
+                { "no": 1, "title": "여행에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 2, "title": "과거 경험에 대해 묻기", "id": null, "ready": false},
+                { "no": 3, "title": "최신 근황 나누기", "id": null, "ready": false},
+                { "no": 4, "title": "요즘 하고 있는 일 말하기", "id": null, "ready": false},
+                { "no": 5, "title": "얼마나 오래 됐는지 묻기", "id": null, "ready": false},
+                { "no": 6, "title": "언제부터 했는지 말하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "수입과 지출",
+              "lessons": [
+                { "no": 1, "title": "수입에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 2, "title": "부업에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 3, "title": "자신에게 선물하기", "id": null, "ready": false},
+                { "no": 4, "title": "남에게 대접하기", "id": null, "ready": false},
+                { "no": 5, "title": "예산에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 6, "title": "큰 구매를 위해 저축하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "계획과 실행",
+              "lessons": [
+                { "no": 1, "title": "근황 나누기", "id": null, "ready": false},
+                { "no": 2, "title": "시간을 어떻게 보냈는지 말하기", "id": null, "ready": false},
+                { "no": 3, "title": "계획 변경 이야기하기", "id": null, "ready": false},
+                { "no": 4, "title": "변명하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "가정 & 상상",
+              "lessons": [
+                { "no": 1, "title": "의견 물어보기", "id": null, "ready": false},
+                { "no": 2, "title": "가정 상황 이야기하기 (What would you do?)", "id": null, "ready": false},
+                { "no": 3, "title": "의견 말하기", "id": null, "ready": false},
+                { "no": 4, "title": "소식과 소문에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 5, "title": "놀람 표현하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 5,
+              "title": "조언 주고받기",
+              "lessons": [
+                { "no": 1, "title": "조언 고려하기", "id": null, "ready": false},
+                { "no": 2, "title": "해야 할 일 논의하기", "id": null, "ready": false},
+                { "no": 3, "title": "결정하기", "id": null, "ready": false},
+                { "no": 4, "title": "경고하기", "id": null, "ready": false},
+                { "no": 5, "title": "조언하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 6,
+              "title": "선택과 딜레마",
+              "lessons": [
+                { "no": 1, "title": "선택지 비교하기", "id": null, "ready": false},
+                { "no": 2, "title": "선택 확정하기", "id": null, "ready": false},
+                { "no": 3, "title": "흔들리는 마음 표현하기", "id": null, "ready": false},
+                { "no": 4, "title": "즉흥적으로 행동하기", "id": null, "ready": false},
+                { "no": 5, "title": "고민에 대해 설명하기", "id": null, "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "level-08",
+          "code": null,
+          "name": "중급 4",
+          "units": [
+            {
+              "no": 1,
+              "title": "새로운 시도 & 후회",
+              "lessons": [
+                { "no": 1, "title": "새로운 것 시도하기", "id": null, "ready": false},
+                { "no": 2, "title": "기간에 대해 말하기", "id": null, "ready": false},
+                { "no": 3, "title": "경험에 대해 말하기", "id": null, "ready": false},
+                { "no": 4, "title": "후회 표현하기", "id": null, "ready": false},
+                { "no": 5, "title": "가치 있었다고 말하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "기대와 현실 비교하기",
+              "lessons": [
+                { "no": 1, "title": "기대에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 2, "title": "결과에 대해 말하기", "id": null, "ready": false},
+                { "no": 3, "title": "새롭거나 오래된 경험", "id": null, "ready": false},
+                { "no": 4, "title": "새로운 취미 시도하기", "id": null, "ready": false},
+                { "no": 5, "title": "의견을 강하게 표현하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "가능성 표현하기",
+              "lessons": [
+                { "no": 1, "title": "가능성에 대해 이야기하기", "id": null, "ready": false},
+                { "no": 2, "title": "해야 할 일 말하기", "id": null, "ready": false},
+                { "no": 3, "title": "아슬아슬했던 일 언급하기", "id": null, "ready": false},
+                { "no": 4, "title": "꿈꾸는 삶에 대해 이야기하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "갈등 & 말다툼",
+              "lessons": [
+                { "no": 1, "title": "컴플레인하기", "id": null, "ready": false},
+                { "no": 2, "title": "공감해 주기", "id": null, "ready": false},
+                { "no": 3, "title": "규칙에 대해 경고하기", "id": null, "ready": false},
+                { "no": 4, "title": "화해하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 5,
+              "title": "추억 회상하기",
+              "lessons": [
+                { "no": 1, "title": "과거를 회상하기", "id": null, "ready": false},
+                { "no": 2, "title": "예상치 못한 변화 이야기하기", "id": null, "ready": false},
+                { "no": 3, "title": "과거에 대해 생각하기", "id": null, "ready": false},
+                { "no": 4, "title": "오래된 기억 확인하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 6,
+              "title": "목표 & 가치관",
+              "lessons": [
+                { "no": 1, "title": "미래 계획 공유하기", "id": null, "ready": false},
+                { "no": 2, "title": "예상치 못한 결과 이야기하기", "id": null, "ready": false},
+                { "no": 3, "title": "새로운 관점 설명하기", "id": null, "ready": false},
+                { "no": 4, "title": "가치관 이야기하기", "id": null, "ready": false}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "고급",
+      "levels": [
+        {
+          "key": "level-09",
+          "code": null,
+          "name": "고급 1",
+          "units": [
+            {
+              "no": 1,
+              "title": "Connecting With People",
+              "lessons": [
+                { "no": 1, "title": "Chat about ghosting", "id": null, "ready": false},
+                { "no": 2, "title": "Compare small talk cultures", "id": null, "ready": false},
+                { "no": 3, "title": "Discuss where to hang out", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "Interesting Hobbies",
+              "lessons": [
+                { "no": 1, "title": "Redefine sleeping", "id": null, "ready": false},
+                { "no": 2, "title": "Dive into livestreaming", "id": null, "ready": false},
+                { "no": 3, "title": "Chat about memes", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "Travel Talk",
+              "lessons": [
+                { "no": 1, "title": "Compare lodging options", "id": null, "ready": false},
+                { "no": 2, "title": "Re-experience culture shock", "id": null, "ready": false},
+                { "no": 3, "title": "Discuss overtourism", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "Movies, TV, and Beyond",
+              "lessons": [
+                { "no": 1, "title": "Explore reboots", "id": null, "ready": false},
+                { "no": 2, "title": "Compare subtitles and dubbing", "id": null, "ready": false},
+                { "no": 3, "title": "Chat about streaming", "id": null, "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "level-10",
+          "code": null,
+          "name": "고급 2",
+          "units": [
+            {
+              "no": 1,
+              "title": "Your Travel Style",
+              "lessons": [
+                { "no": 1, "title": "Compare group vs. solo travel", "id": null, "ready": false},
+                { "no": 2, "title": "Discuss your planning style", "id": null, "ready": false},
+                { "no": 3, "title": "Share your travel dreams", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "Your Best Self",
+              "lessons": [
+                { "no": 1, "title": "Discuss healthy digital habits", "id": null, "ready": false},
+                { "no": 2, "title": "Conquer procrastination", "id": null, "ready": false},
+                { "no": 3, "title": "Defeat imposter syndrome", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "Speaking Up at Work",
+              "lessons": [
+                { "no": 1, "title": "Jump into a discussion", "id": null, "ready": false},
+                { "no": 2, "title": "Provide feedback", "id": null, "ready": false},
+                { "no": 3, "title": "Set boundaries", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "Exploring New Endeavors",
+              "lessons": [
+                { "no": 1, "title": "Try something new", "id": null, "ready": false},
+                { "no": 2, "title": "Consider extreme activities", "id": null, "ready": false},
+                { "no": 3, "title": "Monetize your hobby", "id": null, "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "level-11",
+          "code": null,
+          "name": "고급 3",
+          "units": [
+            {
+              "no": 1,
+              "title": "Work in a Changing World",
+              "lessons": [
+                { "no": 1, "title": "AI at work", "id": null, "ready": false},
+                { "no": 2, "title": "Choosing where you work", "id": null, "ready": false},
+                { "no": 3, "title": "The four-day workweek", "id": null, "ready": false},
+                { "no": 4, "title": "What makes a good manager", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "How We Live",
+              "lessons": [
+                { "no": 1, "title": "Personality types everywhere", "id": null, "ready": false},
+                { "no": 2, "title": "Unproductive hobbies", "id": null, "ready": false},
+                { "no": 3, "title": "Running clubs as social hubs", "id": null, "ready": false},
+                { "no": 4, "title": "Talking to strangers", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "Money & Modern Choices",
+              "lessons": [
+                { "no": 1, "title": "Homeownership as a life goal", "id": null, "ready": false},
+                { "no": 2, "title": "Going cashless", "id": null, "ready": false},
+                { "no": 3, "title": "Secondhand goes mainstream", "id": null, "ready": false},
+                { "no": 4, "title": "Saving versus living now", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "Culture Without Borders",
+              "lessons": [
+                { "no": 1, "title": "When local trends go global", "id": null, "ready": false},
+                { "no": 2, "title": "Streaming and entertainment", "id": null, "ready": false},
+                { "no": 3, "title": "Nostalgia and creativity", "id": null, "ready": false},
+                { "no": 4, "title": "The oat milk takeover", "id": null, "ready": false}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "마스터",
+      "levels": [
+        {
+          "key": "level-12",
+          "code": null,
+          "name": "마스터 1",
+          "units": [
+            {
+              "no": 1,
+              "title": "Finding a Middle Ground",
+              "lessons": [
+                { "no": 1, "title": "Accommodate different needs", "id": null, "ready": false},
+                { "no": 2, "title": "Handle conflicts", "id": null, "ready": false},
+                { "no": 3, "title": "Clashing work styles", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "Negotiating",
+              "lessons": [
+                { "no": 1, "title": "Make a deal", "id": null, "ready": false},
+                { "no": 2, "title": "Give and take", "id": null, "ready": false},
+                { "no": 3, "title": "Make a case", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "Giving Constructive Feedback",
+              "lessons": [
+                { "no": 1, "title": "Different points of view", "id": null, "ready": false},
+                { "no": 2, "title": "Express opinions", "id": null, "ready": false},
+                { "no": 3, "title": "Offer feedback", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "Making Amends",
+              "lessons": [
+                { "no": 1, "title": "Own up to mistakes", "id": null, "ready": false},
+                { "no": 2, "title": "Open up about feelings", "id": null, "ready": false},
+                { "no": 3, "title": "Give an overdue apology", "id": null, "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "level-13",
+          "code": null,
+          "name": "마스터 2",
+          "units": [
+            {
+              "no": 1,
+              "title": "Culture in Fast Forward",
+              "lessons": [
+                { "no": 1, "title": "If travel broadens the mind", "id": null, "ready": false},
+                { "no": 2, "title": "After the shared moment", "id": null, "ready": false},
+                { "no": 3, "title": "AI and art", "id": null, "ready": false},
+                { "no": 4, "title": "Patience for long stories", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "Influence at Work",
+              "lessons": [
+                { "no": 1, "title": "Leaders : born or made", "id": null, "ready": false},
+                { "no": 2, "title": "If networking is overrated", "id": null, "ready": false},
+                { "no": 3, "title": "Global teams run on English", "id": null, "ready": false},
+                { "no": 4, "title": "The value of compromise", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "The Modern Mind",
+              "lessons": [
+                { "no": 1, "title": "Online strangers as friends", "id": null, "ready": false},
+                { "no": 2, "title": "Tracking your health", "id": null, "ready": false},
+                { "no": 3, "title": "Outsourced memory", "id": null, "ready": false},
+                { "no": 4, "title": "A week without your phone", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "Money in Motion",
+              "lessons": [
+                { "no": 1, "title": "Shrinkflation", "id": null, "ready": false},
+                { "no": 2, "title": "Prices by the minute", "id": null, "ready": false},
+                { "no": 3, "title": "Investing as the new saving", "id": null, "ready": false},
+                { "no": 4, "title": "Changing careers mid-life", "id": null, "ready": false}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "비즈니스 영어",
+      "levels": [
+        {
+          "key": "level-14",
+          "code": null,
+          "name": "직장 커뮤니케이션 기초",
+          "units": [
+            {
+              "no": 1,
+              "title": "자기소개",
+              "lessons": [
+                { "no": 1, "title": "직무 소개하기", "id": null, "ready": false},
+                { "no": 2, "title": "경력 소개하기", "id": null, "ready": false},
+                { "no": 3, "title": "담당 업무 소개하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "업무 요청",
+              "lessons": [
+                { "no": 1, "title": "업무 도움 요청하기", "id": null, "ready": false},
+                { "no": 2, "title": "업무 요청 받아들이기", "id": null, "ready": false},
+                { "no": 3, "title": "업무 요청 거절하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "업무 일정",
+              "lessons": [
+                { "no": 1, "title": "근무 일정 말하기", "id": null, "ready": false},
+                { "no": 2, "title": "업무 일과 말하기", "id": null, "ready": false},
+                { "no": 3, "title": "회의 일정 잡기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "의견 조율",
+              "lessons": [
+                { "no": 1, "title": "의견 동의하기", "id": null, "ready": false},
+                { "no": 2, "title": "이견 제시하기", "id": null, "ready": false},
+                { "no": 3, "title": "중간 지점 찾기", "id": null, "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "level-15",
+          "code": null,
+          "name": "직장 커뮤니케이션 중급",
+          "units": [
+            {
+              "no": 1,
+              "title": "팀 회의",
+              "lessons": [
+                { "no": 1, "title": "명확한 설명 요청하기", "id": null, "ready": false},
+                { "no": 2, "title": "의견에 동의하기", "id": null, "ready": false},
+                { "no": 3, "title": "대안 제안하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "프로젝트 진행 상황",
+              "lessons": [
+                { "no": 1, "title": "이슈 공유하기", "id": null, "ready": false},
+                { "no": 2, "title": "선택지 따져보기", "id": null, "ready": false},
+                { "no": 3, "title": "회의 마무리하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "동료와의 면담",
+              "lessons": [
+                { "no": 1, "title": "도움 요청하기", "id": null, "ready": false},
+                { "no": 2, "title": "공감과 응원 표현하기", "id": null, "ready": false},
+                { "no": 3, "title": "조언하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "커리어 면담",
+              "lessons": [
+                { "no": 1, "title": "성과 되짚어보기", "id": null, "ready": false},
+                { "no": 2, "title": "근황 이야기하기", "id": null, "ready": false},
+                { "no": 3, "title": "목표 이야기하기", "id": null, "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "level-16",
+          "code": null,
+          "name": "비즈니스 영어 1",
+          "units": [
+            {
+              "no": 1,
+              "title": "효율적인 회의",
+              "lessons": [
+                { "no": 1, "title": "면담 일정을 잡는게 좋겠어요", "id": null, "ready": false},
+                { "no": 2, "title": "목소리가 나왔다 안나왔다 끊겨요", "id": null, "ready": false},
+                { "no": 3, "title": "앞에 회의가 좀 늦어지고 있어요", "id": null, "ready": false},
+                { "no": 4, "title": "지금 우리가 본론에서 좀 벗어나고 있어요", "id": null, "ready": false},
+                { "no": 5, "title": "참고하시라고 이메일을 포워드 해드렸어요", "id": null, "ready": false},
+                { "no": 6, "title": "회의 마무리하기 전에, 다음으로 할 일이 뭐죠?", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "프리젠테이션",
+              "lessons": [
+                { "no": 1, "title": "발표의 취지는 마케팅 전략을 간략하게 설명해 주기 위함입니다", "id": null, "ready": false},
+                { "no": 2, "title": "목표 달성을 위해서, 전사적인 노력이 필요합니다.", "id": null, "ready": false},
+                { "no": 3, "title": "무려 20%의 생산력 증가를 기대할 수 있습니다.", "id": null, "ready": false},
+                { "no": 4, "title": "데이터에서 보시다시피, 수치가 약간 상승했습니다.", "id": null, "ready": false},
+                { "no": 5, "title": "이제 다음 주제로 넘어가겠습니다.", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "커뮤니케이션",
+              "lessons": [
+                { "no": 1, "title": "결정을 보류하자는 말씀이신 거죠?", "id": null, "ready": false},
+                { "no": 2, "title": "마감이 너무 빠듯하다고 생각하지 않으세요?", "id": null, "ready": false},
+                { "no": 3, "title": "프로모션을 진행해보면 어때요?", "id": null, "ready": false},
+                { "no": 4, "title": "해볼 만하다고 생각해요", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "업무 협의",
+              "lessons": [
+                { "no": 1, "title": "고객 만족도가 역대 최고라는 걸 특별히 강조하고 싶습니다.", "id": null, "ready": false},
+                { "no": 2, "title": "결국엔 시간이 더 많이 필요해요", "id": null, "ready": false},
+                { "no": 3, "title": "상황을 감안했을 때, 계약직을 고용하는 것이 합리적인가요?", "id": null, "ready": false},
+                { "no": 4, "title": "다른 업체를 찾는선에서 절충하는 게 어때요?", "id": null, "ready": false},
+                { "no": 5, "title": "프로젝트의 마무리 작업을 해야 해요", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 5,
+              "title": "업무 공유",
+              "lessons": [
+                { "no": 1, "title": "다름 아니라, 제가 보내드린 이메일에 대해 추가로 확인하고 싶습니다.", "id": null, "ready": false},
+                { "no": 2, "title": "문제를 좀 더 자세히 알아볼게요", "id": null, "ready": false},
+                { "no": 3, "title": "설문 결과에 대해 어떻게 생각하세요?", "id": null, "ready": false},
+                { "no": 4, "title": "가능한 빨리 알려주세요 (공손버전)", "id": null, "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "level-17",
+          "code": null,
+          "name": "비즈니스 영어 2",
+          "units": [
+            {
+              "no": 1,
+              "title": "오피스 생활",
+              "lessons": [
+                { "no": 1, "title": "저는 작년에 입사했어요", "id": null, "ready": false},
+                { "no": 2, "title": "뭐든 필요하면 부담 갖지 말고 연락 주세요", "id": null, "ready": false},
+                { "no": 3, "title": "최근에 신규 프로젝트를 맡았어", "id": null, "ready": false},
+                { "no": 4, "title": "아직 그것을 미처 못 했어", "id": null, "ready": false},
+                { "no": 5, "title": "조금씩 감을 잡아가고 있어요", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "동료와의 관계",
+              "lessons": [
+                { "no": 1, "title": "고생해 주셔서 감사해요", "id": null, "ready": false},
+                { "no": 2, "title": "마감을 못 맞춰서 회사에서 혼났어", "id": null, "ready": false},
+                { "no": 3, "title": "일 끝나고 치맥 어때?", "id": null, "ready": false},
+                { "no": 4, "title": "나 연차 쓸 거야", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "공유",
+              "lessons": [
+                { "no": 1, "title": "그 이슈는 따로 논의하는게 어때요?", "id": null, "ready": false},
+                { "no": 2, "title": "우리 잠깐 확인차 대화해야 돼요", "id": null, "ready": false},
+                { "no": 3, "title": "나에게 진행 상황을 계속 알려주세요", "id": null, "ready": false},
+                { "no": 4, "title": "도착하면 그냥 메시지 하나 보내주세요", "id": null, "ready": false},
+                { "no": 5, "title": "오늘 짬 내서 할 수 있어", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "담당업무 및 협업",
+              "lessons": [
+                { "no": 1, "title": "마케팅적인 부분은 제가 맡아서 처리할 거에요", "id": null, "ready": false},
+                { "no": 2, "title": "회의를 준비할 여유가 되세요?", "id": null, "ready": false},
+                { "no": 3, "title": "회의의 요점을 잠깐 설명해 줄 수 있어요?", "id": null, "ready": false},
+                { "no": 4, "title": "처리해야 할 밀린 이메일이 많아요", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 5,
+              "title": "진행/보류/결과",
+              "lessons": [
+                { "no": 1, "title": "상사에게 아이디어를 보고했어요", "id": null, "ready": false},
+                { "no": 2, "title": "프로젝트를 진행하기로 결정했어요", "id": null, "ready": false},
+                { "no": 3, "title": "순조롭게 진행되고 있어요", "id": null, "ready": false},
+                { "no": 4, "title": "일정보다 좀 늦어지고 있어요", "id": null, "ready": false},
+                { "no": 5, "title": "그다지 가시적인 성과를 내지 못했어요", "id": null, "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "level-18",
+          "code": null,
+          "name": "비즈니스 영어 3",
+          "units": [
+            {
+              "no": 1,
+              "title": "회의",
+              "lessons": [
+                { "no": 1, "title": "팀에게 진행 상황 알리기", "id": null, "ready": false},
+                { "no": 2, "title": "고객과 미팅하기", "id": null, "ready": false},
+                { "no": 3, "title": "회의 일정 잡기", "id": null, "ready": false},
+                { "no": 4, "title": "회의 일정 변경하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "동료와 협업하기",
+              "lessons": [
+                { "no": 1, "title": "프로젝트 이슈", "id": null, "ready": false},
+                { "no": 2, "title": "완료 기한 약속하기", "id": null, "ready": false},
+                { "no": 3, "title": "도움 요청하기", "id": null, "ready": false},
+                { "no": 4, "title": "조언하기", "id": null, "ready": false},
+                { "no": 5, "title": "찬성, 반대 의견 말하기", "id": null, "ready": false},
+                { "no": 6, "title": "다시 설명 요청하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "사무실에서의 스몰토크",
+              "lessons": [
+                { "no": 1, "title": "스몰토크 나누기", "id": null, "ready": false},
+                { "no": 2, "title": "1:1 미팅하기", "id": null, "ready": false},
+                { "no": 3, "title": "사내 소문", "id": null, "ready": false},
+                { "no": 4, "title": "간식 주문하기", "id": null, "ready": false},
+                { "no": 5, "title": "퇴근 도장 찍기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "프리젠테이션",
+              "lessons": [
+                { "no": 1, "title": "프리젠테이션 시작하기", "id": null, "ready": false},
+                { "no": 2, "title": "시각 자료 언급하기", "id": null, "ready": false},
+                { "no": 3, "title": "트렌드 설명하기", "id": null, "ready": false},
+                { "no": 4, "title": "자연스럽게 주제 전환하기", "id": null, "ready": false},
+                { "no": 5, "title": "기술적인 문제", "id": null, "ready": false},
+                { "no": 6, "title": "프리젠테이션 마무리하기", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 5,
+              "title": "필수 비즈니스 표현",
+              "lessons": [
+                { "no": 1, "title": "휴가에서 복귀하기", "id": null, "ready": false},
+                { "no": 2, "title": "업무 적응하기", "id": null, "ready": false},
+                { "no": 3, "title": "아이디어 공유하기", "id": null, "ready": false},
+                { "no": 4, "title": "집중 모드", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 6,
+              "title": "네트워킹 및 인터뷰",
+              "lessons": [
+                { "no": 1, "title": "컨퍼런스 참석하기", "id": null, "ready": false},
+                { "no": 2, "title": "전화 통화하기", "id": null, "ready": false},
+                { "no": 3, "title": "강점과 약점", "id": null, "ready": false},
+                { "no": 4, "title": "취업 면접 보기", "id": null, "ready": false},
+                { "no": 5, "title": "급여 협상하기", "id": null, "ready": false}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "여행 영어",
+      "levels": [
+        {
+          "key": "level-19",
+          "code": null,
+          "name": "여행 영어 1",
+          "units": [
+            {
+              "no": 1,
+              "title": "맛집 즐기기",
+              "lessons": [
+                { "no": 1, "title": "로컬 맛집 추천해주실래요?", "id": null, "ready": false},
+                { "no": 2, "title": "창가 테이블로 가능할까요?", "id": null, "ready": false},
+                { "no": 3, "title": "메뉴 좀 주실래요?", "id": null, "ready": false},
+                { "no": 4, "title": "쌀국수, 고수 빼고 주세요", "id": null, "ready": false},
+                { "no": 5, "title": "앞접시 좀 갖다 주실래요?", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "공항에서",
+              "lessons": [
+                { "no": 1, "title": "입국 심사 통과하기 1탄", "id": null, "ready": false},
+                { "no": 2, "title": "입국 심사 통과하기 2탄", "id": null, "ready": false},
+                { "no": 3, "title": "환승편을 놓칠까 조마조마해요", "id": null, "ready": false},
+                { "no": 4, "title": "제 짐이 안나왔어요", "id": null, "ready": false},
+                { "no": 5, "title": "복도 자리로 부탁해요", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "호텔, 숙박",
+              "lessons": [
+                { "no": 1, "title": "에어비엔비, 게스트하우스", "id": null, "ready": false},
+                { "no": 2, "title": "조식 시간이 어떻게 돼요?", "id": null, "ready": false},
+                { "no": 3, "title": "룸서비스 주문하고 싶어요", "id": null, "ready": false},
+                { "no": 4, "title": "에어컨이 안 되는 것 같아요", "id": null, "ready": false},
+                { "no": 5, "title": "여기 짐 좀 맡겨 놔도 돼요?", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 4,
+              "title": "시티 투어",
+              "lessons": [
+                { "no": 1, "title": "저기요, 새치기하지 마세요", "id": null, "ready": false},
+                { "no": 2, "title": "여기 와이파이가 뭐에요?", "id": null, "ready": false},
+                { "no": 3, "title": "분실물 센터가 어디 있나요?", "id": null, "ready": false},
+                { "no": 4, "title": "안전한 시티투어의 필수 표현", "id": null, "ready": false}
+              ]
+            }
+          ]
+        },
+        {
+          "key": "level-20",
+          "code": null,
+          "name": "여행 영어 2",
+          "units": [
+            {
+              "no": 1,
+              "title": "맛집 즐기기 2탄",
+              "lessons": [
+                { "no": 1, "title": "저기요, 파스타가 너무 불었어요", "id": null, "ready": false},
+                { "no": 2, "title": "계산서가 잘못됐어요", "id": null, "ready": false},
+                { "no": 3, "title": "1번 세트 메뉴로 주세요", "id": null, "ready": false},
+                { "no": 4, "title": "하우스 레드와인 한잔 주세요", "id": null, "ready": false},
+                { "no": 5, "title": "톨 아이스 라테, 얼음 조금만 주세요", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 2,
+              "title": "비행기/교통",
+              "lessons": [
+                { "no": 1, "title": "거기 제 자리인 것 같아요", "id": null, "ready": false},
+                { "no": 2, "title": "비행기 시간을 바꾸고 싶어요", "id": null, "ready": false},
+                { "no": 3, "title": "그냥 다음 신호등에서 내릴게요", "id": null, "ready": false},
+                { "no": 4, "title": "역까지 몇 정거장 더 남았어요?", "id": null, "ready": false},
+                { "no": 5, "title": "런던행 기차는 어느 승강장에서 출발하나요?", "id": null, "ready": false}
+              ]
+            },
+            {
+              "no": 3,
+              "title": "쇼핑",
+              "lessons": [
+                { "no": 1, "title": "서비스로 열쇠고리 하나 주세요 (흥정하기)", "id": null, "ready": false},
+                { "no": 2, "title": "전 피부가 잘 뒤집어져요", "id": null, "ready": false},
+                { "no": 3, "title": "이 재킷 세일중인가요?", "id": null, "ready": false},
+                { "no": 4, "title": "뽁뽁이로 싸줄 수 있나요?", "id": null, "ready": false},
+                { "no": 5, "title": "이 셔츠 반품하고 싶어요", "id": null, "ready": false}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

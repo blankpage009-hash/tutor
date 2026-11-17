@@ -1,0 +1,104 @@
+.card {
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.en {
+  margin: 0 0 var(--space-2);
+  font-family: var(--type-sentence-family);
+  font-size: var(--type-sentence-size);
+  line-height: var(--type-sentence-line);
+  font-weight: var(--type-sentence-weight);
+  letter-spacing: var(--type-sentence-tracking);
+}
+
+.ko, .text {
+  margin: 0;
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+}
+
+.ko { color: var(--ink-muted); }
+
+.stress {
+  margin: var(--space-3) 0 0;
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+  color: var(--ink-muted);
+}
+
+/* 강세 받는 부분(대문자)만 진하게 */
+.strong {
+  color: var(--accent-ink);
+  font-weight: var(--type-headline-weight);
+}
+
+.label {
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  line-height: var(--type-label-line);
+  font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
+  color: var(--ink-muted);
+}
+
+.listen {
+  margin-top: var(--space-4);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.error {
+  margin: var(--space-2) 0 0;
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--danger);
+}
+
+.section { padding: var(--space-5) 0 0; }
+
+.heading {
+  margin: 0 0 var(--space-3);
+  font-size: var(--type-title-size);
+  line-height: var(--type-title-line);
+  font-weight: var(--type-title-weight);
+  letter-spacing: var(--type-title-tracking);
+}
+
+.bullets {
+  margin: 0;
+  padding-left: var(--space-5);
+  display: grid;
+  gap: var(--space-2);
+}
+
+.items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.enBlock {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-sunk);
+  border-radius: var(--radius-md);
+}
+
+.enBlock .text + .ko { margin-top: var(--space-2); }
+
+.wrong {
+  margin: 0;
+  color: var(--danger);
+  text-decoration: line-through;
+}
+
+.right {
+  margin: 0;
+  font-weight: var(--type-headline-weight);
+}
+
+.actions { margin: var(--space-6) 0 var(--space-5); }
