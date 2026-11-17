@@ -5,6 +5,8 @@ import { CourseDetailScreen } from './screens/CourseDetailScreen';
 import { ScreenPlaceholder } from './components/ScreenPlaceholder';
 import { CoursesScreen } from './screens/CoursesScreen';
 import { CurriculumLevelScreen } from './screens/CurriculumLevelScreen';
+import { DialogueScreen } from './screens/DialogueScreen';
+import { DrillScreen } from './screens/DrillScreen';
 import { LearnScreen } from './screens/LearnScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { LessonScreen } from './screens/LessonScreen';
@@ -44,9 +46,11 @@ export function App() {
           <Route path="/shadowing/:lessonId" element={<ShadowingScreen key="shadowing" />} />
           <Route path="/variation/:lessonId" element={<VariationScreen key="variation" />} />
           <Route path="/lesson-review/:lessonId" element={<ShadowingScreen key="review" kind="review" />} />
-          {/* 새 커리큘럼 레슨 (Phase 5.5). 대화문은 세션 2에서 만들 때까지 "준비 중" 빈 화면 */}
+          {/* 새 커리큘럼 레슨 (Phase 5.5). 롤플레이는 세션 3에서 만들 때까지 "준비 중" 빈 화면 */}
           <Route path="/n/:lessonId/learn" element={<LearnScreen />} />
-          <Route path="/n/:lessonId/dialogue" element={<ScreenPlaceholder title="대화문" phase="Phase 5.5 세션 2" />} />
+          <Route path="/n/:lessonId/dialogue" element={<DialogueScreen />} />
+          <Route path="/n/:lessonId/drill" element={<DrillScreen />} />
+          <Route path="/n/:lessonId/roleplay" element={<ScreenPlaceholder title="롤플레이" phase="Phase 5.5 세션 3" />} />
           <Route path="/review" element={<ReviewScreen />} />
           <Route path="/vocab/quiz" element={<VocabQuizScreen />} />
           <Route path="/roleplay" element={<RoleplayScreen />} />

@@ -19,7 +19,17 @@ export type HandsFreeDeps<S> = {
   recordPass: (s: S) => boolean;
   advance: () => void; // 화면을 다음 문장으로 (마지막 문장이면 "모두 통과")
   onStep?: (step: HandsFreeStep, s: S) => void;
+  // 아래 셋은 드릴용(Phase 5.5). 안 주면 쉐도잉·변형·복습과 같은 기본 동작
+  shouldRead?: (s: S) => boolean; // false면 튜터가 먼저 읽지 않고 바로 듣는다 (보고·기억 회차)
+  readFirst?: (s: S) => Promise<void>; // 먼저 읽을 소리를 바꿀 때 (상황 응답은 정답 대신 cue)
+  // 'slow-and-continue': 연속 실패가 maxFails에 닿으면 멈추지 않고 느리게 들려준 뒤 횟수를 0으로
+  onTooManyFails?: 'stop' | 'slow-and-continue';
 };
+
+async function playSlow<S>(d: HandsFreeDeps<S>, s: S): Promise<void> {
+  d.onStep?.('slow', s);
+  await d.play(s, d.slowRate);
+}
 
 // 화면이 다시 그려지기 전에도 옛 문장을 또 읽지 않도록, 문장 번호는 여기서 따로 들고 간다
 export async function runHandsFree<S>(d: HandsFreeDeps<S>): Promise<HandsFreeEnd> {
@@ -28,9 +38,9 @@ export async function runHandsFree<S>(d: HandsFreeDeps<S>): Promise<HandsFreeEnd
   let read = true;
   for (;;) {
     const s = d.sentences[i];
-    if (read) {
+    if (read && (d.shouldRead?.(s) ?? true)) {
       d.onStep?.('reading', s);
-      await d.play(s, 1);
+      await (d.readFirst ? d.readFirst(s) : d.play(s, 1));
       if (d.stopped()) return 'stopped';
     }
     d.onStep?.('listening', s);
@@ -48,13 +58,15 @@ export async function runHandsFree<S>(d: HandsFreeDeps<S>): Promise<HandsFreeEnd
       continue;
     }
     fails += 1;
-    if (fails >= d.maxFails) return 'too-many-fails';
-    // 틀리면 느리게 한 번 들려준 뒤 보통 속도로 다시 읽지 않고 바로 듣는다
+    // 틀리면 보통 속도로 다시 읽지 않고 바로 듣는다
     read = false;
-    if (d.failFeedback) {
-      d.onStep?.('slow', s);
-      await d.play(s, d.slowRate);
-      if (d.stopped()) return 'stopped';
+    if (fails >= d.maxFails) {
+      if (d.onTooManyFails !== 'slow-and-continue') return 'too-many-fails';
+      fails = 0;
+      await playSlow(d, s);
+    } else if (d.failFeedback) {
+      await playSlow(d, s);
     }
+    if (d.stopped()) return 'stopped';
   }
 }

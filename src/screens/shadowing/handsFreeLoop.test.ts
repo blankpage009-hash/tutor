@@ -65,6 +65,35 @@ describe('손 안 대고 이어 말하기 순서', () => {
     expect(calls[0]).toBe('play s2 1');
   });
 
+  it('드릴: 먼저 읽지 않을 회차는 바로 듣는다', async () => {
+    const { deps, calls } = setup(['passed', 'passed', 'passed'], { shouldRead: (s) => s !== 's2' });
+    expect(await runHandsFree(deps)).toBe('done');
+    expect(calls).toEqual(['play s1 1', 'hear s1', 'hear s2', 'play s3 1', 'hear s3']);
+  });
+
+  it('드릴: 먼저 읽을 소리를 바꿀 수 있다 (상황 응답 cue)', async () => {
+    const { deps, calls } = setup(['passed', 'passed', 'passed'], {
+      readFirst: async (s) => { calls.push(`cue ${s}`); }
+    });
+    expect(await runHandsFree(deps)).toBe('done');
+    expect(calls.slice(0, 2)).toEqual(['cue s1', 'hear s1']);
+  });
+
+  it('드릴: 1~2번 실패는 소리 없이 다시, 3번째에 느리게 들려주고 멈추지 않는다', async () => {
+    const { deps, calls } = setup(['failed', 'failed', 'failed', 'passed', 'passed', 'passed'], {
+      failFeedback: false, onTooManyFails: 'slow-and-continue'
+    });
+    expect(await runHandsFree(deps)).toBe('done');
+    expect(calls.slice(0, 6)).toEqual(['play s1 1', 'hear s1', 'hear s1', 'hear s1', 'play s1 0.75', 'hear s1']);
+  });
+
+  it('드릴: 느리게 들려준 뒤 실패 수는 0부터 다시 센다', async () => {
+    const results: HearStatus[] = ['failed', 'failed', 'failed', 'failed', 'failed', 'failed', 'passed', 'passed', 'passed'];
+    const { deps, calls } = setup(results, { failFeedback: false, onTooManyFails: 'slow-and-continue' });
+    expect(await runHandsFree(deps)).toBe('done');
+    expect(calls.filter((c) => c === 'play s1 0.75')).toHaveLength(2);
+  });
+
   it('멈춤을 누르면 그 순간 듣던 결과는 기록하지 않는다', async () => {
     let stop = false;
     const recordPass = vi.fn(() => true);

@@ -1,0 +1,132 @@
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { BackLink } from '../components/BackLink';
+import { Button } from '../components/Button';
+import { ScreenHeader } from '../components/ScreenHeader';
+import type { DialogueLine, NewLesson } from '../content/lessonTypes';
+import type { Sentence } from '../content/types';
+import { unlockAudio } from '../speech/audioPlayer';
+import { newStagePath, nextNewStage } from '../newLessonFlow';
+import courseStyles from './courses/Courses.module.css';
+import styles from './dialogue/Dialogue.module.css';
+import { DialogueLines } from './dialogue/DialogueLines';
+import { MyLinePanel } from './dialogue/MyLinePanel';
+import { useLinePlayer } from './dialogue/useLinePlayer';
+import { useNewLesson } from './newLesson/useNewLesson';
+import { useNewSpeaking } from './newLesson/useNewSpeaking';
+
+// 대화문에는 기준 점수가 따로 없어 드릴 기준(80%)과 맞춘다
+const THRESHOLD = 0.8;
+// 통과 글자를 잠깐 보여 준 뒤 다음 상대 줄로
+const PASS_PAUSE_MS = 800;
+
+type Phase = 'intro' | 'practice' | 'done';
+
+function lineSentence(lessonId: string, l: DialogueLine): Sentence {
+  return { id: `${lessonId}-dlg${l.no}`, en: l.en, ko: l.ko, note: '', hintWords: [], vocab: [], variations: [], audio: l.audio };
+}
+
+// 새 레슨 STEP 2 대화문(/n/:lessonId/dialogue): 전체 듣기 → 상대 줄은 자동 재생, 내 줄에서 멈추고 말하기
+export function DialogueScreen() {
+  const { lessonId = '' } = useParams();
+  const { lesson, error } = useNewLesson(lessonId, 'dialogue');
+  if (error) return <p className={courseStyles.meta} lang="ko">{error}</p>;
+  if (!lesson) return <p className={courseStyles.meta} lang="ko">불러오는 중…</p>;
+  return <DialogueBody key={lesson.lessonId} lesson={lesson} />;
+}
+
+// 연습 순서: go(from)이 상대 줄을 이어서 틀고 내 줄에 닿으면 멈춘다.
+// 말하기 문장(meIdx)은 내 줄에 닿았을 때만 바꾼다 — 상대 줄 재생 중에 바꾸면 말하기 엔진이 재생을 끊는다
+function useDialoguePractice(lesson: NewLesson) {
+  const lines = lesson.dialogue.lines;
+  const player = useLinePlayer(lines);
+  const { playPartners } = player;
+  const [phase, setPhase] = useState<Phase>('intro');
+  const [cur, setCur] = useState(0);
+  const [meIdx, setMeIdx] = useState<number | null>(null);
+  const curRef = useRef(cur);
+  curRef.current = cur;
+
+  const go = useCallback((from: number) => {
+    setCur(from);
+    playPartners(from).then((i) => {
+      if (i === null) return;
+      setCur(i);
+      if (i >= lines.length) setPhase('done');
+      else setMeIdx(i);
+    });
+  }, [playPartners, lines.length]);
+
+  const start = () => {
+    unlockAudio(); // iOS: 탭한 순간 먼저
+    setPhase('practice');
+    go(0);
+  };
+  const sentence = useMemo(() => (meIdx === null ? null : lineSentence(lesson.lessonId, lines[meIdx])), [meIdx, lines, lesson.lessonId]);
+  return { lines, player, phase, cur, curRef, meIdx, go, start, sentence };
+}
+
+function DialogueBody({ lesson }: { lesson: NewLesson }) {
+  const nav = useNavigate();
+  const d = useDialoguePractice(lesson);
+  const timer = useRef<number | null>(null);
+  useEffect(() => () => { if (timer.current !== null) window.clearTimeout(timer.current); }, []);
+  const speaking = useNewSpeaking(d.sentence, {
+    threshold: THRESHOLD, failFeedback: false,
+    onResult: (_id, status) => {
+      if (status !== 'passed') return;
+      timer.current = window.setTimeout(() => d.go(d.curRef.current + 1), PASS_PAUSE_MS);
+    }
+  });
+  const myTurn = d.phase === 'practice' && d.player.playing === null && d.meIdx === d.cur;
+  return (
+    <>
+      <BackLink to={`/curriculum/${lesson.levelCode}`} label={lesson.level} />
+      <ScreenHeader eyebrow={`유닛 ${lesson.unit} · STEP 2 대화문`} title={lesson.lessonTitle} />
+      <p className={styles.situation} lang="ko">{lesson.dialogue.situation} (상대: {lesson.dialogue.partnerRole})</p>
+      <DialogueLines lines={d.lines} partnerRole={lesson.dialogue.partnerRole}
+        current={d.player.playing ?? (d.phase === 'practice' ? d.cur : null)}
+        upTo={d.phase === 'practice' ? d.cur : undefined} />
+      {myTurn && <MyLinePanel attempt={speaking.attempt} threshold={THRESHOLD} engineNote={speaking.engineNote}
+        micLocked={speaking.micLocked} onSkip={() => d.go(d.cur + 1)} />}
+      {d.phase === 'intro' && <IntroActions playing={d.player.playing !== null}
+        onPlayAll={() => { void d.player.playAll(); }} onStop={d.player.stop} onStart={d.start} />}
+      {d.phase === 'done' && <DoneActions lesson={lesson} onAgain={d.start}
+        onNext={() => nav(newStagePath(lesson.lessonId, nextNewStage('dialogue')))} />}
+    </>
+  );
+}
+
+type IntroProps = { playing: boolean; onPlayAll: () => void; onStop: () => void; onStart: () => void };
+
+function IntroActions({ playing, onPlayAll, onStop, onStart }: IntroProps) {
+  return (
+    <div className={courseStyles.actions}>
+      {playing
+        ? <Button block onClick={onStop}>멈추기</Button>
+        : <Button block onClick={onPlayAll}>전체 듣기</Button>}
+      <Button variant="primary" block disabled={playing} onClick={onStart}>내 줄 말하기 시작</Button>
+    </div>
+  );
+}
+
+function DoneActions({ lesson, onAgain, onNext }: { lesson: NewLesson; onAgain: () => void; onNext: () => void }) {
+  return (
+    <>
+      <p className={`${styles.result} ${styles.pass}`} lang="ko">대화문을 끝까지 했어요!</p>
+      <h2 className={styles.heading} lang="ko">표현 노트</h2>
+      <ul className={styles.notes}>
+        {lesson.dialogue.expressionNotes.map((n) => (
+          <li key={n.en}>
+            <p className={styles.en} lang="en">{n.en}</p>
+            <p className={styles.ko} lang="ko">{n.ko}</p>
+          </li>
+        ))}
+      </ul>
+      <div className={courseStyles.actions}>
+        <Button variant="primary" block onClick={onNext}>드릴로</Button>
+        <Button block onClick={onAgain}>대화문 다시 연습</Button>
+      </div>
+    </>
+  );
+}

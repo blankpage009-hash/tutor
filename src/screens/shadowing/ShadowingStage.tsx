@@ -36,6 +36,11 @@ type Props = {
   micLocked: boolean; // 인식 준비가 끝나기 전에는 마이크를 못 누르게
   handsFree: HandsFreeView;
   onSecretTap: () => void; // 맨 위 "문장 1 / 3" 글자 누름 (5번이면 진단 패널 열기/닫기)
+  // 아래는 드릴용(Phase 5.5). 안 주면 지금처럼 영어+한국어, 듣기 버튼 모두 보임
+  show?: 'en+ko' | 'en' | 'ko' | 'cue';
+  cue?: { text: string; lang: 'en' | 'ko'; onPlay?: () => void }; // 상황 응답의 상황(영어 cue만 소리 있음)
+  hideTutorButtons?: boolean; // 정답이 들려 버리는 회차(보고·기억·상황)에서 "다시 듣기" 숨김
+  skipLast?: boolean; // 마지막에서도 건너뛰기를 보일지 (드릴: 마지막 회차를 못 넘어 갇히지 않게)
 };
 
 export type HandsFreeView = {
@@ -95,8 +100,11 @@ function Extras({ p, listening }: { p: Props; listening: boolean }) {
   return (
     <>
       <div className={styles.actions}>
-        <Button size="sm" onClick={() => p.attempt.playTutor(1)} disabled={listening}>문장 다시 듣기</Button>
-        <Button size="sm" onClick={() => p.attempt.playTutor(p.slowRate)} disabled={listening}>느리게 듣기</Button>
+        {!p.hideTutorButtons && <>
+          <Button size="sm" onClick={() => p.attempt.playTutor(1)} disabled={listening}>문장 다시 듣기</Button>
+          <Button size="sm" onClick={() => p.attempt.playTutor(p.slowRate)} disabled={listening}>느리게 듣기</Button>
+        </>}
+        {p.cue?.onPlay && <Button size="sm" onClick={p.cue.onPlay} disabled={listening}>상황 다시 듣기</Button>}
         {p.attempt.myVoice && <Button size="sm" onClick={playMine} disabled={listening}>내 목소리 듣기</Button>}
         {p.saveable && <Button size="sm" onClick={p.onSave} disabled={p.saved}>{p.saved ? '저장됨' : '문장 저장'}</Button>}
       </div>
@@ -122,6 +130,22 @@ function HandsFreeControl({ hf }: { hf: HandsFreeView }) {
   );
 }
 
+// 기억·상황 응답 회차는 통과하기 전까지 영어 정답을 감춘다. 틀렸을 때 보여 주면 3번째 실패 전에
+// 정답을 알려 주는 셈이라 통과했을 때만 보인다 (사용자 결정 2026-11-17: 정답은 3번째 실패에만)
+function SentenceView({ p, final }: { p: Props; final: boolean }) {
+  const o = p.attempt.outcome;
+  const show = p.show ?? 'en+ko';
+  const showEn = show === 'en+ko' || show === 'en' || o?.status === 'passed';
+  return (
+    <>
+      {p.cue && <p className={styles.cue} lang={p.cue.lang}>{p.cue.text}</p>}
+      {o && showEn && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} />}
+      {!showEn && <p className={styles.hidden} lang="ko">영어로 말해 보세요</p>}
+      {(show === 'en+ko' || show === 'ko') && <p className={styles.ko} lang="ko">{p.sentence.ko}</p>}
+    </>
+  );
+}
+
 export function ShadowingStage(p: Props) {
   const o = p.attempt.outcome;
   const hf = p.handsFree;
@@ -132,8 +156,7 @@ export function ShadowingStage(p: Props) {
     <div className={styles.stage}>
       <p className={`${styles.eyebrow} ${styles.secretTap}`} lang="ko" onClick={p.onSecretTap}>{p.label} ·{p.position} · 통과 {Math.min(p.passes, p.required)}/{p.required}</p>
       <ProgressBar value={o?.judgement.ratio ?? 0} label="맞힌 단어 비율" />
-      {o && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} />}
-      <p className={styles.ko} lang="ko">{p.sentence.ko}</p>
+      <SentenceView p={p} final={final} />
       <ResultLine p={p} />
       <MicButton listening={hf.running ? hf.step === 'listening' : listening}
         status={micStatus(p, o?.status ?? 'idle', o?.message ?? null)}
@@ -145,7 +168,7 @@ export function ShadowingStage(p: Props) {
         {p.isLast ? p.lastLabel : '다음 문장'}
       </Button>
       {/* 이미 통과했으면 "다음 문장"이 같은 일을 하고, 마지막 문장은 갈 곳이 없어 숨긴다 */}
-      {!p.canNext && !p.isLast && (
+      {!p.canNext && (!p.isLast || p.skipLast) && (
         <Button variant="ghost" size="sm" block disabled={listening} onClick={p.onSkip}>건너뛰기 (통과 안 함)</Button>
       )}
     </div>

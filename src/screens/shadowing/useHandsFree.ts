@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useRef, useState, type MutableRefObject } from 'react';
 import { contentUrl } from '../../content/loader';
-import type { Lesson, Sentence } from '../../content/types';
+import type { Sentence } from '../../content/types';
 import { playAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
 import { releaseMic } from '../../speech/audioSession';
 import type { MicStream } from '../../speech/micStream';
 import { createCaptureContext } from '../../speech/pcmCapture';
-import { runHandsFree, type HandsFreeEnd, type HandsFreeStep } from './handsFreeLoop';
+import { runHandsFree, type HandsFreeDeps, type HandsFreeEnd, type HandsFreeStep } from './handsFreeLoop';
 import { openVoskMic, type useShadowingAttempt } from './useShadowingAttempt';
 
 // 사용자 결정(2026-11-16): 같은 문장 3번 연속 실패면 멈춤, 8초 동안 말이 없으면 멈춤
@@ -21,7 +21,7 @@ const END_TEXT: Record<HandsFreeEnd, string | null> = {
 };
 
 export type HandsFreeInput = {
-  lesson: Lesson | null;
+  lesson: { sentences: Sentence[] } | null; // 드릴은 회차 목록을 문장 모양으로 바꿔 넘긴다
   index: number;
   cleared: Set<string>;
   recordPass: (id: string) => boolean;
@@ -32,7 +32,7 @@ export type HandsFreeInput = {
   failFeedback: boolean;
   micProcessing: boolean;
   log: (m: string) => void;
-};
+} & Pick<HandsFreeDeps<Sentence>, 'shouldRead' | 'readFirst' | 'onTooManyFails'>; // 드릴용, 안 주면 기본 동작
 
 function playSentence(s: Sentence, rate: number, log: (m: string) => void): Promise<void> {
   if (!s.audio) return Promise.resolve();
@@ -62,6 +62,9 @@ function loopDeps(p: HandsFreeInput, mic: MicStream, stopped: () => boolean, onS
     slowRate: p.slowRate,
     failFeedback: p.failFeedback,
     stopped,
+    shouldRead: p.shouldRead,
+    readFirst: p.readFirst,
+    onTooManyFails: p.onTooManyFails,
     play: async (s: Sentence, rate: number) => {
       // 튜터가 읽는 동안 들어온 소리는 인식기에 넣지 않는다 (듣기는 재생이 끝난 뒤 시작)
       await playSentence(s, rate, p.log);
