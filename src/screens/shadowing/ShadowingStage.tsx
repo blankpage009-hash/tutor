@@ -1,5 +1,6 @@
 import { Button } from '../../components/Button';
 import { MicButton } from '../../components/MicButton';
+import { PlayButton } from '../../components/PlayButton';
 import { ProgressBar } from '../../components/ProgressBar';
 import { WordHighlight } from '../../components/WordHighlight';
 import type { Sentence } from '../../content/types';
@@ -40,7 +41,9 @@ type Props = {
   show?: 'en+ko' | 'en' | 'ko' | 'cue';
   cue?: { text: string; lang: 'en' | 'ko'; onPlay?: () => void }; // 상황 응답의 상황(영어 cue만 소리 있음)
   hideTutorButtons?: boolean; // 정답이 들려 버리는 회차(보고·기억·상황)에서 "다시 듣기" 숨김
-  skipLast?: boolean; // 마지막에서도 건너뛰기를 보일지 (드릴: 마지막 회차를 못 넘어 갇히지 않게)
+  // 드릴: 마이크 버튼 + 이어 말하기 버튼을 재생 버튼 하나로, 다음·건너뛰기를 이전·다음으로 (사용자 요청 2026-11-17).
+  // 다음은 onSkip(통과 안 해도 넘어감, 마지막이면 끝)
+  playMode?: { canPrev: boolean; onPrev: () => void };
 };
 
 export type HandsFreeView = {
@@ -109,10 +112,13 @@ function Extras({ p, listening }: { p: Props; listening: boolean }) {
         {p.saveable && <Button size="sm" onClick={p.onSave} disabled={p.saved}>{p.saved ? '저장됨' : '문장 저장'}</Button>}
       </div>
       {p.saveError && <p className={styles.hint} lang="ko">{p.saveError}</p>}
-      <label className={styles.toggle} lang="ko">
-        <input type="checkbox" checked={p.autoOn} onChange={(e) => p.onAutoOn(e.target.checked)} />
-        자동 넘기기 (통과하면 1.5초 뒤 다음 문장)
-      </label>
+      {/* 재생 버튼 방식에서는 통과하면 알아서 넘어가므로 스위치가 필요 없다 */}
+      {!p.playMode && (
+        <label className={styles.toggle} lang="ko">
+          <input type="checkbox" checked={p.autoOn} onChange={(e) => p.onAutoOn(e.target.checked)} />
+          자동 넘기기 (통과하면 1.5초 뒤 다음 문장)
+        </label>
+      )}
     </>
   );
 }
@@ -146,6 +152,32 @@ function SentenceView({ p, final }: { p: Props; final: boolean }) {
   );
 }
 
+function playStatus(p: Props): string {
+  const hf = p.handsFree;
+  if (hf.running) return STEP_TEXT[hf.step ?? 'reading'];
+  if (hf.notice) return hf.notice;
+  if (p.micLocked && p.engineNote) return p.engineNote;
+  return '재생을 누르면 듣고 말하기가 이어져요';
+}
+
+// 재생 버튼 방식(드릴): 재생 중에도 이전·다음을 누를 수 있다 — 화면 쪽에서 일시정지한 뒤 옮긴다
+function PlayControls({ p }: { p: Props }) {
+  const hf = p.handsFree;
+  return (
+    <PlayButton playing={hf.running} listening={hf.running && hf.step === 'listening'} status={playStatus(p)}
+      disabled={!hf.running && (p.micLocked || !hf.available)} onClick={hf.onToggle} />
+  );
+}
+
+function PrevNext({ p, onPrev, canPrev }: { p: Props; onPrev: () => void; canPrev: boolean }) {
+  return (
+    <div className={styles.nav}>
+      <Button block disabled={!canPrev} onClick={onPrev}>◀ 이전</Button>
+      <Button variant="primary" block onClick={p.onSkip}>{p.isLast ? p.lastLabel : '다음 ▶'}</Button>
+    </div>
+  );
+}
+
 export function ShadowingStage(p: Props) {
   const o = p.attempt.outcome;
   const hf = p.handsFree;
@@ -158,19 +190,29 @@ export function ShadowingStage(p: Props) {
       <ProgressBar value={o?.judgement.ratio ?? 0} label="맞힌 단어 비율" />
       <SentenceView p={p} final={final} />
       <ResultLine p={p} />
-      <MicButton listening={hf.running ? hf.step === 'listening' : listening}
-        status={micStatus(p, o?.status ?? 'idle', o?.message ?? null)}
-        disabled={p.micLocked && !listening}
-        onClick={hf.running ? hf.onToggle : listening ? p.attempt.stop : p.onMic} />
-      <HandsFreeControl hf={hf} />
+      {p.playMode ? <PlayControls p={p} /> : <>
+        <MicButton listening={hf.running ? hf.step === 'listening' : listening}
+          status={micStatus(p, o?.status ?? 'idle', o?.message ?? null)}
+          disabled={p.micLocked && !listening}
+          onClick={hf.running ? hf.onToggle : listening ? p.attempt.stop : p.onMic} />
+        <HandsFreeControl hf={hf} />
+      </>}
       <Extras p={p} listening={listening} />
+      {p.playMode ? <PrevNext p={p} {...p.playMode} /> : <ClassicNext p={p} listening={listening} />}
+    </div>
+  );
+}
+
+function ClassicNext({ p, listening }: { p: Props; listening: boolean }) {
+  return (
+    <>
       <Button variant="primary" block disabled={!p.canNext || listening} onClick={p.onNext}>
         {p.isLast ? p.lastLabel : '다음 문장'}
       </Button>
       {/* 이미 통과했으면 "다음 문장"이 같은 일을 하고, 마지막 문장은 갈 곳이 없어 숨긴다 */}
-      {!p.canNext && (!p.isLast || p.skipLast) && (
+      {!p.canNext && !p.isLast && (
         <Button variant="ghost" size="sm" block disabled={listening} onClick={p.onSkip}>건너뛰기 (통과 안 함)</Button>
       )}
-    </div>
+    </>
   );
 }

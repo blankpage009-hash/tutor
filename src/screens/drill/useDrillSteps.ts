@@ -10,11 +10,13 @@ export function useDrillSteps(total: number) {
   indexRef.current = index;
   const clearedRef = useRef(cleared);
 
-  // 이번 통과로 처음 끝낸 회차면 true
+  // 회차는 통과 1번이면 끝이라 늘 true (이어 말하기가 다음 회차로 넘어가게).
+  // 이전 버튼으로 돌아가 이미 끝낸 회차를 다시 통과해도 넘어가야 한다
   const recordPass = useCallback((id: string) => {
-    if (clearedRef.current.has(id)) return false;
-    clearedRef.current = new Set(clearedRef.current).add(id);
-    setCleared(clearedRef.current);
+    if (!clearedRef.current.has(id)) {
+      clearedRef.current = new Set(clearedRef.current).add(id);
+      setCleared(clearedRef.current);
+    }
     return true;
   }, []);
 
@@ -23,8 +25,13 @@ export function useDrillSteps(total: number) {
     else setFinished(true);
   }, [total]);
 
-  // 건너뛰기: 통과로 세지 않는다. 마지막 회차에서 건너뛰면 드릴을 마친다 (끝까지 못 넘어가 갇히지 않게)
+  // 다음 버튼: 통과로 세지 않는다. 마지막 회차에서 누르면 드릴을 마친다 (끝까지 못 넘어가 갇히지 않게)
   const skip = next;
 
-  return { index, cleared, recordPass, next, skip, finished };
+  const prev = useCallback(() => {
+    if (indexRef.current > 0) setIndex(indexRef.current - 1);
+    setFinished(false);
+  }, []);
+
+  return { index, cleared, recordPass, next, skip, prev, finished };
 }

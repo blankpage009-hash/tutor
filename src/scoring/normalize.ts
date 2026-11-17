@@ -34,7 +34,10 @@ const WHOLE: Record<string, NormWord[]> = {
   "'em": [w('them')],
   "'cause": [w('because')],
   "o'clock": [w("o'clock")],
-  "ma'am": [w("ma'am")]
+  "ma'am": [w("ma'am")],
+  // 호칭 약자: 사람은 "Doctor"라고 말하고 앱 안 인식도 doctor로 받아 적는다 (INT1-U03-L03 "Dr. Lee")
+  dr: [w('doctor')],
+  mr: [w('mister')]
 };
 
 const SUFFIX: [RegExp, NormWord[]][] = [

@@ -41,7 +41,7 @@
     "partnerRole": "접수원",
     "lines": [
       { "no": 1, "speaker": "partner", "en": "Maple Family Clinic, how can I help you?", "ko": "메이플 패밀리 클리닉입니다. 무엇을 도와드릴까요?", "audio": "audio/lessons/INT1-U03-L03/dlg-01-07898f3e.m4a" },
-      { "no": 2, "speaker": "me", "en": "Hi, I'd like to make an appointment to see Dr. Lee.", "ko": "안녕하세요, 이 선생님께 진료 예약하고 싶어요.", "audio": "audio/lessons/INT1-U03-L03/dlg-02-f8914bdd.m4a" },
+      { "no": 2, "speaker": "me", "en": "Hi, I'd like to make an appointment to see Dr. Lee.", "ko": "안녕하세요, 이 선생님께 진료 예약하고 싶어요.", "audio": "audio/lessons/INT1-U03-L03/dlg-02-719c8645.m4a" },
       { "no": 3, "speaker": "partner", "en": "Sure. Is there a day or time that works for you?", "ko": "네. 편하신 요일이나 시간 있으세요?", "audio": "audio/lessons/INT1-U03-L03/dlg-03-e8f8acb1.m4a" },
       {
         "no": 4,

@@ -5,6 +5,13 @@ import { wordMatchJudge } from './wordMatchJudge';
 
 const judge = (target: string, ...heard: string[]) => wordMatchJudge.judge(target, heard);
 
+describe('호칭 약자', () => {
+  it('Dr. ↔ doctor (INT1-U03-L03 대화문)', () => {
+    const t = "Hi, I'd like to make an appointment to see Dr. Lee.";
+    expect(judge(t, 'hi i would like to make an appointment to see doctor lee').ratio).toBe(1);
+  });
+});
+
 describe('축약 양방향 (콘텐츠 실제 문장)', () => {
   it("how's ↔ how is (beg-01-s1)", () => {
     expect(judge("Hey, how's it going?", 'hey how is it going').ratio).toBe(1);

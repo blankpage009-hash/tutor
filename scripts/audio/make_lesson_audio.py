@@ -10,6 +10,7 @@
 """
 import csv
 import json
+import re
 import subprocess
 import sys
 
@@ -40,14 +41,27 @@ def load_lessons():
   return [json.loads(p.read_text(encoding='utf-8-sig')) for p in sorted(LESSONS_SRC.rglob('*.json'))]
 
 
+# 음성 합성기(Piper)가 호칭 약자를 이상하게 읽는다 (사용자 아이폰 확인 2026-11-17: "Dr. Lee").
+# 소리를 만들 때만 풀어 쓴다. 화면 글자와 앱용 JSON의 en은 원고 그대로 둔다
+SPOKEN_ABBR = [(r'\bDr\.', 'Doctor'), (r'\bMrs\.', 'Missus'), (r'\bMr\.', 'Mister'), (r'\bMs\.', 'Miz')]
+
+
+def spoken(text):
+  for pattern, word in SPOKEN_ABBR:
+    text = re.sub(pattern, word, text)
+  return text
+
+
 def fill_audio(builder, lesson):
   lid = lesson['lessonId']
 
   def make(name, text):
     # 경로 문자열을 한 번만 만들어 파일 저장과 JSON에 같이 쓴다.
     # Windows는 대소문자를 무시하지만 GitHub Pages는 구분해서, 따로 만들면 아이폰에서만 깨질 수 있다
-    rel = f'audio/lessons/{lid}/{name}-{fingerprint(text)}.m4a'
-    builder.ensure(rel, text)
+    # 지문도 읽을 글자로 만든다: 읽는 법이 바뀌면 파일 이름이 바뀌어 옛 음성을 다시 쓰지 않는다
+    say = spoken(text)
+    rel = f'audio/lessons/{lid}/{name}-{fingerprint(say)}.m4a'
+    builder.ensure(rel, say)
     return rel
 
   ks = lesson['keySentence']
