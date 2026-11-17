@@ -36,15 +36,17 @@ export function MyLinePanel(p: Props) {
   const o = p.attempt.outcome;
   const listening = o?.status === 'listening';
   const final = o?.status === 'passed' || o?.status === 'failed';
+  // 통과 뒤 다음 상대 줄로 넘어가기 전 잠깐 사이에 또 누르면 마이크가 열린 채 상대 줄이 재생된다
+  const passed = o?.status === 'passed';
   return (
     <div className={styles.panel}>
       {o && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} />}
       <Result p={p} />
       <MicButton listening={listening} status={statusText(p, o?.status ?? 'idle', o?.message ?? null)}
-        disabled={p.micLocked && !listening} onClick={listening ? p.attempt.stop : p.attempt.start} />
+        disabled={passed || (p.micLocked && !listening)} onClick={listening ? p.attempt.stop : p.attempt.start} />
       <div className={styles.actions}>
         <Button size="sm" onClick={() => p.attempt.playTutor(1)} disabled={listening}>듣기</Button>
-        <Button size="sm" variant="ghost" onClick={p.onSkip} disabled={listening}>건너뛰기</Button>
+        <Button size="sm" variant="ghost" onClick={p.onSkip} disabled={listening || passed}>건너뛰기</Button>
       </div>
     </div>
   );

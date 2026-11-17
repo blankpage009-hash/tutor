@@ -22,8 +22,9 @@ const PASS_PAUSE_MS = 800;
 
 type Phase = 'intro' | 'practice' | 'done';
 
-function lineSentence(lessonId: string, l: DialogueLine): Sentence {
-  return { id: `${lessonId}-dlg${l.no}`, en: l.en, ko: l.ko, note: '', hintWords: [], vocab: [], variations: [], audio: l.audio };
+// 다시 연습할 때 앞 판의 "통과"가 남아 마이크가 잠기지 않도록 판 번호(round)를 id에 붙인다
+function lineSentence(lessonId: string, l: DialogueLine, round: number): Sentence {
+  return { id: `${lessonId}-dlg${l.no}-${round}`, en: l.en, ko: l.ko, note: '', hintWords: [], vocab: [], variations: [], audio: l.audio };
 }
 
 // 새 레슨 STEP 2 대화문(/n/:lessonId/dialogue): 전체 듣기 → 상대 줄은 자동 재생, 내 줄에서 멈추고 말하기
@@ -44,6 +45,8 @@ function useDialoguePractice(lesson: NewLesson) {
   const [phase, setPhase] = useState<Phase>('intro');
   const [cur, setCur] = useState(0);
   const [meIdx, setMeIdx] = useState<number | null>(null);
+  const [round, setRound] = useState(0);
+  const nextRound = useRef(0);
   const curRef = useRef(cur);
   curRef.current = cur;
 
@@ -53,16 +56,17 @@ function useDialoguePractice(lesson: NewLesson) {
       if (i === null) return;
       setCur(i);
       if (i >= lines.length) setPhase('done');
-      else setMeIdx(i);
+      else { setMeIdx(i); setRound(nextRound.current); }
     });
   }, [playPartners, lines.length]);
 
   const start = () => {
     unlockAudio(); // iOS: 탭한 순간 먼저
     setPhase('practice');
+    nextRound.current += 1; // 판 번호는 내 줄에 닿을 때 바꾼다 (지금 바꾸면 막 시작한 상대 줄 재생이 끊긴다)
     go(0);
   };
-  const sentence = useMemo(() => (meIdx === null ? null : lineSentence(lesson.lessonId, lines[meIdx])), [meIdx, lines, lesson.lessonId]);
+  const sentence = useMemo(() => (meIdx === null ? null : lineSentence(lesson.lessonId, lines[meIdx], round)), [meIdx, lines, lesson.lessonId, round]);
   return { lines, player, phase, cur, curRef, meIdx, go, start, sentence };
 }
 
@@ -70,11 +74,13 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
   const nav = useNavigate();
   const d = useDialoguePractice(lesson);
   const timer = useRef<number | null>(null);
-  useEffect(() => () => { if (timer.current !== null) window.clearTimeout(timer.current); }, []);
+  const clearTimer = () => { if (timer.current !== null) window.clearTimeout(timer.current); timer.current = null; };
+  useEffect(() => clearTimer, []);
   const speaking = useNewSpeaking(d.sentence, {
     threshold: THRESHOLD, failFeedback: false,
     onResult: (_id, status) => {
       if (status !== 'passed') return;
+      clearTimer();
       timer.current = window.setTimeout(() => d.go(d.curRef.current + 1), PASS_PAUSE_MS);
     }
   });
@@ -88,7 +94,7 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
         current={d.player.playing ?? (d.phase === 'practice' ? d.cur : null)}
         upTo={d.phase === 'practice' ? d.cur : undefined} />
       {myTurn && <MyLinePanel attempt={speaking.attempt} threshold={THRESHOLD} engineNote={speaking.engineNote}
-        micLocked={speaking.micLocked} onSkip={() => d.go(d.cur + 1)} />}
+        micLocked={speaking.micLocked} onSkip={() => { clearTimer(); d.go(d.cur + 1); }} />}
       {d.phase === 'intro' && <IntroActions playing={d.player.playing !== null}
         onPlayAll={() => { void d.player.playAll(); }} onStop={d.player.stop} onStart={d.start} />}
       {d.phase === 'done' && <DoneActions lesson={lesson} onAgain={d.start}
