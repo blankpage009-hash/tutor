@@ -13,10 +13,7 @@ export function LearnNotes({ lesson }: Props) {
         <ul className={`${styles.bullets} ${styles.text}`} lang="ko">
           {explanation.ko.map((t) => <li key={t}>{t}</li>)}
         </ul>
-        <div className={styles.enBlock}>
-          <p className={styles.text} lang="en">{explanation.en}</p>
-          <p className={styles.ko} lang="ko">{explanation.enKo}</p>
-        </div>
+        {/* 원고의 영어 설명(explanation.en·enKo)은 사용자 요청(2026-11-17)으로 화면에 보이지 않는다. 데이터는 그대로 둔다 */}
       </section>
       <section className={styles.section}>
         <h2 className={styles.heading} lang="ko">발음</h2>

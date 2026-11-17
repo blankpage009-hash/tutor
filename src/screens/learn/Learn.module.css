@@ -81,15 +81,6 @@
   gap: var(--space-3);
 }
 
-.enBlock {
-  margin: var(--space-4) 0 0;
-  padding: var(--space-3) var(--space-4);
-  background: var(--surface-sunk);
-  border-radius: var(--radius-md);
-}
-
-.enBlock .text + .ko { margin-top: var(--space-2); }
-
 .wrong {
   margin: 0;
   color: var(--danger);
