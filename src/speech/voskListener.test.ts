@@ -92,6 +92,16 @@ describe('앱 인식: 언제 끝내나', () => {
     expect(t.recognize).not.toHaveBeenCalled();
   });
 
+  it('afterFinalMs를 주면 통과 못 한 확정 결과 뒤에 그만큼 더 듣는다 (롤플레이: 생각하며 쉬기)', async () => {
+    const t = setup({ secondOpinion: false, afterFinalMs: 2500 });
+    t.h().onFinal?.('good to');
+    vi.advanceTimersByTime(AFTER_FINAL_MS * 2);
+    expect(t.session.close).not.toHaveBeenCalled();
+    vi.advanceTimersByTime(2500);
+    const r = await t.l.result;
+    expect(r.alternatives).toEqual(['good to']);
+  });
+
   it('두 번째 의견을 끄면 묻지 않는다', async () => {
     const t = setup({ secondOpinion: false });
     t.sound();

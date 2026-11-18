@@ -35,8 +35,24 @@ describe('롤플레이 키워드 판정', () => {
     expect(judgeKeywords(['or'], ['it works']).pass).toBe(false);
   });
 
-  it('지금은 정확히 같은 말만 (works ≠ work — 사용자 결정 2026-11-18)', () => {
-    expect(judgeKeywords(['work'], ['afternoon works for me']).pass).toBe(false);
+  it('비슷한 소리는 인정한다 (아이폰: work를 walk로 들음 — 사용자 결정 2026-11-18)', () => {
+    expect(judgeKeywords(['work', 'for me'], ['afternoons walk best for me']).pass).toBe(true);
+    expect(judgeKeywords(['torn'], ['i am turn between them']).pass).toBe(true);
+    expect(judgeKeywords(['better'], ['which one do you like bitter']).pass).toBe(true);
+  });
+
+  it('어미만 다른 말도 인정한다', () => {
+    expect(judgeKeywords(['work'], ['afternoon works for me']).pass).toBe(true);
+    expect(judgeKeywords(['work'], ['it worked']).pass).toBe(true);
+    expect(judgeKeywords(['work'], ['working late']).pass).toBe(true);
+  });
+
+  it('너무 후하지 않게: 짧은 말·다른 소리는 여전히 다르다', () => {
+    expect(judgeKeywords(['this one'], ['the one is softer']).pass).toBe(false);
+    expect(judgeKeywords(['which'], ['watch it']).pass).toBe(false);
+    expect(judgeKeywords(['should'], ['she showed me']).pass).toBe(false);
+    expect(judgeKeywords(['if I were you'], ['if you were me']).pass).toBe(false);
+    expect(judgeKeywords(['me'], ['my']).pass).toBe(false);
   });
 
   it('축약을 풀어 비교한다', () => {

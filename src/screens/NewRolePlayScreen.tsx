@@ -1,23 +1,14 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { BackLink } from '../components/BackLink';
 import { Button } from '../components/Button';
 import { ScreenHeader } from '../components/ScreenHeader';
 import type { NewLesson } from '../content/lessonTypes';
-import { markNewStage } from '../db/progress';
-import { unlockAudio } from '../speech/audioPlayer';
 import courseStyles from './courses/Courses.module.css';
 import styles from './dialogue/Dialogue.module.css';
-import { useLinePlayer } from './dialogue/useLinePlayer';
 import { useNewLesson } from './newLesson/useNewLesson';
 import { MyTurnPanel } from './roleplay/MyTurnPanel';
 import { RolePlayLines } from './roleplay/RolePlayLines';
-import { useRolePlayAttempt, type MyLine, type RpOutcome } from './roleplay/useRolePlayAttempt';
-
-// 통과 글자를 잠깐 보여 준 뒤 다음 상대 줄로 (대화문과 같은 간격)
-const PASS_PAUSE_MS = 800;
-
-type Phase = 'intro' | 'practice' | 'done';
+import { useRolePlaySession, type MyLine } from './roleplay/useRolePlaySession';
 
 // 새 레슨 STEP 4 롤플레이(/n/:lessonId/roleplay): 상대 줄은 음성으로, 내 줄은 예시를 참고해 내 말로
 export function NewRolePlayScreen() {
@@ -28,92 +19,54 @@ export function NewRolePlayScreen() {
   return <RolePlayBody key={lesson.lessonId} lesson={lesson} />;
 }
 
-// 진행 순서: go(from)이 상대 줄을 이어서 틀고 내 줄에 닿으면 멈춘다. 끝에 닿으면 진도를 '완료'로 남긴다
-function useRolePlayPractice(lesson: NewLesson) {
-  const lines = lesson.rolePlay.lines;
-  const player = useLinePlayer(lines);
-  const { playPartners } = player;
-  const [phase, setPhase] = useState<Phase>('intro');
-  const [cur, setCur] = useState(0);
-  const [round, setRound] = useState(0);
-  const [said, setSaid] = useState<Record<number, string>>({});
-
-  // 홈·레벨 목록은 진도를 화면을 열 때 한 번 읽는다. 저장이 끝난 뒤 완료 화면을 보여 줘야 바로 '완료'로 보인다
-  const finish = useCallback(async () => {
-    await markNewStage(lesson.lessonId, lesson.levelCode, 'done').catch(() => undefined);
-    setPhase('done');
-  }, [lesson.lessonId, lesson.levelCode]);
-
-  const go = useCallback((from: number) => {
-    setCur(from);
-    playPartners(from).then((i) => {
-      if (i === null) return;
-      setCur(i);
-      if (i >= lines.length) void finish();
-    });
-  }, [playPartners, lines.length, finish]);
-
-  const start = () => {
-    unlockAudio(); // iOS: 탭한 순간 먼저
-    setSaid({});
-    setRound((r) => r + 1);
-    setPhase('practice');
-    go(0);
-  };
-  const record = (no: number, text: string) => setSaid((s) => ({ ...s, [no]: text }));
-  const line = lines[cur];
-  const myLine: MyLine | null = phase === 'practice' && player.playing === null && line?.speaker === 'me' ? line : null;
-  return { lines, player, phase, cur, round, said, go, start, record, myLine };
-}
-
 function RolePlayBody({ lesson }: { lesson: NewLesson }) {
   const nav = useNavigate();
-  const p = useRolePlayPractice(lesson);
-  const timer = useRef<number | null>(null);
-  const clearTimer = () => { if (timer.current !== null) window.clearTimeout(timer.current); timer.current = null; };
-  useEffect(() => clearTimer, []);
-  const onResult = (o: RpOutcome) => {
-    if (o.status !== 'passed' || !p.myLine) return;
-    const at = p.cur;
-    p.record(p.myLine.no, o.judgement.heard);
-    clearTimer();
-    timer.current = window.setTimeout(() => p.go(at + 1), PASS_PAUSE_MS);
-  };
-  const attempt = useRolePlayAttempt(p.myLine, `${p.round}-${p.cur}`, onResult);
-  const skip = () => {
-    if (!p.myLine) return;
-    clearTimer();
-    p.record(p.myLine.no, '');
-    p.go(p.cur + 1);
-  };
+  const s = useRolePlaySession(lesson);
   const rp = lesson.rolePlay;
+  const line = rp.lines[s.cur];
+  const myLine: MyLine | null = s.phase === 'practice' && line?.speaker === 'me' ? line : null;
   return (
     <>
       <BackLink to={`/curriculum/${lesson.levelCode}`} label={lesson.level} />
       <ScreenHeader eyebrow={`유닛 ${lesson.unit} · STEP 4 롤플레이`} title={lesson.lessonTitle} />
       <p className={styles.situation} lang="ko">{rp.situation} (상대: {rp.partnerRole})</p>
-      {p.phase !== 'intro' && <RolePlayLines lines={p.lines} partnerRole={rp.partnerRole}
-        upTo={p.cur} current={p.phase === 'practice' ? (p.player.playing ?? p.cur) : null} said={p.said} />}
-      {p.myLine && attempt.outcome && <MyTurnPanel key={`${p.round}-${p.cur}`} line={p.myLine} outcome={attempt.outcome}
-        micLocked={attempt.micLocked} engineNote={attempt.engineNote}
-        onStart={() => { void attempt.start(); }} onStop={attempt.stop} onSkip={skip} />}
-      {p.phase === 'intro' && <IntroActions onStart={p.start} />}
-      {p.phase === 'done' && <DoneActions onAgain={p.start}
+      {s.phase !== 'intro' && <RolePlayLines lines={rp.lines} partnerRole={rp.partnerRole}
+        upTo={s.cur} current={s.phase === 'practice' ? s.cur : null} said={s.said} />}
+      {myLine && <MyTurnPanel key={s.cur} line={myLine} turn={s.turn} running={s.running}
+        micLocked={s.micLocked} engineNote={s.engineNote}
+        onPause={s.stop} onResume={() => s.start(s.cur)} onSkip={s.skip} />}
+      {s.notice && <p className={`${styles.result} ${styles.fail}`} lang="ko">{s.notice}</p>}
+      {s.phase === 'intro' && <IntroActions locked={s.micLocked} note={s.engineNote} onStart={() => s.start(0)} />}
+      {s.phase === 'practice' && !myLine && <PlayActions running={s.running}
+        onStop={s.stop} onResume={() => s.start(s.cur)} />}
+      {s.phase === 'done' && <DoneActions onAgain={() => s.start(0)}
         onLevel={() => nav(`/curriculum/${lesson.levelCode}`)} onHome={() => nav('/')} />}
     </>
   );
 }
 
-function IntroActions({ onStart }: { onStart: () => void }) {
+function IntroActions({ locked, note, onStart }: { locked: boolean; note: string | null; onStart: () => void }) {
   return (
     <>
       <p className={styles.situation} lang="ko">
-        상대가 먼저 말해요. 내 차례에는 예시를 참고해 내 말로 대답하세요. ‘꼭 넣을 말’이 모두 들어가면 통과예요.
+        상대가 먼저 말해요. 내 차례가 되면 마이크가 저절로 켜져요. 예시를 참고해 내 말로 대답하고, ‘꼭 넣을 말’이 모두 들어가면 통과예요.
       </p>
+      {locked && note && <p className={courseStyles.meta} lang="ko">{note}</p>}
       <div className={courseStyles.actions}>
-        <Button variant="primary" block onClick={onStart}>롤플레이 시작</Button>
+        <Button variant="primary" block disabled={locked} onClick={onStart}>▶ 롤플레이 시작</Button>
       </div>
     </>
+  );
+}
+
+// 상대 줄을 듣는 동안의 버튼. 내 차례에는 마이크 버튼이 멈춤/다시 듣기를 맡는다
+function PlayActions({ running, onStop, onResume }: { running: boolean; onStop: () => void; onResume: () => void }) {
+  return (
+    <div className={courseStyles.actions}>
+      {running
+        ? <Button block onClick={onStop}>⏸ 멈춤</Button>
+        : <Button variant="primary" block onClick={onResume}>▶ 여기서부터 다시</Button>}
+    </div>
   );
 }
 

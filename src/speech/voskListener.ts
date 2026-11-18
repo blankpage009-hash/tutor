@@ -15,6 +15,8 @@ export type VoskListenOptions = {
   isPass: (alts: string[]) => boolean; // 통과 기준을 넘었나 (확정 결과·두 번째 의견에 씀)
   secondOpinion: boolean;
   noSpeechMs?: number; // 이만큼 말이 없으면 끝낸다 (기본 12초, 이어 말하기는 8초 — 사용자 결정)
+  // 확정 결과가 통과 못 했을 때 더 들어 볼 시간 (기본 AFTER_FINAL_MS). 롤플레이 자유 답변은 생각하며 쉬어서 길게
+  afterFinalMs?: number;
   onInterim?: (alts: string[]) => void;
   onDebug?: (msg: string) => void;
   // 시험에서 가짜 엔진으로 바꿔 끼우기 위한 자리
@@ -75,7 +77,7 @@ function onFinal(s: State, t: string): void {
   s.o.onInterim?.([s.lastHeard]);
   if (s.stopping || s.o.isPass(candidatesOf(s.segments, s.lastPartial))) return s.end('확정 결과');
   s.debug('통과 못 해 조금 더 듣기');
-  s.afterFinal = setTimeout(() => s.end('확정 뒤 조용함'), AFTER_FINAL_MS);
+  s.afterFinal = setTimeout(() => s.end('확정 뒤 조용함'), s.o.afterFinalMs ?? AFTER_FINAL_MS);
 }
 
 // 두 번째 의견에 다시 넣을 소리를 모은다. 너무 길어지면 더 모으지 않는다

@@ -16,12 +16,38 @@ function cleanHeard(text: string): string {
   return text.replace(/\[unk\]/gi, ' ').replace(/\s+/g, ' ').trim();
 }
 
+// 어미만 다른 말(works·worked·working)은 같은 말로 본다. 너무 짧은 단어(this)는 떼지 않는다
+function stem(w: string): string {
+  if (w.length > 5 && w.endsWith('ing')) return w.slice(0, -3);
+  if (w.length > 4 && (w.endsWith('ed') || w.endsWith('es'))) return w.slice(0, -2);
+  if (w.length > 4 && w.endsWith('s') && !w.endsWith('ss')) return w.slice(0, -1);
+  return w;
+}
+
+// 소리 뼈대: 첫 글자 뒤 모음은 지우고, 한국어 화자가 헷갈리거나 앱 안 인식이 바꿔 듣는 짝(r/l, b/v, p/f)을
+// 같게 둔다. 아이폰에서 "work"를 "walk"로 들음 (사용자 결정 2026-11-18: 비슷한 소리 + 어미 변화 인정)
+function skeleton(w: string): string {
+  const m = stem(w).replace(/ph/g, 'p').replace(/r/g, 'l').replace(/v/g, 'b').replace(/f/g, 'p').replace(/z/g, 's');
+  return (m[0] + m.slice(1).replace(/[aeiouy]/g, '')).replace(/(.)\1+/g, '$1');
+}
+
+// 두 글자 이하 단어(a, I, me)와 뼈대가 한 글자뿐인 말은 정확히 같아야 한다 — 아무 말이나 걸리지 않게
+function soundsLike(a: string, b: string): boolean {
+  if (a.length < 3 || b.length < 3) return false;
+  const k = skeleton(a);
+  return k.length >= 2 && k === skeleton(b);
+}
+
+function sameKeyWord(key: NormWord, heard: NormWord): boolean {
+  return sameWord(key, heard) || key.forms.some((k) => heard.forms.some((h) => soundsLike(k, h)));
+}
+
 // 여러 단어 키워드("if I were you")는 붙어서 이 순서대로 나와야 한다. 단어 단위로 비교해서
 // "or"가 "work" 속에 숨어 있어도 걸리지 않는다
 function containsRun(heard: NormWord[], key: NormWord[]): boolean {
   if (!key.length) return true;
   for (let i = 0; i + key.length <= heard.length; i++) {
-    if (key.every((k, j) => sameWord(k, heard[i + j]))) return true;
+    if (key.every((k, j) => sameKeyWord(k, heard[i + j]))) return true;
   }
   return false;
 }
