@@ -5,6 +5,7 @@ import { Button } from '../components/Button';
 import { ScreenHeader } from '../components/ScreenHeader';
 import type { DialogueLine, NewLesson } from '../content/lessonTypes';
 import type { Sentence } from '../content/types';
+import { finishNewStep } from '../db/progress';
 import { unlockAudio } from '../speech/audioPlayer';
 import { newStagePath, nextNewStage } from '../newLessonFlow';
 import courseStyles from './courses/Courses.module.css';
@@ -77,6 +78,10 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
   const timer = useRef<number | null>(null);
   const clearTimer = () => { if (timer.current !== null) window.clearTimeout(timer.current); timer.current = null; };
   useEffect(() => clearTimer, []);
+  // 끝까지 가면(건너뛴 줄이 있어도) 대화문 단계를 끝낸 것으로 (사용자 결정 2026-11-18)
+  useEffect(() => {
+    if (d.phase === 'done') finishNewStep(lesson.lessonId, lesson.levelCode, 'dialogue').catch(() => undefined);
+  }, [d.phase, lesson.lessonId, lesson.levelCode]);
   const speaking = useNewSpeaking(d.sentence, {
     threshold: THRESHOLD, failFeedback: false,
     onResult: (_id, status) => {

@@ -5,7 +5,7 @@ import { Button } from '../components/Button';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { loadNewLesson } from '../content/curriculumLoader';
 import type { NewLesson } from '../content/lessonTypes';
-import { markNewStage } from '../db/progress';
+import { finishNewStep, markNewStage } from '../db/progress';
 import { newStagePath, nextNewStage } from '../newLessonFlow';
 import courseStyles from './courses/Courses.module.css';
 import { KeySentenceCard } from './learn/KeySentenceCard';
@@ -26,7 +26,11 @@ export function LearnScreen() {
   }, [lessonId]);
 
   useEffect(() => {
-    if (lesson) markNewStage(lesson.lessonId, lesson.levelCode, 'learn').catch(() => undefined);
+    // 설명은 읽는 단계라 판정할 끝이 없다. 열면 끝낸 것으로 친다 (사용자 결정 2026-11-18)
+    if (!lesson) return;
+    markNewStage(lesson.lessonId, lesson.levelCode, 'learn')
+      .then(() => finishNewStep(lesson.lessonId, lesson.levelCode, 'learn'))
+      .catch(() => undefined);
   }, [lesson]);
 
   if (error) return <p className={courseStyles.meta} lang="ko">{error}</p>;

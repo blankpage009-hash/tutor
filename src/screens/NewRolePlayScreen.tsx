@@ -3,13 +3,14 @@ import { BackLink } from '../components/BackLink';
 import { Button } from '../components/Button';
 import { ScreenHeader } from '../components/ScreenHeader';
 import type { NewLesson } from '../content/lessonTypes';
+import { NEW_STAGE_LABEL, newStagePath, type NewLessonStep } from '../newLessonFlow';
 import courseStyles from './courses/Courses.module.css';
 import styles from './dialogue/Dialogue.module.css';
 import { NewLessonSteps } from './newLesson/NewLessonSteps';
 import { useNewLesson } from './newLesson/useNewLesson';
 import { MyTurnPanel } from './roleplay/MyTurnPanel';
 import { RolePlayLines } from './roleplay/RolePlayLines';
-import { useRolePlaySession, type MyLine } from './roleplay/useRolePlaySession';
+import { useRolePlaySession, type MyLine, type StepResult } from './roleplay/useRolePlaySession';
 
 // 새 레슨 STEP 4 롤플레이(/n/:lessonId/roleplay): 상대 줄은 음성으로, 내 줄은 예시를 참고해 내 말로
 export function NewRolePlayScreen() {
@@ -41,7 +42,8 @@ function RolePlayBody({ lesson }: { lesson: NewLesson }) {
       {s.phase === 'intro' && <IntroActions locked={s.micLocked} note={s.engineNote} onStart={() => s.start(0)} />}
       {s.phase === 'practice' && !myLine && <PlayActions running={s.running}
         onStop={s.stop} onResume={() => s.start(s.cur)} />}
-      {s.phase === 'done' && <DoneActions onAgain={() => s.start(0)}
+      {s.phase === 'done' && <DoneActions result={s.result} onAgain={() => s.start(0)}
+        onStep={(step) => nav(newStagePath(lesson.lessonId, step))}
         onLevel={() => nav(`/curriculum/${lesson.levelCode}`)} onHome={() => nav('/')} />}
     </>
   );
@@ -72,14 +74,30 @@ function PlayActions({ running, onStop, onResume }: { running: boolean; onStop: 
   );
 }
 
-type DoneProps = { onAgain: () => void; onLevel: () => void; onHome: () => void };
+const GO_LABEL: Record<NewLessonStep, string> = { learn: '설명으로', dialogue: '대화문으로', drill: '드릴로', roleplay: '롤플레이로' };
 
-function DoneActions({ onAgain, onLevel, onHome }: DoneProps) {
+type DoneProps = {
+  result: StepResult | null;
+  onAgain: () => void; onStep: (s: NewLessonStep) => void; onLevel: () => void; onHome: () => void;
+};
+
+// 네 단계를 다 끝냈을 때만 레슨 완료. 아니면 남은 단계로 가는 버튼을 먼저 보여 준다 (사용자 요청 2026-11-18)
+function DoneActions({ result, onAgain, onStep, onLevel, onHome }: DoneProps) {
+  const missing = result && !result.done ? result.missing : [];
   return (
     <>
-      <p className={`${styles.result} ${styles.pass}`} lang="ko">레슨 완료! 설명부터 롤플레이까지 모두 끝냈어요.</p>
+      {missing.length
+        ? (
+          <p className={`${styles.result} ${styles.pass}`} lang="ko">
+            롤플레이를 끝냈어요! 남은 단계: {missing.map((m) => NEW_STAGE_LABEL[m]).join(', ')}
+          </p>
+        )
+        : <p className={`${styles.result} ${styles.pass}`} lang="ko">레슨 완료! 설명부터 롤플레이까지 모두 끝냈어요.</p>}
       <div className={courseStyles.actions}>
-        <Button variant="primary" block onClick={onLevel}>레벨 목록으로</Button>
+        {missing.map((m, i) => (
+          <Button key={m} variant={i === 0 ? 'primary' : 'secondary'} block onClick={() => onStep(m)}>{GO_LABEL[m]}</Button>
+        ))}
+        <Button variant={missing.length ? 'secondary' : 'primary'} block onClick={onLevel}>레벨 목록으로</Button>
         <Button block onClick={onHome}>홈으로</Button>
         <Button variant="ghost" block onClick={onAgain}>롤플레이 다시</Button>
       </div>

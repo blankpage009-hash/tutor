@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { CurriculumLesson } from '../../content/lessonTypes';
 import type { ProgressMap } from '../../lessonFlow';
-import { isNewStage, NEW_STAGE_LABEL, newStagePath } from '../../newLessonFlow';
+import { isNewStage, NEW_STAGE_LABEL, NEW_STEPS, newStagePath } from '../../newLessonFlow';
 import courseStyles from '../courses/Courses.module.css';
 import styles from './Curriculum.module.css';
 
@@ -17,14 +17,16 @@ export function LessonRow({ lesson, progress }: Props) {
       </li>
     );
   }
-  const stored = progress.get(lesson.id)?.stage;
-  const stage = isNewStage(stored) ? stored : undefined;
+  const row = progress.get(lesson.id);
+  const stage = isNewStage(row?.stage) ? row.stage : undefined;
+  // 네 단계를 다 끝내야 완료라서 몇 단계를 끝냈는지 같이 보여 준다 (사용자 요청 2026-11-18)
+  const badge = stage === 'done' ? '완료' : stage && `${NEW_STAGE_LABEL[stage]} 중 · ${row?.steps?.length ?? 0}/${NEW_STEPS.length}`;
   return (
     <li>
       <Link to={newStagePath(lesson.id, stage ?? 'learn')} className={courseStyles.row}>
         <div className={courseStyles.rowHead}>
           {title}
-          {stage && <span className={styles.badge} lang="ko">{stage === 'done' ? '완료' : `${NEW_STAGE_LABEL[stage]} 중`}</span>}
+          {badge && <span className={styles.badge} lang="ko">{badge}</span>}
         </div>
       </Link>
     </li>

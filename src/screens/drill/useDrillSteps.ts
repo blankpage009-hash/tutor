@@ -1,9 +1,12 @@
 import { useCallback, useRef, useState } from 'react';
+import type { DrillPosition } from '../../db/types';
 
-// 드릴 60회 중 지금 몇 번째인지와 통과한 회차. 회차마다 통과 1번이면 끝 (회차 자체가 반복이라서)
-export function useDrillSteps(total: number) {
-  const [index, setIndex] = useState(0);
-  const [cleared, setCleared] = useState<Set<string>>(new Set());
+// 드릴 60회 중 지금 몇 번째인지와 통과한 회차. 회차마다 통과 1번이면 끝 (회차 자체가 반복이라서).
+// initial: 하다 만 위치에서 이어서 시작 (사용자 요청 2026-11-18). 레슨이 바뀌어 회차 수가 줄었으면 처음부터
+export function useDrillSteps(total: number, initial?: DrillPosition) {
+  const resume = initial && initial.index < total ? initial : undefined;
+  const [index, setIndex] = useState(resume?.index ?? 0);
+  const [cleared, setCleared] = useState<Set<string>>(() => new Set(resume?.cleared ?? []));
   const [finished, setFinished] = useState(false);
   // 판정 콜백은 렌더 사이에 불릴 수 있어 최신 값을 ref로도 들고 있는다
   const indexRef = useRef(index);

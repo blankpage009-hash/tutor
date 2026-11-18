@@ -21,13 +21,20 @@ export type VocabWord = {
 // 새 커리큘럼(Phase 5.5) 레슨의 단계. 'done'은 기존 수업과 같이 쓴다.
 // 칸 모양만 넓혔고 색인은 그대로라 DB 버전을 올리지 않아도 된다
 export type NewLessonStage = 'learn' | 'dialogue' | 'drill' | 'roleplay' | 'done';
+export type NewLessonStep = Exclude<NewLessonStage, 'done'>;
+
+// 드릴을 중간에 나갔다 와도 이어서 하도록 남기는 위치 (사용자 요청 2026-11-18)
+export type DrillPosition = { index: number; cleared: string[] };
 
 export type LessonProgress = {
   lessonId: string;
   courseId: string; // 새 레슨은 레벨 key(예: INT1)
+  // 기존 수업: 가장 멀리 간 단계. 새 레슨: 마지막으로 들어간 단계, 네 단계를 다 끝내면 'done'
   stage: 'intro' | 'shadowing' | 'variation' | 'review' | NewLessonStage;
   updatedAt: number;
   completedAt?: number;
+  steps?: NewLessonStep[]; // 새 레슨에서 끝까지 간 단계들
+  drill?: DrillPosition; // 새 레슨 드릴을 하다 만 위치 (다 끝내면 지운다)
 };
 
 export type SettingRow = { key: string; value: unknown };

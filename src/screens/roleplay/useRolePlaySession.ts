@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef, useState, type MutableRefObject } from 
 import type { Model } from 'vosk-browser';
 import { contentUrl } from '../../content/loader';
 import type { NewLesson, RolePlayLine } from '../../content/lessonTypes';
-import { markNewStage } from '../../db/progress';
+import { finishNewStep } from '../../db/progress';
+import type { NewLessonStep } from '../../newLessonFlow';
 import { judgeKeywords, type KeywordJudgement } from '../../scoring/keywordJudge';
 import { playAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
 import { releaseMic } from '../../speech/audioSession';
@@ -98,6 +99,8 @@ function useRolePlayState() {
 }
 
 export type Phase = 'intro' | 'practice' | 'done';
+// 롤플레이를 끝까지 간 뒤: 레슨 완료인지, 아직 안 끝낸 단계 (저장에 실패하면 null)
+export type StepResult = { done: boolean; missing: NewLessonStep[] };
 
 // 롤플레이 자동 진행: "시작" 한 번 탭하면 마이크를 켜 두고, 상대 줄 재생 → 내 차례에 저절로 듣기
 // (사용자 요청 2026-11-18). iOS는 탭한 순간 만든 오디오 장치에만 마이크 소리를 주므로 시작·다시 시작은 탭으로만
@@ -108,6 +111,7 @@ export function useRolePlaySession(lesson: NewLesson) {
   const [phase, setPhase] = useState<Phase>('intro');
   const [running, setRunning] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
+  const [result, setResult] = useState<StepResult | null>(null);
   const stoppedRef = useRef(true);
   const listening = useRef<Listening | null>(null);
   const skipping = useRef(false);
@@ -120,7 +124,9 @@ export function useRolePlaySession(lesson: NewLesson) {
   }, []);
   useEffect(() => stop, [stop]); // 화면을 나가면 멈춘다
 
-  const start = useStart({ lesson, log, model: vosk.model, st, stoppedRef, listening, skipping, setPhase, setRunning, setNotice });
+  const start = useStart({
+    lesson, log, model: vosk.model, st, stoppedRef, listening, skipping, setPhase, setRunning, setNotice, setResult
+  });
 
   // 듣는 중이면 듣기를 끝내고 다음 줄로. 멈춰 있으면(탭이니까) 다음 줄부터 다시 시작한다
   const skip = useCallback(() => {
@@ -134,13 +140,14 @@ export function useRolePlaySession(lesson: NewLesson) {
     }
   }, [lesson, st, start]);
 
-  return { ...st, phase, running, notice, start, stop, skip, micLocked: vosk.state !== 'ready', engineNote: ENGINE_NOTE[vosk.state] };
+  return { ...st, phase, running, notice, result, start, stop, skip, micLocked: vosk.state !== 'ready', engineNote: ENGINE_NOTE[vosk.state] };
 }
 
 type StartInput = {
   lesson: NewLesson; log: (m: string) => void; model: Model | null; st: ReturnType<typeof useRolePlayState>;
   stoppedRef: MutableRefObject<boolean>; listening: MutableRefObject<Listening | null>; skipping: MutableRefObject<boolean>;
   setPhase: (p: Phase) => void; setRunning: (b: boolean) => void; setNotice: (n: string | null) => void;
+  setResult: (r: StepResult | null) => void;
 };
 
 function useStart(p: StartInput) {
@@ -167,8 +174,9 @@ function useStart(p: StartInput) {
   }, []);
 }
 
-// 끝나면 마이크 장치를 닫고, 끝까지 갔으면 진도를 '완료'로 저장한 뒤 완료 화면을 보여 준다
-// (홈·레벨 목록은 진도를 화면을 열 때 한 번 읽어서, 저장이 끝난 뒤여야 바로 '완료'로 보인다)
+// 끝나면 마이크 장치를 닫고, 끝까지 갔으면 롤플레이 단계를 끝냄으로 저장한 뒤 끝 화면을 보여 준다.
+// 네 단계를 다 끝냈을 때만 레슨 '완료' (사용자 요청 2026-11-18). 홈·레벨 목록은 진도를 화면을 열 때
+// 한 번 읽어서, 저장이 끝난 뒤여야 바로 반영돼 보인다
 async function finishRun(q: StartInput, ctx: AudioContext, end: string) {
   q.log(`롤플레이 끝 (${end})`);
   ctx.close().catch(() => undefined);
@@ -176,7 +184,8 @@ async function finishRun(q: StartInput, ctx: AudioContext, end: string) {
   q.setRunning(false);
   if (end === 'done') {
     q.st.onLine(q.lesson.rolePlay.lines.length);
-    await markNewStage(q.lesson.lessonId, q.lesson.levelCode, 'done').catch(() => undefined);
+    const r = await finishNewStep(q.lesson.lessonId, q.lesson.levelCode, 'roleplay').catch(() => null);
+    q.setResult(r);
     q.setPhase('done');
   } else if (end !== 'stopped') {
     q.setNotice(end);

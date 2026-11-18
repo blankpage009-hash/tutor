@@ -4,12 +4,14 @@ import { Button } from '../components/Button';
 import { TwoColumn } from '../components/TwoColumn';
 import { contentUrl } from '../content/loader';
 import type { NewLesson } from '../content/lessonTypes';
+import type { DrillPosition } from '../db/types';
 import { buildDrillPlan, DRILL_MODE_LABEL, toSentence, type DrillStep } from '../drillPlan';
 import { newStagePath, nextNewStage } from '../newLessonFlow';
 import { playAudio, unlockAudio } from '../speech/audioPlayer';
 import courseStyles from './courses/Courses.module.css';
 import styles from './drill/Drill.module.css';
 import { DrillList } from './drill/DrillList';
+import { useKeepDrillPosition, useSavedDrillPosition } from './drill/useDrillPosition';
 import { useDrillSaved } from './drill/useDrillSaved';
 import { useDrillSpeaking } from './drill/useDrillSpeaking';
 import { useDrillSteps } from './drill/useDrillSteps';
@@ -21,9 +23,10 @@ import { ShadowingStage, type HandsFreeView } from './shadowing/ShadowingStage';
 export function DrillScreen() {
   const { lessonId = '' } = useParams();
   const { lesson, error } = useNewLesson(lessonId, 'drill');
+  const pos = useSavedDrillPosition(lessonId);
   if (error) return <p className={courseStyles.meta} lang="ko">{error}</p>;
-  if (!lesson) return <p className={courseStyles.meta} lang="ko">불러오는 중…</p>;
-  return <DrillBody key={lesson.lessonId} lesson={lesson} />;
+  if (!lesson || pos === undefined) return <p className={courseStyles.meta} lang="ko">불러오는 중…</p>;
+  return <DrillBody key={lesson.lessonId} lesson={lesson} initial={pos ?? undefined} />;
 }
 
 // 상황 응답 회차의 상황: 영어 cue만 소리가 있다
@@ -35,10 +38,11 @@ function cueOf(step: DrillStep) {
   return { text: cue.text, lang: cue.lang, onPlay };
 }
 
-function DrillBody({ lesson }: { lesson: NewLesson }) {
+function DrillBody({ lesson, initial }: { lesson: NewLesson; initial?: DrillPosition }) {
   const nav = useNavigate();
   const plan = useMemo(() => buildDrillPlan(lesson), [lesson]);
-  const steps = useDrillSteps(plan.length);
+  const steps = useDrillSteps(plan.length, initial);
+  useKeepDrillPosition(lesson, steps);
   const sp = useDrillSpeaking(plan, steps);
   const saved = useDrillSaved(lesson, sp.log);
   const { step, hf } = sp;
