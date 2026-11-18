@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { contentUrl } from '../../content/loader';
-import type { DialogueLine } from '../../content/lessonTypes';
 import { playAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
+
+// 대화문·롤플레이 줄. 롤플레이 내 줄은 음성이 없다(자유 답변)
+export type PlayableLine = { speaker: 'partner' | 'me'; audio?: string };
 
 // 대화문 줄을 차례로 틀어 준다. 새 재생을 시작하거나 멈추면 번호표(token)가 바뀌어
 // 앞서 돌던 순서는 다음 줄로 넘어가지 않고 조용히 끝난다
-export function useLinePlayer(lines: DialogueLine[]) {
+export function useLinePlayer(lines: PlayableLine[]) {
   const [playing, setPlaying] = useState<number | null>(null);
   const token = useRef(0);
 
@@ -20,7 +22,8 @@ export function useLinePlayer(lines: DialogueLine[]) {
   const playLine = useCallback(async (i: number, t: number) => {
     if (token.current !== t) return false;
     setPlaying(i);
-    await playAudio(contentUrl(lines[i].audio), 1).catch((e) => console.debug(`[대화문] 재생 실패: ${String(e)}`));
+    const audio = lines[i].audio;
+    if (audio) await playAudio(contentUrl(audio), 1).catch((e) => console.debug(`[대화문] 재생 실패: ${String(e)}`));
     return token.current === t;
   }, [lines]);
 

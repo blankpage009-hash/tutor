@@ -2,7 +2,6 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import { PracticeLayout } from './layouts/PracticeLayout';
 import { TabLayout } from './layouts/TabLayout';
 import { CourseDetailScreen } from './screens/CourseDetailScreen';
-import { ScreenPlaceholder } from './components/ScreenPlaceholder';
 import { CoursesScreen } from './screens/CoursesScreen';
 import { CurriculumLevelScreen } from './screens/CurriculumLevelScreen';
 import { DialogueScreen } from './screens/DialogueScreen';
@@ -12,6 +11,7 @@ import { HomeScreen } from './screens/HomeScreen';
 import { LessonScreen } from './screens/LessonScreen';
 import { LibraryScreen } from './screens/LibraryScreen';
 import { MoreScreen } from './screens/MoreScreen';
+import { NewRolePlayScreen } from './screens/NewRolePlayScreen';
 import { ProgressScreen } from './screens/ProgressScreen';
 import { PromptScreen } from './screens/PromptScreen';
 import { ReviewScreen } from './screens/ReviewScreen';
@@ -50,7 +50,7 @@ export function App() {
           <Route path="/n/:lessonId/learn" element={<LearnScreen />} />
           <Route path="/n/:lessonId/dialogue" element={<DialogueScreen />} />
           <Route path="/n/:lessonId/drill" element={<DrillScreen />} />
-          <Route path="/n/:lessonId/roleplay" element={<ScreenPlaceholder title="롤플레이" phase="Phase 5.5 세션 3" />} />
+          <Route path="/n/:lessonId/roleplay" element={<NewRolePlayScreen />} />
           <Route path="/review" element={<ReviewScreen />} />
           <Route path="/vocab/quiz" element={<VocabQuizScreen />} />
           <Route path="/roleplay" element={<RoleplayScreen />} />
