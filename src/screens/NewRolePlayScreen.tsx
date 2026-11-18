@@ -5,6 +5,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import type { NewLesson } from '../content/lessonTypes';
 import courseStyles from './courses/Courses.module.css';
 import styles from './dialogue/Dialogue.module.css';
+import { NewLessonSteps } from './newLesson/NewLessonSteps';
 import { useNewLesson } from './newLesson/useNewLesson';
 import { MyTurnPanel } from './roleplay/MyTurnPanel';
 import { RolePlayLines } from './roleplay/RolePlayLines';
@@ -29,6 +30,7 @@ function RolePlayBody({ lesson }: { lesson: NewLesson }) {
     <>
       <BackLink to={`/curriculum/${lesson.levelCode}`} label={lesson.level} />
       <ScreenHeader eyebrow={`유닛 ${lesson.unit} · STEP 4 롤플레이`} title={lesson.lessonTitle} />
+      <NewLessonSteps lessonId={lesson.lessonId} current="roleplay" />
       <p className={styles.situation} lang="ko">{rp.situation} (상대: {rp.partnerRole})</p>
       {s.phase !== 'intro' && <RolePlayLines lines={rp.lines} partnerRole={rp.partnerRole}
         upTo={s.cur} current={s.phase === 'practice' ? s.cur : null} said={s.said} />}

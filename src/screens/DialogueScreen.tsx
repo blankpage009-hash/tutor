@@ -12,6 +12,7 @@ import styles from './dialogue/Dialogue.module.css';
 import { DialogueLines } from './dialogue/DialogueLines';
 import { MyLinePanel } from './dialogue/MyLinePanel';
 import { useLinePlayer } from './dialogue/useLinePlayer';
+import { NewLessonSteps } from './newLesson/NewLessonSteps';
 import { useNewLesson } from './newLesson/useNewLesson';
 import { useNewSpeaking } from './newLesson/useNewSpeaking';
 
@@ -89,6 +90,7 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
     <>
       <BackLink to={`/curriculum/${lesson.levelCode}`} label={lesson.level} />
       <ScreenHeader eyebrow={`유닛 ${lesson.unit} · STEP 2 대화문`} title={lesson.lessonTitle} />
+      <NewLessonSteps lessonId={lesson.lessonId} current="dialogue" />
       <p className={styles.situation} lang="ko">{lesson.dialogue.situation} (상대: {lesson.dialogue.partnerRole})</p>
       <DialogueLines lines={d.lines} partnerRole={lesson.dialogue.partnerRole}
         current={d.player.playing ?? (d.phase === 'practice' ? d.cur : null)}

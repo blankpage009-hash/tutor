@@ -11,6 +11,7 @@ import courseStyles from './courses/Courses.module.css';
 import { KeySentenceCard } from './learn/KeySentenceCard';
 import { LearnNotes } from './learn/LearnNotes';
 import styles from './learn/Learn.module.css';
+import { NewLessonSteps } from './newLesson/NewLessonSteps';
 
 // 새 레슨 STEP 1 설명(/n/:lessonId/learn): 핵심 문장·강세·듣기 + 설명·발음·실수. 읽는 단계라 들어오면 진도를 올린다
 export function LearnScreen() {
@@ -34,6 +35,7 @@ export function LearnScreen() {
     <>
       <BackLink to={`/curriculum/${lesson.levelCode}`} label={lesson.level} />
       <ScreenHeader eyebrow={`유닛 ${lesson.unit} · STEP 1 설명`} title={lesson.lessonTitle} />
+      <NewLessonSteps lessonId={lesson.lessonId} current="learn" />
       <KeySentenceCard sentence={lesson.keySentence} />
       <LearnNotes lesson={lesson} />
       <div className={styles.actions}>

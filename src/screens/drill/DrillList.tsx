@@ -1,5 +1,6 @@
 import type { NewLesson } from '../../content/lessonTypes';
 import { DRILL_MODE_LABEL, doneRepsByDrill, type DrillStep } from '../../drillPlan';
+import { NewLessonSteps } from '../newLesson/NewLessonSteps';
 import styles from './Drill.module.css';
 
 type Props = { lesson: NewLesson; plan: DrillStep[]; current: DrillStep; cleared: Set<string> };
@@ -13,6 +14,7 @@ export function DrillList({ lesson, plan, current, cleared }: Props) {
     <div>
       <p className={styles.eyebrow} lang="ko">유닛 {lesson.unit} · STEP 3 드릴</p>
       <h1 className={styles.title}>{lesson.lessonTitle}</h1>
+      <NewLessonSteps lessonId={lesson.lessonId} current="drill" />
       <ol className={styles.stages}>
         {lesson.drillStages.map((s) => (
           <li key={s.mode} className={s === current.stage ? styles.stageNow : styles.stage} lang="ko">
