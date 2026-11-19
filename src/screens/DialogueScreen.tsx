@@ -10,6 +10,7 @@ import { unlockAudio } from '../speech/audioPlayer';
 import { newStagePath, nextNewStage } from '../newLessonFlow';
 import courseStyles from './courses/Courses.module.css';
 import styles from './dialogue/Dialogue.module.css';
+import { DialogueCard } from './dialogue/DialogueCard';
 import { DialogueLines } from './dialogue/DialogueLines';
 import { MyLinePanel } from './dialogue/MyLinePanel';
 import { useLinePlayer } from './dialogue/useLinePlayer';
@@ -91,17 +92,23 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
     }
   });
   const myTurn = d.phase === 'practice' && d.player.playing === null && d.meIdx === d.cur;
+  const shown = d.player.playing ?? d.cur;
   return (
     <>
       <BackLink to={`/curriculum/${lesson.levelCode}`} label={lesson.level} />
       <ScreenHeader eyebrow={`유닛 ${lesson.unit} · STEP 2 대화문`} title={lesson.lessonTitle} />
       <NewLessonSteps lessonId={lesson.lessonId} current="dialogue" />
       <p className={styles.situation} lang="ko">{lesson.dialogue.situation} (상대: {lesson.dialogue.partnerRole})</p>
-      <DialogueLines lines={d.lines} partnerRole={lesson.dialogue.partnerRole}
-        current={d.player.playing ?? (d.phase === 'practice' ? d.cur : null)}
-        upTo={d.phase === 'practice' ? d.cur : undefined} />
-      {myTurn && <MyLinePanel attempt={speaking.attempt} threshold={THRESHOLD} engineNote={speaking.engineNote}
-        micLocked={speaking.micLocked} onSkip={() => { clearTimer(); d.go(d.cur + 1); }} />}
+      {/* 처음·끝에는 대화문 전체, Speak 연습 중에는 지금 줄 하나만 박스로 (사용자 요청 2026-11-19) */}
+      {d.phase !== 'practice' && <DialogueLines lines={d.lines} partnerRole={lesson.dialogue.partnerRole}
+        current={d.player.playing} />}
+      {d.phase === 'practice' && shown < d.lines.length && (
+        <DialogueCard line={d.lines[shown]} index={shown} total={d.lines.length}
+          partnerRole={lesson.dialogue.partnerRole} outcome={myTurn ? speaking.attempt.outcome : undefined}>
+          {myTurn && <MyLinePanel attempt={speaking.attempt} threshold={THRESHOLD} engineNote={speaking.engineNote}
+            micLocked={speaking.micLocked} onSkip={() => { clearTimer(); d.go(d.cur + 1); }} />}
+        </DialogueCard>
+      )}
       {d.phase === 'intro' && <IntroActions playing={d.player.playing !== null}
         onPlayAll={() => { void d.player.playAll(); }} onStop={d.player.stop} onStart={d.start} />}
       {d.phase === 'done' && <DoneActions lesson={lesson} onAgain={d.start}
@@ -117,8 +124,8 @@ function IntroActions({ playing, onPlayAll, onStop, onStart }: IntroProps) {
     <div className={courseStyles.actions}>
       {playing
         ? <Button block onClick={onStop}>멈추기</Button>
-        : <Button block onClick={onPlayAll}>전체 듣기</Button>}
-      <Button variant="primary" block disabled={playing} onClick={onStart}>내 줄 말하기 시작</Button>
+        : <Button block onClick={onPlayAll}>Listen</Button>}
+      <Button variant="primary" block disabled={playing} onClick={onStart}>Speak</Button>
     </div>
   );
 }

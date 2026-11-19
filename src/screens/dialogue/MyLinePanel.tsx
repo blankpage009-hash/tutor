@@ -1,6 +1,5 @@
 import { Button } from '../../components/Button';
 import { MicButton } from '../../components/MicButton';
-import { WordHighlight } from '../../components/WordHighlight';
 import type { useShadowingAttempt } from '../shadowing/useShadowingAttempt';
 import styles from './Dialogue.module.css';
 
@@ -35,12 +34,10 @@ function Result({ p }: { p: Props }) {
 export function MyLinePanel(p: Props) {
   const o = p.attempt.outcome;
   const listening = o?.status === 'listening';
-  const final = o?.status === 'passed' || o?.status === 'failed';
   // 통과 뒤 다음 상대 줄로 넘어가기 전 잠깐 사이에 또 누르면 마이크가 열린 채 상대 줄이 재생된다
   const passed = o?.status === 'passed';
   return (
     <div className={styles.panel}>
-      {o && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} />}
       <Result p={p} />
       <MicButton listening={listening} status={statusText(p, o?.status ?? 'idle', o?.message ?? null)}
         disabled={passed || (p.micLocked && !listening)} onClick={listening ? p.attempt.stop : p.attempt.start} />
