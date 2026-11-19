@@ -41,7 +41,7 @@ export function GeminiKeyRow() {
     <div className={styles.keyBlock}>
       <p className={styles.keyName} lang="ko">Gemini API 키 (선택)</p>
       <p className={styles.keyHint} lang="ko">
-        키를 넣으면 롤플레잉에 "새 상황 만들기" 버튼이 생겨요. 키는 이 기기에만 저장되고, 생성 버튼을 누를 때만 Google로 전달돼요. 없어도 나머지 기능은 모두 써요.
+        키를 넣으면 롤플레잉의 "새 상황 만들기"와 보관함 문장의 "변형 더 만들기" 버튼이 생겨요. 키는 이 기기에만 저장되고, 생성 버튼을 누를 때만 Google로 전달돼요. 없어도 나머지 기능은 모두 써요.
       </p>
       {saved && <p className={styles.keyState} lang="ko">{maskTail(saved)}</p>}
       <input

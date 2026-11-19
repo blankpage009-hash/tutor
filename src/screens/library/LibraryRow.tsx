@@ -6,11 +6,13 @@ import { contentUrl } from '../../content/loader';
 import type { SavedSentence } from '../../db/types';
 import { playAudio, unlockAudio } from '../../speech/audioPlayer';
 import styles from './Library.module.css';
+import { VariationBox } from './VariationBox';
 
-type Props = { row: SavedSentence; onRemove: (id: string) => void };
+// geminiKey는 보관함 화면이 한 번만 읽어 내려 준다 (줄마다 읽지 않게). 비어 있으면 변형 버튼을 그리지 않는다
+type Props = { row: SavedSentence; onRemove: (id: string) => void; geminiKey?: string };
 
-// 저장 문장 한 줄: 듣기 · 다시 쉐도잉 · 삭제(한 번 더 확인)
-export function LibraryRow({ row, onRemove }: Props) {
+// 저장 문장 한 줄: 듣기 · 다시 쉐도잉 · 삭제(한 번 더 확인) · (키가 있으면) 변형 더 만들기
+export function LibraryRow({ row, onRemove, geminiKey }: Props) {
   const nav = useNavigate();
   const [confirming, setConfirming] = useState(false);
   const [playError, setPlayError] = useState(false);
@@ -35,6 +37,7 @@ export function LibraryRow({ row, onRemove }: Props) {
         </Button>
         <Button size="sm" variant="ghost" onClick={() => setConfirming(true)}>삭제</Button>
       </div>
+      {geminiKey && row.en && <VariationBox geminiKey={geminiKey} en={row.en} ko={row.ko} />}
       {playError && <p className={styles.confirm} lang="ko">재생하지 못했어요. 인터넷 연결을 확인해 주세요.</p>}
       {confirming && (
         <div className={styles.confirm} lang="ko">

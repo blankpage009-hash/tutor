@@ -1,4 +1,4 @@
-// Gemini에게 시킬 일(새 롤플레잉 상황 만들기)의 요청문과, 돌아온 글자를 앱이 쓰는 모양으로 바꾸는 검사.
+// Gemini에게 시킬 일(변형 문장, 새 롤플레잉 상황)의 요청문과, 돌아온 글자를 앱이 쓰는 모양으로 바꾸는 검사.
 // 요청과 응답 검사를 화면·네트워크와 떼어 두어 시험으로 확인한다. 응답은 믿지 않고 모양을 하나씩 확인한다.
 import type { RolePlayLine } from '../content/lessonTypes';
 import { GeminiError, type GeminiRequest } from './geminiClient';
@@ -18,6 +18,35 @@ function parseJson(text: string): unknown {
 }
 
 const str = (v: unknown): string => (typeof v === 'string' ? v.trim() : '');
+
+// ── 변형 문장 ──────────────────────────────────────────────
+export type Variation = { en: string; ko: string };
+const MAX_VARIATIONS = 5;
+
+export function variationRequest(en: string, ko?: string): GeminiRequest {
+  return {
+    json: true,
+    prompt: [
+      'A Korean learner is practicing this American English sentence:',
+      `"${en}"${ko ? ` (Korean: ${ko})` : ''}`,
+      'Write 5 variations that keep the same sentence pattern but change the situation, subject or vocabulary.',
+      'Use simple, natural, everyday American English (CEFR A2-B1). Each needs a natural Korean translation.',
+      'Return JSON only: an array of objects like [{"en": "...", "ko": "..."}].'
+    ].join('\n')
+  };
+}
+
+export function parseVariations(text: string): Variation[] {
+  const data = parseJson(text);
+  const list = Array.isArray(data) ? data : (data as { variations?: unknown })?.variations;
+  if (!Array.isArray(list)) throw new GeminiError(BAD_FORMAT);
+  const out = list
+    .map((v: { en?: unknown; ko?: unknown }) => ({ en: str(v?.en), ko: str(v?.ko) }))
+    .filter((v) => v.en)
+    .slice(0, MAX_VARIATIONS);
+  if (!out.length) throw new GeminiError(BAD_FORMAT);
+  return out;
+}
 
 // ── 새 롤플레잉 상황 ────────────────────────────────────────
 export type GeneratedRolePlay = { title: string; situation: string; partnerRole: string; lines: RolePlayLine[] };
