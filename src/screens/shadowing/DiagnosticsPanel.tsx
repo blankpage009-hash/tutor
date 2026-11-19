@@ -89,7 +89,7 @@ export function DiagnosticsPanel(p: Props) {
       <Switch label="⑦ 떨어지면 두 번째 의견 (문장 단어만 허용으로 한 번 더)" on={p.secondOpinion} onChange={p.onSecondOpinion} />
       <Switch label="⑧ 마이크 소리 처리 끄기 (에코 제거·잡음 억제, 다음 마이크부터)" on={p.rawMic} onChange={p.onRawMic} disabled={p.locked} />
       <Switch label="⑨ 이어 말하기: 튜터가 읽는 동안 마이크 끄기 (튜터 목소리 잡음 비교)" on={p.micOff} onChange={p.onMicOff} disabled={p.locked} />
-      <Switch label="⑩ 처리 없는 마이크 소리 25배 키우기 (⑧과 함께, 다음 마이크부터)" on={p.boost} onChange={p.onBoost} disabled={p.locked} />
+      <Switch label="⑩ 처리 없는 마이크 소리 15배 키우기 (⑧과 함께, 다음 마이크부터)" on={p.boost} onChange={p.onBoost} disabled={p.locked} />
       <Switch label="④ 마이크 뒤 소리 크기 되돌리기 (오디오 세션 조정)" on={p.audioSessionOn} onChange={p.onAudioSessionOn} />
       <p className={styles.diagRow} lang="ko">아래 ①②③⑤는 ⑥을 껐을 때(내장 인식)만 쓰여요.</p>
       <Switch label="① 말하는 동안 내 목소리 같이 녹음" on={p.recordWhileListening} onChange={p.onRecordWhileListening} />

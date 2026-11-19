@@ -7,6 +7,7 @@ import type { Lesson, Sentence } from '../content/types';
 import { DEFAULT_SETTINGS } from '../db/types';
 import { setAudioDebug } from '../speech/audioPlayer';
 import { setAudioSessionEnabled } from '../speech/audioSession';
+import { TUTOR_SAFE_MIC } from '../speech/micSlot';
 import { toVariationLesson, type PracticeKind } from '../lessonFlow';
 import { DiagnosticsPanel } from './shadowing/DiagnosticsPanel';
 import { FinishPanel } from './shadowing/FinishPanel';
@@ -74,8 +75,8 @@ function useDiagnostics() {
   };
 }
 
-// 14차 기록: 처리 켬 0.35~0.54 / 처리 끔 0.015~0.017 → 약 25~30배 차이. 넘침을 피해 낮은 쪽으로
-const RAW_MIC_GAIN = 25;
+// 드릴·롤플레이와 같은 배수 (25배는 작게 말해도 꽉 찬 적이 있어 15배로, 사용자 결정 2026-11-19)
+const RAW_MIC_GAIN = TUTOR_SAFE_MIC.micGain;
 
 type Diag = ReturnType<typeof useDiagnostics>;
 

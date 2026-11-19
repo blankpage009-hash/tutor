@@ -3,6 +3,7 @@ import { contentUrl } from '../../content/loader';
 import type { Sentence } from '../../content/types';
 import { promptAudio, toSentence, type DrillStep } from '../../drillPlan';
 import { playAudio } from '../../speech/audioPlayer';
+import { TUTOR_SAFE_MIC } from '../../speech/micSlot';
 import { SLOW_RATE, useNewSpeaking } from '../newLesson/useNewSpeaking';
 import { useHandsFree } from '../shadowing/useHandsFree';
 import type { useDrillSteps } from './useDrillSteps';
@@ -25,7 +26,7 @@ export function useDrillSpeaking(plan: DrillStep[], steps: Steps) {
   const hf = useHandsFree({
     lesson: { sentences }, index: steps.index, cleared: steps.cleared, recordPass: steps.recordPass, next: steps.next,
     attempt: sp.attempt, active: sp.handsFreeActive, slowRate: SLOW_RATE, failFeedback: false,
-    micProcessing: true, log, onTooManyFails: 'slow-and-continue',
+    ...TUTOR_SAFE_MIC, log, onTooManyFails: 'slow-and-continue',
     shouldRead: (s) => audioOf(s) !== null,
     readFirst: (s) => {
       const a = audioOf(s);

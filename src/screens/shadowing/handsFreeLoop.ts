@@ -2,7 +2,8 @@
 // 튜터가 읽음 → 내가 말함 → 통과면 다음 문장 / 실패면 느리게 한 번 들려준 뒤 바로 다시 들음.
 // 같은 문장에서 연속으로 너무 많이 떨어지거나, 말이 없거나, 멈춤을 누르면 끝난다.
 
-export type HandsFreeStep = 'reading' | 'listening' | 'slow';
+// preparing: 들을 차례지만 마이크가 아직 켜지는 중 (튜터 재생 중 마이크를 끄는 화면에서만, useHandsFree가 알림)
+export type HandsFreeStep = 'reading' | 'preparing' | 'listening' | 'slow';
 export type HearStatus = 'passed' | 'failed' | 'no-speech' | 'error';
 export type HandsFreeEnd = 'done' | 'too-many-fails' | 'no-speech' | 'error' | 'stopped';
 

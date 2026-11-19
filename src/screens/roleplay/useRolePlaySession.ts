@@ -6,7 +6,7 @@ import { finishNewStep } from '../../db/progress';
 import type { NewLessonStep } from '../../newLessonFlow';
 import { judgeKeywords, type KeywordJudgement } from '../../scoring/keywordJudge';
 import { playAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
-import { releaseMic } from '../../speech/audioSession';
+import { createMicSlot, TUTOR_SAFE_MIC, type MicSlot } from '../../speech/micSlot';
 import type { MicStream } from '../../speech/micStream';
 import { createCaptureContext } from '../../speech/pcmCapture';
 import type { Listening } from '../../speech/recognizer';
@@ -17,8 +17,11 @@ import { useVoskModel } from '../shadowing/useVoskModel';
 import { runRolePlay, type RolePlayLoopDeps, type RpHear } from './rolePlayLoop';
 
 export type MyLine = Extract<RolePlayLine, { speaker: 'me' }>;
-// 내 줄 화면: live = 듣는 중 들린 말, last = 마지막으로 끝난 시도(틀리면 빠진 말을 보여 주고 바로 다시 듣는다)
-export type Turn = { live: KeywordJudgement | null; last: { pass: boolean; judgement: KeywordJudgement } | null };
+// 내 줄 화면: live = 듣는 중 들린 말, last = 마지막으로 끝난 시도(틀리면 빠진 말을 보여 주고 바로 다시 듣는다),
+// preparing = 내 차례지만 마이크가 아직 켜지는 중
+export type Turn = {
+  live: KeywordJudgement | null; last: { pass: boolean; judgement: KeywordJudgement } | null; preparing: boolean;
+};
 
 // 통과 글자를 잠깐 보여 준 뒤 다음 상대 줄로 (대화문과 같은 간격)
 const PASS_PAUSE_MS = 800;
@@ -26,17 +29,32 @@ const PASS_PAUSE_MS = 800;
 const THINK_PAUSE_MS = 2500;
 
 type Ctx = {
-  model: Model; mic: MicStream; log: (m: string) => void;
+  model: Model; slot: MicSlot; log: (m: string) => void; stopped: () => boolean;
   listening: MutableRefObject<Listening | null>; skipping: MutableRefObject<boolean>;
   setTurn: (t: (prev: Turn) => Turn) => void; record: (no: number, text: string) => void;
 };
 
+// 상대 줄 재생 중에는 마이크가 꺼져 있어(튜터 목소리 잡음 대책, 2026-11-19) 내 차례에 연다.
+// 켜지는 동안(0.6~3초)은 "준비 중"으로 보여 줘서 너무 일찍 말해 첫 단어가 잘리지 않게 한다
+async function micForTurn(c: Ctx): Promise<MicStream> {
+  if (!c.slot.current()) c.setTurn((t) => ({ ...t, preparing: true }));
+  const mic = await c.slot.get();
+  c.setTurn((t) => ({ ...t, preparing: false }));
+  if (typeof mic === 'string') throw new MicOpenError(mic);
+  return mic;
+}
+
+class MicOpenError extends Error {}
+
 // 한 번 듣기. 두 번째 의견은 끔(예시 답 단어로 끌려간다), 중간 결과로 끝내지 않음(문장 중간에서 잘린다)
 async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   const keys = line.requiredKeywords;
+  const mic = await micForTurn(c);
+  // 마이크가 켜지는 사이 멈춤을 눌렀으면 듣지 않는다 (순서 쪽이 멈춤으로 처리)
+  if (c.stopped()) return 'no-speech';
   c.setTurn((t) => ({ ...t, live: judgeKeywords(keys, []) }));
   const l = listenVosk({
-    model: c.model, mic: c.mic, sentenceEn: line.exampleEn, secondOpinion: false, afterFinalMs: THINK_PAUSE_MS,
+    model: c.model, mic, sentenceEn: line.exampleEn, secondOpinion: false, afterFinalMs: THINK_PAUSE_MS,
     isComplete: () => false,
     isPass: (alts) => judgeKeywords(keys, alts).pass,
     onInterim: (alts) => c.setTurn((t) => ({ ...t, live: judgeKeywords(keys, alts) })),
@@ -53,7 +71,7 @@ async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   if (!res.alternatives.length) return 'no-speech';
   const judgement = judgeKeywords(keys, res.alternatives);
   c.log(`롤플레이 판정 ${judgement.pass ? '통과' : '실패'} · 들린 말 "${judgement.heard}"`);
-  c.setTurn(() => ({ live: null, last: { pass: judgement.pass, judgement } }));
+  c.setTurn(() => ({ live: null, last: { pass: judgement.pass, judgement }, preparing: false }));
   if (judgement.pass) c.record(line.no, judgement.heard);
   return judgement.pass ? 'passed' : 'failed';
 }
@@ -62,31 +80,35 @@ function loopDeps(c: Ctx, lines: RolePlayLine[], start: number, stopped: () => b
   const deps: RolePlayLoopDeps<RolePlayLine> = {
     lines, start, stopped, onLine,
     isMine: (l) => l.speaker === 'me',
-    // 상대가 말하는 동안 마이크는 열어 두되 인식기에는 넣지 않는다 (듣기는 재생이 끝난 뒤 시작 — 드릴과 같음)
-    play: (l) => (l.speaker === 'partner'
-      ? playAudio(contentUrl(l.audio), 1).catch((e) => c.log(`재생 실패: ${String(e)}`))
-      : Promise.resolve()),
+    // 상대가 말하기 전에 마이크를 닫아, 상대 목소리가 통화 모드가 아닌 보통 재생으로 나오게 한다 (드릴과 같음)
+    play: (l) => {
+      if (l.speaker !== 'partner') return Promise.resolve();
+      c.slot.release();
+      return playAudio(contentUrl(l.audio), 1).catch((e) => c.log(`재생 실패: ${String(e)}`));
+    },
     hear: (l) => hearLine(c, l as MyLine),
     afterPass: () => new Promise((r) => window.setTimeout(r, PASS_PAUSE_MS))
   };
   return deps;
 }
 
-type Run = Omit<Ctx, 'mic'> & { lines: RolePlayLine[]; start: number; stopped: () => boolean; onLine: (i: number) => void };
+type Run = Omit<Ctx, 'slot'> & { lines: RolePlayLine[]; start: number; onLine: (i: number) => void };
 
-// 마이크를 한 번 열어 끝(또는 멈춤)까지 둔다. 실패하면 안내 문구를 돌려준다
+// 마이크는 내 차례에 열고 상대 줄 전에 닫는다. 끝나면(이유와 상관없이) 닫는다. 실패하면 안내 문구를 돌려준다
 async function session(r: Run, ctx: AudioContext) {
-  const mic = await openVoskMic({ log: r.log, micProcessing: true }, ctx);
-  if (typeof mic === 'string') return mic;
+  const { micProcessing, micGain } = TUTOR_SAFE_MIC;
+  const slot = createMicSlot(() => openVoskMic({ log: r.log, micProcessing, micGain }, ctx), r.log);
   try {
-    return await runRolePlay(loopDeps({ ...r, mic }, r.lines, r.start, r.stopped, r.onLine));
+    return await runRolePlay(loopDeps({ ...r, slot }, r.lines, r.start, r.stopped, r.onLine));
+  } catch (e) {
+    if (e instanceof MicOpenError) return e.message;
+    throw e;
   } finally {
-    mic.close();
-    releaseMic();
+    slot.release();
   }
 }
 
-const EMPTY_TURN: Turn = { live: null, last: null };
+const EMPTY_TURN: Turn = { live: null, last: null, preparing: false };
 
 // 화면 상태: 지금 줄·내가 한 말·내 줄 결과
 function useRolePlayState() {

@@ -24,10 +24,19 @@ export type MicStream = {
 // 처리 켬(0.35~0.54)의 약 30분의 1이 돼 인식이 위태로웠다. 처리 없이 열고 앱이 직접 키워 보려고 둔다 (진단 ⑩)
 export type MicOptions = { processing?: boolean; gain?: number };
 
-// 키운 소리가 -1~1을 넘으면 인식기가 찌그러진 소리로 받으므로 끝을 자른다
+// 키운 소리가 -1~1을 넘으면 인식기가 찌그러진 소리로 받는다. 딱 자르면 소리 모양이 깨지므로
+// KNEE까지는 그대로 두고, 그 위는 1에 가까워질수록 점점 눌러 준다 (평소 목소리를 크게 키워도 덜 찌그러지게)
+const KNEE = 0.7;
+
+function soften(v: number): number {
+  const a = Math.abs(v);
+  if (a <= KNEE) return v;
+  return Math.sign(v) * (KNEE + (1 - KNEE) * Math.tanh((a - KNEE) / (1 - KNEE)));
+}
+
 export function applyGain(data: Float32Array, gain: number): Float32Array {
   if (gain === 1) return data;
-  for (let i = 0; i < data.length; i++) data[i] = Math.max(-1, Math.min(1, data[i] * gain));
+  for (let i = 0; i < data.length; i++) data[i] = soften(data[i] * gain);
   return data;
 }
 

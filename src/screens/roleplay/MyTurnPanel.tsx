@@ -19,6 +19,7 @@ type Props = {
 
 function statusText(p: Props): string {
   if (p.running && p.turn.last?.pass) return '통과! 다음으로 넘어가요';
+  if (p.running && p.turn.preparing) return '마이크 준비 중… 잠깐만요';
   if (p.running) return '듣는 중… 다 말하고 잠깐 멈추면 판정해요. 탭하면 멈춰요';
   if (p.micLocked && p.engineNote) return p.engineNote;
   return '멈췄어요. 탭하면 이 줄부터 다시 들어요';
@@ -68,7 +69,7 @@ export function MyTurnPanel(p: Props) {
       <Keywords p={p} />
       {showExample && <p className={styles.example} lang="en">{p.line.exampleEn}</p>}
       <Result last={p.turn.last} />
-      <MicButton listening={p.running && !passed} status={statusText(p)}
+      <MicButton listening={p.running && !passed && !p.turn.preparing} status={statusText(p)}
         disabled={passed || (!p.running && p.micLocked)} onClick={p.running ? p.onPause : p.onResume} />
       <div className={dialogueStyles.actions}>
         <Button size="sm" onClick={() => setShowExample((v) => !v)}>{showExample ? '예시 숨기기' : '예시 보기'}</Button>

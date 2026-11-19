@@ -56,6 +56,7 @@ export type HandsFreeView = {
 
 export const STEP_TEXT: Record<HandsFreeStep, string> = {
   reading: '튜터가 읽어요… 듣고 바로 따라 말해 보세요',
+  preparing: '마이크 준비 중… 잠깐만요',
   listening: '따라 말해 보세요 · 듣는 중',
   slow: '느리게 다시 들려줄게요… 끝나면 다시 말해 보세요'
 };

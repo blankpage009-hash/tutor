@@ -2,8 +2,7 @@ import { useCallback, useEffect, useRef, useState, type MutableRefObject } from 
 import { contentUrl } from '../../content/loader';
 import type { Sentence } from '../../content/types';
 import { playAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
-import { releaseMic } from '../../speech/audioSession';
-import type { MicStream } from '../../speech/micStream';
+import { createMicSlot, type MicSlot } from '../../speech/micSlot';
 import { createCaptureContext } from '../../speech/pcmCapture';
 import { runHandsFree, type HandsFreeDeps, type HandsFreeEnd, type HandsFreeStep, type HearStatus } from './handsFreeLoop';
 import { openVoskMic, type useShadowingAttempt } from './useShadowingAttempt';
@@ -43,38 +42,11 @@ function playSentence(s: Sentence, rate: number, log: (m: string) => void): Prom
   return playAudio(contentUrl(s.audio), rate).catch((e) => log(`재생 실패: ${String(e)}`));
 }
 
-// 마이크를 들을 때 열고, 튜터 재생 전에 닫을 수 있게 쥐고 있는다.
-// 다시 열 때도 탭 순간 만든 ctx를 그대로 쓴다 — iOS는 그때 만든 장치에만 마이크 소리를 흘려 준다
-type MicSlot = { get: () => Promise<MicStream | string>; release: () => void; current: () => MicStream | null };
-
-function micSlot(p: HandsFreeInput, ctx: AudioContext): MicSlot {
-  let mic: MicStream | null = null;
-  return {
-    current: () => mic,
-    async get() {
-      if (mic) return mic;
-      const t0 = performance.now();
-      const m = await openVoskMic(p, ctx);
-      if (typeof m === 'string') return m;
-      mic = m;
-      // 첫 단어가 잘리는지 판단하려고 여는 데 걸린 시간을 남긴다
-      p.log(`마이크 여는 데 ${Math.round(performance.now() - t0)}ms`);
-      return m;
-    },
-    release() {
-      if (!mic) return;
-      mic.close();
-      releaseMic();
-      mic = null;
-    }
-  };
-}
-
 // 순서를 돌린다. 끝나면(이유와 상관없이) 마이크를 닫는다. 장치(ctx)는 부른 쪽이 닫는다
 async function session(
   p: HandsFreeInput, ctx: AudioContext, stopped: () => boolean, onStep: (s: HandsFreeStep | null) => void
 ): Promise<HandsFreeEnd | string> {
-  const slot = micSlot(p, ctx);
+  const slot = createMicSlot(() => openVoskMic(p, ctx), p.log);
   // ⑨ 꺼짐: 처음에 한 번 열어 끝까지 둔다. ⑨ 켬: 처음 들을 차례에 연다
   if (!p.micOffWhilePlaying) {
     const first = await slot.get();
@@ -93,9 +65,16 @@ function beforePlay(p: HandsFreeInput, slot: MicSlot): void {
   if (p.micOffWhilePlaying) slot.release();
 }
 
-async function hearWithSlot(p: HandsFreeInput, slot: MicSlot, s: Sentence, stopped: () => boolean): Promise<HearStatus> {
+async function hearWithSlot(
+  p: HandsFreeInput, slot: MicSlot, s: Sentence, stopped: () => boolean, onStep: (s: HandsFreeStep | null) => void
+): Promise<HearStatus> {
+  // 마이크가 켜지는 데 0.6~3초 걸린다(아이폰 결과 2026-11-19). 그동안 "듣는 중"이 뜨면 너무 일찍 말해
+  // 첫 단어가 잘리므로, 실제로 켜질 때까지 준비 중으로 보여 준다
+  const needsOpen = !slot.current();
+  if (needsOpen) onStep('preparing');
   const mic = await slot.get();
   if (typeof mic === 'string') return 'error';
+  if (needsOpen) onStep('listening');
   // 마이크를 여는 사이 멈춤을 눌렀으면 듣지 않는다 (순서 쪽이 멈춤으로 처리)
   if (stopped()) return 'no-speech';
   return p.attempt.hearFor(s, mic, NO_SPEECH_MS);
@@ -120,7 +99,7 @@ function loopDeps(p: HandsFreeInput, slot: MicSlot, stopped: () => boolean, onSt
       const mic = slot.current();
       p.log(`튜터 재생 끝 (속도 ${rate}, ${mic ? `그동안 마이크 최대 소리 ${mic.takePeak().toFixed(3)}` : '그동안 마이크 꺼 둠'})`);
     },
-    hear: (s: Sentence) => hearWithSlot(p, slot, s, stopped),
+    hear: (s: Sentence) => hearWithSlot(p, slot, s, stopped, onStep),
     // 이번 통과로 필요 횟수를 막 채웠거나, 이미 끝낸 문장이면 넘어간다
     recordPass: (s: Sentence) => p.recordPass(s.id) || p.cleared.has(s.id),
     advance: () => { p.log('이어 말하기: 다음 문장'); p.next(); },
