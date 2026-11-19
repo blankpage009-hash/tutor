@@ -18,6 +18,19 @@ export const NEW_STAGE_LABEL: Record<NewLessonStage, string> = {
   done: '완료'
 };
 
+// 단계 버튼(레슨 메뉴·수업 화면 위쪽 바)에 쓰는 영어 이름. 한글 NEW_STAGE_LABEL은 배지·홈 문구용이라 따로 둔다
+export const NEW_STEP_ENGLISH: Record<NewLessonStep, string> = {
+  learn: 'Explanation',
+  dialogue: 'Dialogue',
+  drill: 'Drill',
+  roleplay: 'Role-play'
+};
+
+// 레슨에 처음 들어갈 때 보이는 4버튼 메뉴 화면
+export function newLessonMenuPath(lessonId: string): string {
+  return `/n/${lessonId}`;
+}
+
 export function isNewStage(s: string | undefined): s is NewLessonStage {
   return NEW_STAGES.includes(s as NewLessonStage);
 }

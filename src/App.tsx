@@ -11,6 +11,7 @@ import { HomeScreen } from './screens/HomeScreen';
 import { LessonScreen } from './screens/LessonScreen';
 import { LibraryScreen } from './screens/LibraryScreen';
 import { MoreScreen } from './screens/MoreScreen';
+import { NewLessonMenuScreen } from './screens/NewLessonMenuScreen';
 import { NewRolePlayScreen } from './screens/NewRolePlayScreen';
 import { ProgressScreen } from './screens/ProgressScreen';
 import { PromptScreen } from './screens/PromptScreen';
@@ -47,6 +48,7 @@ export function App() {
           <Route path="/variation/:lessonId" element={<VariationScreen key="variation" />} />
           <Route path="/lesson-review/:lessonId" element={<ShadowingScreen key="review" kind="review" />} />
           {/* 새 커리큘럼 레슨 (Phase 5.5). 롤플레이는 세션 3에서 만들 때까지 "준비 중" 빈 화면 */}
+          <Route path="/n/:lessonId" element={<NewLessonMenuScreen />} />
           <Route path="/n/:lessonId/learn" element={<LearnScreen />} />
           <Route path="/n/:lessonId/dialogue" element={<DialogueScreen />} />
           <Route path="/n/:lessonId/drill" element={<DrillScreen />} />

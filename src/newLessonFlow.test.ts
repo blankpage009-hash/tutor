@@ -2,7 +2,8 @@ import { describe, expect, it } from 'vitest';
 import type { Curriculum } from './content/lessonTypes';
 import type { LessonProgress } from './db/types';
 import {
-  addFinishedStep, enteredNewStage, findNewResume, isNewStage, missingSteps, newStagePath, nextNewStage, NEW_STAGES
+  addFinishedStep, enteredNewStage, findNewResume, isNewStage, missingSteps, newLessonMenuPath, newStagePath,
+  nextNewStage, NEW_STAGES, NEW_STEP_ENGLISH
 } from './newLessonFlow';
 
 describe('새 레슨 흐름', () => {
@@ -40,6 +41,11 @@ describe('새 레슨 흐름', () => {
   it('단계 주소: 끝낸 레슨은 설명부터', () => {
     expect(newStagePath('INT1-U03-L03', 'drill')).toBe('/n/INT1-U03-L03/drill');
     expect(newStagePath('INT1-U03-L03', 'done')).toBe('/n/INT1-U03-L03/learn');
+  });
+
+  it('레슨 메뉴 주소와 영어 단계 이름', () => {
+    expect(newLessonMenuPath('INT1-U03-L03')).toBe('/n/INT1-U03-L03');
+    expect(NEW_STEP_ENGLISH.roleplay).toBe('Role-play');
   });
 });
 
