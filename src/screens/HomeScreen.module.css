@@ -14,6 +14,20 @@
   color: var(--ink-muted);
 }
 
+/* 홈 오른쪽 위 설정 아이콘: 44×44 투명, 누르면 연한 파랑 배경 */
+.iconBtn {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  text-decoration: none;
+}
+.iconBtn:active { background: var(--accent-tint); }
+.iconBtn:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
+
 .list { list-style: none; margin: 0; padding: 0; }
 
 .link {

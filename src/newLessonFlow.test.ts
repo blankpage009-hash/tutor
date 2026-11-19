@@ -3,7 +3,7 @@ import type { Curriculum } from './content/lessonTypes';
 import type { LessonProgress } from './db/types';
 import {
   addFinishedStep, enteredNewStage, findNewResume, isNewStage, missingSteps, newLessonMenuPath, newStagePath,
-  nextNewStage, NEW_STAGES, NEW_STEP_ENGLISH
+  nextNewStage, NEW_STAGES, NEW_STEP_ENGLISH, stepTileState
 } from './newLessonFlow';
 
 describe('새 레슨 흐름', () => {
@@ -47,6 +47,12 @@ describe('새 레슨 흐름', () => {
     expect(newLessonMenuPath('INT1-U03-L03')).toBe('/n/INT1-U03-L03');
     expect(NEW_STEP_ENGLISH.roleplay).toBe('Role-play');
   });
+
+  it('단계 타일: 지금 단계가 우선, 그다음 끝낸 단계, 나머지는 남음', () => {
+    expect(stepTileState('learn', 'drill', ['learn'])).toBe('done');
+    expect(stepTileState('drill', 'drill', ['learn', 'drill'])).toBe('current');
+    expect(stepTileState('roleplay', 'drill', ['learn'])).toBe('todo');
+  });
 });
 
 const lesson = (no: number, id: string | null, ready = true) => ({ no, title: `레슨 ${no}`, id, ready });
@@ -69,7 +75,15 @@ const map = (...rows: LessonProgress[]) => new Map(rows.map((r) => [r.lessonId, 
 
 describe('홈 이어서 할 새 레슨', () => {
   it('진도가 없으면 첫 레슨의 설명부터', () => {
-    expect(findNewResume(curriculum, map())).toEqual({ id: 'INT1-U01-L01', stage: 'learn', title: '레슨 1', level: '중급 1' });
+    expect(findNewResume(curriculum, map())).toEqual({
+      id: 'INT1-U01-L01', stage: 'learn', title: '레슨 1', level: '중급 1',
+      unitNo: 1, unitTitle: '유닛 1', lessonNo: 1, steps: [], started: false
+    });
+  });
+
+  it('하던 레슨은 끝낸 단계와 시작 여부를 함께 돌려준다', () => {
+    const r = findNewResume(curriculum, map({ ...row('INT1-U01-L02', 'drill', 3), steps: ['learn', 'dialogue'] }));
+    expect(r).toMatchObject({ id: 'INT1-U01-L02', unitNo: 1, lessonNo: 2, steps: ['learn', 'dialogue'], started: true });
   });
 
   it('하던 레슨 중 가장 최근 것', () => {

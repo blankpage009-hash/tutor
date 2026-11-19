@@ -23,8 +23,8 @@ export function SettingsScreen() {
   const { settings, update, saveError } = useSettings();
   return (
     <>
-      <BackLink to="/more" label="더보기" />
-      <ScreenHeader eyebrow="더보기" title="설정" />
+      <BackLink to="/" label="오늘" />
+      <ScreenHeader eyebrow="오늘" title="설정" />
       {saveError && <p className={styles.keyError} lang="ko">설정을 저장하지 못했어요. 앱을 닫으면 바뀐 값이 사라질 수 있어요.</p>}
       <TutorNameRow />
       <ChoiceRow name="말하기 속도" hint="튜터 목소리의 보통 속도예요. 실패했을 때 느리게 다시 들려주는 소리는 그대로예요"

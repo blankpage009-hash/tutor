@@ -19,8 +19,8 @@ export function RoleplayScreen() {
   }, [progress]);
   return (
     <>
-      <BackLink to="/more" label="더보기" />
-      <ScreenHeader eyebrow="더보기" title="롤플레잉" />
+      <BackLink to="/" label="오늘" />
+      <ScreenHeader eyebrow="오늘" title="롤플레잉" />
       <p className={courseStyles.intro} lang="ko">
         끝낸 레슨의 롤플레이를 다시 해 볼 수 있어요. 상대가 먼저 말하고, 내 차례에 배운 문장으로 대답해요.
       </p>

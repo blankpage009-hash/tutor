@@ -1,11 +1,14 @@
 /* 디자인 v2: 제목 아래 굵은 줄 없이, 작은 대문자 라벨(넓은 글자 간격) + 큰 Barlow Condensed 제목 */
 .header {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
   padding: var(--space-4) 0 0;
   margin-bottom: var(--space-5);
 }
+
+.text { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 
 .eyebrow {
   font-family: var(--type-label-family);

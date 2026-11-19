@@ -11,7 +11,6 @@ import { LearnScreen } from './screens/LearnScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { LibraryScreen } from './screens/LibraryScreen';
 import { SavedPracticeScreen } from './screens/SavedPracticeScreen';
-import { MoreScreen } from './screens/MoreScreen';
 import { NewLessonMenuScreen } from './screens/NewLessonMenuScreen';
 import { NewRolePlayScreen } from './screens/NewRolePlayScreen';
 import { ProgressScreen } from './screens/ProgressScreen';
@@ -38,10 +37,9 @@ export function App() {
           <Route path="/library" element={<LibraryScreen />} />
           <Route path="/library/practice/:startId" element={<SavedPracticeScreen />} />
           <Route path="/vocab" element={<VocabScreen />} />
-          <Route path="/more" element={<MoreScreen />} />
-          <Route path="/more/progress" element={<ProgressScreen />} />
-          <Route path="/more/prompt" element={<PromptScreen />} />
-          <Route path="/more/settings" element={<SettingsScreen />} />
+          <Route path="/prompt" element={<PromptScreen />} />
+          <Route path="/settings" element={<SettingsScreen />} />
+          <Route path="/settings/progress" element={<ProgressScreen />} />
         </Route>
         <Route element={<PracticeLayout />}>
           {/* 새 커리큘럼 레슨 (Phase 5.5) */}

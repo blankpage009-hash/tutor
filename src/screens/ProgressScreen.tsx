@@ -78,8 +78,8 @@ export function ProgressScreen() {
   const p = useCurriculumProgress();
   return (
     <>
-      <BackLink to="/more" label="더보기" />
-      <ScreenHeader eyebrow="더보기" title="진도 · 레벨" />
+      <BackLink to="/" label="오늘" />
+      <ScreenHeader eyebrow="오늘" title="진도 · 레벨" />
       {p === null && <p className={homeStyles.note} lang="ko">불러오는 중…</p>}
       {p === 'error' && <p className={homeStyles.note} lang="ko">커리큘럼 목록을 못 읽었어요. 인터넷 연결을 확인하고 다시 열어 주세요.</p>}
       {p && p !== 'error' && (
@@ -91,7 +91,7 @@ export function ProgressScreen() {
           <h2 className={homeStyles.sub}>전체 진도</h2>
           <Overall stat={p.stat} />
           <LevelList stat={p.stat} currentKey={p.level?.key} />
-          <p className={homeStyles.note} lang="ko">시작 레벨과 일일 목표는 <Link to="/more/settings">설정</Link>에서 바꿀 수 있어요.</p>
+          <p className={homeStyles.note} lang="ko">시작 레벨과 일일 목표는 <Link to="/settings">설정</Link>에서 바꿀 수 있어요.</p>
         </>
       )}
     </>

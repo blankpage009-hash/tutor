@@ -61,24 +61,52 @@ export function newStagePath(lessonId: string, stage: NewLessonStage): string {
   return `/n/${lessonId}/${stage === 'done' ? 'learn' : stage}`;
 }
 
-export type NewResume = { id: string; stage: NewLessonStage; title: string; level: string };
+// 홈 이어 할 레슨 카드에 쓰는 정보: 레벨·유닛·레슨 번호와 끝낸 단계(steps)까지 함께 돌려준다
+export type NewResume = {
+  id: string;
+  stage: NewLessonStage;
+  title: string;
+  level: string;
+  unitNo: number;
+  unitTitle: string;
+  lessonNo: number;
+  steps: NewLessonStep[];
+  started: boolean;
+};
 
-function readyLessons(c: Curriculum): Omit<NewResume, 'stage'>[] {
+type ReadyLesson = Omit<NewResume, 'stage' | 'steps' | 'started'>;
+
+function readyLessons(c: Curriculum): ReadyLesson[] {
   return c.courses.flatMap((course) => course.levels.flatMap((level) => level.units.flatMap((u) =>
-    u.lessons.flatMap((l) => (l.ready && l.id ? [{ id: l.id, title: l.title, level: level.name }] : []))
+    u.lessons.flatMap((l) => (l.ready && l.id
+      ? [{ id: l.id, title: l.title, level: level.name, unitNo: u.no, unitTitle: u.title, lessonNo: l.no }]
+      : []))
   )));
+}
+
+function toResume(lesson: ReadyLesson, stage: NewLessonStage, progress: ProgressMap): NewResume {
+  const p = progress.get(lesson.id);
+  return { ...lesson, stage, steps: p?.steps ?? [], started: !!p };
 }
 
 // 홈 "이어서 할 수업"의 새 레슨: 가장 최근에 하던(완료 전) 레슨, 없으면 목차 순서상 아직 안 끝낸 첫 레슨
 export function findNewResume(c: Curriculum, progress: ProgressMap): NewResume | null {
   const lessons = readyLessons(c);
-  let latest: { lesson: Omit<NewResume, 'stage'>; stage: NewLessonStage; at: number } | null = null;
+  let latest: { lesson: ReadyLesson; stage: NewLessonStage; at: number } | null = null;
   for (const lesson of lessons) {
     const p = progress.get(lesson.id);
     if (!p || !isNewStage(p.stage) || p.stage === 'done') continue;
     if (!latest || p.updatedAt > latest.at) latest = { lesson, stage: p.stage, at: p.updatedAt };
   }
-  if (latest) return { ...latest.lesson, stage: latest.stage };
+  if (latest) return toResume(latest.lesson, latest.stage, progress);
   const first = lessons.find((l) => progress.get(l.id)?.stage !== 'done');
-  return first ? { ...first, stage: 'learn' } : null;
+  return first ? toResume(first, 'learn', progress) : null;
+}
+
+export type StepTileState = 'current' | 'done' | 'todo';
+
+// 4칸 단계 타일 모양: 지금 단계(파랑 채움) > 끝낸 단계(✓) > 남은 단계. 지금 단계가 이미 끝낸 단계여도 지금이 우선
+export function stepTileState(step: NewLessonStep, stage: NewLessonStage, steps: NewLessonStep[]): StepTileState {
+  if (step === stage) return 'current';
+  return steps.includes(step) ? 'done' : 'todo';
 }

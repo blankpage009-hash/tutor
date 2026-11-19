@@ -12,7 +12,14 @@ export const IconToday = () => <Svg><rect x="4" y="5" width="16" height="15" /><
 export const IconCourses = () => <Svg><path d="M4 5h6v14H4zM14 5h6v14h-6z" /></Svg>;
 export const IconLibrary = () => <Svg><path d="M6 4h12v16l-6-4-6 4z" /></Svg>;
 export const IconVocab = () => <Svg><path d="M4 6h16M4 12h16M4 18h10" /></Svg>;
-export const IconMore = () => <Svg><path d="M5 12h.01M12 12h.01M19 12h.01" strokeWidth="3" /></Svg>;
+export const IconPrompt = () => <Svg><path d="M4 5h16v11H9l-5 4z" /><path d="M8 9.5h8M8 12.5h5" /></Svg>;
+// 가로줄 3개 + 손잡이 네모 (디자인 v2 홈 오른쪽 위 설정 아이콘)
+export const IconSettings = () => (
+  <Svg><path d="M4 7h16M4 12h16M4 17h16" /><path d="M9 5v4M15 10v4M8 15v4" /></Svg>
+);
+export const IconFlame = () => (
+  <Svg width="18" height="18"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 .3 1.5 1 2 2 2 0-3-1-5 1-8z" /></Svg>
+);
 export const IconClose = () => <Svg><path d="M6 6l12 12M18 6L6 18" /></Svg>;
 export const IconChevronLeft = () => <Svg><path d="M15 5l-7 7 7 7" /></Svg>;
 export const IconChevronRight = () => <Svg><path d="M9 5l7 7-7 7" /></Svg>;
@@ -32,5 +39,5 @@ export const TAB_ICONS = {
   courses: IconCourses,
   library: IconLibrary,
   vocab: IconVocab,
-  more: IconMore
+  prompt: IconPrompt
 } as const;

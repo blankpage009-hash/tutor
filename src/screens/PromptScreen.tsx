@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react';
-import { BackLink } from '../components/BackLink';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { buildPrompt } from '../prompt/buildPrompt';
 import { PromptFields, type Draft } from './prompt/PromptFields';
@@ -27,8 +26,7 @@ export function PromptScreen() {
   });
   return (
     <>
-      <BackLink to="/more" label="더보기" />
-      <ScreenHeader eyebrow="더보기" title="프롬프트 만들기" />
+      <ScreenHeader eyebrow="프롬프트" title="프롬프트 만들기" />
       <p className={styles.intro} lang="ko">
         고른 문장을 쓰게 만드는 연습 대본을 만들어 줘요. 복사해서 Gemini나 ChatGPT의 음성 대화에 붙여넣으면 돼요.
       </p>

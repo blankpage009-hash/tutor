@@ -11,7 +11,12 @@ describe('화면 목록', () => {
     expect(new Set(paths).size).toBe(paths.length);
   });
 
-  it('탭은 5개다', () => {
-    expect(TABS).toHaveLength(5);
+  it('탭은 오늘·코스·보관함·단어장·프롬프트 5개다', () => {
+    expect(TABS.map((t) => t.path)).toEqual(['/', '/courses', '/library', '/vocab', '/prompt']);
+  });
+
+  it('더보기 주소는 남아 있지 않다', () => {
+    expect(SCREENS.some((s) => s.path.startsWith('/more'))).toBe(false);
+    expect(TABS.some((t) => t.path.startsWith('/more'))).toBe(false);
   });
 });
