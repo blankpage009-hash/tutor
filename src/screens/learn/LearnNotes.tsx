@@ -9,7 +9,7 @@ export function LearnNotes({ lesson }: Props) {
   return (
     <>
       <section className={styles.section}>
-        <h2 className={styles.heading} lang="ko">설명</h2>
+        <h2 className={styles.heading} lang="en">Explanation</h2>
         <ul className={`${styles.bullets} ${styles.text}`} lang="ko">
           {explanation.ko.map((t) => <li key={t}>{t}</li>)}
         </ul>

@@ -40,7 +40,7 @@ export function LearnScreen() {
       <BackLink to={`/curriculum/${lesson.levelCode}`} label={lesson.level} />
       <ScreenHeader eyebrow={`유닛 ${lesson.unit} · STEP 1 설명`} title={lesson.lessonTitle} />
       <NewLessonSteps lessonId={lesson.lessonId} current="learn" />
-      <KeySentenceCard sentence={lesson.keySentence} />
+      <KeySentenceCard lessonId={lesson.lessonId} sentence={lesson.keySentence} />
       <LearnNotes lesson={lesson} />
       <div className={styles.actions}>
         <Button variant="primary" block onClick={() => nav(newStagePath(lesson.lessonId, nextNewStage('learn')))}>
