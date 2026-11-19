@@ -8,6 +8,7 @@ import { findResume, STAGE_LABEL, stagePath, type ProgressMap } from '../lessonF
 import { findNewResume, NEW_STAGE_LABEL, newStagePath } from '../newLessonFlow';
 import courseStyles from './courses/Courses.module.css';
 import { useProgressMap } from './courses/useProgressMap';
+import { useDueCount } from './review/useDueCount';
 import styles from './HomeScreen.module.css';
 
 type Resume = { to: string; title: string; where: string };
@@ -53,6 +54,25 @@ function ResumeRow({ r }: { r: Resume }) {
   );
 }
 
+// 오늘 복습: 때가 된 저장 문장 개수. 단어 복습은 단어장 작업(Phase 5 3세션)에서 더한다
+function ReviewCard() {
+  const due = useDueCount();
+  return (
+    <>
+      <h2 className={styles.sub}>오늘 복습</h2>
+      {due === null && <p className={styles.note} lang="ko">세는 중…</p>}
+      {due === 0 && <p className={styles.note} lang="ko">오늘 복습할 문장이 없어요.</p>}
+      {due !== null && due > 0 && (
+        <Link to="/review" className={courseStyles.row}>
+          <span className={courseStyles.name} lang="ko">오늘 복습할 문장 {due}개</span>
+          <p className={courseStyles.meta} lang="ko">한국어를 보고 영어로 말해요 · 탭해서 시작</p>
+        </Link>
+      )}
+      <p className={styles.note} lang="ko">복습할 단어는 다음 작업(단어장)에서 채웁니다.</p>
+    </>
+  );
+}
+
 export function HomeScreen() {
   const progress = useProgressMap();
   const fresh = useNewResume(progress);
@@ -61,7 +81,7 @@ export function HomeScreen() {
   return (
     <>
       <ScreenHeader eyebrow="오늘" title="오늘의 연습" />
-      <TwoColumn list={<p className={styles.note} lang="ko">오늘 복습할 문장·단어는 다음 작업(복습·단어장)에서 채웁니다.</p>}>
+      <TwoColumn list={<ReviewCard />}>
         <h2 className={styles.sub}>이어서 할 수업</h2>
         {loading && <p className={styles.note} lang="ko">불러오는 중…</p>}
         {!loading && !fresh && !old && <p className={styles.note} lang="ko">모든 수업을 마쳤어요!</p>}

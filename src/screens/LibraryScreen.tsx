@@ -20,7 +20,10 @@ export function LibraryScreen() {
       {rows && rows.length > 0 && (
         <>
           <p className={styles.note} lang="ko">{rows.length}개 · 최근에 저장한 문장이 위에 있어요</p>
-          <Button variant="primary" block onClick={() => nav('/library/practice/all')}>전부 쉐도잉 연습</Button>
+          <div className={styles.actions}>
+            <Button variant="primary" onClick={() => nav('/library/practice/all')}>전부 쉐도잉 연습</Button>
+            <Button onClick={() => nav('/review?mode=random')}>랜덤 복습</Button>
+          </div>
           <ul className={styles.list}>
             {rows.map((r) => <LibraryRow key={r.id} row={r} onRemove={remove} />)}
           </ul>

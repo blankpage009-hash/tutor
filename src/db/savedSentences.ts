@@ -28,6 +28,13 @@ export function listSaved(): Promise<SavedSentence[]> {
   return db.savedSentences.orderBy('savedAt').toArray();
 }
 
+// 복습 달력이 생기기 전에 저장한 문장은 오늘부터 복습 대상으로 올린다 (이미 있는 것은 그대로)
+export async function ensureSrsForAllSaved(): Promise<SavedSentence[]> {
+  const list = await listSaved();
+  await Promise.all(list.map((r) => ensureSentenceSrs(r.id, 0)));
+  return list;
+}
+
 export async function removeSaved(id: string): Promise<void> {
   await db.savedSentences.delete(id);
   await removeSrs('sentence', id);

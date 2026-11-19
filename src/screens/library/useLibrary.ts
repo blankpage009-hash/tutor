@@ -1,15 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 import { resolveSavedText } from '../../content/savedText';
-import { fillSavedText, listSaved, removeSaved } from '../../db/savedSentences';
-import { ensureSentenceSrs } from '../../db/srs';
+import { ensureSrsForAllSaved, fillSavedText, removeSaved } from '../../db/savedSentences';
 import type { SavedSentence } from '../../db/types';
 
 // 최근에 저장한 문장이 위에 오게 (방금 저장한 것을 바로 찾도록)
 export async function loadRows(): Promise<SavedSentence[]> {
-  const list = await listSaved();
-  // 복습 달력이 생기기 전에 저장한 문장은 오늘부터 복습 대상으로 올린다
-  await Promise.all(list.map((r) => ensureSentenceSrs(r.id, 0)));
-  return list.reverse();
+  return (await ensureSrsForAllSaved()).reverse();
 }
 
 // 글자 없이 저장된 예전 문장은 콘텐츠에서 찾아 채워 넣고(다음부터는 바로 쓰도록 저장), 못 찾으면 그대로 둔다
