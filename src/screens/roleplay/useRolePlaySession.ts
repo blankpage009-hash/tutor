@@ -11,6 +11,7 @@ import { createMicSlot, TUTOR_SAFE_MIC, type MicSlot } from '../../speech/micSlo
 import type { MicStream } from '../../speech/micStream';
 import { createCaptureContext } from '../../speech/pcmCapture';
 import type { Listening } from '../../speech/recognizer';
+import { cancelSpeech, speakText } from '../../speech/speakText';
 import { listenVosk } from '../../speech/voskListener';
 import { ENGINE_NOTE } from '../newLesson/useNewSpeaking';
 import { openVoskMic } from '../shadowing/useShadowingAttempt';
@@ -109,6 +110,14 @@ function readingPause(text: string, stopped: () => boolean): Promise<void> {
   });
 }
 
+// 음성 파일이 없는 줄(Gemini 대사)은 아이폰 내장 음성으로 읽는다. 안 되는 기기·순간이면 글자를 읽을 시간만큼만 기다린다
+async function speakOrWait(text: string, stopped: () => boolean, log: (m: string) => void): Promise<void> {
+  const r = await speakText(text, { stopped });
+  if (r === 'spoken') return;
+  log(`내장 음성 읽기 안 됨 (${r}) → 글자만`);
+  await readingPause(text, stopped);
+}
+
 function loopDeps(c: Ctx, lines: RolePlayLine[], start: number, stopped: () => boolean, onLine: (i: number) => void) {
   const deps: RolePlayLoopDeps<RolePlayLine> = {
     lines, start, stopped, onLine,
@@ -117,7 +126,7 @@ function loopDeps(c: Ctx, lines: RolePlayLine[], start: number, stopped: () => b
     play: (l) => {
       if (l.speaker !== 'partner') return Promise.resolve();
       c.slot.release();
-      if (!l.audio) return readingPause(l.en, stopped);
+      if (!l.audio) return speakOrWait(l.en, stopped, c.log);
       return playAudio(contentUrl(l.audio), 1).catch((e) => c.log(`재생 실패: ${String(e)}`));
     },
     hear: (l) => hearLine(c, l as MyLine),
@@ -176,6 +185,7 @@ export function useRolePlaySession(lesson: RolePlaySource) {
     if (stoppedRef.current) return;
     stoppedRef.current = true;
     stopAudio(); // 재생 중이면 재생 약속이 바로 끝난다
+    cancelSpeech(); // 내장 음성으로 읽던 중이면 끊는다 (읽은 적이 없으면 아무 일도 안 함)
     listening.current?.stop();
   }, []);
   useEffect(() => stop, [stop]); // 화면을 나가면 멈춘다

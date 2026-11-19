@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Button } from '../../components/Button';
 import { callGemini, GeminiError } from '../../gemini/geminiClient';
 import { parseVariations, variationRequest, type Variation } from '../../gemini/tasks';
+import { stopAudio } from '../../speech/audioPlayer';
+import { isSpeakSupported, speakText } from '../../speech/speakText';
 import styles from './Library.module.css';
 
 type Props = { geminiKey: string; en: string; ko?: string };
@@ -23,6 +25,14 @@ export function VariationBox({ geminiKey, en, ko }: Props) {
       setBusy(false);
     }
   };
+  // 변형 문장은 음성 파일이 없어 아이폰 내장 음성으로 읽는다. 탭 처리 함수에서 바로 불러야 iOS가 허락한다
+  const canSpeak = isSpeakSupported();
+  const [speakError, setSpeakError] = useState<string | null>(null);
+  const listen = async (text: string) => {
+    stopAudio();
+    setSpeakError(null);
+    if ((await speakText(text)) === 'failed') setSpeakError('소리를 내지 못했어요. 무음 모드나 볼륨을 확인해 주세요.');
+  };
   return (
     <>
       <div className={styles.actions}>
@@ -35,10 +45,12 @@ export function VariationBox({ geminiKey, en, ko }: Props) {
             <li key={v.en} style={{ marginBottom: 'var(--space-2)' }}>
               <span lang="en">{v.en}</span>
               {v.ko && <span lang="ko" style={{ display: 'block', color: 'var(--ink-muted)' }}>{v.ko}</span>}
+              {canSpeak && <Button size="sm" variant="ghost" onClick={() => listen(v.en)}>듣기</Button>}
             </li>
           ))}
         </ul>
       )}
+      {speakError && <p className={styles.confirm} lang="ko">{speakError}</p>}
     </>
   );
 }
