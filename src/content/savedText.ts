@@ -1,7 +1,6 @@
 import type { SavedSentence } from '../db/types';
 import { drillSaveId } from '../drillPlan';
 import { loadNewLesson } from './curriculumLoader';
-import { loadLesson } from './loader';
 
 export type SavedText = Required<Pick<SavedSentence, 'en' | 'ko' | 'audio'>>;
 
@@ -14,9 +13,8 @@ export async function resolveSavedText(row: SavedSentence): Promise<SavedText | 
       const d = lesson.drills.find((x) => drillSaveId(lesson.lessonId, x.id) === row.id);
       return d ? { en: d.en, ko: d.ko, audio: d.audio.normal } : null;
     }
-    const { lesson } = await loadLesson(row.lessonId);
-    const s = lesson.sentences.find((x) => x.id === row.id);
-    return s ? { en: s.en, ko: s.ko, audio: s.audio ?? '' } : null;
+    // 옛 10코스 문장은 코스와 함께 삭제됨 → 글자가 없는 옛 저장 문장은 되찾을 수 없다
+    return null;
   } catch {
     return null;
   }

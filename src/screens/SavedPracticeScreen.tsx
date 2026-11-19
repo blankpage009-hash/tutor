@@ -6,7 +6,7 @@ import { toSavedLesson } from './library/savedLesson';
 import { ShadowingScreen } from './ShadowingScreen';
 import styles from './library/Library.module.css';
 
-// 보관함에서 "다시 쉐도잉": 저장한 문장들을 수업 한 개처럼 묶어 기존 쉐도잉 화면에 태운다.
+// 보관함에서 "다시 쉐도잉" (ShadowingScreen은 이 화면 전용이 됨): 저장한 문장들을 수업 한 개처럼 묶어 기존 쉐도잉 화면에 태운다.
 // :startId가 문장 id면 그 문장부터, 'all'이면 처음부터
 export function SavedPracticeScreen() {
   const { startId = 'all' } = useParams();

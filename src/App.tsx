@@ -2,7 +2,6 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import { WordPickerProvider } from './components/wordPicker/WordPicker';
 import { PracticeLayout } from './layouts/PracticeLayout';
 import { TabLayout } from './layouts/TabLayout';
-import { CourseDetailScreen } from './screens/CourseDetailScreen';
 import { CoursesScreen } from './screens/CoursesScreen';
 import { CurriculumLevelScreen } from './screens/CurriculumLevelScreen';
 import { CustomRolePlayScreen } from './screens/CustomRolePlayScreen';
@@ -10,7 +9,6 @@ import { DialogueScreen } from './screens/DialogueScreen';
 import { DrillScreen } from './screens/DrillScreen';
 import { LearnScreen } from './screens/LearnScreen';
 import { HomeScreen } from './screens/HomeScreen';
-import { LessonScreen } from './screens/LessonScreen';
 import { LibraryScreen } from './screens/LibraryScreen';
 import { SavedPracticeScreen } from './screens/SavedPracticeScreen';
 import { MoreScreen } from './screens/MoreScreen';
@@ -22,8 +20,6 @@ import { ReviewScreen } from './screens/ReviewScreen';
 import { RoleplayScreen } from './screens/RoleplayScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { SettingsProvider } from './settings/SettingsProvider';
-import { ShadowingScreen } from './screens/ShadowingScreen';
-import { VariationScreen } from './screens/VariationScreen';
 import { VocabQuizScreen } from './screens/VocabQuizScreen';
 import { VocabScreen } from './screens/VocabScreen';
 
@@ -38,7 +34,6 @@ export function App() {
         <Route element={<TabLayout />}>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/courses" element={<CoursesScreen />} />
-          <Route path="/courses/:courseId" element={<CourseDetailScreen />} />
           <Route path="/curriculum/:levelKey" element={<CurriculumLevelScreen />} />
           <Route path="/library" element={<LibraryScreen />} />
           <Route path="/library/practice/:startId" element={<SavedPracticeScreen />} />
@@ -49,12 +44,7 @@ export function App() {
           <Route path="/more/settings" element={<SettingsScreen />} />
         </Route>
         <Route element={<PracticeLayout />}>
-          <Route path="/lesson/:lessonId" element={<LessonScreen />} />
-          {/* key가 다르면 단계가 바뀔 때 화면이 새로 만들어져 이전 단계의 통과 기록이 남지 않는다 */}
-          <Route path="/shadowing/:lessonId" element={<ShadowingScreen key="shadowing" />} />
-          <Route path="/variation/:lessonId" element={<VariationScreen key="variation" />} />
-          <Route path="/lesson-review/:lessonId" element={<ShadowingScreen key="review" kind="review" />} />
-          {/* 새 커리큘럼 레슨 (Phase 5.5). 롤플레이는 세션 3에서 만들 때까지 "준비 중" 빈 화면 */}
+          {/* 새 커리큘럼 레슨 (Phase 5.5) */}
           <Route path="/n/:lessonId" element={<NewLessonMenuScreen />} />
           <Route path="/n/:lessonId/learn" element={<LearnScreen />} />
           <Route path="/n/:lessonId/dialogue" element={<DialogueScreen />} />

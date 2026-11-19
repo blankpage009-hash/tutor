@@ -1,18 +1,13 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { TwoColumn } from '../components/TwoColumn';
-import { loadLesson } from '../content/loader';
 import type { Model } from 'vosk-browser';
 import type { Lesson, Sentence } from '../content/types';
 import { useSettings } from '../settings/SettingsProvider';
 import { setAudioDebug } from '../speech/audioPlayer';
 import { setAudioSessionEnabled } from '../speech/audioSession';
 import { TUTOR_SAFE_MIC } from '../speech/micSlot';
-import { toVariationLesson, type PracticeKind } from '../lessonFlow';
 import { SavedFinish } from './library/SavedFinish';
 import { DiagnosticsPanel } from './shadowing/DiagnosticsPanel';
-import { FinishPanel } from './shadowing/FinishPanel';
-import { useStageProgress } from './shadowing/useStageProgress';
 import { SentenceList } from './shadowing/SentenceList';
 import styles from './shadowing/Shadowing.module.css';
 import { ShadowingStage, type HandsFreeView } from './shadowing/ShadowingStage';
@@ -25,19 +20,6 @@ import { useVoskModel, type VoskModelState } from './shadowing/useVoskModel';
 
 // 실패 피드백의 "느린 속도". 너무 느리면 iOS 재생 속도 변환이 뭉개져서 0.75로 둔다
 const SLOW_RATE = 0.75;
-
-// fixed: 보관함 연습처럼 이미 만들어진 문장 묶음을 줄 때는 파일을 읽지 않는다 (코스 id도 없어 진도에 기록되지 않는다)
-function useLesson(lessonId: string, fixed?: Lesson) {
-  const [data, setData] = useState<{ lesson: Lesson; courseId: string } | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  useEffect(() => {
-    if (fixed) return;
-    setData(null);
-    loadLesson(lessonId).then((r) => setData({ lesson: r.lesson, courseId: r.course.id }), (e) => setError(String(e)));
-  }, [lessonId, fixed]);
-  if (fixed) return { lesson: fixed, courseId: null, error: null };
-  return { lesson: data?.lesson ?? null, courseId: data?.courseId ?? null, error };
-}
 
 function useLog() {
   const [logs, setLogs] = useState<string[]>([]);
@@ -91,22 +73,12 @@ const MODEL_NOTE: Record<VoskModelState, string | null> = {
   error: '음성 인식 준비에 실패했어요. 인터넷 연결을 확인하고 앱을 다시 열어 주세요.'
 };
 
-const KIND_TEXT: Record<PracticeKind, { label: string; lastLabel: string }> = {
-  shadowing: { label: '쉐도잉', lastLabel: '쉐도잉 마치기' },
-  variation: { label: '변형 연습', lastLabel: '변형 연습 마치기' },
-  review: { label: '복습', lastLabel: '수업 마치기' }
-};
-
-// 같은 말하기 엔진으로 세 단계를 돌린다: 쉐도잉(핵심 문장) → 변형 연습(변형 문장) → 복습(핵심 문장 다시)
 const SAVED_TEXT = { label: '보관함 연습', lastLabel: '연습 마치기' };
 
-export function ShadowingScreen({ kind = 'shadowing', fixedLesson }: { kind?: PracticeKind; fixedLesson?: Lesson }) {
-  const { lessonId = 'beg-01' } = useParams();
-  const { lesson: fullLesson, courseId, error } = useLesson(lessonId, fixedLesson);
-  const lesson = useMemo(
-    () => (fullLesson && kind === 'variation' ? toVariationLesson(fullLesson) : fullLesson),
-    [fullLesson, kind]
-  );
+// 보관함 연습 전용: 저장한 문장 묶음(lesson)을 받아 말하기 연습을 돌린다.
+// 코스 id가 없어서(null) 진도에는 기록되지 않고 문장 저장 버튼도 나오지 않는다. 옛 10코스용 갈래는 코스와 함께 지웠다
+export function ShadowingScreen({ fixedLesson: lesson }: { fixedLesson: Lesson }) {
+  const courseId = null;
   const { settings } = useSettings();
   const steps = useLessonSteps(lesson, settings.repeatCount);
   const diag = useDiagnostics();
@@ -114,10 +86,9 @@ export function ShadowingScreen({ kind = 'shadowing', fixedLesson }: { kind?: Pr
   const vosk = useVoskModel(diag.vosk, log);
   // 화면의 스위치는 이번 화면에서만 바뀌고, 처음 상태는 설정의 "자동 넘기기"를 따른다
   const [autoOn, setAutoOn] = useState(settings.autoAdvance);
-  const sentence = lesson?.sentences[steps.index] ?? null;
+  const sentence = lesson.sentences[steps.index] ?? null;
   const auto = useAutoAdvance(autoOn, sentence?.id, steps.next);
   const saved = useSavedSentences(lesson, courseId, log);
-  useStageProgress(lessonId, courseId, kind, steps.finished);
   const onResult = (id: string, status: AttemptStatus) => {
     if (status === 'passed' && steps.recordPass(id) && autoOn) auto.schedule();
   };
@@ -126,8 +97,7 @@ export function ShadowingScreen({ kind = 'shadowing', fixedLesson }: { kind?: Pr
   const [showDiag, setShowDiag] = useState(false);
   const secretTap = useSecretTaps(() => setShowDiag((v) => !v));
 
-  if (error) return <p className={styles.ko} lang="ko">{error}</p>;
-  if (!lesson || !sentence) return <p className={styles.ko} lang="ko">불러오는 중…</p>;
+  if (!sentence) return <p className={styles.ko} lang="ko">불러오는 중…</p>;
   const { index, total, cleared } = steps;
   const listening = attempt.outcome?.status === 'listening' || hf.running;
   const handsFree: HandsFreeView = {
@@ -136,10 +106,8 @@ export function ShadowingScreen({ kind = 'shadowing', fixedLesson }: { kind?: Pr
   };
   return (
     <TwoColumn list={<SentenceList lesson={lesson} index={index} cleared={cleared} locked={listening} onPick={steps.setIndex} />}>
-      {steps.finished && (fixedLesson
-        ? <SavedFinish total={total} />
-        : <FinishPanel kind={kind} lessonId={lessonId} courseId={courseId} total={total} />)}
-      <ShadowingStage sentence={sentence} tapWords {...(fixedLesson ? SAVED_TEXT : KIND_TEXT[kind])} saveable={kind !== 'variation' && !fixedLesson} position={`문장 ${index + 1} / ${total}`} attempt={attempt}
+      {steps.finished && <SavedFinish total={total} />}
+      <ShadowingStage sentence={sentence} tapWords {...SAVED_TEXT} saveable={false} position={`문장 ${index + 1} / ${total}`} attempt={attempt}
         threshold={settings.passThreshold} slowRate={SLOW_RATE}
         passes={steps.counts.get(sentence.id) ?? 0} required={settings.repeatCount}
         canNext={cleared.has(sentence.id)} isLast={index === total - 1} onNext={steps.next}

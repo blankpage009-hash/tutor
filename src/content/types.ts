@@ -1,16 +1,5 @@
 // content/schema.md(schemaVersion 1)의 모양을 그대로 옮긴 것. 칸 설명은 schema.md 참조.
 
-export type CourseEntry = {
-  id: string;
-  file: string;
-  order: number;
-  title: string;
-  titleKo: string;
-  level: number;
-};
-
-export type Manifest = { schemaVersion: number; courses: CourseEntry[] };
-
 export type VocabItem = { word: string; lemma?: string; ko: string; pos: string; audio?: string };
 
 export type Variation = {
@@ -51,16 +40,4 @@ export type Lesson = {
   intro: string;
   sentences: Sentence[];
   roleplay: Roleplay;
-};
-
-export type Course = {
-  schemaVersion: number;
-  id: string;
-  idPrefix: string;
-  title: string;
-  titleKo: string;
-  level: number;
-  register: 'casual' | 'formal';
-  description: string;
-  lessons: Lesson[];
 };

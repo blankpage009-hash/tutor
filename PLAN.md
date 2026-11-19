@@ -493,7 +493,13 @@
   - **7-B 활동·스트릭·진도 (7d1b705)**: `activity` 표(날짜별 practice·review 횟수). 기록 지점 = 복습 기록 두 함수, 쉐도잉 `recordPass`(이어 말하기 포함), 드릴 새 회차 통과, 대화문 통과, 레슨 단계 끝냄. 순수 계산 `src/activity.ts`(스트릭: 오늘 안 했어도 어제까지 이어졌으면 유지, 레슨 완료일도 학습일로 소급)·`src/levelProgress.ts`(내 레벨 = 시작 레벨 이후 "준비된 레슨이 남은 첫 레벨", 원고 없는 레벨은 건너뜀). 홈 맨 위 "오늘 N / 목표 · 연속 N일 + 내 레벨" 카드, 진도·레벨 화면(새 커리큘럼 기준: 내 레벨·습관·전체 %·과정 6개·레벨 20개), 설정에 일일 목표(5·10·20·30)·시작 레벨 드롭다운.
   - **7-C 백업 (200fd7d)**: 설정 화면 맨 아래 — 백업 저장(공유 시트 우선, 안 되면 내려받기, `english-tutor-backup-날짜.json`), 백업 불러오기(파일 고르면 개수·백업 날짜 요약을 먼저 보여 주고 한 번 더 눌러야 덮어씀, 한 트랜잭션이라 반쪽 복원 없음, 깨진 파일·다른 앱 파일·더 새 버전은 거절, 이상한 행은 빼고 개수 알림), 전체 초기화(2단계 확인). 백업 대상: 저장 문장·단어장·진도·복습 달력·활동·앱 설정·테마. **제외: Gemini 키(복원도 이 기기 키를 안 건드림), 녹음.** 전체 초기화는 키와 테마까지 지움. 순수 모듈 `src/backup/backup.ts`, DB 모듈 `src/db/backup.ts`.
   - **사용자 확인 (2026-11-19)**: 7-A·7-B는 아이폰 홈화면 앱에서, 7-C는 아이폰에서 백업 저장 → **아이패드 홈화면 앱에서 불러오기**까지 확인 완료 → **Phase 7 완료.** 완료 기준(설정값 전 화면 반영, 백업 파일로 아이패드 복원) 충족. 테스트 239개·타입·빌드 통과.
-  - **알려 둔 한계 / Phase 8로 넘기는 것**: 연습 횟수는 7-B 배포일부터 쌓임(과거 횟수 복원 불가, 스트릭만 레슨 완료일로 일부 소급) / 롤플레이는 문장별 통과를 세지 않고 단계 끝낼 때만 1회 / 진도 화면에 옛 10코스는 미포함 / 코스 JSON 불러오기 보류 / 백업 파일 크기·녹음 저장 용량 안내는 Phase 8 점검에서 함. Phase 8 시작 전 승인 필요.
+  - **알려 둔 한계 / Phase 8로 넘기는 것**: 연습 횟수는 7-B 배포일부터 쌓임(과거 횟수 복원 불가, 스트릭만 레슨 완료일로 일부 소급) / 롤플레이는 문장별 통과를 세지 않고 단계 끝낼 때만 1회 / (옛 10코스는 7.9에서 삭제) / 코스 JSON 불러오기 보류 / 백업 파일 크기·녹음 저장 용량 안내는 Phase 8 점검에서 함. Phase 8 시작 전 승인 필요.
+
+### Phase 7.9 — 옛 10코스 삭제 (Phase 8 전 정리, 2026-11-19)
+- **결정 (사용자)**: 옛 10개 코스(Phase 2, 약 600문장)를 데이터와 옛 화면 코드까지 삭제. 새 커리큘럼 레슨(INT1 6개)은 그대로. 기기에 저장된 옛 진도·보관 문장은 사용자가 설정의 **전체 초기화**로 정리(Gemini 키·녹음도 함께 지워짐 — 키는 다시 입력). UI·디자인·소소한 기능 수정은 사용자가 따로 진행.
+- **지운 것**: `content/courses/`, `content/manifest.json`, 옛 코스 음성 폴더 10개(`content/audio/{beginner…out-and-about}`), 화면 `CourseDetailScreen`·`LessonScreen`·`VariationScreen`, `shadowing/` 중 `FinishPanel`·`useStageProgress`, 라우트 `/courses/:id`·`/lesson`·`/shadowing`·`/variation`·`/lesson-review`, `loadCourse`·`loadManifest`·`loadLesson`, 타입 `Course`·`CourseEntry`·`Manifest`, `lessonFlow.ts`의 옛 단계 이동 함수와 `markStage`. 코스 탭·홈은 새 커리큘럼만 보여 줌.
+- **남긴 것**: `ShadowingScreen`(+`shadowing/`의 엔진 파일)은 보관함 연습(`SavedPracticeScreen`)이 재사용하므로 유지하되 보관함 전용으로 줄임(`fixedLesson` 필수). `content/audio/words`·`glossary*.json`·`schema.md`. `scripts/content/*.mjs`(옛 코스 검사·사전 도구)·`scripts/audio/make_audio.py`·`docs/phase2/`는 옛 코스를 읽으므로 이제 실행하면 실패함 → **Phase 8 정리에서 지울지 결정**. `build-glossary.mjs`는 다시 돌리지 말 것.
+- 확인: 테스트 236개·타입·빌드 통과, 개발 서버에서 홈·코스·레슨 메뉴·보관함·롤플레잉·진도 화면 열림, 콘솔 오류 없음. 아이폰·아이패드 확인은 배포 후 사용자.
 
 ### Phase 8 — 마감 · 기기 검증 · 정리
 - **모델** Sonnet · **노력** medium · **예상** 1세션

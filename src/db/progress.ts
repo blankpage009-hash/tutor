@@ -1,4 +1,3 @@
-import { laterStage, type Stage } from '../lessonFlow';
 import { addFinishedStep, enteredNewStage, missingSteps, type NewLessonStep } from '../newLessonFlow';
 import { logActivity } from './activity';
 import { db } from './db';
@@ -17,11 +16,6 @@ async function update(lessonId: string, courseId: string, change: Change): Promi
     await db.progress.put(next);
     return next;
   });
-}
-
-// 단계에 들어갈 때마다 불러 진도를 올린다. 이미 더 멀리 간 수업은 뒤로 돌아가지 않는다
-export async function markStage(lessonId: string, courseId: string, stage: Stage): Promise<void> {
-  await update(lessonId, courseId, (cur) => ({ stage: laterStage(cur?.stage, stage) }));
 }
 
 // 새 커리큘럼 레슨: 들어갈 때. 마지막으로 들어간 단계를 남긴다 (newLessonFlow.enteredNewStage)
