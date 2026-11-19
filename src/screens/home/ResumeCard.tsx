@@ -1,7 +1,7 @@
 import type { ComponentType } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../../components/Button';
-import { IconBook, IconChat, IconCheck, IconRepeat, IconUsers } from '../../components/icons/icons';
+import { IconBook, IconChat, IconCheck, IconPlay, IconRepeat, IconUsers } from '../../components/icons/icons';
 import {
   NEW_STEPS, NEW_STEP_ENGLISH, newStagePath, stepTileState, type NewLessonStep, type NewResume
 } from '../../newLessonFlow';
@@ -41,7 +41,8 @@ function ResumeBody({ r }: { r: NewResume }) {
           );
         })}
       </ol>
-      <Button variant="primary" block onClick={() => navigate(newStagePath(r.id, current))}>
+      <Button variant="primary" block className={styles.cta} onClick={() => navigate(newStagePath(r.id, current))}>
+        <IconPlay />
         {r.started ? 'Continue' : 'Start'} {NEW_STEP_ENGLISH[current]}
       </Button>
     </div>

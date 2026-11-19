@@ -21,14 +21,14 @@
   color: var(--ink-muted);
 }
 
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
 .tile {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 116px;
-  padding: 14px 16px;
+  padding: 16px;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   background: var(--surface);
@@ -46,6 +46,11 @@ a.tile:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-o
   color: var(--accent-ink);
 }
 
-.label { font-size: 15px; font-weight: 500; color: var(--ink-muted); }
+/* 위: 종류 아이콘(왼쪽) + ">"(오른쪽), 아래: 숫자와 "문장/단어"가 한 줄에 붙음 */
+.icons { display: flex; justify-content: space-between; color: var(--ink-muted); }
+.icons svg { width: 20px; height: 20px; }
+.value { display: flex; align-items: baseline; gap: 6px; }
+
+.label { font-size: 15px; font-weight: 500; color: var(--ink); }
 
 .idle .count { color: var(--ink-muted); }

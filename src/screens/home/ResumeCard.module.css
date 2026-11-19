@@ -64,6 +64,10 @@
 .current { background: var(--accent); color: var(--on-accent); }
 .current .tileName { font-weight: 600; }
 
+/* 시안: 재생 아이콘 18px + 글자, 간격 10px */
+.cta { gap: 10px; }
+.cta svg { width: 18px; height: 18px; }
+
 .note {
   margin: 0 0 var(--space-4);
   font-size: var(--type-body-kr-size);
