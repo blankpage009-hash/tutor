@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+import { Button } from '../components/Button';
 import { ScreenHeader } from '../components/ScreenHeader';
 import styles from './library/Library.module.css';
 import { useVocab } from './vocab/useVocab';
@@ -7,6 +9,7 @@ import { VocabRow } from './vocab/VocabRow';
 // 단어장: 수업·보관함·쉐도잉에서 문장 속 단어를 눌러 저장한 단어 목록
 export function VocabScreen() {
   const { words, error, remove, edit } = useVocab();
+  const nav = useNavigate();
   return (
     <>
       <ScreenHeader eyebrow="단어장" title="저장한 단어" />
@@ -18,6 +21,10 @@ export function VocabScreen() {
       {words && words.length > 0 && (
         <>
           <p className={styles.note} lang="ko">{words.length}개 · 최근에 저장한 단어가 위에 있어요</p>
+          <div className={styles.actions}>
+            <Button variant="primary" onClick={() => nav('/vocab/quiz?scope=due')}>단어 퀴즈</Button>
+            <Button onClick={() => nav('/vocab/quiz?scope=random')}>랜덤 퀴즈</Button>
+          </div>
           <ul className={styles.list}>
             {words.map((w) => <VocabRow key={w.id} word={w} onRemove={remove} onEdit={edit} />)}
           </ul>

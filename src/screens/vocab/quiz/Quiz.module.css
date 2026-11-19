@@ -1,0 +1,72 @@
+.choices { display: grid; gap: var(--space-3); margin: var(--space-4) 0; }
+
+.choice {
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+  min-height: var(--tap-min);
+}
+
+.choice:active { background: var(--accent-tint); }
+
+.choiceName { display: block; font-size: var(--type-headline-size); font-weight: var(--type-headline-weight); }
+
+.choiceDesc {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--ink-muted);
+}
+
+.bigWord {
+  margin: 0;
+  font-family: var(--type-sentence-family);
+  font-size: var(--type-display-size);
+  line-height: var(--type-display-line);
+  font-weight: var(--type-display-weight);
+  overflow-wrap: anywhere;
+}
+
+.pos {
+  margin-left: var(--space-2);
+  padding: 0 var(--space-2);
+  background: var(--surface-sunk);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: var(--type-label-size);
+  font-weight: 400;
+  color: var(--ink-muted);
+  vertical-align: middle;
+}
+
+.source {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  background: var(--surface-sunk);
+  border-radius: var(--radius-sm);
+}
+
+.typeRow { display: flex; gap: var(--space-2); }
+
+/* iOS는 글자가 16px보다 작은 입력칸을 누르면 화면을 확대해 버려서 16px로 둔다 */
+.input {
+  box-sizing: border-box;
+  flex: 1;
+  min-width: 0;
+  min-height: var(--tap-min);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+}
+
+.input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
