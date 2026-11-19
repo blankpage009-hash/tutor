@@ -1,8 +1,10 @@
 // Gemini 호출(브라우저에서 fetch로 직접). 새 라이브러리 없이 REST만 쓴다.
-// 모델 이름은 여기 한 곳에만 둔다: 구글이 모델을 바꾸면 이 상수만 고치면 된다 (2026-11 문서의 무료 등급 안정 모델)
-export const GEMINI_MODEL = 'gemini-3.8-flash';
+// 모델 이름은 여기 한 곳에만 둔다: 구글이 모델을 바꾸면 이 상수만 고치면 된다 (2026-11 문서의 무료 등급 안정 모델).
+// gemini-3.8-flash는 기본으로 "생각"을 하느라 30초 안에 답이 안 와 시간 초과가 났다(2026-11-19 아이폰).
+// flash-lite는 생각이 거의 꺼진 채가 기본이라 빠르다. 이 앱의 일(문장 몇 개, 짧은 대본)은 lite로 충분하다
+export const GEMINI_MODEL = 'gemini-3.5-flash-lite';
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
-const TIMEOUT_MS = 30_000;
+const TIMEOUT_MS = 60_000;
 
 // 화면에 그대로 보여 줘도 되는 한국어 메시지를 담는다
 export class GeminiError extends Error {}
