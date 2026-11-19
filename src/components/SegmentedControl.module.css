@@ -1,20 +1,31 @@
-.group { display: flex; gap: var(--space-1); }
+/* 디자인 v2: 칸이 붙어 있는 한 줄 상자(1px 선으로 나눔), 고른 칸만 파랑으로 채움 */
+.group {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
 
 .btn {
   flex: 1;
   min-height: var(--tap-min);
   padding: 0 var(--space-3);
-  border: var(--rule-weight) solid var(--line-strong);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
+  border: 0;
+  background: transparent;
   color: var(--ink);
-  font-size: var(--type-headline-size);
-  font-weight: var(--type-headline-weight);
+  font-family: var(--type-caption-family);
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
 }
 
+.btn + .btn { border-left: 1px solid var(--line); }
+
+/* 바깥 상자가 overflow: hidden이라 포커스 테두리를 안쪽으로 그린다 */
+.btn:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: -2px; }
+
 .on {
   background: var(--accent);
-  border-color: var(--accent);
   color: var(--on-accent);
+  font-weight: 600;
 }

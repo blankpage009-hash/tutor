@@ -501,6 +501,47 @@
 - **남긴 것**: `ShadowingScreen`(+`shadowing/`의 엔진 파일)은 보관함 연습(`SavedPracticeScreen`)이 재사용하므로 유지하되 보관함 전용으로 줄임(`fixedLesson` 필수). `content/audio/words`·`glossary*.json`·`schema.md`. `scripts/content/*.mjs`(옛 코스 검사·사전 도구)·`scripts/audio/make_audio.py`·`docs/phase2/`는 옛 코스를 읽으므로 이제 실행하면 실패함 → **Phase 8 정리에서 지울지 결정**. `build-glossary.mjs`는 다시 돌리지 말 것.
 - 확인: 테스트 236개·타입·빌드 통과, 개발 서버에서 홈·코스·레슨 메뉴·보관함·롤플레잉·진도 화면 열림, 콘솔 오류 없음. 아이폰·아이패드 확인은 배포 후 사용자.
 
+### Phase 7.95 — 새 디자인 적용 (2026-11-19 계획 승인, Phase 8 전)
+- **배경**: 7절 U5대로 사용자가 Claude Design으로 만든 `Tutor App Design.html`(저장소 루트, 아직 커밋 안 됨)을 제공. 화면 13개 × 라이트/다크 한 쌍. 이 파일을 기준으로 토큰과 화면을 옮긴다.
+- **진행 방식**: 8단계를 **순서대로만** 진행(1단계 토큰이 모든 화면의 바탕이라 병행 불가). **단계마다 새 창**에서 시작하고, 시작 전 "할 일 + 수정할 파일"을 보고해 **사용자 승인 후** 작업. 끝나면 아래 완료 기준을 하나씩 확인 요청. 🎤 표시 단계는 **아이폰 홈화면 앱에서 확인된 것만** 완료로 본다.
+- **디자인 파일 여는 법**: 번들 HTML이라 그냥 읽으면 내용이 안 보임. ① 보기: `npm run dev` 후 `http://localhost:5173/tutor/design/v2/Tutor%20App%20Design.html` (1단계에서 `design/v2/`로 옮김, 꺼내기는 `design/scripts/unbundle-design.py`) (file:// 은 안 열림) ② 내용 꺼내기: 파일 안 `<script type="__bundler/manifest">`의 JSON이 {uuid: {mime, compressed, data(base64)}} — base64 풀고 compressed면 gzip 해제. `__bundler/template`이 화면 HTML(JSON 문자열). Barlow 글꼴 woff2 12개도 이 안에 들어 있음(인터넷에서 받을 필요 없음, OFL 라이선스). Python은 PowerShell에서 `py -I 스크립트.py`로 실행(Bash의 python은 출력 없이 실패했음).
+- **디자인 값 (화면 HTML의 실제 값, 1단계에서 tokens.json에 반영)**
+  - 라이트: 배경 `#f2f2f3`, 글자 `#1d1f20`, 보조 글자 `#5d5d60`, 강조(파랑) `#1a3fbf`, 강조 연한 배경 `#e3e9fb`, 구분선 `rgba(29,31,32,.16)`, 위험 `#b23a0a`/연한 `#fdebe2`
+  - 다크: 배경 `#0f1115`, 면 `#1b1c1f`, 글자 `#eceef2`, 보조 글자 `#9a9ea8`, 강조 `#2d56e0`, 강조 글자 `#8ea7ff`, 강조 연한 배경 `#18224a`, 구분선 `rgba(236,238,242,.16)`, 위험 `#ff9466`/연한 `#3a1d10`
+  - 글꼴: 제목·라벨 `Barlow Condensed`(600), 본문 `Barlow`(400/500/700), 한글은 뒤에 `Apple SD Gothic Neo`·system-ui로 이어 씀
+  - 모양: 모서리 2~4px(거의 네모), 카드는 그림자 없이 얇은 테두리(1px 구분선), 작은 대문자 라벨(예: `KEY SENTENCE`, `NOV 19 · THU`, 글자 간격 넓게), 목표 진도는 칸 나뉜 막대
+- **인터뷰 결정 (사용자, 2026-11-19)**
+  1. **메뉴 구조 = 디자인대로**: 아래 탭 = 오늘·코스·보관함·단어장·**프롬프트**. "더보기" 탭과 화면 없앰. 설정은 **홈 오른쪽 위 아이콘**으로 열고, 진도·레벨은 **설정 맨 위 요약**(내 레벨·연속·최장·오늘)으로 합침. 전체 레벨 목록은 요약의 **"All Levels" 줄 → 하위 화면**.
+  2. **코스 화면**: 과정 칩(초급·중급·고급·마스터·비즈니스·여행) → 레벨 번호(1~4) → 유닛 목록(레슨 진도 네모 5칸, 준비 안 된 유닛은 SOON). **유닛을 누르면 그 자리에서 레슨 목록이 펼쳐지고**, 레슨을 누르면 레슨 화면으로.
+  3. **보관함·단어장 줄**: 평소엔 디자인처럼 문장·뜻·다음 복습 날짜·재생 버튼만. **삭제 = 줄을 왼쪽으로 밀면 삭제 버튼이 나오고, 그 버튼을 한 번 더 눌러야 최종 삭제.** **Gemini "변형 더 만들기" 기능은 앱에서 제거(다시 만들지 않음).** 내보내기는 오른쪽 위 아이콘 → 형식 고르기.
+  4. **세부 동작 4개 모두 디자인대로**: ① 복습 힌트 3단계(1/3~3/3) + "Show Answer" 버튼(지금 2단계) ② 영문 글꼴 Barlow 파일을 앱에 포함(약 100KB, 라이브러리 아님 — 사용자 승인됨) ③ 설정은 설명 문구 없는 짧은 줄 형태, 튜터 이름·시작 레벨·Gemini 키는 눌러서 들어가는 줄(>) ④ 대화문 연습 중 바로 앞 상대 대사를 흐리게 함께 보여 주고 "LINE 4 / 6" 표시
+  - **기본값(묻지 않고 정함)**: 단어 퀴즈 '뜻 → 영어'(`write`)는 이름만 "Meaning"으로(동작 동일, Card·Meaning·Blank) / 아이패드 두 칸 화면(`TwoColumn`) 유지 / 설명 화면의 발음 팁 등 기존 내용은 지우지 않고 모양만 / 버튼 글자는 디자인대로 영문 / 디자인 HTML은 1단계에서 `design/v2/`로 옮겨 커밋
+- **단계** (각 단계 = 새 창 1개, 시작 전 승인)
+  1. **기초 공사** — Opus · medium
+     - `design/tokens.json` 값을 위 디자인 값으로 고치고 `design/scripts/make-tokens-css.js`로 `tokens.css` 재생성 → `src/styles/tokens.css` 반영(손으로 고치지 않음). Barlow woff2를 `public/fonts/`에 넣고 `@font-face`. 공통 부품(`Button`·`SegmentedControl`·`ProgressBar`(칸 나뉜 막대)·`ScreenHeader`(작은 라벨 + 큰 제목)·카드 테두리) 모양 변경. 디자인 HTML을 `design/v2/`로 옮기고 화면별 메모를 `design/handoff-v2.md`로 작성(다음 단계들이 참고).
+     - 완료 기준: 모든 화면이 새 색·글꼴·모서리로 보이고 라이트/다크 둘 다 깨짐 없음, 테스트·빌드 통과.
+  2. **메뉴 + 홈** — Sonnet · high
+     - `routes.ts`·`TabBar`·`routes.test.ts`·`App.tsx`(더보기 제거, `/more/*` 주소 정리 — 프롬프트는 탭 주소로), 홈: 날짜 라벨·"Today's Practice"·연속일·목표 칸 막대(6/10)·이어 할 레슨 카드(레벨·유닛·레슨 번호, 4단계 진행 표시: 끝낸 단계 ✓·지금 단계 강조, "Continue ○○" 버튼)·Review 칸 2개(문장 N·단어 N)·설정 아이콘.
+     - 완료 기준: 탭 5개 이동, 홈 카드가 실제 진도와 일치, 설정 아이콘으로 설정 열림.
+  3. **설정 + 진도 통합** — Sonnet · high
+     - 맨 위 PROGRESS(내 레벨·레벨 안 레슨 칸 막대·STREAK·BEST·TODAY·All Levels >), TUTOR(이름 >, 속도), PRACTICE(통과 기준·반복·자동 넘기기 스위치·실패 피드백 스위치·일일 목표·시작 레벨 >), DISPLAY(테마 Auto/Light/Dark), DATA(Gemini 키 >·Backup Export/Import·Reset All). 이름·시작 레벨·Gemini 키 하위 화면 새로 만듦, All Levels 화면은 기존 진도 화면의 전체 목록을 새 모양으로. Gemini 키 안내에서 "변형 더 만들기" 문구 삭제.
+     - 완료 기준: 모든 설정이 지금처럼 저장·반영, 백업 내보내기/불러오기/초기화 그대로 동작.
+  4. **코스 + 레슨 화면** — Sonnet · high
+     - 코스 탭을 결정 2대로(기존 `CurriculumLevelScreen`의 주소는 코스 탭으로 돌려보내거나 정리 — 시작 때 보고). 레슨 화면: X·북마크, 레벨·유닛·레슨 라벨, 제목, KEY SENTENCE 카드(재생 버튼), 4칸 타일(번호·이름·끝냄 ✓·다음 단계 강조), "ABOUT N MIN"(`estimatedMinutes`).
+     - 완료 기준: 칩·레벨·유닛 펼치기로 모든 준비된 레슨에 들어갈 수 있고 진도 네모가 실제와 일치.
+  5. **설명 + 대화문 🎤** — Opus · high
+     - 공통 위쪽 단계 표시(EXPLANATION·DIALOGUE·DRILL·ROLE-PLAY 4칸 막대). 설명: 강세 강조된 핵심 문장(`stress`), Listen·Speak·북마크, 번호 붙은 설명, COMMON MISTAKE(틀린 문장 취소선 → 맞는 문장 ✓), "Next: Dialogue". 대화문: LINE n / m, 상대 ↔ ME, 앞 상대 대사 흐리게 + 내 줄 강조 카드, 아래 다시하기·마이크(큰 버튼)·건너뛰기, "LISTENING…". 마이크 자동 켜기·잡음 대책(재생 중 마이크 끔) 등 기존 동작 유지.
+     - 완료 기준: 아이폰 홈화면 앱에서 대화문 처음~끝 통과, 마이크 자동 켜기 그대로.
+  6. **드릴 + 롤플레이 🎤** — Opus · high
+     - 드릴: 위쪽 모드 표시(REPEAT·READ·RECALL·RESPOND), "READ · ROUND 5"·"3 / 6", 카드(포인트 태그·북마크·큰 문장·"PASS · 96%"), 아래 다시하기·일시정지/마이크·건너뛰기, "SWIPE UP · NEXT". 롤플레이: SITUATION, 상대 카드, ME 카드에 키워드 ✓ 칩, 아래 힌트(전구)·마이크·건너뛰기, "TAP TO ANSWER".
+     - 완료 기준: 아이폰에서 드릴 한 바퀴·롤플레이 끝까지, Restart/Continue·위로 밀기 그대로.
+  7. **복습 + 보관함 + 단어장 + 퀴즈 🎤** — Opus · high
+     - 복습: 진행 막대, KO → EN, HINT n / 3(첫 글자 가리기 3단계), Hint·Show Answer, "SAY IT IN ENGLISH" — `useReviewRun`·`ReviewCard`·관련 테스트 수정. 보관함: "N SENTENCES", Shadow All·Random, 줄(문장·뜻·다음 복습 날짜 태그 TODAY/NOV 21·재생), 왼쪽 밀어 삭제(2번 눌러 확정), 오른쪽 위 내보내기 아이콘, **변형 기능 제거**(`VariationBox` 등 — 지울 파일 목록은 시작 때 보고, PLAN 5절의 변형 관련 문구도 정리). 단어장: "N WORDS", Quiz · 12·Random, 줄(단어·품사·예문·뜻), 밀어 삭제. 퀴즈: Card·Meaning·Blank 탭, 뒤집기 카드, Didn't Know·Knew It.
+     - 완료 기준: 아이폰에서 복습 힌트 3단계·정답 보기·말하기 통과, 밀어서 삭제 2단계 확인, 퀴즈 3종 동작, 테스트 통과.
+  8. **프롬프트 + 마무리** — Sonnet · medium
+     - 프롬프트 탭: "VOICE CHAT SCRIPT"·"Prompt Generator", 상황·상대·나, MUST USE 칩(+ 추가), CORRECTION Later/Instant, FEEDBACK KO/EN, PREVIEW, Copy. 아이패드 두 칸 화면 전체 점검, 다크 모드 전체 점검, 이 절에 결과 기록.
+     - 완료 기준: 아이폰·아이패드에서 모든 탭·화면이 새 디자인으로 보이고 기능 이상 없음.
+
 ### Phase 8 — 마감 · 기기 검증 · 정리
 - **모델** Sonnet · **노력** medium · **예상** 1세션
 - 할 일

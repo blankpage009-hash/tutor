@@ -15,7 +15,8 @@ export default defineConfig({
         // 재생할 때 앱 코드(src/speech/audioCache.ts)가 직접 받아 보관한다.
         // 서비스 워커로 음성을 보관하지 않는 이유: iOS의 <audio>는 파일을 조각(Range)으로 요청해서
         // 조각 응답(206)은 보관이 안 되고 재생도 깨질 수 있다.
-        globPatterns: ['**/*.{js,css,html,png,svg,webmanifest}', 'content/**/*.json'],
+        // woff2: 디자인 v2의 Barlow 글꼴(약 110KB)도 미리 받아 두어 오프라인에서도 같은 글꼴로 보이게.
+        globPatterns: ['**/*.{js,css,html,png,svg,webmanifest,woff2}', 'content/**/*.json'],
         globIgnores: ['content/audio/**'],
         // 앱 안 음성 인식 엔진(vosk, 약 6MB짜리 JS)도 설치 때 미리 받아 둔다 — 인터넷 없이도 인식되게.
         // 기본 한도(2MB)로는 빠지므로 한도를 올린다. 인식 모델(models/*.tar.gz, 약 40MB)은 여기 넣지 않고
@@ -30,8 +31,8 @@ export default defineConfig({
         start_url: '/tutor/',
         scope: '/tutor/',
         display: 'standalone',
-        background_color: '#f4f5f8',
-        theme_color: '#f4f5f8',
+        background_color: '#f2f2f3',
+        theme_color: '#f2f2f3',
         icons: [
           { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' },
           { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' },

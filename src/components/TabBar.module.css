@@ -5,7 +5,7 @@
   bottom: 0;
   z-index: 10;
   display: flex;
-  background: var(--surface);
+  background: var(--paper); /* 디자인 v2: 탭 막대도 화면 바탕색과 같게, 위쪽 얇은 선으로만 구분 */
   border-top: 1px solid var(--line);
   /* 홈 막대 자리는 기기가 알려 주는 만큼만 비운다 */
   padding-bottom: env(safe-area-inset-bottom);

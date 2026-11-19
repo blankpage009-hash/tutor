@@ -1,27 +1,29 @@
+/* 디자인 v2: 거의 네모, 그림자 없음, 얇은 테두리. 글자는 Barlow 600 (한글은 Apple SD Gothic Neo로 이어짐) */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  min-height: 52px;
+  min-height: 54px;
   padding: 0 var(--space-4);
   border: 1px solid transparent;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   font-family: var(--type-headline-family);
   font-size: var(--type-headline-size);
   font-weight: var(--type-headline-weight);
   line-height: var(--type-headline-line);
+  letter-spacing: 0.01em;
   cursor: pointer;
 }
 
 .btn:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
 .btn:disabled { opacity: 0.4; cursor: default; }
 
-.primary { background: var(--accent); color: var(--on-accent); }
-.primary:active:not(:disabled) { background: var(--accent-press); }
+.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.primary:active:not(:disabled) { background: var(--accent-press); border-color: var(--accent-press); }
 
-.secondary { background: var(--surface); color: var(--ink); border-color: var(--line-strong); }
-.secondary:active:not(:disabled) { background: var(--surface-sunk); }
+.secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+.secondary:active:not(:disabled) { background: var(--accent-tint); }
 
 .ghost { background: transparent; color: var(--accent-ink); }
 .ghost:active:not(:disabled) { background: var(--accent-tint); }

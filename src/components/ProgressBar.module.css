@@ -1,6 +1,7 @@
+/* 디자인 v2: 빈 부분은 회색 면이 아니라 얇은 선 색(line)으로, 모서리 없이 */
 .track {
   height: var(--progress-height);
-  background: var(--surface-sunk);
+  background: var(--line);
   overflow: hidden;
 }
 
@@ -10,6 +11,20 @@
   transition: width 160ms ease-out;
 }
 
+.segments {
+  display: grid;
+  gap: 3px;
+}
+
+.seg,
+.segOn {
+  height: var(--progress-height);
+  background: var(--line);
+  transition: background-color 160ms ease-out;
+}
+
+.segOn { background: var(--accent); }
+
 @media (prefers-reduced-motion: reduce) {
-  .fill { transition: none; }
+  .fill, .seg, .segOn { transition: none; }
 }
