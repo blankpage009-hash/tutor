@@ -26,6 +26,7 @@ type Props = {
   onPrev: () => void;
   onNext: () => void; // 마지막 카드에서는 드릴을 마친다
   onClose: () => void;
+  whereLabel?: string; // 카드 위 안내 글. 없으면 "단계 · N회차 · 문장 n/m" (보관함 연습은 회차가 없어 따로 준다)
 };
 
 // 위: 목록으로(앱 공통 ✕는 레슨을 나가는 버튼이라 모양을 달리함) + 4단계 진행 바. 아래: 카드 한 장. 위로 쓸면 다음, 아래로 쓸면 이전 카드 (사용자 요청 2026-11-19)
@@ -45,7 +46,7 @@ export function DrillPlayer(p: Props) {
         </div>
       </header>
       <p className={styles.where} lang="ko">
-        {DRILL_MODE_LABEL[step.stage.mode]} · {step.rep}회차 · 문장 {step.drill.id}/{p.sentenceCount}
+        {p.whereLabel ?? `${DRILL_MODE_LABEL[step.stage.mode]} · ${step.rep}회차 · 문장 ${step.drill.id}/${p.sentenceCount}`}
       </p>
       {/* touch-action: none — 아이폰에서 쓸 때 화면이 같이 밀리지 않게 (CSS) */}
       <div className={styles.swipeArea} {...swipe}>

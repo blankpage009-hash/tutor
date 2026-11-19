@@ -73,5 +73,6 @@ export function stageSegments(plan: DrillStep[], index: number): StageSegment[] 
 // 먼저 들려줄 소리: 따라 말하기는 정답 음성, 상황 응답은 영어 cue 음성, 나머지는 없음
 export function promptAudio(step: DrillStep): string | null {
   if (step.stage.mode === 'respond') return step.drill.cue.audio ?? null;
-  return step.stage.playAudio ? step.drill.audio.normal : null;
+  // 빈 문자열 = 음성이 없는 옛 보관함 문장. 그대로 재생하면 오류라서 없음으로 읽는다
+  return step.stage.playAudio ? step.drill.audio.normal || null : null;
 }
