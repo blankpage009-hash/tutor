@@ -7,11 +7,9 @@ import { contentUrl } from '../../content/loader';
 import type { KeySentence } from '../../content/lessonTypes';
 import type { Sentence } from '../../content/types';
 import { playAudio, preloadAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
+import { useSettings } from '../../settings/SettingsProvider';
 import { useNewSpeaking } from '../newLesson/useNewSpeaking';
 import styles from './Learn.module.css';
-
-// 대화문과 같은 기준(드릴 기준 80%)
-const THRESHOLD = 0.8;
 
 type Props = { lessonId: string; sentence: KeySentence };
 
@@ -30,7 +28,8 @@ export function KeySentenceCard({ lessonId, sentence }: Props) {
     id: `${lessonId}-key-speak`, en: sentence.en, ko: sentence.ko, note: '', hintWords: [], vocab: [],
     variations: [], audio: sentence.audio.normal
   }), [lessonId, sentence]);
-  const speaking = useNewSpeaking(target, { threshold: THRESHOLD, failFeedback: false, onResult: () => undefined });
+  const { settings } = useSettings();
+  const speaking = useNewSpeaking(target, { threshold: settings.passThreshold, failFeedback: false, onResult: () => undefined });
   const attempt = speaking.attempt;
   const o = attempt.outcome;
   const listening = o?.status === 'listening';

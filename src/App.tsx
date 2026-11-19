@@ -21,6 +21,7 @@ import { PromptScreen } from './screens/PromptScreen';
 import { ReviewScreen } from './screens/ReviewScreen';
 import { RoleplayScreen } from './screens/RoleplayScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
+import { SettingsProvider } from './settings/SettingsProvider';
 import { ShadowingScreen } from './screens/ShadowingScreen';
 import { VariationScreen } from './screens/VariationScreen';
 import { VocabQuizScreen } from './screens/VocabQuizScreen';
@@ -31,6 +32,7 @@ import { VocabScreen } from './screens/VocabScreen';
 export function App() {
   return (
     <HashRouter>
+      <SettingsProvider>
       <WordPickerProvider>
       <Routes>
         <Route element={<TabLayout />}>
@@ -65,6 +67,7 @@ export function App() {
         </Route>
       </Routes>
       </WordPickerProvider>
+      </SettingsProvider>
     </HashRouter>
   );
 }

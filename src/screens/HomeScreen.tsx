@@ -6,6 +6,7 @@ import { loadCurriculum } from '../content/curriculumLoader';
 import { loadCourse, loadManifest } from '../content/loader';
 import { findResume, STAGE_LABEL, stagePath, type ProgressMap } from '../lessonFlow';
 import { findNewResume, NEW_STAGE_LABEL, newStagePath } from '../newLessonFlow';
+import { useSettings } from '../settings/SettingsProvider';
 import courseStyles from './courses/Courses.module.css';
 import { useProgressMap } from './courses/useProgressMap';
 import { useDueCount } from './review/useDueCount';
@@ -92,9 +93,11 @@ export function HomeScreen() {
   const fresh = useNewResume(progress);
   const old = useOldResume(progress);
   const loading = fresh === undefined || old === undefined;
+  const { tutorName } = useSettings().settings;
+  // "David와"처럼 이름 뒤 조사(와/과)는 받침에 따라 달라져서 쓰지 않고 "튜터 이름" 형태로 둔다
   return (
     <>
-      <ScreenHeader eyebrow="오늘" title="오늘의 연습" />
+      <ScreenHeader eyebrow={`오늘 · 튜터 ${tutorName}`} title="오늘의 연습" />
       <TwoColumn list={<ReviewCard />}>
         <h2 className={styles.sub}>이어서 할 수업</h2>
         {loading && <p className={styles.note} lang="ko">불러오는 중…</p>}

@@ -4,7 +4,7 @@ import { TwoColumn } from '../components/TwoColumn';
 import { loadLesson } from '../content/loader';
 import type { Model } from 'vosk-browser';
 import type { Lesson, Sentence } from '../content/types';
-import { DEFAULT_SETTINGS } from '../db/types';
+import { useSettings } from '../settings/SettingsProvider';
 import { setAudioDebug } from '../speech/audioPlayer';
 import { setAudioSessionEnabled } from '../speech/audioSession';
 import { TUTOR_SAFE_MIC } from '../speech/micSlot';
@@ -107,13 +107,12 @@ export function ShadowingScreen({ kind = 'shadowing', fixedLesson }: { kind?: Pr
     () => (fullLesson && kind === 'variation' ? toVariationLesson(fullLesson) : fullLesson),
     [fullLesson, kind]
   );
-  // 설정 화면은 Phase 7. 그 전까지는 기본값을 쓴다
-  const settings = DEFAULT_SETTINGS;
+  const { settings } = useSettings();
   const steps = useLessonSteps(lesson, settings.repeatCount);
   const diag = useDiagnostics();
   const { log } = diag;
   const vosk = useVoskModel(diag.vosk, log);
-  // 앱을 다시 열면 꺼짐으로 돌아간다 (기억은 설정 화면과 함께 Phase 7)
+  // 화면의 스위치는 이번 화면에서만 바뀌고, 처음 상태는 설정의 "자동 넘기기"를 따른다
   const [autoOn, setAutoOn] = useState(settings.autoAdvance);
   const sentence = lesson?.sentences[steps.index] ?? null;
   const auto = useAutoAdvance(autoOn, sentence?.id, steps.next);
@@ -160,7 +159,7 @@ function useSpeaking(
   sentence: Sentence | null, lesson: Lesson | null, steps: ReturnType<typeof useLessonSteps>,
   diag: Diag, voskModel: Model | null, onResult: (id: string, status: AttemptStatus) => void
 ) {
-  const settings = DEFAULT_SETTINGS;
+  const { settings } = useSettings();
   const { log } = diag;
   const handsFreeActive = useRef(false);
   const micGain = diag.rawMic && diag.boost ? RAW_MIC_GAIN : 1;

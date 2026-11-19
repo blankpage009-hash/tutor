@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import type { Sentence } from '../../content/types';
 import { recordSentenceReview } from '../../db/srs';
-import { DEFAULT_SETTINGS, type SavedSentence } from '../../db/types';
+import type { SavedSentence } from '../../db/types';
 import { initReview, isFinished, reviewReducer } from '../../reviewPlan';
+import { useSettings } from '../../settings/SettingsProvider';
 import { useNewSpeaking } from '../newLesson/useNewSpeaking';
 
 function toSentence(r: SavedSentence): Sentence {
@@ -15,10 +16,11 @@ export function useReviewRun(rows: SavedSentence[]) {
   const [state, dispatch] = useReducer(reviewReducer, rows, (r) => initReview(r.map((x) => x.id)));
   const [recordError, setRecordError] = useState(false);
   const recorded = useRef(0);
+  const { settings } = useSettings();
 
   // 판정 콜백은 마이크를 누른 때의 값을 들고 있어서, 상태를 읽지 않고 reducer에 사건만 넘긴다 (reducer가 늦은 판정을 버린다)
   const speaking = useNewSpeaking(sentences[state.index] ?? null, {
-    threshold: DEFAULT_SETTINGS.passThreshold, failFeedback: false,
+    threshold: settings.passThreshold, failFeedback: false,
     onResult: (id, status) => {
       if (status === 'passed' || status === 'failed') dispatch({ type: 'attempt', id, status });
     }

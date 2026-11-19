@@ -10,6 +10,7 @@ import type { Sentence } from '../content/types';
 import { finishNewStep } from '../db/progress';
 import { unlockAudio } from '../speech/audioPlayer';
 import { newStagePath, nextNewStage } from '../newLessonFlow';
+import { useSettings } from '../settings/SettingsProvider';
 import courseStyles from './courses/Courses.module.css';
 import styles from './dialogue/Dialogue.module.css';
 import { DialogueCard } from './dialogue/DialogueCard';
@@ -20,8 +21,6 @@ import { NewLessonSteps } from './newLesson/NewLessonSteps';
 import { useNewLesson } from './newLesson/useNewLesson';
 import { useNewSpeaking } from './newLesson/useNewSpeaking';
 
-// 대화문에는 기준 점수가 따로 없어 드릴 기준(80%)과 맞춘다
-const THRESHOLD = 0.8;
 // 통과 글자를 잠깐 보여 준 뒤 다음 상대 줄로
 const PASS_PAUSE_MS = 800;
 
@@ -78,6 +77,8 @@ function useDialoguePractice(lesson: NewLesson) {
 function DialogueBody({ lesson }: { lesson: NewLesson }) {
   const nav = useNavigate();
   const d = useDialoguePractice(lesson);
+  // 대화문에는 기준 점수가 따로 없어 설정의 통과 기준을 쓴다
+  const threshold = useSettings().settings.passThreshold;
   const timer = useRef<number | null>(null);
   const clearTimer = () => { if (timer.current !== null) window.clearTimeout(timer.current); timer.current = null; };
   useEffect(() => clearTimer, []);
@@ -86,7 +87,7 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
     if (d.phase === 'done') finishNewStep(lesson.lessonId, lesson.levelCode, 'dialogue').catch(() => undefined);
   }, [d.phase, lesson.lessonId, lesson.levelCode]);
   const speaking = useNewSpeaking(d.sentence, {
-    threshold: THRESHOLD, failFeedback: false,
+    threshold, failFeedback: false,
     onResult: (_id, status) => {
       if (status !== 'passed') return;
       clearTimer();
@@ -116,7 +117,7 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
         <DialogueCard lessonId={lesson.lessonId} line={d.lines[shown]} index={shown} total={d.lines.length}
           partnerRole={lesson.dialogue.partnerRole} outcome={myTurn ? speaking.attempt.outcome : undefined}>
           {/* 상대 줄에도 같은 패널을 (잠근 채) 두어 카드 위치·크기가 내 차례와 똑같게 */}
-          <MyLinePanel attempt={speaking.attempt} threshold={THRESHOLD} engineNote={speaking.engineNote}
+          <MyLinePanel attempt={speaking.attempt} threshold={threshold} engineNote={speaking.engineNote}
             micLocked={speaking.micLocked} waiting={!myTurn} onSkip={() => { clearTimer(); d.go(d.cur + 1); }} />
         </DialogueCard>
       )}

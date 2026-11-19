@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
 import type { Sentence } from '../../../content/types';
-import { DEFAULT_SETTINGS, type VocabWord } from '../../../db/types';
+import type { VocabWord } from '../../../db/types';
 import { initReview, isFinished, reviewReducer } from '../../../reviewPlan';
+import { useSettings } from '../../../settings/SettingsProvider';
 import { clozeWordMatched, isTypedCorrect } from '../../../vocabQuiz';
 import { useNewSpeaking } from '../../newLesson/useNewSpeaking';
 import { useRecordedGrades } from './useRecordedGrades';
@@ -22,8 +23,9 @@ export function useTypeQuizRun(words: VocabWord[], kind: TypeKind) {
   const sentences = useMemo(() => words.map((w) => toSentence(w, kind)), [words, kind]);
   const [state, dispatch] = useReducer(reviewReducer, words, (ws) => initReview(ws.map((w) => String(w.id))));
   const word = words[state.index] ?? null;
+  const { settings } = useSettings();
   const speaking = useNewSpeaking(sentences[state.index] ?? null, {
-    threshold: DEFAULT_SETTINGS.passThreshold, failFeedback: false, onResult: () => undefined
+    threshold: settings.passThreshold, failFeedback: false, onResult: () => undefined
   });
 
   // 판정이 끝난 결과 객체를 한 번만 처리한다. 문장 빈칸은 문장이 통과 기준을 넘어도

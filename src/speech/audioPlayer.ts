@@ -70,6 +70,13 @@ export function preloadAudio(url: string): Promise<string> {
   return getAudioObjectUrl(url);
 }
 
+// 설정의 말하기 속도. "보통(1)"으로 부른 재생에만 적용하고, 느린 다시 듣기(0.75)는 그대로 둔다 —
+// 호출하는 곳이 많아서 한 곳(여기)에서 처리하는 편이 빠뜨릴 일이 없다
+let baseRate = 1;
+export function setBaseRate(rate: number): void {
+  baseRate = rate;
+}
+
 // 콘텐츠 음성 파일 재생. 끝까지 재생되면(또는 멈추면) 끝나는 약속을 돌려준다
 export async function playAudio(url: string, rate = 1): Promise<void> {
   return playSource(await getAudioObjectUrl(url), rate);
@@ -80,10 +87,11 @@ export function playSource(src: string, rate = 1): Promise<void> {
   stopAudio();
   setAudioSession('playback');
   const a = player();
+  const effective = rate === 1 ? baseRate : rate;
   a.src = src;
-  a.playbackRate = rate;
-  a.defaultPlaybackRate = rate;
-  debug(`재생 시작 (속도 ${rate})`);
+  a.playbackRate = effective;
+  a.defaultPlaybackRate = effective;
+  debug(`재생 시작 (속도 ${effective})`);
   return new Promise<void>((resolve, reject) => {
     const done = () => {
       if (a.ended) debug('재생 끝');
