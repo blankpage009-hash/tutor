@@ -7,6 +7,11 @@ export type SavedSentence = {
   lessonId: string;
   savedAt: number; // ms
   note?: string;
+  // 보관함이 레슨 파일을 다시 찾지 않고 바로 보여 주고 연습하려고 저장할 때 함께 적어 둔다.
+  // 예전에 저장한 문장에는 없어서 선택 칸이다 (칸만 늘렸고 색인은 그대로라 DB 버전은 그대로)
+  en?: string;
+  ko?: string;
+  audio?: string; // content/ 기준 경로
 };
 
 export type VocabWord = {

@@ -16,7 +16,11 @@ export function useDrillSaved(lesson: NewLesson, log: (m: string) => void) {
   const save = useCallback(async (id: string) => {
     setError(null);
     try {
-      const ok = await saveSentence({ id, courseId: lesson.levelCode, lessonId: lesson.lessonId });
+      const drill = lesson.drills.find((d) => drillSaveId(lesson.lessonId, d.id) === id);
+      const ok = await saveSentence({
+        id, courseId: lesson.levelCode, lessonId: lesson.lessonId,
+        en: drill?.en, ko: drill?.ko, audio: drill?.audio.normal
+      });
       if (ok) setSaved((prev) => new Set(prev).add(id));
       else setError('저장이 안 됐어요. 다시 눌러 주세요.');
     } catch (e) {

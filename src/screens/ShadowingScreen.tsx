@@ -9,6 +9,7 @@ import { setAudioDebug } from '../speech/audioPlayer';
 import { setAudioSessionEnabled } from '../speech/audioSession';
 import { TUTOR_SAFE_MIC } from '../speech/micSlot';
 import { toVariationLesson, type PracticeKind } from '../lessonFlow';
+import { SavedFinish } from './library/SavedFinish';
 import { DiagnosticsPanel } from './shadowing/DiagnosticsPanel';
 import { FinishPanel } from './shadowing/FinishPanel';
 import { useStageProgress } from './shadowing/useStageProgress';
@@ -25,13 +26,16 @@ import { useVoskModel, type VoskModelState } from './shadowing/useVoskModel';
 // 실패 피드백의 "느린 속도". 너무 느리면 iOS 재생 속도 변환이 뭉개져서 0.75로 둔다
 const SLOW_RATE = 0.75;
 
-function useLesson(lessonId: string) {
+// fixed: 보관함 연습처럼 이미 만들어진 문장 묶음을 줄 때는 파일을 읽지 않는다 (코스 id도 없어 진도에 기록되지 않는다)
+function useLesson(lessonId: string, fixed?: Lesson) {
   const [data, setData] = useState<{ lesson: Lesson; courseId: string } | null>(null);
   const [error, setError] = useState<string | null>(null);
   useEffect(() => {
+    if (fixed) return;
     setData(null);
     loadLesson(lessonId).then((r) => setData({ lesson: r.lesson, courseId: r.course.id }), (e) => setError(String(e)));
-  }, [lessonId]);
+  }, [lessonId, fixed]);
+  if (fixed) return { lesson: fixed, courseId: null, error: null };
   return { lesson: data?.lesson ?? null, courseId: data?.courseId ?? null, error };
 }
 
@@ -94,9 +98,11 @@ const KIND_TEXT: Record<PracticeKind, { label: string; lastLabel: string }> = {
 };
 
 // 같은 말하기 엔진으로 세 단계를 돌린다: 쉐도잉(핵심 문장) → 변형 연습(변형 문장) → 복습(핵심 문장 다시)
-export function ShadowingScreen({ kind = 'shadowing' }: { kind?: PracticeKind }) {
+const SAVED_TEXT = { label: '보관함 연습', lastLabel: '연습 마치기' };
+
+export function ShadowingScreen({ kind = 'shadowing', fixedLesson }: { kind?: PracticeKind; fixedLesson?: Lesson }) {
   const { lessonId = 'beg-01' } = useParams();
-  const { lesson: fullLesson, courseId, error } = useLesson(lessonId);
+  const { lesson: fullLesson, courseId, error } = useLesson(lessonId, fixedLesson);
   const lesson = useMemo(
     () => (fullLesson && kind === 'variation' ? toVariationLesson(fullLesson) : fullLesson),
     [fullLesson, kind]
@@ -131,8 +137,10 @@ export function ShadowingScreen({ kind = 'shadowing' }: { kind?: PracticeKind })
   };
   return (
     <TwoColumn list={<SentenceList lesson={lesson} index={index} cleared={cleared} locked={listening} onPick={steps.setIndex} />}>
-      {steps.finished && <FinishPanel kind={kind} lessonId={lessonId} courseId={courseId} total={total} />}
-      <ShadowingStage sentence={sentence} {...KIND_TEXT[kind]} saveable={kind !== 'variation'} position={`문장 ${index + 1} / ${total}`} attempt={attempt}
+      {steps.finished && (fixedLesson
+        ? <SavedFinish total={total} />
+        : <FinishPanel kind={kind} lessonId={lessonId} courseId={courseId} total={total} />)}
+      <ShadowingStage sentence={sentence} {...(fixedLesson ? SAVED_TEXT : KIND_TEXT[kind])} saveable={kind !== 'variation' && !fixedLesson} position={`문장 ${index + 1} / ${total}`} attempt={attempt}
         threshold={settings.passThreshold} slowRate={SLOW_RATE}
         passes={steps.counts.get(sentence.id) ?? 0} required={settings.repeatCount}
         canNext={cleared.has(sentence.id)} isLast={index === total - 1} onNext={steps.next}

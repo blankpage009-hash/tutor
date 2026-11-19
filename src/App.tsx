@@ -10,6 +10,7 @@ import { LearnScreen } from './screens/LearnScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { LessonScreen } from './screens/LessonScreen';
 import { LibraryScreen } from './screens/LibraryScreen';
+import { SavedPracticeScreen } from './screens/SavedPracticeScreen';
 import { MoreScreen } from './screens/MoreScreen';
 import { NewLessonMenuScreen } from './screens/NewLessonMenuScreen';
 import { NewRolePlayScreen } from './screens/NewRolePlayScreen';
@@ -35,6 +36,7 @@ export function App() {
           <Route path="/courses/:courseId" element={<CourseDetailScreen />} />
           <Route path="/curriculum/:levelKey" element={<CurriculumLevelScreen />} />
           <Route path="/library" element={<LibraryScreen />} />
+          <Route path="/library/practice/:startId" element={<SavedPracticeScreen />} />
           <Route path="/vocab" element={<VocabScreen />} />
           <Route path="/more" element={<MoreScreen />} />
           <Route path="/more/progress" element={<ProgressScreen />} />
