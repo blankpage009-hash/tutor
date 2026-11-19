@@ -27,6 +27,13 @@
 /* 첫 화면: iPad에서도 한 칸으로 가운데 */
 .start { max-width: 720px; }
 
+/* Restart · Continue 두 버튼을 반반 나란히 */
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
 .sentenceRow {
   display: flex;
   flex-direction: column;

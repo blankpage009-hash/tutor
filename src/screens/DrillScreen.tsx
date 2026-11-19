@@ -56,7 +56,10 @@ function DrillBody({ lesson, initial }: { lesson: NewLesson; initial?: DrillPosi
   }
   if (!started) {
     const resume = steps.index > 0 || steps.cleared.size > 0;
-    return <DrillList lesson={lesson} resume={resume} onStart={() => setStarted(true)} />;
+    return (
+      <DrillList lesson={lesson} resume={resume} onStart={() => setStarted(true)}
+        onRestart={() => { steps.restart(); setStarted(true); }} />
+    );
   }
   return (
     <DrillPlayer plan={plan} index={steps.index} sentenceCount={lesson.drills.length}

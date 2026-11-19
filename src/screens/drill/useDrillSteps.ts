@@ -36,5 +36,13 @@ export function useDrillSteps(total: number, initial?: DrillPosition) {
     setFinished(false);
   }, []);
 
-  return { index, cleared, recordPass, next, skip, prev, finished };
+  // Restart 버튼: 하다 만 기록을 버리고 1회차부터. 저장은 useKeepDrillPosition이 바뀐 값을 알아서 남긴다
+  const restart = useCallback(() => {
+    clearedRef.current = new Set();
+    setCleared(clearedRef.current);
+    setIndex(0);
+    setFinished(false);
+  }, []);
+
+  return { index, cleared, recordPass, next, skip, prev, restart, finished };
 }
