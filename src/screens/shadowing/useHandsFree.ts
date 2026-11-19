@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState, type MutableRefObject } from 
 import { contentUrl } from '../../content/loader';
 import type { Sentence } from '../../content/types';
 import { playAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
+import { playFeedback } from '../../speech/feedbackSound';
 import { createMicSlot, type MicSlot } from '../../speech/micSlot';
 import { createCaptureContext } from '../../speech/pcmCapture';
 import { runHandsFree, type HandsFreeDeps, type HandsFreeEnd, type HandsFreeStep, type HearStatus } from './handsFreeLoop';
@@ -34,6 +35,8 @@ export type HandsFreeInput = {
   // 진단 ⑨: 튜터가 읽는 동안 마이크를 닫아 둔다. 마이크가 열려 있으면 iOS가 소리를 통화 모드로 바꿔
   // 튜터 목소리에 잡음이 섞이고 음량도 따로 논다(아이폰 결과 13차, 사용자 확인 2026-11-19). 안 주면 지금처럼 열어 둠
   micOffWhilePlaying?: boolean;
+  // 통과/실패 효과음 (새 레슨 드릴만, 사용자 요청 2026-11-19). 소리 전에 마이크를 닫는다. 안 주면 소리 없음
+  feedbackSound?: boolean;
   log: (m: string) => void;
 } & Pick<HandsFreeDeps<Sentence>, 'shouldRead' | 'readFirst' | 'onTooManyFails'>; // 드릴용, 안 주면 기본 동작
 
@@ -80,6 +83,14 @@ async function hearWithSlot(
   return p.attempt.hearFor(s, mic, NO_SPEECH_MS);
 }
 
+// 판정 소리는 마이크를 닫고 튼다 (켜진 채면 iOS 통화 모드 잡음). 다시 들을 때 마이크가 새로 켜지느라
+// 약 0.6초 "마이크 준비 중"이 생기는 것은 사용자가 받아들임 (2026-11-19). 말이 없거나 오류면 소리 없음
+async function playJudgedSound(slot: MicSlot, r: HearStatus): Promise<void> {
+  if (r !== 'passed' && r !== 'failed') return;
+  slot.release();
+  await playFeedback(r === 'passed' ? 'pass' : 'fail');
+}
+
 function loopDeps(p: HandsFreeInput, slot: MicSlot, stopped: () => boolean, onStep: (s: HandsFreeStep | null) => void) {
   const { readFirst } = p;
   return {
@@ -99,7 +110,15 @@ function loopDeps(p: HandsFreeInput, slot: MicSlot, stopped: () => boolean, onSt
       const mic = slot.current();
       p.log(`튜터 재생 끝 (속도 ${rate}, ${mic ? `그동안 마이크 최대 소리 ${mic.takePeak().toFixed(3)}` : '그동안 마이크 꺼 둠'})`);
     },
-    hear: (s: Sentence) => hearWithSlot(p, slot, s, stopped, onStep),
+    hear: async (s: Sentence) => {
+      const r = await hearWithSlot(p, slot, s, stopped, onStep);
+      if (p.feedbackSound && !stopped()) {
+        // 틀리면 소리 동안 마이크를 닫으므로 바로 준비 중으로 (듣는 중으로 보이면 일찍 말해 첫 단어가 잘린다)
+        if (r === 'failed') onStep('preparing');
+        await playJudgedSound(slot, r);
+      }
+      return r;
+    },
     // 이번 통과로 필요 횟수를 막 채웠거나, 이미 끝낸 문장이면 넘어간다
     recordPass: (s: Sentence) => p.recordPass(s.id) || p.cleared.has(s.id),
     advance: () => { p.log('이어 말하기: 다음 문장'); p.next(); },

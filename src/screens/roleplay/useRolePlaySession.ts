@@ -6,6 +6,7 @@ import { finishNewStep } from '../../db/progress';
 import type { NewLessonStep } from '../../newLessonFlow';
 import { judgeKeywords, type KeywordJudgement } from '../../scoring/keywordJudge';
 import { playAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
+import { playFeedback } from '../../speech/feedbackSound';
 import { createMicSlot, TUTOR_SAFE_MIC, type MicSlot } from '../../speech/micSlot';
 import type { MicStream } from '../../speech/micStream';
 import { createCaptureContext } from '../../speech/pcmCapture';
@@ -46,12 +47,29 @@ async function micForTurn(c: Ctx): Promise<MicStream> {
 
 class MicOpenError extends Error {}
 
+function takeSkip(c: Ctx, line: MyLine): boolean {
+  if (!c.skipping.current) return false;
+  c.skipping.current = false;
+  c.record(line.no, '');
+  return true;
+}
+
+// 판정 소리 (사용자 요청 2026-11-19). 마이크를 닫고 튼다 — 켜진 채면 iOS 통화 모드 잡음.
+// 틀려서 다시 들을 때 마이크가 새로 켜지는 약 0.6초는 사용자가 받아들임
+async function judgedSound(c: Ctx, pass: boolean): Promise<void> {
+  if (c.stopped()) return;
+  c.slot.release();
+  await playFeedback(pass ? 'pass' : 'fail');
+}
+
 // 한 번 듣기. 두 번째 의견은 끔(예시 답 단어로 끌려간다), 중간 결과로 끝내지 않음(문장 중간에서 잘린다)
 async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   const keys = line.requiredKeywords;
   const mic = await micForTurn(c);
   // 마이크가 켜지는 사이 멈춤을 눌렀으면 듣지 않는다 (순서 쪽이 멈춤으로 처리)
   if (c.stopped()) return 'no-speech';
+  // 판정 소리·마이크 여는 사이에 누른 건너뛰기 (그동안은 듣는 중이 아니라 듣기를 끊을 수 없다)
+  if (takeSkip(c, line)) return 'skipped';
   c.setTurn((t) => ({ ...t, live: judgeKeywords(keys, []) }));
   const l = listenVosk({
     model: c.model, mic, sentenceEn: line.exampleEn, secondOpinion: false, afterFinalMs: THINK_PAUSE_MS,
@@ -63,16 +81,14 @@ async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   c.listening.current = l;
   const res = await l.result;
   c.listening.current = null;
-  if (c.skipping.current) {
-    c.skipping.current = false;
-    c.record(line.no, '');
-    return 'skipped';
-  }
+  if (takeSkip(c, line)) return 'skipped';
   if (!res.alternatives.length) return 'no-speech';
   const judgement = judgeKeywords(keys, res.alternatives);
   c.log(`롤플레이 판정 ${judgement.pass ? '통과' : '실패'} · 들린 말 "${judgement.heard}"`);
-  c.setTurn(() => ({ live: null, last: { pass: judgement.pass, judgement }, preparing: false }));
+  // 틀리면 판정 소리 동안 마이크를 닫으므로 바로 "마이크 준비 중"으로 (듣는 중으로 보이면 일찍 말해 첫 단어가 잘린다)
+  c.setTurn(() => ({ live: null, last: { pass: judgement.pass, judgement }, preparing: !judgement.pass }));
   if (judgement.pass) c.record(line.no, judgement.heard);
+  await judgedSound(c, judgement.pass);
   return judgement.pass ? 'passed' : 'failed';
 }
 
@@ -159,6 +175,9 @@ export function useRolePlaySession(lesson: NewLesson) {
       const line = lesson.rolePlay.lines[st.cur];
       if (line) st.record(line.no, '');
       start(st.cur + 1);
+    } else {
+      // 진행 중인데 듣는 중이 아님(판정 소리·마이크 여는 중): 다음 듣기 직전에 건너뛴다
+      skipping.current = true;
     }
   }, [lesson, st, start]);
 

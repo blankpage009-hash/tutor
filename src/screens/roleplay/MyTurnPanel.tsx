@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '../../components/Button';
 import { MicButton } from '../../components/MicButton';
+import { ResultMark } from '../../components/ResultMark';
 import { judgeKeywords } from '../../scoring/keywordJudge';
 import dialogueStyles from '../dialogue/Dialogue.module.css';
 import styles from './RolePlay.module.css';
@@ -46,10 +47,10 @@ function Result({ last }: { last: Turn['last'] }) {
   return (
     <>
       {last.pass
-        ? <p className={`${dialogueStyles.result} ${dialogueStyles.pass}`} lang="ko">통과!</p>
+        ? <p className={`${dialogueStyles.result} ${dialogueStyles.pass}`} lang="ko"><ResultMark pass />통과!</p>
         : (
           <p className={`${dialogueStyles.result} ${dialogueStyles.fail}`} lang="ko">
-            {missed.length ? <>빠진 말: <span lang="en">{missed.join(', ')}</span> · 다시 말해 보세요</> : '잘 안 들렸어요. 다시 말해 보세요'}
+            <ResultMark pass={false} />{missed.length ? <>빠진 말: <span lang="en">{missed.join(', ')}</span> · 다시 말해 보세요</> : '잘 안 들렸어요. 다시 말해 보세요'}
           </p>
         )}
       {/* 자유 답변 인식이 어떻게 되는지 보려고 들린 말은 늘 보여 준다 */}

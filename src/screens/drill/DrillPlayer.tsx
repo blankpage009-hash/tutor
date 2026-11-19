@@ -1,5 +1,6 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 import { ProgressBar } from '../../components/ProgressBar';
+import { ResultMark } from '../../components/ResultMark';
 import { WordHighlight } from '../../components/WordHighlight';
 import { IconBookmark, IconChevronLeft, IconPause, IconPlay, IconReplay, IconSkipNext } from '../../components/icons/icons';
 import { DRILL_MODE_LABEL, stageSegments, type DrillStep } from '../../drillPlan';
@@ -145,10 +146,10 @@ function Result({ p }: { p: Props }) {
   const o = p.attempt.outcome;
   if (!o || (o.status !== 'passed' && o.status !== 'failed')) return null;
   const pct = Math.round(o.judgement.ratio * 100);
-  if (o.status === 'passed') return <p className={styles.pass} lang="ko">통과! 일치율 {pct}%</p>;
+  if (o.status === 'passed') return <p className={styles.pass} lang="ko"><ResultMark pass />통과! 일치율 {pct}%</p>;
   return (
     <p className={styles.fail} lang="ko">
-      조금만 더! 일치율 {pct}%{o.judgement.heard && <> · 들린 말 <span lang="en">“{o.judgement.heard}”</span></>}
+      <ResultMark pass={false} />조금만 더! 일치율 {pct}%{o.judgement.heard && <> · 들린 말 <span lang="en">“{o.judgement.heard}”</span></>}
     </p>
   );
 }

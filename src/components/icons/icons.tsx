@@ -24,6 +24,7 @@ export const IconSkipNext = () => <Svg><path d="M6 5l9 7-9 7z" fill="currentColo
 export const IconBookmark = ({ filled = false }: { filled?: boolean }) => (
   <Svg><path d="M6 4h12v16l-6-4-6 4z" fill={filled ? 'currentColor' : 'none'} /></Svg>
 );
+export const IconCheck = () => <Svg><path d="M5 12.5l4.5 4.5L19 7.5" /></Svg>;
 export const IconStop = () => <Svg><rect x="7" y="7" width="10" height="10" fill="currentColor" /></Svg>;
 
 export const TAB_ICONS = {

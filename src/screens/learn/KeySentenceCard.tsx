@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '../../components/Button';
+import { ResultMark } from '../../components/ResultMark';
 import { WordHighlight } from '../../components/WordHighlight';
 import { contentUrl } from '../../content/loader';
 import type { KeySentence } from '../../content/lessonTypes';
@@ -75,10 +76,10 @@ function SpeakFeedback({ speaking }: { speaking: ReturnType<typeof useNewSpeakin
     <div className={styles.feedback}>
       <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} />
       {o.status === 'listening' && <p className={styles.status} lang="ko">듣는 중… 다 말하면 저절로 멈춰요</p>}
-      {o.status === 'passed' && <p className={`${styles.result} ${styles.pass}`} lang="ko">통과! 일치율 {pct}%</p>}
+      {o.status === 'passed' && <p className={`${styles.result} ${styles.pass}`} lang="ko"><ResultMark pass />통과! 일치율 {pct}%</p>}
       {o.status === 'failed' && (
         <p className={`${styles.result} ${styles.fail}`} lang="ko">
-          조금만 더! 일치율 {pct}% · 들린 말 <span lang="en">“{o.judgement.heard}”</span>
+          <ResultMark pass={false} />조금만 더! 일치율 {pct}% · 들린 말 <span lang="en">“{o.judgement.heard}”</span>
         </p>
       )}
     </div>

@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Button } from '../components/Button';
+import { StepComplete } from '../components/StepComplete';
+import { useCelebration } from '../components/useCelebration';
 import type { NewLesson } from '../content/lessonTypes';
 import type { DrillPosition } from '../db/types';
 import { buildDrillPlan } from '../drillPlan';
@@ -36,13 +38,22 @@ function DrillBody({ lesson, initial }: { lesson: NewLesson; initial?: DrillPosi
   const sp = useDrillSpeaking(plan, steps);
   const saved = useDrillSaved(lesson, sp.log);
   const { step, hf } = sp;
+  // 이어 말하기가 멈춘 뒤(마이크 반납 후)에 띄운다 — 마이크가 켜진 채 팡파르를 틀면 iOS 통화 모드 잡음
+  const celebrate = useCelebration(steps.finished && !hf.running);
   const handsFree: HandsFreeView = {
     available: sp.voskReady, running: hf.running, step: hf.step, notice: hf.notice,
     onToggle: () => { if (hf.running) hf.stop(); else hf.start(); }
   };
   // 재생 중에 넘기거나 닫으면 일시정지하고 옮긴다. 다시 ▶를 누르면 옮긴 카드부터
   const move = (go: () => void) => { hf.stop(); go(); };
-  if (steps.finished) return <DrillFinish onNext={() => nav(newStagePath(lesson.lessonId, nextNewStage('drill')))} />;
+  if (steps.finished) {
+    return (
+      <>
+        <DrillFinish onNext={() => nav(newStagePath(lesson.lessonId, nextNewStage('drill')))} />
+        {celebrate.show && <StepComplete title="Drill Complete!" subtitle="드릴 60회를 마쳤어요" onClose={celebrate.close} />}
+      </>
+    );
+  }
   if (!started) {
     const resume = steps.index > 0 || steps.cleared.size > 0;
     return <DrillList lesson={lesson} resume={resume} onStart={() => setStarted(true)} />;

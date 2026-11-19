@@ -26,7 +26,7 @@ export function useDrillSpeaking(plan: DrillStep[], steps: Steps) {
   const hf = useHandsFree({
     lesson: { sentences }, index: steps.index, cleared: steps.cleared, recordPass: steps.recordPass, next: steps.next,
     attempt: sp.attempt, active: sp.handsFreeActive, slowRate: SLOW_RATE, failFeedback: false,
-    ...TUTOR_SAFE_MIC, log, onTooManyFails: 'slow-and-continue',
+    ...TUTOR_SAFE_MIC, feedbackSound: true, log, onTooManyFails: 'slow-and-continue',
     shouldRead: (s) => audioOf(s) !== null,
     readFirst: (s) => {
       const a = audioOf(s);

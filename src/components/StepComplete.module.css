@@ -1,0 +1,71 @@
+/* 화면 전체를 덮는 축하 화면. 탭바까지 덮어 실수로 다른 곳을 누르지 않게 */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-4);
+  border: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  animation: fadeIn 0.25s ease-out both;
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--space-8) * 1.75);
+  height: calc(var(--space-8) * 1.75);
+  margin-bottom: var(--space-3);
+  border-radius: var(--radius-full);
+  background: var(--accent);
+  color: var(--on-accent);
+  animation: pop 0.5s 0.1s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+}
+
+.check svg { width: var(--space-8); height: var(--space-8); stroke-width: 2.5; }
+
+.title {
+  font-family: var(--type-display-family);
+  font-size: var(--type-display-size);
+  line-height: var(--type-display-line);
+  font-weight: var(--type-display-weight);
+  letter-spacing: var(--type-display-tracking);
+}
+
+.subtitle {
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+  color: var(--ink-muted);
+}
+
+.hint {
+  margin-top: var(--space-6);
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--ink-muted);
+}
+
+.overlay:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: calc(var(--space-2) * -1); }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pop {
+  from { transform: scale(0.2); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay, .check { animation: none; }
+}

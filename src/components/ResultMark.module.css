@@ -1,0 +1,28 @@
+.mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: var(--space-6);
+  height: var(--space-6);
+  margin-right: var(--space-2);
+  border-radius: var(--radius-full);
+  color: var(--on-accent);
+  vertical-align: middle;
+  animation: pop 0.35s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+}
+
+.mark svg { width: var(--space-5); height: var(--space-5); stroke-width: 2.5; }
+
+.pass { background: var(--accent); }
+
+.fail { background: var(--danger); }
+
+@keyframes pop {
+  from { transform: scale(0.2); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mark { animation: none; }
+}

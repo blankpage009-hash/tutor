@@ -1,5 +1,6 @@
 import { useCallback, useRef } from 'react';
 import type { Sentence } from '../../content/types';
+import { playFeedback } from '../../speech/feedbackSound';
 import { useShadowingAttempt, type AttemptStatus } from '../shadowing/useShadowingAttempt';
 import { useVoskModel, type VoskModelState } from '../shadowing/useVoskModel';
 
@@ -32,9 +33,15 @@ export function useNewSpeaking(sentence: Sentence | null, o: Options) {
   const log = useCallback((m: string) => console.debug(`[말하기] ${m}`), []);
   const vosk = useVoskModel(true, log);
   const handsFreeActive = useRef(false);
+  // 손으로 누르는 말하기(대화문·설명)의 통과/실패 소리 (사용자 요청 2026-11-19). 판정이 나올 때는
+  // 이미 마이크를 닫은 뒤라 바로 틀어도 된다. 이어 말하기(드릴)는 이 길을 안 타고 useHandsFree가 직접 튼다
+  const onResult = (id: string, status: AttemptStatus) => {
+    if (status === 'passed' || status === 'failed') void playFeedback(status === 'passed' ? 'pass' : 'fail');
+    o.onResult(id, status);
+  };
   const attempt = useShadowingAttempt(sentence, {
     ...FIXED, threshold: o.threshold, failFeedback: o.failFeedback, slowRate: SLOW_RATE,
-    voskModel: vosk.model, log, onResult: o.onResult, handsFreeActive
+    voskModel: vosk.model, log, onResult, handsFreeActive
   });
   return {
     attempt, log, handsFreeActive,

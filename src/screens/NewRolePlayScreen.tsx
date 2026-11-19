@@ -2,6 +2,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { BackLink } from '../components/BackLink';
 import { Button } from '../components/Button';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { StepComplete } from '../components/StepComplete';
+import { useCelebration } from '../components/useCelebration';
 import type { NewLesson } from '../content/lessonTypes';
 import { NEW_STAGE_LABEL, newStagePath, type NewLessonStep } from '../newLessonFlow';
 import courseStyles from './courses/Courses.module.css';
@@ -26,6 +28,8 @@ function RolePlayBody({ lesson }: { lesson: NewLesson }) {
   const s = useRolePlaySession(lesson);
   const rp = lesson.rolePlay;
   const line = rp.lines[s.cur];
+  // 끝 화면 전에 완료 화면을 한 번. 네 단계를 다 끝냈으면 레슨 완료로 (사용자 요청 2026-11-19)
+  const celebrate = useCelebration(s.phase === 'done');
   const myLine: MyLine | null = s.phase === 'practice' && line?.speaker === 'me' ? line : null;
   return (
     <>
@@ -45,8 +49,15 @@ function RolePlayBody({ lesson }: { lesson: NewLesson }) {
       {s.phase === 'done' && <DoneActions result={s.result} onAgain={() => s.start(0)}
         onStep={(step) => nav(newStagePath(lesson.lessonId, step))}
         onLevel={() => nav(`/curriculum/${lesson.levelCode}`)} onHome={() => nav('/')} />}
+      {celebrate.show && <RolePlayComplete result={s.result} onClose={celebrate.close} />}
     </>
   );
+}
+
+function RolePlayComplete({ result, onClose }: { result: StepResult | null; onClose: () => void }) {
+  return result?.done
+    ? <StepComplete title="Lesson Complete!" subtitle="설명부터 롤플레이까지 모두 끝냈어요" onClose={onClose} />
+    : <StepComplete title="Role-play Complete!" subtitle="롤플레이를 끝까지 했어요" onClose={onClose} />;
 }
 
 function IntroActions({ locked, note, onStart }: { locked: boolean; note: string | null; onStart: () => void }) {

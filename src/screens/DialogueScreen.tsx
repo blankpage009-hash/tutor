@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { BackLink } from '../components/BackLink';
 import { Button } from '../components/Button';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { StepComplete } from '../components/StepComplete';
+import { useCelebration } from '../components/useCelebration';
 import type { DialogueLine, NewLesson } from '../content/lessonTypes';
 import type { Sentence } from '../content/types';
 import { finishNewStep } from '../db/progress';
@@ -91,6 +93,8 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
       timer.current = window.setTimeout(() => d.go(d.curRef.current + 1), PASS_PAUSE_MS);
     }
   });
+  // 끝까지 가면 완료 화면을 한 번 (사용자 요청 2026-11-19)
+  const celebrate = useCelebration(d.phase === 'done');
   const myTurn = d.phase === 'practice' && d.player.playing === null && d.meIdx === d.cur;
   const shown = d.player.playing ?? d.cur;
   useAutoListen(myTurn && !speaking.micLocked, d.sentence?.id, speaking.attempt.start);
@@ -120,6 +124,7 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
         onPlayAll={() => { void d.player.playAll(); }} onStop={d.player.stop} onStart={d.start} />}
       {d.phase === 'done' && <DoneActions lesson={lesson} onAgain={d.start}
         onNext={() => nav(newStagePath(lesson.lessonId, nextNewStage('dialogue')))} />}
+      {celebrate.show && <StepComplete title="Dialogue Complete!" subtitle="대화문을 끝까지 했어요" onClose={celebrate.close} />}
     </>
   );
 }
