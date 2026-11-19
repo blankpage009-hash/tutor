@@ -34,4 +34,11 @@
 
 .input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
 
-.keyActions { display: flex; gap: var(--space-2); }
+.keyActions { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+
+/* 백업 영역: Gemini 키 블록과 같은 모양(제목·설명·버튼 줄)을 재사용한다 */
+.summary { margin: 0; padding-left: var(--space-5); font-size: var(--type-body-kr-size); line-height: var(--type-body-kr-line); }
+
+.warn { margin: 0; font-size: var(--type-body-kr-size); line-height: var(--type-body-kr-line); color: var(--danger); }
+
+.hidden { display: none; }

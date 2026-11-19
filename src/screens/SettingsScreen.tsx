@@ -4,6 +4,7 @@ import { useTheme } from '../theme/useTheme';
 import { DAILY_GOAL_CHOICES, PASS_THRESHOLD_CHOICES, REPEAT_COUNT_CHOICES, SPEECH_RATE_CHOICES } from '../settings/settings';
 import { useSettings } from '../settings/SettingsProvider';
 import { ChoiceRow } from './settings/ChoiceRow';
+import { BackupSection } from './settings/BackupSection';
 import { GeminiKeyRow } from './settings/GeminiKeyRow';
 import { StartLevelRow } from './settings/StartLevelRow';
 import { TutorNameRow } from './settings/TutorNameRow';
@@ -17,7 +18,6 @@ const THEME_CHOICES: { value: ThemeSetting; label: string }[] = [
 ];
 const ON_OFF = [{ value: true, label: '켜기' }, { value: false, label: '끄기' }];
 
-// 백업·초기화는 7-C에서 이 화면에 더한다
 export function SettingsScreen() {
   const { theme, setTheme } = useTheme();
   const { settings, update, saveError } = useSettings();
@@ -46,6 +46,7 @@ export function SettingsScreen() {
       <StartLevelRow />
       <ChoiceRow name="테마" choices={THEME_CHOICES} value={theme} onChange={setTheme} />
       <GeminiKeyRow />
+      <BackupSection />
     </>
   );
 }
