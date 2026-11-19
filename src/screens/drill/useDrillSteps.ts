@@ -1,4 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
+import { logActivity } from '../../db/activity';
 import type { DrillPosition } from '../../db/types';
 
 // 드릴 60회 중 지금 몇 번째인지와 통과한 회차. 회차마다 통과 1번이면 끝 (회차 자체가 반복이라서).
@@ -17,6 +18,7 @@ export function useDrillSteps(total: number, initial?: DrillPosition) {
   // 이전 버튼으로 돌아가 이미 끝낸 회차를 다시 통과해도 넘어가야 한다
   const recordPass = useCallback((id: string) => {
     if (!clearedRef.current.has(id)) {
+      logActivity('practice'); // 같은 회차를 다시 통과한 것은 세지 않는다 (이전 버튼으로 돌아가 반복해도 목표가 부풀지 않게)
       clearedRef.current = new Set(clearedRef.current).add(id);
       setCleared(clearedRef.current);
     }

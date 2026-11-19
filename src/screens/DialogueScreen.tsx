@@ -7,6 +7,7 @@ import { StepComplete } from '../components/StepComplete';
 import { useCelebration } from '../components/useCelebration';
 import type { DialogueLine, NewLesson } from '../content/lessonTypes';
 import type { Sentence } from '../content/types';
+import { logActivity } from '../db/activity';
 import { finishNewStep } from '../db/progress';
 import { unlockAudio } from '../speech/audioPlayer';
 import { newStagePath, nextNewStage } from '../newLessonFlow';
@@ -90,6 +91,7 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
     threshold, failFeedback: false,
     onResult: (_id, status) => {
       if (status !== 'passed') return;
+      logActivity('practice');
       clearTimer();
       timer.current = window.setTimeout(() => d.go(d.curRef.current + 1), PASS_PAUSE_MS);
     }

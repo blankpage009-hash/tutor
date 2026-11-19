@@ -60,6 +60,10 @@ export type SrsState = {
   lapses: number;
 };
 
+// 하루치 활동 횟수. date는 기기 현지 날짜('YYYY-MM-DD'). 스트릭·일일 목표 계산용 (Phase 7-B)
+// practice: 쉐도잉·대화문·드릴 통과 + 끝낸 레슨 단계, review: 복습 기록(문장·단어). 둘은 겹쳐 세지 않는다
+export type Activity = { date: string; practice: number; review: number };
+
 export type Recording = {
   id?: number;
   sentenceId: string;
@@ -75,7 +79,8 @@ export type AppSettings = {
   repeatCount: number;
   autoAdvance: boolean;
   failFeedback: boolean;
-  dailyGoal: number;
+  dailyGoal: number; // 하루에 채울 연습 횟수
+  startLevel: string; // 내 레벨의 출발점(커리큘럼 레벨 key). ''이면 첫 레벨
   theme: 'system' | 'light' | 'dark';
 };
 
@@ -88,5 +93,6 @@ export const DEFAULT_SETTINGS: AppSettings = {
   autoAdvance: false, // PLAN 5.3: 기본 꺼짐 (Phase 4에서 바로잡음)
   failFeedback: true,
   dailyGoal: 10,
+  startLevel: '',
   theme: 'system'
 };

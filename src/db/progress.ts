@@ -1,5 +1,6 @@
 import { laterStage, type Stage } from '../lessonFlow';
 import { addFinishedStep, enteredNewStage, missingSteps, type NewLessonStep } from '../newLessonFlow';
+import { logActivity } from './activity';
 import { db } from './db';
 import type { DrillPosition, LessonProgress } from './types';
 
@@ -35,6 +36,8 @@ export async function finishNewStep(lessonId: string, levelKey: string, step: Ne
     const stage = missingSteps(steps).length ? enteredNewStage(cur?.stage, step) : 'done';
     return { steps, stage };
   });
+  // 롤플레이처럼 통과 횟수를 따로 세지 않는 단계만 한 날도 학습일이 되도록 단계 끝냄을 연습 1회로 센다
+  logActivity('practice');
   return { done: row.stage === 'done', missing: missingSteps(row.steps) };
 }
 

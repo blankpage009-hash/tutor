@@ -19,10 +19,19 @@ describe('normalizeSettings', () => {
     expect(s).toEqual(DEFAULT_SETTINGS);
   });
 
-  it('테마·일일 목표는 저장된 값을 따르지 않는다', () => {
-    const s = normalizeSettings({ theme: 'dark', dailyGoal: 99 });
-    expect(s.theme).toBe(DEFAULT_SETTINGS.theme);
-    expect(s.dailyGoal).toBe(DEFAULT_SETTINGS.dailyGoal);
+  it('테마는 저장된 값을 따르지 않는다 (localStorage가 따로 관리)', () => {
+    expect(normalizeSettings({ theme: 'dark' }).theme).toBe(DEFAULT_SETTINGS.theme);
+  });
+
+  it('일일 목표는 선택지 안의 값만', () => {
+    expect(normalizeSettings({ dailyGoal: 20 }).dailyGoal).toBe(20);
+    expect(normalizeSettings({ dailyGoal: 99 }).dailyGoal).toBe(DEFAULT_SETTINGS.dailyGoal);
+  });
+
+  it('시작 레벨은 글자일 때만, 너무 길면 기본값', () => {
+    expect(normalizeSettings({ startLevel: 'INT1' }).startLevel).toBe('INT1');
+    expect(normalizeSettings({ startLevel: 5 }).startLevel).toBe('');
+    expect(normalizeSettings({ startLevel: 'x'.repeat(41) }).startLevel).toBe('');
   });
 });
 

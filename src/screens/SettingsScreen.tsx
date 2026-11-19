@@ -1,10 +1,11 @@
 import { BackLink } from '../components/BackLink';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { useTheme } from '../theme/useTheme';
-import { PASS_THRESHOLD_CHOICES, REPEAT_COUNT_CHOICES, SPEECH_RATE_CHOICES } from '../settings/settings';
+import { DAILY_GOAL_CHOICES, PASS_THRESHOLD_CHOICES, REPEAT_COUNT_CHOICES, SPEECH_RATE_CHOICES } from '../settings/settings';
 import { useSettings } from '../settings/SettingsProvider';
 import { ChoiceRow } from './settings/ChoiceRow';
 import { GeminiKeyRow } from './settings/GeminiKeyRow';
+import { StartLevelRow } from './settings/StartLevelRow';
 import { TutorNameRow } from './settings/TutorNameRow';
 import styles from './settings/Settings.module.css';
 import type { ThemeSetting } from '../theme/theme';
@@ -16,7 +17,7 @@ const THEME_CHOICES: { value: ThemeSetting; label: string }[] = [
 ];
 const ON_OFF = [{ value: true, label: '켜기' }, { value: false, label: '끄기' }];
 
-// 일일 목표·시작 레벨은 7-B, 백업·초기화는 7-C에서 이 화면에 더한다
+// 백업·초기화는 7-C에서 이 화면에 더한다
 export function SettingsScreen() {
   const { theme, setTheme } = useTheme();
   const { settings, update, saveError } = useSettings();
@@ -39,6 +40,10 @@ export function SettingsScreen() {
         choices={ON_OFF} value={settings.autoAdvance} onChange={(autoAdvance) => update({ autoAdvance })} />
       <ChoiceRow name="실패 피드백" hint="쉐도잉에서 틀리면 들린 말을 보여 주고 느리게 다시 들려줘요"
         choices={ON_OFF} value={settings.failFeedback} onChange={(failFeedback) => update({ failFeedback })} />
+      <ChoiceRow name="일일 목표" hint="하루에 채울 연습 횟수예요. 쉐도잉·대화문·드릴 통과와 복습을 합쳐서 세요"
+        choices={DAILY_GOAL_CHOICES.map((v) => ({ value: v, label: `${v}번` }))}
+        value={settings.dailyGoal} onChange={(dailyGoal) => update({ dailyGoal })} />
+      <StartLevelRow />
       <ChoiceRow name="테마" choices={THEME_CHOICES} value={theme} onChange={setTheme} />
       <GeminiKeyRow />
     </>

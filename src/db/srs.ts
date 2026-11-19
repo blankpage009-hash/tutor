@@ -1,4 +1,5 @@
 import { newSrsState, reviewSrs, srsId, type Grade } from '../srs';
+import { logActivity } from './activity';
 import { db } from './db';
 import type { SrsState } from './types';
 
@@ -48,6 +49,7 @@ export async function recordWordReview(itemId: string, grade: Grade, now = Date.
     const cur = (await db.srsState.get(id)) ?? newSrsState('word', itemId, now, 0);
     await db.srsState.put(reviewSrs(cur, grade, now));
   });
+  logActivity('review');
 }
 
 // 복습 결과 한 건을 달력에 반영한다. 읽고-고쳐-쓰기를 한 번에 묶어 두 번 눌려도 꼬이지 않게
@@ -57,4 +59,5 @@ export async function recordSentenceReview(itemId: string, grade: Grade, now = D
     const cur = (await db.srsState.get(id)) ?? newSrsState('sentence', itemId, now, 0);
     await db.srsState.put(reviewSrs(cur, grade, now));
   });
+  logActivity('review');
 }

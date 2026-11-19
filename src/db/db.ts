@@ -1,5 +1,6 @@
 import Dexie, { type EntityTable } from 'dexie';
 import type {
+  Activity,
   LessonProgress,
   Recording,
   SavedSentence,
@@ -15,6 +16,7 @@ export class TutorDb extends Dexie {
   settings!: EntityTable<SettingRow, 'key'>;
   srsState!: EntityTable<SrsState, 'id'>;
   recordings!: EntityTable<Recording, 'id'>;
+  activity!: EntityTable<Activity, 'date'>;
 
   constructor(name = 'tutor') {
     super(name);
@@ -27,6 +29,8 @@ export class TutorDb extends Dexie {
       srsState: 'id, kind, dueAt',
       recordings: '++id, sentenceId, createdAt'
     });
+    // 7-B: 날짜별 활동 표만 더한다. Dexie는 새 표만 만들고 기존 표의 데이터는 그대로 둔다
+    this.version(2).stores({ activity: 'date' });
   }
 }
 

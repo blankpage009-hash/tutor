@@ -8,6 +8,7 @@ import { findResume, STAGE_LABEL, stagePath, type ProgressMap } from '../lessonF
 import { findNewResume, NEW_STAGE_LABEL, newStagePath } from '../newLessonFlow';
 import { useSettings } from '../settings/SettingsProvider';
 import courseStyles from './courses/Courses.module.css';
+import { TodayCard } from './home/TodayCard';
 import { useProgressMap } from './courses/useProgressMap';
 import { useDueCount } from './review/useDueCount';
 import { useDueWordCount } from './vocab/useVocab';
@@ -98,6 +99,7 @@ export function HomeScreen() {
   return (
     <>
       <ScreenHeader eyebrow={`오늘 · 튜터 ${tutorName}`} title="오늘의 연습" />
+      <TodayCard />
       <TwoColumn list={<ReviewCard />}>
         <h2 className={styles.sub}>이어서 할 수업</h2>
         {loading && <p className={styles.note} lang="ko">불러오는 중…</p>}

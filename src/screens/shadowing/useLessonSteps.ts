@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Lesson } from '../../content/types';
+import { logActivity } from '../../db/activity';
 import { addPass, clearedIds, justCleared } from './lessonSteps';
 
 // PLAN 5.3: 자동 넘기기를 켜면 통과 후 1.5초 뒤 다음 문장
@@ -25,6 +26,7 @@ export function useLessonSteps(lesson: Lesson | null, required: number) {
 
   // 통과 한 번을 기록하고, 이번 통과로 필요 횟수를 막 채웠으면 true
   const recordPass = useCallback((id: string) => {
+    logActivity('practice'); // 이어 말하기 통과도 여기를 지나므로 쉐도잉 통과는 이 한 곳에서만 센다
     const before = countsRef.current;
     countsRef.current = addPass(before, id);
     setCounts(countsRef.current);
