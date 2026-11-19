@@ -19,6 +19,11 @@ export const IconChevronRight = () => <Svg><path d="M9 5l7 7-7 7" /></Svg>;
 export const IconMic = () => <Svg><rect x="9" y="3" width="6" height="11" /><path d="M5 11a7 7 0 0 0 14 0M12 18v3" /></Svg>;
 export const IconPlay = () => <Svg><path d="M8 5l11 7-11 7z" fill="currentColor" /></Svg>;
 export const IconPause = () => <Svg><path d="M7 5h3v14H7zM14 5h3v14h-3z" fill="currentColor" /></Svg>;
+export const IconReplay = () => <Svg><path d="M4 12a8 8 0 1 0 3-6.2M4 4v5h5" /></Svg>;
+export const IconSkipNext = () => <Svg><path d="M6 5l9 7-9 7z" fill="currentColor" /><path d="M18 5v14" /></Svg>;
+export const IconBookmark = ({ filled = false }: { filled?: boolean }) => (
+  <Svg><path d="M6 4h12v16l-6-4-6 4z" fill={filled ? 'currentColor' : 'none'} /></Svg>
+);
 export const IconStop = () => <Svg><rect x="7" y="7" width="10" height="10" fill="currentColor" /></Svg>;
 
 export const TAB_ICONS = {

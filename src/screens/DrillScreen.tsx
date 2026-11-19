@@ -1,25 +1,23 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Button } from '../components/Button';
-import { TwoColumn } from '../components/TwoColumn';
-import { contentUrl } from '../content/loader';
 import type { NewLesson } from '../content/lessonTypes';
 import type { DrillPosition } from '../db/types';
-import { buildDrillPlan, DRILL_MODE_LABEL, toSentence, type DrillStep } from '../drillPlan';
+import { buildDrillPlan } from '../drillPlan';
 import { newStagePath, nextNewStage } from '../newLessonFlow';
-import { playAudio, unlockAudio } from '../speech/audioPlayer';
 import courseStyles from './courses/Courses.module.css';
 import styles from './drill/Drill.module.css';
 import { DrillList } from './drill/DrillList';
+import { DrillPlayer } from './drill/DrillPlayer';
 import { useKeepDrillPosition, useSavedDrillPosition } from './drill/useDrillPosition';
 import { useDrillSaved } from './drill/useDrillSaved';
 import { useDrillSpeaking } from './drill/useDrillSpeaking';
 import { useDrillSteps } from './drill/useDrillSteps';
-import { SLOW_RATE } from './newLesson/useNewSpeaking';
 import { useNewLesson } from './newLesson/useNewLesson';
-import { ShadowingStage, type HandsFreeView } from './shadowing/ShadowingStage';
+import type { HandsFreeView } from './shadowing/ShadowingStage';
 
-// 새 레슨 STEP 3 드릴(/n/:lessonId/drill): 6문장 × 10회, 바퀴 방식 (drillPlan.ts)
+// 새 레슨 STEP 3 드릴(/n/:lessonId/drill): 6문장 × 10회, 바퀴 방식 (drillPlan.ts).
+// 첫 화면은 문장 목록, [드릴 시작]을 누르면 카드 화면 (사용자 요청 2026-11-19)
 export function DrillScreen() {
   const { lessonId = '' } = useParams();
   const { lesson, error } = useNewLesson(lessonId, 'drill');
@@ -29,17 +27,9 @@ export function DrillScreen() {
   return <DrillBody key={lesson.lessonId} lesson={lesson} initial={pos ?? undefined} />;
 }
 
-// 상황 응답 회차의 상황: 영어 cue만 소리가 있다
-function cueOf(step: DrillStep) {
-  if (step.stage.mode !== 'respond') return undefined;
-  const { cue } = step.drill;
-  const audio = cue.audio;
-  const onPlay = audio ? () => { unlockAudio(); playAudio(contentUrl(audio), 1).catch(() => undefined); } : undefined;
-  return { text: cue.text, lang: cue.lang, onPlay };
-}
-
 function DrillBody({ lesson, initial }: { lesson: NewLesson; initial?: DrillPosition }) {
   const nav = useNavigate();
+  const [started, setStarted] = useState(false);
   const plan = useMemo(() => buildDrillPlan(lesson), [lesson]);
   const steps = useDrillSteps(plan.length, initial);
   useKeepDrillPosition(lesson, steps);
@@ -50,23 +40,19 @@ function DrillBody({ lesson, initial }: { lesson: NewLesson; initial?: DrillPosi
     available: sp.voskReady, running: hf.running, step: hf.step, notice: hf.notice,
     onToggle: () => { if (hf.running) hf.stop(); else hf.start(); }
   };
-  // 재생 중에 이전·다음을 누르면 일시정지하고 옮긴다. 다시 ▶를 누르면 옮긴 회차부터
+  // 재생 중에 넘기거나 닫으면 일시정지하고 옮긴다. 다시 ▶를 누르면 옮긴 카드부터
   const move = (go: () => void) => { hf.stop(); go(); };
-  const goNext = () => nav(newStagePath(lesson.lessonId, nextNewStage('drill')));
+  if (steps.finished) return <DrillFinish onNext={() => nav(newStagePath(lesson.lessonId, nextNewStage('drill')))} />;
+  if (!started) {
+    const resume = steps.index > 0 || steps.cleared.size > 0;
+    return <DrillList lesson={lesson} resume={resume} onStart={() => setStarted(true)} />;
+  }
   return (
-    <TwoColumn list={<DrillList lesson={lesson} plan={plan} current={step} cleared={steps.cleared} />}>
-      {steps.finished && <DrillFinish onNext={goNext} />}
-      <ShadowingStage sentence={toSentence(step)} label={DRILL_MODE_LABEL[step.stage.mode]} lastLabel="드릴 마치기"
-        position={` ${step.rep}회차 · 문장 ${step.drill.id}/${lesson.drills.length}`} saveable
-        attempt={sp.attempt} threshold={step.stage.passScore / 100} slowRate={SLOW_RATE}
-        passes={steps.cleared.has(step.stepId) ? 1 : 0} required={1}
-        canNext={steps.cleared.has(step.stepId)} isLast={steps.index === plan.length - 1} onNext={steps.next}
-        onSkip={() => move(steps.skip)} playMode={{ canPrev: steps.index > 0, onPrev: () => move(steps.prev) }}
-        onMic={() => undefined} autoOn={false} onAutoOn={() => undefined} autoPending={false}
-        saved={saved.saved.has(step.saveId)} saveError={saved.error} onSave={() => { void saved.save(step.saveId); }}
-        engineNote={sp.engineNote} micLocked={sp.micLocked} handsFree={handsFree} onSecretTap={() => undefined}
-        show={step.stage.show} cue={cueOf(step)} hideTutorButtons={step.stage.mode !== 'repeat'} />
-    </TwoColumn>
+    <DrillPlayer plan={plan} index={steps.index} sentenceCount={lesson.drills.length}
+      attempt={sp.attempt} handsFree={handsFree} engineNote={sp.engineNote} micLocked={sp.micLocked}
+      saved={saved.saved.has(step.saveId)} saveError={saved.error} onSave={() => { void saved.save(step.saveId); }}
+      onPrev={() => move(steps.prev)} onNext={() => move(steps.skip)}
+      onClose={() => move(() => setStarted(false))} />
   );
 }
 

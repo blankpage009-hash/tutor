@@ -1,0 +1,179 @@
+.player {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 560px;
+  margin: 0 auto;
+  min-height: 80dvh;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.close {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+/* 단계 4칸 */
+.bars {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-1);
+}
+
+.bars > * { border-radius: var(--radius-full); }
+
+.where {
+  margin: 0;
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+/* 쓸기 받는 영역: 카드 둘레까지 넓게. 카드가 미끄러져 들어오는 동안 밖으로 삐져나가지 않게 overflow 숨김 */
+.swipeArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.card {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-5) var(--space-4) var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.fromBelow { animation: fromBelow 240ms ease-out; }
+.fromAbove { animation: fromAbove 240ms ease-out; }
+
+@keyframes fromBelow {
+  from { transform: translateY(48px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+@keyframes fromAbove {
+  from { transform: translateY(-48px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fromBelow, .fromAbove { animation: none; }
+}
+
+/* 저장: 카드 오른쪽 위 아이콘 */
+.save {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  border: 0;
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+
+.save:disabled { color: var(--accent); cursor: default; }
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.ko, .hidden {
+  margin: 0;
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+  color: var(--ink-muted);
+}
+
+.cue {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--accent-tint);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+}
+
+.pass, .fail {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+}
+
+.pass { background: var(--accent-tint); color: var(--accent-ink); }
+.fail { background: var(--danger-tint); color: var(--danger); }
+
+/* 다시 듣기 · 재생 · 다음 (재생이 가운데) */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  padding-top: var(--space-4);
+}
+
+.iconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--surface-sunk);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.iconBtn:disabled { opacity: 0.4; cursor: default; }
+
+.status {
+  margin: 0;
+  min-height: var(--space-6);
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+.error {
+  margin: 0;
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--danger);
+  text-align: center;
+}

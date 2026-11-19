@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Drill, DrillStage } from './content/lessonTypes';
-import { buildDrillPlan, doneRepsByDrill, promptAudio, toSentence } from './drillPlan';
+import { buildDrillPlan, doneRepsByDrill, promptAudio, stageSegments, toSentence } from './drillPlan';
 
 const stages: DrillStage[] = [
   { reps: [1, 2, 3], mode: 'repeat', show: 'en+ko', playAudio: true, passScore: 80 },
@@ -56,6 +56,14 @@ describe('드릴 60회 순서 (바퀴 방식)', () => {
     expect(promptAudio(at(7, 1))).toBeNull();
     expect(promptAudio(at(9, 1))).toBe('cue-1.m4a');
     expect(promptAudio(at(9, 5))).toBeNull(); // 한국어 cue는 소리 없음
+  });
+
+  it('진행 바: 단계마다 한 칸, 지금 카드까지 채운다', () => {
+    expect(stageSegments(plan, 0).map((s) => s.mode)).toEqual(['repeat', 'read', 'recall', 'respond']);
+    expect(stageSegments(plan, 0).map((s) => s.fill)).toEqual([1 / 18, 0, 0, 0]);
+    // 인덱스 18 = 4회차 첫 카드 (따라 말하기 18칸을 다 지남)
+    expect(stageSegments(plan, 18).map((s) => s.fill)).toEqual([1, 1 / 18, 0, 0]);
+    expect(stageSegments(plan, 59).map((s) => s.fill)).toEqual([1, 1, 1, 1]);
   });
 
   it('문장별로 끝낸 회차 수를 센다', () => {

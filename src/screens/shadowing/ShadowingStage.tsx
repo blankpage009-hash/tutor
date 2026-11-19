@@ -54,7 +54,7 @@ export type HandsFreeView = {
   onToggle: () => void;
 };
 
-const STEP_TEXT: Record<HandsFreeStep, string> = {
+export const STEP_TEXT: Record<HandsFreeStep, string> = {
   reading: '튜터가 읽어요… 듣고 바로 따라 말해 보세요',
   listening: '따라 말해 보세요 · 듣는 중',
   slow: '느리게 다시 들려줄게요… 끝나면 다시 말해 보세요'

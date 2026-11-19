@@ -58,6 +58,18 @@ export function doneRepsByDrill(plan: DrillStep[], cleared: Set<string>): Map<nu
   return m;
 }
 
+export type StageSegment = { mode: DrillStage['mode']; fill: number };
+
+// 상단 진행 바: 단계마다 한 칸. 지금 카드까지 온 만큼 채운다 (이전 단계는 꽉 참, 이후 단계는 빔)
+export function stageSegments(plan: DrillStep[], index: number): StageSegment[] {
+  const stages = [...new Set(plan.map((s) => s.stage))];
+  return stages.map((stage) => {
+    const pos = plan.flatMap((s, i) => (s.stage === stage ? [i] : []));
+    const reached = index - pos[0] + 1;
+    return { mode: stage.mode, fill: Math.min(1, Math.max(0, reached / pos.length)) };
+  });
+}
+
 // 먼저 들려줄 소리: 따라 말하기는 정답 음성, 상황 응답은 영어 cue 음성, 나머지는 없음
 export function promptAudio(step: DrillStep): string | null {
   if (step.stage.mode === 'respond') return step.drill.cue.audio ?? null;
