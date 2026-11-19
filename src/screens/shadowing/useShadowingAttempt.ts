@@ -30,6 +30,7 @@ export type AttemptOptions = {
   // 넘길 때 막 시작한 튜터 재생을 끊지 않는다 (ref라서 문장이 바뀌는 그 순간에도 최신 값)
   handsFreeActive?: MutableRefObject<boolean>;
   micProcessing: boolean; // 마이크 에코 제거·잡음 억제 (진단 ⑧, 아이폰 결과 13차 잡음 비교용)
+  micGain?: number; // 마이크 소리를 몇 배로 키울지 (진단 ⑩, 안 주면 1배)
   recordWhileListening: boolean; // Phase 4 진단: 인식과 녹음을 동시에 해도 되는지 아이폰에서 확인
   // Phase 4 진단: 두 번째 시도부터 마이크가 무음이 되는 원인 가리기 (아이폰 결과 6차)
   pcmFallback: boolean; // 직접 녹음(Web Audio)도 같이 돌릴지
@@ -145,11 +146,11 @@ function micErrorText(e: unknown): string {
 
 // 앱 안 인식용 마이크를 연다. 실패하면 화면에 보일 안내 문구를 돌려준다
 export async function openVoskMic(
-  o: Pick<AttemptOptions, 'log' | 'micProcessing'>, ctx: AudioContext
+  o: Pick<AttemptOptions, 'log' | 'micProcessing' | 'micGain'>, ctx: AudioContext
 ): Promise<MicStream | string> {
   acquireMic();
   try {
-    const mic = await openMicStream(ctx, o.log, { processing: o.micProcessing });
+    const mic = await openMicStream(ctx, o.log, { processing: o.micProcessing, gain: o.micGain });
     o.log(`마이크 열림 · ${mic.info()}`);
     return mic;
   } catch (e) {

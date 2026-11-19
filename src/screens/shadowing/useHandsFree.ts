@@ -5,7 +5,7 @@ import { playAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
 import { releaseMic } from '../../speech/audioSession';
 import type { MicStream } from '../../speech/micStream';
 import { createCaptureContext } from '../../speech/pcmCapture';
-import { runHandsFree, type HandsFreeDeps, type HandsFreeEnd, type HandsFreeStep } from './handsFreeLoop';
+import { runHandsFree, type HandsFreeDeps, type HandsFreeEnd, type HandsFreeStep, type HearStatus } from './handsFreeLoop';
 import { openVoskMic, type useShadowingAttempt } from './useShadowingAttempt';
 
 // 사용자 결정(2026-11-16): 같은 문장 3번 연속 실패면 멈춤, 8초 동안 말이 없으면 멈춤
@@ -31,6 +31,10 @@ export type HandsFreeInput = {
   slowRate: number;
   failFeedback: boolean;
   micProcessing: boolean;
+  micGain?: number; // 진단 ⑩
+  // 진단 ⑨: 튜터가 읽는 동안 마이크를 닫아 둔다. 마이크가 열려 있으면 iOS가 소리를 통화 모드로 바꿔
+  // 튜터 목소리에 잡음이 섞이고 음량도 따로 논다(아이폰 결과 13차, 사용자 확인 2026-11-19). 안 주면 지금처럼 열어 둠
+  micOffWhilePlaying?: boolean;
   log: (m: string) => void;
 } & Pick<HandsFreeDeps<Sentence>, 'shouldRead' | 'readFirst' | 'onTooManyFails'>; // 드릴용, 안 주면 기본 동작
 
@@ -39,22 +43,66 @@ function playSentence(s: Sentence, rate: number, log: (m: string) => void): Prom
   return playAudio(contentUrl(s.audio), rate).catch((e) => log(`재생 실패: ${String(e)}`));
 }
 
-// 마이크를 열어 둔 채 순서를 돌린다. 끝나면(이유와 상관없이) 마이크·장치를 닫는다
+// 마이크를 들을 때 열고, 튜터 재생 전에 닫을 수 있게 쥐고 있는다.
+// 다시 열 때도 탭 순간 만든 ctx를 그대로 쓴다 — iOS는 그때 만든 장치에만 마이크 소리를 흘려 준다
+type MicSlot = { get: () => Promise<MicStream | string>; release: () => void; current: () => MicStream | null };
+
+function micSlot(p: HandsFreeInput, ctx: AudioContext): MicSlot {
+  let mic: MicStream | null = null;
+  return {
+    current: () => mic,
+    async get() {
+      if (mic) return mic;
+      const t0 = performance.now();
+      const m = await openVoskMic(p, ctx);
+      if (typeof m === 'string') return m;
+      mic = m;
+      // 첫 단어가 잘리는지 판단하려고 여는 데 걸린 시간을 남긴다
+      p.log(`마이크 여는 데 ${Math.round(performance.now() - t0)}ms`);
+      return m;
+    },
+    release() {
+      if (!mic) return;
+      mic.close();
+      releaseMic();
+      mic = null;
+    }
+  };
+}
+
+// 순서를 돌린다. 끝나면(이유와 상관없이) 마이크를 닫는다. 장치(ctx)는 부른 쪽이 닫는다
 async function session(
   p: HandsFreeInput, ctx: AudioContext, stopped: () => boolean, onStep: (s: HandsFreeStep | null) => void
 ): Promise<HandsFreeEnd | string> {
-  const mic = await openVoskMic(p, ctx);
-  if (typeof mic === 'string') return mic;
+  const slot = micSlot(p, ctx);
+  // ⑨ 꺼짐: 처음에 한 번 열어 끝까지 둔다. ⑨ 켬: 처음 들을 차례에 연다
+  if (!p.micOffWhilePlaying) {
+    const first = await slot.get();
+    if (typeof first === 'string') return first;
+  }
   try {
     if (stopped() || !p.lesson) return 'stopped';
-    return await runHandsFree(loopDeps(p, mic, stopped, onStep));
+    return await runHandsFree(loopDeps(p, slot, stopped, onStep));
   } finally {
-    mic.close();
-    releaseMic();
+    slot.release();
   }
 }
 
-function loopDeps(p: HandsFreeInput, mic: MicStream, stopped: () => boolean, onStep: (s: HandsFreeStep | null) => void) {
+// 튜터 소리를 틀기 직전에 (⑨ 켬이면) 마이크를 닫아, 통화 모드가 아닌 보통 재생으로 나오게 한다
+function beforePlay(p: HandsFreeInput, slot: MicSlot): void {
+  if (p.micOffWhilePlaying) slot.release();
+}
+
+async function hearWithSlot(p: HandsFreeInput, slot: MicSlot, s: Sentence, stopped: () => boolean): Promise<HearStatus> {
+  const mic = await slot.get();
+  if (typeof mic === 'string') return 'error';
+  // 마이크를 여는 사이 멈춤을 눌렀으면 듣지 않는다 (순서 쪽이 멈춤으로 처리)
+  if (stopped()) return 'no-speech';
+  return p.attempt.hearFor(s, mic, NO_SPEECH_MS);
+}
+
+function loopDeps(p: HandsFreeInput, slot: MicSlot, stopped: () => boolean, onStep: (s: HandsFreeStep | null) => void) {
+  const { readFirst } = p;
   return {
     sentences: p.lesson?.sentences ?? [],
     start: p.index,
@@ -63,14 +111,16 @@ function loopDeps(p: HandsFreeInput, mic: MicStream, stopped: () => boolean, onS
     failFeedback: p.failFeedback,
     stopped,
     shouldRead: p.shouldRead,
-    readFirst: p.readFirst,
+    readFirst: readFirst && (async (s: Sentence) => { beforePlay(p, slot); await readFirst(s); }),
     onTooManyFails: p.onTooManyFails,
     play: async (s: Sentence, rate: number) => {
+      beforePlay(p, slot);
       // 튜터가 읽는 동안 들어온 소리는 인식기에 넣지 않는다 (듣기는 재생이 끝난 뒤 시작)
       await playSentence(s, rate, p.log);
-      p.log(`튜터 재생 끝 (속도 ${rate}, 그동안 마이크 최대 소리 ${mic.takePeak().toFixed(3)})`);
+      const mic = slot.current();
+      p.log(`튜터 재생 끝 (속도 ${rate}, ${mic ? `그동안 마이크 최대 소리 ${mic.takePeak().toFixed(3)}` : '그동안 마이크 꺼 둠'})`);
     },
-    hear: (s: Sentence) => p.attempt.hearFor(s, mic, NO_SPEECH_MS),
+    hear: (s: Sentence) => hearWithSlot(p, slot, s, stopped),
     // 이번 통과로 필요 횟수를 막 채웠거나, 이미 끝낸 문장이면 넘어간다
     recordPass: (s: Sentence) => p.recordPass(s.id) || p.cleared.has(s.id),
     advance: () => { p.log('이어 말하기: 다음 문장'); p.next(); },

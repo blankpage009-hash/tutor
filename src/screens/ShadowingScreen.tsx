@@ -60,14 +60,22 @@ function useDiagnostics() {
   const [secondOpinion, setSecondOpinion] = useState(true);
   // ⑧ 켬 = 마이크 소리 처리(에코 제거·잡음 억제) 끄기. 아이폰 비교 전까지 지금처럼 처리 켬을 기본으로
   const [rawMic, setRawMic] = useState(false);
+  // ⑨ 이어 말하기 중 튜터가 읽는 동안 마이크 끄기, ⑩ ⑧과 함께 처리 없는 마이크 소리 키우기
+  // (튜터 목소리 잡음 비교용, 2026-11-19). 아이폰 비교 전까지 둘 다 꺼짐 = 지금과 같음
+  const [micOff, setMicOff] = useState(false);
+  const [boost, setBoost] = useState(false);
   const { logs, log } = useLog();
   useEffect(() => setAudioSessionEnabled(sessionOn), [sessionOn]);
   useEffect(() => setAudioDebug(log), [log]);
   return {
     recordWhile, setRecordWhile, sessionOn, setSessionOn, pcm, setPcm, warmUp, setWarmUp,
-    ios27Fix, setIos27Fix, vosk, setVosk, secondOpinion, setSecondOpinion, rawMic, setRawMic, logs, log
+    ios27Fix, setIos27Fix, vosk, setVosk, secondOpinion, setSecondOpinion, rawMic, setRawMic,
+    micOff, setMicOff, boost, setBoost, logs, log
   };
 }
+
+// 14차 기록: 처리 켬 0.35~0.54 / 처리 끔 0.015~0.017 → 약 25~30배 차이. 넘침을 피해 낮은 쪽으로
+const RAW_MIC_GAIN = 25;
 
 type Diag = ReturnType<typeof useDiagnostics>;
 
@@ -146,17 +154,18 @@ function useSpeaking(
   const settings = DEFAULT_SETTINGS;
   const { log } = diag;
   const handsFreeActive = useRef(false);
+  const micGain = diag.rawMic && diag.boost ? RAW_MIC_GAIN : 1;
   const attempt = useShadowingAttempt(sentence, {
     threshold: settings.passThreshold, failFeedback: settings.failFeedback,
     recordWhileListening: diag.recordWhile, pcmFallback: diag.pcm, warmUpMic: diag.warmUp,
     ios27Fix: diag.ios27Fix, slowRate: SLOW_RATE, log, onResult, handsFreeActive,
     engine: diag.vosk ? 'vosk' : 'builtin', voskModel, secondOpinion: diag.secondOpinion,
-    micProcessing: !diag.rawMic
+    micProcessing: !diag.rawMic, micGain
   });
   const hf = useHandsFree({
     lesson, index: steps.index, cleared: steps.cleared, recordPass: steps.recordPass, next: steps.next,
     attempt, active: handsFreeActive, slowRate: SLOW_RATE, failFeedback: settings.failFeedback,
-    micProcessing: !diag.rawMic, log
+    micProcessing: !diag.rawMic, micGain, micOffWhilePlaying: diag.micOff, log
   });
   return { attempt, hf };
 }
@@ -166,6 +175,7 @@ function Diagnostics({ diag, voskState, locked }: { diag: Diag; voskState: VoskM
     <DiagnosticsPanel vosk={diag.vosk} onVosk={diag.setVosk} voskState={voskState}
       secondOpinion={diag.secondOpinion} onSecondOpinion={diag.setSecondOpinion} locked={locked}
       rawMic={diag.rawMic} onRawMic={diag.setRawMic}
+      micOff={diag.micOff} onMicOff={diag.setMicOff} boost={diag.boost} onBoost={diag.setBoost}
       recordWhileListening={diag.recordWhile} onRecordWhileListening={diag.setRecordWhile}
       audioSessionOn={diag.sessionOn} onAudioSessionOn={diag.setSessionOn}
       pcmFallback={diag.pcm} onPcmFallback={diag.setPcm} warmUpMic={diag.warmUp} onWarmUpMic={diag.setWarmUp}

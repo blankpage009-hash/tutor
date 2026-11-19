@@ -20,16 +20,27 @@ export type MicStream = {
 // processing: 에코 제거·잡음 억제·자동 음량. 켜면 튜터 소리가 스피커로 나올 때 마이크가 덜 주워듣지만,
 // 아이폰 결과 13차에서 마이크를 켜 둔 채 튜터 소리를 틀면 잡음이 섞였다(iOS가 통화용 처리로 바꾸는 것으로 추정).
 // 튜터가 읽는 동안은 인식기에 소리를 넣지 않으므로 꺼도 될 수 있어, 아이폰에서 비교하려고 고를 수 있게 한다
-export type MicOptions = { processing?: boolean };
+// gain: 소리를 몇 배로 키워 넘길지. 아이폰 결과 14차에서 처리를 끄면 말할 때 최대 소리가 0.015 안팎으로
+// 처리 켬(0.35~0.54)의 약 30분의 1이 돼 인식이 위태로웠다. 처리 없이 열고 앱이 직접 키워 보려고 둔다 (진단 ⑩)
+export type MicOptions = { processing?: boolean; gain?: number };
+
+// 키운 소리가 -1~1을 넘으면 인식기가 찌그러진 소리로 받으므로 끝을 자른다
+export function applyGain(data: Float32Array, gain: number): Float32Array {
+  if (gain === 1) return data;
+  for (let i = 0; i < data.length; i++) data[i] = Math.max(-1, Math.min(1, data[i] * gain));
+  return data;
+}
 
 export async function openMicStream(ctx: AudioContext, log: Log = () => {}, opts: MicOptions = {}): Promise<MicStream> {
   const on = opts.processing ?? true;
+  const gain = opts.gain ?? 1;
   const stream = await navigator.mediaDevices.getUserMedia({
     audio: { channelCount: 1, echoCancellation: on, noiseSuppression: on, autoGainControl: on }
   });
   const track = stream.getAudioTracks()[0];
   const applied = track?.getSettings?.() ?? {};
-  const processingText = `에코 제거 ${String(applied.echoCancellation ?? '?')}, 잡음 억제 ${String(applied.noiseSuppression ?? '?')}`;
+  const processingText = `에코 제거 ${String(applied.echoCancellation ?? '?')}, 잡음 억제 ${String(applied.noiseSuppression ?? '?')}`
+    + (gain === 1 ? '' : `, 소리 키우기 ×${gain}`);
   if (track) {
     track.onmute = () => log('마이크: 무음으로 바뀜');
     track.onunmute = () => log('마이크: 무음 풀림');
@@ -41,7 +52,7 @@ export async function openMicStream(ctx: AudioContext, log: Log = () => {}, opts
   const subs = new Set<(data: Float32Array) => void>();
   let peak = 0;
   proc.onaudioprocess = (e) => {
-    const data = new Float32Array(e.inputBuffer.getChannelData(0));
+    const data = applyGain(new Float32Array(e.inputBuffer.getChannelData(0)), gain);
     for (let i = 0; i < data.length; i++) peak = Math.max(peak, Math.abs(data[i]));
     subs.forEach((fn) => fn(data));
   };
