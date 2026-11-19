@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../../components/Button';
 import { callGemini, GeminiError } from '../../gemini/geminiClient';
 import { parseVariations, variationRequest, type Variation } from '../../gemini/tasks';
 import { stopAudio } from '../../speech/audioPlayer';
-import { getLastSpeakInfo, isSpeakSupported, speakText } from '../../speech/speakText';
+import { getLastSpeakInfo, isSpeakSupported, speakText, warmUpVoices } from '../../speech/speakText';
 import styles from './Library.module.css';
 
 type Props = { geminiKey: string; en: string; ko?: string };
@@ -27,6 +27,7 @@ export function VariationBox({ geminiKey, en, ko }: Props) {
   };
   // 변형 문장은 음성 파일이 없어 아이폰 내장 음성으로 읽는다. 탭 처리 함수에서 바로 불러야 iOS가 허락한다
   const canSpeak = isSpeakSupported();
+  useEffect(warmUpVoices, []); // 목소리 목록을 미리 불러 둔다(아이폰은 처음엔 비어 있음)
   const [speakError, setSpeakError] = useState<string | null>(null);
   const listen = async (text: string) => {
     stopAudio();
@@ -34,7 +35,7 @@ export function VariationBox({ geminiKey, en, ko }: Props) {
     const r = await speakText(text);
     // 소리가 안 나는 원인을 찾는 동안 결과를 화면에 보여 준다 (원인을 잡으면 지운다)
     const i = getLastSpeakInfo();
-    const detail = i ? `[진단] 결과 ${i.result} · ${i.ms}ms · 시작신호 ${i.started ? '옴' : '없음'} · 목소리 ${i.voices}개 · 선택 ${i.voice ?? '기기 기본'}` : '';
+    const detail = i ? `[진단] 결과 ${i.result} · ${i.ms}ms · 시작신호 ${i.started ? '옴' : '없음'} · 목소리 ${i.voicesAtStart}→${i.voices}개 · 선택 ${i.picked ?? '기기 기본'}` : '';
     setSpeakError(r === 'failed' ? `소리를 내지 못했어요. 무음 모드나 볼륨을 확인해 주세요. ${detail}` : detail || null);
   };
   return (

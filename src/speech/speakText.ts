@@ -17,7 +17,11 @@ const MAX_PER_CHAR_MS = 120;
 let current: SpeechSynthesisUtterance | null = null;
 
 // 아이폰에서 소리가 안 날 때 원인을 화면에서 볼 수 있게 마지막 읽기 결과를 남긴다 (읽기 시작 신호가 왔는지, 목소리 개수 등)
-export type SpeakInfo = { result: SpeakResult; ms: number; started: boolean; voices: number; voice: string | null };
+export type SpeakInfo = {
+  result: SpeakResult; ms: number; started: boolean;
+  voicesAtStart: number; // 읽기 시작 순간의 목소리 개수 (0이면 목록이 아직 안 채워진 것)
+  voices: number; picked: string | null;
+};
 let lastInfo: SpeakInfo | null = null;
 export function getLastSpeakInfo(): SpeakInfo | null {
   return lastInfo;
@@ -27,14 +31,27 @@ export function isSpeakSupported(): boolean {
   return typeof speechSynthesis !== 'undefined' && typeof SpeechSynthesisUtterance !== 'undefined';
 }
 
-// 미국 영어 목소리를 고른다 (튜터 David가 미국 남성이라 남성 목소리를 먼저). 없으면 undefined — 이때는 lang만 지정해 기기가 고르게 한다
+// iOS는 목소리 목록을 처음엔 비워 두었다가 나중에 채운다(voiceschanged). 읽기 시작 순간에 목록이 비면 목소리를 못 골라
+// 기기 기본(내려받지 않은 목소리면 소리 없이 시간만 흐름)으로 읽게 된다. 화면이 열릴 때 미리 불러 둔다
+export function warmUpVoices(): void {
+  if (!isSpeakSupported()) return;
+  speechSynthesis.getVoices();
+  speechSynthesis.addEventListener?.('voiceschanged', () => { speechSynthesis.getVoices(); }, { once: true });
+}
+
+// 미국 영어 목소리를 고른다. 기기에 이미 들어 있는(localService) 목소리를 먼저: 내려받아야 하는 목소리는 아직 없으면 소리가 안 난다.
+// 그중 튜터 David가 미국 남성이라 남성 이름을 먼저. 없으면 undefined — 이때는 lang만 지정해 기기가 고르게 한다
 const PREFERRED = ['aaron', 'evan', 'nathan', 'daniel', 'alex', 'fred', 'tom'];
 
-export function pickVoice(voices: Pick<SpeechSynthesisVoice, 'name' | 'lang'>[]): Pick<SpeechSynthesisVoice, 'name' | 'lang'> | undefined {
+type VoiceLike = Pick<SpeechSynthesisVoice, 'name' | 'lang'> & { localService?: boolean };
+
+export function pickVoice<V extends VoiceLike>(voices: V[]): V | undefined {
   const us = voices.filter((v) => v.lang.replace('_', '-').toLowerCase() === 'en-us');
   const pool = us.length ? us : voices.filter((v) => v.lang.toLowerCase().startsWith('en'));
-  const male = pool.find((v) => PREFERRED.some((n) => v.name.toLowerCase().includes(n)));
-  return male ?? pool[0];
+  const local = pool.filter((v) => v.localService);
+  const usable = local.length ? local : pool;
+  const male = usable.find((v) => PREFERRED.some((n) => v.name.toLowerCase().includes(n)));
+  return male ?? usable[0];
 }
 
 export function cancelSpeech(): void {
@@ -60,14 +77,21 @@ export function speakText(text: string, opt: Options = {}): Promise<SpeakResult>
       clearInterval(poll);
       if (current === u) current = null;
       if (cancel) speechSynthesis.cancel();
-      lastInfo = { result: r, ms: Math.round(performance.now() - began), started, voices: speechSynthesis.getVoices().length, voice: u.voice?.name ?? null };
+      lastInfo = {
+        result: r, ms: Math.round(performance.now() - began), started,
+        voicesAtStart, voices: speechSynthesis.getVoices().length, picked: voice?.name ?? null
+      };
       resolve(r);
     };
     let started = false;
+    let voicesAtStart = 0;
     u.lang = 'en-US';
     u.rate = opt.rate ?? 1;
-    const voice = pickVoice(speechSynthesis.getVoices());
-    if (voice) u.voice = voice as SpeechSynthesisVoice;
+    const all = speechSynthesis.getVoices();
+    voicesAtStart = all.length;
+    const voice = pickVoice(all);
+    if (voice) u.voice = voice;
+    u.volume = 1;
     u.onstart = () => { started = true; timers.forEach(clearTimeout); };
     u.onend = () => finish('spoken');
     // 우리가 멈춘 취소(canceled·interrupted)는 오류가 아니다

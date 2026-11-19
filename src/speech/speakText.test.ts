@@ -8,6 +8,10 @@ describe('pickVoice', () => {
     const list = [v('Karen', 'en-AU'), v('Samantha', 'en-US'), v('Aaron', 'en-US'), v('Daniel', 'en-GB')];
     expect(pickVoice(list)?.name).toBe('Aaron');
   });
+  it('기기에 들어 있는(localService) 목소리를 먼저 고른다', () => {
+    const list = [{ name: 'Aaron', lang: 'en-US', localService: false }, { name: 'Samantha', lang: 'en-US', localService: true }];
+    expect(pickVoice(list)?.name).toBe('Samantha');
+  });
   it('미국 영어가 없으면 다른 영어, 영어가 없으면 undefined', () => {
     expect(pickVoice([v('Daniel', 'en-GB'), v('Yuna', 'ko-KR')])?.name).toBe('Daniel');
     expect(pickVoice([v('Yuna', 'ko-KR')])).toBeUndefined();

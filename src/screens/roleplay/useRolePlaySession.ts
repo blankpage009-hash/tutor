@@ -11,7 +11,7 @@ import { createMicSlot, TUTOR_SAFE_MIC, type MicSlot } from '../../speech/micSlo
 import type { MicStream } from '../../speech/micStream';
 import { createCaptureContext } from '../../speech/pcmCapture';
 import type { Listening } from '../../speech/recognizer';
-import { cancelSpeech, speakText } from '../../speech/speakText';
+import { cancelSpeech, speakText, warmUpVoices } from '../../speech/speakText';
 import { listenVosk } from '../../speech/voskListener';
 import { ENGINE_NOTE } from '../newLesson/useNewSpeaking';
 import { openVoskMic } from '../shadowing/useShadowingAttempt';
@@ -189,6 +189,7 @@ export function useRolePlaySession(lesson: RolePlaySource) {
     listening.current?.stop();
   }, []);
   useEffect(() => stop, [stop]); // 화면을 나가면 멈춘다
+  useEffect(warmUpVoices, []); // Gemini 대사를 읽을 때 쓸 목소리 목록을 미리 불러 둔다(아이폰은 처음엔 비어 있음)
 
   const start = useStart({
     lesson, log, model: vosk.model, st, stoppedRef, listening, skipping, setPhase, setRunning, setNotice, setResult
