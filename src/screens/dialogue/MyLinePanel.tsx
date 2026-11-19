@@ -8,10 +8,12 @@ type Props = {
   threshold: number;
   engineNote: string | null;
   micLocked: boolean;
+  waiting?: boolean; // 상대가 말하는 중: 모양만 보여 주고 모두 잠근다
   onSkip: () => void;
 };
 
 function statusText(p: Props, status: string, message: string | null): string {
+  if (p.waiting) return '상대가 말하는 중…';
   if (status === 'listening') return '듣는 중… 다 말하면 저절로 멈춰요';
   if (message) return message;
   if (p.micLocked && p.engineNote) return p.engineNote;
@@ -32,18 +34,18 @@ function Result({ p }: { p: Props }) {
 
 // 대화문 연습에서 내 줄: 먼저 들려주지 않고 바로 말한다 (사용자 결정 2026-11-17). 듣기는 보통 속도
 export function MyLinePanel(p: Props) {
-  const o = p.attempt.outcome;
+  const o = p.waiting ? null : p.attempt.outcome;
   const listening = o?.status === 'listening';
   // 통과 뒤 다음 상대 줄로 넘어가기 전 잠깐 사이에 또 누르면 마이크가 열린 채 상대 줄이 재생된다
-  const passed = o?.status === 'passed';
+  const locked = p.waiting || o?.status === 'passed';
   return (
     <div className={styles.panel}>
-      <Result p={p} />
+      {!p.waiting && <Result p={p} />}
       <MicButton listening={listening} status={statusText(p, o?.status ?? 'idle', o?.message ?? null)}
-        disabled={passed || (p.micLocked && !listening)} onClick={listening ? p.attempt.stop : p.attempt.start} />
+        disabled={locked || (p.micLocked && !listening)} onClick={listening ? p.attempt.stop : p.attempt.start} />
       <div className={styles.actions}>
-        <Button size="sm" onClick={() => p.attempt.playTutor(1)} disabled={listening}>듣기</Button>
-        <Button size="sm" variant="ghost" onClick={p.onSkip} disabled={listening || passed}>건너뛰기</Button>
+        <Button size="sm" onClick={() => p.attempt.playTutor(1)} disabled={p.waiting || listening}>Listen</Button>
+        <Button size="sm" variant="ghost" onClick={p.onSkip} disabled={listening || locked}>Skip</Button>
       </div>
     </div>
   );

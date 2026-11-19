@@ -57,6 +57,15 @@
   color: var(--ink-muted);
 }
 
+/* Speak 연습 중 상단: 레슨 제목만 가운데 작게 */
+.miniTitle {
+  margin: 0 0 var(--space-3);
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+  font-weight: var(--type-headline-weight);
+  text-align: center;
+}
+
 /* Speak 연습: 한 줄씩 보여 주는 박스 (드릴 카드와 같은 모양) */
 .where {
   margin: 0 0 var(--space-2);
@@ -83,10 +92,15 @@
 
 .cardMe { background: var(--accent-tint); border-color: transparent; }
 
+/* 내 차례의 색칠 문장(WordHighlight)과 같은 글꼴·크기 — 상대 줄과 내 줄 카드가 똑같아 보이게 */
 .cardEn {
   margin: 0;
-  font-size: var(--type-body-size);
-  line-height: var(--type-body-line);
+  font-family: var(--type-sentence-family);
+  font-size: var(--type-sentence-size);
+  line-height: var(--type-sentence-line);
+  font-weight: var(--type-sentence-weight);
+  letter-spacing: var(--type-sentence-tracking);
+  overflow-wrap: anywhere;
 }
 
 .cardKo {

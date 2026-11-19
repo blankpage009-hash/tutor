@@ -93,20 +93,27 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
   });
   const myTurn = d.phase === 'practice' && d.player.playing === null && d.meIdx === d.cur;
   const shown = d.player.playing ?? d.cur;
+  useAutoListen(myTurn && !speaking.micLocked, d.sentence?.id, speaking.attempt.start);
   return (
     <>
       <BackLink to={`/curriculum/${lesson.levelCode}`} label={lesson.level} />
-      <ScreenHeader eyebrow={`유닛 ${lesson.unit} · STEP 2 대화문`} title={lesson.lessonTitle} />
-      <NewLessonSteps lessonId={lesson.lessonId} current="dialogue" />
-      <p className={styles.situation} lang="ko">{lesson.dialogue.situation} (상대: {lesson.dialogue.partnerRole})</p>
+      {/* 말하기 중에는 카드에 집중하게 제목만 작게 (사용자 요청 2026-11-19) */}
+      {d.phase === 'practice'
+        ? <p className={styles.miniTitle} lang="ko">{lesson.lessonTitle}</p>
+        : <>
+          <ScreenHeader eyebrow={`유닛 ${lesson.unit} · STEP 2 대화문`} title={lesson.lessonTitle} />
+          <NewLessonSteps lessonId={lesson.lessonId} current="dialogue" />
+          <p className={styles.situation} lang="ko">{lesson.dialogue.situation} (상대: {lesson.dialogue.partnerRole})</p>
+        </>}
       {/* 처음·끝에는 대화문 전체, Speak 연습 중에는 지금 줄 하나만 박스로 (사용자 요청 2026-11-19) */}
       {d.phase !== 'practice' && <DialogueLines lines={d.lines} partnerRole={lesson.dialogue.partnerRole}
         current={d.player.playing} />}
       {d.phase === 'practice' && shown < d.lines.length && (
         <DialogueCard line={d.lines[shown]} index={shown} total={d.lines.length}
           partnerRole={lesson.dialogue.partnerRole} outcome={myTurn ? speaking.attempt.outcome : undefined}>
-          {myTurn && <MyLinePanel attempt={speaking.attempt} threshold={THRESHOLD} engineNote={speaking.engineNote}
-            micLocked={speaking.micLocked} onSkip={() => { clearTimer(); d.go(d.cur + 1); }} />}
+          {/* 상대 줄에도 같은 패널을 (잠근 채) 두어 카드 위치·크기가 내 차례와 똑같게 */}
+          <MyLinePanel attempt={speaking.attempt} threshold={THRESHOLD} engineNote={speaking.engineNote}
+            micLocked={speaking.micLocked} waiting={!myTurn} onSkip={() => { clearTimer(); d.go(d.cur + 1); }} />
         </DialogueCard>
       )}
       {d.phase === 'intro' && <IntroActions playing={d.player.playing !== null}
@@ -117,13 +124,25 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
   );
 }
 
-type IntroProps = { playing: boolean; onPlayAll: () => void; onStop: () => void; onStart: () => void };
+// 내 차례가 되면 마이크를 저절로 한 번 연다 (사용자 요청 2026-11-19). 틀린 뒤 다시 말하기는 직접 탭.
+// 문장 id에 판 번호가 붙어 있어 "다시 연습"에서도 줄마다 한 번씩 열린다.
+// 상대 줄 재생이 끝난 뒤라 iOS에서도 탭 없이 마이크가 열린다 (롤플레이와 같은 방식)
+function useAutoListen(ready: boolean, sentenceId: string | undefined, start: () => void) {
+  const opened = useRef<string | null>(null);
+  useEffect(() => {
+    if (!ready || !sentenceId || opened.current === sentenceId) return;
+    opened.current = sentenceId;
+    start();
+  }, [ready, sentenceId, start]);
+}
+
+type IntroProps ={ playing: boolean; onPlayAll: () => void; onStop: () => void; onStart: () => void };
 
 function IntroActions({ playing, onPlayAll, onStop, onStart }: IntroProps) {
   return (
     <div className={courseStyles.actions}>
       {playing
-        ? <Button block onClick={onStop}>멈추기</Button>
+        ? <Button block onClick={onStop}>Stop</Button>
         : <Button block onClick={onPlayAll}>Listen</Button>}
       <Button variant="primary" block disabled={playing} onClick={onStart}>Speak</Button>
     </div>
@@ -144,8 +163,8 @@ function DoneActions({ lesson, onAgain, onNext }: { lesson: NewLesson; onAgain: 
         ))}
       </ul>
       <div className={courseStyles.actions}>
-        <Button variant="primary" block onClick={onNext}>드릴로</Button>
-        <Button block onClick={onAgain}>대화문 다시 연습</Button>
+        <Button variant="primary" block onClick={onNext}>Next: Drill</Button>
+        <Button block onClick={onAgain}>Practice Again</Button>
       </div>
     </>
   );
