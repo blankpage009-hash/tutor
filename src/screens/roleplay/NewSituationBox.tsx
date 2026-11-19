@@ -36,7 +36,7 @@ export function NewSituationBox() {
         <input className={promptStyles.input} type="text" value={hint} placeholder="예: 공항에서 짐 부치기 (비워도 돼요)"
           onChange={(e) => setHint(e.target.value)} />
       </label>
-      <p className={promptStyles.hint} lang="ko">상대 대사는 아이폰 내장 음성으로 읽어 줘요(레슨의 튜터 목소리와 달라요). 소리가 안 나면 글자로만 나와요. 만든 상황은 앱을 닫으면 사라져요.</p>
+      <p className={promptStyles.hint} lang="ko">상대 대사는 소리 없이 글자로만 나와요. 만든 상황은 앱을 닫으면 사라져요.</p>
       <div className={courseStyles.actions}>
         <Button variant="primary" block disabled={busy} onClick={make}>{busy ? '만드는 중…' : '새 상황 만들기'}</Button>
         {last && <Button block onClick={() => nav('/roleplay/custom')}>방금 만든 상황 다시 하기: {last.title}</Button>}
