@@ -1,10 +1,21 @@
+import type { ComponentType } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../../components/Button';
-import { IconCheck } from '../../components/icons/icons';
-import { NEW_STEPS, NEW_STEP_ENGLISH, newStagePath, stepTileState, type NewResume } from '../../newLessonFlow';
+import { IconBook, IconChat, IconCheck, IconRepeat, IconUsers } from '../../components/icons/icons';
+import {
+  NEW_STEPS, NEW_STEP_ENGLISH, newStagePath, stepTileState, type NewLessonStep, type NewResume
+} from '../../newLessonFlow';
 import styles from './ResumeCard.module.css';
 
 const pad2 = (n: number) => String(n).padStart(2, '0');
+
+// 끝낸 단계는 ✓, 아직인 단계(지금 단계 포함)는 그 단계를 뜻하는 그림 (디자인 v2 시안)
+const STEP_ICON: Record<NewLessonStep, ComponentType> = {
+  learn: IconBook,
+  dialogue: IconChat,
+  drill: IconRepeat,
+  roleplay: IconUsers
+};
 
 // 이어 할 레슨 카드: 레벨·유닛·레슨 번호, 제목, 4단계 타일, 이어 하기 버튼
 function ResumeBody({ r }: { r: NewResume }) {
@@ -19,11 +30,12 @@ function ResumeBody({ r }: { r: NewResume }) {
       <h2 className={styles.title} lang="ko">{r.title}</h2>
       <p className={styles.unit} lang="ko">{r.unitTitle}</p>
       <ol className={styles.steps}>
-        {NEW_STEPS.map((step, i) => {
+        {NEW_STEPS.map((step) => {
           const state = stepTileState(step, current, r.steps);
+          const Icon = state === 'done' ? IconCheck : STEP_ICON[step];
           return (
             <li key={step} className={`${styles.tile} ${styles[state]}`} aria-current={state === 'current' ? 'step' : undefined}>
-              <span className={styles.tileNo}>{state === 'done' ? <IconCheck /> : pad2(i + 1)}</span>
+              <Icon />
               <span className={styles.tileName}>{NEW_STEP_ENGLISH[step]}</span>
             </li>
           );

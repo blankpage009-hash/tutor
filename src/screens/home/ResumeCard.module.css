@@ -35,41 +35,34 @@
 
 .unit { margin: 0 0 var(--space-4); font-size: 14px; line-height: 20px; color: var(--ink-muted); }
 
+/* 디자인 v2: 4칸이 붙은 한 줄(바깥 1px 선, 칸 사이 1px 선), 칸마다 아이콘 + 영문 이름 가운데 정렬 */
 .steps {
   list-style: none;
   margin: 0 0 var(--space-4);
   padding: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-2);
+  border: 1px solid var(--line);
 }
 
 .tile {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 10px 6px;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 4px;
   min-width: 0;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
   color: var(--ink-muted);
 }
+.tile + .tile { border-left: 1px solid var(--line); }
+.tile svg { width: 22px; height: 22px; }
 
-.tileNo {
-  display: flex;
-  align-items: center;
-  height: 20px;
-  font-family: var(--type-label-family);
-  font-size: 17px;
-  font-weight: 600;
-}
-.tileNo svg { width: 18px; height: 18px; }
+/* 가장 긴 "Explanation"이 아이폰 폭(375px)에서 한 줄로 들어가도록 12px에 자간 없이 */
+.tileName { font-size: 12px; line-height: 14px; font-weight: 500; text-align: center; overflow-wrap: anywhere; }
 
-/* 가장 긴 "Explanation"이 아이폰 폭(375px)에서 한 줄로 들어가도록 10px */
-.tileName { font-size: 10px; line-height: 14px; font-weight: 600; overflow-wrap: anywhere; }
-
-.done { background: var(--accent-tint); border-color: transparent; color: var(--accent-ink); }
-.current { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.done { background: var(--accent-tint); color: var(--accent-ink); }
+.current { background: var(--accent); color: var(--on-accent); }
+.current .tileName { font-weight: 600; }
 
 .note {
   margin: 0 0 var(--space-4);
