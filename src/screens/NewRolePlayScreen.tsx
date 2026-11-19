@@ -4,7 +4,6 @@ import { Button } from '../components/Button';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { StepComplete } from '../components/StepComplete';
 import { useCelebration } from '../components/useCelebration';
-import type { NewLesson } from '../content/lessonTypes';
 import { NEW_STAGE_LABEL, newStagePath, type NewLessonStep } from '../newLessonFlow';
 import courseStyles from './courses/Courses.module.css';
 import styles from './dialogue/Dialogue.module.css';
@@ -13,7 +12,7 @@ import { useNewLesson } from './newLesson/useNewLesson';
 import { MyTurnPanel } from './roleplay/MyTurnPanel';
 import { RolePlayCard } from './roleplay/RolePlayCard';
 import { RolePlayLines } from './roleplay/RolePlayLines';
-import { useRolePlaySession, type MyLine, type StepResult } from './roleplay/useRolePlaySession';
+import { useRolePlaySession, type MyLine, type RolePlaySource, type StepResult } from './roleplay/useRolePlaySession';
 
 // 새 레슨 STEP 4 롤플레이(/n/:lessonId/roleplay): 상대 줄은 음성으로, 내 줄은 예시를 참고해 내 말로
 export function NewRolePlayScreen() {
@@ -24,23 +23,27 @@ export function NewRolePlayScreen() {
   return <RolePlayBody key={lesson.lessonId} lesson={lesson} />;
 }
 
-function RolePlayBody({ lesson }: { lesson: NewLesson }) {
+// 레슨 STEP 4와 Gemini가 만든 새 상황(levelCode가 null, /roleplay/custom)이 같은 화면을 쓴다
+export type RolePlayView = RolePlaySource & { lessonTitle: string; level: string; unit: number };
+
+export function RolePlayBody({ lesson }: { lesson: RolePlayView }) {
   const nav = useNavigate();
   const s = useRolePlaySession(lesson);
   const rp = lesson.rolePlay;
   const line = rp.lines[s.cur];
+  const custom = lesson.levelCode === null;
   // 끝 화면 전에 완료 화면을 한 번. 네 단계를 다 끝냈으면 레슨 완료로 (사용자 요청 2026-11-19)
   const celebrate = useCelebration(s.phase === 'done');
   const myLine: MyLine | null = s.phase === 'practice' && line?.speaker === 'me' ? line : null;
   return (
     <>
-      <BackLink to={`/curriculum/${lesson.levelCode}`} label={lesson.level} />
+      <BackLink to={custom ? '/roleplay' : `/curriculum/${lesson.levelCode}`} label={custom ? '롤플레잉' : lesson.level} />
       {/* 연습 중에는 대화문 화면처럼 제목만 작게, 지금 줄 하나만 박스로 (사용자 요청 2026-11-19) */}
       {s.phase === 'practice'
         ? <p className={styles.miniTitle} lang="ko">{lesson.lessonTitle}</p>
         : <>
-          <ScreenHeader eyebrow={`유닛 ${lesson.unit} · STEP 4 롤플레이`} title={lesson.lessonTitle} />
-          <NewLessonSteps lessonId={lesson.lessonId} current="roleplay" />
+          <ScreenHeader eyebrow={custom ? '새 상황 · 롤플레이' : `유닛 ${lesson.unit} · STEP 4 롤플레이`} title={lesson.lessonTitle} />
+          {!custom && <NewLessonSteps lessonId={lesson.lessonId} current="roleplay" />}
           <p className={styles.situation} lang="ko">{rp.situation} (상대: {rp.partnerRole})</p>
         </>}
       {s.phase === 'done' && <RolePlayLines lines={rp.lines} partnerRole={rp.partnerRole}
@@ -54,10 +57,25 @@ function RolePlayBody({ lesson }: { lesson: NewLesson }) {
       {s.phase === 'intro' && <IntroActions locked={s.micLocked} note={s.engineNote} onStart={() => s.start(0)} />}
       {s.phase === 'practice' && !myLine && <PlayActions running={s.running}
         onStop={s.stop} onResume={() => s.start(s.cur)} />}
-      {s.phase === 'done' && <DoneActions result={s.result} onAgain={() => s.start(0)}
+      {s.phase === 'done' && !custom && <DoneActions result={s.result} onAgain={() => s.start(0)}
         onStep={(step) => nav(newStagePath(lesson.lessonId, step))}
         onLevel={() => nav(`/curriculum/${lesson.levelCode}`)} onHome={() => nav('/')} />}
+      {s.phase === 'done' && custom && <CustomDoneActions onAgain={() => s.start(0)}
+        onList={() => nav('/roleplay')} onHome={() => nav('/')} />}
       {celebrate.show && <RolePlayComplete result={s.result} onClose={celebrate.close} />}
+    </>
+  );
+}
+
+function CustomDoneActions({ onAgain, onList, onHome }: { onAgain: () => void; onList: () => void; onHome: () => void }) {
+  return (
+    <>
+      <p className={`${styles.result} ${styles.pass}`} lang="ko">롤플레이를 끝냈어요! (새 상황은 진도에 기록되지 않아요)</p>
+      <div className={courseStyles.actions}>
+        <Button variant="primary" block onClick={onAgain}>롤플레이 다시</Button>
+        <Button block onClick={onList}>롤플레잉 목록으로</Button>
+        <Button variant="ghost" block onClick={onHome}>홈으로</Button>
+      </div>
     </>
   );
 }

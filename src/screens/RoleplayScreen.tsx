@@ -6,6 +6,7 @@ import { loadCurriculum } from '../content/curriculumLoader';
 import courseStyles from './courses/Courses.module.css';
 import { useProgressMap } from './courses/useProgressMap';
 import { doneLessonGroups, type DoneGroup } from './roleplay/doneLessons';
+import { NewSituationBox } from './roleplay/NewSituationBox';
 
 // 끝낸 레슨의 롤플레이를 골라 다시 연습하는 목록. 연습 화면은 레슨 STEP 4(/n/:id/roleplay)를 그대로 쓴다
 export function RoleplayScreen() {
@@ -23,6 +24,7 @@ export function RoleplayScreen() {
       <p className={courseStyles.intro} lang="ko">
         끝낸 레슨의 롤플레이를 다시 해 볼 수 있어요. 상대가 먼저 말하고, 내 차례에 배운 문장으로 대답해요.
       </p>
+      <NewSituationBox />
       {error && <p className={courseStyles.meta} lang="ko">{error}</p>}
       {!error && !groups && <p className={courseStyles.meta} lang="ko">불러오는 중…</p>}
       {groups && groups.length === 0 && (

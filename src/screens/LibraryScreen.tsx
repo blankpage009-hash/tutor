@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { useGeminiKey } from '../gemini/useGeminiKey';
 import { ExportBar } from './library/ExportBar';
 import styles from './library/Library.module.css';
 import { LibraryRow } from './library/LibraryRow';
@@ -8,6 +9,7 @@ import { useLibrary } from './library/useLibrary';
 
 export function LibraryScreen() {
   const { rows, error, remove } = useLibrary();
+  const geminiKey = useGeminiKey();
   const nav = useNavigate();
   return (
     <>
@@ -25,7 +27,7 @@ export function LibraryScreen() {
             <Button onClick={() => nav('/review?mode=random')}>랜덤 복습</Button>
           </div>
           <ul className={styles.list}>
-            {rows.map((r) => <LibraryRow key={r.id} row={r} onRemove={remove} />)}
+            {rows.map((r) => <LibraryRow key={r.id} row={r} onRemove={remove} geminiKey={geminiKey} />)}
           </ul>
           <ExportBar rows={rows} />
         </>

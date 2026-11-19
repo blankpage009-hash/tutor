@@ -17,6 +17,10 @@ import { openVoskMic } from '../shadowing/useShadowingAttempt';
 import { useVoskModel } from '../shadowing/useVoskModel';
 import { runRolePlay, type RolePlayLoopDeps, type RpHear } from './rolePlayLoop';
 
+// 롤플레이 연습에 필요한 것만. 레슨 STEP 4는 NewLesson을 그대로 넘기고,
+// Gemini가 만든 새 상황은 levelCode가 null이라 진도를 저장하지 않는다 (가짜 레슨 줄이 생기지 않게)
+export type RolePlaySource = Pick<NewLesson, 'lessonId' | 'rolePlay'> & { levelCode: string | null };
+
 export type MyLine = Extract<RolePlayLine, { speaker: 'me' }>;
 // 내 줄 화면: live = 듣는 중 들린 말, last = 마지막으로 끝난 시도(틀리면 빠진 말을 보여 주고 바로 다시 듣는다),
 // preparing = 내 차례지만 마이크가 아직 켜지는 중
@@ -92,6 +96,19 @@ async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   return judgement.pass ? 'passed' : 'failed';
 }
 
+// 음성 파일이 없는 상대 줄(Gemini가 만든 대사)은 글자를 읽을 시간만큼 기다린다.
+// 안 기다리면 대사가 휙 지나가고 마이크가 먼저 열린다. 멈춤을 누르면 바로 끝낸다
+function readingPause(text: string, stopped: () => boolean): Promise<void> {
+  const until = Date.now() + Math.min(1500 + text.length * 70, 6000);
+  return new Promise((resolve) => {
+    const timer = window.setInterval(() => {
+      if (!stopped() && Date.now() < until) return;
+      window.clearInterval(timer);
+      resolve();
+    }, 100);
+  });
+}
+
 function loopDeps(c: Ctx, lines: RolePlayLine[], start: number, stopped: () => boolean, onLine: (i: number) => void) {
   const deps: RolePlayLoopDeps<RolePlayLine> = {
     lines, start, stopped, onLine,
@@ -100,6 +117,7 @@ function loopDeps(c: Ctx, lines: RolePlayLine[], start: number, stopped: () => b
     play: (l) => {
       if (l.speaker !== 'partner') return Promise.resolve();
       c.slot.release();
+      if (!l.audio) return readingPause(l.en, stopped);
       return playAudio(contentUrl(l.audio), 1).catch((e) => c.log(`재생 실패: ${String(e)}`));
     },
     hear: (l) => hearLine(c, l as MyLine),
@@ -142,7 +160,7 @@ export type StepResult = { done: boolean; missing: NewLessonStep[] };
 
 // 롤플레이 자동 진행: "시작" 한 번 탭하면 마이크를 켜 두고, 상대 줄 재생 → 내 차례에 저절로 듣기
 // (사용자 요청 2026-11-18). iOS는 탭한 순간 만든 오디오 장치에만 마이크 소리를 주므로 시작·다시 시작은 탭으로만
-export function useRolePlaySession(lesson: NewLesson) {
+export function useRolePlaySession(lesson: RolePlaySource) {
   const log = useCallback((m: string) => console.debug(`[롤플레이] ${m}`), []);
   const vosk = useVoskModel(true, log);
   const st = useRolePlayState();
@@ -185,7 +203,7 @@ export function useRolePlaySession(lesson: NewLesson) {
 }
 
 type StartInput = {
-  lesson: NewLesson; log: (m: string) => void; model: Model | null; st: ReturnType<typeof useRolePlayState>;
+  lesson: RolePlaySource; log: (m: string) => void; model: Model | null; st: ReturnType<typeof useRolePlayState>;
   stoppedRef: MutableRefObject<boolean>; listening: MutableRefObject<Listening | null>; skipping: MutableRefObject<boolean>;
   setPhase: (p: Phase) => void; setRunning: (b: boolean) => void; setNotice: (n: string | null) => void;
   setResult: (r: StepResult | null) => void;
@@ -225,7 +243,8 @@ async function finishRun(q: StartInput, ctx: AudioContext, end: string) {
   q.setRunning(false);
   if (end === 'done') {
     q.st.onLine(q.lesson.rolePlay.lines.length);
-    const r = await finishNewStep(q.lesson.lessonId, q.lesson.levelCode, 'roleplay').catch(() => null);
+    const code = q.lesson.levelCode;
+    const r = code ? await finishNewStep(q.lesson.lessonId, code, 'roleplay').catch(() => null) : null;
     q.setResult(r);
     q.setPhase('done');
   } else if (end !== 'stopped') {

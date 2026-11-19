@@ -5,6 +5,7 @@ import { TabLayout } from './layouts/TabLayout';
 import { CourseDetailScreen } from './screens/CourseDetailScreen';
 import { CoursesScreen } from './screens/CoursesScreen';
 import { CurriculumLevelScreen } from './screens/CurriculumLevelScreen';
+import { CustomRolePlayScreen } from './screens/CustomRolePlayScreen';
 import { DialogueScreen } from './screens/DialogueScreen';
 import { DrillScreen } from './screens/DrillScreen';
 import { LearnScreen } from './screens/LearnScreen';
@@ -60,6 +61,7 @@ export function App() {
           <Route path="/review" element={<ReviewScreen />} />
           <Route path="/vocab/quiz" element={<VocabQuizScreen />} />
           <Route path="/roleplay" element={<RoleplayScreen />} />
+          <Route path="/roleplay/custom" element={<CustomRolePlayScreen />} />
         </Route>
       </Routes>
       </WordPickerProvider>
