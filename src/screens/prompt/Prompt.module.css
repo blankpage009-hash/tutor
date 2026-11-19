@@ -1,0 +1,54 @@
+.field { display: flex; flex-direction: column; gap: var(--space-1); margin-top: var(--space-4); }
+
+.label {
+  font-weight: var(--type-headline-weight);
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+}
+
+.hint { margin: 0; font-size: var(--type-caption-size); line-height: var(--type-caption-line); color: var(--ink-muted); }
+
+/* iOS는 글자가 16px보다 작은 입력칸을 누르면 화면을 확대해 버려서 16px로 둔다 */
+.input, .textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+}
+
+.input { min-height: var(--tap-min); }
+
+.textarea { padding: var(--space-3); line-height: 1.5; resize: vertical; }
+
+.input:focus-visible, .textarea:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+.preview { min-height: 220px; font-size: 14px; }
+
+.pick {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  min-height: var(--tap-min);
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.pick input { flex: none; width: 22px; height: 22px; margin-top: 2px; accent-color: var(--accent); }
+
+.pickEn { font-size: var(--type-body-size); line-height: var(--type-body-line); }
+
+.pickKo { display: block; font-size: var(--type-caption-size); line-height: var(--type-caption-line); color: var(--ink-muted); }
+
+.copied { margin: var(--space-2) 0 0; color: var(--accent-ink); font-size: var(--type-body-kr-size); }
+
+.failed { margin: var(--space-2) 0 0; color: var(--danger); font-size: var(--type-body-kr-size); }
+
+.section { margin-top: var(--space-5); }
+
+.intro { margin: 0; font-size: var(--type-body-kr-size); line-height: var(--type-body-kr-line); }

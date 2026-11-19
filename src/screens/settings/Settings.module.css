@@ -1,0 +1,37 @@
+.keyBlock { padding: var(--space-4) 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: var(--space-2); }
+
+.keyName {
+  margin: 0;
+  font-weight: var(--type-headline-weight);
+  font-size: var(--type-headline-size);
+  line-height: var(--type-headline-line);
+}
+
+.keyHint, .keyState {
+  margin: 0;
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+  color: var(--ink-muted);
+}
+
+.keyState { color: var(--accent-ink); }
+
+.keyError { margin: 0; font-size: var(--type-body-kr-size); color: var(--danger); }
+
+/* iOS는 글자가 16px보다 작은 입력칸을 누르면 화면을 확대해 버려서 16px로 둔다 */
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--tap-min);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+}
+
+.input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+.keyActions { display: flex; gap: var(--space-2); }

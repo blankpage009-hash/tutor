@@ -3,6 +3,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { SegmentedControl } from '../components/SegmentedControl';
 import { SettingsRow } from '../components/SettingsRow';
 import { useTheme } from '../theme/useTheme';
+import { GeminiKeyRow } from './settings/GeminiKeyRow';
 import type { ThemeSetting } from '../theme/theme';
 
 const THEME_OPTIONS: { value: ThemeSetting; label: string }[] = [
@@ -11,7 +12,7 @@ const THEME_OPTIONS: { value: ThemeSetting; label: string }[] = [
   { value: 'dark', label: '다크' }
 ];
 
-// 테마만 동작한다. 나머지 설정 항목은 Phase 7에서 채운다.
+// 테마와 Gemini 키만 동작한다. 나머지 설정 항목은 Phase 7에서 채운다.
 export function SettingsScreen() {
   const { theme, setTheme } = useTheme();
   return (
@@ -22,6 +23,7 @@ export function SettingsScreen() {
       <div style={{ padding: 'var(--space-3) 0' }}>
         <SegmentedControl label="테마" options={THEME_OPTIONS} value={theme} onChange={setTheme} />
       </div>
+      <GeminiKeyRow />
     </>
   );
 }
