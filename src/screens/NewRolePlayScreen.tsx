@@ -11,6 +11,7 @@ import styles from './dialogue/Dialogue.module.css';
 import { NewLessonSteps } from './newLesson/NewLessonSteps';
 import { useNewLesson } from './newLesson/useNewLesson';
 import { MyTurnPanel } from './roleplay/MyTurnPanel';
+import { RolePlayCard } from './roleplay/RolePlayCard';
 import { RolePlayLines } from './roleplay/RolePlayLines';
 import { useRolePlaySession, type MyLine, type StepResult } from './roleplay/useRolePlaySession';
 
@@ -34,11 +35,18 @@ function RolePlayBody({ lesson }: { lesson: NewLesson }) {
   return (
     <>
       <BackLink to={`/curriculum/${lesson.levelCode}`} label={lesson.level} />
-      <ScreenHeader eyebrow={`유닛 ${lesson.unit} · STEP 4 롤플레이`} title={lesson.lessonTitle} />
-      <NewLessonSteps lessonId={lesson.lessonId} current="roleplay" />
-      <p className={styles.situation} lang="ko">{rp.situation} (상대: {rp.partnerRole})</p>
-      {s.phase !== 'intro' && <RolePlayLines lines={rp.lines} partnerRole={rp.partnerRole}
-        upTo={s.cur} current={s.phase === 'practice' ? s.cur : null} said={s.said} />}
+      {/* 연습 중에는 대화문 화면처럼 제목만 작게, 지금 줄 하나만 박스로 (사용자 요청 2026-11-19) */}
+      {s.phase === 'practice'
+        ? <p className={styles.miniTitle} lang="ko">{lesson.lessonTitle}</p>
+        : <>
+          <ScreenHeader eyebrow={`유닛 ${lesson.unit} · STEP 4 롤플레이`} title={lesson.lessonTitle} />
+          <NewLessonSteps lessonId={lesson.lessonId} current="roleplay" />
+          <p className={styles.situation} lang="ko">{rp.situation} (상대: {rp.partnerRole})</p>
+        </>}
+      {s.phase === 'done' && <RolePlayLines lines={rp.lines} partnerRole={rp.partnerRole}
+        upTo={s.cur} current={null} said={s.said} />}
+      {s.phase === 'practice' && line && <RolePlayCard line={line} index={s.cur} total={rp.lines.length}
+        partnerRole={rp.partnerRole} turn={s.turn} />}
       {myLine && <MyTurnPanel key={s.cur} line={myLine} turn={s.turn} running={s.running}
         micLocked={s.micLocked} engineNote={s.engineNote}
         onPause={s.stop} onResume={() => s.start(s.cur)} onSkip={s.skip} />}
