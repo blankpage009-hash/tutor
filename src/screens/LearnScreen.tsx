@@ -44,7 +44,7 @@ export function LearnScreen() {
       <LearnNotes lesson={lesson} />
       <div className={styles.actions}>
         <Button variant="primary" block onClick={() => nav(newStagePath(lesson.lessonId, nextNewStage('learn')))}>
-          대화문으로
+          Go to Dialogue
         </Button>
       </div>
     </>
