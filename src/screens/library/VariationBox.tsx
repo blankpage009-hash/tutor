@@ -3,7 +3,7 @@ import { Button } from '../../components/Button';
 import { callGemini, GeminiError } from '../../gemini/geminiClient';
 import { parseVariations, variationRequest, type Variation } from '../../gemini/tasks';
 import { stopAudio } from '../../speech/audioPlayer';
-import { isSpeakSupported, speakText } from '../../speech/speakText';
+import { getLastSpeakInfo, isSpeakSupported, speakText } from '../../speech/speakText';
 import styles from './Library.module.css';
 
 type Props = { geminiKey: string; en: string; ko?: string };
@@ -31,7 +31,11 @@ export function VariationBox({ geminiKey, en, ko }: Props) {
   const listen = async (text: string) => {
     stopAudio();
     setSpeakError(null);
-    if ((await speakText(text)) === 'failed') setSpeakError('소리를 내지 못했어요. 무음 모드나 볼륨을 확인해 주세요.');
+    const r = await speakText(text);
+    // 소리가 안 나는 원인을 찾는 동안 결과를 화면에 보여 준다 (원인을 잡으면 지운다)
+    const i = getLastSpeakInfo();
+    const detail = i ? `[진단] 결과 ${i.result} · ${i.ms}ms · 시작신호 ${i.started ? '옴' : '없음'} · 목소리 ${i.voices}개 · 선택 ${i.voice ?? '기기 기본'}` : '';
+    setSpeakError(r === 'failed' ? `소리를 내지 못했어요. 무음 모드나 볼륨을 확인해 주세요. ${detail}` : detail || null);
   };
   return (
     <>
