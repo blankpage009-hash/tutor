@@ -3,6 +3,7 @@ import { MicButton } from '../../components/MicButton';
 import { PlayButton } from '../../components/PlayButton';
 import { ProgressBar } from '../../components/ProgressBar';
 import { WordHighlight } from '../../components/WordHighlight';
+import { usePickWord } from '../../components/wordPicker/WordPicker';
 import type { Sentence } from '../../content/types';
 import { playSource, unlockAudio } from '../../speech/audioPlayer';
 import type { HandsFreeStep } from './handsFreeLoop';
@@ -44,6 +45,7 @@ type Props = {
   // 드릴: 마이크 버튼 + 이어 말하기 버튼을 재생 버튼 하나로, 다음·건너뛰기를 이전·다음으로 (사용자 요청 2026-11-17).
   // 다음은 onSkip(통과 안 해도 넘어감, 마지막이면 끝)
   playMode?: { canPrev: boolean; onPrev: () => void };
+  tapWords?: boolean; // 문장 속 단어를 눌러 단어장에 저장 (쉐도잉 화면만 켠다)
 };
 
 export type HandsFreeView = {
@@ -139,14 +141,17 @@ function HandsFreeControl({ hf }: { hf: HandsFreeView }) {
 
 // 기억·상황 응답 회차는 통과하기 전까지 영어 정답을 감춘다. 틀렸을 때 보여 주면 3번째 실패 전에
 // 정답을 알려 주는 셈이라 통과했을 때만 보인다 (사용자 결정 2026-11-17: 정답은 3번째 실패에만)
-function SentenceView({ p, final }: { p: Props; final: boolean }) {
+function SentenceView({ p, final, listening }: { p: Props; final: boolean; listening: boolean }) {
   const o = p.attempt.outcome;
+  // 단어 저장은 쉐도잉 화면에서만(tapWords) 켜고, 듣는 중에는 잘못 눌리지 않게 끈다
+  const pick = usePickWord();
+  const onWordTap = p.tapWords && pick && !listening ? (w: string) => pick(w, p.sentence) : undefined;
   const show = p.show ?? 'en+ko';
   const showEn = show === 'en+ko' || show === 'en' || o?.status === 'passed';
   return (
     <>
       {p.cue && <p className={styles.cue} lang={p.cue.lang}>{p.cue.text}</p>}
-      {o && showEn && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} />}
+      {o && showEn && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} onWordTap={onWordTap} />}
       {!showEn && <p className={styles.hidden} lang="ko">영어로 말해 보세요</p>}
       {(show === 'en+ko' || show === 'ko') && <p className={styles.ko} lang="ko">{p.sentence.ko}</p>}
     </>
@@ -189,7 +194,7 @@ export function ShadowingStage(p: Props) {
     <div className={styles.stage}>
       <p className={`${styles.eyebrow} ${styles.secretTap}`} lang="ko" onClick={p.onSecretTap}>{p.label} ·{p.position} · 통과 {Math.min(p.passes, p.required)}/{p.required}</p>
       <ProgressBar value={o?.judgement.ratio ?? 0} label="맞힌 단어 비율" />
-      <SentenceView p={p} final={final} />
+      <SentenceView p={p} final={final} listening={listening} />
       <ResultLine p={p} />
       {p.playMode ? <PlayControls p={p} /> : <>
         <MicButton listening={hf.running ? hf.step === 'listening' : listening}

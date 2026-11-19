@@ -1,4 +1,5 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
+import { WordPickerProvider } from './components/wordPicker/WordPicker';
 import { PracticeLayout } from './layouts/PracticeLayout';
 import { TabLayout } from './layouts/TabLayout';
 import { CourseDetailScreen } from './screens/CourseDetailScreen';
@@ -29,6 +30,7 @@ import { VocabScreen } from './screens/VocabScreen';
 export function App() {
   return (
     <HashRouter>
+      <WordPickerProvider>
       <Routes>
         <Route element={<TabLayout />}>
           <Route path="/" element={<HomeScreen />} />
@@ -60,6 +62,7 @@ export function App() {
           <Route path="/roleplay" element={<RoleplayScreen />} />
         </Route>
       </Routes>
+      </WordPickerProvider>
     </HashRouter>
   );
 }

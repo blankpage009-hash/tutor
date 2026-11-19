@@ -1,0 +1,84 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgb(0 0 0 / 0.45);
+}
+
+.sheet {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--space-4) var(--space-4) calc(var(--space-4) + env(safe-area-inset-bottom));
+  background: var(--surface);
+  color: var(--ink);
+  border-top: var(--rule-weight) solid var(--line-strong);
+}
+
+.word {
+  margin: 0;
+  font-family: var(--type-title-family);
+  font-size: var(--type-title-size);
+  line-height: var(--type-title-line);
+  font-weight: var(--type-title-weight);
+  overflow-wrap: anywhere;
+}
+
+.source {
+  margin: var(--space-2) 0 var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: var(--surface-sunk);
+  border-radius: var(--radius-sm);
+}
+
+.sourceEn { margin: 0; font-size: var(--type-body-size); line-height: var(--type-body-line); }
+
+.sourceKo {
+  margin: var(--space-1) 0 0;
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--ink-muted);
+}
+
+.field { display: block; margin-top: var(--space-3); }
+
+.label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: var(--type-label-size);
+  color: var(--ink-muted);
+}
+
+/* iOS는 글자가 16px보다 작은 입력칸을 누르면 화면을 확대해 버려서 16px로 둔다 */
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--tap-min);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+}
+
+.input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+.hint {
+  margin: var(--space-2) 0 0;
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--ink-muted);
+}
+
+.error { margin: var(--space-2) 0 0; color: var(--danger); font-size: var(--type-body-kr-size); }
+
+.actions { margin-top: var(--space-4); display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+.saved { margin: var(--space-3) 0 0; font-size: var(--type-body-kr-size); line-height: var(--type-body-kr-line); }

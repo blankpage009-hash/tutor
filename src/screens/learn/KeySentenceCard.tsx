@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Button } from '../../components/Button';
 import { ResultMark } from '../../components/ResultMark';
 import { WordHighlight } from '../../components/WordHighlight';
+import { TapText } from '../../components/wordPicker/TapText';
 import { contentUrl } from '../../content/loader';
 import type { KeySentence } from '../../content/lessonTypes';
 import type { Sentence } from '../../content/types';
@@ -49,7 +50,9 @@ export function KeySentenceCard({ lessonId, sentence }: Props) {
 
   return (
     <section className={styles.card}>
-      <p className={styles.en} lang="en">{sentence.en}</p>
+      <p className={styles.en} lang="en">
+        <TapText text={sentence.en} source={{ id: `${lessonId}-key`, en: sentence.en, ko: sentence.ko }} />
+      </p>
       <p className={styles.ko} lang="ko">{sentence.ko}</p>
       <p className={styles.stress} lang="en"><StressText text={sentence.stress} /></p>
       <div className={styles.listen}>

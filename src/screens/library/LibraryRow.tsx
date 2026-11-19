@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/Button';
+import { TapText } from '../../components/wordPicker/TapText';
 import { contentUrl } from '../../content/loader';
 import type { SavedSentence } from '../../db/types';
 import { playAudio, unlockAudio } from '../../speech/audioPlayer';
@@ -22,7 +23,9 @@ export function LibraryRow({ row, onRemove }: Props) {
   const ready = Boolean(row.en);
   return (
     <li className={styles.item}>
-      <p className={styles.en} lang="en">{row.en ?? '문장을 찾는 중…'}</p>
+      <p className={styles.en} lang="en">
+        {row.en ? <TapText text={row.en} source={{ id: row.id, en: row.en, ko: row.ko ?? '' }} /> : '문장을 찾는 중…'}
+      </p>
       {row.ko && <p className={styles.ko} lang="ko">{row.ko}</p>}
       <p className={styles.meta} lang="ko">{row.lessonId}</p>
       <div className={styles.actions}>

@@ -110,10 +110,10 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
           <p className={styles.situation} lang="ko">{lesson.dialogue.situation} (상대: {lesson.dialogue.partnerRole})</p>
         </>}
       {/* 처음·끝에는 대화문 전체, Speak 연습 중에는 지금 줄 하나만 박스로 (사용자 요청 2026-11-19) */}
-      {d.phase !== 'practice' && <DialogueLines lines={d.lines} partnerRole={lesson.dialogue.partnerRole}
+      {d.phase !== 'practice' && <DialogueLines lessonId={lesson.lessonId} lines={d.lines} partnerRole={lesson.dialogue.partnerRole}
         current={d.player.playing} />}
       {d.phase === 'practice' && shown < d.lines.length && (
-        <DialogueCard line={d.lines[shown]} index={shown} total={d.lines.length}
+        <DialogueCard lessonId={lesson.lessonId} line={d.lines[shown]} index={shown} total={d.lines.length}
           partnerRole={lesson.dialogue.partnerRole} outcome={myTurn ? speaking.attempt.outcome : undefined}>
           {/* 상대 줄에도 같은 패널을 (잠근 채) 두어 카드 위치·크기가 내 차례와 똑같게 */}
           <MyLinePanel attempt={speaking.attempt} threshold={THRESHOLD} engineNote={speaking.engineNote}

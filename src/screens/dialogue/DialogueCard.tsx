@@ -1,12 +1,14 @@
 import type { ReactNode } from 'react';
 import type { DialogueLine } from '../../content/lessonTypes';
 import { WordHighlight } from '../../components/WordHighlight';
+import { TapText } from '../../components/wordPicker/TapText';
 import type { useShadowingAttempt } from '../shadowing/useShadowingAttempt';
 import styles from './Dialogue.module.css';
 
 type Outcome = ReturnType<typeof useShadowingAttempt>['outcome'];
 
 type Props = {
+  lessonId: string; // 단어 저장 때 출처 문장 이름에 쓴다
   line: DialogueLine;
   index: number;
   total: number;
@@ -16,7 +18,7 @@ type Props = {
 };
 
 // Speak 연습 중 한 줄씩 보여 주는 박스 (드릴 카드처럼, 사용자 요청 2026-11-19)
-export function DialogueCard({ line, index, total, partnerRole, outcome, children }: Props) {
+export function DialogueCard({ lessonId, line, index, total, partnerRole, outcome, children }: Props) {
   const me = line.speaker === 'me';
   const final = outcome?.status === 'passed' || outcome?.status === 'failed';
   return (
@@ -27,7 +29,11 @@ export function DialogueCard({ line, index, total, partnerRole, outcome, childre
         <span className={styles.who} lang="ko">{me ? '나' : partnerRole}</span>
         {outcome
           ? <WordHighlight words={outcome.judgement.words} nextIndex={outcome.judgement.nextIndex} final={final} />
-          : <p className={styles.cardEn} lang="en">{line.en}</p>}
+          : (
+            <p className={styles.cardEn} lang="en">
+              <TapText text={line.en} source={{ id: `${lessonId}-dlg${line.no}`, en: line.en, ko: line.ko }} />
+            </p>
+          )}
         <p className={styles.cardKo} lang="ko">{line.ko}</p>
       </article>
       {children}

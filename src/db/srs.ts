@@ -30,6 +30,11 @@ export async function countDueSentences(now: number): Promise<number> {
   return (await dueSentenceTimes(now)).size;
 }
 
+// 오늘 때가 된 단어 수. 단어를 지울 때 달력도 같이 지우므로 달력 개수 = 복습할 단어 수
+export async function countDueWords(now: number): Promise<number> {
+  return db.srsState.where('dueAt').belowOrEqual(now).filter((s) => s.kind === 'word').count();
+}
+
 // 복습 결과 한 건을 달력에 반영한다. 읽고-고쳐-쓰기를 한 번에 묶어 두 번 눌려도 꼬이지 않게
 export async function recordSentenceReview(itemId: string, grade: Grade, now = Date.now()): Promise<void> {
   await db.transaction('rw', db.srsState, async () => {

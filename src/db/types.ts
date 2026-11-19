@@ -20,6 +20,10 @@ export type VocabWord = {
   meaning: string; // 사용자가 고칠 수 있음
   pos: string;
   sourceSentenceId?: string;
+  // 출처 문장의 글자도 함께 적어 둔다: 문장 빈칸 퀴즈·단어 목록이 콘텐츠 파일을 다시 찾지 않게.
+  // 예전 모양에는 없어서 선택 칸이다 (색인은 그대로라 DB 버전은 그대로)
+  sourceEn?: string;
+  sourceKo?: string;
   savedAt: number;
 };
 

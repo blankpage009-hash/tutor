@@ -1,0 +1,45 @@
+.word {
+  margin: 0 0 var(--space-1);
+  font-family: var(--type-sentence-family);
+  font-size: var(--type-title-size);
+  line-height: var(--type-title-line);
+  font-weight: var(--type-title-weight);
+  overflow-wrap: anywhere;
+}
+
+.pos {
+  margin-left: var(--space-2);
+  padding: 0 var(--space-2);
+  background: var(--surface-sunk);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: var(--type-label-size);
+  font-weight: 400;
+  color: var(--ink-muted);
+  vertical-align: middle;
+}
+
+.source {
+  margin: var(--space-1) 0 0;
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--ink-muted);
+}
+
+.form { margin-top: var(--space-2); display: flex; flex-direction: column; gap: var(--space-2); }
+
+/* iOS는 글자가 16px보다 작은 입력칸을 누르면 화면을 확대해 버려서 16px로 둔다 */
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--tap-min);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+}
+
+.input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }

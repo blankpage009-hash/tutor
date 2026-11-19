@@ -9,6 +9,7 @@ import { findNewResume, NEW_STAGE_LABEL, newStagePath } from '../newLessonFlow';
 import courseStyles from './courses/Courses.module.css';
 import { useProgressMap } from './courses/useProgressMap';
 import { useDueCount } from './review/useDueCount';
+import { useDueWordCount } from './vocab/useVocab';
 import styles from './HomeScreen.module.css';
 
 type Resume = { to: string; title: string; where: string };
@@ -54,7 +55,7 @@ function ResumeRow({ r }: { r: Resume }) {
   );
 }
 
-// 오늘 복습: 때가 된 저장 문장 개수. 단어 복습은 단어장 작업(Phase 5 3세션)에서 더한다
+// 오늘 복습: 때가 된 저장 문장 개수와 단어 개수
 function ReviewCard() {
   const due = useDueCount();
   return (
@@ -68,8 +69,21 @@ function ReviewCard() {
           <p className={courseStyles.meta} lang="ko">한국어를 보고 영어로 말해요 · 탭해서 시작</p>
         </Link>
       )}
-      <p className={styles.note} lang="ko">복습할 단어는 다음 작업(단어장)에서 채웁니다.</p>
+      <WordDueRow />
     </>
+  );
+}
+
+// 오늘 복습할 단어 수. 단어 퀴즈는 다음 작업(3-B)에서 열리므로 지금은 단어 목록으로 이어 준다
+function WordDueRow() {
+  const due = useDueWordCount();
+  if (due === null) return null;
+  if (due === 0) return <p className={styles.note} lang="ko">오늘 복습할 단어가 없어요.</p>;
+  return (
+    <Link to="/vocab" className={courseStyles.row}>
+      <span className={courseStyles.name} lang="ko">오늘 복습할 단어 {due}개</span>
+      <p className={courseStyles.meta} lang="ko">단어 퀴즈는 곧 열려요 · 지금은 단어 목록으로 가요</p>
+    </Link>
   );
 }
 

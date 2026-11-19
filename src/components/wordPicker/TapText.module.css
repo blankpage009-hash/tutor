@@ -1,0 +1,16 @@
+/* 글자 모양은 감싸는 문장 그대로, 눌러도 된다는 점만 점선 밑줄로 살짝 알린다 */
+.word {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px dotted var(--ink-muted);
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+
+.word:active { background: var(--accent-tint); }

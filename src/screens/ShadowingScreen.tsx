@@ -140,7 +140,7 @@ export function ShadowingScreen({ kind = 'shadowing', fixedLesson }: { kind?: Pr
       {steps.finished && (fixedLesson
         ? <SavedFinish total={total} />
         : <FinishPanel kind={kind} lessonId={lessonId} courseId={courseId} total={total} />)}
-      <ShadowingStage sentence={sentence} {...(fixedLesson ? SAVED_TEXT : KIND_TEXT[kind])} saveable={kind !== 'variation' && !fixedLesson} position={`문장 ${index + 1} / ${total}`} attempt={attempt}
+      <ShadowingStage sentence={sentence} tapWords {...(fixedLesson ? SAVED_TEXT : KIND_TEXT[kind])} saveable={kind !== 'variation' && !fixedLesson} position={`문장 ${index + 1} / ${total}`} attempt={attempt}
         threshold={settings.passThreshold} slowRate={SLOW_RATE}
         passes={steps.counts.get(sentence.id) ?? 0} required={settings.repeatCount}
         canNext={cleared.has(sentence.id)} isLast={index === total - 1} onNext={steps.next}
