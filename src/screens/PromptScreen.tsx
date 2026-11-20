@@ -37,9 +37,10 @@ export function PromptScreen() {
   ) : undefined;
   return (
     <>
-      <ScreenHeader eyebrow="VOICE CHAT SCRIPT" title="Prompt Generator" action={generateButton} />
+      <ScreenHeader eyebrow="VOICE CHAT SCRIPT" title="Prompt Generator" />
       {gen.error && <p className={styles.failed} lang="ko">{gen.error}</p>}
-      <SentencePicker saved={saved} selected={picked} onToggle={toggle} extra={extra} onExtra={setExtra} />
+      <SentencePicker saved={saved} selected={picked} onToggle={toggle} extra={extra} onExtra={setExtra}
+        action={generateButton} />
       <PromptFields draft={draft} onChange={(patch) => setDraft((d) => ({ ...d, ...patch }))} />
       <PromptPreview text={text} />
     </>

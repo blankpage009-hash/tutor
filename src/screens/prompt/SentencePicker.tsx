@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import type { SavedSentence } from '../../db/types';
 import styles from './Prompt.module.css';
 
@@ -8,22 +8,28 @@ type Props = {
   onToggle: (id: string) => void;
   extra: string;
   onExtra: (text: string) => void;
+  // MUST USE 줄 오른쪽(접기 화살표 앞)에 놓을 버튼 (Generate)
+  action?: ReactNode;
 };
 
 // 보관함 문장은 눌러 켜고 끄는 칩, 직접 쓰는 문장은 '+ Add'를 눌러 입력칸을 연다.
 // 저장한 문장이 많으면 화면이 너무 길어져서 전체를 기본 닫힘으로 둔다
-export function SentencePicker({ saved, selected, onToggle, extra, onExtra }: Props) {
+export function SentencePicker({ saved, selected, onToggle, extra, onExtra, action }: Props) {
   // 이미 적은 내용이 있으면 닫혀 있어서 안 보이는 일이 없도록 열어 둔다
   const [listOpen, setListOpen] = useState(false);
   const [open, setOpen] = useState(extra.trim() !== '');
   const extraCount = extra.split('\n').filter((l) => l.trim() !== '').length;
   return (
     <div className={styles.field}>
-      <button type="button" className={styles.toggle} aria-expanded={listOpen}
-        onClick={() => setListOpen((o) => !o)}>
-        <span className={styles.label}>MUST USE · {selected.size + extraCount}</span>
-        <span className={styles.chevron} aria-hidden="true" />
-      </button>
+      {/* 버튼 안에 버튼을 넣을 수 없어서, 줄 전체 접기 버튼 위에 action을 겹쳐 올린다 */}
+      <div className={styles.toggleRow}>
+        <button type="button" className={styles.toggle} aria-expanded={listOpen}
+          onClick={() => setListOpen((o) => !o)}>
+          <span className={styles.label}>MUST USE · {selected.size + extraCount}</span>
+          <span className={styles.chevron} aria-hidden="true" />
+        </button>
+        {action && <div className={styles.toggleAction}>{action}</div>}
+      </div>
       {listOpen && (
         <>
           <div className={styles.chips}>
