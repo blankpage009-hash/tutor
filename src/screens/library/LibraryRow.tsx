@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { IconCircle, IconPlay, IconTrash } from '../../components/icons/icons';
+import { IconCircle, IconPlay, IconPrompt, IconTrash } from '../../components/icons/icons';
 import { SwipeRow } from '../../components/SwipeRow';
 import { contentUrl } from '../../content/loader';
 import type { SavedSentence } from '../../db/types';
@@ -36,7 +36,12 @@ export function LibraryRow({ row, due, open, onOpenChange, onRemove, selecting, 
     <SwipeRow open={open} onOpenChange={onOpenChange} swipeEnabled={!selecting}
       onLongPress={selecting ? undefined : () => onSelect(row.id)}
       shifted={selecting} lead={<IconCircle checked={selected} />}
-      actions={[{ key: 'delete', label: 'Delete', confirmLabel: 'Confirm', danger: true, icon: <IconTrash />, onClick: () => onRemove(row.id) }]}>
+      actions={[
+        // 이 문장을 꼭 쓰는 롤플레이 상황을 프롬프트 화면에서 바로 만들게 한다 (사용자 요청 2026-11-20)
+        { key: 'roleplay', label: 'Role-Play Generate', icon: <IconPrompt />,
+          onClick: () => nav('/prompt', { state: { generateFrom: row.id } }) },
+        { key: 'delete', label: 'Delete', confirmLabel: 'Confirm', danger: true, icon: <IconTrash />, onClick: () => onRemove(row.id) }
+      ]}>
       <div className={`${styles.card} ${selected ? styles.selected : ''}`}>
         <button type="button" className={styles.main} onClick={tap} disabled={!ready && !selecting}
           aria-pressed={selecting ? selected : undefined}>

@@ -28,6 +28,8 @@
   cursor: pointer;
 }
 .action svg { width: 20px; height: 20px; }
+/* "Role-Play Generate"처럼 긴 이름은 좁은 칸에서 두 줄로 접히므로 가운데 맞춤 */
+.action span { text-align: center; line-height: 1.2; overflow-wrap: anywhere; }
 .action:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: -3px; }
 .danger { background: var(--danger-tint); color: var(--danger); }
 /* 한 번 누른 삭제 버튼: 꽉 채워 "한 번 더 누르면 지워짐"을 분명히 */
