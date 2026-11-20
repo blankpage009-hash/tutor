@@ -2,8 +2,10 @@
 
 실행: .venv\\Scripts\\python.exe scripts\\audio\\make_lesson_audio.py
 1. 검사(new curriculum/tools/check_lessons.py)를 먼저 돌려, 오류가 있으면 아무것도 만들지 않는다.
-2. new curriculum/lessons/**의 레슨마다 Piper 음성을 만든다
+2. new curriculum/lessons/**의 레슨마다 Google Chirp 3 HD(Sadachbia) 음성을 만든다
    → content/audio/lessons/<lessonId>/<이름>-<지문8자>.m4a (이미 있으면 건너뜀)
+   키는 C:\\Users\\<사용자>\\.tutor-keys\\google-tts.txt에서 읽는다 (저장소 밖).
+   새로 보낼 글자가 MAX_NEW_CHARS를 넘으면 만들기 전에 멈춘다 (그래도 만들려면 --allow-large).
 3. 앱용 복사본 content/lessons/<레벨코드>/<lessonId>.json을 쓴다 (audio 칸을 실제 경로로 바꿈).
 4. CSV로 목차 content/curriculum.json을 만든다 (레슨마다 ready 표시).
 5. 더 이상 안 쓰는 레슨 음성·복사본을 지운다 (content/audio/lessons/ 안만 — 기존 코스 음성은 건드리지 않음).
@@ -27,6 +29,11 @@ LESSONS_OUT = CONTENT / 'lessons'
 
 # new curriculum/CLAUDE.md 규칙. 나머지 레벨은 코드가 정해지면 여기에 추가한다
 LEVEL_CODES = {'중급 1': 'INT1', '중급 2': 'INT2'}
+
+# 사용자가 16개 목소리를 들어 보고 고름 (2026-11-20). 예전 목소리는 Piper 'en_US-ryan-high'
+VOICE = 'google:en-US-Chirp3-HD-Sadachbia'
+# Google 무료 범위는 한 달 100만 자. 한 번 실행으로 넘지 않게 여유를 두고 멈춘다
+MAX_NEW_CHARS = 200_000
 
 
 def run_checker():
@@ -60,7 +67,7 @@ def fill_audio(builder, lesson):
     # Windows는 대소문자를 무시하지만 GitHub Pages는 구분해서, 따로 만들면 아이폰에서만 깨질 수 있다
     # 지문도 읽을 글자로 만든다: 읽는 법이 바뀌면 파일 이름이 바뀌어 옛 음성을 다시 쓰지 않는다
     say = spoken(text)
-    rel = f'audio/lessons/{lid}/{name}-{fingerprint(say)}.m4a'
+    rel = f'audio/lessons/{lid}/{name}-{fingerprint(say, VOICE)}.m4a'
     builder.ensure(rel, say)
     return rel
 
@@ -152,11 +159,23 @@ def prune(used, written):
   return removed
 
 
+def check_budget(lessons):
+  # 실제로 보내기 전에 글자 수부터 센다. 지문을 바꾸는 실수 하나로 전체를 다시 만들면 무료 범위를 넘을 수 있다
+  counter = Builder(VOICE, plan_only=True)
+  for lesson in lessons:
+    fill_audio(counter, lesson)
+  if counter.chars > MAX_NEW_CHARS and '--allow-large' not in sys.argv:
+    raise SystemExit(f'새로 보낼 글자가 {counter.chars:,}자로 한도 {MAX_NEW_CHARS:,}자를 넘어 멈춥니다. '
+                     '정말 만들려면 --allow-large를 붙여 다시 실행하세요.')
+  print(f'새로 보낼 글자 {counter.chars:,}자 (한도 {MAX_NEW_CHARS:,}자)')
+
+
 def main():
   sys.stdout.reconfigure(encoding='utf-8')
   run_checker()
   lessons = load_lessons()
-  b = Builder()
+  check_budget(lessons)
+  b = Builder(VOICE)
   ready, declared, written = {}, {}, set()
   for lesson in lessons:
     print(f'레슨 {lesson["lessonId"]}')
@@ -167,7 +186,8 @@ def main():
   (CONTENT / 'curriculum.json').write_text(dump(curriculum) + '\n', encoding='utf-8')
   removed = prune(b.used, written)
   total = sum(f.stat().st_size for f in AUDIO_DIR.rglob('*.m4a'))
-  print(f'레슨 {len(lessons)}개 · 음성 새로 만듦 {b.made} · 지움 {removed} · 전체 {len(b.used)}개 · {total / 1e6:.2f}MB')
+  print(f'레슨 {len(lessons)}개 · 음성 새로 만듦 {b.made} · 지움 {removed} · 전체 {len(b.used)}개 · '
+        f'{total / 1e6:.2f}MB · Google에 보낸 글자 {b.chars:,}자')
 
 
 if __name__ == '__main__':

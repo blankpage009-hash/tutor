@@ -12,7 +12,7 @@
     "en": "This one's a lot cheaper.",
     "ko": "이게 훨씬 싸네요.",
     "stress": "THIS one's a LOT CHEAPer.",
-    "audio": { "normal": "audio/lessons/INT1-U01-L02/key-d0e53932.m4a", "slow": "audio/lessons/INT1-U01-L02/key-d0e53932.m4a" }
+    "audio": { "normal": "audio/lessons/INT1-U01-L02/key-5c612a40.m4a", "slow": "audio/lessons/INT1-U01-L02/key-5c612a40.m4a" }
   },
   "explanation": {
     "ko": [
@@ -40,19 +40,19 @@
     "situation": "샌프란시스코의 휴대폰 매장에서 직원에게 요금제 두 가지를 비교해 설명 듣습니다.",
     "partnerRole": "매장 직원",
     "lines": [
-      { "no": 1, "speaker": "partner", "en": "So these are our two most popular plans.", "ko": "이 두 가지가 저희 매장에서 제일 인기 있는 요금제예요.", "audio": "audio/lessons/INT1-U01-L02/dlg-01-d2acd59c.m4a" },
-      { "no": 2, "speaker": "me", "en": "Okay. What's the difference between them?", "ko": "네. 둘이 뭐가 달라요?", "audio": "audio/lessons/INT1-U01-L02/dlg-02-463d5fb0.m4a" },
-      { "no": 3, "speaker": "partner", "en": "The basic plan has less data, but it's twenty dollars less.", "ko": "기본 요금제는 데이터가 적은 대신 20달러 더 싸요.", "audio": "audio/lessons/INT1-U01-L02/dlg-03-63f051e5.m4a" },
+      { "no": 1, "speaker": "partner", "en": "So these are our two most popular plans.", "ko": "이 두 가지가 저희 매장에서 제일 인기 있는 요금제예요.", "audio": "audio/lessons/INT1-U01-L02/dlg-01-dfdcba0c.m4a" },
+      { "no": 2, "speaker": "me", "en": "Okay. What's the difference between them?", "ko": "네. 둘이 뭐가 달라요?", "audio": "audio/lessons/INT1-U01-L02/dlg-02-c41c3bc8.m4a" },
+      { "no": 3, "speaker": "partner", "en": "The basic plan has less data, but it's twenty dollars less.", "ko": "기본 요금제는 데이터가 적은 대신 20달러 더 싸요.", "audio": "audio/lessons/INT1-U01-L02/dlg-03-820bcb7f.m4a" },
       {
         "no": 4,
         "speaker": "me",
         "en": "Oh, so this one's a lot cheaper. I don't use much data anyway.",
         "ko": "아, 그럼 이게 훨씬 싸네요. 어차피 데이터는 많이 안 써요.",
-        "audio": "audio/lessons/INT1-U01-L02/dlg-04-7bbc4cb3.m4a",
+        "audio": "audio/lessons/INT1-U01-L02/dlg-04-939bca39.m4a",
         "hasKeySentence": true
       },
-      { "no": 5, "speaker": "partner", "en": "Then the basic plan might be the better deal for you.", "ko": "그럼 손님께는 기본 요금제가 더 이득일 수 있겠네요.", "audio": "audio/lessons/INT1-U01-L02/dlg-05-af5664d8.m4a" },
-      { "no": 6, "speaker": "me", "en": "Yeah, it sounds like a better fit for me.", "ko": "네, 저한테 더 잘 맞는 것 같아요.", "audio": "audio/lessons/INT1-U01-L02/dlg-06-bf96552f.m4a" }
+      { "no": 5, "speaker": "partner", "en": "Then the basic plan might be the better deal for you.", "ko": "그럼 손님께는 기본 요금제가 더 이득일 수 있겠네요.", "audio": "audio/lessons/INT1-U01-L02/dlg-05-e65e753f.m4a" },
+      { "no": 6, "speaker": "me", "en": "Yeah, it sounds like a better fit for me.", "ko": "네, 저한테 더 잘 맞는 것 같아요.", "audio": "audio/lessons/INT1-U01-L02/dlg-06-9fb86fed.m4a" }
     ],
     "expressionNotes": [
       { "en": "What's the difference between them?", "ko": "'둘이 뭐가 달라요?' 비슷해 보이는 두 가지를 비교해 달라고 할 때 가장 먼저 쓰는 질문입니다." },
@@ -65,32 +65,32 @@
       "en": "This one's a lot cheaper.",
       "ko": "이게 훨씬 싸네요.",
       "point": "핵심 문장",
-      "cue": { "lang": "en", "text": "How is this one different from that one?", "audio": "audio/lessons/INT1-U01-L02/cue-01-f7b98063.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L02/drill-01-d0e53932.m4a", "slow": "audio/lessons/INT1-U01-L02/drill-01-d0e53932.m4a" }
+      "cue": { "lang": "en", "text": "How is this one different from that one?", "audio": "audio/lessons/INT1-U01-L02/cue-01-e5f605da.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L02/drill-01-5c612a40.m4a", "slow": "audio/lessons/INT1-U01-L02/drill-01-5c612a40.m4a" }
     },
     {
       "id": 2,
       "en": "This one's a lot quieter.",
       "ko": "이게 훨씬 조용해요.",
       "point": "형용사 교체 (cheaper → quieter)",
-      "cue": { "lang": "en", "text": "Which fan should I get for my bedroom?", "audio": "audio/lessons/INT1-U01-L02/cue-02-481bce2b.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L02/drill-02-0626a6ca.m4a", "slow": "audio/lessons/INT1-U01-L02/drill-02-0626a6ca.m4a" }
+      "cue": { "lang": "en", "text": "Which fan should I get for my bedroom?", "audio": "audio/lessons/INT1-U01-L02/cue-02-34a9be45.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L02/drill-02-bc19c862.m4a", "slow": "audio/lessons/INT1-U01-L02/drill-02-bc19c862.m4a" }
     },
     {
       "id": 3,
       "en": "These shoes are a lot more comfortable.",
       "ko": "이 신발이 훨씬 편해요.",
       "point": "복수 주어 + more 비교급",
-      "cue": { "lang": "en", "text": "Why did you switch shoes?", "audio": "audio/lessons/INT1-U01-L02/cue-03-d28f03a4.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L02/drill-03-33373a01.m4a", "slow": "audio/lessons/INT1-U01-L02/drill-03-33373a01.m4a" }
+      "cue": { "lang": "en", "text": "Why did you switch shoes?", "audio": "audio/lessons/INT1-U01-L02/cue-03-9c37182a.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L02/drill-03-937f7649.m4a", "slow": "audio/lessons/INT1-U01-L02/drill-03-937f7649.m4a" }
     },
     {
       "id": 4,
       "en": "This one's the cheapest of the three.",
       "ko": "셋 중에 이게 제일 싸요.",
       "point": "최상급 (the -est)",
-      "cue": { "lang": "en", "text": "Which one costs the least?", "audio": "audio/lessons/INT1-U01-L02/cue-04-0cd23f43.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L02/drill-04-0872382d.m4a", "slow": "audio/lessons/INT1-U01-L02/drill-04-0872382d.m4a" }
+      "cue": { "lang": "en", "text": "Which one costs the least?", "audio": "audio/lessons/INT1-U01-L02/cue-04-5871d401.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L02/drill-04-dd276092.m4a", "slow": "audio/lessons/INT1-U01-L02/drill-04-dd276092.m4a" }
     },
     {
       "id": 5,
@@ -98,15 +98,15 @@
       "ko": "이게 좀 더 싼가요?",
       "point": "질문형 (any + 비교급)",
       "cue": { "lang": "ko", "text": "점원에게 이 물건이 다른 것보다 조금이라도 더 싼지 물어보세요." },
-      "audio": { "normal": "audio/lessons/INT1-U01-L02/drill-05-3bd293c4.m4a", "slow": "audio/lessons/INT1-U01-L02/drill-05-3bd293c4.m4a" }
+      "audio": { "normal": "audio/lessons/INT1-U01-L02/drill-05-5cfad3e0.m4a", "slow": "audio/lessons/INT1-U01-L02/drill-05-5cfad3e0.m4a" }
     },
     {
       "id": 6,
       "en": "This one isn't much cheaper.",
       "ko": "이게 그렇게 많이 싸진 않아요.",
       "point": "부정형 (not much + 비교급)",
-      "cue": { "lang": "en", "text": "Should I get this one to save money?", "audio": "audio/lessons/INT1-U01-L02/cue-06-f4b86c85.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L02/drill-06-b6c5b9e3.m4a", "slow": "audio/lessons/INT1-U01-L02/drill-06-b6c5b9e3.m4a" }
+      "cue": { "lang": "en", "text": "Should I get this one to save money?", "audio": "audio/lessons/INT1-U01-L02/cue-06-aa69e547.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L02/drill-06-57186473.m4a", "slow": "audio/lessons/INT1-U01-L02/drill-06-57186473.m4a" }
     }
   ],
   "drillStages": [
@@ -144,7 +144,7 @@
     "situation": "가구점에서 소파 두 개에 앉아 본 뒤 직원이 말을 겁니다. 대본 없이 내 말로 대답합니다.",
     "partnerRole": "가구점 직원",
     "lines": [
-      { "no": 1, "speaker": "partner", "en": "Have you had a chance to try both sofas?", "ko": "소파 두 개 다 앉아 보셨어요?", "audio": "audio/lessons/INT1-U01-L02/rp-01-22b0d80c.m4a" },
+      { "no": 1, "speaker": "partner", "en": "Have you had a chance to try both sofas?", "ko": "소파 두 개 다 앉아 보셨어요?", "audio": "audio/lessons/INT1-U01-L02/rp-01-de1110bd.m4a" },
       {
         "no": 2,
         "speaker": "me",
@@ -153,7 +153,7 @@
         "exampleKo": "네. 그런데 이게 훨씬 푹신하네요.",
         "requiredKeywords": ["this one", "a lot"]
       },
-      { "no": 3, "speaker": "partner", "en": "It is. It's also a little more expensive.", "ko": "맞아요. 대신 조금 더 비싸요.", "audio": "audio/lessons/INT1-U01-L02/rp-03-edadd557.m4a" },
+      { "no": 3, "speaker": "partner", "en": "It is. It's also a little more expensive.", "ko": "맞아요. 대신 조금 더 비싸요.", "audio": "audio/lessons/INT1-U01-L02/rp-03-0aa9b033.m4a" },
       {
         "no": 4,
         "speaker": "me",

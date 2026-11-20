@@ -10,17 +10,25 @@ import json
 import re
 import sys
 
-from tts_common import ROOT, TMP_DIR, encode_m4a, find_ffmpeg, load_voice, synth_wav
+from tts_common import (ROOT, TMP_DIR, encode_m4a, find_ffmpeg, google_synth_wav, load_google_key,
+                        load_voice, synth_wav)
 
 CONTENT = ROOT / 'content'
 VOICE = 'en_US-ryan-high'
+# 'google:<목소리 이름>'이면 Google Cloud TTS로, 아니면 Piper 모델 이름으로 본다
+GOOGLE_PREFIX = 'google:'
 # 1.0이 기본 속도. 앱에서 재생 속도로 느리게 들려주므로 원본은 자연스러운 속도로 둔다
 LENGTH_SCALE = 1.0
+# Google 음성을 맞출 소리 크기. 옛 Piper 레슨 음성 평균(-14.5 LUFS, 2026-11-19 측정)에 맞춰
+# 화면·문장마다 소리 크기가 달라지지 않게 한다. Piper는 원래 고르게 나와서 손대지 않는다
+GOOGLE_TARGET_LUFS = -14.5
 
 
-def fingerprint(text):
+def fingerprint(text, voice=VOICE):
   # 음성 설정까지 지문에 넣어, 목소리나 속도를 바꾸면 모든 파일이 새로 만들어지게 한다
-  raw = f'{VOICE}|{LENGTH_SCALE}|{text}'.encode('utf-8')
+  # Google만 음량 목표도 넣는다 (Piper 지문은 예전 그대로여야 옛 파일을 다시 만들지 않는다)
+  loud = f'|{GOOGLE_TARGET_LUFS}' if voice.startswith(GOOGLE_PREFIX) else ''
+  raw = f'{voice}|{LENGTH_SCALE}{loud}|{text}'.encode('utf-8')
   return hashlib.sha1(raw).hexdigest()[:8]
 
 
@@ -71,23 +79,40 @@ def dump(value, indent=0):
 
 
 class Builder:
-  def __init__(self):
+  def __init__(self, voice_name=VOICE, plan_only=False):
+    # plan_only: 파일은 만들지 않고, 새로 만들 글자 수(chars)만 센다 (Google 무료 범위 확인용)
+    self.voice_name = voice_name
+    self.plan_only = plan_only
     self.voice = None
+    self.google_key = None
     self.ffmpeg = find_ffmpeg()
     self.made = 0
+    self.chars = 0
     self.used = set()
+
+  def _synth(self, text, wav):
+    if self.voice_name.startswith(GOOGLE_PREFIX):
+      if self.google_key is None:
+        self.google_key = load_google_key()
+      google_synth_wav(self.google_key, self.voice_name[len(GOOGLE_PREFIX):], text, wav)
+      return
+    if self.voice is None:
+      # 모델 로드는 몇 초 걸리므로, 새로 만들 파일이 있을 때만 한 번 불러온다
+      self.voice = load_voice(self.voice_name)
+    synth_wav(self.voice, text, wav, LENGTH_SCALE)
 
   def ensure(self, rel_path, text):
     self.used.add(rel_path)
     out = CONTENT / rel_path
     if out.exists():
       return
-    if self.voice is None:
-      # 모델 로드는 몇 초 걸리므로, 새로 만들 파일이 있을 때만 한 번 불러온다
-      self.voice = load_voice(VOICE)
+    self.chars += len(text)
+    if self.plan_only:
+      return
     wav = TMP_DIR / 'build.wav'
-    synth_wav(self.voice, text, wav, LENGTH_SCALE)
-    encode_m4a(self.ffmpeg, wav, out)
+    self._synth(text, wav)
+    target = GOOGLE_TARGET_LUFS if self.voice_name.startswith(GOOGLE_PREFIX) else None
+    encode_m4a(self.ffmpeg, wav, out, target)
     self.made += 1
     if self.made % 50 == 0:
       print(f'  ...{self.made}개 만듦')
