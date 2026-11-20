@@ -33,6 +33,8 @@ export type Turn = {
 const PASS_PAUSE_MS = 800;
 // 키워드가 안 맞은 채 말이 끊기면 이만큼 더 기다린다 — 생각하며 쉬어도 끊기지 않게 (사용자 결정 2026-11-18)
 const THINK_PAUSE_MS = 2500;
+// 키워드가 다 나와도 문장을 끝까지 말하게, 말이 이만큼 멈춰야 통과로 끝낸다 (사용자 요청 2026-11-20)
+const DONE_PAUSE_MS = 1500;
 
 type Ctx = {
   model: Model; slot: MicSlot; log: (m: string) => void; stopped: () => boolean;
@@ -78,7 +80,7 @@ async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   c.setTurn((t) => ({ ...t, live: judgeKeywords(keys, []) }));
   const l = listenVosk({
     model: c.model, mic, sentenceEn: line.exampleEn, secondOpinion: false, afterFinalMs: THINK_PAUSE_MS,
-    isComplete: () => false,
+    afterPassMs: DONE_PAUSE_MS, isComplete: () => false,
     isPass: (alts) => judgeKeywords(keys, alts).pass,
     onInterim: (alts) => c.setTurn((t) => ({ ...t, live: judgeKeywords(keys, alts) })),
     onDebug: c.log

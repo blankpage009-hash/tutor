@@ -102,6 +102,21 @@ describe('앱 인식: 언제 끝내나', () => {
     expect(r.alternatives).toEqual(['good to']);
   });
 
+  it('afterPassMs를 주면 통과한 확정 결과 뒤에도 조용해질 때까지 듣는다 (롤플레이: 문장 끝까지)', async () => {
+    const t = setup({ secondOpinion: false, isComplete: () => false, afterPassMs: 1500 });
+    t.h().onFinal?.('good to see you');
+    vi.advanceTimersByTime(1000);
+    t.h().onPartial?.('again');
+    vi.advanceTimersByTime(3000);
+    expect(t.session.close).not.toHaveBeenCalled();
+    t.h().onFinal?.('again');
+    vi.advanceTimersByTime(1499);
+    expect(t.session.close).not.toHaveBeenCalled();
+    vi.advanceTimersByTime(1);
+    const r = await t.l.result;
+    expect(r.alternatives).toEqual(['good to see you again']);
+  });
+
   it('두 번째 의견을 끄면 묻지 않는다', async () => {
     const t = setup({ secondOpinion: false });
     t.sound();

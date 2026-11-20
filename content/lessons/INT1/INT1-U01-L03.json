@@ -141,28 +141,70 @@
   ],
   "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
   "rolePlay": {
-    "situation": "영어 스터디 모임 멤버가 다음 모임 장소를 같이 정하자고 합니다. 대본 없이 내 말로 대답합니다.",
-    "partnerRole": "스터디 모임 멤버",
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
     "lines": [
-      { "no": 1, "speaker": "partner", "en": "We need a new café for our study group. Any ideas?", "ko": "스터디 모임 할 카페를 새로 찾아야 해요. 좋은 데 있어요?", "audio": "audio/lessons/INT1-U01-L03/rp-01-fc99b057.m4a" },
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "The small meeting room is free, but there are eight of us. What do you think?",
+        "ko": "작은 회의실이 비어 있는데, 우리가 여덟 명이에요. 어떻게 생각해요?",
+        "audio": "audio/lessons/INT1-U01-L03/rp-01-0a7aa913.m4a"
+      },
       {
         "no": 2,
         "speaker": "me",
         "freeResponse": true,
-        "exampleEn": "Maybe we should try the one near the library.",
-        "exampleKo": "도서관 근처에 있는 곳에 가 보는 게 좋겠어요.",
-        "requiredKeywords": ["maybe", "should"]
+        "exampleEn": "Maybe we should go with the bigger one.",
+        "exampleKo": "큰 쪽으로 하는 게 좋겠어요.",
+        "requiredKeywords": ["maybe we should", "bigger"]
       },
-      { "no": 3, "speaker": "partner", "en": "Sure. Is it quiet enough there?", "ko": "좋아요. 거기 충분히 조용해요?", "audio": "audio/lessons/INT1-U01-L03/rp-03-1cb849a4.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Our flight to LA just got canceled. What do we do now?", "ko": "LA 가는 비행기가 방금 취소됐대. 이제 어떡하지?", "audio": "audio/lessons/INT1-U01-L03/rp-03-8f0813de.m4a" },
       {
         "no": 4,
         "speaker": "me",
         "freeResponse": true,
-        "exampleEn": "Yeah, it's usually pretty quiet in the morning.",
-        "exampleKo": "네, 아침에는 보통 꽤 조용해요.",
-        "requiredKeywords": []
+        "exampleEn": "Maybe we should take the train instead.",
+        "exampleKo": "대신 기차를 타는 게 좋겠어요.",
+        "requiredKeywords": ["maybe we should", "train", "instead"]
+      },
+      { "no": 5, "speaker": "partner", "en": "These jeans keep falling down. I don't get it.", "ko": "이 청바지가 자꾸 흘러내려요. 왜 이러지?", "audio": "audio/lessons/INT1-U01-L03/rp-05-40a094a3.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Maybe you should try the smaller size.",
+        "exampleKo": "작은 사이즈를 입어 보시는 게 좋겠어요.",
+        "requiredKeywords": ["maybe you should", "smaller size"]
+      },
+      { "no": 7, "speaker": "partner", "en": "It's so stuffy in here, and it's beautiful out.", "ko": "안은 너무 답답한데, 밖은 날씨가 정말 좋네.", "audio": "audio/lessons/INT1-U01-L03/rp-07-bed3f366.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Maybe we could ask for a table outside.",
+        "exampleKo": "바깥 자리로 달라고 해 보면 어떨까요.",
+        "requiredKeywords": ["maybe we could", "outside"]
+      },
+      { "no": 9, "speaker": "partner", "en": "Both hotels look fine. One's just eighty dollars more a night.", "ko": "호텔 두 곳 다 괜찮아 보여. 한 곳이 하룻밤에 80달러 더 비쌀 뿐이야.", "audio": "audio/lessons/INT1-U01-L03/rp-09-bba95e9e.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Should we go with the cheaper one?",
+        "exampleKo": "싼 걸로 할까요?",
+        "requiredKeywords": ["should we", "cheaper one"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Look at this TV! It's huge, but it's three thousand dollars.", "ko": "이 TV 좀 봐! 엄청 큰데, 3천 달러야.", "audio": "audio/lessons/INT1-U01-L03/rp-11-1a2fc5aa.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Maybe we shouldn't get the expensive one.",
+        "exampleKo": "비싼 건 안 사는 게 좋겠어요.",
+        "requiredKeywords": ["maybe we shouldn't", "expensive"]
       }
     ],
-    "passRule": "requiredKeywords가 있는 줄은 답변에 키워드가 모두 들어가면 통과. 키워드가 없는 줄은 말하기만 하면 통과."
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
   }
 }

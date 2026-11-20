@@ -17,6 +17,9 @@ export type VoskListenOptions = {
   noSpeechMs?: number; // 이만큼 말이 없으면 끝낸다 (기본 12초, 이어 말하기는 8초 — 사용자 결정)
   // 확정 결과가 통과 못 했을 때 더 들어 볼 시간 (기본 AFTER_FINAL_MS). 롤플레이 자유 답변은 생각하며 쉬어서 길게
   afterFinalMs?: number;
+  // 확정 결과가 통과해도 바로 끝내지 않고 이만큼 조용해야 끝낸다. 그 사이 말이 이어지면 계속 듣는다.
+  // 롤플레이는 키워드만 보므로, 문장 앞부분에서 키워드가 나오자마자 끝나 버리지 않게 (사용자 요청 2026-11-20)
+  afterPassMs?: number;
   onInterim?: (alts: string[]) => void;
   onDebug?: (msg: string) => void;
   // 시험에서 가짜 엔진으로 바꿔 끼우기 위한 자리
@@ -75,9 +78,12 @@ function onFinal(s: State, t: string): void {
   s.debug(`확정 "${t}"`);
   s.lastHeard = joinHeard(s.segments);
   s.o.onInterim?.([s.lastHeard]);
-  if (s.stopping || s.o.isPass(candidatesOf(s.segments, s.lastPartial))) return s.end('확정 결과');
-  s.debug('통과 못 해 조금 더 듣기');
-  s.afterFinal = setTimeout(() => s.end('확정 뒤 조용함'), s.o.afterFinalMs ?? AFTER_FINAL_MS);
+  if (s.stopping) return s.end('확정 결과');
+  const pass = s.o.isPass(candidatesOf(s.segments, s.lastPartial));
+  if (pass && s.o.afterPassMs === undefined) return s.end('확정 결과');
+  s.debug(pass ? '통과했지만 말이 끝날 때까지 기다리기' : '통과 못 해 조금 더 듣기');
+  const wait = pass ? s.o.afterPassMs : s.o.afterFinalMs;
+  s.afterFinal = setTimeout(() => s.end('확정 뒤 조용함'), wait ?? AFTER_FINAL_MS);
 }
 
 // 두 번째 의견에 다시 넣을 소리를 모은다. 너무 길어지면 더 모으지 않는다

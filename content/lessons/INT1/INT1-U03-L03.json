@@ -141,34 +141,70 @@
   ],
   "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
   "rolePlay": {
-    "situation": "약국에서 처방약이 준비됐다고 전화가 왔습니다. 대본 없이 내 말로 대답합니다.",
-    "partnerRole": "약사",
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
     "lines": [
-      {
-        "no": 1,
-        "speaker": "partner",
-        "en": "Hi, this is Maple Pharmacy. Your prescription is ready. When would you like to pick it up?",
-        "ko": "안녕하세요, 메이플 약국입니다. 처방약이 준비됐어요. 언제 찾으러 오시겠어요?",
-        "audio": "audio/lessons/INT1-U03-L03/rp-01-6c86fcd7.m4a"
-      },
+      { "no": 1, "speaker": "partner", "en": "It's time to book your next cleaning. When's a good time for you?", "ko": "다음 스케일링을 예약할 때가 됐어요. 언제가 좋으세요?", "audio": "audio/lessons/INT1-U03-L03/rp-01-df1bb782.m4a" },
       {
         "no": 2,
         "speaker": "me",
         "freeResponse": true,
-        "exampleEn": "Afternoons work best for me. Can I come by after 3?",
-        "exampleKo": "저는 오후가 제일 좋아요. 3시 넘어서 가도 될까요?",
-        "requiredKeywords": ["work", "for me"]
+        "exampleEn": "Mornings work best for me.",
+        "exampleKo": "저는 오전이 제일 좋아요.",
+        "requiredKeywords": ["mornings", "work best"]
       },
-      { "no": 3, "speaker": "partner", "en": "Sure, we're open until 7.", "ko": "그럼요, 7시까지 열어요.", "audio": "audio/lessons/INT1-U03-L03/rp-03-47d88373.m4a" },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "We have morning and afternoon openings for your haircut. Which is easier for you?",
+        "ko": "커트 예약은 오전·오후 다 있어요. 어느 쪽이 더 편하세요?",
+        "audio": "audio/lessons/INT1-U03-L03/rp-03-b15e49a8.m4a"
+      },
       {
         "no": 4,
         "speaker": "me",
         "freeResponse": true,
-        "exampleEn": "Great. I'll be there around 4.",
-        "exampleKo": "좋아요. 4시쯤 갈게요.",
-        "requiredKeywords": []
+        "exampleEn": "Afternoons work better for me.",
+        "exampleKo": "저는 오후가 더 좋아요.",
+        "requiredKeywords": ["afternoons", "work better"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Let's set up a weekly team call. What day is good for you?", "ko": "매주 팀 통화를 잡읍시다. 무슨 요일이 좋아요?", "audio": "audio/lessons/INT1-U03-L03/rp-05-4ca539b5.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Tuesday works best for me.",
+        "exampleKo": "저는 화요일이 제일 좋아요.",
+        "requiredKeywords": ["tuesday", "works best"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Our technician can stop by any time today. When will you be home?", "ko": "기사님이 오늘 아무 때나 들를 수 있어요. 언제 집에 계세요?", "audio": "audio/lessons/INT1-U03-L03/rp-07-9f84e672.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Anytime after 3 works for me.",
+        "exampleKo": "3시 이후면 언제든 괜찮아요.",
+        "requiredKeywords": ["anytime after", "works"]
+      },
+      { "no": 9, "speaker": "partner", "en": "The doctor has an opening tomorrow at 8 a.m. Would that be okay?", "ko": "내일 오전 8시에 진료 자리가 있어요. 괜찮으세요?", "audio": "audio/lessons/INT1-U03-L03/rp-09-2a7bd62e.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Early next week would work better for me.",
+        "exampleKo": "다음 주 초가 더 좋을 것 같아요.",
+        "requiredKeywords": ["next week", "work better"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Let's meet this week to go over the plan. I'm pretty flexible.", "ko": "이번 주에 만나서 계획을 같이 봐요. 저는 시간이 꽤 자유로워요.", "audio": "audio/lessons/INT1-U03-L03/rp-11-3a549bfa.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Does Friday morning work for you?",
+        "exampleKo": "금요일 오전 괜찮으세요?",
+        "requiredKeywords": ["friday morning", "work for you"]
       }
     ],
-    "passRule": "requiredKeywords가 있는 줄은 답변에 키워드가 모두 들어가면 통과. 키워드가 없는 줄은 말하기만 하면 통과."
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
   }
 }

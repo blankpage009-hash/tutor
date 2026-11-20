@@ -134,8 +134,8 @@ def check_counts(rep, lesson, sample):
         rep.error(f'드릴: 6개여야 함 (지금 {len(lesson.get("drills") or [])}개)')
     rp = (lesson.get('rolePlay') or {}).get('lines') or []
     order = [l.get('speaker') for l in rp]
-    if order != ['partner', 'me', 'partner', 'me']:
-        rep.error(f'롤플레이: partner→me→partner→me 4줄이어야 함 (지금 {order})')
+    if order != ['partner', 'me'] * 6:
+        rep.error(f'롤플레이: partner→me 6세트(12줄)여야 함 (지금 {len(order)}줄)')
     if lesson.get('drillStages') != sample['drillStages']:
         rep.error('drillStages가 샘플과 다름')
     if lesson.get('retryRule') != sample['retryRule']:
@@ -188,8 +188,16 @@ def check_rules(rep, lesson):
     for l in me_rp:
         if l.get('freeResponse') is not True:
             rep.error(f'롤플레이 {l.get("no")}번: me 줄은 freeResponse: true')
-    if me_rp and not me_rp[0].get('requiredKeywords'):
-        rep.error('롤플레이 첫 me 줄에 requiredKeywords가 비어 있음')
+    # 롤플레이 n번째 대답 = 드릴 n번 문장 (2026-11-20 사용자 결정)
+    for l, d in zip(me_rp, drills):
+        if norm(l.get('exampleEn', '')) != norm(d.get('en', '')):
+            rep.error(f'롤플레이 {l.get("no")}번: 대답이 드릴 {d.get("id")}번 문장과 다름')
+        if not l.get('requiredKeywords'):
+            rep.error(f'롤플레이 {l.get("no")}번: requiredKeywords가 비어 있음')
+    cues = {norm((d.get('cue') or {}).get('text', '')) for d in drills}
+    for l in rp:
+        if l.get('speaker') == 'partner' and norm(l.get('en', '')) in cues:
+            rep.warn(f'롤플레이 {l.get("no")}번: 드릴 cue와 같은 질문')
     for l in me_rp:
         ex = norm(l.get('exampleEn', ''))
         for kw in l.get('requiredKeywords') or []:

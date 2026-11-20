@@ -121,14 +121,64 @@
   "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
 
   "rolePlay": {
-    "situation": "가구점에서 소파 두 개에 앉아 본 뒤 직원이 말을 겁니다. 대본 없이 내 말로 대답합니다.",
-    "partnerRole": "가구점 직원",
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
     "lines": [
-      { "no": 1, "speaker": "partner", "en": "Have you had a chance to try both sofas?", "ko": "소파 두 개 다 앉아 보셨어요?", "audio": "int1-u01-l02_rp_01.mp3" },
-      { "no": 2, "speaker": "me", "freeResponse": true, "exampleEn": "Yes. This one's a lot softer, though.", "exampleKo": "네. 그런데 이게 훨씬 푹신하네요.", "requiredKeywords": ["this one", "a lot"] },
-      { "no": 3, "speaker": "partner", "en": "It is. It's also a little more expensive.", "ko": "맞아요. 대신 조금 더 비싸요.", "audio": "int1-u01-l02_rp_03.mp3" },
-      { "no": 4, "speaker": "me", "freeResponse": true, "exampleEn": "That's okay. I think it's worth it.", "exampleKo": "괜찮아요. 그만한 가치가 있는 것 같아요.", "requiredKeywords": [] }
+      { "no": 1, "speaker": "partner", "en": "These two speakers look the same to me. Why do you want that one?", "ko": "내 눈엔 스피커 두 개가 똑같아 보이는데. 왜 그걸로 하려고?" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "This one's a lot cheaper.",
+        "exampleKo": "이게 훨씬 싸네요.",
+        "requiredKeywords": ["a lot", "cheaper"]
+      },
+      { "no": 3, "speaker": "partner", "en": "I've turned on both fans. Can you hear the difference?", "ko": "선풍기 두 대를 다 켜 봤어요. 소리 차이가 느껴지세요?" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "This one's a lot quieter.",
+        "exampleKo": "이게 훨씬 조용해요.",
+        "requiredKeywords": ["a lot", "quieter"]
+      },
+      { "no": 5, "speaker": "partner", "en": "You're not limping today. Did your feet stop hurting?", "ko": "오늘은 안 절뚝거리네. 발 이제 안 아파?" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "These shoes are a lot more comfortable.",
+        "exampleKo": "이 신발이 훨씬 편해요.",
+        "requiredKeywords": ["shoes", "more comfortable"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Okay, there are three toasters here. Which one fits our budget?", "ko": "토스터가 세 개 있네. 우리 예산에 맞는 건 뭐야?" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "This one's the cheapest of the three.",
+        "exampleKo": "셋 중에 이게 제일 싸요.",
+        "requiredKeywords": ["cheapest", "three"]
+      },
+      { "no": 9, "speaker": "partner", "en": "This blender is the newest model. The one next to it is last year's.", "ko": "이 블렌더가 최신 모델이고요, 옆에 있는 건 작년 모델이에요." },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Is this one any cheaper?",
+        "exampleKo": "이게 좀 더 싼가요?",
+        "requiredKeywords": ["is this", "any cheaper"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Oh, that one's on sale! Shouldn't you grab it instead?", "ko": "어, 그거 세일한다! 그걸로 사야 하는 거 아냐?" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "This one isn't much cheaper.",
+        "exampleKo": "이게 그렇게 많이 싸진 않아요.",
+        "requiredKeywords": ["isn't", "much cheaper"]
+      }
     ],
-    "passRule": "requiredKeywords가 있는 줄은 답변에 키워드가 모두 들어가면 통과. 키워드가 없는 줄은 말하기만 하면 통과."
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
   }
 }

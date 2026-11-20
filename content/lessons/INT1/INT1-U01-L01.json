@@ -141,28 +141,64 @@
   ],
   "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
   "rolePlay": {
-    "situation": "회사 휴게실에서 동료가 이사 갈 집을 정했는지 묻습니다. 대본 없이 내 말로 대답합니다.",
-    "partnerRole": "직장 동료",
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
     "lines": [
-      { "no": 1, "speaker": "partner", "en": "So, did you finally pick an apartment?", "ko": "그래서, 아파트는 드디어 정하셨어요?", "audio": "audio/lessons/INT1-U01-L01/rp-01-52f4b9e9.m4a" },
+      { "no": 1, "speaker": "partner", "en": "You've been holding those two jackets for ten minutes. Which one is it?", "ko": "그 재킷 두 개를 10분째 들고 있네. 뭘로 할 거야?", "audio": "audio/lessons/INT1-U01-L01/rp-01-5d90517d.m4a" },
       {
         "no": 2,
         "speaker": "me",
         "freeResponse": true,
-        "exampleEn": "Not yet. I'm torn between a place downtown and one near the beach.",
-        "exampleKo": "아직이요. 시내에 있는 집이랑 바닷가 근처 집 중에 고민 중이에요.",
-        "requiredKeywords": ["torn", "between"]
+        "exampleEn": "I'm torn between these two.",
+        "exampleKo": "이 두 개 중에 고민돼요.",
+        "requiredKeywords": ["torn", "two"]
       },
-      { "no": 3, "speaker": "partner", "en": "Those both sound great. What's the hard part?", "ko": "둘 다 좋은데요. 뭐가 제일 고민이에요?", "audio": "audio/lessons/INT1-U01-L01/rp-03-4eda0c39.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Have you had a chance to look at the menu? Anything catch your eye?", "ko": "메뉴 좀 보셨어요? 눈에 띄는 거 있으세요?", "audio": "audio/lessons/INT1-U01-L01/rp-03-e87624d0.m4a" },
       {
         "no": 4,
         "speaker": "me",
         "freeResponse": true,
-        "exampleEn": "The downtown one is closer to work, but it's smaller.",
-        "exampleKo": "시내 집이 회사랑 더 가까운데, 좀 작아요.",
-        "requiredKeywords": []
+        "exampleEn": "I'm torn between the pasta and the burger.",
+        "exampleKo": "파스타랑 버거 중에 고민돼요.",
+        "requiredKeywords": ["torn", "pasta", "burger"]
+      },
+      { "no": 5, "speaker": "partner", "en": "So, after all the tours, did you two pick a place?", "ko": "그래서, 집을 다 둘러보시고 두 분이 한 곳으로 정하셨어요?", "audio": "audio/lessons/INT1-U01-L01/rp-05-5d7c8a6d.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We're torn between two apartments.",
+        "exampleKo": "저희는 아파트 두 곳을 두고 고민 중이에요.",
+        "requiredKeywords": ["we're", "torn", "apartments"]
+      },
+      { "no": 7, "speaker": "partner", "en": "I heard you almost went to a different company. What happened?", "ko": "다른 회사로 갈 뻔했다면서요. 어떻게 된 거예요?", "audio": "audio/lessons/INT1-U01-L01/rp-07-0f1a6bb7.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I was torn between two job offers.",
+        "exampleKo": "일자리 제안 두 개를 두고 고민했었어요.",
+        "requiredKeywords": ["was", "torn", "offers"]
+      },
+      { "no": 9, "speaker": "partner", "en": "Ugh, I keep picking up this mug, then that one. I love them both.", "ko": "아, 이 머그컵 들었다 저거 들었다 하네. 둘 다 너무 좋아.", "audio": "audio/lessons/INT1-U01-L01/rp-09-a74b1e0f.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are you torn between these two?",
+        "exampleKo": "이 두 개 중에 고민 중이세요?",
+        "requiredKeywords": ["are you", "torn"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Take your time. Do you need a few more minutes?", "ko": "천천히 보세요. 시간 좀 더 드릴까요?", "audio": "audio/lessons/INT1-U01-L01/rp-11-02f87a2a.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm not torn anymore. I'll take this one.",
+        "exampleKo": "이제 고민 안 해요. 이걸로 할게요.",
+        "requiredKeywords": ["not", "anymore", "take"]
       }
     ],
-    "passRule": "requiredKeywords가 있는 줄은 답변에 키워드가 모두 들어가면 통과. 키워드가 없는 줄은 말하기만 하면 통과."
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
   }
 }

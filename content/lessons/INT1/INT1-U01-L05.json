@@ -141,34 +141,88 @@
   ],
   "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
   "rolePlay": {
-    "situation": "동네 파머스 마켓에서 이웃이 파티에 가져갈 파이를 못 고르고 있습니다. 대본 없이 내 말로 대답합니다.",
-    "partnerRole": "이웃",
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
     "lines": [
-      {
-        "no": 1,
-        "speaker": "partner",
-        "en": "I can't pick between these two pies for the party. What do you think?",
-        "ko": "파티에 가져갈 파이를 이 두 개 중에 못 고르겠어요. 어떻게 생각하세요?",
-        "audio": "audio/lessons/INT1-U01-L05/rp-01-f7b27d4e.m4a"
-      },
+      { "no": 1, "speaker": "partner", "en": "This phone has a better camera, but that one has a longer battery life.", "ko": "이 폰은 카메라가 더 좋고, 저 폰은 배터리가 더 오래 가요.", "audio": "audio/lessons/INT1-U01-L05/rp-01-e0d0b513.m4a" },
       {
         "no": 2,
         "speaker": "me",
         "freeResponse": true,
-        "exampleEn": "If I were you, I'd get the apple pie. Everyone loves it.",
-        "exampleKo": "저라면 사과 파이로 할 것 같아요. 다들 좋아하잖아요.",
-        "requiredKeywords": ["if I were you"]
+        "exampleEn": "If I were you, I'd get this one.",
+        "exampleKo": "저라면 이걸로 할 것 같아요.",
+        "requiredKeywords": ["if I were you", "this one"]
       },
-      { "no": 3, "speaker": "partner", "en": "Good call. Should I get one or two?", "ko": "좋은 생각이에요. 하나 살까요, 두 개 살까요?", "audio": "audio/lessons/INT1-U01-L05/rp-03-f1a76af1.m4a" },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "There are two flights, one at 6 a.m. and one at 9 p.m. The late one lands after midnight.",
+        "ko": "비행기가 두 편 있어요. 오전 6시랑 밤 9시요. 늦은 건 자정 넘어서 도착해요.",
+        "audio": "audio/lessons/INT1-U01-L05/rp-03-8dcc7f7e.m4a"
+      },
       {
         "no": 4,
         "speaker": "me",
         "freeResponse": true,
-        "exampleEn": "I'd get two, just in case.",
-        "exampleKo": "혹시 모르니까 저라면 두 개 살 것 같아요.",
-        "requiredKeywords": []
+        "exampleEn": "If I were you, I'd take the earlier flight.",
+        "exampleKo": "저라면 더 이른 비행기를 탈 것 같아요.",
+        "requiredKeywords": ["if I were you", "earlier flight"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "The landlord wants a two-year contract, and the rent goes up every six months.",
+        "ko": "집주인이 2년 계약을 원하는데, 월세가 6개월마다 올라요.",
+        "audio": "audio/lessons/INT1-U01-L05/rp-05-cb61e97c.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If I were you, I wouldn't sign that lease.",
+        "exampleKo": "저라면 그 임대 계약은 안 할 것 같아요.",
+        "requiredKeywords": ["wouldn't", "sign", "lease"]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "My daughter got a job offer in New York, but she's scared to move so far.",
+        "ko": "딸이 뉴욕에서 일자리 제안을 받았는데, 그렇게 멀리 이사 가는 걸 무서워해요.",
+        "audio": "audio/lessons/INT1-U01-L05/rp-07-a839c347.m4a"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If I were her, I'd take the job.",
+        "exampleKo": "제가 그분이라면 그 일을 맡을 것 같아요.",
+        "requiredKeywords": ["if I were her", "take the job"]
+      },
+      { "no": 9, "speaker": "partner", "en": "So you're thinking about quitting your job? That's a big decision.", "ko": "회사를 그만둘까 생각 중이라고요? 큰 결정이네요.", "audio": "audio/lessons/INT1-U01-L05/rp-09-b42d4cf7.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What would you do if you were me?",
+        "exampleKo": "제 입장이라면 어떻게 하시겠어요?",
+        "requiredKeywords": ["what would you do", "were me"]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "These two blenders are almost the same, but this one is fifty dollars more.",
+        "ko": "이 블렌더 두 개는 거의 똑같은데, 이게 50달러 더 비싸요.",
+        "audio": "audio/lessons/INT1-U01-L05/rp-11-01d530a6.m4a"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If I were you, I'd get the cheaper one.",
+        "exampleKo": "저라면 더 싼 걸로 할 것 같아요.",
+        "requiredKeywords": ["if I were you", "cheaper one"]
       }
     ],
-    "passRule": "requiredKeywords가 있는 줄은 답변에 키워드가 모두 들어가면 통과. 키워드가 없는 줄은 말하기만 하면 통과."
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
   }
 }

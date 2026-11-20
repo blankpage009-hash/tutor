@@ -121,14 +121,64 @@
   "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
 
   "rolePlay": {
-    "situation": "회사에서 동료와 함께 다른 동료의 생일 케이크를 고릅니다. 대본 없이 내 말로 대답합니다.",
-    "partnerRole": "직장 동료",
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
     "lines": [
-      { "no": 1, "speaker": "partner", "en": "We're getting a cake for Jen's birthday. Chocolate or strawberry?", "ko": "젠 생일 케이크를 사려고 해요. 초콜릿이 좋을까요, 딸기가 좋을까요?", "audio": "int1-u01-l04_rp_01.mp3" },
-      { "no": 2, "speaker": "me", "freeResponse": true, "exampleEn": "I'm not sure. Which one do you think she'd like better?", "exampleKo": "잘 모르겠어요. 젠이 어느 쪽을 더 좋아할 것 같아요?", "requiredKeywords": ["which", "better"] },
-      { "no": 3, "speaker": "partner", "en": "I think she loves chocolate.", "ko": "젠은 초콜릿을 엄청 좋아하는 것 같아요.", "audio": "int1-u01-l04_rp_03.mp3" },
-      { "no": 4, "speaker": "me", "freeResponse": true, "exampleEn": "Then let's get the chocolate one.", "exampleKo": "그럼 초콜릿으로 사요.", "requiredKeywords": [] }
+      { "no": 1, "speaker": "partner", "en": "I brought two cakes for the party, chocolate and lemon.", "ko": "파티에 케이크 두 개 가져왔어요. 초콜릿이랑 레몬이요." },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Which one do you like better?",
+        "exampleKo": "어느 게 더 좋으세요?",
+        "requiredKeywords": ["which one", "like better"]
+      },
+      { "no": 3, "speaker": "partner", "en": "I'm painting my room. I've got two samples here, blue and green.", "ko": "방을 칠하려고. 여기 파란색이랑 초록색 샘플이 있어." },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Which color do you like better?",
+        "exampleKo": "어느 색이 더 좋으세요?",
+        "requiredKeywords": ["which color", "better"]
+      },
+      { "no": 5, "speaker": "partner", "en": "I'm shopping for my son's birthday. It's either a bike or a skateboard.", "ko": "아들 생일 선물을 사려는데요, 자전거 아니면 스케이트보드예요." },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Which one does your son like better?",
+        "exampleKo": "아드님은 어느 걸 더 좋아하세요?",
+        "requiredKeywords": ["does your son", "better"]
+      },
+      { "no": 7, "speaker": "partner", "en": "The new cafe has three lunch specials: soup, salad, or a sandwich.", "ko": "새로 생긴 카페에 점심 특선이 세 가지 있어요. 수프, 샐러드, 샌드위치요." },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Which one do you like best?",
+        "exampleKo": "어느 게 제일 좋으세요?",
+        "requiredKeywords": ["which one", "best"]
+      },
+      { "no": 9, "speaker": "partner", "en": "We can sit by the window or in the back. Either is fine with us.", "ko": "창가 자리도 되고 안쪽 자리도 돼요. 저희는 어디든 괜찮아요." },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Which one would you prefer?",
+        "exampleKo": "어느 쪽이 좋으시겠어요?",
+        "requiredKeywords": ["which one", "would you prefer"]
+      },
+      { "no": 11, "speaker": "partner", "en": "I saw both of the new superhero movies last weekend.", "ko": "지난 주말에 새로 나온 슈퍼히어로 영화 두 편을 다 봤어." },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Which one did you like better?",
+        "exampleKo": "어느 게 더 좋았어요?",
+        "requiredKeywords": ["did you", "better"]
+      }
     ],
-    "passRule": "requiredKeywords가 있는 줄은 답변에 키워드가 모두 들어가면 통과. 키워드가 없는 줄은 말하기만 하면 통과."
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
   }
 }
