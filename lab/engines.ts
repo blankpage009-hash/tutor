@@ -1,6 +1,6 @@
 import type { Model } from 'vosk-browser';
 import { normalizeText, sameWord } from '../src/scoring/normalize';
-import { grammarFor, looseGrammarFor, recognizeChunks } from '../src/speech/voskEngine';
+import { looseGrammarFor, recognizeChunks } from '../src/speech/voskEngine';
 import { downsample, mergeChunks, WAV_RATE } from '../src/speech/wav';
 
 // PC 시험 전용(엔진 묶음): 같은 녹음을 엔진마다 넣어 "적힌 글자"를 나란히 비교한다 (사용자 요청 2026-11-21).
@@ -11,8 +11,6 @@ export type Engine = { name: string; load(): Promise<void>; run(r: Recording, se
 
 const BASE = import.meta.env.BASE_URL;
 const SMALL_VOSK = `${location.origin}${BASE}models/vosk-model-small-en-us-0.15.tar.gz`;
-// 128MB라 저장소에 안 올린다 (lab/models/는 .gitignore). PC에서 받아 다시 묶어 둔 것
-const BIG_VOSK = `${location.origin}${BASE}lab/models/vosk-model-en-us-0.22-lgraph.tar.gz`;
 const VOSK_TIMEOUT_MS = 30000;
 
 export const PRESETS = [
@@ -38,8 +36,7 @@ function voskEngines(label: string, url: string): Engine[] {
   return [
     { name: `${label} 자유`, load: async () => { await get(); }, run: (r) => run(r, null) },
     // 지금 앱의 롤플레이 두 번째 의견과 같은 목록
-    { name: `${label} + 정답 단어`, load: async () => { await get(); }, run: (r, s) => run(r, looseGrammarFor(s)) },
-    { name: `${label} + 문장 통째`, load: async () => { await get(); }, run: (r, s) => run(r, grammarFor(s)) }
+    { name: `${label} + 정답 단어`, load: async () => { await get(); }, run: (r, s) => run(r, looseGrammarFor(s)) }
   ];
 }
 
@@ -62,8 +59,9 @@ function whisperEngine(label: string, repo: string): Engine {
 }
 
 export const ENGINES: Engine[] = [
+  // 큰 Vosk(lgraph 128MB)·문장 통째 칸은 1차 비교(2026-11-21)에서 뺐다: 큰 Vosk는 6~8배 느리고
+  // 사용자 발음은 오히려 덜 맞혔다(36/49 vs 작은 것 40/49). 문장 통째는 쉐도잉용이라 롤플레이 비교와 무관
   ...voskEngines('작은 Vosk(지금 앱)', SMALL_VOSK),
-  ...voskEngines('큰 Vosk(128MB)', BIG_VOSK),
   whisperEngine('Whisper tiny.en', 'onnx-community/whisper-tiny.en'),
   whisperEngine('Whisper base.en', 'onnx-community/whisper-base.en')
 ];
