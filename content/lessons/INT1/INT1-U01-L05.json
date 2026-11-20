@@ -12,7 +12,7 @@
     "en": "If I were you, I'd get this one.",
     "ko": "저라면 이걸로 할 것 같아요.",
     "stress": "If I were YOU, I'd GET THIS one.",
-    "audio": { "normal": "audio/lessons/INT1-U01-L05/key-3b4cecb8.m4a", "slow": "audio/lessons/INT1-U01-L05/key-3b4cecb8.m4a" }
+    "audio": { "normal": "audio/lessons/INT1-U01-L05/key-772e7b3d.m4a", "slow": "audio/lessons/INT1-U01-L05/key-772e7b3d.m4a" }
   },
   "explanation": {
     "ko": [
@@ -40,19 +40,19 @@
     "situation": "샌프란시스코의 회사에서 동료가 휴대폰으로 헬스장 두 곳을 보여 주며 어디에 등록할지 의견을 묻습니다.",
     "partnerRole": "직장 동료",
     "lines": [
-      { "no": 1, "speaker": "partner", "en": "I can't decide which gym to join. Can I get your opinion?", "ko": "어느 헬스장에 등록할지 못 정하겠어요. 의견 좀 들어도 될까요?", "audio": "audio/lessons/INT1-U01-L05/dlg-01-60b01947.m4a" },
-      { "no": 2, "speaker": "me", "en": "Sure. What are you choosing between?", "ko": "그럼요. 어떤 곳들 중에서 고르고 계세요?", "audio": "audio/lessons/INT1-U01-L05/dlg-02-bd532b4e.m4a" },
-      { "no": 3, "speaker": "partner", "en": "This one is closer to home, and that one has a pool.", "ko": "이곳은 집에서 더 가깝고, 저곳은 수영장이 있어요.", "audio": "audio/lessons/INT1-U01-L05/dlg-03-e8e29a6d.m4a" },
+      { "no": 1, "speaker": "partner", "en": "I can't decide which gym to join. Can I get your opinion?", "ko": "어느 헬스장에 등록할지 못 정하겠어요. 의견 좀 들어도 될까요?", "audio": "audio/lessons/INT1-U01-L05/dlg-01-35cbfc9f.m4a" },
+      { "no": 2, "speaker": "me", "en": "Sure. What are you choosing between?", "ko": "그럼요. 어떤 곳들 중에서 고르고 계세요?", "audio": "audio/lessons/INT1-U01-L05/dlg-02-44fb0908.m4a" },
+      { "no": 3, "speaker": "partner", "en": "This one is closer to home, and that one has a pool.", "ko": "이곳은 집에서 더 가깝고, 저곳은 수영장이 있어요.", "audio": "audio/lessons/INT1-U01-L05/dlg-03-deba188a.m4a" },
       {
         "no": 4,
         "speaker": "me",
         "en": "You hate driving, right? If I were you, I'd get this one.",
         "ko": "운전하는 거 싫어하시잖아요? 저라면 이걸로 할 것 같아요.",
-        "audio": "audio/lessons/INT1-U01-L05/dlg-04-fc0e17b7.m4a",
+        "audio": "audio/lessons/INT1-U01-L05/dlg-04-36ca4cf9.m4a",
         "hasKeySentence": true
       },
-      { "no": 5, "speaker": "partner", "en": "That makes sense. I probably wouldn't use the pool much anyway.", "ko": "그렇네요. 어차피 수영장은 별로 안 쓸 것 같아요.", "audio": "audio/lessons/INT1-U01-L05/dlg-05-c889165f.m4a" },
-      { "no": 6, "speaker": "me", "en": "Exactly. And you can always switch later if you want.", "ko": "그렇죠. 그리고 원하면 나중에 언제든 바꿀 수 있잖아요.", "audio": "audio/lessons/INT1-U01-L05/dlg-06-b4677bb2.m4a" }
+      { "no": 5, "speaker": "partner", "en": "That makes sense. I probably wouldn't use the pool much anyway.", "ko": "그렇네요. 어차피 수영장은 별로 안 쓸 것 같아요.", "audio": "audio/lessons/INT1-U01-L05/dlg-05-d6c6cb24.m4a" },
+      { "no": 6, "speaker": "me", "en": "Exactly. And you can always switch later if you want.", "ko": "그렇죠. 그리고 원하면 나중에 언제든 바꿀 수 있잖아요.", "audio": "audio/lessons/INT1-U01-L05/dlg-06-b3e2318b.m4a" }
     ],
     "expressionNotes": [
       { "en": "Can I get your opinion?", "ko": "'의견 좀 들어도 될까요?' 고민을 털어놓으며 조언을 구할 때 쓰는 말입니다." },
@@ -65,32 +65,32 @@
       "en": "If I were you, I'd get this one.",
       "ko": "저라면 이걸로 할 것 같아요.",
       "point": "핵심 문장",
-      "cue": { "lang": "en", "text": "I can't decide which phone to buy.", "audio": "audio/lessons/INT1-U01-L05/cue-01-e0ab5dc8.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-01-3b4cecb8.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-01-3b4cecb8.m4a" }
+      "cue": { "lang": "en", "text": "I can't decide which phone to buy.", "audio": "audio/lessons/INT1-U01-L05/cue-01-aa4596c5.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-01-772e7b3d.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-01-772e7b3d.m4a" }
     },
     {
       "id": 2,
       "en": "If I were you, I'd take the earlier flight.",
       "ko": "저라면 더 이른 비행기를 탈 것 같아요.",
       "point": "동사·대상 교체 (take the earlier flight)",
-      "cue": { "lang": "en", "text": "The morning flight is cheaper, but it's so early.", "audio": "audio/lessons/INT1-U01-L05/cue-02-92a35cd3.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-02-48780631.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-02-48780631.m4a" }
+      "cue": { "lang": "en", "text": "The morning flight is cheaper, but it's so early.", "audio": "audio/lessons/INT1-U01-L05/cue-02-b6084696.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-02-7364338b.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-02-7364338b.m4a" }
     },
     {
       "id": 3,
       "en": "If I were you, I wouldn't sign that lease.",
       "ko": "저라면 그 임대 계약은 안 할 것 같아요.",
       "point": "부정형 (wouldn't)",
-      "cue": { "lang": "en", "text": "The rent is really high, but the apartment is nice.", "audio": "audio/lessons/INT1-U01-L05/cue-03-83a2d649.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-03-80b8031c.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-03-80b8031c.m4a" }
+      "cue": { "lang": "en", "text": "The rent is really high, but the apartment is nice.", "audio": "audio/lessons/INT1-U01-L05/cue-03-417d2207.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-03-187bb29f.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-03-187bb29f.m4a" }
     },
     {
       "id": 4,
       "en": "If I were her, I'd take the job.",
       "ko": "제가 그분이라면 그 일을 맡을 것 같아요.",
       "point": "주어 변경 (you → her)",
-      "cue": { "lang": "en", "text": "My friend got a great job offer, but she's nervous.", "audio": "audio/lessons/INT1-U01-L05/cue-04-8c34eef2.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-04-2e1c9674.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-04-2e1c9674.m4a" }
+      "cue": { "lang": "en", "text": "My friend got a great job offer, but she's nervous.", "audio": "audio/lessons/INT1-U01-L05/cue-04-7303b1d4.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-04-59e6a3fb.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-04-59e6a3fb.m4a" }
     },
     {
       "id": 5,
@@ -98,15 +98,15 @@
       "ko": "제 입장이라면 어떻게 하시겠어요?",
       "point": "질문형 (상대 의견 묻기)",
       "cue": { "lang": "ko", "text": "고민을 털어놓은 뒤, 상대가 내 입장이라면 어떻게 할지 물어보세요." },
-      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-05-29e056af.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-05-29e056af.m4a" }
+      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-05-9463509b.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-05-9463509b.m4a" }
     },
     {
       "id": 6,
       "en": "If I were you, I'd get the cheaper one.",
       "ko": "저라면 더 싼 걸로 할 것 같아요.",
       "point": "비교급 넣기 (the cheaper one)",
-      "cue": { "lang": "en", "text": "They look almost the same, but one costs a lot more.", "audio": "audio/lessons/INT1-U01-L05/cue-06-a1fbe2f7.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-06-518969c7.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-06-518969c7.m4a" }
+      "cue": { "lang": "en", "text": "They look almost the same, but one costs a lot more.", "audio": "audio/lessons/INT1-U01-L05/cue-06-97a81f4a.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L05/drill-06-80b4bd3a.m4a", "slow": "audio/lessons/INT1-U01-L05/drill-06-80b4bd3a.m4a" }
     }
   ],
   "drillStages": [
@@ -149,7 +149,7 @@
         "speaker": "partner",
         "en": "I can't pick between these two pies for the party. What do you think?",
         "ko": "파티에 가져갈 파이를 이 두 개 중에 못 고르겠어요. 어떻게 생각하세요?",
-        "audio": "audio/lessons/INT1-U01-L05/rp-01-d2dd898e.m4a"
+        "audio": "audio/lessons/INT1-U01-L05/rp-01-f7b27d4e.m4a"
       },
       {
         "no": 2,
@@ -159,7 +159,7 @@
         "exampleKo": "저라면 사과 파이로 할 것 같아요. 다들 좋아하잖아요.",
         "requiredKeywords": ["if I were you"]
       },
-      { "no": 3, "speaker": "partner", "en": "Good call. Should I get one or two?", "ko": "좋은 생각이에요. 하나 살까요, 두 개 살까요?", "audio": "audio/lessons/INT1-U01-L05/rp-03-b95e451c.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Good call. Should I get one or two?", "ko": "좋은 생각이에요. 하나 살까요, 두 개 살까요?", "audio": "audio/lessons/INT1-U01-L05/rp-03-f1a76af1.m4a" },
       {
         "no": 4,
         "speaker": "me",

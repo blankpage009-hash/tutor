@@ -12,7 +12,7 @@
     "en": "Maybe we should go with the bigger one.",
     "ko": "큰 쪽으로 하는 게 좋겠어요.",
     "stress": "MAYbe we should GO with the BIGger one.",
-    "audio": { "normal": "audio/lessons/INT1-U01-L03/key-bb649d03.m4a", "slow": "audio/lessons/INT1-U01-L03/key-bb649d03.m4a" }
+    "audio": { "normal": "audio/lessons/INT1-U01-L03/key-7f9b1d08.m4a", "slow": "audio/lessons/INT1-U01-L03/key-7f9b1d08.m4a" }
   },
   "explanation": {
     "ko": [
@@ -40,19 +40,19 @@
     "situation": "샌프란시스코의 회사에서 동료와 금요일 팀 회식 장소를 고릅니다.",
     "partnerRole": "직장 동료",
     "lines": [
-      { "no": 1, "speaker": "partner", "en": "We need to book a place for the team dinner on Friday.", "ko": "금요일 팀 회식 장소를 예약해야 해요.", "audio": "audio/lessons/INT1-U01-L03/dlg-01-d0b1e800.m4a" },
-      { "no": 2, "speaker": "me", "en": "Right. Did you look at those two restaurants?", "ko": "맞아요. 그 식당 두 곳 보셨어요?", "audio": "audio/lessons/INT1-U01-L03/dlg-02-ba612c97.m4a" },
-      { "no": 3, "speaker": "partner", "en": "Yeah. One's closer, but the other one has a bigger room.", "ko": "네. 한 곳은 더 가깝고, 다른 곳은 방이 더 커요.", "audio": "audio/lessons/INT1-U01-L03/dlg-03-2a65f07a.m4a" },
+      { "no": 1, "speaker": "partner", "en": "We need to book a place for the team dinner on Friday.", "ko": "금요일 팀 회식 장소를 예약해야 해요.", "audio": "audio/lessons/INT1-U01-L03/dlg-01-f9af8f9f.m4a" },
+      { "no": 2, "speaker": "me", "en": "Right. Did you look at those two restaurants?", "ko": "맞아요. 그 식당 두 곳 보셨어요?", "audio": "audio/lessons/INT1-U01-L03/dlg-02-e6fc7196.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Yeah. One's closer, but the other one has a bigger room.", "ko": "네. 한 곳은 더 가깝고, 다른 곳은 방이 더 커요.", "audio": "audio/lessons/INT1-U01-L03/dlg-03-11693e02.m4a" },
       {
         "no": 4,
         "speaker": "me",
         "en": "Maybe we should go with the bigger one. There are twelve of us.",
         "ko": "큰 데로 하는 게 좋겠어요. 우리 열두 명이잖아요.",
-        "audio": "audio/lessons/INT1-U01-L03/dlg-04-ec989e94.m4a",
+        "audio": "audio/lessons/INT1-U01-L03/dlg-04-7c8d88b6.m4a",
         "hasKeySentence": true
       },
-      { "no": 5, "speaker": "partner", "en": "Good idea. Should I call them, or do you want to?", "ko": "좋은 생각이에요. 제가 전화할까요, 아니면 직접 하실래요?", "audio": "audio/lessons/INT1-U01-L03/dlg-05-00972c6b.m4a" },
-      { "no": 6, "speaker": "me", "en": "I can call them after lunch.", "ko": "점심 먹고 제가 전화할게요.", "audio": "audio/lessons/INT1-U01-L03/dlg-06-dc067c7d.m4a" }
+      { "no": 5, "speaker": "partner", "en": "Good idea. Should I call them, or do you want to?", "ko": "좋은 생각이에요. 제가 전화할까요, 아니면 직접 하실래요?", "audio": "audio/lessons/INT1-U01-L03/dlg-05-d0946665.m4a" },
+      { "no": 6, "speaker": "me", "en": "I can call them after lunch.", "ko": "점심 먹고 제가 전화할게요.", "audio": "audio/lessons/INT1-U01-L03/dlg-06-d0f79900.m4a" }
     ],
     "expressionNotes": [
       { "en": "There are twelve of us.", "ko": "'우리 일행이 열두 명이에요.' 예약하거나 자리를 잡을 때 인원수를 말하는 기본 표현입니다." },
@@ -65,32 +65,32 @@
       "en": "Maybe we should go with the bigger one.",
       "ko": "큰 쪽으로 하는 게 좋겠어요.",
       "point": "핵심 문장",
-      "cue": { "lang": "en", "text": "So, which restaurant should we book?", "audio": "audio/lessons/INT1-U01-L03/cue-01-182f7cbd.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L03/drill-01-bb649d03.m4a", "slow": "audio/lessons/INT1-U01-L03/drill-01-bb649d03.m4a" }
+      "cue": { "lang": "en", "text": "So, which restaurant should we book?", "audio": "audio/lessons/INT1-U01-L03/cue-01-080faf2a.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L03/drill-01-7f9b1d08.m4a", "slow": "audio/lessons/INT1-U01-L03/drill-01-7f9b1d08.m4a" }
     },
     {
       "id": 2,
       "en": "Maybe we should take the train instead.",
       "ko": "대신 기차를 타는 게 좋겠어요.",
       "point": "동사·선택지 교체 (+ instead)",
-      "cue": { "lang": "en", "text": "Traffic looks terrible. Should we still drive?", "audio": "audio/lessons/INT1-U01-L03/cue-02-cc68d4ba.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L03/drill-02-2174ad2c.m4a", "slow": "audio/lessons/INT1-U01-L03/drill-02-2174ad2c.m4a" }
+      "cue": { "lang": "en", "text": "Traffic looks terrible. Should we still drive?", "audio": "audio/lessons/INT1-U01-L03/cue-02-d5169b2c.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L03/drill-02-c7edb970.m4a", "slow": "audio/lessons/INT1-U01-L03/drill-02-c7edb970.m4a" }
     },
     {
       "id": 3,
       "en": "Maybe you should try the smaller size.",
       "ko": "작은 사이즈를 입어 보시는 게 좋겠어요.",
       "point": "주어 변경 (we → you)",
-      "cue": { "lang": "en", "text": "This jacket feels a little loose on me.", "audio": "audio/lessons/INT1-U01-L03/cue-03-fa17ce63.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L03/drill-03-303e0945.m4a", "slow": "audio/lessons/INT1-U01-L03/drill-03-303e0945.m4a" }
+      "cue": { "lang": "en", "text": "This jacket feels a little loose on me.", "audio": "audio/lessons/INT1-U01-L03/cue-03-1ca1b9b4.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L03/drill-03-6b58663e.m4a", "slow": "audio/lessons/INT1-U01-L03/drill-03-6b58663e.m4a" }
     },
     {
       "id": 4,
       "en": "Maybe we could ask for a table outside.",
       "ko": "바깥 자리로 달라고 해 보면 어떨까요.",
       "point": "더 공손하게 (should → could)",
-      "cue": { "lang": "en", "text": "It's so loud in here.", "audio": "audio/lessons/INT1-U01-L03/cue-04-728b9d59.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L03/drill-04-b4175749.m4a", "slow": "audio/lessons/INT1-U01-L03/drill-04-b4175749.m4a" }
+      "cue": { "lang": "en", "text": "It's so loud in here.", "audio": "audio/lessons/INT1-U01-L03/cue-04-58af6824.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L03/drill-04-c2ece80c.m4a", "slow": "audio/lessons/INT1-U01-L03/drill-04-c2ece80c.m4a" }
     },
     {
       "id": 5,
@@ -98,15 +98,15 @@
       "ko": "싼 걸로 할까요?",
       "point": "질문형 (Should we ~?)",
       "cue": { "lang": "ko", "text": "두 가지 중 싼 쪽으로 할지 상대에게 물어보세요." },
-      "audio": { "normal": "audio/lessons/INT1-U01-L03/drill-05-14bc782a.m4a", "slow": "audio/lessons/INT1-U01-L03/drill-05-14bc782a.m4a" }
+      "audio": { "normal": "audio/lessons/INT1-U01-L03/drill-05-cc8ce045.m4a", "slow": "audio/lessons/INT1-U01-L03/drill-05-cc8ce045.m4a" }
     },
     {
       "id": 6,
       "en": "Maybe we shouldn't get the expensive one.",
       "ko": "비싼 건 안 사는 게 좋겠어요.",
       "point": "부정형 (shouldn't)",
-      "cue": { "lang": "en", "text": "The fancy coffee machine is twice the price.", "audio": "audio/lessons/INT1-U01-L03/cue-06-123e2917.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U01-L03/drill-06-7b4a6253.m4a", "slow": "audio/lessons/INT1-U01-L03/drill-06-7b4a6253.m4a" }
+      "cue": { "lang": "en", "text": "The fancy coffee machine is twice the price.", "audio": "audio/lessons/INT1-U01-L03/cue-06-b9cee717.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U01-L03/drill-06-f4b460f0.m4a", "slow": "audio/lessons/INT1-U01-L03/drill-06-f4b460f0.m4a" }
     }
   ],
   "drillStages": [
@@ -144,7 +144,7 @@
     "situation": "영어 스터디 모임 멤버가 다음 모임 장소를 같이 정하자고 합니다. 대본 없이 내 말로 대답합니다.",
     "partnerRole": "스터디 모임 멤버",
     "lines": [
-      { "no": 1, "speaker": "partner", "en": "We need a new café for our study group. Any ideas?", "ko": "스터디 모임 할 카페를 새로 찾아야 해요. 좋은 데 있어요?", "audio": "audio/lessons/INT1-U01-L03/rp-01-8bc37dca.m4a" },
+      { "no": 1, "speaker": "partner", "en": "We need a new café for our study group. Any ideas?", "ko": "스터디 모임 할 카페를 새로 찾아야 해요. 좋은 데 있어요?", "audio": "audio/lessons/INT1-U01-L03/rp-01-fc99b057.m4a" },
       {
         "no": 2,
         "speaker": "me",
@@ -153,7 +153,7 @@
         "exampleKo": "도서관 근처에 있는 곳에 가 보는 게 좋겠어요.",
         "requiredKeywords": ["maybe", "should"]
       },
-      { "no": 3, "speaker": "partner", "en": "Sure. Is it quiet enough there?", "ko": "좋아요. 거기 충분히 조용해요?", "audio": "audio/lessons/INT1-U01-L03/rp-03-3796b765.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Sure. Is it quiet enough there?", "ko": "좋아요. 거기 충분히 조용해요?", "audio": "audio/lessons/INT1-U01-L03/rp-03-1cb849a4.m4a" },
       {
         "no": 4,
         "speaker": "me",

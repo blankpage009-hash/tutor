@@ -20,9 +20,9 @@ GOOGLE_PREFIX = 'google:'
 # 1.0이 기본 속도. 앱에서 재생 속도로 느리게 들려주므로 원본은 자연스러운 속도로 둔다
 LENGTH_SCALE = 1.0
 # Google 음성을 맞출 소리 크기. 문장마다 크기가 달라지지 않게 한 크기로 맞춘다.
-# 처음엔 옛 Piper 평균(-14.5 LUFS)에 맞췄으나 아이폰에서 "살짝 크다"고 해서 2dB 낮춤 (사용자, 2026-11-20).
+# 처음엔 옛 Piper 평균(-14.5 LUFS)에 맞췄으나 아이폰에서 "살짝 크다"고 해서 2dB씩 두 번 낮춤 (사용자, 2026-11-20).
 # Piper는 원래 고르게 나와서 손대지 않는다
-GOOGLE_TARGET_LUFS = -16.5
+GOOGLE_TARGET_LUFS = -18.5
 
 
 def fingerprint(text, voice=VOICE):

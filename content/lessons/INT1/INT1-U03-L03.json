@@ -12,7 +12,7 @@
     "en": "Mornings work best for me.",
     "ko": "저는 오전이 제일 좋아요.",
     "stress": "MORnings work BEST for me.",
-    "audio": { "normal": "audio/lessons/INT1-U03-L03/key-8a04027b.m4a", "slow": "audio/lessons/INT1-U03-L03/key-8a04027b.m4a" }
+    "audio": { "normal": "audio/lessons/INT1-U03-L03/key-bbd74a6f.m4a", "slow": "audio/lessons/INT1-U03-L03/key-bbd74a6f.m4a" }
   },
   "explanation": {
     "ko": [
@@ -40,19 +40,19 @@
     "situation": "샌프란시스코 동네 클리닉에 전화해서 진료 예약을 잡습니다.",
     "partnerRole": "접수원",
     "lines": [
-      { "no": 1, "speaker": "partner", "en": "Maple Family Clinic, how can I help you?", "ko": "메이플 패밀리 클리닉입니다. 무엇을 도와드릴까요?", "audio": "audio/lessons/INT1-U03-L03/dlg-01-75747402.m4a" },
-      { "no": 2, "speaker": "me", "en": "Hi, I'd like to make an appointment to see Dr. Lee.", "ko": "안녕하세요, 이 선생님께 진료 예약하고 싶어요.", "audio": "audio/lessons/INT1-U03-L03/dlg-02-02dbadd0.m4a" },
-      { "no": 3, "speaker": "partner", "en": "Sure. Is there a day or time that works for you?", "ko": "네. 편하신 요일이나 시간 있으세요?", "audio": "audio/lessons/INT1-U03-L03/dlg-03-b24fa750.m4a" },
+      { "no": 1, "speaker": "partner", "en": "Maple Family Clinic, how can I help you?", "ko": "메이플 패밀리 클리닉입니다. 무엇을 도와드릴까요?", "audio": "audio/lessons/INT1-U03-L03/dlg-01-21d94153.m4a" },
+      { "no": 2, "speaker": "me", "en": "Hi, I'd like to make an appointment to see Dr. Lee.", "ko": "안녕하세요, 이 선생님께 진료 예약하고 싶어요.", "audio": "audio/lessons/INT1-U03-L03/dlg-02-17035111.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Sure. Is there a day or time that works for you?", "ko": "네. 편하신 요일이나 시간 있으세요?", "audio": "audio/lessons/INT1-U03-L03/dlg-03-c614d91d.m4a" },
       {
         "no": 4,
         "speaker": "me",
         "en": "Mornings work best for me. Do you have anything before 11?",
         "ko": "저는 오전이 제일 좋아요. 11시 전에 비는 시간 있나요?",
-        "audio": "audio/lessons/INT1-U03-L03/dlg-04-b536eb34.m4a",
+        "audio": "audio/lessons/INT1-U03-L03/dlg-04-12d3fd66.m4a",
         "hasKeySentence": true
       },
-      { "no": 5, "speaker": "partner", "en": "Let me check... I have Thursday at 9:30. Does that work?", "ko": "확인해 볼게요... 목요일 9시 반이 있네요. 괜찮으세요?", "audio": "audio/lessons/INT1-U03-L03/dlg-05-17a9e486.m4a" },
-      { "no": 6, "speaker": "me", "en": "Perfect. Thursday at 9:30 works for me.", "ko": "좋아요. 목요일 9시 반 괜찮아요.", "audio": "audio/lessons/INT1-U03-L03/dlg-06-abe07e8b.m4a" }
+      { "no": 5, "speaker": "partner", "en": "Let me check... I have Thursday at 9:30. Does that work?", "ko": "확인해 볼게요... 목요일 9시 반이 있네요. 괜찮으세요?", "audio": "audio/lessons/INT1-U03-L03/dlg-05-75d5850b.m4a" },
+      { "no": 6, "speaker": "me", "en": "Perfect. Thursday at 9:30 works for me.", "ko": "좋아요. 목요일 9시 반 괜찮아요.", "audio": "audio/lessons/INT1-U03-L03/dlg-06-d7f4f632.m4a" }
     ],
     "expressionNotes": [
       { "en": "Do you have anything ~?", "ko": "'~에 빈 자리 있나요?' anything이 '빈 예약 시간'을 뜻합니다." },
@@ -65,40 +65,40 @@
       "en": "Mornings work best for me.",
       "ko": "저는 오전이 제일 좋아요.",
       "point": "핵심 문장",
-      "cue": { "lang": "en", "text": "What time works for you?", "audio": "audio/lessons/INT1-U03-L03/cue-01-f51dd995.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U03-L03/drill-01-8a04027b.m4a", "slow": "audio/lessons/INT1-U03-L03/drill-01-8a04027b.m4a" }
+      "cue": { "lang": "en", "text": "What time works for you?", "audio": "audio/lessons/INT1-U03-L03/cue-01-9c25b00c.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L03/drill-01-bbd74a6f.m4a", "slow": "audio/lessons/INT1-U03-L03/drill-01-bbd74a6f.m4a" }
     },
     {
       "id": 2,
       "en": "Afternoons work better for me.",
       "ko": "저는 오후가 더 좋아요.",
       "point": "시간대 교체, best → better",
-      "cue": { "lang": "en", "text": "Would mornings or afternoons be better?", "audio": "audio/lessons/INT1-U03-L03/cue-02-01728182.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U03-L03/drill-02-10a49ad4.m4a", "slow": "audio/lessons/INT1-U03-L03/drill-02-10a49ad4.m4a" }
+      "cue": { "lang": "en", "text": "Would mornings or afternoons be better?", "audio": "audio/lessons/INT1-U03-L03/cue-02-8f5e79e1.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L03/drill-02-7e2eeb5c.m4a", "slow": "audio/lessons/INT1-U03-L03/drill-02-7e2eeb5c.m4a" }
     },
     {
       "id": 3,
       "en": "Tuesday works best for me.",
       "ko": "저는 화요일이 제일 좋아요.",
       "point": "단수 주어 → works",
-      "cue": { "lang": "en", "text": "Which day works best for you?", "audio": "audio/lessons/INT1-U03-L03/cue-03-0083c5ce.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U03-L03/drill-03-3957dca9.m4a", "slow": "audio/lessons/INT1-U03-L03/drill-03-3957dca9.m4a" }
+      "cue": { "lang": "en", "text": "Which day works best for you?", "audio": "audio/lessons/INT1-U03-L03/cue-03-5e1dc9f4.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L03/drill-03-ec8874cb.m4a", "slow": "audio/lessons/INT1-U03-L03/drill-03-ec8874cb.m4a" }
     },
     {
       "id": 4,
       "en": "Anytime after 3 works for me.",
       "ko": "3시 이후면 언제든 괜찮아요.",
       "point": "시간 범위 말하기",
-      "cue": { "lang": "en", "text": "We only have openings in the afternoon. Is that okay?", "audio": "audio/lessons/INT1-U03-L03/cue-04-dd24913f.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U03-L03/drill-04-26353c0b.m4a", "slow": "audio/lessons/INT1-U03-L03/drill-04-26353c0b.m4a" }
+      "cue": { "lang": "en", "text": "We only have openings in the afternoon. Is that okay?", "audio": "audio/lessons/INT1-U03-L03/cue-04-577ef895.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L03/drill-04-4af181ef.m4a", "slow": "audio/lessons/INT1-U03-L03/drill-04-4af181ef.m4a" }
     },
     {
       "id": 5,
       "en": "Early next week would work better for me.",
       "ko": "다음 주 초가 더 좋을 것 같아요.",
       "point": "would → 더 공손한 미래",
-      "cue": { "lang": "en", "text": "Can you come in this Friday?", "audio": "audio/lessons/INT1-U03-L03/cue-05-17e0d806.m4a" },
-      "audio": { "normal": "audio/lessons/INT1-U03-L03/drill-05-efa6e3f0.m4a", "slow": "audio/lessons/INT1-U03-L03/drill-05-efa6e3f0.m4a" }
+      "cue": { "lang": "en", "text": "Can you come in this Friday?", "audio": "audio/lessons/INT1-U03-L03/cue-05-57c623f3.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L03/drill-05-3f46f988.m4a", "slow": "audio/lessons/INT1-U03-L03/drill-05-3f46f988.m4a" }
     },
     {
       "id": 6,
@@ -106,7 +106,7 @@
       "ko": "금요일 오전 괜찮으세요?",
       "point": "질문형, for me → for you",
       "cue": { "lang": "ko", "text": "상대에게 금요일 오전이 괜찮은지 물어보세요." },
-      "audio": { "normal": "audio/lessons/INT1-U03-L03/drill-06-f5882fee.m4a", "slow": "audio/lessons/INT1-U03-L03/drill-06-f5882fee.m4a" }
+      "audio": { "normal": "audio/lessons/INT1-U03-L03/drill-06-82c3c179.m4a", "slow": "audio/lessons/INT1-U03-L03/drill-06-82c3c179.m4a" }
     }
   ],
   "drillStages": [
@@ -149,7 +149,7 @@
         "speaker": "partner",
         "en": "Hi, this is Maple Pharmacy. Your prescription is ready. When would you like to pick it up?",
         "ko": "안녕하세요, 메이플 약국입니다. 처방약이 준비됐어요. 언제 찾으러 오시겠어요?",
-        "audio": "audio/lessons/INT1-U03-L03/rp-01-36f4d348.m4a"
+        "audio": "audio/lessons/INT1-U03-L03/rp-01-6c86fcd7.m4a"
       },
       {
         "no": 2,
@@ -159,7 +159,7 @@
         "exampleKo": "저는 오후가 제일 좋아요. 3시 넘어서 가도 될까요?",
         "requiredKeywords": ["work", "for me"]
       },
-      { "no": 3, "speaker": "partner", "en": "Sure, we're open until 7.", "ko": "그럼요, 7시까지 열어요.", "audio": "audio/lessons/INT1-U03-L03/rp-03-0f4197b7.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Sure, we're open until 7.", "ko": "그럼요, 7시까지 열어요.", "audio": "audio/lessons/INT1-U03-L03/rp-03-47d88373.m4a" },
       {
         "no": 4,
         "speaker": "me",
