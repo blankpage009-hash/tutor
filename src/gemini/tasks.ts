@@ -86,3 +86,33 @@ export function parseRoleplay(text: string): GeneratedRolePlay {
     lines
   };
 }
+
+// ── 고른 문장에 맞는 상황 (프롬프트 만들기의 상황·상대·나 칸) ─────────────
+export type GeneratedSituation = { situation: string; partnerRole: string; myRole: string };
+// 응답을 그대로 칸에 넣으므로 너무 긴 글은 자른다: 칸은 한 줄짜리라 길면 프롬프트가 흐려진다
+const MAX_SITUATION = 80;
+const MAX_ROLE = 30;
+
+export function situationRequest(sentences: string[]): GeminiRequest {
+  const list = sentences.map((s) => s.trim()).filter(Boolean).map((s) => `- ${s}`);
+  return {
+    json: true,
+    prompt: [
+      'A Korean learner of American English wants to practice these sentences in a spoken role-play:',
+      ...list,
+      'Invent ONE realistic everyday situation in the U.S. where the learner would naturally use ALL of these sentences.',
+      'Return JSON only, in this shape (all values in Korean, short):',
+      '{"situation": one short line describing the setting (under 30 Korean characters),',
+      ' "partnerRole": the other person\'s role (a few words), "myRole": the learner\'s role (a few words)}'
+    ].join('\n')
+  };
+}
+
+export function parseSituation(text: string): GeneratedSituation {
+  const data = parseJson(text) as { situation?: unknown; partnerRole?: unknown; myRole?: unknown };
+  const situation = str(data?.situation).slice(0, MAX_SITUATION);
+  const partnerRole = str(data?.partnerRole).slice(0, MAX_ROLE);
+  const myRole = str(data?.myRole).slice(0, MAX_ROLE);
+  if (!situation || !partnerRole || !myRole) throw new GeminiError(BAD_FORMAT);
+  return { situation, partnerRole, myRole };
+}

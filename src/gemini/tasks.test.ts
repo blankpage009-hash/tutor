@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { GeminiError } from './geminiClient';
-import { parseRoleplay, roleplayRequest, validKeywords } from './tasks';
+import { parseRoleplay, parseSituation, roleplayRequest, situationRequest, validKeywords } from './tasks';
 
 describe('roleplayRequest', () => {
   it('JSON 응답을 요구하고 상황 힌트를 담는다', () => {
@@ -65,5 +65,36 @@ describe('parseRoleplay', () => {
     expect(() => parseRoleplay(JSON.stringify(onlyPartner))).toThrow(GeminiError);
     expect(() => parseRoleplay(JSON.stringify(onlyMe))).toThrow(GeminiError);
     expect(() => parseRoleplay('{"lines":"nope"}')).toThrow(GeminiError);
+  });
+});
+
+describe('situationRequest', () => {
+  it('JSON 응답을 요구하고 고른 문장을 빈 줄 없이 모두 담는다', () => {
+    const r = situationRequest(['Can I get a latte?', '  ', 'To go, please.']);
+    expect(r.json).toBe(true);
+    expect(r.prompt).toContain('- Can I get a latte?');
+    expect(r.prompt).toContain('- To go, please.');
+    expect(r.prompt).not.toContain('- \n');
+  });
+});
+
+describe('parseSituation', () => {
+  it('세 칸을 읽고 앞뒤 빈칸을 지운다', () => {
+    const r = parseSituation('{"situation":" 카페에서 커피 주문하기 ","partnerRole":"바리스타","myRole":"손님"}');
+    expect(r).toEqual({ situation: '카페에서 커피 주문하기', partnerRole: '바리스타', myRole: '손님' });
+  });
+  it('```json 울타리가 붙어도 읽는다', () => {
+    const r = parseSituation('```json\n{"situation":"공항 체크인","partnerRole":"직원","myRole":"승객"}\n```');
+    expect(r.partnerRole).toBe('직원');
+  });
+  it('너무 긴 값은 자른다', () => {
+    const r = parseSituation(JSON.stringify({ situation: '가'.repeat(200), partnerRole: '나'.repeat(50), myRole: '손님' }));
+    expect(r.situation.length).toBe(80);
+    expect(r.partnerRole.length).toBe(30);
+  });
+  it('빈 칸이 있거나 글자가 아니거나 JSON이 아니면 오류다', () => {
+    expect(() => parseSituation('{"situation":"카페","partnerRole":"","myRole":"손님"}')).toThrow(GeminiError);
+    expect(() => parseSituation('{"situation":"카페","partnerRole":3,"myRole":"손님"}')).toThrow(GeminiError);
+    expect(() => parseSituation('not json')).toThrow(GeminiError);
   });
 });
