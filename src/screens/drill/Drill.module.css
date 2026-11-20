@@ -62,7 +62,8 @@
 
 .en {
   margin: 0;
-  font-size: var(--type-body-size);
+  /* 공용 토큰은 다른 화면도 쓰므로, 이 목록만 1px 키운다 (사용자 요청 2026-11-21) */
+  font-size: calc(var(--type-body-size) + 1px);
   line-height: 1.4;
   font-weight: 500;
 }
