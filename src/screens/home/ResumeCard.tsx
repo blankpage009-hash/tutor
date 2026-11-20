@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import { useState, type ComponentType } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../../components/Button';
 import { IconBook, IconChat, IconCheck, IconPlay, IconRepeat, IconUsers } from '../../components/icons/icons';
@@ -21,6 +21,11 @@ const STEP_ICON: Record<NewLessonStep, ComponentType> = {
 function ResumeBody({ r }: { r: NewResume }) {
   const navigate = useNavigate();
   const current = r.stage === 'done' ? 'learn' : r.stage;
+  // 눌러 고른 단계. 고르지 않았으면 이어 할 단계(current)를 따른다
+  const [picked, setPicked] = useState<NewLessonStep | null>(null);
+  const selected = picked ?? current;
+  const finished = r.steps.includes(selected);
+  const verb = finished ? 'Redo' : selected === current && r.started ? 'Continue' : 'Start';
   return (
     <div className={styles.card}>
       <div className={styles.top}>
@@ -31,19 +36,22 @@ function ResumeBody({ r }: { r: NewResume }) {
       <p className={styles.unit} lang="ko">{r.unitTitle}</p>
       <ol className={styles.steps}>
         {NEW_STEPS.map((step) => {
-          const state = stepTileState(step, current, r.steps);
+          const state = stepTileState(step, selected, r.steps);
           const Icon = state === 'done' ? IconCheck : STEP_ICON[step];
           return (
-            <li key={step} className={`${styles.tile} ${styles[state]}`} aria-current={state === 'current' ? 'step' : undefined}>
-              <Icon />
-              <span className={styles.tileName}>{NEW_STEP_ENGLISH[step]}</span>
+            <li key={step}>
+              <button type="button" className={`${styles.tile} ${styles[state]}`}
+                aria-current={state === 'current' ? 'step' : undefined} onClick={() => setPicked(step)}>
+                <Icon />
+                <span className={styles.tileName}>{NEW_STEP_ENGLISH[step]}</span>
+              </button>
             </li>
           );
         })}
       </ol>
-      <Button variant="primary" block className={styles.cta} onClick={() => navigate(newStagePath(r.id, current))}>
+      <Button variant="primary" block className={styles.cta} onClick={() => navigate(newStagePath(r.id, selected))}>
         <IconPlay />
-        {r.started ? 'Continue' : 'Start'} {NEW_STEP_ENGLISH[current]}
+        {verb} {NEW_STEP_ENGLISH[selected]}
       </Button>
     </div>
   );
