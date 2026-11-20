@@ -20,7 +20,7 @@ type Props = {
   micLocked: boolean;
   saved: boolean;
   saveError: string | null;
-  onSave: () => void;
+  onSave?: () => void; // 없으면 북마크는 잠긴 채 "저장됨" (보관함 연습)
   onPrev: () => void;
   onNext: () => void; // 마지막 카드에서는 드릴을 마친다
   onClose: () => void;

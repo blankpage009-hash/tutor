@@ -66,7 +66,7 @@ function DrillBody({ lesson, initial }: { lesson: NewLesson; initial?: DrillPosi
   return (
     <DrillPlayer plan={plan} index={steps.index} sentenceCount={lesson.drills.length}
       attempt={sp.attempt} handsFree={handsFree} engineNote={sp.engineNote} micLocked={sp.micLocked}
-      saved={saved.saved.has(step.saveId)} saveError={saved.error} onSave={() => { void saved.save(step.saveId); }}
+      saved={saved.saved.has(step.saveId)} saveError={saved.error} onSave={() => { void saved.toggle(step.saveId); }}
       onPrev={() => move(steps.prev)} onNext={() => move(steps.skip)}
       onClose={() => move(() => setStarted(false))} />
   );

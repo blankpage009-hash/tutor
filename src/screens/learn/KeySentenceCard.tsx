@@ -57,8 +57,9 @@ export function KeySentenceCard({ lesson }: { lesson: NewLesson }) {
           disabled={speaking.micLocked && !listening} aria-pressed={listening}>
           {listening ? <IconStop /> : <IconMic />}Speak
         </Button>
-        <button type="button" className={styles.mark} onClick={() => { void key.save(); }} disabled={key.saved}
-          aria-label={key.saved ? '핵심 문장 저장됨' : '핵심 문장을 보관함에 저장'}>
+        {/* 누를 때마다 저장 ↔ 해제 (사용자 요청 2026-11-20) */}
+        <button type="button" className={styles.mark} onClick={() => { void key.toggle(); }} aria-pressed={key.saved}
+          aria-label={key.saved ? '핵심 문장 저장 해제' : '핵심 문장을 보관함에 저장'}>
           <IconBookmark filled={key.saved} />
         </button>
       </div>

@@ -122,7 +122,9 @@
   cursor: pointer;
 }
 .save:active:not(:disabled) { background: var(--accent-tint); }
-.save:disabled { color: var(--accent-ink); cursor: default; }
+/* 저장된 상태는 파랑. 눌러서 해제할 수 있어 잠금(disabled)과 따로 표시한다 */
+.save[aria-pressed='true'] { color: var(--accent-ink); }
+.save:disabled { cursor: default; }
 .save:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
 
 .body {

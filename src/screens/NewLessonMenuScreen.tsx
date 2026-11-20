@@ -39,8 +39,9 @@ function LessonView({ lesson, stage, steps }: { lesson: NewLesson; stage?: strin
         {/* 닫기: 이 레슨이 있던 유닛이 펼쳐진 코스 목록으로 돌아간다 */}
         <Link to={`/courses?level=${encodeURIComponent(lesson.levelCode)}&unit=${lesson.unit}`}
           className={styles.iconBtn} aria-label="닫기"><IconClose /></Link>
-        <button type="button" className={styles.iconBtn} onClick={() => { void key.save(); }} disabled={key.saved}
-          aria-label={key.saved ? '핵심 문장 저장됨' : '핵심 문장을 보관함에 저장'}>
+        {/* 누를 때마다 저장 ↔ 해제 (사용자 요청 2026-11-20) */}
+        <button type="button" className={styles.iconBtn} onClick={() => { void key.toggle(); }} aria-pressed={key.saved}
+          aria-label={key.saved ? '핵심 문장 저장 해제' : '핵심 문장을 보관함에 저장'}>
           <IconBookmark filled={key.saved} />
         </button>
       </div>

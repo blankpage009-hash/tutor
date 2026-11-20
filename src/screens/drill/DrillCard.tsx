@@ -11,7 +11,7 @@ type Props = {
   step: DrillStep;
   outcome: Outcome;
   saved: boolean;
-  onSave: () => void;
+  onSave?: () => void; // 없으면(보관함 연습: 이미 보관함에 있는 문장) 잠긴 채 "저장됨"으로만 보여 준다
 };
 
 // 드릴 카드 한 장 (디자인 v2 06): 포인트 태그 + 북마크, 큰 문장(맞힌 단어 색칠), 결과 PASS · 96%
@@ -21,8 +21,9 @@ export function DrillCard({ step, outcome, saved, onSave }: Props) {
       <div className={styles.cardTop}>
         {/* 보관함 연습 문장은 포인트가 없어 빈 자리만 둔다 (북마크가 오른쪽에 붙어 있게) */}
         {step.drill.point ? <span className={styles.tag} lang="ko">{step.drill.point}</span> : <span />}
-        <button type="button" className={styles.save} onClick={onSave} disabled={saved}
-          aria-label={saved ? '저장됨' : '문장 저장'}><IconBookmark filled={saved} /></button>
+        {/* 누를 때마다 저장 ↔ 해제 (사용자 요청 2026-11-20) */}
+        <button type="button" className={styles.save} onClick={onSave} disabled={!onSave} aria-pressed={saved}
+          aria-label={!onSave ? '저장됨' : saved ? '저장 해제' : '문장 저장'}><IconBookmark filled={saved} /></button>
       </div>
       <div className={styles.body}>
         <Sentence step={step} outcome={outcome} />

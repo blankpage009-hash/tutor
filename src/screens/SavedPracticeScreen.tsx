@@ -56,8 +56,9 @@ function SavedDrill({ plan }: { plan: DrillStep[] }) {
         available: sp.voskReady, running: hf.running, step: hf.step, notice: hf.notice,
         onToggle: () => { if (hf.running) hf.stop(); else hf.start(); }
       }}
-      // 이미 보관함에 있는 문장이라 북마크는 "저장됨"으로만 보여 준다 (눌러도 아무 일 없음)
-      saved saveError={null} onSave={() => undefined}
+      // 이미 보관함에 있는 문장이라 북마크는 "저장됨"으로만 보여 준다 (onSave를 주지 않으면 잠긴다).
+      // 여기서 해제하면 연습 중인 목록이 흔들려서 막아 둔다
+      saved saveError={null}
       onPrev={() => move(steps.prev)} onNext={() => move(steps.skip)}
       onClose={() => move(() => nav('/library'))} />
   );

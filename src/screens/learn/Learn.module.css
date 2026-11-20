@@ -78,7 +78,8 @@
   cursor: pointer;
 }
 .mark:active:not(:disabled) { background: var(--accent-tint); }
-.mark:disabled { color: var(--accent-ink); cursor: default; }
+/* 저장된 상태는 파랑. 눌러서 해제할 수 있어 잠금(disabled)이 아니라 눌림 표시로 칠한다 */
+.mark[aria-pressed='true'] { color: var(--accent-ink); }
 .mark:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
 
 .feedback { display: grid; gap: var(--space-2); }
