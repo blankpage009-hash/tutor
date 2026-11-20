@@ -4,7 +4,7 @@ import { ProgressBar } from '../../components/ProgressBar';
 import { useActivitySummary } from '../progress/useActivitySummary';
 import styles from './TodayCard.module.css';
 
-// 홈 맨 위: 연속 학습일과 오늘 목표(칸 나뉜 막대). 탭하면 설정 맨 위의 PROGRESS 요약으로 간다.
+// 홈 맨 위: 연속 학습일과 오늘 목표(한 줄 막대). 탭하면 설정 맨 위의 PROGRESS 요약으로 간다.
 // 기록을 못 읽으면 통째로 숨긴다(홈의 나머지는 그대로)
 export function TodayCard() {
   const a = useActivitySummary();
@@ -20,7 +20,7 @@ export function TodayCard() {
         </span>
         <span className={styles.goal}>{count} / {goal}</span>
       </div>
-      <ProgressBar value={goal > 0 ? count / goal : 0} label="오늘 목표" segments={goal} />
+      <ProgressBar value={goal > 0 ? count / goal : 0} label="오늘 목표" />
     </Link>
   );
 }
