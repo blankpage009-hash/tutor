@@ -1,4 +1,4 @@
-import { judgeKeywords, soundsLike } from './keywordJudge';
+import { judgeKeywords, soundsLike, type KeywordJudgement } from './keywordJudge';
 import { normalizeText, normalizeToken, sameWord, tokenize } from './normalize';
 
 // 롤플레이 화면용: 들린 말을 정답(예시) 문장 쪽으로 살짝 바로잡는다 (사용자 요청 2026-11-20).
@@ -53,4 +53,16 @@ export function pickShown(keywords: string[], alternatives: string[], expected: 
     }
   }
   return best;
+}
+
+// 롤플레이 판정 + 보여 줄 글자. 통과 여부는 자유 인식 후보(alternatives)로만 정한다.
+// 정답 단어만 허용해 다시 들은 글자(hinted)는 정답 쪽으로 끌려가서, 판정에 섞으면 웅얼거림이나
+// 다른 대답도 키워드로 바뀌어 통과한다. 그래서 통과했을 때만 hinted까지 보고 화면 글자를 고르고,
+// 떨어지면 진짜 잘못 들린 글자를 그대로 보여 준다 (사용자 결정 2026-11-20: 판정은 그대로, 글자만 바로잡기)
+export function judgeShown(
+  keywords: string[], alternatives: string[], hinted: string | undefined, expected: string
+): KeywordJudgement {
+  const free = judgeKeywords(keywords, alternatives);
+  if (!free.pass || !hinted) return free;
+  return judgeKeywords(keywords, [pickShown(keywords, [...alternatives, hinted], expected)]);
 }

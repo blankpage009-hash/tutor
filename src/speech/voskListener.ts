@@ -13,8 +13,8 @@ export type VoskListenOptions = {
   sentenceEn: string;
   isComplete: (alts: string[]) => boolean; // 문장 전체를 다 말했나 (중간 결과로 바로 끝낼 때)
   isPass: (alts: string[]) => boolean; // 통과 기준을 넘었나 (확정 결과·두 번째 의견에 씀)
-  // true: 통과 못 했을 때만 다시 들어 본다. 'always': 통과해도 다시 듣는다 — 롤플레이는 판정이 아니라
-  // 화면에 적히는 글자를 정답 문장 쪽으로 바로잡으려고 쓴다 (사용자 요청 2026-11-20)
+  // true: 통과 못 했을 때만 다시 들어 보고 후보(alternatives)에 더한다. 'always': 통과해도 다시 듣되
+  // 후보에 섞지 않고 hinted로 따로 준다 — 롤플레이는 판정이 아니라 화면 글자를 바로잡는 데만 쓴다 (2026-11-20)
   secondOpinion: boolean | 'always';
   grammar?: string[]; // 두 번째 의견 단어 목록. 없으면 문장 통째(grammarFor)
   noSpeechMs?: number; // 이만큼 말이 없으면 끝낸다 (기본 12초, 이어 말하기는 8초 — 사용자 결정)
@@ -145,5 +145,6 @@ async function conclude(
   // 자유 인식 세션은 이미 닫았다 — 엔진 작업 스레드에서 인식기가 한 번에 하나만 돌게
   const second = await recognize(o.model, o.mic.sampleRate, grammar, chunks, SECOND_OPINION_MS);
   debug(`두 번째 의견 "${second ?? '(없음)'}" · ${Math.round(performance.now() - began)}ms`);
-  return { alternatives: second && !cands.includes(second) ? [...cands, second] : cands };
+  if (o.secondOpinion === 'always') return { alternatives: cands, ...(second ? { hinted: second } : {}) };
+  return { alternatives: second ? [...cands, second] : cands };
 }

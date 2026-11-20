@@ -136,15 +136,9 @@ describe('앱 인식: 언제 끝내나', () => {
     const r = await t.l.result;
     expect(t.recognize).toHaveBeenCalledOnce();
     expect(t.recognize.mock.calls[0][2]).toBe(grammar);
-    expect(r.alternatives).toEqual(['good to sea you again', 'good to see you again']);
-  });
-
-  it('두 번째 의견이 이미 있는 후보와 같으면 겹쳐 넣지 않는다', async () => {
-    const t = setup({ secondOpinion: 'always', isComplete: () => false });
-    t.sound();
-    t.h().onFinal?.('good to see you again');
-    const r = await t.l.result;
-    expect(r.alternatives).toEqual(['good to see you again']);
+    // 판정용 후보에는 섞지 않고 따로 준다
+    expect(r.alternatives).toEqual(['good to sea you again']);
+    expect(r.hinted).toBe('good to see you again');
   });
 
   it('아무 말도 없으면 no-speech로 끝난다', async () => {

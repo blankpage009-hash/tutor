@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { pickShown, snapToSentence } from './snapHeard';
+import { judgeShown, pickShown, snapToSentence } from './snapHeard';
 
 const text = (heard: string, expected: string) => snapToSentence(heard, expected).map((p) => p.text).join(' ');
 const snapped = (heard: string, expected: string) =>
@@ -54,5 +54,25 @@ describe('롤플레이 화면: 보여 줄 후보 고르기', () => {
 
   it('점수가 같으면 앞의 것(자유 인식)', () => {
     expect(pickShown(['work'], ['afternoons walk best', 'afternoons work best'], ex)).toBe('afternoons walk best');
+  });
+});
+
+describe('롤플레이 판정: 다시 들은 글자(hinted)는 판정에 섞지 않는다', () => {
+  const ex = 'Afternoons work best for me.';
+
+  it('자유 인식에 키워드가 없으면, 다시 들은 글자에 있어도 떨어진다', () => {
+    const j = judgeShown(['for me'], ['afternoons work best'], 'afternoons work best for me', ex);
+    expect(j.pass).toBe(false);
+    expect(j.heard).toBe('afternoons work best');
+  });
+
+  it('자유 인식으로 통과하면, 예시 단어를 더 담은 다시 들은 글자를 보여 준다', () => {
+    const j = judgeShown(['work'], ['after noon walk the best four me'], 'afternoons work best for me', ex);
+    expect(j.pass).toBe(true);
+    expect(j.heard).toBe('afternoons work best for me');
+  });
+
+  it('다시 들은 글자가 없으면 자유 인식 판정 그대로', () => {
+    expect(judgeShown(['work'], ['it works'], undefined, ex).heard).toBe('it works');
   });
 });

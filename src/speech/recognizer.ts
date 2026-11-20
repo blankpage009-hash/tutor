@@ -30,6 +30,9 @@ type SRConstructor = new () => SpeechRecognitionLike;
 export type ListenResult = {
   alternatives: string[]; // 후보 문장들 (판정기는 가장 잘 맞는 후보를 고른다)
   error?: string; // no-speech, not-allowed, audio-capture, network, aborted 등
+  // 정답 문장 단어만 허용해 다시 들은 글자 (앱 인식 secondOpinion 'always'일 때만). 판정에 섞지 않고
+  // 화면 글자에만 쓴다 — 정답 단어로 끌려가서 섞으면 엉뚱한 대답도 통과해 버린다
+  hinted?: string;
 };
 
 export type ListenOptions = {
