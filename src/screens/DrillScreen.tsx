@@ -61,7 +61,7 @@ function DrillBody({ lesson, initial }: { lesson: NewLesson; initial?: DrillPosi
   // 처음부터 다시(restart)는 위치가 다음 화면에서야 0으로 바뀌어 엉뚱한 카드부터 시작할 수 있으니 자동 재생하지 않는다
   const begin = (autoPlay: boolean) => {
     setStarted(true);
-    if (autoPlay && sp.voskReady && !sp.micLocked) hf.start();
+    if (autoPlay && sp.voskReady && !sp.micLocked) { sp.armLeadIn(); hf.start(); }
   };
   if (!started) {
     const resume = steps.index > 0 || steps.cleared.size > 0;
