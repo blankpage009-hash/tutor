@@ -59,6 +59,19 @@ export function pickShown(keywords: string[], alternatives: string[], expected: 
 // 정답 단어만 허용해 다시 들은 글자(hinted)는 정답 쪽으로 끌려가서, 판정에 섞으면 웅얼거림이나
 // 다른 대답도 키워드로 바뀌어 통과한다. 그래서 통과했을 때만 hinted까지 보고 화면 글자를 고르고,
 // 떨어지면 진짜 잘못 들린 글자를 그대로 보여 준다 (사용자 결정 2026-11-20: 판정은 그대로, 글자만 바로잡기)
+export type HeardSource = 'whisper' | 'vosk';
+
+// 롤플레이 최종 판정 (2026-11-21): Whisper 글자가 있으면 그것으로 판정·표시하고, 없으면 judgeShown(지금 방식).
+// Whisper는 소리가 거의 없을 때 "You"·"I" 같은 말을 지어낸다(PC 시험). 키워드 없는 줄은 아무 말이나 통과라
+// 그대로 두면 조용해도 통과해 버린다 → Vosk가 들은 말(모르는 소리 [unk] 뺀)이 하나도 없으면 Whisper를 믿지 않는다
+export function judgeTurn(
+  keywords: string[], voskAlts: string[], hinted: string | undefined, whisperText: string | null, expected: string
+): { judgement: KeywordJudgement; source: HeardSource } {
+  const vosk = judgeKeywords(keywords, voskAlts);
+  if (whisperText && vosk.heard) return { judgement: judgeKeywords(keywords, [whisperText]), source: 'whisper' };
+  return { judgement: judgeShown(keywords, voskAlts, hinted, expected), source: 'vosk' };
+}
+
 export function judgeShown(
   keywords: string[], alternatives: string[], hinted: string | undefined, expected: string
 ): KeywordJudgement {

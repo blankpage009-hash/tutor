@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { judgeShown, pickShown, snapToSentence } from './snapHeard';
+import { judgeShown, judgeTurn, pickShown, snapToSentence } from './snapHeard';
 
 const text = (heard: string, expected: string) => snapToSentence(heard, expected).map((p) => p.text).join(' ');
 const snapped = (heard: string, expected: string) =>
@@ -74,5 +74,36 @@ describe('롤플레이 판정: 다시 들은 글자(hinted)는 판정에 섞지 
 
   it('다시 들은 글자가 없으면 자유 인식 판정 그대로', () => {
     expect(judgeShown(['work'], ['it works'], undefined, ex).heard).toBe('it works');
+  });
+});
+
+describe('롤플레이 최종 판정: Whisper 글자가 있으면 그것으로 (2026-11-21)', () => {
+  const ex = "I'm torn between the pasta and the burger.";
+  const keys = ['torn', 'pasta', 'burger'];
+
+  it('Vosk가 잘못 들어도 Whisper가 맞게 들으면 통과하고 Whisper 글자를 보여 준다', () => {
+    const r = judgeTurn(keys, ["i'm torn between the path tart and a burger"], undefined,
+      "I'm torn between the pasta and the burger.", ex);
+    expect(r.source).toBe('whisper');
+    expect(r.judgement.pass).toBe(true);
+    expect(r.judgement.heard).toBe("I'm torn between the pasta and the burger.");
+  });
+
+  it('Whisper도 키워드를 못 들으면 떨어진다 (정답 쪽으로 끌려가지 않음)', () => {
+    const r = judgeTurn(keys, ['i like coffee'], 'i [unk]', 'I like coffee.', ex);
+    expect(r.source).toBe('whisper');
+    expect(r.judgement.pass).toBe(false);
+  });
+
+  it('Vosk가 들은 말이 없으면(조용함·[unk]만) Whisper가 지어낸 말을 믿지 않는다', () => {
+    const r = judgeTurn([], ['[unk]'], undefined, 'You', ex);
+    expect(r.source).toBe('vosk');
+    expect(r.judgement.pass).toBe(false);
+  });
+
+  it('Whisper 글자가 없으면(준비 안 됨·시간 초과) 지금 방식으로', () => {
+    const r = judgeTurn(['burger'], ['the burger'], 'and the burger', null, ex);
+    expect(r.source).toBe('vosk');
+    expect(r.judgement.pass).toBe(true);
   });
 });

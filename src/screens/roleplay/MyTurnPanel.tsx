@@ -25,6 +25,7 @@ function statusLabel(p: Props): string {
   if (!p.myTurn) return 'Tap to resume';
   if (!p.running) return 'Tap to answer';
   if (p.turn.last?.pass) return 'Pass';
+  if (p.turn.checking) return 'Checking…';
   if (p.turn.preparing) return 'Get ready';
   return 'Listening…';
 }
@@ -32,6 +33,8 @@ function statusLabel(p: Props): string {
 // 라벨 밑 한국어 안내: 듣는 중 요령, 인식 준비 같은 꼭 읽어야 할 말만
 function hintText(p: Props): string | null {
   if (!p.running && p.micLocked && p.engineNote) return p.engineNote;
+  // Whisper가 다시 받아쓰는 약 2.3초 — 마이크가 꺼져 있으니 다음 말은 기다렸다가
+  if (p.myTurn && p.running && p.turn.checking) return '들은 말을 확인하고 있어요';
   if (p.myTurn && p.running && p.turn.preparing) return '마이크가 켜지면 말해 주세요';
   if (p.myTurn && p.running && !p.turn.last?.pass) return '다 말하고 잠깐 멈추면 판정해요';
   return null;
@@ -60,7 +63,7 @@ export function MyTurnPanel(p: Props) {
         <button type="button" className={dialogueStyles.side} onClick={p.onToggleExample} disabled={!p.myTurn}
           aria-pressed={p.showExample} aria-label={p.showExample ? '예시 영어 숨기기' : '예시 영어 보기'}><IconBulb /></button>
         {p.myTurn
-          ? <MicButton tone="label" listening={p.running && !passed && !p.turn.preparing} status={statusLabel(p)}
+          ? <MicButton tone="label" listening={p.running && !passed && !p.turn.preparing && !p.turn.checking} status={statusLabel(p)}
             disabled={passed || p.echoing || (!p.running && p.micLocked)} onClick={p.running ? p.onPause : p.onResume} />
           : <PlayToggle p={p} />}
         <button type="button" className={dialogueStyles.side} onClick={p.onSkip}

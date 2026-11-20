@@ -31,7 +31,7 @@ export function MeCard({ line, turn, showExample }: Props) {
         </ul>
       </div>
       {heard
-        ? <Heard keywords={keys} text={heard} expected={line.exampleEn} />
+        ? <Heard keywords={keys} text={heard} expected={line.exampleEn} snap={!(turn.last?.source === 'whisper' && !turn.live)} />
         : <p className={styles.prompt} lang="ko">{keys.length ? '꼭 넣을 말을 넣어 영어로 대답해 보세요' : '자유롭게 영어로 대답해 보세요'}</p>}
       <p className={dialogueStyles.cardKo} lang="ko">예: {line.exampleKo}</p>
       {showExample && <p className={styles.example} lang="en">{line.exampleEn}</p>}
@@ -40,9 +40,12 @@ export function MeCard({ line, turn, showExample }: Props) {
 }
 
 // 소리가 비슷해 예시 문장 단어로 맞춰 적은 말은 점선 밑줄로 구분한다 — 진짜 들린 글자와 섞이지 않게.
-// 맞춰 적기는 한 단어 → 한 단어라 키워드 강조와 단어 번호가 같다
-function Heard({ keywords, text, expected }: { keywords: string[]; text: string; expected: string }) {
-  const snap = snapToSentence(text, expected);
+// 맞춰 적기는 한 단어 → 한 단어라 키워드 강조와 단어 번호가 같다.
+// Whisper가 받아쓴 글자는 맞춰 적지 않는다(snap=false): 들린 그대로 보여 줘야 발음 피드백이 된다 (2026-11-21)
+type HeardProps = { keywords: string[]; text: string; expected: string; snap: boolean };
+
+function Heard({ keywords, text, expected, snap: on }: HeardProps) {
+  const snap = on ? snapToSentence(text, expected) : text.split(/\s+/).filter(Boolean).map((t) => ({ text: t, snapped: false }));
   const marks = markKeywords(keywords, snap.map((s) => s.text).join(' '));
   return (
     <p className={styles.heard} lang="en">

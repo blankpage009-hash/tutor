@@ -141,6 +141,23 @@ describe('앱 인식: 언제 끝내나', () => {
     expect(r.hinted).toBe('good to see you again');
   });
 
+  it('keepAudio면 모아 둔 목소리를 결과에 함께 준다 (롤플레이 Whisper용)', async () => {
+    const t = setup({ secondOpinion: false, keepAudio: true });
+    t.sound();
+    t.sound();
+    t.h().onFinal?.('good to see you again');
+    const r = await t.l.result;
+    expect(r.audio?.rate).toBe(16000);
+    expect(r.audio?.chunks).toHaveLength(2);
+  });
+
+  it('keepAudio가 없으면 목소리를 넘기지 않는다', async () => {
+    const t = setup({ secondOpinion: false });
+    t.sound();
+    t.h().onFinal?.('good to see you again');
+    expect((await t.l.result).audio).toBeUndefined();
+  });
+
   it('아무 말도 없으면 no-speech로 끝난다', async () => {
     const t = setup();
     vi.advanceTimersByTime(NO_SPEECH_MS);

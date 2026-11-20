@@ -17,6 +17,7 @@ export type VoskListenOptions = {
   // 후보에 섞지 않고 hinted로 따로 준다 — 롤플레이는 판정이 아니라 화면 글자를 바로잡는 데만 쓴다 (2026-11-20)
   secondOpinion: boolean | 'always';
   grammar?: string[]; // 두 번째 의견 단어 목록. 없으면 문장 통째(grammarFor)
+  keepAudio?: boolean; // 결과에 모아 둔 목소리(audio)도 넘겨준다 (롤플레이 Whisper 받아쓰기용, 2026-11-21)
   noSpeechMs?: number; // 이만큼 말이 없으면 끝낸다 (기본 12초, 이어 말하기는 8초 — 사용자 결정)
   // 확정 결과가 통과 못 했을 때 더 들어 볼 시간 (기본 AFTER_FINAL_MS). 롤플레이 자유 답변은 생각하며 쉬어서 길게
   afterFinalMs?: number;
@@ -111,7 +112,8 @@ export function listenVosk(o: VoskListenOptions): Listening {
       unsubscribe();
       session.close();
       s.debug(`끝 (${reason})`);
-      void conclude(o, candidatesOf(s.segments, s.lastPartial), s.chunks, s.debug).then(finish);
+      void conclude(o, candidatesOf(s.segments, s.lastPartial), s.chunks, s.debug)
+        .then((r) => finish(o.keepAudio ? { ...r, audio: { chunks: s.chunks, rate: o.mic.sampleRate } } : r));
     }
   };
   const session = make(o.model, o.mic.sampleRate, null, {

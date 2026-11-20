@@ -5,15 +5,16 @@ import type { NewLesson, RolePlayLine } from '../../content/lessonTypes';
 import { finishNewStep } from '../../db/progress';
 import type { NewLessonStep } from '../../newLessonFlow';
 import { judgeKeywords, type KeywordJudgement } from '../../scoring/keywordJudge';
-import { judgeShown } from '../../scoring/snapHeard';
+import { judgeTurn, type HeardSource } from '../../scoring/snapHeard';
 import { playAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
 import { playFeedback } from '../../speech/feedbackSound';
 import { createMicSlot, TUTOR_SAFE_MIC, type MicSlot } from '../../speech/micSlot';
 import type { MicStream } from '../../speech/micStream';
 import { createCaptureContext } from '../../speech/pcmCapture';
-import type { Listening } from '../../speech/recognizer';
+import type { Listening, ListenResult } from '../../speech/recognizer';
 import { looseGrammarFor } from '../../speech/voskEngine';
 import { listenVosk } from '../../speech/voskListener';
+import { whisper } from '../../speech/whisperEngine';
 import { ENGINE_NOTE } from '../newLesson/useNewSpeaking';
 import { openVoskMic } from '../shadowing/useShadowingAttempt';
 import { useVoskModel } from '../shadowing/useVoskModel';
@@ -26,9 +27,13 @@ export type RolePlaySource = Pick<NewLesson, 'lessonId' | 'rolePlay'> & { levelC
 
 export type MyLine = Extract<RolePlayLine, { speaker: 'me' }>;
 // 내 줄 화면: live = 듣는 중 들린 말, last = 마지막으로 끝난 시도(틀리면 빠진 말을 보여 주고 바로 다시 듣는다),
-// preparing = 내 차례지만 마이크가 아직 켜지는 중
+// preparing = 내 차례지만 마이크가 아직 켜지는 중, checking = 말이 끝나 Whisper가 다시 받아쓰는 중(약 2.3초),
+// last.source = 보여 주는 글자를 누가 받아썼나 (Whisper 글자는 비슷한 소리 맞춰 적기를 하지 않는다)
 export type Turn = {
-  live: KeywordJudgement | null; last: { pass: boolean; judgement: KeywordJudgement } | null; preparing: boolean;
+  live: KeywordJudgement | null;
+  last: { pass: boolean; judgement: KeywordJudgement; source: HeardSource } | null;
+  preparing: boolean;
+  checking: boolean;
 };
 
 // 통과 글자를 잠깐 보여 준 뒤 다음 상대 줄로 (대화문과 같은 간격)
@@ -37,6 +42,8 @@ const PASS_PAUSE_MS = 800;
 const THINK_PAUSE_MS = 2500;
 // 키워드가 다 나와도 문장을 끝까지 말하게, 말이 이만큼 멈춰야 통과로 끝낸다 (사용자 요청 2026-11-20)
 const DONE_PAUSE_MS = 1500;
+// Whisper 받아쓰기를 이만큼까지 기다린다. 아이폰에서 약 2.3초라 넉넉히. 넘으면 Vosk로 판정
+const WHISPER_TIMEOUT_MS = 8000;
 
 type Ctx = {
   model: Model; slot: MicSlot; log: (m: string) => void; stopped: () => boolean;
@@ -71,9 +78,22 @@ async function judgedSound(c: Ctx, pass: boolean): Promise<void> {
   await playFeedback(pass ? 'pass' : 'fail');
 }
 
+// 말이 끝난 뒤 판정. Whisper가 준비돼 있으면 모아 둔 목소리를 다시 받아써 그 글자로 판정한다
+// (엔진 비교 2026-11-21: 아이폰 Vosk 79% → Whisper 92%). 그동안 "확인 중"을 보여 주고, 마이크는 먼저 닫는다
+async function judgeHeard(c: Ctx, line: MyLine, res: ListenResult): Promise<ReturnType<typeof judgeTurn>> {
+  let text: string | null = null;
+  if (res.audio) {
+    c.slot.release();
+    c.setTurn((t) => ({ ...t, checking: true }));
+    text = await whisper().transcribe(res.audio, WHISPER_TIMEOUT_MS, c.log);
+    c.setTurn((t) => ({ ...t, checking: false }));
+  }
+  return judgeTurn(line.requiredKeywords, res.alternatives, res.hinted, text, line.exampleEn);
+}
+
 // 한 번 듣기. 중간 결과로 끝내지 않음(문장 중간에서 잘린다).
-// 두 번째 의견은 늘 묻는다(화면 글자용, 판정엔 안 씀): 대답이 드릴 문장이 된 뒤(2026-11-20)
-// 예시 답 단어로 다시 들으면 흐린 발음도 맞게 적힌다 (사용자 요청 2026-11-20)
+// Whisper가 준비 안 됐으면 두 번째 의견(정답 단어로 다시 듣기)을 늘 묻는다(화면 글자용, 판정엔 안 씀, 2026-11-20).
+// Whisper가 준비돼 있으면 그쪽이 다시 받아쓰므로 두 번째 의견은 건너뛴다(시간 절약)
 async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   const keys = line.requiredKeywords;
   const mic = await micForTurn(c);
@@ -82,9 +102,10 @@ async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   // 판정 소리·마이크 여는 사이에 누른 건너뛰기 (그동안은 듣는 중이 아니라 듣기를 끊을 수 없다)
   if (takeSkip(c, line)) return 'skipped';
   c.setTurn((t) => ({ ...t, live: judgeKeywords(keys, []) }));
+  const useWhisper = whisper().ready();
   const l = listenVosk({
     model: c.model, mic, sentenceEn: line.exampleEn, afterFinalMs: THINK_PAUSE_MS,
-    secondOpinion: 'always', grammar: looseGrammarFor(line.exampleEn),
+    secondOpinion: useWhisper ? false : 'always', grammar: looseGrammarFor(line.exampleEn), keepAudio: useWhisper,
     afterPassMs: DONE_PAUSE_MS, isComplete: () => false,
     isPass: (alts) => judgeKeywords(keys, alts).pass,
     onInterim: (alts) => c.setTurn((t) => ({ ...t, live: judgeKeywords(keys, alts) })),
@@ -95,10 +116,13 @@ async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   c.listening.current = null;
   if (takeSkip(c, line)) return 'skipped';
   if (!res.alternatives.length) return 'no-speech';
-  const judgement = judgeShown(keys, res.alternatives, res.hinted, line.exampleEn);
-  c.log(`롤플레이 판정 ${judgement.pass ? '통과' : '실패'} · 들린 말 "${judgement.heard}"`);
+  const { judgement, source } = await judgeHeard(c, line, res);
+  // 받아쓰는 사이 누른 멈춤·건너뛰기
+  if (c.stopped()) return 'no-speech';
+  if (takeSkip(c, line)) return 'skipped';
+  c.log(`롤플레이 판정(${source}) ${judgement.pass ? '통과' : '실패'} · 들린 말 "${judgement.heard}"`);
   // 틀리면 판정 소리 동안 마이크를 닫으므로 바로 "마이크 준비 중"으로 (듣는 중으로 보이면 일찍 말해 첫 단어가 잘린다)
-  c.setTurn(() => ({ live: null, last: { pass: judgement.pass, judgement }, preparing: !judgement.pass }));
+  c.setTurn(() => ({ live: null, last: { pass: judgement.pass, judgement, source }, preparing: !judgement.pass, checking: false }));
   if (judgement.pass) c.record(line.no, judgement.heard);
   await judgedSound(c, judgement.pass);
   return judgement.pass ? 'passed' : 'failed';
@@ -150,7 +174,7 @@ async function session(r: Run, ctx: AudioContext) {
   }
 }
 
-const EMPTY_TURN: Turn = { live: null, last: null, preparing: false };
+const EMPTY_TURN: Turn = { live: null, last: null, preparing: false, checking: false };
 
 // 화면 상태: 지금 줄·내가 한 말·내 줄 결과
 function useRolePlayState() {
@@ -171,6 +195,9 @@ export type StepResult = { done: boolean; missing: NewLessonStep[] };
 export function useRolePlaySession(lesson: RolePlaySource) {
   const log = useCallback((m: string) => console.debug(`[롤플레이] ${m}`), []);
   const vosk = useVoskModel(true, log);
+  // 롤플레이 판정용 Whisper를 화면을 열 때부터 뒤에서 준비한다(처음 한 번 약 100MB 내려받기).
+  // 준비되기 전 차례는 지금 방식(Vosk)으로 판정한다. 앱 전체에서 한 번만 불러온다
+  useEffect(() => whisper().preload(log), [log]);
   const st = useRolePlayState();
   const [phase, setPhase] = useState<Phase>('intro');
   const [running, setRunning] = useState(false);

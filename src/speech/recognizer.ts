@@ -33,6 +33,8 @@ export type ListenResult = {
   // 정답 문장 단어만 허용해 다시 들은 글자 (앱 인식 secondOpinion 'always'일 때만). 판정에 섞지 않고
   // 화면 글자에만 쓴다 — 정답 단어로 끌려가서 섞으면 엉뚱한 대답도 통과해 버린다
   hinted?: string;
+  // 들은 동안 모아 둔 내 목소리 (앱 인식 keepAudio일 때만). 롤플레이가 Whisper로 다시 받아쓸 때 쓴다
+  audio?: { chunks: Float32Array[]; rate: number };
 };
 
 export type ListenOptions = {

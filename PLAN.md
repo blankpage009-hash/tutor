@@ -172,6 +172,7 @@
 | dexie | IndexedDB를 쉽게 쓰는 라이브러리 (저장 문장, 진도, 녹음) |
 | vitest | 판정 로직(단어 일치율, SRS 계산) 단위 테스트 |
 | vosk-browser (2026-11-16 승인) | 앱 안 음성 인식 엔진(Apache-2.0, 약 6MB). 영어 모델 `vosk-model-small-en-us-0.15`(Apache-2.0, 약 40MB, 출처 alphacephei.com)은 `public/models/`에 두고 처음 쓸 때 한 번 내려받아 기기에 보관 |
+| @huggingface/transformers (2026-11-21 승인) | 롤플레이 판정용 앱 안 음성 인식(Whisper, Apache-2.0). 모델 `whisper-base.en` ONNX 양자화판(Apache-2.0, 약 77MB, 출처 huggingface.co/onnx-community)은 `public/models/whisper-base.en/`에 두고 처음 쓸 때 한 번 내려받아 기기에 보관. 아이폰 Safari 시험: 92%·약 2.3초(작은 Vosk 79%). WebGPU 방식은 아이폰에서 꺼져서 CPU(wasm)만 |
 
 **개발용 PC 도구** (앱에 들어가지 않음, Phase 2에서 설치 전에 다시 승인받는다)
 
