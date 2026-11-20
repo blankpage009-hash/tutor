@@ -72,11 +72,11 @@
 }
 .hit { border-color: var(--accent-tint); background: var(--accent-tint); color: var(--accent-ink); }
 
-/* 내가 한 말: 대화문·드릴과 같은 말할 문장 크기, 키워드 부분만 파랑 굵게 */
+/* 내가 한 말: 24px (사용자 요청 2026-11-21 — 내 말로 하는 대답이라 길어지기 쉬워 대화문·드릴보다 작게), 키워드 부분만 파랑 굵게 */
 .heard {
   margin: 0;
-  font-size: var(--type-speak-size);
-  line-height: var(--type-speak-line);
+  font-size: 24px;
+  line-height: 1.4;
   font-weight: 500;
   overflow-wrap: anywhere;
 }

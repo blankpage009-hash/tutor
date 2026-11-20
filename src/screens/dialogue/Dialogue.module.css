@@ -156,7 +156,11 @@
   letter-spacing: var(--type-sentence-tracking);
   overflow-wrap: anywhere;
 }
-.cardDim .cardEn { font-size: 17px; line-height: 1.4; letter-spacing: 0; }
+/* 흐린 튜터 줄도 내 줄과 같은 30px (사용자 요청 2026-11-21: 튜터·내 문장 모두 같은 크기) */
+.cardDim {
+  --type-sentence-size: var(--type-speak-size);
+  --type-sentence-line: var(--type-speak-line);
+}
 
 .cardKo {
   margin: 0;
