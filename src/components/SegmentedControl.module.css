@@ -29,3 +29,9 @@
   color: var(--on-accent);
   font-weight: 600;
 }
+
+.compact .btn {
+  min-height: 34px;
+  padding: 0 var(--space-1);
+  font-size: 13px;
+}

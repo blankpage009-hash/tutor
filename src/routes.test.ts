@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { SCREENS, TABS } from './routes';
 
 describe('화면 목록', () => {
-  it('화면 10개가 모두 있다 (옛 10코스 화면 3개는 삭제됨)', () => {
-    expect(SCREENS).toHaveLength(10);
+  it('화면 12개가 모두 있다 (설정 하위 화면 시작 레벨·Gemini 키 추가, 튜터 이름 화면은 없음)', () => {
+    expect(SCREENS).toHaveLength(12);
   });
 
   it('주소가 겹치지 않는다', () => {

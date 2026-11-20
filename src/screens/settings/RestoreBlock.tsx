@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { Button } from '../../components/Button';
+import { SettingsRow } from '../../components/SettingsRow';
 import { parseBackup, summarizeBackup, type BackupData } from '../../backup/backup';
 import { restoreBackup } from '../../db/backup';
 import styles from './Settings.module.css';
@@ -19,7 +20,7 @@ function Summary({ p }: { p: Pending }) {
       <ul className={styles.summary} lang="ko">
         <li>저장 문장 {s.savedSentences}개 · 단어 {s.vocab}개</li>
         <li>진도 {s.progress}개 · 복습 기록 {s.srsState}개 · 연습 기록 {s.activity}일</li>
-        <li>설정: 튜터 {p.data.settings.tutorName}, 일일 목표 {p.data.settings.dailyGoal}번 등</li>
+        <li>설정: 일일 목표 {p.data.settings.dailyGoal}번 등</li>
       </ul>
       {p.dropped > 0 && <p className={styles.keyHint} lang="ko">읽을 수 없는 항목 {p.dropped}개는 빼고 가져와요.</p>}
       <p className={styles.warn} lang="ko">이 기기의 지금 기록은 모두 지워지고 백업 내용으로 바뀌어요. 되돌릴 수 없어요.</p>
@@ -63,22 +64,22 @@ export function RestoreBlock() {
   };
 
   return (
-    <div className={styles.keyBlock}>
-      <p className={styles.keyName} lang="ko">백업 불러오기</p>
-      <p className={styles.keyHint} lang="ko">백업 파일(.json)을 골라 이 기기에 복원해요.</p>
+    <>
       <input ref={input} className={styles.hidden} type="file" accept="application/json,.json" aria-label="백업 파일 선택"
         onChange={(e) => { void pick(e.target.files?.[0]); e.target.value = ''; }} />
-      {!pending && <div className={styles.keyActions}><Button size="sm" onClick={() => input.current?.click()}>백업 파일 고르기</Button></div>}
-      {pending && (
-        <>
-          <Summary p={pending} />
-          <div className={styles.keyActions}>
-            <Button variant="primary" size="sm" disabled={busy} onClick={apply}>지우고 복원하기</Button>
-            <Button variant="ghost" size="sm" disabled={busy} onClick={() => setPending(null)}>취소</Button>
-          </div>
-        </>
+      <SettingsRow name="Backup Import" disabled={busy} onClick={() => input.current?.click()} />
+      {(pending || message) && (
+        <div className={styles.detail}>
+          {pending && <Summary p={pending} />}
+          {pending && (
+            <div className={styles.keyActions}>
+              <Button variant="primary" size="sm" disabled={busy} onClick={apply}>지우고 복원하기</Button>
+              <Button variant="ghost" size="sm" disabled={busy} onClick={() => setPending(null)}>취소</Button>
+            </div>
+          )}
+          {message && <p className={styles.keyState} lang="ko" role="status">{message}</p>}
+        </div>
       )}
-      {message && <p className={styles.keyState} lang="ko" role="status">{message}</p>}
-    </div>
+    </>
   );
 }

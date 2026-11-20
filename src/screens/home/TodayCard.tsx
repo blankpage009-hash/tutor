@@ -4,14 +4,14 @@ import { ProgressBar } from '../../components/ProgressBar';
 import { useActivitySummary } from '../progress/useActivitySummary';
 import styles from './TodayCard.module.css';
 
-// 홈 맨 위: 연속 학습일과 오늘 목표(칸 나뉜 막대). 탭하면 진도 화면(3단계에서 설정 맨 위로 합칠 때까지 임시 연결).
+// 홈 맨 위: 연속 학습일과 오늘 목표(칸 나뉜 막대). 탭하면 설정 맨 위의 PROGRESS 요약으로 간다.
 // 기록을 못 읽으면 통째로 숨긴다(홈의 나머지는 그대로)
 export function TodayCard() {
   const a = useActivitySummary();
   if (!a) return null;
   const { count, goal } = a.goal;
   return (
-    <Link to="/settings/progress" className={styles.card} aria-label={`연속 ${a.streak}일, 오늘 목표 ${count} / ${goal}. 진도 보기`}>
+    <Link to="/settings" className={styles.card} aria-label={`연속 ${a.streak}일, 오늘 목표 ${count} / ${goal}. 진도·설정 보기`}>
       <div className={styles.head}>
         <span className={styles.streak}>
           <IconFlame />

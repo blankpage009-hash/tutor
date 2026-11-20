@@ -7,6 +7,7 @@ import { CurriculumLevelScreen } from './screens/CurriculumLevelScreen';
 import { CustomRolePlayScreen } from './screens/CustomRolePlayScreen';
 import { DialogueScreen } from './screens/DialogueScreen';
 import { DrillScreen } from './screens/DrillScreen';
+import { GeminiKeyScreen } from './screens/GeminiKeyScreen';
 import { LearnScreen } from './screens/LearnScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { LibraryScreen } from './screens/LibraryScreen';
@@ -18,6 +19,7 @@ import { PromptScreen } from './screens/PromptScreen';
 import { ReviewScreen } from './screens/ReviewScreen';
 import { RoleplayScreen } from './screens/RoleplayScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
+import { StartLevelScreen } from './screens/StartLevelScreen';
 import { SettingsProvider } from './settings/SettingsProvider';
 import { VocabQuizScreen } from './screens/VocabQuizScreen';
 import { VocabScreen } from './screens/VocabScreen';
@@ -40,6 +42,8 @@ export function App() {
           <Route path="/prompt" element={<PromptScreen />} />
           <Route path="/settings" element={<SettingsScreen />} />
           <Route path="/settings/progress" element={<ProgressScreen />} />
+          <Route path="/settings/start-level" element={<StartLevelScreen />} />
+          <Route path="/settings/gemini-key" element={<GeminiKeyScreen />} />
         </Route>
         <Route element={<PracticeLayout />}>
           {/* 새 커리큘럼 레슨 (Phase 5.5) */}

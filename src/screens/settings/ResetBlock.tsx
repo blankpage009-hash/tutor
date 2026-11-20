@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from '../../components/Button';
+import { SettingsRow } from '../../components/SettingsRow';
 import { resetAllData } from '../../db/backup';
 import styles from './Settings.module.css';
 
@@ -23,22 +24,24 @@ export function ResetBlock() {
   };
 
   return (
-    <div className={styles.keyBlock}>
-      <p className={styles.keyName} lang="ko">전체 초기화</p>
-      <p className={styles.keyHint} lang="ko">이 기기의 모든 기록과 설정을 지우고 처음 상태로 돌려요.</p>
-      {!asking && <div className={styles.keyActions}><Button size="sm" onClick={() => setAsking(true)}>전체 초기화…</Button></div>}
-      {asking && (
-        <>
-          <p className={styles.warn} lang="ko">
-            저장 문장·단어장·진도·복습 기록·연습 기록·설정·Gemini 키·테마가 모두 지워져요. 되돌릴 수 없으니, 먼저 위에서 백업을 저장해 두는 걸 권해요.
-          </p>
-          <div className={styles.keyActions}>
-            <Button variant="primary" size="sm" disabled={busy} onClick={reset}>모두 지우기</Button>
-            <Button variant="ghost" size="sm" disabled={busy} onClick={() => setAsking(false)}>취소</Button>
-          </div>
-        </>
+    <>
+      <SettingsRow name="Reset All" danger disabled={busy || asking} onClick={() => setAsking(true)} />
+      {(asking || message) && (
+        <div className={styles.detail}>
+          {asking && (
+            <>
+              <p className={styles.warn} lang="ko">
+                저장 문장·단어장·진도·복습 기록·연습 기록·설정·Gemini 키·테마가 모두 지워져요. 되돌릴 수 없으니, 먼저 Backup Export로 백업을 저장해 두는 걸 권해요.
+              </p>
+              <div className={styles.keyActions}>
+                <Button variant="primary" size="sm" disabled={busy} onClick={reset}>모두 지우기</Button>
+                <Button variant="ghost" size="sm" disabled={busy} onClick={() => setAsking(false)}>취소</Button>
+              </div>
+            </>
+          )}
+          {message && <p className={styles.keyState} lang="ko" role="status">{message}</p>}
+        </div>
       )}
-      {message && <p className={styles.keyState} lang="ko" role="status">{message}</p>}
-    </div>
+    </>
   );
 }

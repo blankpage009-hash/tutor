@@ -1,36 +1,39 @@
-.section { margin: var(--space-5) 0 var(--space-2); }
-
-.big {
-  margin: 0;
-  font-weight: var(--type-headline-weight);
-  font-size: var(--type-headline-size);
-  line-height: var(--type-headline-line);
+.label, .tag, .badge {
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
 }
 
-.stats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); margin: 0 0 var(--space-3); }
+.overall { padding: var(--space-4) 0 var(--space-3); }
+.overallHead { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: var(--space-2); }
+.label { color: var(--ink-muted); }
+.big { font-family: var(--type-label-family); font-size: 34px; line-height: 1; font-weight: 600; color: var(--accent-ink); }
+.meta { margin: var(--space-2) 0 0; font-size: var(--type-body-kr-size); line-height: var(--type-body-kr-line); color: var(--ink-muted); }
 
-.stat {
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  background: var(--surface);
+.course {
+  margin: var(--space-5) 0 var(--space-1);
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
+  color: var(--ink-muted);
 }
-
-.statValue { margin: 0; font-weight: var(--type-headline-weight); font-size: var(--type-headline-size); line-height: var(--type-headline-line); }
-
-.statLabel { margin: var(--space-1) 0 0; font-size: var(--type-body-kr-size); line-height: var(--type-body-kr-line); color: var(--ink-muted); }
-
-.met { color: var(--accent-ink); }
 
 .levelRow {
-  display: block;
-  padding: var(--space-3) 0;
-  min-height: var(--tap-min);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 52px;
   border-bottom: 1px solid var(--line);
   text-decoration: none;
   color: inherit;
 }
 
-.current { background: var(--accent-tint); padding-left: var(--space-3); padding-right: var(--space-3); border-radius: var(--radius-md); }
-
+.levelName { display: inline-flex; align-items: baseline; gap: var(--space-2); font-size: 16px; font-weight: 500; }
+.tag { font-size: 11px; color: var(--accent-ink); }
+.badge { color: var(--ink); }
 .pending { color: var(--ink-muted); }
+
+.current { background: var(--accent-tint); padding-left: var(--space-3); padding-right: var(--space-3); border-radius: var(--radius-sm); }

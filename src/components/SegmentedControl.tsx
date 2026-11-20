@@ -6,11 +6,13 @@ type Props<T extends string> = {
   value: T;
   onChange: (value: T) => void;
   label: string;
+  // 설정 줄 오른쪽에 들어가는 낮은 모양(시안 34px). 기본은 터치하기 편한 높이
+  compact?: boolean;
 };
 
-export function SegmentedControl<T extends string>({ options, value, onChange, label }: Props<T>) {
+export function SegmentedControl<T extends string>({ options, value, onChange, label, compact }: Props<T>) {
   return (
-    <div role="group" aria-label={label} className={styles.group}>
+    <div role="group" aria-label={label} className={`${styles.group} ${compact ? styles.compact : ''}`}>
       {options.map((o) => (
         <button
           key={o.value}
