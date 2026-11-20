@@ -56,11 +56,18 @@ function DrillBody({ lesson, initial }: { lesson: NewLesson; initial?: DrillPosi
       </>
     );
   }
+  // 시작 버튼을 누른 그 순간에 바로 이어 말하기를 켠다. 나중에 켜면 iOS가 마이크 소리를 막는다(탭한 순간 만든 장치만 허용).
+  // 재생 버튼과 같은 조건(인식 엔진 준비됨, 마이크 안 잠김)일 때만 켜고, 아니면 화면만 열어 안내를 보여준다.
+  // 처음부터 다시(restart)는 위치가 다음 화면에서야 0으로 바뀌어 엉뚱한 카드부터 시작할 수 있으니 자동 재생하지 않는다
+  const begin = (autoPlay: boolean) => {
+    setStarted(true);
+    if (autoPlay && sp.voskReady && !sp.micLocked) hf.start();
+  };
   if (!started) {
     const resume = steps.index > 0 || steps.cleared.size > 0;
     return (
-      <DrillList lesson={lesson} fill={steps.index / plan.length} resume={resume} onStart={() => setStarted(true)}
-        onRestart={() => { steps.restart(); setStarted(true); }} />
+      <DrillList lesson={lesson} fill={steps.index / plan.length} resume={resume} onStart={() => begin(true)}
+        onRestart={() => { steps.restart(); begin(false); }} />
     );
   }
   return (
