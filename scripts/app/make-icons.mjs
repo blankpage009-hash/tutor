@@ -1,10 +1,44 @@
-// 임시 아이콘 생성기: 파랑 바탕에 흰 "T". 외부 라이브러리 없이 PNG를 직접 만든다.
-// 나중에 진짜 아이콘으로 바꿀 땐 public/icons/ 의 같은 이름 파일만 교체하면 된다.
+// 앱 아이콘 생성기: "Natter App Icon.html"의 3C 시안(코랄 바탕 + 흰 음성 막대 5개).
+// 외부 라이브러리 없이 PNG를 직접 만든다. 실행: node scripts/app/make-icons.mjs
 import { deflateSync } from 'node:zlib';
 import { writeFileSync, mkdirSync } from 'node:fs';
 
-const BG = [0x0f, 0x31, 0xb8];
+const BG = [0xff, 0x5a, 0x4e];
 const FG = [0xff, 0xff, 0xff];
+
+// 시안 SVG(100x100 좌표)의 막대 값 그대로. 폭 7, 양끝은 반지름 3.5로 완전히 둥글다.
+const BAR_W = 7;
+const BARS = [
+  { x: 22.5, y: 42, h: 16 },
+  { x: 34.5, y: 33, h: 34 },
+  { x: 46.5, y: 24, h: 52 },
+  { x: 58.5, y: 33, h: 34 },
+  { x: 70.5, y: 42, h: 16 }
+];
+
+// 막대(세로 캡슐) 안에 점이 있는지: 가운데 세로선까지의 거리가 반지름 이하인가
+function inBar(px, py) {
+  const r = BAR_W / 2;
+  return BARS.some(({ x, y, h }) => {
+    const cx = x + r;
+    const cy = Math.min(Math.max(py, y + r), y + h - r);
+    return (px - cx) ** 2 + (py - cy) ** 2 <= r * r;
+  });
+}
+
+// 가장자리가 계단처럼 보이지 않게 픽셀 하나를 4x4로 쪼개 흰색 비율만큼 섞는다
+const SS = 4;
+function coverage(x, y, size) {
+  let hit = 0;
+  for (let sy = 0; sy < SS; sy++) {
+    for (let sx = 0; sx < SS; sx++) {
+      const px = ((x + (sx + 0.5) / SS) / size) * 100;
+      const py = ((y + (sy + 0.5) / SS) / size) * 100;
+      if (inBar(px, py)) hit++;
+    }
+  }
+  return hit / (SS * SS);
+}
 
 function crc32(buf) {
   let c, crc = 0xffffffff;
@@ -25,18 +59,14 @@ function chunk(type, data) {
   return Buffer.concat([len, body, crc]);
 }
 
+// 바탕은 꽉 찬 정사각형으로 둔다 — 아이폰이 모서리를 알아서 둥글게 깎기 때문
 function makePng(size) {
-  // T 모양: 윗줄 가로막대 + 가운데 세로막대. 마스커블 안전영역을 위해 중앙 60% 안에 그린다.
-  const u = size / 10;
-  const inT = (x, y) =>
-    (y >= 2.5 * u && y < 4 * u && x >= 2.5 * u && x < 7.5 * u) ||
-    (y >= 4 * u && y < 7.5 * u && x >= 4.25 * u && x < 5.75 * u);
   const rows = [];
   for (let y = 0; y < size; y++) {
     const row = Buffer.alloc(1 + size * 3);
     for (let x = 0; x < size; x++) {
-      const [r, g, b] = inT(x, y) ? FG : BG;
-      row[1 + x * 3] = r; row[2 + x * 3] = g; row[3 + x * 3] = b;
+      const a = coverage(x, y, size);
+      for (let i = 0; i < 3; i++) row[1 + x * 3 + i] = Math.round(BG[i] * (1 - a) + FG[i] * a);
     }
     rows.push(row);
   }

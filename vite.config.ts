@@ -24,8 +24,8 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024
       },
       manifest: {
-        name: 'Tutor',
-        short_name: 'Tutor',
+        name: 'Natter',
+        short_name: 'Natter',
         description: '영어 문장 쉐도잉 · 반복 학습',
         lang: 'ko',
         start_url: '/tutor/',
