@@ -50,3 +50,15 @@
   color: var(--ink-muted);
   text-align: center;
 }
+
+.label {
+  margin: 0;
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  line-height: 1;
+  font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  text-align: center;
+}

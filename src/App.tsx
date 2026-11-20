@@ -48,11 +48,12 @@ export function App() {
         </Route>
         <Route element={<PlainLayout />}>
           <Route path="/n/:lessonId" element={<NewLessonMenuScreen />} />
+          {/* 설명·대화문은 위쪽 단계 막대에 X를 직접 그린다 (X → 레슨 화면, Phase 7.95 5단계) */}
+          <Route path="/n/:lessonId/learn" element={<LearnScreen />} />
+          <Route path="/n/:lessonId/dialogue" element={<DialogueScreen />} />
         </Route>
         <Route element={<PracticeLayout />}>
           {/* 새 커리큘럼 레슨 (Phase 5.5) */}
-          <Route path="/n/:lessonId/learn" element={<LearnScreen />} />
-          <Route path="/n/:lessonId/dialogue" element={<DialogueScreen />} />
           <Route path="/n/:lessonId/drill" element={<DrillScreen />} />
           <Route path="/n/:lessonId/roleplay" element={<NewRolePlayScreen />} />
           <Route path="/review" element={<ReviewScreen />} />

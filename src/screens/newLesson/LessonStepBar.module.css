@@ -1,0 +1,82 @@
+/* 디자인 v2 04·05: X + 4칸 막대(4px 선) + 10px 라벨 */
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 52px;
+  margin: 0 calc(var(--space-2) * -1);
+}
+
+.close, .spacer {
+  flex: none;
+  width: var(--tap-min);
+  height: var(--tap-min);
+}
+
+.close {
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+}
+.close:active { background: var(--accent-tint); }
+.close:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
+
+.steps {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-1);
+}
+
+/* 막대는 얇아도 누르는 자리는 손가락 크기(44px)로 */
+.step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+  min-height: var(--tap-min);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink-muted);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.step:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
+.on { color: var(--accent-ink); cursor: default; }
+
+.track {
+  position: relative;
+  display: block;
+  height: 4px;
+  background: var(--line);
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+  width: calc(var(--fill, 0) * 100%);
+  background: var(--accent);
+  transition: width 240ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill { transition: none; }
+}
+
+/* 좁은 폰에서 EXPLANATION이 칸을 넘으면 잘라서 줄이 깨지지 않게 */
+.name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  font-family: var(--type-label-family);
+  font-size: 10px;
+  line-height: 1;
+  font-weight: var(--type-label-weight);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}

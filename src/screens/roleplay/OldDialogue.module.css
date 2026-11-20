@@ -1,0 +1,161 @@
+/* 옛 대화문 모양(Phase 7.95 5단계 전 Dialogue.module.css 그대로). 대화문은 새 디자인으로 바뀌었고,
+   롤플레이는 6단계에서 새 디자인으로 바꿀 때까지 이 모양을 그대로 쓴다. 6단계에서 지울 것 */
+.situation {
+  margin: 0 0 var(--space-4);
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+  color: var(--ink-muted);
+}
+
+.lines {
+  list-style: none;
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.line {
+  max-width: 88%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.partner { align-self: flex-start; }
+
+.me {
+  align-self: flex-end;
+  background: var(--accent-tint);
+  border-color: transparent;
+}
+
+/* 지금 재생 중이거나 내가 말할 줄 */
+.current { outline: 2px solid var(--accent-ink); }
+
+/* 연습 중 아직 차례가 오지 않은 줄 */
+.later { opacity: 0.45; }
+
+.who {
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  line-height: var(--type-label-line);
+  font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
+  color: var(--ink-muted);
+}
+
+.en {
+  margin: var(--space-1) 0;
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+}
+
+.ko {
+  margin: 0;
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--ink-muted);
+}
+
+/* Speak 연습 중 상단: 레슨 제목만 가운데 작게 */
+.miniTitle {
+  margin: 0 0 var(--space-3);
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+  font-weight: var(--type-headline-weight);
+  text-align: center;
+}
+
+/* Speak 연습: 한 줄씩 보여 주는 박스 (드릴 카드와 같은 모양) */
+.where {
+  margin: 0 0 var(--space-2);
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-3);
+  min-height: 40dvh;
+  margin: 0 0 var(--space-5);
+  padding: var(--space-5) var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  text-align: center;
+  animation: cardIn 240ms ease-out;
+}
+
+.cardMe { background: var(--accent-tint); border-color: transparent; }
+
+/* 내 차례의 색칠 문장(WordHighlight)과 같은 글꼴·크기 — 상대 줄과 내 줄 카드가 똑같아 보이게 */
+.cardEn {
+  margin: 0;
+  font-family: var(--type-sentence-family);
+  font-size: var(--type-sentence-size);
+  line-height: var(--type-sentence-line);
+  font-weight: var(--type-sentence-weight);
+  letter-spacing: var(--type-sentence-tracking);
+  overflow-wrap: anywhere;
+}
+
+.cardKo {
+  margin: 0;
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+  color: var(--ink-muted);
+}
+
+@keyframes cardIn {
+  from { transform: translateY(48px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { animation: none; }
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 640px;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.result {
+  margin: 0;
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+}
+
+.pass { color: var(--accent-ink); }
+
+.fail { color: var(--danger); }
+
+.heading {
+  margin: var(--space-5) 0 var(--space-3);
+  font-size: var(--type-headline-size);
+  line-height: var(--type-headline-line);
+  font-weight: var(--type-headline-weight);
+}
+
+.notes {
+  list-style: none;
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}

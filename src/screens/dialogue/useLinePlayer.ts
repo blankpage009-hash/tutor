@@ -9,12 +9,15 @@ export type PlayableLine = { speaker: 'partner' | 'me'; audio?: string };
 // 앞서 돌던 순서는 다음 줄로 넘어가지 않고 조용히 끝난다
 export function useLinePlayer(lines: PlayableLine[]) {
   const [playing, setPlaying] = useState<number | null>(null);
+  // 다시 듣기 중인 줄. playing과 따로 둬서 화면의 "지금 줄"은 그대로 두고, 재생 중에는 마이크만 잠근다
+  const [echo, setEcho] = useState<number | null>(null);
   const token = useRef(0);
 
   const stop = useCallback(() => {
     token.current += 1;
     stopAudio(); // 재생 중이던 약속이 바로 끝난다
     setPlaying(null);
+    setEcho(null);
   }, []);
 
   useEffect(() => stop, [stop]); // 화면을 나가면 멈춘다
@@ -50,5 +53,16 @@ export function useLinePlayer(lines: PlayableLine[]) {
     return i;
   }, [lines, playLine]);
 
-  return { playing, playAll, playPartners, stop };
+  // 한 줄만 다시 듣기 (대화문 상대 카드의 ▶). 탭한 순간 불러야 iOS가 재생을 허락한다
+  const replay = useCallback(async (i: number) => {
+    unlockAudio();
+    const t = ++token.current;
+    const audio = lines[i].audio;
+    if (!audio) return;
+    setEcho(i);
+    await playAudio(contentUrl(audio), 1).catch((e) => console.debug(`[대화문] 다시 듣기 실패: ${String(e)}`));
+    if (token.current === t) setEcho(null);
+  }, [lines]);
+
+  return { playing, echo, playAll, playPartners, replay, stop };
 }

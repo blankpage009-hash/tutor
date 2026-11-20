@@ -1,66 +1,69 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '../../components/Button';
+import { IconBookmark, IconMic, IconPlay, IconStop } from '../../components/icons/icons';
 import { ResultMark } from '../../components/ResultMark';
 import { WordHighlight } from '../../components/WordHighlight';
-import { TapText } from '../../components/wordPicker/TapText';
 import { contentUrl } from '../../content/loader';
-import type { KeySentence } from '../../content/lessonTypes';
+import type { NewLesson } from '../../content/lessonTypes';
 import type { Sentence } from '../../content/types';
 import { playAudio, preloadAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
 import { useSettings } from '../../settings/SettingsProvider';
+import { useKeySaved } from '../newLesson/useKeySaved';
 import { useNewSpeaking } from '../newLesson/useNewSpeaking';
+import { StressText } from './StressText';
 import styles from './Learn.module.css';
 
-type Props = { lessonId: string; sentence: KeySentence };
-
-// 원고의 강세 표기(MORnings work BEST)에서 두 글자 이상 대문자 덩어리만 강조한다.
-// 한 글자 대문자(I, 문장 첫 글자)는 강세 표시가 아니라서 그대로 둔다
-function StressText({ text }: { text: string }) {
-  const parts = text.split(/([A-Z]{2,})/);
-  return <>{parts.map((p, i) => (i % 2 ? <b key={i} className={styles.strong}>{p}</b> : p))}</>;
-}
-
-export function KeySentenceCard({ lessonId, sentence }: Props) {
+// 핵심 문장 듣기: 미리 불러 두고, 화면을 떠나면 재생 중이던 소리를 끈다
+function useListen(url: string) {
   const [error, setError] = useState<string | null>(null);
-  const url = contentUrl(sentence.audio.normal);
-  // 말하기 엔진이 먹는 문장 모양. id는 핵심 문장 전용이라 보관함 id와 겹치지 않게 접미사를 붙인다
-  const target = useMemo<Sentence>(() => ({
-    id: `${lessonId}-key-speak`, en: sentence.en, ko: sentence.ko, note: '', hintWords: [], vocab: [],
-    variations: [], audio: sentence.audio.normal
-  }), [lessonId, sentence]);
-  const { settings } = useSettings();
-  const speaking = useNewSpeaking(target, { threshold: settings.passThreshold, failFeedback: false, onResult: () => undefined });
-  const attempt = speaking.attempt;
-  const o = attempt.outcome;
-  const listening = o?.status === 'listening';
-
   useEffect(() => {
     preloadAudio(url).catch(() => undefined);
-    // 화면을 떠나면 재생 중이던 소리를 끈다
     return () => { stopAudio(); };
   }, [url]);
-
   const listen = () => {
     // iOS: 탭 처리 안에서 기다림(await) 없이 먼저 불러야 재생이 허락된다
     unlockAudio();
     setError(null);
     playAudio(url, 1).catch((e) => setError(`재생하지 못했어요: ${String(e)}`));
   };
+  return { listen, error };
+}
+
+// 설명 화면 KEY SENTENCE 카드: 강세 표시 문장 + 한글, Listen · Speak · 북마크
+export function KeySentenceCard({ lesson }: { lesson: NewLesson }) {
+  const sentence = lesson.keySentence;
+  const { listen, error } = useListen(contentUrl(sentence.audio.normal));
+  // 말하기 엔진이 먹는 문장 모양. id는 핵심 문장 전용이라 보관함 id와 겹치지 않게 접미사를 붙인다
+  const target = useMemo<Sentence>(() => ({
+    id: `${lesson.lessonId}-key-speak`, en: sentence.en, ko: sentence.ko, note: '', hintWords: [], vocab: [],
+    variations: [], audio: sentence.audio.normal
+  }), [lesson.lessonId, sentence]);
+  const { settings } = useSettings();
+  const speaking = useNewSpeaking(target, { threshold: settings.passThreshold, failFeedback: false, onResult: () => undefined });
+  const key = useKeySaved(lesson);
+  const attempt = speaking.attempt;
+  const listening = attempt.outcome?.status === 'listening';
 
   return (
     <section className={styles.card}>
+      <span className={`${styles.label} ${styles.accent}`}>Key Sentence</span>
       <p className={styles.en} lang="en">
-        <TapText text={sentence.en} source={{ id: `${lessonId}-key`, en: sentence.en, ko: sentence.ko }} />
+        <StressText text={sentence.stress} source={{ id: `${lesson.lessonId}-key`, en: sentence.en, ko: sentence.ko }} />
       </p>
       <p className={styles.ko} lang="ko">{sentence.ko}</p>
-      <p className={styles.stress} lang="en"><StressText text={sentence.stress} /></p>
-      <div className={styles.listen}>
-        <Button onClick={listen} disabled={listening}>Listen</Button>
-        <Button onClick={listening ? attempt.stop : attempt.start} disabled={speaking.micLocked && !listening}
-          aria-pressed={listening}>Speak</Button>
+      <div className={styles.buttons}>
+        <Button size="sm" onClick={listen} disabled={listening}><IconPlay />Listen</Button>
+        <Button size="sm" variant="primary" onClick={listening ? attempt.stop : attempt.start}
+          disabled={speaking.micLocked && !listening} aria-pressed={listening}>
+          {listening ? <IconStop /> : <IconMic />}Speak
+        </Button>
+        <button type="button" className={styles.mark} onClick={() => { void key.save(); }} disabled={key.saved}
+          aria-label={key.saved ? '핵심 문장 저장됨' : '핵심 문장을 보관함에 저장'}>
+          <IconBookmark filled={key.saved} />
+        </button>
       </div>
       <SpeakFeedback speaking={speaking} />
-      {error && <p className={styles.error} lang="ko">{error}</p>}
+      {(error ?? key.error) && <p className={styles.error} lang="ko">{error ?? key.error}</p>}
     </section>
   );
 }

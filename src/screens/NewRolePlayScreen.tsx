@@ -6,7 +6,7 @@ import { StepComplete } from '../components/StepComplete';
 import { useCelebration } from '../components/useCelebration';
 import { NEW_STAGE_LABEL, newStagePath, type NewLessonStep } from '../newLessonFlow';
 import courseStyles from './courses/Courses.module.css';
-import styles from './dialogue/Dialogue.module.css';
+import styles from './roleplay/OldDialogue.module.css';
 import { NewLessonSteps } from './newLesson/NewLessonSteps';
 import { useNewLesson } from './newLesson/useNewLesson';
 import { MyTurnPanel } from './roleplay/MyTurnPanel';

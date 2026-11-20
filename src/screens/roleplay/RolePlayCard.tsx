@@ -1,5 +1,5 @@
 import type { RolePlayLine } from '../../content/lessonTypes';
-import styles from '../dialogue/Dialogue.module.css';
+import styles from './OldDialogue.module.css';
 import type { Turn } from './useRolePlaySession';
 
 type Props = {

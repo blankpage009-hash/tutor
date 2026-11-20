@@ -3,7 +3,7 @@ import type { Curriculum } from './content/lessonTypes';
 import type { LessonProgress } from './db/types';
 import {
   addFinishedStep, enteredNewStage, findNewResume, isNewStage, missingSteps, newLessonMenuPath, newStagePath,
-  focusStep, nextNewStage, NEW_STAGES, NEW_STEP_ENGLISH, stepTileState
+  focusStep, nextNewStage, NEW_STAGES, NEW_STEP_ENGLISH, stepBarFill, stepTileState
 } from './newLessonFlow';
 
 describe('새 레슨 흐름', () => {
@@ -110,5 +110,21 @@ describe('focusStep (레슨 화면에서 강조할 다음 단계)', () => {
   it('처음 보는 레슨은 설명, 다 끝낸 레슨은 없음', () => {
     expect(focusStep(undefined, undefined)).toBe('learn');
     expect(focusStep('done', ['learn', 'dialogue', 'drill', 'roleplay'])).toBeNull();
+  });
+});
+
+describe('stepBarFill (단계 막대 채움)', () => {
+  it('끝낸 단계는 꽉, 안 한 단계는 빈 칸', () => {
+    expect(stepBarFill('learn', 'dialogue', ['learn'], 0.5)).toBe(1);
+    expect(stepBarFill('drill', 'dialogue', ['learn'], 0.5)).toBe(0);
+  });
+
+  it('지금 단계는 끝낸 적이 있어도 이번 진행만큼', () => {
+    expect(stepBarFill('dialogue', 'dialogue', ['learn', 'dialogue'], 0.25)).toBe(0.25);
+  });
+
+  it('진행 값은 0~1 밖으로 나가지 않는다', () => {
+    expect(stepBarFill('learn', 'learn', [], 1.4)).toBe(1);
+    expect(stepBarFill('learn', 'learn', [], -1)).toBe(0);
   });
 });

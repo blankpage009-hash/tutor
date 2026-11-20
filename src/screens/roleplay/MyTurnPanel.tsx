@@ -3,7 +3,7 @@ import { Button } from '../../components/Button';
 import { MicButton } from '../../components/MicButton';
 import { ResultMark } from '../../components/ResultMark';
 import { judgeKeywords } from '../../scoring/keywordJudge';
-import dialogueStyles from '../dialogue/Dialogue.module.css';
+import dialogueStyles from './OldDialogue.module.css';
 import styles from './RolePlay.module.css';
 import type { MyLine, Turn } from './useRolePlaySession';
 

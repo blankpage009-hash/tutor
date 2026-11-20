@@ -119,3 +119,10 @@ export function focusStep(stage: string | undefined, steps: NewLessonStep[] | un
   if (entered && !done.includes(entered)) return entered;
   return missingSteps(done)[0] ?? null;
 }
+
+// 레슨 단계 화면 위쪽 4칸 막대의 채움(0~1). 지금 단계는 화면이 알려 주는 진행만큼(대화문 = 지나간 줄 비율),
+// 나머지는 끝낸 단계면 꽉, 아니면 빈 칸. 지금 단계가 예전에 끝낸 단계여도 이번 진행을 보여 준다
+export function stepBarFill(step: NewLessonStep, current: NewLessonStep, steps: NewLessonStep[], currentFill: number): number {
+  if (step === current) return Math.min(1, Math.max(0, currentFill));
+  return steps.includes(step) ? 1 : 0;
+}
