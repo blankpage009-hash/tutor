@@ -117,7 +117,7 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
           onSkip={() => { pass.clear(); d.go(d.cur + 1); }} />
         : <DialogueOverview lesson={lesson} phase={d.phase} player={d.player} onStart={d.start}
           onNext={() => nav(newStagePath(lesson.lessonId, nextNewStage('dialogue')))} />}
-      {celebrate.show && <StepComplete title="Dialogue Complete!" subtitle="대화문을 끝까지 했어요" onClose={celebrate.close} />}
+      {celebrate.show && <StepComplete title="Dialogue Complete!" onClose={celebrate.close} />}
     </div>
   );
 }

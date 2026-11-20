@@ -41,12 +41,6 @@
   letter-spacing: var(--type-display-tracking);
 }
 
-.subtitle {
-  font-size: var(--type-body-kr-size);
-  line-height: var(--type-body-kr-line);
-  color: var(--ink-muted);
-}
-
 .hint {
   margin-top: var(--space-6);
   font-size: var(--type-caption-size);

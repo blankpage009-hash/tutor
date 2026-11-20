@@ -52,7 +52,7 @@ function DrillBody({ lesson, initial }: { lesson: NewLesson; initial?: DrillPosi
     return (
       <>
         <DrillFinish lessonId={lesson.lessonId} onNext={() => nav(newStagePath(lesson.lessonId, nextNewStage('drill')))} />
-        {celebrate.show && <StepComplete title="Drill Complete!" subtitle="드릴 60회를 마쳤어요" onClose={celebrate.close} />}
+        {celebrate.show && <StepComplete title="Drill Complete!" onClose={celebrate.close} />}
       </>
     );
   }

@@ -67,6 +67,6 @@ function RolePlayHead({ lesson }: { lesson: RolePlayView }) {
 
 function RolePlayComplete({ result, onClose }: { result: StepResult | null; onClose: () => void }) {
   return result?.done
-    ? <StepComplete title="Lesson Complete!" subtitle="설명부터 롤플레이까지 모두 끝냈어요" onClose={onClose} />
-    : <StepComplete title="Role-play Complete!" subtitle="롤플레이를 끝까지 했어요" onClose={onClose} />;
+    ? <StepComplete title="Lesson Complete!" onClose={onClose} />
+    : <StepComplete title="Role-play Complete!" onClose={onClose} />;
 }
