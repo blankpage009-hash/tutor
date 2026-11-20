@@ -1,9 +1,12 @@
 .field { display: flex; flex-direction: column; gap: var(--space-1); margin-top: var(--space-4); }
 
 .label {
-  font-weight: var(--type-headline-weight);
-  font-size: var(--type-body-kr-size);
-  line-height: var(--type-body-kr-line);
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  line-height: var(--type-label-line);
+  font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
+  color: var(--ink-muted);
 }
 
 .hint { margin: 0; font-size: var(--type-caption-size); line-height: var(--type-caption-line); color: var(--ink-muted); }
@@ -29,21 +32,28 @@
 
 .preview { min-height: 220px; font-size: 14px; }
 
-.pick {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-  padding: var(--space-3) 0;
+.chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
   min-height: var(--tap-min);
-  border-bottom: 1px solid var(--line);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
   cursor: pointer;
 }
 
-.pick input { flex: none; width: 22px; height: 22px; margin-top: 2px; accent-color: var(--accent); }
+.chip[aria-pressed='true'] { background: var(--accent-tint); border-color: var(--accent-ink); color: var(--accent-ink); }
 
-.pickEn { font-size: var(--type-body-size); line-height: var(--type-body-line); }
+.chipMark { min-width: 1ch; font-weight: 700; }
 
-.pickKo { display: block; font-size: var(--type-caption-size); line-height: var(--type-caption-line); color: var(--ink-muted); }
+.chipAdd { color: var(--accent-ink); border-style: dashed; }
 
 .copied { margin: var(--space-2) 0 0; color: var(--accent-ink); font-size: var(--type-body-kr-size); }
 
@@ -51,4 +61,38 @@
 
 .section { margin-top: var(--space-5); }
 
-.intro { margin: 0; font-size: var(--type-body-kr-size); line-height: var(--type-body-kr-line); }
+/* 줄 전체가 눌리는 접기/펼치기 버튼. 높이는 탭 최소 크기를 지킨다 */
+/* Generate: 아래 CORRECTION의 한 칸(Later)과 같은 크기·글자로 맞춘다 (사용자 요청) */
+.generate {
+  align-self: flex-start;
+  width: 50%;
+  margin: var(--space-2) 0 var(--space-1);
+  font-family: var(--type-caption-family);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--tap-min);
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+}
+
+.chevron {
+  width: 8px;
+  height: 8px;
+  margin-right: var(--space-1);
+  border-right: 1.5px solid var(--ink-muted);
+  border-bottom: 1.5px solid var(--ink-muted);
+  transform: rotate(45deg);
+}
+
+.toggle[aria-expanded='true'] .chevron { transform: rotate(-135deg); }
+
+.toggle:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }

@@ -13,13 +13,13 @@ export type Draft = {
 type Props = { draft: Draft; onChange: (patch: Partial<Draft>) => void };
 
 const CORRECTION_OPTIONS: { value: Correction; label: string }[] = [
-  { value: 'later', label: '끝나고 한꺼번에' },
-  { value: 'now', label: '그때그때 바로' }
+  { value: 'later', label: 'Later' },
+  { value: 'now', label: 'Instant' }
 ];
 
 const FEEDBACK_OPTIONS: { value: FeedbackLang; label: string }[] = [
-  { value: 'ko', label: '한국어' },
-  { value: 'en', label: '영어' }
+  { value: 'ko', label: 'KO' },
+  { value: 'en', label: 'EN' }
 ];
 
 type TextProps = { label: string; value: string; placeholder: string; onChange: (v: string) => void };
@@ -27,7 +27,7 @@ type TextProps = { label: string; value: string; placeholder: string; onChange: 
 function TextField({ label, value, placeholder, onChange }: TextProps) {
   return (
     <label className={styles.field}>
-      <span className={styles.label} lang="ko">{label}</span>
+      <span className={styles.label}>{label}</span>
       <input className={styles.input} type="text" value={value} placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)} />
     </label>
@@ -37,19 +37,19 @@ function TextField({ label, value, placeholder, onChange }: TextProps) {
 export function PromptFields({ draft, onChange }: Props) {
   return (
     <>
-      <TextField label="상황" value={draft.situation} placeholder="카페에서 커피 주문하기"
+      <TextField label="SITUATION" value={draft.situation} placeholder="카페에서 커피 주문하기"
         onChange={(v) => onChange({ situation: v })} />
-      <TextField label="상대 역할" value={draft.partnerRole} placeholder="바리스타"
+      <TextField label="PARTNER" value={draft.partnerRole} placeholder="바리스타"
         onChange={(v) => onChange({ partnerRole: v })} />
-      <TextField label="내 역할" value={draft.myRole} placeholder="손님"
+      <TextField label="ME" value={draft.myRole} placeholder="손님"
         onChange={(v) => onChange({ myRole: v })} />
       <div className={styles.field}>
-        <span className={styles.label} lang="ko">틀렸을 때 고쳐 주는 방식</span>
+        <span className={styles.label}>CORRECTION</span>
         <SegmentedControl label="교정 방식" options={CORRECTION_OPTIONS} value={draft.correction}
           onChange={(v) => onChange({ correction: v })} />
       </div>
       <div className={styles.field}>
-        <span className={styles.label} lang="ko">피드백 언어</span>
+        <span className={styles.label}>FEEDBACK</span>
         <SegmentedControl label="피드백 언어" options={FEEDBACK_OPTIONS} value={draft.feedbackLang}
           onChange={(v) => onChange({ feedbackLang: v })} />
       </div>
