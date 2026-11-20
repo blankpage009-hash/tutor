@@ -16,6 +16,14 @@
   cursor: pointer;
 }
 
+/* ▶ 모양은 24칸 그림 중 x 8~19에만 있어 왼쪽 8/24·오른쪽 5/24가 비어 있다.
+   빈 여백을 음수 여백으로 빼야 "▶ 글자" 묶음이 눈에 보이는 그대로 버튼 한가운데 온다.
+   글자 붙은 버튼의 아이콘은 화면마다 18px로 쓰므로 기본값을 18px로 계산한다.
+   다른 크기로 쓰는 화면은 --icon-size를 그 크기로 같이 지정해야 한다. */
+.btn > svg[data-icon='play'] {
+  margin: 0 calc(var(--icon-size, 18px) * -5 / 24) 0 calc(var(--icon-size, 18px) * -8 / 24);
+}
+
 .btn:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
 .btn:disabled { opacity: 0.4; cursor: default; }
 

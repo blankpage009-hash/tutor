@@ -38,7 +38,8 @@ export const IconChevronRight = () => <Svg><path d="M9 5l7 7-7 7" /></Svg>;
 export const IconMic = () => (
   <Svg {...ROUND}><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" /><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3" /></Svg>
 );
-export const IconPlay = () => <Svg><path d="M8 5l11 7-11 7z" fill="currentColor" /></Svg>;
+// data-icon: 글자 붙은 버튼에서 삼각형의 빈 여백을 빼는 CSS(Button.module.css)가 이 표식으로 찾는다
+export const IconPlay = () => <Svg data-icon="play"><path d="M8 5l11 7-11 7z" fill="currentColor" /></Svg>;
 export const IconPause = () => <Svg><path d="M7 5h3v14H7zM14 5h3v14h-3z" fill="currentColor" /></Svg>;
 export const IconReplay = () => <Svg><path d="M4 12a8 8 0 1 0 3-6.2M4 4v5h5" /></Svg>;
 export const IconSkipNext = () => <Svg><path d="M6 5l9 7-9 7z" fill="currentColor" /><path d="M18 5v14" /></Svg>;
