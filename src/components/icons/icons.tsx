@@ -17,8 +17,9 @@ export const IconToday = () => (
 export const IconCourses = () => (
   <Svg {...ROUND}><circle cx="6" cy="5" r="3" /><circle cx="18" cy="19" r="3" /><path d="M9 5h8.5a3.5 3.5 0 0 1 0 7h-11a3.5 3.5 0 0 0 0 7H15" /></Svg>
 );
+// 보관함 탭만은 복습 타일의 북마크(IconBookmark)처럼 모서리가 각진 모양 (사용자 요청 2026-11-20). ROUND 안 씀
 export const IconLibrary = () => (
-  <Svg {...ROUND}><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" /></Svg>
+  <Svg><path d="M6 4h12v16l-6-4-6 4z" /></Svg>
 );
 export const IconVocab = () => <Svg {...ROUND}><path d="M21 5H3M15 12H3M17 19H3" /></Svg>;
 export const IconPrompt = () => (
