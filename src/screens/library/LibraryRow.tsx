@@ -38,7 +38,7 @@ export function LibraryRow({ row, due, open, onOpenChange, onRemove, selecting, 
       shifted={selecting} lead={<IconCircle checked={selected} />}
       actions={[
         // 이 문장을 꼭 쓰는 롤플레이 상황을 프롬프트 화면에서 바로 만들게 한다 (사용자 요청 2026-11-20)
-        { key: 'roleplay', label: 'Role-Play Generate', icon: <IconPrompt />,
+        { key: 'roleplay', label: 'Role-Play Generate', accent: true, icon: <IconPrompt />,
           onClick: () => nav('/prompt', { state: { generateFrom: row.id } }) },
         { key: 'delete', label: 'Delete', confirmLabel: 'Confirm', danger: true, icon: <IconTrash />, onClick: () => onRemove(row.id) }
       ]}>

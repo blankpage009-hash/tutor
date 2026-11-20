@@ -8,6 +8,7 @@ export type SwipeAction = {
   label: string;
   icon: ReactNode;
   danger?: boolean;
+  accent?: boolean; // 앱의 주 버튼(파란색)과 같은 색으로 칠한다
   confirmLabel?: string; // 있으면 한 번 눌러 이 글자로 바뀐 뒤, 한 번 더 눌러야 실행 (삭제 2단계, 사용자 결정 3)
   onClick: () => void;
 };
@@ -37,7 +38,7 @@ export function SwipeRow({ actions, open, onOpenChange, swipeEnabled = true, onL
           const isArmed = armed === a.key;
           return (
             <button key={a.key} type="button" tabIndex={open ? 0 : -1} style={{ visibility: shown ? 'visible' : 'hidden' }}
-              className={`${styles.action} ${a.danger ? styles.danger : ''} ${isArmed ? styles.armed : ''}`}
+              className={`${styles.action} ${a.danger ? styles.danger : ''} ${a.accent ? styles.accent : ''}${isArmed ? styles.armed : ''}`}
               onClick={() => { if (a.confirmLabel && !isArmed) setArmed(a.key); else a.onClick(); }}>
               {a.icon}<span>{isArmed ? a.confirmLabel : a.label}</span>
             </button>

@@ -32,6 +32,8 @@
 .action span { text-align: center; line-height: 1.2; overflow-wrap: anywhere; }
 .action:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: -3px; }
 .danger { background: var(--danger-tint); color: var(--danger); }
+.accent { background: var(--accent); color: var(--on-accent); }
+.accent:active { background: var(--accent-press); }
 /* 한 번 누른 삭제 버튼: 꽉 채워 "한 번 더 누르면 지워짐"을 분명히 */
 .armed { background: var(--danger); color: var(--on-accent); }
 
