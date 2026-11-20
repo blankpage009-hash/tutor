@@ -526,6 +526,7 @@
   3. **설정 + 진도 통합** — Sonnet · high
      - 맨 위 PROGRESS(내 레벨·레벨 안 레슨 칸 막대·STREAK·BEST·TODAY·All Levels >), TUTOR(이름 >, 속도), PRACTICE(통과 기준·반복·자동 넘기기 스위치·실패 피드백 스위치·일일 목표·시작 레벨 >), DISPLAY(테마 Auto/Light/Dark), DATA(Gemini 키 >·Backup Export/Import·Reset All). 이름·시작 레벨·Gemini 키 하위 화면 새로 만듦, All Levels 화면은 기존 진도 화면의 전체 목록을 새 모양으로. Gemini 키 안내에서 "변형 더 만들기" 문구 삭제.
      - 완료 기준: 모든 설정이 지금처럼 저장·반영, 백업 내보내기/불러오기/초기화 그대로 동작.
+     - **구현 결과 (2026-11-20)**: 사용자 결정 2가지 — ① **튜터 이름 설정 삭제**(행·입력 화면 없음. 저장 값 `tutorName`은 백업 호환 때문에 데이터에만 남고 화면 어디에도 안 쓰임) ② **스위치는 기존처럼 둥근 알약 모양**(시안의 네모 아님). 설정은 한 화면(PROGRESS·TUTOR·PRACTICE·DISPLAY·DATA), 하위 화면은 `/settings/progress`(All Levels)·`/settings/start-level`·`/settings/gemini-key`. 홈 연속일 카드는 `/settings`(맨 위 요약)로 연결. 설명 문구는 화면에서 뺐고, 백업 내보내기 결과 문구에 "Gemini 키·녹음은 안 들어감"을 남김. 보관함의 "변형 더 만들기" 버튼은 7단계에서 제거(이번엔 Gemini 안내 문구만 삭제). 테스트 245개·타입·빌드 통과.
   4. **코스 + 레슨 화면** — Sonnet · high
      - 코스 탭을 결정 2대로(기존 `CurriculumLevelScreen`의 주소는 코스 탭으로 돌려보내거나 정리 — 시작 때 보고). 레슨 화면: X·북마크, 레벨·유닛·레슨 라벨, 제목, KEY SENTENCE 카드(재생 버튼), 4칸 타일(번호·이름·끝냄 ✓·다음 단계 강조), "ABOUT N MIN"(`estimatedMinutes`).
      - 완료 기준: 칩·레벨·유닛 펼치기로 모든 준비된 레슨에 들어갈 수 있고 진도 네모가 실제와 일치.
