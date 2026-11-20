@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { judgeKeywords } from './keywordJudge';
+import { judgeKeywords, markKeywords } from './keywordJudge';
 
 describe('롤플레이 키워드 판정', () => {
   it('실제 레슨 예시 답은 모두 통과한다', () => {
@@ -70,5 +70,25 @@ describe('롤플레이 키워드 판정', () => {
     const j = judgeKeywords(['torn', 'between'], ['i am born between', 'i am torn between']);
     expect(j.pass).toBe(true);
     expect(j.heard).toBe('i am torn between');
+  });
+});
+
+describe('들린 말에서 키워드 강조 (ME 카드)', () => {
+  const keys = (parts: { text: string; key: boolean }[]) => parts.filter((p) => p.key).map((p) => p.text);
+
+  it('한 단어·여러 단어 키워드를 원래 글자 그대로 표시한다', () => {
+    expect(keys(markKeywords(['work', 'for me'], 'Afternoons work best for me. Can I come by after 3?')))
+      .toEqual(['work', 'for', 'me.']);
+  });
+
+  it('판정처럼 비슷한 소리·어미 변화도 강조하고, 순서가 다르면 강조하지 않는다', () => {
+    expect(keys(markKeywords(['work'], 'mornings walk for me'))).toEqual(['walk']);
+    expect(keys(markKeywords(['for me'], 'me for it'))).toEqual([]);
+  });
+
+  it('축약 속 키워드도 그 화면 단어를 강조하고, 나머지 글자는 그대로 둔다', () => {
+    const parts = markKeywords(['this one'], "This one's a lot softer");
+    expect(keys(parts)).toEqual(['This', "one's"]);
+    expect(parts.map((p) => p.text).join(' ')).toBe("This one's a lot softer");
   });
 });

@@ -1,8 +1,0 @@
-.wrap { margin: 0 0 var(--space-4); }
-
-/* 영어 이름("Explanation", "Role-play")이 한글보다 길어 4칸에서 줄바꿈되므로, 이 바에서만 글자·좌우 여백을 줄인다 */
-.wrap button {
-  padding: 0 var(--space-1);
-  font-size: var(--type-caption-size);
-  white-space: nowrap;
-}

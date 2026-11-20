@@ -1,23 +1,36 @@
 import { Button } from '../../components/Button';
+import { IconPlay } from '../../components/icons/icons';
 import type { NewLesson } from '../../content/lessonTypes';
-import { NewLessonSteps } from '../newLesson/NewLessonSteps';
+import { LessonStepBar } from '../newLesson/LessonStepBar';
 import styles from './Drill.module.css';
 
-type Props = { lesson: NewLesson; resume: boolean; onStart: () => void; onRestart: () => void };
+type Props = {
+  lesson: NewLesson;
+  fill: number; // 위쪽 단계 막대의 드릴 칸 (지나간 회차 비율)
+  resume: boolean;
+  onStart: () => void;
+  onRestart: () => void;
+};
 
 // 드릴 첫 화면: 연습할 문장 6개만 보여 주고, 시작 버튼을 눌러야 카드 화면이 나온다 (사용자 요청 2026-11-19).
 // 영어를 여기서 보여 줘도 되는 이유: 기억·상황 회차의 "정답 가리기"는 카드 화면에서만 필요하다
-export function DrillList({ lesson, resume, onStart, onRestart }: Props) {
+export function DrillList({ lesson, fill, resume, onStart, onRestart }: Props) {
+  const rounds = lesson.drillStages.reduce((n, s) => n + s.reps.length, 0);
   return (
-    <div className={styles.start}>
-      <p className={styles.eyebrow} lang="ko">유닛 {lesson.unit} · STEP 3 드릴</p>
-      <h1 className={styles.title}>{lesson.lessonTitle}</h1>
-      <NewLessonSteps lessonId={lesson.lessonId} current="drill" />
+    <div className={styles.page}>
+      <LessonStepBar lessonId={lesson.lessonId} current="drill" fill={fill} />
+      <header className={styles.head}>
+        <p className={styles.title} lang="ko">{lesson.lessonTitle}</p>
+        <span className={styles.label}>{lesson.drills.length} Sentences · {rounds} Rounds</span>
+      </header>
       <ol className={styles.list}>
         {lesson.drills.map((d) => (
-          <li key={d.id} className={styles.sentenceRow}>
-            <span className={styles.en} lang="en">{d.en}</span>
-            <span className={styles.koSmall} lang="ko">{d.ko}</span>
+          <li key={d.id} className={styles.row}>
+            <span className={styles.no}>{String(d.id).padStart(2, '0')}</span>
+            <div className={styles.text}>
+              <p className={styles.en} lang="en">{d.en}</p>
+              <p className={styles.ko} lang="ko">{d.ko}</p>
+            </div>
           </li>
         ))}
       </ol>
@@ -25,10 +38,10 @@ export function DrillList({ lesson, resume, onStart, onRestart }: Props) {
       {resume ? (
         <div className={styles.actions}>
           <Button block onClick={onRestart}>Restart</Button>
-          <Button variant="primary" block onClick={onStart}>Continue</Button>
+          <Button variant="primary" block onClick={onStart}><IconPlay />Continue</Button>
         </div>
       ) : (
-        <Button variant="primary" block onClick={onStart}>드릴 시작</Button>
+        <Button variant="primary" block className={styles.bottom} onClick={onStart}><IconPlay />Start Drill</Button>
       )}
     </div>
   );

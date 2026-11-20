@@ -50,7 +50,7 @@ function SavedDrill({ plan }: { plan: DrillStep[] }) {
   if (steps.finished) return <SavedFinish total={plan.length} />;
   return (
     <DrillPlayer plan={plan} index={steps.index} sentenceCount={plan.length}
-      whereLabel={`보관함 연습 · 문장 ${steps.index + 1}/${plan.length}`}
+      where={{ left: 'Library', right: `${steps.index + 1} / ${plan.length}` }}
       attempt={sp.attempt} engineNote={sp.engineNote} micLocked={sp.micLocked}
       handsFree={{
         available: sp.voskReady, running: hf.running, step: hf.step, notice: hf.notice,

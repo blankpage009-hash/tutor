@@ -4,7 +4,6 @@ import { PlainLayout } from './layouts/PlainLayout';
 import { PracticeLayout } from './layouts/PracticeLayout';
 import { TabLayout } from './layouts/TabLayout';
 import { CoursesScreen } from './screens/CoursesScreen';
-import { LevelRedirect } from './screens/curriculum/LevelRedirect';
 import { CustomRolePlayScreen } from './screens/CustomRolePlayScreen';
 import { DialogueScreen } from './screens/DialogueScreen';
 import { DrillScreen } from './screens/DrillScreen';
@@ -36,7 +35,6 @@ export function App() {
         <Route element={<TabLayout />}>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/courses" element={<CoursesScreen />} />
-          <Route path="/curriculum/:levelKey" element={<LevelRedirect />} />
           <Route path="/library" element={<LibraryScreen />} />
           <Route path="/library/practice/:startId" element={<SavedPracticeScreen />} />
           <Route path="/vocab" element={<VocabScreen />} />
@@ -48,18 +46,18 @@ export function App() {
         </Route>
         <Route element={<PlainLayout />}>
           <Route path="/n/:lessonId" element={<NewLessonMenuScreen />} />
-          {/* 설명·대화문은 위쪽 단계 막대에 X를 직접 그린다 (X → 레슨 화면, Phase 7.95 5단계) */}
+          {/* 레슨 네 단계는 위쪽 단계 막대에 X를 직접 그린다 (X → 레슨 화면, Phase 7.95 5·6단계).
+              새 상황 롤플레이는 X → 롤플레잉 목록 */}
           <Route path="/n/:lessonId/learn" element={<LearnScreen />} />
           <Route path="/n/:lessonId/dialogue" element={<DialogueScreen />} />
-        </Route>
-        <Route element={<PracticeLayout />}>
-          {/* 새 커리큘럼 레슨 (Phase 5.5) */}
           <Route path="/n/:lessonId/drill" element={<DrillScreen />} />
           <Route path="/n/:lessonId/roleplay" element={<NewRolePlayScreen />} />
+          <Route path="/roleplay/custom" element={<CustomRolePlayScreen />} />
+        </Route>
+        <Route element={<PracticeLayout />}>
           <Route path="/review" element={<ReviewScreen />} />
           <Route path="/vocab/quiz" element={<VocabQuizScreen />} />
           <Route path="/roleplay" element={<RoleplayScreen />} />
-          <Route path="/roleplay/custom" element={<CustomRolePlayScreen />} />
         </Route>
       </Routes>
       </WordPickerProvider>

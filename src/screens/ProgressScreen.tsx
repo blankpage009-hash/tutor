@@ -29,7 +29,7 @@ function LevelList({ stat, currentKey }: { stat: CurriculumStat; currentKey: str
         <section key={course.name}>
           <h2 className={styles.course} lang="ko">{course.name} · {course.done}/{course.ready}</h2>
           {course.levels.map((l) => (
-            <Link key={l.key} to={`/curriculum/${l.key}`} className={`${styles.levelRow} ${l.key === currentKey ? styles.current : ''}`}>
+            <Link key={l.key} to={`/courses?level=${encodeURIComponent(l.key)}`} className={`${styles.levelRow} ${l.key === currentKey ? styles.current : ''}`}>
               <span className={styles.levelName} lang="ko">
                 {l.name}
                 {l.key === currentKey && <span className={styles.tag}>MY LEVEL</span>}

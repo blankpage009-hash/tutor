@@ -16,6 +16,7 @@ import { ENGINE_NOTE } from '../newLesson/useNewSpeaking';
 import { openVoskMic } from '../shadowing/useShadowingAttempt';
 import { useVoskModel } from '../shadowing/useVoskModel';
 import { runRolePlay, type RolePlayLoopDeps, type RpHear } from './rolePlayLoop';
+import { useRolePlayReplay } from './useRolePlayReplay';
 
 // 롤플레이 연습에 필요한 것만. 레슨 STEP 4는 NewLesson을 그대로 넘기고,
 // Gemini가 만든 새 상황은 levelCode가 null이라 진도를 저장하지 않는다 (가짜 레슨 줄이 생기지 않게)
@@ -171,6 +172,8 @@ export function useRolePlaySession(lesson: RolePlaySource) {
   const stoppedRef = useRef(true);
   const listening = useRef<Listening | null>(null);
   const skipping = useRef(false);
+  // 지금 돌고 있는 진행(마이크를 닫는 끝 정리까지). 다시 듣기는 이것이 끝난 뒤에 소리를 낸다
+  const run = useRef<Promise<void>>(Promise.resolve());
 
   const stop = useCallback(() => {
     if (stoppedRef.current) return;
@@ -181,8 +184,9 @@ export function useRolePlaySession(lesson: RolePlaySource) {
   useEffect(() => stop, [stop]); // 화면을 나가면 멈춘다
 
   const start = useStart({
-    lesson, log, model: vosk.model, st, stoppedRef, listening, skipping, setPhase, setRunning, setNotice, setResult
+    lesson, log, model: vosk.model, st, stoppedRef, listening, skipping, run, setPhase, setRunning, setNotice, setResult
   });
+  const echo = useRolePlayReplay(lesson.rolePlay.lines, stop, run);
 
   // 듣는 중이면 듣기를 끝내고 다음 줄로. 멈춰 있으면(탭이니까) 다음 줄부터 다시 시작한다
   const skip = useCallback(() => {
@@ -199,12 +203,16 @@ export function useRolePlaySession(lesson: RolePlaySource) {
     }
   }, [lesson, st, start]);
 
-  return { ...st, phase, running, notice, result, start, stop, skip, micLocked: vosk.state !== 'ready', engineNote: ENGINE_NOTE[vosk.state] };
+  return {
+    ...st, phase, running, notice, result, start, stop, skip, echo: echo.playing, replay: echo.replay,
+    micLocked: vosk.state !== 'ready', engineNote: ENGINE_NOTE[vosk.state]
+  };
 }
 
 type StartInput = {
   lesson: RolePlaySource; log: (m: string) => void; model: Model | null; st: ReturnType<typeof useRolePlayState>;
   stoppedRef: MutableRefObject<boolean>; listening: MutableRefObject<Listening | null>; skipping: MutableRefObject<boolean>;
+  run: MutableRefObject<Promise<void>>;
   setPhase: (p: Phase) => void; setRunning: (b: boolean) => void; setNotice: (n: string | null) => void;
   setResult: (r: StepResult | null) => void;
 };
@@ -228,7 +236,7 @@ function useStart(p: StartInput) {
     q.setRunning(true);
     q.setNotice(null);
     const lines = q.lesson.rolePlay.lines;
-    void session({ ...q, model: q.model, setTurn: q.st.setTurn, record: q.st.record, lines, start: from,
+    q.run.current = session({ ...q, model: q.model, setTurn: q.st.setTurn, record: q.st.record, lines, start: from,
       stopped: () => q.stoppedRef.current, onLine: q.st.onLine }, ctx).then((end) => finishRun(q, ctx, end));
   }, []);
 }

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Button } from '../components/Button';
+import { IconChevronRight } from '../components/icons/icons';
 import { StepComplete } from '../components/StepComplete';
 import { useCelebration } from '../components/useCelebration';
 import type { NewLesson } from '../content/lessonTypes';
@@ -15,6 +16,7 @@ import { useKeepDrillPosition, useSavedDrillPosition } from './drill/useDrillPos
 import { useDrillSaved } from './drill/useDrillSaved';
 import { useDrillSpeaking } from './drill/useDrillSpeaking';
 import { useDrillSteps } from './drill/useDrillSteps';
+import { LessonStepBar } from './newLesson/LessonStepBar';
 import { useNewLesson } from './newLesson/useNewLesson';
 import type { HandsFreeView } from './shadowing/ShadowingStage';
 
@@ -49,7 +51,7 @@ function DrillBody({ lesson, initial }: { lesson: NewLesson; initial?: DrillPosi
   if (steps.finished) {
     return (
       <>
-        <DrillFinish onNext={() => nav(newStagePath(lesson.lessonId, nextNewStage('drill')))} />
+        <DrillFinish lessonId={lesson.lessonId} onNext={() => nav(newStagePath(lesson.lessonId, nextNewStage('drill')))} />
         {celebrate.show && <StepComplete title="Drill Complete!" subtitle="드릴 60회를 마쳤어요" onClose={celebrate.close} />}
       </>
     );
@@ -57,7 +59,7 @@ function DrillBody({ lesson, initial }: { lesson: NewLesson; initial?: DrillPosi
   if (!started) {
     const resume = steps.index > 0 || steps.cleared.size > 0;
     return (
-      <DrillList lesson={lesson} resume={resume} onStart={() => setStarted(true)}
+      <DrillList lesson={lesson} fill={steps.index / plan.length} resume={resume} onStart={() => setStarted(true)}
         onRestart={() => { steps.restart(); setStarted(true); }} />
     );
   }
@@ -70,11 +72,12 @@ function DrillBody({ lesson, initial }: { lesson: NewLesson; initial?: DrillPosi
   );
 }
 
-function DrillFinish({ onNext }: { onNext: () => void }) {
+function DrillFinish({ lessonId, onNext }: { lessonId: string; onNext: () => void }) {
   return (
-    <>
+    <div className={styles.page}>
+      <LessonStepBar lessonId={lessonId} current="drill" fill={1} />
       <p className={styles.done} lang="ko">드릴 60회를 마쳤어요!</p>
-      <Button variant="primary" block onClick={onNext}>롤플레이로</Button>
-    </>
+      <Button variant="primary" block className={styles.bottom} onClick={onNext}><IconChevronRight />Next: Role-play</Button>
+    </div>
   );
 }

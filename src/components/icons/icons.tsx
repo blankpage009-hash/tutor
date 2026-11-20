@@ -47,6 +47,12 @@ export const IconBookmark = ({ filled = false }: { filled?: boolean }) => (
 );
 export const IconCheck = () => <Svg><path d="M5 12.5l4.5 4.5L19 7.5" /></Svg>;
 export const IconStop = () => <Svg><rect x="7" y="7" width="10" height="10" fill="currentColor" /></Svg>;
+// 드릴 카드 화면 왼쪽 위 "문장 목록으로" (디자인 v2 06)
+export const IconList = () => <Svg><path d="M9 6h11M9 12h11M9 18h11M4 6h1M4 12h1M4 18h1" /></Svg>;
+// 롤플레이 "예시 보기" 전구 (디자인 v2 07)
+export const IconBulb = () => (
+  <Svg {...ROUND}><path d="M9 18h6M10 22h4" /><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2V17h6v-.3c0-.8.4-1.5 1-2A7 7 0 0 0 12 2z" /></Svg>
+);
 
 // 레슨 4단계 아이콘 (디자인 v2 레슨 화면·홈 단계 타일): 설명 / 대화문 / 드릴 / 롤플레이
 export const IconBook = () => (

@@ -1,4 +1,4 @@
-import { normalizeText, sameWord, type NormWord } from './normalize';
+import { normalizeText, normalizeToken, sameWord, type NormWord } from './normalize';
 
 // 롤플레이 자유 답변 판정. 문장 전체를 맞히는 게 아니라 "꼭 넣을 말(키워드)"이 들어갔는지만 본다
 // (레슨 rolePlay.passRule: 키워드가 있으면 모두 들어가야 통과, 없으면 말하기만 하면 통과)
@@ -71,4 +71,24 @@ export function judgeKeywords(keywords: string[], alternatives: string[]): Keywo
     else if (r.pass === best.pass && hitCount(r) > hitCount(best)) best = r;
   }
   return best;
+}
+
+export type HeardPart = { text: string; key: boolean };
+
+// 화면용: 들린 말을 띄어쓰기 단위로 나눠, 키워드에 걸린 단어를 표시한다 (디자인 v2 07 ME 카드의 키워드 강조).
+// 판정(containsRun)과 같은 비교를 써서, 칩에 ✓가 붙은 키워드만 문장에서도 강조되게 한다
+export function markKeywords(keywords: string[], heard: string): HeardPart[] {
+  const tokens = heard.split(/\s+/).filter(Boolean);
+  // 축약(I'm → I am)은 한 화면 단어가 비교용 단어 여러 개가 되므로, 비교용 단어마다 원래 화면 단어 번호를 붙인다
+  const flat = tokens.flatMap((t, tok) => normalizeToken(t).map((word) => ({ word, tok })));
+  const marked = new Set<number>();
+  for (const k of keywords) {
+    const key = normalizeText(k);
+    if (!key.length) continue;
+    for (let i = 0; i + key.length <= flat.length; i++) {
+      if (!key.every((kw, j) => sameKeyWord(kw, flat[i + j].word))) continue;
+      for (let j = 0; j < key.length; j++) marked.add(flat[i + j].tok);
+    }
+  }
+  return tokens.map((text, i) => ({ text, key: marked.has(i) }));
 }

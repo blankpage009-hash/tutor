@@ -13,11 +13,12 @@ export type DrillStep = {
   stage: DrillStage;
 };
 
+// 화면 글자는 디자인 v2대로 영문 (PLAN 7.95 기본값). 뜻: 따라 말하기 · 보고 말하기 · 기억해서 말하기 · 상황 응답
 export const DRILL_MODE_LABEL: Record<DrillStage['mode'], string> = {
-  repeat: '따라 말하기',
-  read: '보고 말하기',
-  recall: '기억해서 말하기',
-  respond: '상황 응답'
+  repeat: 'Repeat',
+  read: 'Read',
+  recall: 'Recall',
+  respond: 'Respond'
 };
 
 export function drillSaveId(lessonId: string, drillId: number): string {

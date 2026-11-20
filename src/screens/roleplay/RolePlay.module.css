@@ -1,52 +1,110 @@
-.hint {
-  margin: 0;
-  font-size: var(--type-body-kr-size);
-  line-height: var(--type-body-kr-line);
-}
-
+/* 디자인 v2 07 ROLE-PLAY. 카드·이름표·아래 버튼은 대화문(Dialogue.module.css)과 같은 모양을 함께 쓰고,
+   롤플레이에만 있는 것(SITUATION 점선 카드, 키워드 칩, 들린 말 강조)만 여기 둔다 */
 .label {
-  margin: 0 0 var(--space-2);
   font-family: var(--type-label-family);
   font-size: var(--type-label-size);
-  line-height: var(--type-label-line);
+  line-height: 1;
   font-weight: var(--type-label-weight);
   letter-spacing: var(--type-label-tracking);
+  text-transform: uppercase;
   color: var(--ink-muted);
 }
 
-.keywords {
+.situation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 14px var(--space-4);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.situationText {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+/* 내 차례에 함께 보이는 상대 줄: 대화문 cardMain과 같은 여백, 새로 올라오는 움직임만 없음 */
+.still { gap: var(--space-3); padding: 14px 18px 20px; }
+
+.partnerEn {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.me { gap: var(--space-3); }
+
+.meTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 36px;
+}
+
+.chips {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2);
+  justify-content: flex-end;
+  gap: 6px;
 }
 
+/* 키워드 칩: 22px 높이 (시안 값). 아직 안 들어간 말은 선만, 들어간 말은 연한 파랑 + ✓ */
 .chip {
-  padding: var(--space-1) var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 0 var(--space-2);
   border: 1px solid var(--line);
-  border-radius: var(--radius-full);
-  font-size: var(--type-body-size);
-  line-height: var(--type-body-line);
+  font-family: var(--type-label-family);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: var(--type-label-weight);
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
 }
+.hit { border-color: var(--accent-tint); background: var(--accent-tint); color: var(--accent-ink); }
 
-/* 들린 말에 들어간 키워드 */
-.hit {
-  background: var(--accent-tint);
-  border-color: var(--accent-ink);
-  color: var(--accent-ink);
+/* 내가 한 말: 22px, 키워드 부분만 파랑 굵게 */
+.heard {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.key { color: var(--accent-ink); font-weight: 700; }
+
+.prompt {
+  margin: 0;
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+  color: var(--ink-muted);
+  word-break: keep-all;
 }
 
 .example {
   margin: 0;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--line);
   font-size: var(--type-body-size);
-  line-height: var(--type-body-line);
+  line-height: 1.4;
 }
 
-.heard {
-  margin: 0;
-  font-size: var(--type-caption-size);
-  line-height: var(--type-caption-line);
-  color: var(--ink-muted);
+/* 처음·끝 화면 버튼은 화면 아래에 붙인다 */
+.bottom { margin-top: auto; }
+.bottom svg, .doneActions svg { width: 18px; height: 18px; }
+
+.doneActions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
