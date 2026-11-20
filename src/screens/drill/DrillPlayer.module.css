@@ -193,7 +193,7 @@
   justify-content: space-between;
   width: 100%;
   max-width: 400px;
-  padding: 0 20px;
+  padding: 0 44px; /* 양쪽 버튼을 가운데로 살짝 모음 (사용자 요청 2026-11-20) */
   box-sizing: border-box;
 }
 
