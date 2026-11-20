@@ -188,7 +188,7 @@ export function useRolePlaySession(lesson: RolePlaySource) {
   const start = useStart({
     lesson, log, model: vosk.model, st, stoppedRef, listening, skipping, run, setPhase, setRunning, setNotice, setResult
   });
-  const echo = useRolePlayReplay(lesson.rolePlay.lines, stop, run);
+  const echo = useRolePlayReplay(lesson.rolePlay.lines, stop, run, start);
 
   // 듣는 중이면 듣기를 끝내고 다음 줄로. 멈춰 있으면(탭이니까) 다음 줄부터 다시 시작한다
   const skip = useCallback(() => {
@@ -222,14 +222,20 @@ type StartInput = {
 function useStart(p: StartInput) {
   const latest = useRef(p);
   latest.current = p;
-  return useCallback((from: number) => {
+  // tapCtx: 다시 듣기처럼 탭한 순간 미리 만든 오디오 장치. 없으면 지금 만든다 (지금이 탭한 순간).
+  // 시작했으면 true
+  return useCallback((from: number, tapCtx?: AudioContext | null): boolean => {
     const q = latest.current;
-    if (!q.stoppedRef.current) return;
+    if (!q.stoppedRef.current) {
+      tapCtx?.close().catch(() => undefined);
+      return false;
+    }
     unlockAudio(); // iOS: 탭한 순간 먼저
-    const ctx = createCaptureContext();
+    const ctx = tapCtx === undefined ? createCaptureContext() : tapCtx;
     if (!ctx || !q.model) {
       ctx?.close().catch(() => undefined);
-      return q.setNotice(ctx ? '음성 인식을 준비하고 있어요. 잠시 뒤 다시 눌러 주세요.' : '이 기기에서는 마이크 소리를 받을 수 없어요.');
+      q.setNotice(ctx ? '음성 인식을 준비하고 있어요. 잠시 뒤 다시 눌러 주세요.' : '이 기기에서는 마이크 소리를 받을 수 없어요.');
+      return false;
     }
     q.stoppedRef.current = false;
     q.skipping.current = false;
@@ -240,6 +246,7 @@ function useStart(p: StartInput) {
     const lines = q.lesson.rolePlay.lines;
     q.run.current = session({ ...q, model: q.model, setTurn: q.st.setTurn, record: q.st.record, lines, start: from,
       stopped: () => q.stoppedRef.current, onLine: q.st.onLine }, ctx).then((end) => finishRun(q, ctx, end));
+    return true;
   }, []);
 }
 
