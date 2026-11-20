@@ -13,7 +13,7 @@ function toSentence(r: SavedSentence): Sentence {
 // 복습 한 판: 카드 진행(reducer) + 말하기 + 끝낸 카드의 등급을 복습 달력에 기록
 export function useReviewRun(rows: SavedSentence[]) {
   const sentences = useMemo(() => rows.map(toSentence), [rows]);
-  const [state, dispatch] = useReducer(reviewReducer, rows, (r) => initReview(r.map((x) => x.id)));
+  const [state, dispatch] = useReducer(reviewReducer, rows, (r) => initReview(r.map((x) => x.id), 3));
   const [recordError, setRecordError] = useState(false);
   const recorded = useRef(0);
   const { settings } = useSettings();

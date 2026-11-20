@@ -1,29 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { GeminiError } from './geminiClient';
-import { parseRoleplay, parseVariations, roleplayRequest, validKeywords, variationRequest } from './tasks';
-
-describe('요청문', () => {
-  it('변형 요청은 JSON 응답을 요구하고 문장을 담는다', () => {
-    const r = variationRequest('I like tea.', '나는 차를 좋아해요.');
-    expect(r.json).toBe(true);
-    expect(r.prompt).toContain('I like tea.');
-  });
-});
-
-describe('parseVariations', () => {
-  it('울타리가 붙은 배열을 읽고 5개까지만 쓴다', () => {
-    const items = Array.from({ length: 7 }, (_, i) => ({ en: `S${i}`, ko: `K${i}` }));
-    const out = parseVariations('```json\n' + JSON.stringify(items) + '\n```');
-    expect(out).toHaveLength(5);
-    expect(out[0]).toEqual({ en: 'S0', ko: 'K0' });
-  });
-  it('en이 없는 항목은 버리고, 아무것도 없거나 모양이 틀리면 오류다', () => {
-    expect(parseVariations('[{"en":"a","ko":"b"},{"ko":"x"}]')).toHaveLength(1);
-    expect(() => parseVariations('[]')).toThrow(GeminiError);
-    expect(() => parseVariations('not json')).toThrow(GeminiError);
-    expect(() => parseVariations('{"a":1}')).toThrow(GeminiError);
-  });
-});
+import { parseRoleplay, roleplayRequest, validKeywords } from './tasks';
 
 describe('roleplayRequest', () => {
   it('JSON 응답을 요구하고 상황 힌트를 담는다', () => {
@@ -68,6 +45,11 @@ describe('parseRoleplay', () => {
     expect(first.speaker === 'partner' && first.audio).toBe('');
     const mine = rp.lines[1];
     expect(mine.speaker === 'me' && mine.requiredKeywords).toEqual(['latte']);
+  });
+
+  it('```json 울타리가 붙어도 읽고, JSON이 아니면 오류다', () => {
+    expect(parseRoleplay('```json\n' + JSON.stringify(GOOD) + '\n```').lines).toHaveLength(4);
+    expect(() => parseRoleplay('not json')).toThrow(GeminiError);
   });
 
   it('알 수 없는 줄은 건너뛰고 10줄까지만 쓴다', () => {

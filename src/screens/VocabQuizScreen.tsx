@@ -1,62 +1,65 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Button } from '../components/Button';
-import { ScreenHeader } from '../components/ScreenHeader';
+import { RunTopBar } from '../components/RunTopBar';
+import { SegmentedControl } from '../components/SegmentedControl';
 import { isQuizKind, type QuizKind, type QuizScope } from '../vocabQuiz';
 import reviewStyles from './review/Review.module.css';
 import { CardQuiz } from './vocab/quiz/CardQuiz';
-import { KIND_TEXT, QuizPicker } from './vocab/quiz/QuizPicker';
 import { TypeQuiz } from './vocab/quiz/TypeQuiz';
 import { useQuizWords } from './vocab/quiz/useQuizWords';
 
-function Empty({ kind, scope, onRandom }: { kind: QuizKind; scope: QuizScope; onRandom: () => void }) {
+// 탭 이름은 디자인대로 영문. '뜻 → 영어'(write)는 이름만 Meaning (PLAN 7.95 기본값, 동작 같음)
+const KINDS: { value: QuizKind; label: string }[] = [
+  { value: 'card', label: 'Card' }, { value: 'write', label: 'Meaning' }, { value: 'cloze', label: 'Blank' }
+];
+
+type RunProps = { kind: QuizKind; scope: QuizScope; setScope: (s: QuizScope) => void; tabs: ReactNode };
+
+function Empty({ kind, scope, setScope, tabs }: RunProps) {
   const nav = useNavigate();
   return (
-    <>
+    <div className={reviewStyles.stack}>
+      <RunTopBar closeTo="/vocab" closeLabel="퀴즈 닫고 단어장으로" />
+      {tabs}
       <p className={reviewStyles.note} lang="ko">
         {scope === 'due' ? '오늘 복습할 단어가 없어요. 저장한 단어는 저장한 다음 날부터 복습에 나와요.'
           : kind === 'cloze' ? '문장 빈칸으로 풀 수 있는 단어가 없어요. 문장 속 단어를 눌러 저장하면 생겨요.' : '풀 수 있는 저장 단어가 없어요.'}
       </p>
-      <div className={reviewStyles.actions}>
-        {scope === 'due' && <Button onClick={onRandom}>랜덤으로 풀기</Button>}
-        <Button variant="ghost" onClick={() => nav('/vocab')}>단어장으로</Button>
+      <div className={reviewStyles.pair}>
+        {scope === 'due' && <Button variant="primary" onClick={() => setScope('random')}>Random</Button>}
+        <Button onClick={() => nav('/vocab')}>Vocab</Button>
       </div>
-    </>
+    </div>
   );
 }
 
-function Run({ kind, scope, setScope }: { kind: QuizKind; scope: QuizScope; setScope: (s: QuizScope) => void }) {
+function Run(p: RunProps) {
   const [round, setRound] = useState(0);
-  const { words, error } = useQuizWords(kind, scope, round);
+  const { words, error } = useQuizWords(p.kind, p.scope, round);
   const onContinue = () => setRound((r) => r + 1);
-  return (
-    <>
-      {error && <p className={reviewStyles.note} lang="ko">{error}</p>}
-      {!words && !error && <p className={reviewStyles.note} lang="ko">불러오는 중…</p>}
-      {words?.length === 0 && <Empty kind={kind} scope={scope} onRandom={() => setScope('random')} />}
-      {words && words.length > 0 && kind === 'card' && <CardQuiz key={`${scope}-${round}`} words={words} onContinue={onContinue} />}
-      {words && words.length > 0 && kind !== 'card' && <TypeQuiz key={`${kind}-${scope}-${round}`} words={words} kind={kind} onContinue={onContinue} />}
-    </>
-  );
+  if (!words || words.length === 0) {
+    if (words) return <Empty {...p} />;
+    return (
+      <div className={reviewStyles.stack}>
+        <RunTopBar closeTo="/vocab" closeLabel="퀴즈 닫고 단어장으로" />
+        {p.tabs}
+        <p className={reviewStyles.note} lang="ko">{error ?? '불러오는 중…'}</p>
+      </div>
+    );
+  }
+  if (p.kind === 'card') return <CardQuiz key={round} words={words} tabs={p.tabs} onContinue={onContinue} />;
+  return <TypeQuiz key={round} words={words} kind={p.kind} tabs={p.tabs} onContinue={onContinue} />;
 }
 
-// /vocab/quiz = 종류·범위 고르기, /vocab/quiz?mode=card|write|cloze&scope=due|random = 한 판
+// 디자인 v2 11 VOCAB QUIZ: 위 X·막대 → Card · Meaning · Blank 탭 → 카드. 탭을 바꾸면 그 종류로 새 판을 시작한다.
+// /vocab/quiz?mode=card|write|cloze&scope=due|random (mode가 없으면 Card)
 export function VocabQuizScreen() {
   const [params, setParams] = useSearchParams();
   const modeParam = params.get('mode');
-  const kind = isQuizKind(modeParam) ? modeParam : null;
+  const kind: QuizKind = isQuizKind(modeParam) ? modeParam : 'card';
   const scope: QuizScope = params.get('scope') === 'random' ? 'random' : 'due';
-  const update = (next: { mode?: QuizKind | null; scope?: QuizScope }) => {
-    const m = next.mode === undefined ? kind : next.mode;
-    const s = next.scope ?? scope;
-    setParams(m ? { mode: m, scope: s } : { scope: s }, { replace: true });
-  };
-  return (
-    <>
-      <ScreenHeader eyebrow="단어 퀴즈" title={kind ? KIND_TEXT[kind].name : '단어 퀴즈'} />
-      {!kind
-        ? <QuizPicker scope={scope} onScope={(s) => update({ scope: s })} onPick={(k) => update({ mode: k })} />
-        : <Run kind={kind} scope={scope} setScope={(s) => update({ scope: s })} />}
-    </>
-  );
+  const update = (m: QuizKind, s: QuizScope) => setParams({ mode: m, scope: s }, { replace: true });
+  const tabs = <SegmentedControl label="퀴즈 종류" options={KINDS} value={kind} onChange={(k) => update(k, scope)} />;
+  return <Run key={`${kind}-${scope}`} kind={kind} scope={scope} setScope={(s) => update(kind, s)} tabs={tabs} />;
 }

@@ -54,6 +54,28 @@ export const IconBulb = () => (
   <Svg {...ROUND}><path d="M9 18h6M10 22h4" /><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2V17h6v-.3c0-.8.4-1.5 1-2A7 7 0 0 0 12 2z" /></Svg>
 );
 
+// 디자인 v2 08~11 (복습·보관함·단어장·퀴즈)
+export const IconEye = () => (
+  <Svg {...ROUND}><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0" /><circle cx="12" cy="12" r="3" /></Svg>
+);
+export const IconExport = () => <Svg><path d="M12 3v12M17 8l-5-5-5 5M21 15v6H3v-6" /></Svg>;
+export const IconHeadphones = () => (
+  <Svg {...ROUND}><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" /></Svg>
+);
+export const IconShuffle = () => (
+  <Svg {...ROUND}><path d="m18 14 4 4-4 4M18 2l4 4-4 4" /><path d="M2 18h2a4 4 0 0 0 3.3-1.7l5.4-8.6A4 4 0 0 1 16 6h6M2 6h2a4 4 0 0 1 3.6 2.2M22 18h-6a4 4 0 0 1-3.3-1.8l-.4-.45" /></Svg>
+);
+// 밀어서 나오는 줄 버튼: 지우기 / 뜻 고치기
+export const IconTrash = () => <Svg><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v5M14 11v5" /></Svg>;
+export const IconEdit = () => <Svg><path d="M4 20h4L19 9l-4-4L4 16zM13 7l4 4" /></Svg>;
+// 고른 줄 표시 (보관함 길게 눌러 고르기)
+export const IconCircle = ({ checked = false }: { checked?: boolean }) => (
+  <Svg {...ROUND}>
+    <circle cx="12" cy="12" r="9" fill={checked ? 'currentColor' : 'none'} />
+    {checked && <path d="m8 12.5 3 3 5-6" stroke="var(--on-accent)" />}
+  </Svg>
+);
+
 // 레슨 4단계 아이콘 (디자인 v2 레슨 화면·홈 단계 타일): 설명 / 대화문 / 드릴 / 롤플레이
 export const IconBook = () => (
   <Svg width="22" height="22"><path d="M12 7v14" /><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" /></Svg>

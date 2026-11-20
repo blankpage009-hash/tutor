@@ -1,59 +1,59 @@
 import { useState } from 'react';
 import { Button } from '../../components/Button';
+import { IconEdit, IconTrash } from '../../components/icons/icons';
+import { SwipeRow } from '../../components/SwipeRow';
 import type { VocabWord } from '../../db/types';
-import { POS_OPTIONS, posLabel } from '../../posLabels';
-import styles from '../library/Library.module.css';
-import vocabStyles from './Vocab.module.css';
+import { POS_OPTIONS, posLabel, posShort } from '../../posLabels';
+import styles from './Vocab.module.css';
 
 type Props = {
   word: VocabWord;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
   onRemove: (id: number) => void;
   onEdit: (id: number, fields: Pick<VocabWord, 'meaning' | 'pos'>) => Promise<boolean>;
 };
 
-// 단어 한 줄: 단어 · 품사 · 뜻 · 출처 문장, 수정(뜻·품사)과 삭제(한 번 더 확인)
-export function VocabRow({ word, onRemove, onEdit }: Props) {
-  const [mode, setMode] = useState<'view' | 'edit' | 'confirm'>('view');
+// 단어 한 줄 (디자인 v2 10): 단어 · 품사 · 뜻 / 예문. 왼쪽으로 밀면 Edit(뜻·품사 고치기) · Delete(2번 눌러 확정)
+export function VocabRow({ word, open, onOpenChange, onRemove, onEdit }: Props) {
+  const [editing, setEditing] = useState(false);
+  const id = word.id!;
+  const actions = [
+    { key: 'edit', label: 'Edit', icon: <IconEdit />, onClick: () => { onOpenChange(false); setEditing(true); } },
+    { key: 'delete', label: 'Delete', confirmLabel: 'Confirm', danger: true, icon: <IconTrash />, onClick: () => onRemove(id) }
+  ];
+  return (
+    <SwipeRow open={open} onOpenChange={onOpenChange} swipeEnabled={!editing} actions={actions}>
+      <div className={styles.card}>
+        <div className={styles.head}>
+          <span className={styles.word} lang="en">{word.word}</span>
+          <span className={styles.pos} lang="en" title={posLabel(word.pos)}>{posShort(word.pos)}</span>
+          {!editing && <span className={styles.meaning} lang="ko">{word.meaning}</span>}
+        </div>
+        {word.sourceEn && <p className={styles.source} lang="en">{word.sourceEn}</p>}
+        {editing && <EditForm word={word} onCancel={() => setEditing(false)}
+          onSave={async (fields) => { if (await onEdit(id, fields)) setEditing(false); }} />}
+      </div>
+    </SwipeRow>
+  );
+}
+
+type FormProps = { word: VocabWord; onCancel: () => void; onSave: (f: Pick<VocabWord, 'meaning' | 'pos'>) => void };
+
+function EditForm({ word, onCancel, onSave }: FormProps) {
   const [meaning, setMeaning] = useState(word.meaning);
   const [pos, setPos] = useState(word.pos);
-  const id = word.id!;
-  const startEdit = () => { setMeaning(word.meaning); setPos(word.pos); setMode('edit'); };
-  const save = async () => {
-    if (await onEdit(id, { meaning: meaning.trim(), pos })) setMode('view');
-  };
   return (
-    <li className={styles.item}>
-      <p className={vocabStyles.word} lang="en">{word.word} <span className={vocabStyles.pos} lang="ko">{posLabel(word.pos)}</span></p>
-      {mode !== 'edit' && <p className={styles.ko} lang="ko">{word.meaning}</p>}
-      {word.sourceEn && <p className={vocabStyles.source} lang="en">{word.sourceEn}</p>}
-      {mode === 'edit' && (
-        <div className={vocabStyles.form}>
-          <input className={vocabStyles.input} lang="ko" value={meaning} onChange={(e) => setMeaning(e.target.value)}
-            aria-label="뜻" placeholder="뜻" autoComplete="off" />
-          <select className={vocabStyles.input} lang="ko" value={pos} onChange={(e) => setPos(e.target.value)} aria-label="품사">
-            {POS_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
-          </select>
-          <div className={styles.actions}>
-            <Button size="sm" variant="primary" disabled={!meaning.trim()} onClick={save}>저장</Button>
-            <Button size="sm" onClick={() => setMode('view')}>취소</Button>
-          </div>
-        </div>
-      )}
-      {mode === 'view' && (
-        <div className={styles.actions}>
-          <Button size="sm" onClick={startEdit}>뜻 고치기</Button>
-          <Button size="sm" variant="ghost" onClick={() => setMode('confirm')}>삭제</Button>
-        </div>
-      )}
-      {mode === 'confirm' && (
-        <div className={styles.confirm} lang="ko">
-          <p>단어장에서 지울까요? 복습 달력에서도 같이 빠져요.</p>
-          <div className={styles.actions}>
-            <Button size="sm" variant="primary" onClick={() => onRemove(id)}>삭제</Button>
-            <Button size="sm" onClick={() => setMode('view')}>취소</Button>
-          </div>
-        </div>
-      )}
-    </li>
+    <div className={styles.form}>
+      <input className={styles.input} lang="ko" value={meaning} onChange={(e) => setMeaning(e.target.value)}
+        aria-label="뜻" placeholder="뜻" autoComplete="off" autoFocus />
+      <select className={styles.input} lang="ko" value={pos} onChange={(e) => setPos(e.target.value)} aria-label="품사">
+        {POS_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
+      </select>
+      <div className={styles.formButtons}>
+        <Button size="sm" variant="primary" disabled={!meaning.trim()} onClick={() => onSave({ meaning: meaning.trim(), pos })}>Save</Button>
+        <Button size="sm" onClick={onCancel}>Cancel</Button>
+      </div>
+    </div>
   );
 }

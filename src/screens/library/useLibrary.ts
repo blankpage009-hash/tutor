@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { resolveSavedText } from '../../content/savedText';
 import { ensureSrsForAllSaved, fillSavedText, removeSaved } from '../../db/savedSentences';
+import { listSrs } from '../../db/srs';
 import type { SavedSentence } from '../../db/types';
 
 // 최근에 저장한 문장이 위에 오게 (방금 저장한 것을 바로 찾도록)
@@ -22,9 +23,12 @@ export async function fillMissing(rows: SavedSentence[]): Promise<SavedSentence[
 export function useLibrary() {
   const [rows, setRows] = useState<SavedSentence[] | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [dueAt, setDueAt] = useState<Map<string, number>>(new Map());
 
   useEffect(() => {
     let alive = true;
+    // 줄마다 "다음 복습 날짜"를 보여 주려고 문장 복습 달력을 한 번에 읽는다. 못 읽어도 목록은 그대로 보인다
+    listSrs('sentence').then((list) => alive && setDueAt(new Map(list.map((s) => [s.itemId, s.dueAt]))), () => undefined);
     loadRows()
       .then((list) => {
         if (alive) setRows(list);
@@ -48,5 +52,5 @@ export function useLibrary() {
     }
   }, []);
 
-  return { rows, error, remove };
+  return { rows, error, remove, dueAt };
 }

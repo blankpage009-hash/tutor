@@ -53,10 +53,11 @@ export function App() {
           <Route path="/n/:lessonId/drill" element={<DrillScreen />} />
           <Route path="/n/:lessonId/roleplay" element={<NewRolePlayScreen />} />
           <Route path="/roleplay/custom" element={<CustomRolePlayScreen />} />
-        </Route>
-        <Route element={<PracticeLayout />}>
+          {/* 복습·단어 퀴즈는 X + 진행 막대를 화면이 직접 그린다 (X → 홈 / 단어장, Phase 7.95 7단계) */}
           <Route path="/review" element={<ReviewScreen />} />
           <Route path="/vocab/quiz" element={<VocabQuizScreen />} />
+        </Route>
+        <Route element={<PracticeLayout />}>
           <Route path="/roleplay" element={<RoleplayScreen />} />
         </Route>
       </Routes>

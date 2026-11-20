@@ -1,0 +1,49 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 52px;
+  margin: 0 calc(var(--space-2) * -1);
+}
+
+.close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+}
+.close:active { background: var(--accent-tint); }
+.close:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
+
+.track {
+  position: relative;
+  flex: 1;
+  height: 4px;
+  background: var(--line);
+}
+
+.fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--accent);
+  transition: width 240ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill { transition: none; }
+}
+
+/* 막대가 없을 때도 X가 왼쪽에 붙어 있게 오른쪽 칸이 남은 폭을 차지한다 */
+.count {
+  flex: none;
+  min-width: var(--tap-min);
+  margin-left: auto;
+  text-align: center;
+  font-family: var(--type-label-family);
+  font-weight: var(--type-label-weight);
+  font-size: 15px;
+  line-height: 1;
+}

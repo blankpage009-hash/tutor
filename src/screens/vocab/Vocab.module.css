@@ -1,32 +1,53 @@
+/* 디자인 v2 10 VOCAB 줄 */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 14px var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+}
+
+.head { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+
 .word {
-  margin: 0 0 var(--space-1);
-  font-family: var(--type-sentence-family);
+  min-width: 0;
+  font-family: var(--font-display);
   font-size: var(--type-title-size);
-  line-height: var(--type-title-line);
-  font-weight: var(--type-title-weight);
+  line-height: 1;
+  font-weight: 600;
   overflow-wrap: anywhere;
 }
 
 .pos {
-  margin-left: var(--space-2);
-  padding: 0 var(--space-2);
-  background: var(--surface-sunk);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-sans);
-  font-size: var(--type-label-size);
-  font-weight: 400;
+  flex: none;
+  font-size: var(--type-caption-size);
+  line-height: 1;
+  font-weight: 500;
+  font-style: italic;
   color: var(--ink-muted);
-  vertical-align: middle;
+}
+
+.meaning {
+  margin-left: auto;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--accent-ink);
+  text-align: right;
+  word-break: keep-all;
 }
 
 .source {
-  margin: var(--space-1) 0 0;
+  margin: 0;
   font-size: var(--type-caption-size);
-  line-height: var(--type-caption-line);
+  line-height: 1.4;
   color: var(--ink-muted);
 }
 
-.form { margin-top: var(--space-2); display: flex; flex-direction: column; gap: var(--space-2); }
+.form { display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-1); }
+.formButtons { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
 
 /* iOS는 글자가 16px보다 작은 입력칸을 누르면 화면을 확대해 버려서 16px로 둔다 */
 .input {
@@ -35,11 +56,10 @@
   min-height: var(--tap-min);
   padding: 0 var(--space-3);
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   background: var(--surface);
   color: var(--ink);
   font: inherit;
   font-size: 16px;
 }
-
 .input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }

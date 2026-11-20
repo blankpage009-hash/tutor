@@ -1,59 +1,124 @@
-.list { list-style: none; margin: var(--space-4) 0; padding: 0; border-top: 1px solid var(--line); }
+/* 디자인 v2 09 LIBRARY · 10 VOCAB 공용 (버튼 두 개 줄, 선 카드 목록, 오른쪽 위 아이콘) */
+.iconBtn {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  margin-right: calc(var(--space-2) * -1);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+.iconBtn:active { background: var(--accent-tint); }
+.iconBtn:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
 
-.item {
-  padding: var(--space-4) 0;
-  border-bottom: 1px solid var(--line);
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: calc(var(--space-2) * -1); }
+.pair svg { width: 18px; height: 18px; flex: none; }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: var(--space-5) 0 0;
+  padding: 0;
 }
 
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 14px var(--space-2) 14px var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+}
+.selected { border-color: var(--accent); background: var(--accent-tint); }
+
+/* 줄 전체가 누르는 자리 (재생 버튼만 따로) */
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.main:disabled { cursor: default; }
+.main:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 4px; }
+
 .en {
-  margin: 0 0 var(--space-1);
-  font-family: var(--type-sentence-family);
-  font-size: var(--type-sentence-size);
-  line-height: var(--type-sentence-line);
+  font-family: var(--font-sans);
+  font-size: var(--type-headline-size);
+  line-height: 1.35;
+  font-weight: 500;
+  overflow-wrap: anywhere;
 }
 
 .ko {
-  margin: 0;
-  font-size: var(--type-body-kr-size);
-  line-height: var(--type-body-kr-line);
+  font-size: var(--type-caption-size);
+  line-height: 1.5;
   color: var(--ink-muted);
+  word-break: keep-all;
 }
 
-.meta {
-  margin: var(--space-1) 0 0;
-  font-size: var(--type-label-size);
-  color: var(--ink-muted);
-}
-
-.actions {
-  margin-top: var(--space-3);
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.confirm {
-  margin: var(--space-3) 0 0;
-  font-size: var(--type-body-kr-size);
-}
-
-.section {
-  margin: var(--space-6) 0 var(--space-2);
-  font-size: var(--type-headline-size);
-  font-weight: var(--type-headline-weight);
-}
-
-.exportRow {
-  display: flex;
+.tag {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-3);
-  padding: var(--space-2) 0;
+  height: 22px;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--line);
+  font-family: var(--type-label-family);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: var(--type-label-weight);
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
 }
+.tagToday { border-color: transparent; background: var(--accent-tint); color: var(--accent-ink); }
+
+.error { font-size: var(--type-caption-size); color: var(--danger); }
+
+.play {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--accent-ink);
+  cursor: pointer;
+}
+.play:active { background: var(--accent-tint); }
+.play:disabled { opacity: 0.4; cursor: default; }
+.play:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
+.play svg { width: 20px; height: 20px; }
 
 .note {
   margin: var(--space-2) 0;
   font-size: var(--type-body-kr-size);
   line-height: var(--type-body-kr-line);
   color: var(--ink-muted);
+}
+
+.tip {
+  margin: var(--space-4) 0 0;
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--ink-muted);
+  text-align: center;
+  word-break: keep-all;
 }

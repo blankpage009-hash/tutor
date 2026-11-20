@@ -17,7 +17,9 @@ const FUNCTION_WORDS = new Set([
   'don', 'can', 'won', 'isn', 'aren', 'doesn', 'didn', 'wasn', 'weren', 'couldn', 'wouldn', 'shouldn', 'haven', 'hasn'
 ]);
 
-export type HintLevel = 0 | 1 | 2; // 0 = 한국어만, 1 = 핵심 단어 빈칸, 2 = 빈칸에 첫 글자
+// 0 = 한국어만. 단어 퀴즈(최대 2): 1 = 핵심 단어 빈칸, 2 = 빈칸에 첫 글자.
+// 문장 복습(최대 3, reviewHintText): 1 = 단어마다 첫 글자, 2 = 첫 글자 + 글자 수, 3 = 짧은 말은 다 보임
+export type HintLevel = 0 | 1 | 2 | 3;
 
 type Piece = { before: string; core: string; after: string };
 
@@ -32,10 +34,10 @@ function isKeyWord(core: string): boolean {
   return base.length > 2 && !FUNCTION_WORDS.has(base) && !FUNCTION_WORDS.has(lower);
 }
 
-function blank(core: string, level: HintLevel): string {
+function blank(core: string, firstLetter: boolean): string {
   // 글자·숫자만 밑줄로 바꾸고 줄임표(')와 붙임표(-)는 남겨 단어 모양이 보이게 한다
   const masked = core.replace(/[A-Za-z0-9]/g, '_');
-  return level === 2 ? core[0] + masked.slice(1) : masked;
+  return firstLetter ? core[0] + masked.slice(1) : masked;
 }
 
 // 힌트 단계에 맞게 문장을 가려서 보여 줄 글자로 만든다
@@ -48,7 +50,18 @@ export function maskText(en: string, level: HintLevel): string {
     const longest = pieces.reduce((best, p, i) => (p.core.length > pieces[best].core.length ? i : best), 0);
     hide = pieces.map((_, i) => i === longest);
   }
-  return pieces.map((p, i) => (hide[i] ? `${p.before}${blank(p.core, level)}${p.after}` : `${p.before}${p.core}${p.after}`)).join(' ');
+  const first = level >= 2;
+  return pieces.map((p, i) => (hide[i] ? `${p.before}${blank(p.core, first)}${p.after}` : `${p.before}${p.core}${p.after}`)).join(' ');
+}
+
+// 문장 복습의 힌트 3단계 (디자인 v2 08: "M w b f m"). 한 단계마다 조금씩 더 보여 준다:
+// 1 = 단어마다 첫 글자만(길이도 숨김) → 2 = 첫 글자 + 나머지 글자 수만큼 밑줄 → 3 = 짧은 말(for, me…)은 다 보이고 핵심 단어만 2처럼
+export function reviewHintText(en: string, level: HintLevel): string {
+  if (level === 0) return '';
+  if (level >= 3) return maskText(en, 2);
+  const pieces = en.split(/\s+/).filter(Boolean).map(splitToken).filter((p) => p.core);
+  if (level === 1) return pieces.map((p) => p.core[0]).join(' ');
+  return pieces.map((p) => `${p.before}${blank(p.core, true)}${p.after}`).join(' ');
 }
 
 // ── 등급 ─────────────────────────────────────────────────
@@ -96,6 +109,7 @@ export type ReviewState = {
   ids: string[];
   index: number; // ids.length와 같으면 전부 끝난 것
   hint: HintLevel;
+  maxHint: HintLevel; // 힌트를 몇 단계까지 줄지 (문장 복습 3, 단어 퀴즈 2)
   fails: number;
   outcome: CardOutcome;
   graded: GradedCard[]; // 끝낸 카드의 등급 (화면이 이 길이가 늘 때마다 복습 달력에 기록한다)
@@ -107,8 +121,8 @@ export type ReviewAction =
   | { type: 'giveUp' }
   | { type: 'next' };
 
-export function initReview(ids: string[]): ReviewState {
-  return { ids, index: 0, hint: 0, fails: 0, outcome: 'open', graded: [] };
+export function initReview(ids: string[], maxHint: HintLevel = 2): ReviewState {
+  return { ids, index: 0, hint: 0, maxHint, fails: 0, outcome: 'open', graded: [] };
 }
 
 export const isFinished = (s: ReviewState) => s.index >= s.ids.length;
@@ -129,7 +143,7 @@ export function reviewReducer(s: ReviewState, a: ReviewAction): ReviewState {
       return fails >= MAX_FAILS ? finish({ ...s, fails }, false) : { ...s, fails };
     }
     case 'hint':
-      return s.outcome === 'open' && s.hint < 2 ? { ...s, hint: (s.hint + 1) as HintLevel } : s;
+      return s.outcome === 'open' && s.hint < s.maxHint ? { ...s, hint: (s.hint + 1) as HintLevel } : s;
     case 'giveUp':
       return s.outcome === 'open' ? finish(s, false) : s;
     case 'next':

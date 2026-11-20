@@ -1,27 +1,73 @@
-.stage { display: grid; gap: var(--space-4); }
+/* 디자인 v2 08 REVIEW · 11 VOCAB QUIZ 공용: 위 막대 → 카드(화면 남은 높이를 채움) → 버튼 두 개 → 마이크 */
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* 카드가 남은 높이를 채우도록. 위아래 안전 영역과 레이아웃 아래 여백만큼 뺀다 */
+  min-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - var(--space-6));
+}
 
-.eyebrow {
-  margin: 0;
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-height: 240px;
+  padding: 18px 20px var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.cardTop { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); min-height: 36px; }
+
+.labelAccent, .labelMuted {
   font-family: var(--type-label-family);
   font-size: var(--type-label-size);
-  line-height: var(--type-label-line);
+  line-height: 1;
+  font-weight: var(--type-label-weight);
   letter-spacing: var(--type-label-tracking);
-  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+.labelAccent { color: var(--accent-ink); }
+.labelMuted { color: var(--ink-muted); }
+
+.cardBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
 }
 
 .ko {
   margin: 0;
-  font-size: var(--type-headline-size);
-  line-height: var(--type-headline-line);
-  font-weight: var(--type-headline-weight);
+  font-size: 26px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
 }
 
-.mask {
-  margin: 0;
-  font-family: var(--type-sentence-family);
-  font-size: var(--type-sentence-size);
-  line-height: var(--type-sentence-line);
-  letter-spacing: 0.04em;
+.hint { margin: 0; }
+
+.hintWords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) 14px;
+  font-family: var(--font-sans);
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 500;
+  color: var(--accent-ink);
+}
+
+.hintWord { display: inline-flex; align-items: flex-end; gap: 2px; }
+
+.blank {
+  display: inline-block;
+  height: 1em;
+  border-bottom: 2px solid var(--line);
 }
 
 .answer {
@@ -29,7 +75,9 @@
   font-family: var(--type-sentence-family);
   font-size: var(--type-sentence-size);
   line-height: var(--type-sentence-line);
+  font-weight: var(--type-sentence-weight);
   color: var(--accent-ink);
+  overflow-wrap: anywhere;
 }
 
 .hidden {
@@ -38,34 +86,107 @@
   color: var(--ink-muted);
 }
 
-.line {
+.resultBox { display: flex; flex-direction: column; gap: var(--space-1); }
+
+.result {
   margin: 0;
-  font-size: var(--type-body-kr-size);
-  line-height: var(--type-body-kr-line);
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  line-height: 1;
+  font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
+  text-transform: uppercase;
+}
+.pass { color: var(--accent-ink); }
+.fail { color: var(--danger); }
+
+.heard {
+  margin: 0;
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--ink-muted);
 }
 
+/* 버튼 두 개 한 줄 (Hint · Show Answer / Didn't Know · Knew It). 시안의 아이콘은 18px */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pair svg, .block svg { width: 18px; height: 18px; flex: none; }
+
+.micArea { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); }
+
+.tip {
+  margin: 0;
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+/* ── 빈 화면 · 결과 화면 ── */
 .actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
-
-.summary {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--line);
-}
-
-.summaryRow {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--space-3);
-  padding: var(--space-3) 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.grade { flex: none; color: var(--accent-ink); font-size: var(--type-label-size); }
 
 .note {
   margin: var(--space-2) 0;
   font-size: var(--type-body-kr-size);
   line-height: var(--type-body-kr-line);
   color: var(--ink-muted);
+}
+
+.counts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+.countBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.countNum {
+  font-family: var(--type-numeral-family);
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+
+.summary {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: var(--type-headline-size);
+  line-height: 1.35;
+}
+
+.grade {
+  flex: none;
+  font-family: var(--type-label-family);
+  font-size: 12px;
+  font-weight: var(--type-label-weight);
+  letter-spacing: 0.1em;
+  color: var(--accent-ink);
+}
+
+.stack { display: flex; flex-direction: column; gap: 10px; }
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }

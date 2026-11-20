@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Button } from '../components/Button';
+import { RunTopBar } from '../components/RunTopBar';
 import { ScreenHeader } from '../components/ScreenHeader';
 import type { SavedSentence } from '../db/types';
 import type { ReviewMode } from '../reviewPlan';
@@ -25,9 +26,9 @@ function Empty({ mode }: { mode: ReviewMode }) {
       <p className={styles.note} lang="ko">
         {mode === 'due' ? '오늘 복습할 문장이 없어요. 저장한 문장은 저장한 다음 날부터 복습에 나와요.' : '복습할 저장 문장이 없어요.'}
       </p>
-      <div className={styles.actions}>
-        {mode === 'due' && <Button onClick={() => nav('/review?mode=random')}>랜덤 복습</Button>}
-        <Button variant="ghost" onClick={() => nav('/library')}>보관함으로</Button>
+      <div className={styles.pair}>
+        {mode === 'due' && <Button variant="primary" onClick={() => nav('/review?mode=random')}>Random</Button>}
+        <Button onClick={() => nav('/library')}>Library</Button>
       </div>
     </>
   );
@@ -39,13 +40,16 @@ export function ReviewScreen() {
   const mode: ReviewMode = params.get('mode') === 'random' ? 'random' : 'due';
   const [round, setRound] = useState(0);
   const { rows, error } = useReviewQueue(mode, round);
+  if (rows && rows.length > 0) {
+    return <ReviewRun key={`${mode}-${round}`} rows={rows} onContinue={() => setRound((r) => r + 1)} />;
+  }
   return (
-    <>
-      <ScreenHeader eyebrow="복습" title={mode === 'random' ? '랜덤 복습' : '오늘의 복습'} />
+    <div className={styles.stack}>
+      <RunTopBar closeTo="/" closeLabel="복습 닫고 홈으로" />
+      <ScreenHeader eyebrow={mode === 'random' ? 'RANDOM' : 'TODAY'} title="Review" />
       {error && <p className={styles.note} lang="ko">{error}</p>}
       {!rows && !error && <p className={styles.note} lang="ko">불러오는 중…</p>}
       {rows?.length === 0 && <Empty mode={mode} />}
-      {rows && rows.length > 0 && <ReviewRun key={`${mode}-${round}`} rows={rows} onContinue={() => setRound((r) => r + 1)} />}
-    </>
+    </div>
   );
 }

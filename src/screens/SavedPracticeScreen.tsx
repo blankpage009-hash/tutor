@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import type { SavedSentence } from '../db/types';
 import type { DrillStep } from '../drillPlan';
 import { useSettings } from '../settings/SettingsProvider';
@@ -12,9 +12,12 @@ import { toSavedPlan } from './library/savedPlan';
 import styles from './library/Library.module.css';
 
 // 보관함에서 "다시 쉐도잉": 저장한 문장을 코스 드릴과 같은 카드 화면(DrillPlayer)으로 한 바퀴 연습한다.
-// :startId가 문장 id면 그 문장부터, 'all'이면 처음부터
+// :startId가 문장 id면 그 문장부터, 'all'이면 처음부터,
+// 'selected'면 주소의 ?id=…로 고른 문장만 (보관함에서 길게 눌러 고르기, 사용자 요청 2026-11-20)
 export function SavedPracticeScreen() {
   const { startId = 'all' } = useParams();
+  const [params] = useSearchParams();
+  const pickedKey = startId === 'selected' ? params.getAll('id').join('\n') : '';
   const { settings } = useSettings();
   const [rows, setRows] = useState<SavedSentence[] | undefined>(undefined);
   const [error, setError] = useState<string | null>(null);
@@ -28,16 +31,18 @@ export function SavedPracticeScreen() {
     return () => { alive = false; };
   }, [startId]);
 
-  const plan = useMemo(
-    () => (rows ? toSavedPlan(rows, startId, settings.passThreshold) : undefined),
-    [rows, startId, settings.passThreshold]
-  );
+  const plan = useMemo(() => {
+    if (!rows) return undefined;
+    const picked = new Set(pickedKey.split('\n'));
+    const usable = startId === 'selected' ? rows.filter((r) => picked.has(r.id)) : rows;
+    return toSavedPlan(usable, startId, settings.passThreshold);
+  }, [rows, startId, pickedKey, settings.passThreshold]);
 
   if (error) return <p className={styles.note} lang="ko">{error}</p>;
   if (plan === undefined) return <p className={styles.note} lang="ko">불러오는 중…</p>;
   if (plan === null) return <p className={styles.note} lang="ko">연습할 문장이 없어요. 보관함에서 문장을 확인해 주세요.</p>;
   // key: 시작 문장이 바뀌면 통과 기록·위치도 새로 시작하게 (같은 이름의 묶음으로 보이기 때문)
-  return <SavedDrill key={startId} plan={plan} />;
+  return <SavedDrill key={`${startId}:${pickedKey}`} plan={plan} />;
 }
 
 function SavedDrill({ plan }: { plan: DrillStep[] }) {

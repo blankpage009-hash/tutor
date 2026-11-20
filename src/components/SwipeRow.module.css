@@ -1,0 +1,62 @@
+.row { position: relative; list-style: none; }
+
+/* 숨은 버튼은 줄 오른쪽 아래에 깔려 있다가, 카드가 왼쪽으로 밀리면 드러난다 */
+.actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+
+.action {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-1);
+  border: 0;
+  background: var(--surface-sunk);
+  color: var(--ink);
+  font-family: var(--type-label-family);
+  font-size: 12px;
+  font-weight: var(--type-label-weight);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.action svg { width: 20px; height: 20px; }
+.action:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: -3px; }
+.danger { background: var(--danger-tint); color: var(--danger); }
+/* 한 번 누른 삭제 버튼: 꽉 채워 "한 번 더 누르면 지워짐"을 분명히 */
+.armed { background: var(--danger); color: var(--on-accent); }
+
+.lead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--tap-min);
+  display: grid;
+  place-items: center;
+  color: var(--accent-ink);
+}
+
+/* 카드가 버튼을 덮는다. 세로 스크롤은 브라우저에 맡기고 가로 움직임만 받는다.
+   길게 누를 때 iOS가 글자 고르기·메뉴를 띄우지 않게 막는다 */
+.content {
+  position: relative;
+  background: var(--paper);
+  touch-action: pan-y;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.settle { transition: transform 200ms ease-out, margin-left 200ms ease-out; }
+.shifted { margin-left: var(--tap-min); }
+
+@media (prefers-reduced-motion: reduce) {
+  .settle { transition: none; }
+}

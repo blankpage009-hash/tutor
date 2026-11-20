@@ -1,20 +1,28 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../../components/Button';
-import { TapText } from '../../components/wordPicker/TapText';
+import { IconCircle, IconPlay, IconTrash } from '../../components/icons/icons';
+import { SwipeRow } from '../../components/SwipeRow';
 import { contentUrl } from '../../content/loader';
 import type { SavedSentence } from '../../db/types';
+import type { DueLabel } from '../../dueLabel';
 import { playAudio, unlockAudio } from '../../speech/audioPlayer';
 import styles from './Library.module.css';
-import { VariationBox } from './VariationBox';
 
-// geminiKey는 보관함 화면이 한 번만 읽어 내려 준다 (줄마다 읽지 않게). 비어 있으면 변형 버튼을 그리지 않는다
-type Props = { row: SavedSentence; onRemove: (id: string) => void; geminiKey?: string };
+type Props = {
+  row: SavedSentence;
+  due: DueLabel | null;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  onRemove: (id: string) => void;
+  // 길게 눌러 여러 문장 고르기 (사용자 요청 2026-11-20): 고르는 중엔 밀기 대신 누르면 고름/풂
+  selecting: boolean;
+  selected: boolean;
+  onSelect: (id: string) => void;
+};
 
-// 저장 문장 한 줄: 듣기 · 다시 쉐도잉 · 삭제(한 번 더 확인) · (키가 있으면) 변형 더 만들기
-export function LibraryRow({ row, onRemove, geminiKey }: Props) {
+// 저장 문장 한 줄: 영어 · 한글 · 다음 복습 날짜 · 재생. 줄을 누르면 그 문장부터 쉐도잉, 왼쪽으로 밀면 삭제(2번 눌러 확정)
+export function LibraryRow({ row, due, open, onOpenChange, onRemove, selecting, selected, onSelect }: Props) {
   const nav = useNavigate();
-  const [confirming, setConfirming] = useState(false);
   const [playError, setPlayError] = useState(false);
   const play = () => {
     if (!row.audio) return;
@@ -23,31 +31,22 @@ export function LibraryRow({ row, onRemove, geminiKey }: Props) {
     playAudio(contentUrl(row.audio), 1).catch(() => setPlayError(true));
   };
   const ready = Boolean(row.en);
+  const tap = () => (selecting ? onSelect(row.id) : nav(`/library/practice/${encodeURIComponent(row.id)}`));
   return (
-    <li className={styles.item}>
-      <p className={styles.en} lang="en">
-        {row.en ? <TapText text={row.en} source={{ id: row.id, en: row.en, ko: row.ko ?? '' }} /> : '문장을 찾는 중…'}
-      </p>
-      {row.ko && <p className={styles.ko} lang="ko">{row.ko}</p>}
-      <p className={styles.meta} lang="ko">{row.lessonId}</p>
-      <div className={styles.actions}>
-        <Button size="sm" onClick={play} disabled={!row.audio}>듣기</Button>
-        <Button size="sm" variant="primary" disabled={!ready} onClick={() => nav(`/library/practice/${encodeURIComponent(row.id)}`)}>
-          다시 쉐도잉
-        </Button>
-        <Button size="sm" variant="ghost" onClick={() => setConfirming(true)}>삭제</Button>
+    <SwipeRow open={open} onOpenChange={onOpenChange} swipeEnabled={!selecting}
+      onLongPress={selecting ? undefined : () => onSelect(row.id)}
+      shifted={selecting} lead={<IconCircle checked={selected} />}
+      actions={[{ key: 'delete', label: 'Delete', confirmLabel: 'Confirm', danger: true, icon: <IconTrash />, onClick: () => onRemove(row.id) }]}>
+      <div className={`${styles.card} ${selected ? styles.selected : ''}`}>
+        <button type="button" className={styles.main} onClick={tap} disabled={!ready && !selecting}
+          aria-pressed={selecting ? selected : undefined}>
+          <span className={styles.en} lang="en">{row.en || '문장을 찾는 중…'}</span>
+          {row.ko && <span className={styles.ko} lang="ko">{row.ko}</span>}
+          {due && <span className={`${styles.tag} ${due.today ? styles.tagToday : ''}`} lang="en">{due.text}</span>}
+          {playError && <span className={styles.error} lang="ko">재생하지 못했어요. 인터넷 연결을 확인해 주세요.</span>}
+        </button>
+        <button type="button" className={styles.play} onClick={play} disabled={!row.audio} aria-label="문장 듣기"><IconPlay /></button>
       </div>
-      {geminiKey && row.en && <VariationBox geminiKey={geminiKey} en={row.en} ko={row.ko} />}
-      {playError && <p className={styles.confirm} lang="ko">재생하지 못했어요. 인터넷 연결을 확인해 주세요.</p>}
-      {confirming && (
-        <div className={styles.confirm} lang="ko">
-          <p>보관함에서 지울까요? 복습 달력에서도 같이 빠져요.</p>
-          <div className={styles.actions}>
-            <Button size="sm" variant="primary" onClick={() => onRemove(row.id)}>삭제</Button>
-            <Button size="sm" onClick={() => setConfirming(false)}>취소</Button>
-          </div>
-        </div>
-      )}
-    </li>
+    </SwipeRow>
   );
 }

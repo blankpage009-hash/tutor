@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import type { SavedSentence } from './db/types';
 import {
-  gradeCounts, gradeFor, initReview, isFinished, maskText, MAX_FAILS, pickReviewRows, reviewReducer, type ReviewAction
+  gradeCounts, gradeFor, initReview, isFinished, maskText, MAX_FAILS, pickReviewRows, reviewHintText, reviewReducer,
+  type ReviewAction
 } from './reviewPlan';
 
 describe('빈칸 힌트', () => {
@@ -25,6 +26,18 @@ describe('빈칸 힌트', () => {
     const out = maskText('Is it you?', 1);
     expect(out).not.toBe('Is it you?');
     expect(out.split(' ').filter((w) => w.includes('_'))).toHaveLength(1);
+  });
+});
+
+describe('문장 복습 힌트 3단계', () => {
+  const en = 'Mornings work best for me.';
+  it('0단계는 아무것도 보이지 않는다', () => expect(reviewHintText(en, 0)).toBe(''));
+  it('1단계는 단어마다 첫 글자만 (길이·문장부호 없이)', () => expect(reviewHintText(en, 1)).toBe('M w b f m'));
+  it('2단계는 첫 글자 + 나머지 글자 수만큼 밑줄', () => expect(reviewHintText(en, 2)).toBe('M_______ w___ b___ f__ m_.'));
+  it('3단계는 짧은 말을 다 보여 주고 핵심 단어만 2단계처럼', () => expect(reviewHintText(en, 3)).toBe('M_______ w___ b___ for me.'));
+  it('줄임표는 남기고, 문장부호만 있는 덩어리는 1단계에서 뺀다', () => {
+    expect(reviewHintText("Don't — worry.", 1)).toBe('D w');
+    expect(reviewHintText("Don't worry.", 2)).toBe("D__'_ w____.");
   });
 });
 
@@ -76,9 +89,10 @@ describe('카드 진행', () => {
     expect(n).toMatchObject({ index: 1, hint: 0, fails: 0, outcome: 'open' });
   });
 
-  it('힌트는 2단계까지만 올라간다', () => {
-    const s = run(['a'], [{ type: 'hint' }, { type: 'hint' }, { type: 'hint' }]);
-    expect(s.hint).toBe(2);
+  it('힌트는 정한 단계까지만 올라간다 (기본 2, 문장 복습 3)', () => {
+    const hints: ReviewAction[] = [{ type: 'hint' }, { type: 'hint' }, { type: 'hint' }, { type: 'hint' }];
+    expect(run(['a'], hints).hint).toBe(2);
+    expect(hints.reduce(reviewReducer, initReview(['a'], 3)).hint).toBe(3);
   });
 
   it('힌트를 쓰고 통과하면 어려움', () => {

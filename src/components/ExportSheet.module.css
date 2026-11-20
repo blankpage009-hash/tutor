@@ -1,0 +1,76 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4); /* 화면을 어둡게 덮는 막: 라이트·다크 같은 값이라 토큰 없이 둔다 */
+}
+
+.sheet {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 560px;
+  padding: var(--space-3) var(--space-5) calc(var(--space-6) + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  animation: up 200ms ease-out;
+}
+
+@keyframes up { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .sheet { animation: none; } }
+
+.top { display: flex; justify-content: space-between; align-items: center; margin-right: calc(var(--space-2) * -1); }
+
+.label {
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
+  color: var(--ink-muted);
+}
+
+.close {
+  display: grid;
+  place-items: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+.close:active { background: var(--accent-tint); }
+.close:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
+
+.title {
+  margin: 0 0 var(--space-4);
+  font-family: var(--type-display-family);
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: var(--type-display-weight);
+}
+
+.list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 58px;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--type-headline-size);
+}
+
+.buttons { display: flex; gap: var(--space-2); flex: none; }
+
+.message {
+  margin: var(--space-3) 0 0;
+  font-size: var(--type-body-kr-size);
+  color: var(--ink-muted);
+}
