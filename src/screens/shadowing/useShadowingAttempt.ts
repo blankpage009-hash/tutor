@@ -2,8 +2,8 @@ import { useCallback, useEffect, useRef, useState, type MutableRefObject } from 
 import type { Model } from 'vosk-browser';
 import { contentUrl } from '../../content/loader';
 import type { Sentence } from '../../content/types';
-import { isPass, type Judgement } from '../../scoring/types';
-import { wordMatchJudge } from '../../scoring/wordMatchJudge';
+import { isPass, type Judgement, type WordMark } from '../../scoring/types';
+import { keepMatched, wordMatchJudge } from '../../scoring/wordMatchJudge';
 import { playAudio, preloadAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
 import { acquireMic, releaseMic } from '../../speech/audioSession';
 import { ensureMicPermission, type MicCheck } from '../../speech/micPermission';
@@ -138,6 +138,17 @@ async function listenAndRecord(
 type Heard = { res: ListenResult; voice: string | null };
 type SetOutcome = (o: Outcome) => void;
 
+// 한 번 말하기(탭 한 번·이어 말하기 한 문장)마다 새로 만든다. 그 안에서 칠해진 단어는 끝까지 남고,
+// 다시 말하면 새 기록부터 시작한다
+function stickyOutcome(set: SetOutcome): SetOutcome {
+  let prev: WordMark[] | null = null;
+  return (out) => {
+    const judgement = keepMatched(prev, out.judgement);
+    prev = judgement.words;
+    set({ ...out, judgement });
+  };
+}
+
 function micErrorText(e: unknown): string {
   const name = (e as { name?: string })?.name;
   if (name === 'NotAllowedError') return '마이크 권한이 꺼져 있어요. 설정 > Safari > 마이크에서 허용해 주세요.';
@@ -246,7 +257,7 @@ function useHearFor(
   return useCallback(async (s: Sentence, mic: MicStream, noSpeechMs: number): Promise<HearStatus> => {
     const o = opts.current;
     if (!o.voskModel) return 'error';
-    const setOutcome = (out: Outcome) => setStored({ id: s.id, o: out });
+    const setOutcome = stickyOutcome((out) => setStored({ id: s.id, o: out }));
     const res = await hearWithVosk(s, o, o.voskModel, mic, setOutcome, listening, noSpeechMs);
     const out = evaluate(s, res, o.threshold);
     o.log(`이어 말하기 판정 ${Math.round(out.judgement.ratio * 100)}% · 들린 말 "${out.judgement.heard}"`);
@@ -304,7 +315,7 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     unlockAudio();
     const wasPlaying = stopAudio();
     const stale = () => currentId.current !== sentence.id;
-    const setOutcome = (o: Outcome) => setStored({ id: sentence.id, o });
+    const setOutcome = stickyOutcome((o) => setStored({ id: sentence.id, o }));
     const heard = o.engine === 'vosk'
       ? await runVosk(sentence, o, setOutcome, listening, preparing)
       : await runBuiltin(sentence, o, wasPlaying, setOutcome, listening, preparing, stale);

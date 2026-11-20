@@ -63,6 +63,15 @@ function findNext(words: WordMark[]): number {
   return words.findIndex((wd) => wd.status === 'missed');
 }
 
+// 한 번 말하는 동안 화면에 칠할 단어: 앞서 한 번이라도 맞힌 단어는 계속 맞힘으로 둔다.
+// 인식기가 말하는 도중 앞부분을 고쳐 쓰면("torn"→"tom") 칠해졌던 단어가 지워져서다 (사용자 요청 2026-11-20).
+// 화면 표시용일 뿐 점수(ratio)는 그대로 둔다
+export function keepMatched(prev: WordMark[] | null, now: Judgement): Judgement {
+  if (!prev || prev.length !== now.words.length) return now;
+  const words = now.words.map((w, i) => (prev[i].status === 'matched' ? { ...w, status: 'matched' as const } : w));
+  return { ...now, words, nextIndex: findNext(words) };
+}
+
 export const wordMatchJudge: Judge = {
   judge(target, alternatives) {
     const candidates = alternatives.length ? alternatives : [''];

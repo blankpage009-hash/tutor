@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { digitsToWords } from './numbers';
 import { isPass } from './types';
-import { wordMatchJudge } from './wordMatchJudge';
+import { keepMatched, wordMatchJudge } from './wordMatchJudge';
 
 const judge = (target: string, ...heard: string[]) => wordMatchJudge.judge(target, heard);
 
@@ -136,6 +136,27 @@ function spellOut(en: string): string {
     .replace(/\blet's\b/gi, 'let us')
     .replace(/(\w)'s\b/gi, '$1 is');
 }
+
+describe('칠한 단어 유지 (keepMatched)', () => {
+  const target = 'I was torn between two job offers.';
+
+  it('인식기가 앞부분을 고쳐 써도 칠해진 단어는 남는다', () => {
+    const first = judge(target, 'i was torn');
+    const later = keepMatched(first.words, judge(target, 'i was tom between two'));
+    expect(later.words.map((w) => w.status === 'matched')).toEqual([true, true, true, true, true, false, false]);
+    expect(later.nextIndex).toBe(5);
+  });
+
+  it('점수는 바꾸지 않는다', () => {
+    const now = judge(target, 'i was tom');
+    expect(keepMatched(judge(target, 'i was torn').words, now).ratio).toBe(now.ratio);
+  });
+
+  it('처음(앞 기록 없음)은 그대로', () => {
+    const now = judge(target, 'i was');
+    expect(keepMatched(null, now)).toBe(now);
+  });
+});
 
 // 별도 패키지(@types/node) 없이 Vite 기능으로 새 커리큘럼 레슨 파일 전부를 읽는다 (옛 10코스는 삭제됨)
 type LessonLike = { drills: { en: string }[] };
