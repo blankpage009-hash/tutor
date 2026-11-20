@@ -45,6 +45,8 @@ export function DrillPlayer(p: Props) {
       </div>
       {/* touch-action: none — 아이폰에서 쓸 때 화면이 같이 밀리지 않게 (CSS) */}
       <div className={styles.swipeArea} {...swipe}>
+        {/* 이전 카드의 아랫부분이 살짝 보인다. 첫 카드에서도 칸은 비워 두어 카드 위치가 문장마다 달라지지 않게 한다 */}
+        <div className={`${styles.peek} ${p.index > 0 ? '' : styles.peekEmpty}`} aria-hidden="true" />
         <article key={p.index} className={`${styles.card} ${styles[dir]}`}>
           <DrillCard step={step} outcome={p.attempt.outcome} saved={p.saved} onSave={p.onSave} />
         </article>
