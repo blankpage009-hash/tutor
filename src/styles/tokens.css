@@ -101,6 +101,9 @@
   --type-sentence-line: 38px;
   --type-sentence-weight: 500;
   --type-sentence-tracking: 0;
+  /* 대화문·드릴·롤플레이에서 내가 말할 문장: 세 화면이 같은 크기로 보이게 (사용자 요청 2026-11-21) */
+  --type-speak-size: 30px;
+  --type-speak-line: 40px;
   --type-numeral-family: var(--font-display);
   --type-numeral-size: 44px;
   --type-numeral-line: 44px;

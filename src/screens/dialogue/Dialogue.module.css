@@ -109,6 +109,9 @@
 }
 
 .cardMain {
+  /* 드릴·롤플레이와 같은 말할 문장 크기 (WordHighlight와 cardEn 모두 이 값을 따른다) */
+  --type-sentence-size: var(--type-speak-size);
+  --type-sentence-line: var(--type-speak-line);
   gap: var(--space-3);
   padding: 14px 18px 20px;
   animation: cardIn 240ms ease-out;

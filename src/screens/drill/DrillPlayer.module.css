@@ -128,6 +128,9 @@
 .save:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
 
 .body {
+  /* 안쪽 색칠 문장(WordHighlight)을 말할 문장 크기로 — 다른 화면의 28px은 그대로 두려고 여기서만 덮어쓴다 */
+  --type-sentence-size: var(--type-speak-size);
+  --type-sentence-line: var(--type-speak-line);
   flex: 1;
   display: flex;
   flex-direction: column;
