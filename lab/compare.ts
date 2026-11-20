@@ -1,7 +1,7 @@
 import { openMicStream, type MicStream } from '../src/speech/micStream';
 import { createCaptureContext } from '../src/speech/pcmCapture';
 import { downsample, encodeWav, mergeChunks, WAV_RATE } from '../src/speech/wav';
-import { countMatched, ENGINES, PRESETS, type Recording } from './engines';
+import { countMatched, ENGINES, PRESETS, type Engine, type Recording } from './engines';
 
 // PC 시험 페이지 화면: 녹음 → 같은 녹음을 엔진마다 넣기 → 결과 표 쌓기 → 채팅에 붙일 글로 복사
 
@@ -14,9 +14,14 @@ const takes: Take[] = [];
 let live: { ctx: AudioContext; mic: MicStream; chunks: Float32Array[] } | null = null;
 let last: Recording | null = null;
 
+// 체크된 엔진만 불러오고 돌린다 — 아이폰은 한꺼번에 다 올리면 메모리가 모자라 꺼질 수 있다
+function chosen(): Engine[] {
+  return ENGINES.filter((_, i) => $<HTMLInputElement>(`eng-${i}`).checked);
+}
+
 async function loadAll(): Promise<void> {
   const lines: string[] = [];
-  for (const e of ENGINES) {
+  for (const e of chosen()) {
     status([...lines, `${e.name} 불러오는 중…`].join('\n'));
     const began = performance.now();
     try {
@@ -64,7 +69,7 @@ async function runAll(rec: Recording): Promise<void> {
   const seconds = rec.chunks.reduce((n, c) => n + c.length, 0) / rec.rate;
   const take: Take = { sentence, seconds, rows: [] };
   takes.unshift(take);
-  for (const e of ENGINES) {
+  for (const e of chosen()) {
     status(`${e.name} 듣는 중…`);
     const began = performance.now();
     let text: string;
@@ -92,10 +97,10 @@ const scoreClass = (r: Row) => (r.matched === r.total ? 'full' : r.matched < r.t
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => `&#${c.charCodeAt(0)};`);
 
 function asText(): string {
-  return takes.slice().reverse().map((t) => [
+  return [deviceLine(), ...takes.slice().reverse().map((t) => [
     `■ ${t.sentence} (녹음 ${t.seconds.toFixed(1)}초)`,
     ...t.rows.map((r) => `- ${r.engine}: "${r.text}" ${r.matched}/${r.total} · ${(r.ms / 1000).toFixed(2)}초`)
-  ].join('\n')).join('\n\n');
+  ].join('\n'))].join('\n\n');
 }
 
 function play(): void {
@@ -104,7 +109,17 @@ function play(): void {
   void new Audio(URL.createObjectURL(new Blob([wav], { type: 'audio/wav' }))).play();
 }
 
+// 결과를 붙여 받았을 때 어떤 기기·브라우저였는지 알 수 있게
+function deviceLine(): string {
+  const gpu = 'gpu' in navigator ? 'WebGPU 있음' : 'WebGPU 없음';
+  const cores = navigator.hardwareConcurrency ?? '?';
+  return `기기: ${navigator.userAgent} · ${gpu} · 코어 ${cores}`;
+}
+
 function setup(): void {
+  $('device').textContent = deviceLine();
+  $('engines').innerHTML = ENGINES.map((e, i) =>
+    `<label><input id="eng-${i}" type="checkbox"${e.on ? ' checked' : ''} /> ${esc(e.name)}</label>`).join('');
   $('presets').innerHTML = PRESETS.map((p) => `<option value="${esc(p)}"></option>`).join('');
   $<HTMLInputElement>('sentence').value = PRESETS[0];
   $('load').onclick = () => void loadAll();

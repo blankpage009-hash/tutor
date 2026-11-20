@@ -14,6 +14,8 @@
     button { padding: 8px 14px; font-size: 15px; border-radius: 6px; border: 1px solid var(--accent); background: #fff; color: var(--accent); cursor: pointer; }
     button.main { background: var(--accent); color: #fff; }
     button:disabled { opacity: 0.4; cursor: default; }
+    #device { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+    #engines label { white-space: nowrap; }
     #status { color: var(--muted); white-space: pre-line; margin: 8px 0 16px; }
     table { border-collapse: collapse; width: 100%; background: #fff; margin-bottom: 18px; }
     th, td { border: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
@@ -25,7 +27,9 @@
   </style>
 </head>
 <body>
-  <h1>인식 엔진 비교 (PC 시험)</h1>
+  <h1>인식 엔진 비교 시험</h1>
+  <div id="device"></div>
+  <div id="engines" class="row"></div>
   <div class="row">
     <input id="sentence" type="text" list="presets" placeholder="예시 문장 (내가 말할 문장)" />
     <datalist id="presets"></datalist>

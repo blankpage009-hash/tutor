@@ -7,7 +7,7 @@ import { downsample, mergeChunks, WAV_RATE } from '../src/speech/wav';
 // 앱 코드는 바꾸지 않고, 앱이 쓰는 모듈(마이크·Vosk 인식)을 그대로 가져다 써서 조건을 맞춘다.
 
 export type Recording = { chunks: Float32Array[]; rate: number };
-export type Engine = { name: string; load(): Promise<void>; run(r: Recording, sentence: string): Promise<string> };
+export type Engine = { name: string; on?: boolean; load(): Promise<void>; run(r: Recording, sentence: string): Promise<string> };
 
 const BASE = import.meta.env.BASE_URL;
 const SMALL_VOSK = `${location.origin}${BASE}models/vosk-model-small-en-us-0.15.tar.gz`;
@@ -34,7 +34,7 @@ function voskEngines(label: string, url: string): Engine[] {
   const run = async (r: Recording, grammar: string[] | null) =>
     (await recognizeChunks(await get(), r.rate, grammar, r.chunks, VOSK_TIMEOUT_MS)) ?? '(시간 초과)';
   return [
-    { name: `${label} 자유`, load: async () => { await get(); }, run: (r) => run(r, null) },
+    { name: `${label} 자유`, on: true, load: async () => { await get(); }, run: (r) => run(r, null) },
     // 지금 앱의 롤플레이 두 번째 의견과 같은 목록
     { name: `${label} + 정답 단어`, load: async () => { await get(); }, run: (r, s) => run(r, looseGrammarFor(s)) }
   ];
@@ -42,13 +42,20 @@ function voskEngines(label: string, url: string): Engine[] {
 
 type Asr = (audio: Float32Array) => Promise<{ text: string } | { text: string }[]>;
 
-function whisperEngine(label: string, repo: string): Engine {
+// gpu: 그래픽 칩(WebGPU)으로 계산. 아이폰 Safari가 지원하면 CPU(wasm)보다 훨씬 빠를 수 있어 따로 잰다.
+// WebGPU에서는 q8이 잘 안 돼 라이브러리 예제가 권하는 조합(encoder fp32 + decoder q4)을 쓴다
+function whisperEngine(label: string, repo: string, gpu = false, on = false): Engine {
   let asr: Promise<Asr> | null = null;
-  const get = () => (asr ??= import('@huggingface/transformers').then(
-    ({ pipeline }) => pipeline('automatic-speech-recognition', repo, { dtype: 'q8', device: 'wasm' }) as unknown as Promise<Asr>
-  ));
+  const options = gpu
+    ? { device: 'webgpu', dtype: { encoder_model: 'fp32', decoder_model_merged: 'q4' } }
+    : { device: 'wasm', dtype: 'q8' };
+  const get = () => (asr ??= import('@huggingface/transformers').then(({ pipeline }) => {
+    if (gpu && !('gpu' in navigator)) throw new Error('이 브라우저는 WebGPU 지원 안 함');
+    return pipeline('automatic-speech-recognition', repo, options as never) as unknown as Promise<Asr>;
+  }));
   return {
     name: label,
+    on,
     load: async () => { await get(); },
     run: async (r) => {
       // Whisper는 16kHz 소리만 받는다
@@ -61,9 +68,11 @@ function whisperEngine(label: string, repo: string): Engine {
 export const ENGINES: Engine[] = [
   // 큰 Vosk(lgraph 128MB)·문장 통째 칸은 1차 비교(2026-11-21)에서 뺐다: 큰 Vosk는 6~8배 느리고
   // 사용자 발음은 오히려 덜 맞혔다(36/49 vs 작은 것 40/49). 문장 통째는 쉐도잉용이라 롤플레이 비교와 무관
+  // on: 처음부터 체크된 칸. 아이폰은 메모리가 작아 한꺼번에 다 올리면 꺼질 수 있어 기본은 둘만 (2026-11-21)
   ...voskEngines('작은 Vosk(지금 앱)', SMALL_VOSK),
   whisperEngine('Whisper tiny.en', 'onnx-community/whisper-tiny.en'),
-  whisperEngine('Whisper base.en', 'onnx-community/whisper-base.en')
+  whisperEngine('Whisper base.en', 'onnx-community/whisper-base.en', false, true),
+  whisperEngine('Whisper base.en (WebGPU)', 'onnx-community/whisper-base.en', true)
 ];
 
 // 예시 문장 단어 중 몇 개가 적혔나 (같은 단어 두 번 세지 않게 한 번 쓴 단어는 지운다)
