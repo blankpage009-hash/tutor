@@ -53,7 +53,8 @@ export function DrillControls(p: Props) {
         </button>
       </div>
       <p className={styles.label} lang="en" aria-live="polite">{hf.running ? STEP_LABEL[hf.step ?? 'reading'] : 'Swipe up · Next'}</p>
-      {hint && <p className={styles.hint} lang="ko">{hint}</p>}
+      {/* 안내가 없어도 칸은 그대로 둔다: 재생 ↔ 정지에서 안내 줄이 생기고 사라지면 아래 영역 높이가 변해 카드와 버튼이 움직인다 */}
+      <p className={styles.hint} lang="ko">{hint}</p>
     </div>
   );
 }

@@ -218,7 +218,9 @@
 .side:disabled { opacity: 0.4; cursor: default; }
 .side:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
 
+/* 안내가 2줄까지 들어가는 고정 높이 칸 — 내용이 없어도 높이를 지켜 마이크 버튼 위치를 고정한다 */
 .hint {
+  height: calc(var(--type-caption-line) * 2);
   margin: 0;
   font-size: var(--type-caption-size);
   line-height: var(--type-caption-line);

@@ -69,7 +69,8 @@ export function MyTurnPanel(p: Props) {
         <button type="button" className={dialogueStyles.side} onClick={p.onSkip}
           disabled={!p.myTurn || passed || p.echoing} aria-label="이 줄 건너뛰기"><IconSkipNext /></button>
       </div>
-      {hint && <p className={dialogueStyles.hint} lang="ko">{hint}</p>}
+      {/* 안내가 없어도 칸은 그대로 둔다 (안내가 생기고 사라질 때 버튼이 움직이지 않게) */}
+      <p className={dialogueStyles.hint} lang="ko">{hint}</p>
     </div>
   );
 }

@@ -232,5 +232,6 @@
   text-align: center;
   word-break: keep-all;
 }
-.hint { color: var(--ink-muted); }
+/* 안내가 2줄까지 들어가는 고정 높이 칸 — 내용이 없어도 높이를 지켜 카드·버튼 위치를 고정한다 */
+.hint { height: calc(var(--type-caption-line) * 2); color: var(--ink-muted); }
 .error { color: var(--danger); }
