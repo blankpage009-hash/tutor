@@ -9,3 +9,5 @@ public/content/
 .audio-tmp/
 __pycache__/
 .claude/
+# PC 비교 시험용 큰 인식 모델(128MB). GitHub는 100MB 넘는 파일을 못 받아서 저장소에 안 올린다
+lab/models/

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>인식 엔진 비교</title>
+  <!-- PC 시험 전용 페이지 (배포 안 함). 같은 녹음을 엔진마다 넣어 적힌 글자를 나란히 비교한다 -->
+  <style>
+    :root { --ink: #1b1b1f; --muted: #6b6b75; --line: #d9d9de; --bg: #f7f7f8; --accent: #1d3fbf; --good: #1f7a3a; --bad: #b3261e; }
+    body { margin: 0; padding: 16px; font: 15px/1.5 system-ui, sans-serif; color: var(--ink); background: var(--bg); }
+    h1 { font-size: 20px; margin: 0 0 12px; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+    input[type=text] { flex: 1; min-width: 260px; padding: 8px; font-size: 16px; border: 1px solid var(--line); border-radius: 6px; }
+    button { padding: 8px 14px; font-size: 15px; border-radius: 6px; border: 1px solid var(--accent); background: #fff; color: var(--accent); cursor: pointer; }
+    button.main { background: var(--accent); color: #fff; }
+    button:disabled { opacity: 0.4; cursor: default; }
+    #status { color: var(--muted); white-space: pre-line; margin: 8px 0 16px; }
+    table { border-collapse: collapse; width: 100%; background: #fff; margin-bottom: 18px; }
+    th, td { border: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+    th { background: #eef0f6; font-weight: 600; }
+    caption { text-align: left; font-weight: 600; padding: 4px 0; }
+    .score { white-space: nowrap; }
+    .full { color: var(--good); font-weight: 700; }
+    .low { color: var(--bad); }
+  </style>
+</head>
+<body>
+  <h1>인식 엔진 비교 (PC 시험)</h1>
+  <div class="row">
+    <input id="sentence" type="text" list="presets" placeholder="예시 문장 (내가 말할 문장)" />
+    <datalist id="presets"></datalist>
+  </div>
+  <div class="row">
+    <button id="load">① 모델 모두 불러오기</button>
+    <button id="rec" class="main">② 녹음</button>
+    <button id="stop" disabled>멈춤</button>
+    <button id="play" disabled>내 녹음 듣기</button>
+    <label><input id="appMic" type="checkbox" /> 앱과 같은 마이크(처리 끔 + 15배)</label>
+    <button id="copy">결과 복사</button>
+  </div>
+  <div id="status">① 먼저 모델을 불러오세요 (처음엔 내려받느라 몇 분 걸릴 수 있어요).</div>
+  <div id="results"></div>
+  <script type="module" src="./compare.ts"></script>
+</body>
+</html>
