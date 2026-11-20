@@ -26,69 +26,104 @@ export type WhisperEngine = {
   transcribe(audio: WhisperAudio, timeoutMs: number, log?: Log): Promise<string | null>;
 };
 
-// 일하는 중(busy)이면 새 일을 받지 않는다: 시간 초과로 포기한 일도 작업 스레드는 끝까지 하므로,
-// 다음 차례 일이 그 뒤에 줄 서서 또 시간 초과가 나지 않게 그 차례는 Vosk로 판정한다
-export function createWhisperEngine(makeWorker: () => WorkerLike): WhisperEngine {
-  let worker: WorkerLike | null = null;
-  let state: 'idle' | 'loading' | 'ready' | 'failed' = 'idle';
-  let busy = false;
-  let nextId = 1;
-  let log: Log = () => {};
-  const waiting = new Map<number, (text: string | null) => void>();
+type Job = { audio: WhisperAudio; resolve: (text: string | null) => void; timer?: ReturnType<typeof setTimeout> };
 
-  const onReply = (r: WhisperReply) => {
+// 작업 스레드는 한 번에 하나만 받아쓴다. 일하는 중에 온 일은 "대기 한 칸"에 둔다:
+// - 시간 초과로 포기한 일도 작업 스레드는 끝까지 하므로, 새 일은 거절하지 않고 그 뒤에 바로 이어서 한다
+// - 대기 칸에 이미 일이 있으면 새 일이 차지하고 옛 일은 null — 롤플레이 미리 받아쓰기에서는 가장 최근 멈춤만 의미 있다
+// 시간 초과는 기다린 시간까지 합쳐 센다 (사용자 요청 2026-11-21: 미리 받아쓰기로 기다리는 시간 줄이기)
+class WhisperQueue implements WhisperEngine {
+  private worker: WorkerLike | null = null;
+  private state: 'idle' | 'loading' | 'ready' | 'failed' = 'idle';
+  private running: { id: number; job: Job } | null = null;
+  private pending: Job | null = null;
+  private nextId = 1;
+  private log: Log = () => {};
+
+  constructor(private readonly makeWorker: () => WorkerLike) {}
+
+  preload(l?: Log): void {
+    if (l) this.log = l;
+    if (this.state !== 'idle') return;
+    this.state = 'loading';
+    try {
+      this.worker = this.makeWorker();
+      this.worker.onmessage = (e) => this.onReply(e.data);
+      this.worker.postMessage({ type: 'load' } satisfies WhisperRequest);
+    } catch (err) {
+      this.state = 'failed';
+      this.log(`Whisper 시작 실패: ${String(err)}`);
+    }
+  }
+
+  // 불러오기가 끝났나. 일하는 중이어도 true — 새 일은 대기 칸에서 기다린다
+  ready(): boolean {
+    return this.state === 'ready';
+  }
+
+  transcribe(audio: WhisperAudio, timeoutMs: number, l?: Log): Promise<string | null> {
+    if (l) this.log = l;
+    if (this.state !== 'ready' || !audio.chunks.length) return Promise.resolve(null);
+    return new Promise((resolve) => {
+      const job: Job = { audio, resolve };
+      job.timer = setTimeout(() => this.giveUp(job, timeoutMs), timeoutMs);
+      if (!this.running) return this.start(job);
+      if (this.pending) this.drop(this.pending, '더 새 받아쓰기가 와서 대기 중이던 것을 버림');
+      this.pending = job;
+    });
+  }
+
+  private start(job: Job): void {
+    const id = this.nextId++;
+    this.running = { id, job };
+    const samples = downsample(mergeChunks(job.audio.chunks), job.audio.rate, WAV_RATE);
+    this.worker!.postMessage({ type: 'run', id, audio: samples } satisfies WhisperRequest, [samples.buffer]);
+  }
+
+  // 시간 초과: 기다리던 쪽에는 null. 이미 작업 스레드가 하는 중이면 끝날 때까지 running은 그대로 둔다
+  private giveUp(job: Job, timeoutMs: number): void {
+    this.log(`Whisper 시간 초과 ${timeoutMs}ms`);
+    if (this.pending === job) this.pending = null;
+    job.resolve(null);
+  }
+
+  private drop(job: Job, why: string): void {
+    clearTimeout(job.timer);
+    this.log(`Whisper ${why}`);
+    job.resolve(null);
+  }
+
+  private onReply(r: WhisperReply): void {
     if (r.type === 'ready') {
-      state = 'ready';
-      log(`Whisper 준비됨 ${(r.ms / 1000).toFixed(1)}초`);
+      this.state = 'ready';
+      this.log(`Whisper 준비됨 ${(r.ms / 1000).toFixed(1)}초`);
       return;
     }
     if (r.type === 'error' && r.id === undefined) {
-      state = 'failed';
-      log(`Whisper 불러오기 실패: ${r.message}`);
+      this.state = 'failed';
+      this.log(`Whisper 불러오기 실패: ${r.message}`);
       return;
     }
-    busy = false;
-    const id = r.id ?? -1;
-    if (r.type === 'error') log(`Whisper 오류: ${r.message}`);
-    else log(`Whisper 받아쓰기 ${(r.ms / 1000).toFixed(2)}초 "${r.text}"`);
-    waiting.get(id)?.(r.type === 'result' ? cleanWhisperText(r.text) : null);
-    waiting.delete(id);
-  };
-
-  return {
-    preload(l) {
-      if (l) log = l;
-      if (state !== 'idle') return;
-      state = 'loading';
-      try {
-        worker = makeWorker();
-        worker.onmessage = (e) => onReply(e.data);
-        worker.postMessage({ type: 'load' } satisfies WhisperRequest);
-      } catch (err) {
-        state = 'failed';
-        log(`Whisper 시작 실패: ${String(err)}`);
-      }
-    },
-    ready: () => state === 'ready' && !busy,
-    transcribe: (audio, timeoutMs, l) => runOnce(audio, timeoutMs, l)
-  };
-
-  function runOnce(audio: WhisperAudio, timeoutMs: number, l?: Log): Promise<string | null> {
-    if (l) log = l;
-    if (state !== 'ready' || busy || !worker || !audio.chunks.length) return Promise.resolve(null);
-    busy = true;
-    const id = nextId++;
-    const samples = downsample(mergeChunks(audio.chunks), audio.rate, WAV_RATE);
-    return new Promise((resolve) => {
-      const timer = setTimeout(() => {
-        waiting.delete(id); // busy는 그대로: 작업 스레드가 이 일을 끝내야 풀린다
-        log(`Whisper 시간 초과 ${timeoutMs}ms`);
-        resolve(null);
-      }, timeoutMs);
-      waiting.set(id, (text) => { clearTimeout(timer); resolve(text); });
-      worker!.postMessage({ type: 'run', id, audio: samples } satisfies WhisperRequest, [samples.buffer]);
-    });
+    this.finish(r);
   }
+
+  private finish(r: Extract<WhisperReply, { id?: number }>): void {
+    const done = this.running;
+    this.running = null;
+    if (r.type === 'error') this.log(`Whisper 오류: ${r.message}`);
+    else this.log(`Whisper 받아쓰기 ${(r.ms / 1000).toFixed(2)}초 "${r.text}"`);
+    if (done && done.id === r.id) {
+      clearTimeout(done.job.timer);
+      done.job.resolve(r.type === 'result' ? cleanWhisperText(r.text) : null);
+    }
+    const next = this.pending;
+    this.pending = null;
+    if (next) this.start(next);
+  }
+}
+
+export function createWhisperEngine(makeWorker: () => WorkerLike): WhisperEngine {
+  return new WhisperQueue(makeWorker);
 }
 
 // 앱 전체에서 하나만 쓴다 (모델 약 77MB를 두 번 올리지 않게)

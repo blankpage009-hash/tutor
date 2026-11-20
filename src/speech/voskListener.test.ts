@@ -1,7 +1,7 @@
 import type { Model } from 'vosk-browser';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { VoskHandlers } from './voskEngine';
-import { AFTER_FINAL_MS, candidatesOf, joinHeard, listenVosk, NO_SPEECH_MS, type VoskListenOptions } from './voskListener';
+import { AFTER_FINAL_MS, candidatesOf, joinHeard, listenVosk, NO_SPEECH_MS, QUIET_AFTER_FINAL, type VoskListenOptions } from './voskListener';
 
 // 가짜 엔진: 시험이 직접 중간 결과·확정 결과를 보낸다
 function setup(over: Partial<VoskListenOptions> = {}) {
@@ -149,6 +149,38 @@ describe('앱 인식: 언제 끝내나', () => {
     const r = await t.l.result;
     expect(r.audio?.rate).toBe(16000);
     expect(r.audio?.chunks).toHaveLength(2);
+  });
+
+  it('확정 뒤 조용히 기다리기를 시작하면 onPause로 그때까지 목소리와 번호를 준다 (미리 받아쓰기)', async () => {
+    const onPause = vi.fn();
+    const t = setup({ secondOpinion: false, keepAudio: true, isComplete: () => false, afterPassMs: 1500, onPause });
+    t.sound();
+    t.h().onPartial?.('good to see');
+    t.h().onFinal?.('good to see you again');
+    expect(onPause).toHaveBeenCalledOnce();
+    const [audio, id] = onPause.mock.calls[0];
+    expect(audio.chunks).toHaveLength(1);
+    t.sound(); // 기다리는 동안 쌓인 조용한 소리는 이미 넘긴 목록에 들어가지 않는다
+    expect(audio.chunks).toHaveLength(1);
+    vi.advanceTimersByTime(1500);
+    const r = await t.l.result;
+    expect(r.speechId).toBe(id);
+    expect(r.endReason).toBe(QUIET_AFTER_FINAL);
+  });
+
+  it('기다리는 사이 다시 말하면 번호가 올라 미리 받아쓴 것을 쓰지 않게 된다', async () => {
+    const onPause = vi.fn();
+    const t = setup({ secondOpinion: false, keepAudio: true, isComplete: () => false, afterPassMs: 1500, onPause });
+    t.sound();
+    t.h().onFinal?.('good to see you');
+    const firstId = onPause.mock.calls[0][1];
+    t.h().onPartial?.('again');
+    t.h().onFinal?.('again');
+    expect(onPause).toHaveBeenCalledTimes(2);
+    vi.advanceTimersByTime(1500);
+    const r = await t.l.result;
+    expect(r.speechId).not.toBe(firstId);
+    expect(r.speechId).toBe(onPause.mock.calls[1][1]);
   });
 
   it('keepAudio가 없으면 목소리를 넘기지 않는다', async () => {

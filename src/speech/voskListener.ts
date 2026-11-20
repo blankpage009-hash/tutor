@@ -18,6 +18,9 @@ export type VoskListenOptions = {
   secondOpinion: boolean | 'always';
   grammar?: string[]; // 두 번째 의견 단어 목록. 없으면 문장 통째(grammarFor)
   keepAudio?: boolean; // 결과에 모아 둔 목소리(audio)도 넘겨준다 (롤플레이 Whisper 받아쓰기용, 2026-11-21)
+  // 확정 결과 뒤 "말이 끝났나" 조용히 기다리기를 시작할 때 부른다(그때까지 목소리 + 들린 말 번호).
+  // 롤플레이가 그 기다림 동안 Whisper를 미리 돌려 기다리는 시간을 줄인다 (사용자 요청 2026-11-21)
+  onPause?: (audio: { chunks: Float32Array[]; rate: number }, speechId: number) => void;
   noSpeechMs?: number; // 이만큼 말이 없으면 끝낸다 (기본 12초, 이어 말하기는 8초 — 사용자 결정)
   // 확정 결과가 통과 못 했을 때 더 들어 볼 시간 (기본 AFTER_FINAL_MS). 롤플레이 자유 답변은 생각하며 쉬어서 길게
   afterFinalMs?: number;
@@ -36,6 +39,8 @@ export const AFTER_FINAL_MS = 800;
 export const NO_SPEECH_MS = 12000;
 export const MAX_LISTEN_MS = 15000;
 const STOP_GRACE_MS = 1000;
+// 끝난 이유 중 "확정 결과 뒤 조용히 기다리다 끝남". 롤플레이 미리 받아쓰기는 이때만 미리 받아쓴 결과를 쓴다
+export const QUIET_AFTER_FINAL = '확정 뒤 조용함';
 const SECOND_OPINION_MS = 3000;
 
 // 엔진의 중간 결과는 "지금 말하는 토막"만 담고, 확정된 앞 토막들은 빠진다. 그래서 이어 붙인다
@@ -56,6 +61,8 @@ type State = {
   samples: number;
   lastHeard: string; // 지금까지 들린 말 전체 (말소리가 있었는지 보는 용도)
   lastPartial: string; // 마지막 중간 결과까지 이어 붙인 것. 확정 결과가 이보다 못할 때를 위한 후보
+  // 들린 말 번호: 글자 있는 중간·확정 결과마다 오른다. 멈춤 때 번호 = 끝날 때 번호면 "멈춘 뒤 새 말 없음"
+  speechId: number;
   ended: boolean;
   stopping: boolean;
   afterFinal?: ReturnType<typeof setTimeout>;
@@ -65,6 +72,7 @@ type State = {
 function onPartial(s: State, t: string): void {
   if (!t || s.ended) return;
   clearTimeout(s.afterFinal);
+  s.speechId++;
   s.lastHeard = joinHeard(s.segments, t);
   s.lastPartial = s.lastHeard;
   s.o.onInterim?.([s.lastHeard]);
@@ -79,6 +87,7 @@ function onFinal(s: State, t: string): void {
     return;
   }
   s.segments.push(t);
+  s.speechId++;
   s.debug(`확정 "${t}"`);
   s.lastHeard = joinHeard(s.segments);
   s.o.onInterim?.([s.lastHeard]);
@@ -87,7 +96,9 @@ function onFinal(s: State, t: string): void {
   if (pass && s.o.afterPassMs === undefined) return s.end('확정 결과');
   s.debug(pass ? '통과했지만 말이 끝날 때까지 기다리기' : '통과 못 해 조금 더 듣기');
   const wait = pass ? s.o.afterPassMs : s.o.afterFinalMs;
-  s.afterFinal = setTimeout(() => s.end('확정 뒤 조용함'), wait ?? AFTER_FINAL_MS);
+  s.afterFinal = setTimeout(() => s.end(QUIET_AFTER_FINAL), wait ?? AFTER_FINAL_MS);
+  // 조각 목록은 복사본으로 넘긴다 — 기다리는 동안에도 조용한 소리가 계속 쌓이므로
+  s.o.onPause?.({ chunks: s.chunks.slice(), rate: s.o.mic.sampleRate }, s.speechId);
 }
 
 // 두 번째 의견에 다시 넣을 소리를 모은다. 너무 길어지면 더 모으지 않는다
@@ -104,7 +115,7 @@ export function listenVosk(o: VoskListenOptions): Listening {
   const timers: ReturnType<typeof setTimeout>[] = [];
   const s: State = {
     o, debug: (m) => o.onDebug?.(`앱 인식 ${m}`), segments: [], chunks: [], samples: 0,
-    lastHeard: '', lastPartial: '', ended: false, stopping: false,
+    lastHeard: '', lastPartial: '', speechId: 0, ended: false, stopping: false,
     end: (reason) => {
       if (s.ended) return;
       s.ended = true;
@@ -113,7 +124,9 @@ export function listenVosk(o: VoskListenOptions): Listening {
       session.close();
       s.debug(`끝 (${reason})`);
       void conclude(o, candidatesOf(s.segments, s.lastPartial), s.chunks, s.debug)
-        .then((r) => finish(o.keepAudio ? { ...r, audio: { chunks: s.chunks, rate: o.mic.sampleRate } } : r));
+        .then((r) => finish(o.keepAudio
+          ? { ...r, audio: { chunks: s.chunks, rate: o.mic.sampleRate }, speechId: s.speechId, endReason: reason }
+          : r));
     }
   };
   const session = make(o.model, o.mic.sampleRate, null, {

@@ -13,8 +13,8 @@ import type { MicStream } from '../../speech/micStream';
 import { createCaptureContext } from '../../speech/pcmCapture';
 import type { Listening, ListenResult } from '../../speech/recognizer';
 import { looseGrammarFor } from '../../speech/voskEngine';
-import { listenVosk } from '../../speech/voskListener';
-import { whisper } from '../../speech/whisperEngine';
+import { listenVosk, QUIET_AFTER_FINAL } from '../../speech/voskListener';
+import { whisper, type WhisperAudio } from '../../speech/whisperEngine';
 import { ENGINE_NOTE } from '../newLesson/useNewSpeaking';
 import { openVoskMic } from '../shadowing/useShadowingAttempt';
 import { useVoskModel } from '../shadowing/useVoskModel';
@@ -80,15 +80,39 @@ async function judgedSound(c: Ctx, pass: boolean): Promise<void> {
 
 // 말이 끝난 뒤 판정. Whisper가 준비돼 있으면 모아 둔 목소리를 다시 받아써 그 글자로 판정한다
 // (엔진 비교 2026-11-21: 아이폰 Vosk 79% → Whisper 92%). 그동안 "확인 중"을 보여 주고, 마이크는 먼저 닫는다
-async function judgeHeard(c: Ctx, line: MyLine, res: ListenResult): Promise<ReturnType<typeof judgeTurn>> {
+async function judgeHeard(
+  c: Ctx, line: MyLine, res: ListenResult, early: EarlyWhisper
+): Promise<ReturnType<typeof judgeTurn>> {
   let text: string | null = null;
   if (res.audio) {
     c.slot.release();
     c.setTurn((t) => ({ ...t, checking: true }));
-    text = await whisper().transcribe(res.audio, WHISPER_TIMEOUT_MS, c.log);
+    text = await early.textFor(res.audio, res);
     c.setTurn((t) => ({ ...t, checking: false }));
   }
   return judgeTurn(line.requiredKeywords, res.alternatives, res.hinted, text, line.exampleEn);
+}
+
+type EarlyWhisper = ReturnType<typeof earlyWhisper>;
+
+// 미리 받아쓰기 (사용자 요청 2026-11-21): 말이 멈춰 "끝났나" 조용히 기다리는 1.5~2.5초 동안 Whisper를 먼저 돌려
+// 기다림과 받아쓰기(약 2.3초)를 겹친다. 멈춘 뒤 새 말 없이 조용히 끝났을 때만 그 결과를 쓰고,
+// 다시 말했거나 멈춤 버튼 등으로 끝났으면 끝난 뒤의 전체 목소리로 다시 받아쓴다
+function earlyWhisper(c: Ctx) {
+  let early: { id: number; text: Promise<string | null> } | null = null;
+  return {
+    onPause(audio: WhisperAudio, id: number) {
+      early = { id, text: whisper().transcribe(audio, WHISPER_TIMEOUT_MS, c.log) };
+    },
+    textFor(audio: WhisperAudio, res: ListenResult): Promise<string | null> {
+      if (early && early.id === res.speechId && res.endReason === QUIET_AFTER_FINAL) {
+        c.log('미리 받아쓰기 사용');
+        return early.text;
+      }
+      if (early) c.log('멈춘 뒤 새 말이 있어 다시 받아쓰기');
+      return whisper().transcribe(audio, WHISPER_TIMEOUT_MS, c.log);
+    }
+  };
 }
 
 // 한 번 듣기. 중간 결과로 끝내지 않음(문장 중간에서 잘린다).
@@ -103,7 +127,9 @@ async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   if (takeSkip(c, line)) return 'skipped';
   c.setTurn((t) => ({ ...t, live: judgeKeywords(keys, []) }));
   const useWhisper = whisper().ready();
+  const early = earlyWhisper(c);
   const l = listenVosk({
+    onPause: useWhisper ? early.onPause : undefined,
     model: c.model, mic, sentenceEn: line.exampleEn, afterFinalMs: THINK_PAUSE_MS,
     secondOpinion: useWhisper ? false : 'always', grammar: looseGrammarFor(line.exampleEn), keepAudio: useWhisper,
     afterPassMs: DONE_PAUSE_MS, isComplete: () => false,
@@ -116,7 +142,7 @@ async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   c.listening.current = null;
   if (takeSkip(c, line)) return 'skipped';
   if (!res.alternatives.length) return 'no-speech';
-  const { judgement, source } = await judgeHeard(c, line, res);
+  const { judgement, source } = await judgeHeard(c, line, res, early);
   // 받아쓰는 사이 누른 멈춤·건너뛰기
   if (c.stopped()) return 'no-speech';
   if (takeSkip(c, line)) return 'skipped';

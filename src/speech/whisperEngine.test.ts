@@ -13,6 +13,7 @@ function fakeWorker() {
 }
 
 const audio = { chunks: [new Float32Array(1600)], rate: 16000 };
+type RunReq = Extract<WhisperRequest, { type: 'run' }>;
 
 describe('Whisper 받아쓰기 엔진', () => {
   it('괄호 표시([BLANK_AUDIO], (music))는 지운다', () => {
@@ -43,7 +44,7 @@ describe('Whisper 받아쓰기 엔진', () => {
     expect(await p).toBe('Hi there.');
   });
 
-  it('시간이 넘으면 null, 그 일이 끝날 때까지 다음 받아쓰기는 받지 않는다 (줄 서서 또 늦지 않게)', async () => {
+  it('시간이 넘으면 null. 다음 받아쓰기는 거절하지 않고 그 일이 끝나면 이어서 한다', async () => {
     vi.useFakeTimers();
     const { w, sent } = fakeWorker();
     const e = createWhisperEngine(() => w);
@@ -52,12 +53,30 @@ describe('Whisper 받아쓰기 엔진', () => {
     const p = e.transcribe(audio, 1000);
     vi.advanceTimersByTime(1000);
     expect(await p).toBeNull();
-    expect(e.ready()).toBe(false);
-    expect(await e.transcribe(audio, 1000)).toBeNull();
-    const run = sent[1] as Extract<WhisperRequest, { type: 'run' }>;
-    w.reply({ type: 'result', id: run.id, text: 'late', ms: 3000 });
     expect(e.ready()).toBe(true);
+    const next = e.transcribe(audio, 5000);
+    expect(sent).toHaveLength(2); // 아직 작업 스레드는 첫 일을 하는 중이라 보내지 않는다
+    w.reply({ type: 'result', id: (sent[1] as RunReq).id, text: 'late', ms: 3000 });
+    expect(sent).toHaveLength(3);
+    w.reply({ type: 'result', id: (sent[2] as RunReq).id, text: 'Hi there.', ms: 2000 });
+    expect(await next).toBe('Hi there.');
     vi.useRealTimers();
+  });
+
+  it('대기 칸은 한 칸: 더 새 일이 오면 대기 중이던 옛 일은 null (미리 받아쓰기에서 가장 최근 멈춤만)', async () => {
+    const { w, sent } = fakeWorker();
+    const e = createWhisperEngine(() => w);
+    e.preload();
+    w.reply({ type: 'ready', ms: 100 });
+    const first = e.transcribe(audio, 5000);
+    const older = e.transcribe(audio, 5000);
+    const newest = e.transcribe(audio, 5000);
+    expect(await older).toBeNull();
+    w.reply({ type: 'result', id: (sent[1] as RunReq).id, text: 'first', ms: 2000 });
+    expect(await first).toBe('first');
+    w.reply({ type: 'result', id: (sent[2] as RunReq).id, text: 'newest', ms: 2000 });
+    expect(await newest).toBe('newest');
+    expect(sent).toHaveLength(3);
   });
 
   it('불러오기에 실패하면 계속 준비 안 됨', () => {

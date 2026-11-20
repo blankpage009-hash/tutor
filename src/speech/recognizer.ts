@@ -35,6 +35,10 @@ export type ListenResult = {
   hinted?: string;
   // 들은 동안 모아 둔 내 목소리 (앱 인식 keepAudio일 때만). 롤플레이가 Whisper로 다시 받아쓸 때 쓴다
   audio?: { chunks: Float32Array[]; rate: number };
+  // 끝날 때의 들린 말 번호와 끝난 이유 (keepAudio일 때만). 롤플레이가 미리 받아쓴 결과를 써도 되는지 본다:
+  // 마지막 멈춤 뒤 새 말이 없고(번호 같음) "확정 뒤 조용함"으로 끝났을 때만 쓴다
+  speechId?: number;
+  endReason?: string;
 };
 
 export type ListenOptions = {
