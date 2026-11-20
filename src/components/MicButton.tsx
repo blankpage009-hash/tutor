@@ -10,7 +10,8 @@ type Props = {
 // handoff.md MicButton: 아래에 상태 문구를 꼭 붙인다
 export function MicButton({ listening, disabled, status, onClick, tone = 'text' }: Props) {
   return (
-    <div className={styles.wrap}>
+    // 라벨 모양일 때는 듣는 중 숨 쉬는 고리(마이크 밖으로 약 13px)와 겹치지 않게 더 띄운다 (사용자 요청 2026-11-20)
+    <div className={`${styles.wrap} ${tone === 'label' ? styles.wrapLabel : ''}`}>
       <button type="button" onClick={onClick} disabled={disabled}
         className={`${styles.mic} ${listening ? styles.listening : ''}`}
         aria-label={listening ? '듣기 멈추기' : '말하기 시작'} aria-pressed={listening}>
