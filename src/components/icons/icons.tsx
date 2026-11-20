@@ -8,11 +8,22 @@ function Svg(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export const IconToday = () => <Svg><rect x="4" y="5" width="16" height="15" /><path d="M4 10h16M9 3v4M15 3v4" /></Svg>;
-export const IconCourses = () => <Svg><path d="M4 5h6v14H4zM14 5h6v14h-6z" /></Svg>;
-export const IconLibrary = () => <Svg><path d="M6 4h12v16l-6-4-6 4z" /></Svg>;
-export const IconVocab = () => <Svg><path d="M4 6h16M4 12h16M4 18h10" /></Svg>;
-export const IconPrompt = () => <Svg><path d="M4 5h16v11H9l-5 4z" /><path d="M8 9.5h8M8 12.5h5" /></Svg>;
+// 하단 탭 아이콘은 모서리·끝이 둥근 모양(디자인 v2 시안). 각진 기본 Svg와 달리 round로 덮어씀
+const ROUND = { strokeLinecap: 'round', strokeLinejoin: 'round' } as const;
+
+export const IconToday = () => (
+  <Svg {...ROUND}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M8 2v4M16 2v4M3 10h18" /></Svg>
+);
+export const IconCourses = () => (
+  <Svg {...ROUND}><circle cx="6" cy="5" r="3" /><circle cx="18" cy="19" r="3" /><path d="M9 5h8.5a3.5 3.5 0 0 1 0 7h-11a3.5 3.5 0 0 0 0 7H15" /></Svg>
+);
+export const IconLibrary = () => (
+  <Svg {...ROUND}><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" /></Svg>
+);
+export const IconVocab = () => <Svg {...ROUND}><path d="M21 5H3M15 12H3M17 19H3" /></Svg>;
+export const IconPrompt = () => (
+  <Svg {...ROUND}><path d="M22 17a2 2 0 0 1-2 2H6.8a2 2 0 0 0-1.4.6l-2.2 2.2A.7.7 0 0 1 2 21.3V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" /><path d="M7 11h10M7 15h6" /></Svg>
+);
 // 가로줄 3개 + 손잡이 네모 (디자인 v2 홈 오른쪽 위 설정 아이콘)
 export const IconSettings = () => (
   <Svg><path d="M4 7h16M4 12h16M4 17h16" /><path d="M9 5v4M15 10v4M8 15v4" /></Svg>
