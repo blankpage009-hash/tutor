@@ -24,9 +24,14 @@ export const IconVocab = () => <Svg {...ROUND}><path d="M21 5H3M15 12H3M17 19H3"
 export const IconPrompt = () => (
   <Svg {...ROUND}><path d="M22 17a2 2 0 0 1-2 2H6.8a2 2 0 0 0-1.4.6l-2.2 2.2A.7.7 0 0 1 2 21.3V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" /><path d="M7 11h10M7 15h6" /></Svg>
 );
-// 가로줄 3개 + 손잡이 네모 (디자인 v2 홈 오른쪽 위 설정 아이콘)
+// 가로줄 3개에 손잡이가 서로 다른 위치에 끼운 슬라이더 모양 (사용자가 준 디자인 시안 그대로).
+// 손잡이 자리 양옆을 비우려고 줄을 둘로 나눠 그렸고, 줄 끝이 시안처럼 평평하도록 butt로 지정
 export const IconSettings = () => (
-  <Svg><path d="M4 7h16M4 12h16M4 17h16" /><path d="M9 5v4M15 10v4M8 15v4" /></Svg>
+  <Svg strokeLinecap="butt" strokeLinejoin="miter">
+    <path d="M3 5h7M14 5h7M14 3v4" />
+    <path d="M3 12h5M12 12h9M8 10v4" />
+    <path d="M3 19h9M16 19h5M16 17v4" />
+  </Svg>
 );
 export const IconFlame = () => (
   <Svg width="18" height="18"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 .3 1.5 1 2 2 2 0-3-1-5 1-8z" /></Svg>
