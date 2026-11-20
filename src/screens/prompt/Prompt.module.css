@@ -60,3 +60,29 @@
 .failed { margin: var(--space-2) 0 0; color: var(--danger); font-size: var(--type-body-kr-size); }
 
 .section { margin-top: var(--space-5); }
+
+/* 줄 전체가 눌리는 접기/펼치기 버튼. 높이는 탭 최소 크기를 지킨다 */
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--tap-min);
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+}
+
+.chevron {
+  width: 8px;
+  height: 8px;
+  margin-right: var(--space-1);
+  border-right: 1.5px solid var(--ink-muted);
+  border-bottom: 1.5px solid var(--ink-muted);
+  transform: rotate(45deg);
+}
+
+.toggle[aria-expanded='true'] .chevron { transform: rotate(-135deg); }
+
+.toggle:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
