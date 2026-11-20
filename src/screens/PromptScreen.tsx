@@ -30,7 +30,7 @@ export function PromptScreen() {
     return next;
   });
   const generateButton = gen.available ? (
-    <Button size="sm" variant="primary" disabled={gen.busy || sentences.length === 0}
+    <Button size="sm" variant="primary" className={styles.generate} disabled={gen.busy || sentences.length === 0}
       aria-label="고른 문장으로 상황 만들기" onClick={() => gen.generate(sentences)}>
       {gen.busy ? '…' : 'Generate'}
     </Button>

@@ -62,14 +62,14 @@
 .section { margin-top: var(--space-5); }
 
 /* 줄 전체가 눌리는 접기/펼치기 버튼. 높이는 탭 최소 크기를 지킨다 */
-.toggleRow { position: relative; display: flex; flex-direction: column; }
-
-/* 접기 화살표 바로 왼쪽. 화살표 폭(8px + 회전 여유)과 여백만큼 띄운다 */
-.toggleAction {
-  position: absolute;
-  top: 50%;
-  right: calc(var(--space-1) + 20px);
-  transform: translateY(-50%);
+/* Generate: 아래 CORRECTION의 한 칸(Later)과 같은 크기·글자로 맞춘다 (사용자 요청) */
+.generate {
+  align-self: flex-start;
+  width: 50%;
+  margin: var(--space-2) 0 var(--space-1);
+  font-family: var(--type-caption-family);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .toggle {

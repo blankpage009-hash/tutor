@@ -8,7 +8,7 @@ type Props = {
   onToggle: (id: string) => void;
   extra: string;
   onExtra: (text: string) => void;
-  // MUST USE 줄 오른쪽(접기 화살표 앞)에 놓을 버튼 (Generate)
+  // 펼친 목록 맨 위(밑줄 바로 아래)에 놓을 버튼 (Generate). 문장을 고르는 자리 바로 옆이라 흐름이 이어진다
   action?: ReactNode;
 };
 
@@ -21,17 +21,14 @@ export function SentencePicker({ saved, selected, onToggle, extra, onExtra, acti
   const extraCount = extra.split('\n').filter((l) => l.trim() !== '').length;
   return (
     <div className={styles.field}>
-      {/* 버튼 안에 버튼을 넣을 수 없어서, 줄 전체 접기 버튼 위에 action을 겹쳐 올린다 */}
-      <div className={styles.toggleRow}>
-        <button type="button" className={styles.toggle} aria-expanded={listOpen}
-          onClick={() => setListOpen((o) => !o)}>
-          <span className={styles.label}>MUST USE · {selected.size + extraCount}</span>
-          <span className={styles.chevron} aria-hidden="true" />
-        </button>
-        {action && <div className={styles.toggleAction}>{action}</div>}
-      </div>
+      <button type="button" className={styles.toggle} aria-expanded={listOpen}
+        onClick={() => setListOpen((o) => !o)}>
+        <span className={styles.label}>MUST USE · {selected.size + extraCount}</span>
+        <span className={styles.chevron} aria-hidden="true" />
+      </button>
       {listOpen && (
         <>
+          {action}
           <div className={styles.chips}>
             {saved.map((s) => (
               <button key={s.id} type="button" className={styles.chip} aria-pressed={selected.has(s.id)}
