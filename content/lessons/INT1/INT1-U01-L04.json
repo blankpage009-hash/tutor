@@ -12,7 +12,7 @@
     "en": "Which one do you like better?",
     "ko": "어느 게 더 좋으세요?",
     "stress": "WHICH one do you like BETter?",
-    "audio": { "normal": "audio/lessons/INT1-U01-L04/key-9d7359da.m4a", "slow": "audio/lessons/INT1-U01-L04/key-9d7359da.m4a" }
+    "audio": { "normal": "audio/lessons/INT1-U01-L04/key-d6314b1a.m4a", "slow": "audio/lessons/INT1-U01-L04/key-d6314b1a.m4a" }
   },
   "explanation": {
     "ko": [
@@ -40,19 +40,19 @@
     "situation": "샌프란시스코의 우리 집에 이웃을 초대했습니다. 마실 것을 고르게 해 줍니다.",
     "partnerRole": "이웃",
     "lines": [
-      { "no": 1, "speaker": "partner", "en": "Thanks for having me over. Your place looks great!", "ko": "초대해 주셔서 감사해요. 집이 정말 멋지네요!", "audio": "audio/lessons/INT1-U01-L04/dlg-01-27c6c0d8.m4a" },
-      { "no": 2, "speaker": "me", "en": "Thanks for coming! Can I get you something to drink?", "ko": "와 주셔서 고마워요! 마실 것 좀 드릴까요?", "audio": "audio/lessons/INT1-U01-L04/dlg-02-a4552fe0.m4a" },
-      { "no": 3, "speaker": "partner", "en": "Sure, what do you have?", "ko": "좋죠, 뭐가 있어요?", "audio": "audio/lessons/INT1-U01-L04/dlg-03-2aef4742.m4a" },
+      { "no": 1, "speaker": "partner", "en": "Thanks for having me over. Your place looks great!", "ko": "초대해 주셔서 감사해요. 집이 정말 멋지네요!", "audio": "audio/lessons/INT1-U01-L04/dlg-01-f9972355.m4a" },
+      { "no": 2, "speaker": "me", "en": "Thanks for coming! Can I get you something to drink?", "ko": "와 주셔서 고마워요! 마실 것 좀 드릴까요?", "audio": "audio/lessons/INT1-U01-L04/dlg-02-aa7e10ef.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Sure, what do you have?", "ko": "좋죠, 뭐가 있어요?", "audio": "audio/lessons/INT1-U01-L04/dlg-03-9cc57648.m4a" },
       {
         "no": 4,
         "speaker": "me",
         "en": "I have lemonade and iced tea. Which one do you like better?",
         "ko": "레모네이드랑 아이스티가 있어요. 어느 게 더 좋으세요?",
-        "audio": "audio/lessons/INT1-U01-L04/dlg-04-f717dec5.m4a",
+        "audio": "audio/lessons/INT1-U01-L04/dlg-04-9e6e539d.m4a",
         "hasKeySentence": true
       },
-      { "no": 5, "speaker": "partner", "en": "Hmm, I'll have the iced tea, please.", "ko": "음, 아이스티로 할게요.", "audio": "audio/lessons/INT1-U01-L04/dlg-05-5f760a68.m4a" },
-      { "no": 6, "speaker": "me", "en": "Coming right up. Would you like some lemon with it?", "ko": "금방 드릴게요. 레몬도 좀 넣어 드릴까요?", "audio": "audio/lessons/INT1-U01-L04/dlg-06-0fb3898d.m4a" }
+      { "no": 5, "speaker": "partner", "en": "Hmm, I'll have the iced tea, please.", "ko": "음, 아이스티로 할게요.", "audio": "audio/lessons/INT1-U01-L04/dlg-05-9af95c6f.m4a" },
+      { "no": 6, "speaker": "me", "en": "Coming right up. Would you like some lemon with it?", "ko": "금방 드릴게요. 레몬도 좀 넣어 드릴까요?", "audio": "audio/lessons/INT1-U01-L04/dlg-06-eff70915.m4a" }
     ],
     "expressionNotes": [
       { "en": "Thanks for having me over.", "ko": "'초대해 주셔서 감사해요.' 남의 집에 갔을 때 들어서며 하는 인사입니다. have ~ over = ~를 집에 초대하다." },
@@ -66,7 +66,7 @@
       "ko": "어느 게 더 좋으세요?",
       "point": "핵심 문장",
       "cue": { "lang": "ko", "text": "두 가지를 보여 주며, 상대에게 어느 쪽이 더 좋은지 물어보세요." },
-      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-01-9d7359da.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-01-9d7359da.m4a" }
+      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-01-d6314b1a.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-01-d6314b1a.m4a" }
     },
     {
       "id": 2,
@@ -74,7 +74,7 @@
       "ko": "어느 색이 더 좋으세요?",
       "point": "명사 교체 (one → color)",
       "cue": { "lang": "ko", "text": "파란색과 초록색 중 어느 색이 더 좋은지 물어보세요." },
-      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-02-3dd82757.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-02-3dd82757.m4a" }
+      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-02-696d1d97.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-02-696d1d97.m4a" }
     },
     {
       "id": 3,
@@ -82,7 +82,7 @@
       "ko": "아드님은 어느 걸 더 좋아하세요?",
       "point": "주어 변경 (you → your son, does)",
       "cue": { "lang": "ko", "text": "아들 선물을 고르는 이웃에게, 아들이 어느 쪽을 더 좋아하는지 물어보세요." },
-      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-03-e7589dcc.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-03-e7589dcc.m4a" }
+      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-03-ea525bde.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-03-ea525bde.m4a" }
     },
     {
       "id": 4,
@@ -90,7 +90,7 @@
       "ko": "어느 게 제일 좋으세요?",
       "point": "최상급 (better → best)",
       "cue": { "lang": "ko", "text": "메뉴 세 가지를 보여 주고 어느 게 제일 좋은지 물어보세요." },
-      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-04-c2815f02.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-04-c2815f02.m4a" }
+      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-04-c1202e39.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-04-c1202e39.m4a" }
     },
     {
       "id": 5,
@@ -98,7 +98,7 @@
       "ko": "어느 쪽이 좋으시겠어요?",
       "point": "공손형 (would prefer)",
       "cue": { "lang": "ko", "text": "손님에게 두 가지 중 어느 쪽이 좋을지 공손하게 물어보세요." },
-      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-05-a2ecb153.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-05-a2ecb153.m4a" }
+      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-05-ff7a9787.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-05-ff7a9787.m4a" }
     },
     {
       "id": 6,
@@ -106,7 +106,7 @@
       "ko": "어느 게 더 좋았어요?",
       "point": "과거형 (do → did)",
       "cue": { "lang": "ko", "text": "상대가 영화 두 편을 다 봤대요. 어느 쪽이 더 좋았는지 물어보세요." },
-      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-06-ed05f936.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-06-ed05f936.m4a" }
+      "audio": { "normal": "audio/lessons/INT1-U01-L04/drill-06-bda3cd7d.m4a", "slow": "audio/lessons/INT1-U01-L04/drill-06-bda3cd7d.m4a" }
     }
   ],
   "drillStages": [
@@ -144,7 +144,7 @@
     "situation": "회사에서 동료와 함께 다른 동료의 생일 케이크를 고릅니다. 대본 없이 내 말로 대답합니다.",
     "partnerRole": "직장 동료",
     "lines": [
-      { "no": 1, "speaker": "partner", "en": "We're getting a cake for Jen's birthday. Chocolate or strawberry?", "ko": "젠 생일 케이크를 사려고 해요. 초콜릿이 좋을까요, 딸기가 좋을까요?", "audio": "audio/lessons/INT1-U01-L04/rp-01-e8e7e2d3.m4a" },
+      { "no": 1, "speaker": "partner", "en": "We're getting a cake for Jen's birthday. Chocolate or strawberry?", "ko": "젠 생일 케이크를 사려고 해요. 초콜릿이 좋을까요, 딸기가 좋을까요?", "audio": "audio/lessons/INT1-U01-L04/rp-01-b803a8d0.m4a" },
       {
         "no": 2,
         "speaker": "me",
@@ -153,7 +153,7 @@
         "exampleKo": "잘 모르겠어요. 젠이 어느 쪽을 더 좋아할 것 같아요?",
         "requiredKeywords": ["which", "better"]
       },
-      { "no": 3, "speaker": "partner", "en": "I think she loves chocolate.", "ko": "젠은 초콜릿을 엄청 좋아하는 것 같아요.", "audio": "audio/lessons/INT1-U01-L04/rp-03-221679b0.m4a" },
+      { "no": 3, "speaker": "partner", "en": "I think she loves chocolate.", "ko": "젠은 초콜릿을 엄청 좋아하는 것 같아요.", "audio": "audio/lessons/INT1-U01-L04/rp-03-a4c8fa36.m4a" },
       {
         "no": 4,
         "speaker": "me",
