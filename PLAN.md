@@ -549,6 +549,7 @@
   8. **프롬프트 + 마무리** — Sonnet · medium
      - 프롬프트 탭: "VOICE CHAT SCRIPT"·"Prompt Generator", 상황·상대·나, MUST USE 칩(+ 추가), CORRECTION Later/Instant, FEEDBACK KO/EN, PREVIEW, Copy. 아이패드 두 칸 화면 전체 점검, 다크 모드 전체 점검, 이 절에 결과 기록.
      - 완료 기준: 아이폰·아이패드에서 모든 탭·화면이 새 디자인으로 보이고 기능 이상 없음.
+     - **구현 결과 (2026-11-20, 아이폰·아이패드 확인 전)**: 사용자 결정 2가지(추천안) — ① 칩은 시안대로 네모(2px 모서리), 버튼류는 그대로 ② `SentencePicker`는 기능 그대로 모양만 칩으로. 프롬프트 탭: `VOICE CHAT SCRIPT` + `Prompt Generator`, 입력칸 라벨 `SITUATION`·`PARTNER`·`ME`, `CORRECTION` Later/Instant, `FEEDBACK` KO/EN, `MUST USE · n`(보관함 문장 칩 = 눌러 켜고 끔, 켜지면 ✓ + 연한 파랑 / `+ Add`(점선 칩) = 직접 쓰는 문장 입력칸 열기, 적은 내용이 있으면 열린 채로 시작, n = 고른 문장 + 직접 적은 줄 수), `PREVIEW` 상자, `Copy` 버튼. 설명 문단은 뺌(복사 성공·실패 안내는 유지). `buildPrompt`·저장 로직은 그대로. 수정 파일: `PromptScreen.tsx`, `prompt/PromptFields.tsx`·`PromptPreview.tsx`·`SentencePicker.tsx`·`Prompt.module.css`. 마무리 점검: 개발 서버에서 폰(390)·아이패드 세로(820)·가로(1180) × 라이트·다크로 모든 탭과 설정 하위 화면·롤플레잉·복습 주소를 돌며 가로 넘침·콘솔 오류 없음 확인(프롬프트 탭은 아이패드에서도 한 칸 화면, 두 칸 화면은 홈·쉐도잉만 사용). 테스트 269개·타입·빌드 통과. **7.95 전체의 아이폰·아이패드 실기기 확인(마이크·소리·밀기 포함)은 사용자 확인 필요.**
 
 ### Phase 8 — 마감 · 기기 검증 · 정리
 - **모델** Sonnet · **노력** medium · **예상** 1세션

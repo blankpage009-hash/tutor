@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { SavedSentence } from '../../db/types';
 import styles from './Prompt.module.css';
 
@@ -9,29 +10,32 @@ type Props = {
   onExtra: (text: string) => void;
 };
 
-// 보관함에서 고르거나 직접 적는다
+// 보관함 문장은 눌러 켜고 끄는 칩, 직접 쓰는 문장은 '+ Add'를 눌러 입력칸을 연다
 export function SentencePicker({ saved, selected, onToggle, extra, onExtra }: Props) {
+  // 이미 적은 내용이 있으면 닫혀 있어서 안 보이는 일이 없도록 열어 둔다
+  const [open, setOpen] = useState(extra.trim() !== '');
+  const extraCount = extra.split('\n').filter((l) => l.trim() !== '').length;
   return (
-    <>
-      <div className={styles.field}>
-        <span className={styles.label} lang="ko">꼭 써 볼 문장</span>
-        {saved.length === 0
-          ? <p className={styles.hint} lang="ko">보관함에 저장한 문장이 아직 없어요. 아래에 직접 적어도 돼요.</p>
-          : saved.map((s) => (
-            <label key={s.id} className={styles.pick}>
-              <input type="checkbox" checked={selected.has(s.id)} onChange={() => onToggle(s.id)} />
-              <span className={styles.pickEn}>
-                {s.en}
-                {s.ko && <span className={styles.pickKo} lang="ko">{s.ko}</span>}
-              </span>
-            </label>
-          ))}
+    <div className={styles.field}>
+      <span className={styles.label}>MUST USE · {selected.size + extraCount}</span>
+      <div className={styles.chips}>
+        {saved.map((s) => (
+          <button key={s.id} type="button" className={styles.chip} aria-pressed={selected.has(s.id)}
+            onClick={() => onToggle(s.id)}>
+            <span className={styles.chipMark} aria-hidden="true">{selected.has(s.id) ? '✓' : ''}</span>
+            {s.en}
+          </button>
+        ))}
+        <button type="button" className={`${styles.chip} ${styles.chipAdd}`} aria-expanded={open}
+          onClick={() => setOpen((o) => !o)}>
+          + Add
+        </button>
       </div>
-      <label className={styles.field}>
-        <span className={styles.label} lang="ko">직접 적은 문장 (한 줄에 하나)</span>
+      {saved.length === 0 && <p className={styles.hint} lang="ko">보관함에 저장한 문장이 아직 없어요. + Add로 직접 적어도 돼요.</p>}
+      {open && (
         <textarea className={styles.textarea} rows={3} value={extra} onChange={(e) => onExtra(e.target.value)}
-          placeholder="Can I get a latte?" />
-      </label>
-    </>
+          aria-label="직접 적은 문장 (한 줄에 하나)" placeholder="Can I get a latte? (한 줄에 하나)" />
+      )}
+    </div>
   );
 }

@@ -5,7 +5,6 @@ import { PromptFields, type Draft } from './prompt/PromptFields';
 import { PromptPreview } from './prompt/PromptPreview';
 import { SentencePicker } from './prompt/SentencePicker';
 import { useSavedSentences } from './prompt/useSavedSentences';
-import styles from './prompt/Prompt.module.css';
 
 const INITIAL: Draft = { situation: '', partnerRole: '', myRole: '', correction: 'later', feedbackLang: 'ko' };
 
@@ -26,10 +25,7 @@ export function PromptScreen() {
   });
   return (
     <>
-      <ScreenHeader eyebrow="프롬프트" title="프롬프트 만들기" />
-      <p className={styles.intro} lang="ko">
-        고른 문장을 쓰게 만드는 연습 대본을 만들어 줘요. 복사해서 Gemini나 ChatGPT의 음성 대화에 붙여넣으면 돼요.
-      </p>
+      <ScreenHeader eyebrow="VOICE CHAT SCRIPT" title="Prompt Generator" />
       <PromptFields draft={draft} onChange={(patch) => setDraft((d) => ({ ...d, ...patch }))} />
       <SentencePicker saved={saved} selected={picked} onToggle={toggle} extra={extra} onExtra={setExtra} />
       <PromptPreview text={text} />
