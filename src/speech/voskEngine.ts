@@ -27,14 +27,25 @@ export function loadVoskModel(): Promise<Model> {
 
 // "지금 말해야 할 문장"의 단어만 알아듣게 하는 목록. 그 밖의 말은 [unk](모르는 말)로 나온다.
 // 엔진 사전은 소문자 낱말만 알아서 문장부호를 뺀다
-export function grammarFor(sentenceEn: string): string[] {
-  const text = sentenceEn
+function grammarText(sentenceEn: string): string {
+  return sentenceEn
     .toLowerCase()
     .replace(/[’‘]/g, "'")
     .replace(/[^a-z' ]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
-  return [text, '[unk]'];
+}
+
+export function grammarFor(sentenceEn: string): string[] {
+  return [grammarText(sentenceEn), '[unk]'];
+}
+
+// 롤플레이용 느슨한 목록: 문장 통째와 함께 낱말도 하나씩 넣는다. 통째로만 있으면 문장을 조금 다르게 말했을 때
+// 전부 [unk]가 되지만, 낱말이 있으면 맞게 말한 단어는 그 단어로 나온다 (사용자 요청 2026-11-20)
+export function looseGrammarFor(sentenceEn: string): string[] {
+  const text = grammarText(sentenceEn);
+  const words = [...new Set(text.split(' ').filter(Boolean))];
+  return [...new Set([text, ...words, '[unk]'])];
 }
 
 export type VoskHandlers = {

@@ -127,6 +127,26 @@ describe('앱 인식: 언제 끝내나', () => {
     expect(r.alternatives).toEqual(['nice to meet you']);
   });
 
+  it("'always'면 통과해도 두 번째 의견을 묻고, 넘겨준 단어 목록을 쓴다 (롤플레이 화면 글자 바로잡기)", async () => {
+    const grammar = ['good to see you again', 'good', 'to', '[unk]'];
+    const t = setup({ secondOpinion: 'always', grammar, isComplete: () => false });
+    t.recognize.mockResolvedValue('good to see you again');
+    t.sound();
+    t.h().onFinal?.('good to sea you again');
+    const r = await t.l.result;
+    expect(t.recognize).toHaveBeenCalledOnce();
+    expect(t.recognize.mock.calls[0][2]).toBe(grammar);
+    expect(r.alternatives).toEqual(['good to sea you again', 'good to see you again']);
+  });
+
+  it('두 번째 의견이 이미 있는 후보와 같으면 겹쳐 넣지 않는다', async () => {
+    const t = setup({ secondOpinion: 'always', isComplete: () => false });
+    t.sound();
+    t.h().onFinal?.('good to see you again');
+    const r = await t.l.result;
+    expect(r.alternatives).toEqual(['good to see you again']);
+  });
+
   it('아무 말도 없으면 no-speech로 끝난다', async () => {
     const t = setup();
     vi.advanceTimersByTime(NO_SPEECH_MS);

@@ -32,7 +32,7 @@ function skeleton(w: string): string {
 }
 
 // 두 글자 이하 단어(a, I, me)와 뼈대가 한 글자뿐인 말은 정확히 같아야 한다 — 아무 말이나 걸리지 않게
-function soundsLike(a: string, b: string): boolean {
+export function soundsLike(a: string, b: string): boolean {
   if (a.length < 3 || b.length < 3) return false;
   const k = skeleton(a);
   return k.length >= 2 && k === skeleton(b);

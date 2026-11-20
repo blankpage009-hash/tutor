@@ -5,12 +5,14 @@ import type { NewLesson, RolePlayLine } from '../../content/lessonTypes';
 import { finishNewStep } from '../../db/progress';
 import type { NewLessonStep } from '../../newLessonFlow';
 import { judgeKeywords, type KeywordJudgement } from '../../scoring/keywordJudge';
+import { pickShown } from '../../scoring/snapHeard';
 import { playAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
 import { playFeedback } from '../../speech/feedbackSound';
 import { createMicSlot, TUTOR_SAFE_MIC, type MicSlot } from '../../speech/micSlot';
 import type { MicStream } from '../../speech/micStream';
 import { createCaptureContext } from '../../speech/pcmCapture';
 import type { Listening } from '../../speech/recognizer';
+import { looseGrammarFor } from '../../speech/voskEngine';
 import { listenVosk } from '../../speech/voskListener';
 import { ENGINE_NOTE } from '../newLesson/useNewSpeaking';
 import { openVoskMic } from '../shadowing/useShadowingAttempt';
@@ -69,7 +71,9 @@ async function judgedSound(c: Ctx, pass: boolean): Promise<void> {
   await playFeedback(pass ? 'pass' : 'fail');
 }
 
-// 한 번 듣기. 두 번째 의견은 끔(예시 답 단어로 끌려간다), 중간 결과로 끝내지 않음(문장 중간에서 잘린다)
+// 한 번 듣기. 중간 결과로 끝내지 않음(문장 중간에서 잘린다).
+// 두 번째 의견은 통과해도 늘 묻는다: 대답이 드릴 문장이 된 뒤(2026-11-20) 예시 답 단어로 다시 들으면
+// 흐린 발음도 맞게 적힌다. 예시와 다르게 대답하면 pickShown이 자유 인식 글자를 남긴다 (사용자 요청 2026-11-20)
 async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   const keys = line.requiredKeywords;
   const mic = await micForTurn(c);
@@ -79,7 +83,8 @@ async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   if (takeSkip(c, line)) return 'skipped';
   c.setTurn((t) => ({ ...t, live: judgeKeywords(keys, []) }));
   const l = listenVosk({
-    model: c.model, mic, sentenceEn: line.exampleEn, secondOpinion: false, afterFinalMs: THINK_PAUSE_MS,
+    model: c.model, mic, sentenceEn: line.exampleEn, afterFinalMs: THINK_PAUSE_MS,
+    secondOpinion: 'always', grammar: looseGrammarFor(line.exampleEn),
     afterPassMs: DONE_PAUSE_MS, isComplete: () => false,
     isPass: (alts) => judgeKeywords(keys, alts).pass,
     onInterim: (alts) => c.setTurn((t) => ({ ...t, live: judgeKeywords(keys, alts) })),
@@ -90,7 +95,8 @@ async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   c.listening.current = null;
   if (takeSkip(c, line)) return 'skipped';
   if (!res.alternatives.length) return 'no-speech';
-  const judgement = judgeKeywords(keys, res.alternatives);
+  // 키워드를 다 담은 후보를 먼저 고르므로, 고른 후보 하나로 판정해도 전체 후보 판정과 통과 여부가 같다
+  const judgement = judgeKeywords(keys, [pickShown(keys, res.alternatives, line.exampleEn)]);
   c.log(`롤플레이 판정 ${judgement.pass ? '통과' : '실패'} · 들린 말 "${judgement.heard}"`);
   // 틀리면 판정 소리 동안 마이크를 닫으므로 바로 "마이크 준비 중"으로 (듣는 중으로 보이면 일찍 말해 첫 단어가 잘린다)
   c.setTurn(() => ({ live: null, last: { pass: judgement.pass, judgement }, preparing: !judgement.pass }));

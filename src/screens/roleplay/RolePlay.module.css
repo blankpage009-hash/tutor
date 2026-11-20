@@ -81,6 +81,11 @@
   overflow-wrap: anywhere;
 }
 .key { color: var(--accent-ink); font-weight: 700; }
+/* 비슷한 소리라 예시 문장 단어로 맞춰 적은 말 */
+.snapped {
+  text-decoration: underline dotted var(--ink-muted);
+  text-underline-offset: 4px;
+}
 
 .prompt {
   margin: 0;
