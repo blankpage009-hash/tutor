@@ -8,22 +8,36 @@ function Svg(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-// 하단 탭 아이콘은 모서리·끝이 둥근 모양(디자인 v2 시안). 각진 기본 Svg와 달리 round로 덮어씀
+// 둥근 모양이 필요한 일반 아이콘(마이크·전구 등)용. 기본 Svg는 각진 모양이라 round로 덮어씀
 const ROUND = { strokeLinecap: 'round', strokeLinejoin: 'round' } as const;
 
+// 하단 탭 아이콘 5개는 사용자가 준 탭바 캡처(2026-11-20)를 픽셀 단위로 재서 그대로 옮김.
+// 오늘: 모서리 각진 달력, 고리 2개가 윗변을 뚫고 안쪽까지 내려옴
 export const IconToday = () => (
-  <Svg {...ROUND}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M8 2v4M16 2v4M3 10h18" /></Svg>
+  <Svg><rect x="4" y="5" width="16" height="15" /><path d="M9 3v4M15 3v4M4 10h16" /></Svg>
 );
+// 코스: 오른쪽 위 → 왼쪽 아래로 내려오는 S자 길, 가운데에 채운 점
 export const IconCourses = () => (
-  <Svg {...ROUND}><circle cx="6" cy="5" r="3" /><circle cx="18" cy="19" r="3" /><path d="M9 5h8.5a3.5 3.5 0 0 1 0 7h-11a3.5 3.5 0 0 0 0 7H15" /></Svg>
+  <Svg>
+    <circle cx="18" cy="5" r="2.5" /><circle cx="6" cy="19" r="2.5" />
+    <circle cx="12" cy="12" r="1.25" fill="currentColor" />
+    <path d="M15.5 5H6.5a3.5 3.5 0 0 0 0 7h11a3.5 3.5 0 0 1 0 7H8.5" />
+  </Svg>
 );
 // 보관함 탭만은 복습 타일의 북마크(IconBookmark)처럼 모서리가 각진 모양 (사용자 요청 2026-11-20). ROUND 안 씀
 export const IconLibrary = () => (
   <Svg><path d="M6 4h12v16l-6-4-6 4z" /></Svg>
 );
-export const IconVocab = () => <Svg {...ROUND}><path d="M21 5H3M15 12H3M17 19H3" /></Svg>;
+// 단어장: 왼쪽 정렬 가로줄 3개(긴·긴·짧은), 줄 끝은 캡처처럼 평평하게(butt)
+export const IconVocab = () => (
+  <Svg strokeLinecap="butt"><path d="M3 6h18M3 12h18M3 18h12" /></Svg>
+);
+// 프롬프트: 모서리 살짝 둥근 말풍선, 꼬리는 왼쪽 아래로 뾰족하게. 안쪽 줄은 짧은·긴 순서
 export const IconPrompt = () => (
-  <Svg {...ROUND}><path d="M22 17a2 2 0 0 1-2 2H6.8a2 2 0 0 0-1.4.6l-2.2 2.2A.7.7 0 0 1 2 21.3V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" /><path d="M7 11h10M7 15h6" /></Svg>
+  <Svg strokeLinecap="butt">
+    <path d="M3.5 21V4a1 1 0 0 1 1-1h15a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H7.5z" />
+    <path d="M6.5 8h8M6.5 12h12" />
+  </Svg>
 );
 // 가로줄 3개에 손잡이가 서로 다른 위치에 끼운 슬라이더 모양 (사용자가 준 디자인 시안 그대로).
 // 손잡이 자리 양옆을 비우려고 줄을 둘로 나눠 그렸고, 줄 끝이 시안처럼 평평하도록 butt로 지정
