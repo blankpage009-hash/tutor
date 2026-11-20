@@ -550,6 +550,8 @@
      - 프롬프트 탭: "VOICE CHAT SCRIPT"·"Prompt Generator", 상황·상대·나, MUST USE 칩(+ 추가), CORRECTION Later/Instant, FEEDBACK KO/EN, PREVIEW, Copy. 아이패드 두 칸 화면 전체 점검, 다크 모드 전체 점검, 이 절에 결과 기록.
      - 완료 기준: 아이폰·아이패드에서 모든 탭·화면이 새 디자인으로 보이고 기능 이상 없음.
      - **구현 결과 (2026-11-20, 아이폰·아이패드 확인 전)**: 사용자 결정 2가지(추천안) — ① 칩은 시안대로 네모(2px 모서리), 버튼류는 그대로 ② `SentencePicker`는 기능 그대로 모양만 칩으로. 프롬프트 탭: `VOICE CHAT SCRIPT` + `Prompt Generator`, 입력칸 라벨 `SITUATION`·`PARTNER`·`ME`, `CORRECTION` Later/Instant, `FEEDBACK` KO/EN, `MUST USE · n`(보관함 문장 칩 = 눌러 켜고 끔, 켜지면 ✓ + 연한 파랑 / `+ Add`(점선 칩) = 직접 쓰는 문장 입력칸 열기, 적은 내용이 있으면 열린 채로 시작, n = 고른 문장 + 직접 적은 줄 수), `PREVIEW` 상자, `Copy` 버튼. 설명 문단은 뺌(복사 성공·실패 안내는 유지). `buildPrompt`·저장 로직은 그대로. 수정 파일: `PromptScreen.tsx`, `prompt/PromptFields.tsx`·`PromptPreview.tsx`·`SentencePicker.tsx`·`Prompt.module.css`. 마무리 점검: 개발 서버에서 폰(390)·아이패드 세로(820)·가로(1180) × 라이트·다크로 모든 탭과 설정 하위 화면·롤플레잉·복습 주소를 돌며 가로 넘침·콘솔 오류 없음 확인(프롬프트 탭은 아이패드에서도 한 칸 화면, 두 칸 화면은 홈·쉐도잉만 사용). 테스트 269개·타입·빌드 통과. **7.95 전체의 아이폰·아이패드 실기기 확인(마이크·소리·밀기 포함)은 사용자 확인 필요.**
+     - **추가 (2026-11-20, 사용자 요청)**: `MUST USE`를 **기본 닫힘 접기/펼치기**로 — 저장한 문장이 많으면 화면이 너무 길어져서. 닫힘 = `MUST USE · n` 줄 + 화살표만(n은 그대로 갱신), 줄을 누르면 문장 칩과 `+ Add`가 펼쳐짐. 고른 문장은 닫아도 프롬프트에 들어감. 수정 파일: `SentencePicker.tsx`, `Prompt.module.css`. 테스트 269개·타입·빌드 통과.
+     - **8단계 완료 (2026-11-20, 사용자 확정)**: 8단계 작업·점검 끝, `main`에 반영됨(`9a7bcc0`). 이로써 Phase 7.95의 8단계가 모두 끝남. 다음은 Phase 8(승인 후 시작). 아이폰·아이패드 실기기 확인 항목(마이크·소리·밀기)은 Phase 8 실기기 체크리스트에서 이어서 확인.
 
 ### Phase 8 — 마감 · 기기 검증 · 정리
 - **모델** Sonnet · **노력** medium · **예상** 1세션
