@@ -110,3 +110,12 @@ export function stepTileState(step: NewLessonStep, stage: NewLessonStage, steps:
   if (step === stage) return 'current';
   return steps.includes(step) ? 'done' : 'todo';
 }
+
+// 레슨 화면 타일에서 강조할 "다음 단계": 하던 단계가 아직 안 끝났으면 그 단계, 아니면 안 끝낸 첫 단계, 다 끝냈으면 없음.
+// 설명은 열면 바로 끝난 것으로 치므로(LearnScreen) 설명만 열어 본 레슨은 대화문이 강조된다
+export function focusStep(stage: string | undefined, steps: NewLessonStep[] | undefined): NewLessonStep | null {
+  const done = steps ?? [];
+  const entered = NEW_STEPS.find((s) => s === stage);
+  if (entered && !done.includes(entered)) return entered;
+  return missingSteps(done)[0] ?? null;
+}

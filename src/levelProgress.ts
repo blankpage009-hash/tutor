@@ -1,6 +1,7 @@
 // 새 커리큘럼(과정 → 레벨 → 유닛 → 레슨)의 진도 숫자와 "내 레벨"을 계산하는 순수 모듈
-import type { Curriculum } from './content/lessonTypes';
+import type { Curriculum, CurriculumLesson, CurriculumUnit } from './content/lessonTypes';
 import type { ProgressMap } from './lessonFlow';
+import { isNewStage } from './newLessonFlow';
 
 // ready: 지금 앱에서 할 수 있는 레슨 수(원고가 완성된 것), total: 목차 전체 레슨 수
 export type LevelStat = { key: string; name: string; done: number; ready: number; total: number };
@@ -43,4 +44,37 @@ export function currentLevel(levels: LevelStat[], startKey: string): LevelStat |
 
 export function percent(done: number, ready: number): number {
   return ready === 0 ? 0 : Math.round((done / ready) * 100);
+}
+
+// 코스 탭 유닛 줄의 진도 네모 한 칸의 상태. soon = 아직 안 만든 레슨, doing = 시작했지만 아직 안 끝냄
+export type CellState = 'done' | 'doing' | 'todo' | 'soon';
+
+export function lessonCellState(lesson: CurriculumLesson, progress: ProgressMap): CellState {
+  if (!lesson.ready || !lesson.id) return 'soon';
+  const row = progress.get(lesson.id);
+  if (row?.stage === 'done') return 'done';
+  return row && isNewStage(row.stage) ? 'doing' : 'todo';
+}
+
+// 칸 수는 그 유닛의 레슨 수 그대로다 (유닛마다 3~6개라 시안의 5칸으로 고정하지 않음 — 사용자 결정 2026-11-20)
+export type UnitStat = { done: number; ready: number; total: number; cells: CellState[] };
+
+export function summarizeUnit(unit: CurriculumUnit, progress: ProgressMap): UnitStat {
+  const cells = unit.lessons.map((l) => lessonCellState(l, progress));
+  return {
+    done: cells.filter((c) => c === 'done').length,
+    ready: cells.filter((c) => c !== 'soon').length,
+    total: cells.length,
+    cells
+  };
+}
+
+// 레벨 key로 (몇 번째 과정, 그 안의 몇 번째 레벨)인지 찾는다. 주소의 ?level= 값이 틀려도 화면이 깨지지 않게 null을 돌려준다
+export function locateLevel(c: Curriculum, key: string | null): { courseIdx: number; levelIdx: number } | null {
+  if (!key) return null;
+  for (let courseIdx = 0; courseIdx < c.courses.length; courseIdx += 1) {
+    const levelIdx = c.courses[courseIdx].levels.findIndex((l) => l.key === key);
+    if (levelIdx >= 0) return { courseIdx, levelIdx };
+  }
+  return null;
 }

@@ -3,7 +3,7 @@ import type { Curriculum } from './content/lessonTypes';
 import type { LessonProgress } from './db/types';
 import {
   addFinishedStep, enteredNewStage, findNewResume, isNewStage, missingSteps, newLessonMenuPath, newStagePath,
-  nextNewStage, NEW_STAGES, NEW_STEP_ENGLISH, stepTileState
+  focusStep, nextNewStage, NEW_STAGES, NEW_STEP_ENGLISH, stepTileState
 } from './newLessonFlow';
 
 describe('새 레슨 흐름', () => {
@@ -94,5 +94,21 @@ describe('홈 이어서 할 새 레슨', () => {
   it('끝낸 레슨은 건너뛰고, 준비 안 된 레슨은 고르지 않는다', () => {
     expect(findNewResume(curriculum, map(row('INT1-U01-L01', 'done', 5)))).toMatchObject({ id: 'INT1-U01-L02', stage: 'learn' });
     expect(findNewResume(curriculum, map(row('INT1-U01-L01', 'done', 1), row('INT1-U01-L02', 'done', 2)))).toBeNull();
+  });
+});
+
+describe('focusStep (레슨 화면에서 강조할 다음 단계)', () => {
+  it('하던 단계가 아직 안 끝났으면 그 단계', () => {
+    expect(focusStep('drill', ['learn', 'dialogue'])).toBe('drill');
+  });
+
+  it('하던 단계가 이미 끝났으면 안 끝낸 첫 단계', () => {
+    expect(focusStep('learn', ['learn'])).toBe('dialogue');
+    expect(focusStep('done', ['learn', 'dialogue', 'drill'])).toBe('roleplay');
+  });
+
+  it('처음 보는 레슨은 설명, 다 끝낸 레슨은 없음', () => {
+    expect(focusStep(undefined, undefined)).toBe('learn');
+    expect(focusStep('done', ['learn', 'dialogue', 'drill', 'roleplay'])).toBeNull();
   });
 });

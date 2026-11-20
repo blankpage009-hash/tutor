@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Curriculum } from './content/lessonTypes';
 import type { LessonProgress } from './db/types';
-import { currentLevel, percent, summarizeCurriculum } from './levelProgress';
+import { currentLevel, locateLevel, percent, summarizeCurriculum, summarizeUnit } from './levelProgress';
 
 const lesson = (id: string | null, ready: boolean) => ({ no: 1, title: id ?? 'x', id, ready, file: ready ? `${id}.json` : undefined });
 const curriculum: Curriculum = {
@@ -76,5 +76,37 @@ describe('percent', () => {
     expect(percent(0, 0)).toBe(0);
     expect(percent(1, 3)).toBe(33);
     expect(percent(2, 3)).toBe(67);
+  });
+});
+
+describe('유닛 진도 칸', () => {
+  const unit = { no: 1, title: 'u', lessons: [lesson('A-1', true), lesson('A-2', true), lesson('A-3', true), lesson(null, false)] };
+  const rows = new Map<string, LessonProgress>([
+    ['A-1', { lessonId: 'A-1', courseId: 'x', stage: 'done', updatedAt: 1 }],
+    ['A-2', { lessonId: 'A-2', courseId: 'x', stage: 'drill', updatedAt: 1 }]
+  ]);
+
+  it('끝냄·진행 중·안 함·준비 중을 구분하고 칸 수는 레슨 수와 같다', () => {
+    const s = summarizeUnit(unit, rows);
+    expect(s.cells).toEqual(['done', 'doing', 'todo', 'soon']);
+    expect([s.done, s.ready, s.total]).toEqual([1, 3, 4]);
+  });
+
+  it('준비된 레슨이 없는 유닛은 ready가 0', () => {
+    expect(summarizeUnit({ no: 2, title: 'u', lessons: [lesson(null, false)] }, new Map()).ready).toBe(0);
+  });
+
+  it('옛 단계 이름이 남은 진도는 시작 안 한 것으로 본다', () => {
+    const old = new Map<string, LessonProgress>([['A-1', { lessonId: 'A-1', courseId: 'x', stage: 'shadow' as never, updatedAt: 1 }]]);
+    expect(summarizeUnit(unit, old).cells[0]).toBe('todo');
+  });
+});
+
+describe('locateLevel', () => {
+  it('과정 번호와 레벨 번호를 찾고, 없는 key는 null', () => {
+    expect(locateLevel(curriculum, 'L2')).toEqual({ courseIdx: 0, levelIdx: 1 });
+    expect(locateLevel(curriculum, 'level-3')).toEqual({ courseIdx: 1, levelIdx: 0 });
+    expect(locateLevel(curriculum, 'nope')).toBeNull();
+    expect(locateLevel(curriculum, null)).toBeNull();
   });
 });

@@ -1,0 +1,9 @@
+/* 고른 레벨의 이름 (예: 중급 1). 레벨 번호 칸만으로는 어느 레벨인지 알기 어려워서 한 줄 보여 준다 */
+.levelName {
+  margin: var(--space-4) 0 var(--space-3);
+  font-size: var(--type-headline-size);
+  line-height: var(--type-headline-line);
+  font-weight: var(--type-headline-weight);
+}
+
+.units { display: flex; flex-direction: column; gap: 10px; list-style: none; margin: 0; padding: 0; }

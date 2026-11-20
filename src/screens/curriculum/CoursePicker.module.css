@@ -1,0 +1,45 @@
+.picker { display: flex; flex-direction: column; gap: var(--space-3); }
+
+/* 아이폰 폭에서는 6개가 다 안 들어가서 옆으로 밀어 보게 한다. 스크롤 막대는 숨긴다 */
+.chips {
+  display: flex;
+  gap: var(--space-2);
+  margin: 0 calc(var(--space-4) * -1);
+  padding: 0 var(--space-4);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.chips::-webkit-scrollbar { display: none; }
+
+.chip {
+  flex: none;
+  min-height: var(--tap-min);
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-0);
+  background: transparent;
+  color: var(--ink);
+  font: 500 14px/1 var(--font-sans);
+  cursor: pointer;
+}
+
+.levels {
+  display: grid;
+  border: 1px solid var(--line);
+}
+
+.level {
+  min-height: var(--tap-min);
+  border: 0;
+  border-radius: var(--radius-0);
+  background: transparent;
+  color: var(--ink);
+  font: 500 14px/1 var(--font-sans);
+  cursor: pointer;
+}
+.level + .level { border-left: 1px solid var(--line); }
+
+.on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
+
+.chip:focus-visible,
+.level:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }

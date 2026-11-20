@@ -1,9 +1,10 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { WordPickerProvider } from './components/wordPicker/WordPicker';
+import { PlainLayout } from './layouts/PlainLayout';
 import { PracticeLayout } from './layouts/PracticeLayout';
 import { TabLayout } from './layouts/TabLayout';
 import { CoursesScreen } from './screens/CoursesScreen';
-import { CurriculumLevelScreen } from './screens/CurriculumLevelScreen';
+import { LevelRedirect } from './screens/curriculum/LevelRedirect';
 import { CustomRolePlayScreen } from './screens/CustomRolePlayScreen';
 import { DialogueScreen } from './screens/DialogueScreen';
 import { DrillScreen } from './screens/DrillScreen';
@@ -35,7 +36,7 @@ export function App() {
         <Route element={<TabLayout />}>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/courses" element={<CoursesScreen />} />
-          <Route path="/curriculum/:levelKey" element={<CurriculumLevelScreen />} />
+          <Route path="/curriculum/:levelKey" element={<LevelRedirect />} />
           <Route path="/library" element={<LibraryScreen />} />
           <Route path="/library/practice/:startId" element={<SavedPracticeScreen />} />
           <Route path="/vocab" element={<VocabScreen />} />
@@ -45,9 +46,11 @@ export function App() {
           <Route path="/settings/start-level" element={<StartLevelScreen />} />
           <Route path="/settings/gemini-key" element={<GeminiKeyScreen />} />
         </Route>
+        <Route element={<PlainLayout />}>
+          <Route path="/n/:lessonId" element={<NewLessonMenuScreen />} />
+        </Route>
         <Route element={<PracticeLayout />}>
           {/* 새 커리큘럼 레슨 (Phase 5.5) */}
-          <Route path="/n/:lessonId" element={<NewLessonMenuScreen />} />
           <Route path="/n/:lessonId/learn" element={<LearnScreen />} />
           <Route path="/n/:lessonId/dialogue" element={<DialogueScreen />} />
           <Route path="/n/:lessonId/drill" element={<DrillScreen />} />

@@ -1,0 +1,9 @@
+.cells { display: flex; gap: 4px; }
+
+.cell { width: 14px; height: 14px; box-sizing: border-box; }
+
+.done { background: var(--accent); }
+.doing { border: 1.5px solid var(--accent); background: var(--accent-tint); }
+.todo { border: 1px solid var(--line); }
+/* 아직 안 만든 레슨은 점선 */
+.soon { border: 1px dashed var(--line); }

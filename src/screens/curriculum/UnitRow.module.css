@@ -1,0 +1,93 @@
+/* 디자인 v2: 그림자 없이 1px 선 테두리, 모서리 거의 없음 */
+.unit {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  list-style: none;
+}
+.current { border-color: var(--accent); }
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 64px;
+  padding: 14px var(--space-4);
+  box-sizing: border-box;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+div.head { cursor: default; }
+.head:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: -2px; }
+
+.text { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+
+.code {
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  line-height: 1;
+  font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
+  color: var(--ink-muted);
+}
+.accent { color: var(--accent-ink); }
+
+.title {
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.muted .title { color: var(--ink-muted); }
+
+.right { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-2); flex: none; }
+
+.count {
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  line-height: 1;
+  font-weight: var(--type-label-weight);
+  color: var(--ink-muted);
+}
+.soonLabel { letter-spacing: var(--type-label-tracking); }
+
+/* 펼친 레슨 목록 */
+.lessons { list-style: none; margin: 0; padding: 0 var(--space-4) var(--space-2); }
+
+.lesson {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  min-height: var(--tap-min);
+  padding: var(--space-3) 0;
+  box-sizing: border-box;
+  border-top: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+}
+.lesson:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: -2px; }
+
+.lessonNo {
+  flex: none;
+  width: 28px;
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
+  color: var(--ink-muted);
+}
+
+.lessonTitle { flex: 1; min-width: 0; font-size: 15px; line-height: 22px; font-weight: 500; }
+
+.lessonBadge { flex: none; font-size: var(--type-caption-size); color: var(--ink-muted); }
+.lessonBadge.on { color: var(--accent-ink); }
+
+.off { color: var(--ink-muted); cursor: default; }
