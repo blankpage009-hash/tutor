@@ -80,9 +80,11 @@ function SenseList({ senses, picked, onPick }: SenseProps) {
       {groupByPos(senses).map(([pos, list]) => (
         <div key={pos} className={styles.senseGroup}>
           <p className={styles.senseLabel} lang="ko">{posLabel(pos)}</p>
+          {/* 번호를 브라우저 목록 기호(::marker)에 맡기면 아이폰에서 뜻 칸의 파란 테두리가 번호 위로 겹쳐 그려져서 직접 그린다 */}
           <ol className={styles.senseList}>
-            {list.map((s) => (
-              <li key={s.ko}>
+            {list.map((s, i) => (
+              <li key={s.ko} className={styles.senseItem}>
+                <span className={styles.senseNum} aria-hidden="true">{i + 1}.</span>
                 {onPick ? (
                   <button type="button" lang="ko" onClick={() => onPick(s)}
                     className={picked?.ko === meaningForSave(s.ko) && picked.pos === s.pos ? `${styles.sense} ${styles.sensePicked}` : styles.sense}>
