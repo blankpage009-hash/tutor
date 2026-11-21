@@ -90,9 +90,9 @@ export const IconHeadphones = () => (
 export const IconShuffle = () => (
   <Svg {...ROUND}><path d="m18 14 4 4-4 4M18 2l4 4-4 4" /><path d="M2 18h2a4 4 0 0 0 3.3-1.7l5.4-8.6A4 4 0 0 1 16 6h6M2 6h2a4 4 0 0 1 3.6 2.2M22 18h-6a4 4 0 0 1-3.3-1.8l-.4-.45" /></Svg>
 );
-// 보관함 "In Order": 위에서 아래로 한 줄씩 차례로 돌아 내려오는 U턴 화살표 (사용자가 손으로 그려 준 모양)
+// 보관함 "In Order": 차례대로 계속 돌아가는 동그란 화살표 (사용자가 첨부해 준 모양)
 export const IconInOrder = () => (
-  <Svg {...ROUND}><path d="M10 5h4.5a5.5 5.5 0 0 1 0 11H4" /><path d="m8 12-4 4 4 4" /></Svg>
+  <Svg {...ROUND}><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" /><path d="M21 3v5h-5" /></Svg>
 );
 // 밀어서 나오는 줄 버튼: 지우기 / 뜻 고치기
 export const IconTrash = () => <Svg><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v5M14 11v5" /></Svg>;
