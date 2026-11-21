@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U06-L03",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 6,
+  "unitTitle": "약속과 다짐",
+  "lessonNo": 3,
+  "lessonTitle": "약속하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I promise I won't be late again.",
+    "ko": "다시는 안 늦을게, 약속해.",
+    "stress": "I PROMise I WON'T be LATE aGAIN.",
+    "audio": {
+      "normal": "beg1-u06-l03_key.mp3",
+      "slow": "beg1-u06-l03_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'다시는 안 늦을게, 약속해'라는 뜻으로, 사과하면서 다음엔 그러지 않겠다고 약속할 때 씁니다.",
+      "I promise를 앞에 붙이면 그냥 I won't be late보다 훨씬 진심으로 들립니다.",
+      "won't는 will not의 줄임말로 '~하지 않을게'라는 뜻입니다.",
+      "late는 '늦은'이라는 형용사라서 be가 필요합니다. won't late가 아니라 won't be late입니다."
+    ],
+    "en": "Use \"I promise ...\" when you really mean what you say. Here, you were late, and you promise it won't happen again.",
+    "enKo": "내가 하는 말이 진심일 때 \"I promise ...\"를 씁니다. 여기서는 내가 늦었고, 다시는 그러지 않겠다고 약속하는 거예요."
+  },
+  "pronunciation": [
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "won't와 want는 다른 소리입니다. won't는 입을 둥글게 해서 '오운트', want는 '원트'에 가깝습니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "won't의 t는 거의 소리 내지 않고 멈추듯 끝내서 '오운(트)'처럼 말합니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "late again은 t가 부드러운 소리로 바뀌어 '레이러겐'처럼 이어집니다."
+    },
+    {
+      "focus": "강세",
+      "tip": "PROM, WON'T, LATE, GAIN에 힘을 주고, I와 be는 가볍게 말합니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I promise I won't late again.",
+      "right": "I promise I won't be late again.",
+      "note": "late는 형용사라서 be가 꼭 필요합니다. won't be late로 말합니다."
+    },
+    {
+      "wrong": "I promise I don't be late again.",
+      "right": "I promise I won't be late again.",
+      "note": "앞으로의 약속은 don't가 아니라 won't로 말합니다."
+    },
+    {
+      "wrong": "I promise to you I won't be late again.",
+      "right": "I promise I won't be late again.",
+      "note": "'너한테 약속해'를 그대로 옮겨 to you를 넣지 않습니다. I promise 또는 I promise you라고 합니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "토요일 오후, 영화관 앞에서 30분을 기다린 친구에게 뛰어옵니다.",
+    "partnerRole": "친구",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "There you are! The movie already started.",
+        "ko": "드디어 왔네! 영화 벌써 시작했어.",
+        "audio": "beg1-u06-l03_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "I'm so sorry. The bus was really slow.",
+        "ko": "진짜 미안해. 버스가 너무 느렸어.",
+        "audio": "beg1-u06-l03_dlg_02.mp3"
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "This is the third time this month.",
+        "ko": "이번 달에만 세 번째야.",
+        "audio": "beg1-u06-l03_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "I know. I promise I won't be late again.",
+        "ko": "알아. 다시는 안 늦을게, 약속해.",
+        "audio": "beg1-u06-l03_dlg_04.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Okay, okay. Let's just go in.",
+        "ko": "알았어, 알았어. 일단 들어가자.",
+        "audio": "beg1-u06-l03_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "The popcorn is on me.",
+        "ko": "팝콘은 내가 살게.",
+        "audio": "beg1-u06-l03_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "There you are!",
+        "ko": "'드디어 왔네!' 기다리던 사람이 나타났을 때 씁니다."
+      },
+      {
+        "en": "The popcorn is on me.",
+        "ko": "'팝콘은 내가 살게.' ~ is on me는 '~는 내가 낼게'라는 뜻입니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I promise I won't be late again.",
+      "ko": "다시는 안 늦을게, 약속해.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "You were late again today!"
+      },
+      "audio": {
+        "normal": "beg1-u06-l03_drill_01.mp3",
+        "slow": "beg1-u06-l03_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I promise I won't be late tomorrow.",
+      "ko": "내일은 안 늦을게, 약속해.",
+      "point": "단어 교체: again → tomorrow",
+      "cue": {
+        "lang": "en",
+        "text": "Our flight is early tomorrow. Don't be late."
+      },
+      "audio": {
+        "normal": "beg1-u06-l03_drill_02.mp3",
+        "slow": "beg1-u06-l03_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "He promises he won't be late again.",
+      "ko": "걔가 다시는 안 늦겠대.",
+      "point": "주어 변경: I → He (promises)",
+      "cue": {
+        "lang": "en",
+        "text": "What did Tom say about being late?"
+      },
+      "audio": {
+        "normal": "beg1-u06-l03_drill_03.mp3",
+        "slow": "beg1-u06-l03_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I promised I wouldn't be late again.",
+      "ko": "다시는 안 늦겠다고 약속했거든.",
+      "point": "시제: 과거 (promised, wouldn't)",
+      "cue": {
+        "lang": "en",
+        "text": "Why are you in such a hurry?"
+      },
+      "audio": {
+        "normal": "beg1-u06-l03_drill_04.mp3",
+        "slow": "beg1-u06-l03_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Do you promise you won't be late again?",
+      "ko": "다시는 안 늦는다고 약속하는 거지?",
+      "point": "질문형: Do you promise ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "늘 늦는 친구가 사과합니다. 다시는 안 늦을 거라고 약속하는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u06-l03_drill_05.mp3",
+        "slow": "beg1-u06-l03_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I promise I'll be on time.",
+      "ko": "제시간에 올게, 약속해.",
+      "point": "긍정형: won't be late → I'll be on time",
+      "cue": {
+        "lang": "en",
+        "text": "Please don't be late for the party, okay?"
+      },
+      "audio": {
+        "normal": "beg1-u06-l03_drill_06.mp3",
+        "slow": "beg1-u06-l03_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "You kept me waiting for an hour!",
+        "ko": "나 한 시간이나 기다리게 했잖아!"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I promise I won't be late again.",
+        "exampleKo": "다시는 안 늦을게, 약속해.",
+        "requiredKeywords": [
+          "won't be late",
+          "again"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "The wedding starts at nine tomorrow morning.",
+        "ko": "결혼식 내일 아침 아홉 시에 시작해."
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I promise I won't be late tomorrow.",
+        "exampleKo": "내일은 안 늦을게, 약속해.",
+        "requiredKeywords": [
+          "won't be late",
+          "tomorrow"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Your brother came late again. Did he say anything?",
+        "ko": "네 동생 또 늦게 왔어. 뭐라고 해?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "He promises he won't be late again.",
+        "exampleKo": "걔가 다시는 안 늦겠대.",
+        "requiredKeywords": [
+          "he promises",
+          "won't be late again"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "You left home an hour early. Why?",
+        "ko": "너 한 시간이나 일찍 나왔네. 왜?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I promised I wouldn't be late again.",
+        "exampleKo": "다시는 안 늦겠다고 약속했거든.",
+        "requiredKeywords": [
+          "promised",
+          "wouldn't be late"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Sorry I'm late again. I feel bad.",
+        "ko": "또 늦어서 미안해. 마음이 안 좋네."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you promise you won't be late again?",
+        "exampleKo": "다시는 안 늦는다고 약속하는 거지?",
+        "requiredKeywords": [
+          "do you promise",
+          "won't be late again"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Dinner with my parents is at six. Please!",
+        "ko": "우리 부모님이랑 저녁이 여섯 시야. 제발!"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I promise I'll be on time.",
+        "exampleKo": "제시간에 올게, 약속해.",
+        "requiredKeywords": [
+          "I'll be",
+          "on time"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

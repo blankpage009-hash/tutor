@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U06-L02",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 6,
+  "unitTitle": "약속과 다짐",
+  "lessonNo": 2,
+  "lessonTitle": "언제 할지 말하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I'll send it to you by Friday.",
+    "ko": "금요일까지 보내 드릴게요.",
+    "stress": "I'll SEND it to you by FRIday.",
+    "audio": {
+      "normal": "beg1-u06-l02_key.mp3",
+      "slow": "beg1-u06-l02_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'금요일까지 보내 드릴게요'라는 뜻으로, 할 일을 언제까지 끝낼지 약속할 때 씁니다.",
+      "회사에서 자료나 파일을 보내 달라는 부탁을 받았을 때 가장 많이 쓰는 대답입니다.",
+      "by Friday는 '늦어도 금요일까지', on Friday는 '금요일 그날에'라는 뜻입니다.",
+      "it은 보낼 것(파일·보고서)을 가리킵니다. send you it이 아니라 send it to you 순서로 말합니다."
+    ],
+    "en": "Use \"I'll ... by + time\" to say when you will finish something. \"By Friday\" means on Friday or sooner.",
+    "enKo": "무언가를 언제까지 끝낼지 말할 때 \"I'll ... by + 시간\"을 씁니다. \"by Friday\"는 금요일이나 그 전이라는 뜻입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "연음",
+      "tip": "send it은 끊지 않고 '센딧'처럼 붙여 말합니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "to you는 '투 유'가 아니라 '터유'처럼 약하고 빠르게 말합니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "Friday의 F는 아랫입술을 윗니에 살짝 대고 바람을 내보낸 뒤 바로 r로 넘어갑니다. '프라이데이'의 'ㅍ'과 다릅니다."
+    },
+    {
+      "focus": "강세",
+      "tip": "SEND와 FRI에 힘을 주고, 나머지는 가볍게 말합니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I'll send it to you until Friday.",
+      "right": "I'll send it to you by Friday.",
+      "note": "until은 '그때까지 계속'이라는 뜻입니다. 마감을 말할 때는 by를 씁니다."
+    },
+    {
+      "wrong": "I'll send you it by Friday.",
+      "right": "I'll send it to you by Friday.",
+      "note": "it 같은 말은 send 바로 뒤에 두고, 받는 사람은 to you로 붙입니다."
+    },
+    {
+      "wrong": "I send it to you by Friday.",
+      "right": "I'll send it to you by Friday.",
+      "note": "앞으로 할 일을 약속할 때는 will을 넣어 I'll로 말합니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "월요일 아침, 회사 동료가 보고서를 언제 받을 수 있는지 묻습니다.",
+    "partnerRole": "회사 동료",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Hi, how's the sales report going?",
+        "ko": "안녕하세요, 판매 보고서는 잘 되고 있어요?",
+        "audio": "beg1-u06-l02_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Pretty good. I'm almost halfway done.",
+        "ko": "꽤 잘 되고 있어요. 거의 반쯤 했어요.",
+        "audio": "beg1-u06-l02_dlg_02.mp3"
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Great. When can I see it?",
+        "ko": "잘됐네요. 언제 볼 수 있을까요?",
+        "audio": "beg1-u06-l02_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "I'll send it to you by Friday.",
+        "ko": "금요일까지 보내 드릴게요.",
+        "audio": "beg1-u06-l02_dlg_04.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Perfect. Could you add the charts too?",
+        "ko": "좋아요. 차트도 넣어 주실 수 있어요?",
+        "audio": "beg1-u06-l02_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Sure. I'll add them this afternoon.",
+        "ko": "그럼요. 오늘 오후에 넣을게요.",
+        "audio": "beg1-u06-l02_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "How's the report going?",
+        "ko": "'보고서는 잘 되고 있어요?' 하는 일이 어떻게 되어 가는지 물을 때 씁니다."
+      },
+      {
+        "en": "I'm almost halfway done.",
+        "ko": "'거의 반쯤 했어요.' halfway는 '절반쯤'이라는 뜻입니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I'll send it to you by Friday.",
+      "ko": "금요일까지 보내 드릴게요.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "When can I get the report?"
+      },
+      "audio": {
+        "normal": "beg1-u06-l02_drill_01.mp3",
+        "slow": "beg1-u06-l02_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I'll send it to you by noon.",
+      "ko": "정오까지 보내 드릴게요.",
+      "point": "단어 교체: by Friday → by noon",
+      "cue": {
+        "lang": "en",
+        "text": "I need the file before lunch."
+      },
+      "audio": {
+        "normal": "beg1-u06-l02_drill_02.mp3",
+        "slow": "beg1-u06-l02_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "She'll send it to you by Friday.",
+      "ko": "그분이 금요일까지 보내 드릴 거예요.",
+      "point": "주어 변경: I → She",
+      "cue": {
+        "lang": "en",
+        "text": "Is Emma sending me the file?"
+      },
+      "audio": {
+        "normal": "beg1-u06-l02_drill_03.mp3",
+        "slow": "beg1-u06-l02_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I can't send it to you by Friday.",
+      "ko": "금요일까지는 못 보내 드려요.",
+      "point": "부정형: can't",
+      "cue": {
+        "lang": "en",
+        "text": "Can I have it by Friday?"
+      },
+      "audio": {
+        "normal": "beg1-u06-l02_drill_04.mp3",
+        "slow": "beg1-u06-l02_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Can you send it to me by Friday?",
+      "ko": "금요일까지 저한테 보내 주실 수 있어요?",
+      "point": "질문형: Can you ~? (me)",
+      "cue": {
+        "lang": "ko",
+        "text": "동료에게 금요일까지 파일을 보내 줄 수 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u06-l02_drill_05.mp3",
+        "slow": "beg1-u06-l02_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I sent it to you last Friday.",
+      "ko": "지난 금요일에 보내 드렸어요.",
+      "point": "시제: 과거 (sent, last Friday)",
+      "cue": {
+        "lang": "en",
+        "text": "Did you forget to send me the file?"
+      },
+      "audio": {
+        "normal": "beg1-u06-l02_drill_06.mp3",
+        "slow": "beg1-u06-l02_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "The client needs your design this week.",
+        "ko": "고객이 이번 주에 디자인을 받아야 해요."
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'll send it to you by Friday.",
+        "exampleKo": "금요일까지 보내 드릴게요.",
+        "requiredKeywords": [
+          "send it to you",
+          "by Friday"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "My meeting starts at one. I need that file.",
+        "ko": "제 회의가 한 시에 시작해요. 그 파일 필요해요."
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'll send it to you by noon.",
+        "exampleKo": "정오까지 보내 드릴게요.",
+        "requiredKeywords": [
+          "send it to you",
+          "by noon"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Is Lisa working on my contract?",
+        "ko": "리사 씨가 제 계약서 작업하고 있어요?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "She'll send it to you by Friday.",
+        "exampleKo": "그분이 금요일까지 보내 드릴 거예요.",
+        "requiredKeywords": [
+          "she'll send it",
+          "by Friday"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "The deadline is Friday. Is that okay for you?",
+        "ko": "마감이 금요일이에요. 괜찮으세요?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I can't send it to you by Friday.",
+        "exampleKo": "금요일까지는 못 보내 드려요.",
+        "requiredKeywords": [
+          "can't send it",
+          "by Friday"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I have the file, but I'm busy this week.",
+        "ko": "파일은 저한테 있는데, 이번 주가 바빠서요."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Can you send it to me by Friday?",
+        "exampleKo": "금요일까지 저한테 보내 주실 수 있어요?",
+        "requiredKeywords": [
+          "can you send it to me",
+          "by Friday"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "I'm still waiting for your report.",
+        "ko": "아직 보고서 기다리고 있어요."
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I sent it to you last Friday.",
+        "exampleKo": "지난 금요일에 보내 드렸어요.",
+        "requiredKeywords": [
+          "sent it to you",
+          "last Friday"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

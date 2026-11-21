@@ -64,10 +64,10 @@
               "no": 6,
               "title": "약속과 다짐",
               "lessons": [
-                { "no": 1, "title": "무언가를 하겠다고 제안하기", "id": "BEG1-U06-L01", "ready": false},
-                { "no": 2, "title": "언제 할지 말하기", "id": "BEG1-U06-L02", "ready": false},
-                { "no": 3, "title": "약속하기", "id": "BEG1-U06-L03", "ready": false},
-                { "no": 4, "title": "예상하기", "id": "BEG1-U06-L04", "ready": false}
+                { "no": 1, "title": "무언가를 하겠다고 제안하기", "id": "BEG1-U06-L01", "ready": true, "file": "lessons/BEG1/BEG1-U06-L01.json" },
+                { "no": 2, "title": "언제 할지 말하기", "id": "BEG1-U06-L02", "ready": true, "file": "lessons/BEG1/BEG1-U06-L02.json" },
+                { "no": 3, "title": "약속하기", "id": "BEG1-U06-L03", "ready": true, "file": "lessons/BEG1/BEG1-U06-L03.json" },
+                { "no": 4, "title": "예상하기", "id": "BEG1-U06-L04", "ready": true, "file": "lessons/BEG1/BEG1-U06-L04.json" }
               ]
             }
           ]

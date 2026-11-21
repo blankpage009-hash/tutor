@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U06-L01",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 6,
+  "unitTitle": "약속과 다짐",
+  "lessonNo": 1,
+  "lessonTitle": "무언가를 하겠다고 제안하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I'll make dinner tonight.",
+    "ko": "오늘 저녁은 내가 할게.",
+    "stress": "I'll MAKE DINner toNIGHT.",
+    "audio": {
+      "normal": "beg1-u06-l01_key.mp3",
+      "slow": "beg1-u06-l01_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "I'll ~은 I will의 줄임말로, '내가 ~할게'라는 뜻입니다. 그 자리에서 바로 하겠다고 나설 때 씁니다.",
+      "상대가 피곤하거나 바쁠 때 '내가 할게' 하고 일을 맡겠다고 제안하는 말입니다.",
+      "I'm going to는 미리 정해 둔 계획을 말할 때, I'll은 지금 막 하기로 마음먹었을 때 씁니다.",
+      "will 뒤에는 동사원형이 옵니다. I'll makes, I'll making이라고 하지 않습니다."
+    ],
+    "en": "Use \"I'll ...\" when you decide to do something right now, often to help someone. Your roommate is tired, so you offer to cook.",
+    "enKo": "지금 막 무언가를 하기로 정했을 때, 특히 누군가를 도와줄 때 \"I'll ...\"을 씁니다. 룸메이트가 피곤해서 내가 요리하겠다고 나서는 거예요."
+  },
+  "pronunciation": [
+    {
+      "focus": "약화",
+      "tip": "I'll은 '아이 윌'로 끊지 않고 '아일'처럼 한 소리로 짧게 말합니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "I'll 끝의 l은 혀끝을 윗잇몸에 살짝 대고 끝냅니다. '아이으'처럼 흐리지 않습니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "make dinner는 make의 k를 거의 터뜨리지 않고 바로 dinner로 넘어가 '메익디너'처럼 말합니다."
+    },
+    {
+      "focus": "강세",
+      "tip": "MAKE, DIN, NIGHT에 힘을 주고, I'll은 가볍게 말합니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I make dinner tonight.",
+      "right": "I'll make dinner tonight.",
+      "note": "'할게'를 현재형으로 말하면 제안으로 들리지 않습니다. will을 넣어 I'll로 말합니다."
+    },
+    {
+      "wrong": "I'll cooking dinner tonight.",
+      "right": "I'll make dinner tonight.",
+      "note": "will 뒤에는 동사원형이 옵니다. 요리한다는 말은 make dinner가 가장 자연스럽습니다."
+    },
+    {
+      "wrong": "Tonight dinner, I'll make.",
+      "right": "I'll make dinner tonight.",
+      "note": "'오늘 저녁은'을 한국어 순서대로 앞에 두지 않습니다. 영어는 '누가-한다-무엇을-언제' 순서입니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "저녁 7시, 룸메이트가 지친 얼굴로 퇴근해 들어옵니다.",
+    "partnerRole": "룸메이트",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Ugh, what a long day.",
+        "ko": "아, 진짜 긴 하루였어.",
+        "audio": "beg1-u06-l01_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "You look tired. Sit down and relax.",
+        "ko": "피곤해 보인다. 앉아서 좀 쉬어.",
+        "audio": "beg1-u06-l01_dlg_02.mp3"
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "But it's my turn to cook.",
+        "ko": "근데 오늘 내가 요리할 차례잖아.",
+        "audio": "beg1-u06-l01_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Don't worry. I'll make dinner tonight.",
+        "ko": "걱정 마. 오늘 저녁은 내가 할게.",
+        "audio": "beg1-u06-l01_dlg_04.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Really? Thanks. You're the best.",
+        "ko": "정말? 고마워. 역시 너밖에 없다.",
+        "audio": "beg1-u06-l01_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "No problem. How about pasta?",
+        "ko": "별말을. 파스타 어때?",
+        "audio": "beg1-u06-l01_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "It's my turn to cook.",
+        "ko": "'내가 요리할 차례야.' turn은 '차례'라는 뜻입니다."
+      },
+      {
+        "en": "You're the best.",
+        "ko": "'네가 최고야.' 고마울 때 가볍게 하는 말로, '역시 너밖에 없다'와 비슷합니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I'll make dinner tonight.",
+      "ko": "오늘 저녁은 내가 할게.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "I'm too tired to cook today."
+      },
+      "audio": {
+        "normal": "beg1-u06-l01_drill_01.mp3",
+        "slow": "beg1-u06-l01_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I'll make breakfast tomorrow.",
+      "ko": "내일 아침은 내가 할게.",
+      "point": "단어 교체: dinner tonight → breakfast tomorrow",
+      "cue": {
+        "lang": "en",
+        "text": "Who's cooking in the morning?"
+      },
+      "audio": {
+        "normal": "beg1-u06-l01_drill_02.mp3",
+        "slow": "beg1-u06-l01_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "We'll make dinner tonight.",
+      "ko": "오늘 저녁은 우리가 할게.",
+      "point": "주어 변경: I → We",
+      "cue": {
+        "lang": "en",
+        "text": "Is anyone cooking for us tonight?"
+      },
+      "audio": {
+        "normal": "beg1-u06-l01_drill_03.mp3",
+        "slow": "beg1-u06-l01_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I won't make dinner tonight.",
+      "ko": "오늘 저녁은 안 만들 거야.",
+      "point": "부정형: won't",
+      "cue": {
+        "lang": "en",
+        "text": "Are you cooking for us again tonight?"
+      },
+      "audio": {
+        "normal": "beg1-u06-l01_drill_04.mp3",
+        "slow": "beg1-u06-l01_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Will you make dinner tonight?",
+      "ko": "오늘 저녁 네가 해 줄래?",
+      "point": "질문형: Will you ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "오늘 너무 피곤해요. 룸메이트에게 오늘 저녁을 해 줄 수 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u06-l01_drill_05.mp3",
+        "slow": "beg1-u06-l01_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I made dinner last night.",
+      "ko": "어젯밤 저녁은 내가 했어.",
+      "point": "시제: 과거 (made, tonight → last night)",
+      "cue": {
+        "lang": "en",
+        "text": "Who cooked that pasta yesterday?"
+      },
+      "audio": {
+        "normal": "beg1-u06-l01_drill_06.mp3",
+        "slow": "beg1-u06-l01_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I worked twelve hours today. I can't cook.",
+        "ko": "나 오늘 12시간 일했어. 요리 못 하겠어."
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'll make dinner tonight.",
+        "exampleKo": "오늘 저녁은 내가 할게.",
+        "requiredKeywords": [
+          "I'll make dinner",
+          "tonight"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Our guests are staying over. What about breakfast?",
+        "ko": "손님들 오늘 자고 가잖아. 아침은 어떡하지?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'll make breakfast tomorrow.",
+        "exampleKo": "내일 아침은 내가 할게.",
+        "requiredKeywords": [
+          "make breakfast",
+          "tomorrow"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Are you and Jen cooking for us tonight?",
+        "ko": "너랑 젠이 오늘 밤 우리 요리해 주는 거야?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We'll make dinner tonight.",
+        "exampleKo": "오늘 저녁은 우리가 할게.",
+        "requiredKeywords": [
+          "we'll make dinner",
+          "tonight"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "You're going out with friends? What about dinner here?",
+        "ko": "친구들이랑 나간다고? 여기 저녁은?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I won't make dinner tonight.",
+        "exampleKo": "오늘 저녁은 안 만들 거야.",
+        "requiredKeywords": [
+          "won't make dinner",
+          "tonight"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I'm home early today, and I love cooking.",
+        "ko": "나 오늘 일찍 왔어. 그리고 나 요리하는 거 좋아해."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Will you make dinner tonight?",
+        "exampleKo": "오늘 저녁 네가 해 줄래?",
+        "requiredKeywords": [
+          "will you make",
+          "dinner tonight"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Was that pasta in the fridge yours?",
+        "ko": "냉장고에 있던 파스타 네 거야?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I made dinner last night.",
+        "exampleKo": "어젯밤 저녁은 내가 했어.",
+        "requiredKeywords": [
+          "made dinner",
+          "last night"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

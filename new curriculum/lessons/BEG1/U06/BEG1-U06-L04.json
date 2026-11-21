@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U06-L04",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 6,
+  "unitTitle": "약속과 다짐",
+  "lessonNo": 4,
+  "lessonTitle": "예상하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I'm sure you'll do great tomorrow.",
+    "ko": "내일 분명 잘하실 거예요.",
+    "stress": "I'm SURE you'll do GREAT toMORrow.",
+    "audio": {
+      "normal": "beg1-u06-l04_key.mp3",
+      "slow": "beg1-u06-l04_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'내일 분명 잘하실 거예요'라는 뜻으로, 앞일을 자신 있게 예상하면서 상대를 응원할 때 씁니다.",
+      "발표, 면접, 시험처럼 상대가 긴장하는 일을 앞두고 있을 때 자주 씁니다.",
+      "I'm sure를 앞에 붙이면 '분명히'라는 확신이 들어갑니다. I think는 그보다 약한 예상입니다.",
+      "do great은 '잘 해내다'라는 뜻입니다. do well과 같은 뜻인데, 말할 때는 do great을 아주 많이 씁니다."
+    ],
+    "en": "Use \"I'm sure you'll ...\" when you feel certain about what will happen. It's a kind way to cheer someone up before a big day.",
+    "enKo": "앞으로 일어날 일을 확신할 때 \"I'm sure you'll ...\"을 씁니다. 중요한 날을 앞둔 사람을 응원하는 다정한 말이에요."
+  },
+  "pronunciation": [
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "sure는 입술을 둥글게 내밀고 '슈어'처럼 말하고, 끝의 r은 혀를 뒤로 말아서 냅니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "you'll은 '유 윌'이 아니라 '율'처럼 한 소리로 짧게 말합니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "great tomorrow는 great의 t를 멈추듯 짧게 끊고 바로 넘어갑니다. tomorrow의 to는 '투'가 아니라 '터'처럼 약하게 말합니다."
+    },
+    {
+      "focus": "강세",
+      "tip": "SURE, GREAT, MOR에 힘을 줍니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I'm sure you do great tomorrow.",
+      "right": "I'm sure you'll do great tomorrow.",
+      "note": "앞일을 예상할 때는 will을 넣어 you'll로 말합니다."
+    },
+    {
+      "wrong": "I'm sure you'll do greatly tomorrow.",
+      "right": "I'm sure you'll do great tomorrow.",
+      "note": "do great은 굳어진 말이라 greatly로 바꾸지 않습니다."
+    },
+    {
+      "wrong": "Fighting! Tomorrow!",
+      "right": "I'm sure you'll do great tomorrow.",
+      "note": "'파이팅!'은 영어에서 응원하는 말로 쓰지 않습니다. 대신 I'm sure you'll do great이라고 합니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "퇴근 전, 내일 큰 발표를 앞둔 동료가 긴장해 있습니다.",
+    "partnerRole": "회사 동료",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I'm so nervous about my presentation.",
+        "ko": "발표 때문에 너무 떨려요.",
+        "audio": "beg1-u06-l04_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Really? You've practiced all week.",
+        "ko": "정말요? 일주일 내내 연습하셨잖아요.",
+        "audio": "beg1-u06-l04_dlg_02.mp3"
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "I know, but what if I forget everything?",
+        "ko": "알아요, 근데 다 까먹으면 어떡하죠?",
+        "audio": "beg1-u06-l04_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "You won't. I'm sure you'll do great tomorrow.",
+        "ko": "안 그러실 거예요. 내일 분명 잘하실 거예요.",
+        "audio": "beg1-u06-l04_dlg_04.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Thanks. That really helps.",
+        "ko": "고마워요. 정말 힘이 되네요.",
+        "audio": "beg1-u06-l04_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Get some good sleep tonight.",
+        "ko": "오늘 밤엔 푹 주무세요.",
+        "audio": "beg1-u06-l04_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "What if I forget everything?",
+        "ko": "'다 까먹으면 어떡하죠?' what if ~?는 걱정되는 일을 말할 때 씁니다."
+      },
+      {
+        "en": "That really helps.",
+        "ko": "'정말 힘이 되네요.' 위로나 조언이 도움이 됐을 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I'm sure you'll do great tomorrow.",
+      "ko": "내일 분명 잘하실 거예요.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "My job interview is tomorrow."
+      },
+      "audio": {
+        "normal": "beg1-u06-l04_drill_01.mp3",
+        "slow": "beg1-u06-l04_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I'm sure you'll do great on Monday.",
+      "ko": "월요일에 분명 잘하실 거예요.",
+      "point": "단어 교체: tomorrow → on Monday",
+      "cue": {
+        "lang": "en",
+        "text": "My big test is on Monday."
+      },
+      "audio": {
+        "normal": "beg1-u06-l04_drill_02.mp3",
+        "slow": "beg1-u06-l04_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "I'm sure they'll do great tomorrow.",
+      "ko": "내일 그 아이들 분명 잘할 거예요.",
+      "point": "주어 변경: you → they",
+      "cue": {
+        "lang": "en",
+        "text": "The kids have a school play tomorrow."
+      },
+      "audio": {
+        "normal": "beg1-u06-l04_drill_03.mp3",
+        "slow": "beg1-u06-l04_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I'm sure you'll do even better tomorrow.",
+      "ko": "내일은 분명 더 잘하실 거예요.",
+      "point": "비교: great → even better",
+      "cue": {
+        "lang": "en",
+        "text": "My first day was kind of bad."
+      },
+      "audio": {
+        "normal": "beg1-u06-l04_drill_04.mp3",
+        "slow": "beg1-u06-l04_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Do you think I'll do great tomorrow?",
+      "ko": "제가 내일 잘할 수 있을까요?",
+      "point": "질문형: Do you think ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "내일 면접이 있어서 떨려요. 동료에게 내가 잘할 것 같은지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u06-l04_drill_05.mp3",
+        "slow": "beg1-u06-l04_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I'm sure you did great today.",
+      "ko": "오늘 분명 잘하셨을 거예요.",
+      "point": "시제: 과거 (did, today)",
+      "cue": {
+        "lang": "en",
+        "text": "I just finished my interview. I'm not sure how it went."
+      },
+      "audio": {
+        "normal": "beg1-u06-l04_drill_06.mp3",
+        "slow": "beg1-u06-l04_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "My first marathon is tomorrow morning.",
+        "ko": "내일 아침에 제 첫 마라톤이 있어요."
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm sure you'll do great tomorrow.",
+        "exampleKo": "내일 분명 잘하실 거예요.",
+        "requiredKeywords": [
+          "you'll do great",
+          "tomorrow"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "I start my new job on Monday.",
+        "ko": "저 월요일에 새 직장에 첫 출근해요."
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm sure you'll do great on Monday.",
+        "exampleKo": "월요일에 분명 잘하실 거예요.",
+        "requiredKeywords": [
+          "do great",
+          "on Monday"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "My students have a big concert tomorrow.",
+        "ko": "제 학생들이 내일 큰 공연을 해요."
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm sure they'll do great tomorrow.",
+        "exampleKo": "내일 그 아이들 분명 잘할 거예요.",
+        "requiredKeywords": [
+          "they'll do great",
+          "tomorrow"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "I made some mistakes in today's meeting.",
+        "ko": "오늘 회의에서 실수를 좀 했어요."
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm sure you'll do even better tomorrow.",
+        "exampleKo": "내일은 분명 더 잘하실 거예요.",
+        "requiredKeywords": [
+          "even better",
+          "tomorrow"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Your driving test is tomorrow, right? Are you ready?",
+        "ko": "내일 운전면허 시험이죠? 준비됐어요?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you think I'll do great tomorrow?",
+        "exampleKo": "제가 내일 잘할 수 있을까요?",
+        "requiredKeywords": [
+          "do you think",
+          "I'll do great tomorrow"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "I just gave my speech. My hands were shaking.",
+        "ko": "방금 연설했는데, 손이 떨렸어요."
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm sure you did great today.",
+        "exampleKo": "오늘 분명 잘하셨을 거예요.",
+        "requiredKeywords": [
+          "you did great",
+          "today"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
