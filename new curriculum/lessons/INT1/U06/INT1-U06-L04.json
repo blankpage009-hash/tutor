@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U06-L04",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 6,
+  "unitTitle": "친구와 근황 이야기하기",
+  "lessonNo": 4,
+  "lessonTitle": "근황과 소문",
+  "estimatedMinutes": 10,
+
+  "keySentence": {
+    "en": "I heard Mia is moving to Seattle.",
+    "ko": "미아 시애틀로 이사 간다더라.",
+    "stress": "I HEARD MIa is MOVing to seATtle.",
+    "audio": {
+      "normal": "int1-u06-l04_key.mp3",
+      "slow": "int1-u06-l04_key_slow.mp3"
+    }
+  },
+
+  "explanation": {
+    "ko": [
+      "I heard (that) ~는 '~라더라, ~라고 들었어'라는 뜻입니다. 다른 사람에게 들은 소식이나 소문을 전할 때 씁니다.",
+      "that은 보통 빼고 말합니다. I heard 뒤에 완전한 문장을 그대로 붙이면 됩니다.",
+      "is moving처럼 현재진행형을 쓰면 '이미 정해진 가까운 계획'이라는 느낌이 납니다.",
+      "누구한테 들었는지 말하려면 I heard from Ben that ~이라고 합니다. 레슨 1의 I heard from Mia(미아한테 연락 왔어)와 헷갈리지 않게, 뒤에 that + 문장을 붙입니다.",
+      "확실하지 않은 소문은 Apparently ~(듣자 하니 ~래)로 조심스럽게 전할 수도 있습니다."
+    ],
+    "en": "Use \"I heard\" to share news you got from someone else. Just add the news after it, like \"I heard Mia is moving to Seattle.\"",
+    "enKo": "다른 사람에게 들은 소식을 전할 때 I heard를 씁니다. \"I heard Mia is moving to Seattle.\"처럼 그 뒤에 소식만 붙이면 됩니다."
+  },
+
+  "pronunciation": [
+    { "focus": "강세", "tip": "HEARD, MIa, MOVing, seATtle에 힘을 줍니다. 새 소식인 이름과 장소를 또렷하게 말합니다." },
+    { "focus": "연음", "tip": "heard Mia는 d가 거의 들리지 않고 바로 이어져 '허r미아'처럼 들립니다." },
+    { "focus": "약화", "tip": "Seattle의 tt는 미국식으로 부드럽게 굴려 '시애를'에 가깝습니다. '시애틀'처럼 t를 세게 터뜨리지 않습니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "moving의 v는 윗니를 아랫입술에 살짝 대고 떨며 냅니다. '무빙'의 b 소리가 되지 않게 합니다." }
+  ],
+
+  "commonMistakes": [
+    { "wrong": "I listened that Mia is moving.", "right": "I heard Mia is moving.", "note": "소식을 '들었다'는 listen이 아니라 hear입니다. listen은 귀 기울여 듣는 행동을 말합니다." },
+    { "wrong": "There is a rumor Mia moves to Seattle.", "right": "I heard Mia is moving to Seattle.", "note": "rumor는 뒷말처럼 들릴 수 있습니다. 친구 소식은 I heard로 가볍게 전하고, 정해진 계획은 is moving으로 말합니다." },
+    { "wrong": "Mia is moving to Seattle, I heard it.", "right": "I heard Mia is moving to Seattle.", "note": "문장 끝에 I heard it을 붙이지 않습니다. I heard를 앞에 두고 뒤에 소식을 붙입니다." }
+  ],
+
+  "dialogue": {
+    "situation": "저녁에 거실에서 룸메이트와 친구들 소식을 나눕니다.",
+    "partnerRole": "룸메이트",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Have you talked to Mia this week? She's been so busy.", "ko": "이번 주에 미아랑 얘기해 봤어? 걔 엄청 바쁘더라.", "audio": "int1-u06-l04_dlg_01.mp3" },
+      { "no": 2, "speaker": "me", "en": "Not yet, but I heard Mia is moving to Seattle.", "ko": "아직. 근데 미아 시애틀로 이사 간다더라.", "audio": "int1-u06-l04_dlg_02.mp3", "hasKeySentence": true },
+      { "no": 3, "speaker": "partner", "en": "Seriously? Who told you that?", "ko": "진짜? 누가 그래?", "audio": "int1-u06-l04_dlg_03.mp3" },
+      { "no": 4, "speaker": "me", "en": "Ben did. Apparently she got a great job offer there.", "ko": "벤이. 듣자 하니 거기서 좋은 일자리를 제안받았나 봐.", "audio": "int1-u06-l04_dlg_04.mp3" },
+      { "no": 5, "speaker": "partner", "en": "Wow, good for her. I'm really going to miss her, though.", "ko": "와, 잘됐다. 근데 진짜 보고 싶을 거야.", "audio": "int1-u06-l04_dlg_05.mp3" },
+      { "no": 6, "speaker": "me", "en": "Me too. Let's throw her a goodbye party.", "ko": "나도. 우리가 송별회 열어 주자.", "audio": "int1-u06-l04_dlg_06.mp3" }
+    ],
+    "expressionNotes": [
+      { "en": "Apparently, ~", "ko": "'듣자 하니 ~래.' 직접 확인한 건 아니고 들은 이야기라는 걸 알려 줍니다." },
+      { "en": "throw someone a party", "ko": "'~에게 파티를 열어 주다.' throw가 '던지다'가 아니라 '(파티를) 열다'라는 뜻으로 쓰입니다." }
+    ]
+  },
+
+  "drills": [
+    {
+      "id": 1,
+      "en": "I heard Mia is moving to Seattle.",
+      "ko": "미아 시애틀로 이사 간다더라.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Why is Mia selling all her furniture?" },
+      "audio": { "normal": "int1-u06-l04_drill_01.mp3", "slow": "int1-u06-l04_drill_01_slow.mp3" }
+    },
+    {
+      "id": 2,
+      "en": "I heard Ben got a new job.",
+      "ko": "벤 새 직장 구했다더라.",
+      "point": "과거 시제: Ben got a new job",
+      "cue": { "lang": "en", "text": "Ben seems so happy lately. What happened?" },
+      "audio": { "normal": "int1-u06-l04_drill_02.mp3", "slow": "int1-u06-l04_drill_02_slow.mp3" }
+    },
+    {
+      "id": 3,
+      "en": "I heard they're getting married.",
+      "ko": "걔네 결혼한대.",
+      "point": "주어 변경: 복수 they",
+      "cue": { "lang": "en", "text": "Chris and Anna look so happy lately. What's going on?" },
+      "audio": { "normal": "int1-u06-l04_drill_03.mp3", "slow": "int1-u06-l04_drill_03_slow.mp3" }
+    },
+    {
+      "id": 4,
+      "en": "Did you hear Mia is moving?",
+      "ko": "미아 이사 간다는 얘기 들었어?",
+      "point": "질문형: Did you hear ~?",
+      "cue": { "lang": "ko", "text": "미아가 이사 간다는 소식을 들었는지 룸메이트에게 물어보세요." },
+      "audio": { "normal": "int1-u06-l04_drill_04.mp3", "slow": "int1-u06-l04_drill_04_slow.mp3" }
+    },
+    {
+      "id": 5,
+      "en": "I haven't heard anything about it.",
+      "ko": "그거에 대해선 아무 얘기도 못 들었어.",
+      "point": "부정형: I haven't heard anything",
+      "cue": { "lang": "en", "text": "Is it true that our landlord is selling the building?" },
+      "audio": { "normal": "int1-u06-l04_drill_05.mp3", "slow": "int1-u06-l04_drill_05_slow.mp3" }
+    },
+    {
+      "id": 6,
+      "en": "I heard Mia will be back next summer.",
+      "ko": "미아 내년 여름에 다시 온대.",
+      "point": "미래 시제: will be back",
+      "cue": { "lang": "en", "text": "Is Mia leaving San Francisco for good?" },
+      "audio": { "normal": "int1-u06-l04_drill_06.mp3", "slow": "int1-u06-l04_drill_06_slow.mp3" }
+    }
+  ],
+
+  "drillStages": [
+    { "reps": [1, 2, 3], "mode": "repeat",  "show": "en+ko", "playAudio": true,  "passScore": 80 },
+    { "reps": [4, 5, 6], "mode": "read",    "show": "en",    "playAudio": false, "passScore": 80 },
+    { "reps": [7, 8],    "mode": "recall",  "show": "ko",    "playAudio": false, "passScore": 80 },
+    { "reps": [9, 10],   "mode": "respond", "show": "cue",   "playAudio": false, "passScore": 80 }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Mia just gave me her bike and all her plants. Is she going somewhere?", "ko": "미아가 방금 자기 자전거랑 화분을 다 나한테 줬어. 어디 가는 거야?" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I heard Mia is moving to Seattle.",
+        "exampleKo": "미아 시애틀로 이사 간다더라.",
+        "requiredKeywords": ["heard", "moving", "Seattle"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Ben quit his job at the bank last month, right? Is he doing okay?", "ko": "벤 지난달에 은행 그만뒀잖아, 맞지? 걔 괜찮대?" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I heard Ben got a new job.",
+        "exampleKo": "벤 새 직장 구했다더라.",
+        "requiredKeywords": ["heard", "got a new job"]
+      },
+      { "no": 5, "speaker": "partner", "en": "I just saw Chris and Anna looking at rings at the mall together.", "ko": "방금 쇼핑몰에서 크리스랑 애나가 같이 반지 보고 있는 거 봤어." },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I heard they're getting married.",
+        "exampleKo": "걔네 결혼한대.",
+        "requiredKeywords": ["heard", "getting married"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Mia's apartment looks so empty lately. I wonder what's going on with her.", "ko": "요즘 미아네 집이 엄청 텅 비어 보여. 무슨 일 있나 몰라." },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you hear Mia is moving?",
+        "exampleKo": "미아 이사 간다는 얘기 들었어?",
+        "requiredKeywords": ["did you hear", "moving"]
+      },
+      { "no": 9, "speaker": "partner", "en": "Everyone at work says the coffee shop downstairs is closing. Is that true?", "ko": "회사 사람들이 다 아래층 커피숍 문 닫는대. 그거 진짜야?" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I haven't heard anything about it.",
+        "exampleKo": "그거에 대해선 아무 얘기도 못 들었어.",
+        "requiredKeywords": ["haven't heard", "about it"]
+      },
+      { "no": 11, "speaker": "partner", "en": "I'm so sad Mia is leaving. Do you think we'll ever see her again?", "ko": "미아 떠나서 너무 슬퍼. 우리 걔 다시 볼 수 있을까?" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I heard Mia will be back next summer.",
+        "exampleKo": "미아 내년 여름에 다시 온대.",
+        "requiredKeywords": ["will be back", "next summer"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

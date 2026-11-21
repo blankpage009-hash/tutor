@@ -1,0 +1,228 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U06-L02",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 6,
+  "unitTitle": "친구와 근황 이야기하기",
+  "lessonNo": 2,
+  "lessonTitle": "예전 모습에 대해 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I used to be really shy.",
+    "ko": "저 예전엔 되게 수줍음이 많았어요.",
+    "stress": "I USED to be REALly SHY.",
+    "audio": { "normal": "audio/lessons/INT1-U06-L02/key-c716270c.m4a", "slow": "audio/lessons/INT1-U06-L02/key-c716270c.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "I used to + 동사원형은 '예전엔 ~했다(지금은 아니다)'라는 뜻입니다. 옛날 모습과 지금이 달라졌다는 걸 보여 줍니다.",
+      "I was shy는 과거 사실만 말합니다. I used to be shy라고 하면 '지금은 안 그렇다'는 느낌이 확실해집니다.",
+      "부정은 I didn't use to ~, 질문은 Did you use to ~?입니다. did가 앞에 있으면 used가 아니라 use로 씁니다.",
+      "be used to ~(~에 익숙하다)와는 다른 표현입니다. I'm used to it.은 '익숙해요'라는 뜻입니다.",
+      "외모(I used to have long hair)나 습관(I used to play soccer)에도 똑같이 씁니다."
+    ],
+    "en": "Use \"used to\" to talk about how you were in the past but aren't anymore. \"I used to be really shy\" means you were shy before, but now you're not.",
+    "enKo": "예전엔 그랬지만 지금은 아닌 모습을 말할 때 used to를 씁니다. \"I used to be really shy\"는 예전엔 수줍음이 많았지만 지금은 아니라는 뜻입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "USED, REALly, SHY에 힘을 줍니다. 특히 USED를 살려야 '예전엔'이라는 느낌이 납니다." },
+    { "focus": "약화", "tip": "used to는 '유즈드 투'가 아니라 붙여서 '유스터'입니다. d는 소리가 나지 않고 s 소리가 됩니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "really는 r로 시작해 l로 끝납니다. 혀를 말고 '(우)뤼'로 시작해 혀끝을 윗니 뒤에 대며 '얼리'로 끝냅니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "shy의 sh는 입술을 앞으로 내밀고 바람을 냅니다. '사이'가 아니라 '샤이'." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I was used to be shy.", "right": "I used to be shy.", "note": "used to 앞에 was를 붙이지 않습니다. was used to는 '~에 익숙했다'라는 다른 표현이 됩니다." },
+    { "wrong": "Before, I am very shy person.", "right": "I used to be really shy.", "note": "'예전엔'을 before로 직역하기보다 used to로 말하는 게 자연스럽습니다. 지금은 아니라는 뜻도 함께 전해집니다." },
+    { "wrong": "Did you used to play sports?", "right": "Did you use to play sports?", "note": "did가 이미 과거를 나타내니 뒤에는 use를 씁니다. 발음은 둘 다 '유스터'로 같습니다." }
+  ],
+  "dialogue": {
+    "situation": "점심시간에 회사 동료가 내 책상 위 옛날 사진을 보고 말을 겁니다.",
+    "partnerRole": "직장 동료",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Is this you in the photo? You look so different!", "ko": "이 사진 속 사람 당신이에요? 완전 달라 보여요!", "audio": "audio/lessons/INT1-U06-L02/dlg-01-446a5916.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Ha, yes. That's me in high school. I used to be really shy.",
+        "ko": "하하, 네. 고등학교 때 저예요. 저 예전엔 되게 수줍음이 많았어요.",
+        "audio": "audio/lessons/INT1-U06-L02/dlg-02-64961ce2.m4a",
+        "hasKeySentence": true
+      },
+      { "no": 3, "speaker": "partner", "en": "No way. You talk to everyone in the office now.", "ko": "설마요. 지금은 사무실 사람들이랑 다 얘기하시잖아요.", "audio": "audio/lessons/INT1-U06-L02/dlg-03-dab659f8.m4a" },
+      { "no": 4, "speaker": "me", "en": "I know. My first job in sales really changed me.", "ko": "그러니까요. 첫 직장에서 영업하면서 정말 많이 바뀌었어요.", "audio": "audio/lessons/INT1-U06-L02/dlg-04-4876a5f4.m4a" },
+      { "no": 5, "speaker": "partner", "en": "That makes sense. People change a lot in their twenties.", "ko": "그럴 만하네요. 이십 대엔 사람이 많이 바뀌잖아요.", "audio": "audio/lessons/INT1-U06-L02/dlg-05-1b964ca5.m4a" },
+      { "no": 6, "speaker": "me", "en": "True. I can't picture going back to the old me.", "ko": "맞아요. 예전의 저로 돌아가는 건 상상이 안 돼요.", "audio": "audio/lessons/INT1-U06-L02/dlg-06-a8dfac99.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "No way.", "ko": "'설마요, 말도 안 돼요.' 믿기 어려울 만큼 놀랐을 때 가볍게 하는 말입니다." },
+      { "en": "I can't picture ~", "ko": "'~가 상상이 안 돼요.' picture는 동사로 '머릿속에 그려 보다'라는 뜻입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I used to be really shy.",
+      "ko": "저 예전엔 되게 수줍음이 많았어요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "You're so outgoing. Were you always like this?", "audio": "audio/lessons/INT1-U06-L02/cue-01-4703c7eb.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U06-L02/drill-01-c716270c.m4a", "slow": "audio/lessons/INT1-U06-L02/drill-01-c716270c.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I used to have long hair.",
+      "ko": "저 예전엔 머리가 길었어요.",
+      "point": "단어 교체: be really shy → have long hair",
+      "cue": { "lang": "en", "text": "Your hair is so short. Have you always had it like that?", "audio": "audio/lessons/INT1-U06-L02/cue-02-e498ea7a.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U06-L02/drill-02-ad36f3ee.m4a", "slow": "audio/lessons/INT1-U06-L02/drill-02-ad36f3ee.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "My brother used to be really quiet.",
+      "ko": "제 남동생은 예전엔 되게 조용했어요.",
+      "point": "주어 변경: I → My brother",
+      "cue": { "lang": "en", "text": "Your brother is so loud and funny! Was he always like that?", "audio": "audio/lessons/INT1-U06-L02/cue-03-5907dd61.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U06-L02/drill-03-01aec7ce.m4a", "slow": "audio/lessons/INT1-U06-L02/drill-03-01aec7ce.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "I didn't use to wear glasses.",
+      "ko": "저 예전엔 안경을 안 썼어요.",
+      "point": "부정형: I didn't use to ~",
+      "cue": { "lang": "en", "text": "How long have you worn glasses?", "audio": "audio/lessons/INT1-U06-L02/cue-04-f1761ffa.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U06-L02/drill-04-9937665a.m4a", "slow": "audio/lessons/INT1-U06-L02/drill-04-9937665a.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Did you use to play sports?",
+      "ko": "예전에 운동하셨어요?",
+      "point": "질문형: Did you use to ~?",
+      "cue": { "lang": "ko", "text": "동료에게 예전에 운동을 했었는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U06-L02/drill-05-d357b948.m4a", "slow": "audio/lessons/INT1-U06-L02/drill-05-d357b948.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I used to be much more serious.",
+      "ko": "저 예전엔 훨씬 더 진지했어요.",
+      "point": "비교: much more serious",
+      "cue": { "lang": "en", "text": "You're always joking around. Have you always been this funny?", "audio": "audio/lessons/INT1-U06-L02/cue-06-1c608c4f.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U06-L02/drill-06-59a008b5.m4a", "slow": "audio/lessons/INT1-U06-L02/drill-06-59a008b5.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "You made friends with everyone at the team dinner so fast. I'm jealous!", "ko": "팀 회식에서 모든 사람이랑 금방 친해지시던데요. 부러워요!", "audio": "audio/lessons/INT1-U06-L02/rp-01-36051b8b.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I used to be really shy.",
+        "exampleKo": "저 예전엔 되게 수줍음이 많았어요.",
+        "requiredKeywords": ["used to", "shy"]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "My hairstylist wants me to grow my hair out. Have you ever tried that?",
+        "ko": "제 미용사가 머리를 길러 보라고 하네요. 혹시 길러 본 적 있어요?",
+        "audio": "audio/lessons/INT1-U06-L02/rp-03-0dbb89b3.m4a"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I used to have long hair.",
+        "exampleKo": "저 예전엔 머리가 길었어요.",
+        "requiredKeywords": ["used to have", "long hair"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I met your brother at the company barbecue. He talked to everyone there!",
+        "ko": "회사 바비큐 파티에서 남동생분 만났어요. 거기 있는 사람들이랑 다 얘기하시던데요!",
+        "audio": "audio/lessons/INT1-U06-L02/rp-05-96f1aed1.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My brother used to be really quiet.",
+        "exampleKo": "제 남동생은 예전엔 되게 조용했어요.",
+        "requiredKeywords": ["brother", "used to", "quiet"]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Your new glasses look great. Have you had bad eyesight since you were a kid?",
+        "ko": "새 안경 잘 어울려요. 어릴 때부터 눈이 안 좋으셨어요?",
+        "audio": "audio/lessons/INT1-U06-L02/rp-07-1bb46f2e.m4a"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't use to wear glasses.",
+        "exampleKo": "저 예전엔 안경을 안 썼어요.",
+        "requiredKeywords": ["didn't use to", "glasses"]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I'm so sore after the company softball game. I haven't run like that in years.",
+        "ko": "회사 소프트볼 경기 끝나고 온몸이 쑤셔요. 그렇게 뛰어 본 게 몇 년 만이에요.",
+        "audio": "audio/lessons/INT1-U06-L02/rp-09-cf12078e.m4a"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you use to play sports?",
+        "exampleKo": "예전에 운동하셨어요?",
+        "requiredKeywords": ["did you use to", "sports"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Everyone on our team says you're the funniest person in the office.", "ko": "우리 팀 사람들이 다 당신이 사무실에서 제일 웃기대요.", "audio": "audio/lessons/INT1-U06-L02/rp-11-f333dc3a.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I used to be much more serious.",
+        "exampleKo": "저 예전엔 훨씬 더 진지했어요.",
+        "requiredKeywords": ["much more", "serious"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

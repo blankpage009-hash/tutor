@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U06-L01",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 6,
+  "unitTitle": "친구와 근황 이야기하기",
+  "lessonNo": 1,
+  "lessonTitle": "옛 친구에 대해 묻기",
+  "estimatedMinutes": 10,
+
+  "keySentence": {
+    "en": "Have you heard from Jake lately?",
+    "ko": "요즘 제이크한테 연락 온 거 있어?",
+    "stress": "Have you HEARD from JAKE LATEly?",
+    "audio": {
+      "normal": "int1-u06-l01_key.mp3",
+      "slow": "int1-u06-l01_key_slow.mp3"
+    }
+  },
+
+  "explanation": {
+    "ko": [
+      "Have you heard from ~ lately?는 '요즘 ~한테 연락 온 거 있어?'라는 뜻입니다. 한동안 못 본 친구 소식을 물을 때 가장 많이 씁니다.",
+      "hear from + 사람은 '그 사람에게서 연락을 받다'입니다. 전화·문자·메일 모두 됩니다. hear about은 '~에 대한 소식을 (남에게) 듣다'로 뜻이 다릅니다.",
+      "'최근 아무 때나, 지금까지' 연락이 있었는지 묻기 때문에 현재완료(have heard)를 씁니다. lately(요즘)는 문장 끝에 둡니다.",
+      "연락이 없을 땐 I haven't heard from him in years.(걔한테 몇 년째 연락이 없어)라고 말합니다.",
+      "레슨 4의 I heard ~(~라더라)와 구별하세요. heard 뒤에 from + 사람이 오면 '연락', 뒤에 문장이 오면 '소문'입니다."
+    ],
+    "en": "When you want to know if a friend has been in touch with someone, ask \"Have you heard from Jake lately?\" \"Hear from\" means someone called, texted, or emailed you.",
+    "enKo": "친구가 누군가와 연락하고 지내는지 알고 싶을 때 \"Have you heard from Jake lately?\"라고 물어봅니다. hear from은 누군가 나에게 전화나 문자, 메일을 했다는 뜻입니다."
+  },
+
+  "pronunciation": [
+    { "focus": "강세", "tip": "HEARD, JAKE, LATEly에 힘을 줍니다. Have you와 from은 가볍게 지나갑니다." },
+    { "focus": "연음", "tip": "Have you는 붙여서 '해뷰'처럼 말합니다. 두 단어를 따로 끊지 않습니다." },
+    { "focus": "약화", "tip": "from은 '프롬'이 아니라 짧게 '프럼'입니다. heard의 d는 거의 들리지 않아 heard from → '허r프럼'." },
+    { "focus": "한국인이 어려운 소리", "tip": "heard의 ear은 '히어'가 아니라 혀를 뒤로 마는 r 소리입니다. '허r드'에 가깝게, 입을 크게 벌리지 않습니다." }
+  ],
+
+  "commonMistakes": [
+    { "wrong": "Did you get contact from Jake recently?", "right": "Have you heard from Jake lately?", "note": "get contact from은 어색합니다. '~한테 연락이 오다'는 hear from이 가장 자연스럽습니다." },
+    { "wrong": "I didn't contact with him for years.", "right": "I haven't heard from him in years.", "note": "contact는 with 없이 쓰는 동사입니다. 몇 년째 이어지는 상태는 현재완료(haven't heard)로 말합니다." },
+    { "wrong": "Do you know Jake's news?", "right": "Do you know how Jake's doing?", "note": "'소식을 알다'를 know his news로 직역하면 어색합니다. how he's doing(어떻게 지내는지)으로 묻습니다." }
+  ],
+
+  "dialogue": {
+    "situation": "카페에서 오랜만에 만난 대학 친구와 옛날 친구들 이야기를 합니다.",
+    "partnerRole": "대학 친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "I found our old college photos last night. So many memories!", "ko": "어젯밤에 우리 대학 때 사진 찾았어. 추억 진짜 많더라!", "audio": "int1-u06-l01_dlg_01.mp3" },
+      { "no": 2, "speaker": "me", "en": "Oh, fun! Is Jake in them? Have you heard from Jake lately?", "ko": "오, 재밌겠다! 제이크도 있어? 요즘 제이크한테 연락 온 거 있어?", "audio": "int1-u06-l01_dlg_02.mp3", "hasKeySentence": true },
+      { "no": 3, "speaker": "partner", "en": "Not really. Last I heard, he moved to Denver for work.", "ko": "아니, 별로. 마지막으로 듣기로는 일 때문에 덴버로 이사 갔대.", "audio": "int1-u06-l01_dlg_03.mp3" },
+      { "no": 4, "speaker": "me", "en": "Really? I haven't talked to him since graduation.", "ko": "진짜? 나 졸업하고 나서 걔랑 한 번도 얘기 못 해 봤어.", "audio": "int1-u06-l01_dlg_04.mp3" },
+      { "no": 5, "speaker": "partner", "en": "Same here. We should reach out to him.", "ko": "나도 그래. 우리가 먼저 연락해 보자.", "audio": "int1-u06-l01_dlg_05.mp3" },
+      { "no": 6, "speaker": "me", "en": "Yeah, let's send him a message tonight.", "ko": "그래, 오늘 밤에 메시지 보내 보자.", "audio": "int1-u06-l01_dlg_06.mp3" }
+    ],
+    "expressionNotes": [
+      { "en": "Last I heard, ~", "ko": "'마지막으로 듣기로는 ~래.' 오래전에 들은 소식이라 지금은 다를 수도 있다는 느낌입니다." },
+      { "en": "reach out to someone", "ko": "'~에게 먼저 연락하다.' 한동안 연락 없던 사람에게 먼저 말을 걸 때 씁니다." }
+    ]
+  },
+
+  "drills": [
+    {
+      "id": 1,
+      "en": "Have you heard from Jake lately?",
+      "ko": "요즘 제이크한테 연락 온 거 있어?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "오랜만에 생각난 친구 제이크 소식을 친구에게 물어보세요." },
+      "audio": { "normal": "int1-u06-l01_drill_01.mp3", "slow": "int1-u06-l01_drill_01_slow.mp3" }
+    },
+    {
+      "id": 2,
+      "en": "Have you heard from your old roommate lately?",
+      "ko": "요즘 예전 룸메이트한테 연락 온 거 있어?",
+      "point": "단어 교체: Jake → your old roommate",
+      "cue": { "lang": "ko", "text": "친구에게 예전 룸메이트와 요즘 연락하는지 물어보세요." },
+      "audio": { "normal": "int1-u06-l01_drill_02.mp3", "slow": "int1-u06-l01_drill_02_slow.mp3" }
+    },
+    {
+      "id": 3,
+      "en": "I haven't heard from Jake in years.",
+      "ko": "제이크한테 몇 년째 연락이 없어.",
+      "point": "부정형: I haven't heard from ~ in years",
+      "cue": { "lang": "en", "text": "Do you still talk to Jake from college?" },
+      "audio": { "normal": "int1-u06-l01_drill_03.mp3", "slow": "int1-u06-l01_drill_03_slow.mp3" }
+    },
+    {
+      "id": 4,
+      "en": "Has Sarah heard from Jake lately?",
+      "ko": "사라는 요즘 제이크한테 연락 받은 거 있대?",
+      "point": "주어 변경: you → Sarah",
+      "cue": { "lang": "ko", "text": "사라가 요즘 제이크에게 연락을 받았는지 친구에게 물어보세요." },
+      "audio": { "normal": "int1-u06-l01_drill_04.mp3", "slow": "int1-u06-l01_drill_04_slow.mp3" }
+    },
+    {
+      "id": 5,
+      "en": "I heard from Jake last week.",
+      "ko": "지난주에 제이크한테 연락 왔어.",
+      "point": "과거 시제: I heard from ~ last week",
+      "cue": { "lang": "en", "text": "When was the last time Jake got in touch with you?" },
+      "audio": { "normal": "int1-u06-l01_drill_05.mp3", "slow": "int1-u06-l01_drill_05_slow.mp3" }
+    },
+    {
+      "id": 6,
+      "en": "Will you let me know if you hear from Jake?",
+      "ko": "제이크한테 연락 오면 나한테 알려 줄래?",
+      "point": "부탁: Will you let me know if you hear from ~?",
+      "cue": { "lang": "ko", "text": "제이크에게 연락이 오면 알려 달라고 친구에게 부탁하세요." },
+      "audio": { "normal": "int1-u06-l01_drill_06.mp3", "slow": "int1-u06-l01_drill_06_slow.mp3" }
+    }
+  ],
+
+  "drillStages": [
+    { "reps": [1, 2, 3], "mode": "repeat",  "show": "en+ko", "playAudio": true,  "passScore": 80 },
+    { "reps": [4, 5, 6], "mode": "read",    "show": "en",    "playAudio": false, "passScore": 80 },
+    { "reps": [7, 8],    "mode": "recall",  "show": "ko",    "playAudio": false, "passScore": 80 },
+    { "reps": [9, 10],   "mode": "respond", "show": "cue",   "playAudio": false, "passScore": 80 }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Remember Jake from our dorm? I was just thinking about him the other day.", "ko": "우리 기숙사에 있던 제이크 기억나? 며칠 전에 걔 생각이 나더라." },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Have you heard from Jake lately?",
+        "exampleKo": "요즘 제이크한테 연락 온 거 있어?",
+        "requiredKeywords": ["heard from", "lately"]
+      },
+      { "no": 3, "speaker": "partner", "en": "I really miss living with Dana, my old roommate. We used to cook together every night.", "ko": "예전 룸메이트 데이나랑 살던 때가 진짜 그리워. 매일 밤 같이 요리했었는데." },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Have you heard from your old roommate lately?",
+        "exampleKo": "요즘 예전 룸메이트한테 연락 온 거 있어?",
+        "requiredKeywords": ["old roommate", "lately"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Are you and Jake still close? You two were best friends in school.", "ko": "너 제이크랑 아직 친해? 너네 학교 다닐 때 제일 친했잖아." },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I haven't heard from Jake in years.",
+        "exampleKo": "제이크한테 몇 년째 연락이 없어.",
+        "requiredKeywords": ["haven't heard", "in years"]
+      },
+      { "no": 7, "speaker": "partner", "en": "I'm having lunch with Sarah tomorrow. She and Jake used to text every day.", "ko": "나 내일 사라랑 점심 먹어. 사라랑 제이크는 예전에 매일 문자했었지." },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Has Sarah heard from Jake lately?",
+        "exampleKo": "사라는 요즘 제이크한테 연락 받은 거 있대?",
+        "requiredKeywords": ["has Sarah", "lately"]
+      },
+      { "no": 9, "speaker": "partner", "en": "Is Jake okay? Nobody from our group has seen him in months.", "ko": "제이크 괜찮은 거야? 우리 무리 중에 몇 달째 걔 본 사람이 없어." },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I heard from Jake last week.",
+        "exampleKo": "지난주에 제이크한테 연락 왔어.",
+        "requiredKeywords": ["heard from", "last week"]
+      },
+      { "no": 11, "speaker": "partner", "en": "I'm going to call Jake this weekend. It's been way too long.", "ko": "이번 주말에 제이크한테 전화해 볼 거야. 너무 오래됐어." },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Will you let me know if you hear from Jake?",
+        "exampleKo": "제이크한테 연락 오면 나한테 알려 줄래?",
+        "requiredKeywords": ["let me know", "hear from"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

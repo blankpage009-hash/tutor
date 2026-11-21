@@ -1,0 +1,221 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U06-L03",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 6,
+  "unitTitle": "친구와 근황 이야기하기",
+  "lessonNo": 3,
+  "lessonTitle": "어떻게 변했는지 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "She's changed a lot since college.",
+    "ko": "걔 대학 때랑 많이 달라졌어.",
+    "stress": "She's CHANGED a LOT since COLlege.",
+    "audio": { "normal": "audio/lessons/INT1-U06-L03/key-a5df42f1.m4a", "slow": "audio/lessons/INT1-U06-L03/key-a5df42f1.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "She's changed a lot since ~는 '~ 이후로 많이 달라졌어'라는 뜻입니다. 오랜만에 만난 사람이 달라 보일 때 씁니다. She's는 She has의 줄임말입니다.",
+      "예전부터 지금까지 변해 온 결과가 지금 눈에 보이니까 현재완료(has changed)를 씁니다.",
+      "since 뒤에는 시점(college, 2020)이나 문장(I moved here)이 옵니다. '~ 이후로'는 from이 아니라 since입니다.",
+      "부정은 He hasn't changed at all.(하나도 안 변했어)입니다. 질문과 부정에서는 a lot 대신 much를 자주 씁니다. Has he changed much?",
+      "사람뿐 아니라 동네·도시처럼 장소가 바뀐 이야기에도 똑같이 씁니다."
+    ],
+    "en": "Say \"She's changed a lot since college\" when someone looks or acts very different now. \"Since\" tells when the change started.",
+    "enKo": "누군가 지금 모습이나 행동이 많이 달라졌을 때 \"She's changed a lot since college\"라고 말합니다. since는 언제부터 변했는지를 알려 줍니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "CHANGED, LOT, COLlege에 힘을 줍니다. She's와 since는 가볍게 지나갑니다." },
+    { "focus": "연음", "tip": "changed a lot은 d가 a와 붙어 '체인쥐더랏'처럼 이어집니다. lot의 t는 거의 멈추듯 약하게 끝냅니다." },
+    { "focus": "약화", "tip": "She's의 's는 '쉬즈'로 아주 짧게 붙입니다. '쉬 해즈'처럼 늘이지 않습니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "college는 '컬리지'가 아니라 '칼리쥐'에 가깝습니다. 첫 모음은 입을 크게 벌린 '아', l은 혀끝을 윗니 뒤에 댑니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "She changed many since college.", "right": "She's changed a lot since college.", "note": "'많이 변했다'의 '많이'는 many가 아니라 a lot입니다. many는 셀 수 있는 명사 앞에만 씁니다." },
+    { "wrong": "She is changed a lot.", "right": "She's changed a lot.", "note": "is changed는 '누가 바꿔 놓았다'는 수동태처럼 들립니다. 여기서 's는 has입니다." },
+    { "wrong": "From college, she changed a lot.", "right": "She's changed a lot since college.", "note": "'~ 이후로 지금까지'는 from이 아니라 since로 말합니다." }
+  ],
+  "dialogue": {
+    "situation": "대학 동창회에 다녀온 다음 날, 못 간 친구와 커피를 마시며 이야기합니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "So how was the college reunion? Did you see Emily?", "ko": "그래서 대학 동창회 어땠어? 에밀리 봤어?", "audio": "audio/lessons/INT1-U06-L03/dlg-01-6fb76803.m4a" },
+      { "no": 2, "speaker": "me", "en": "I did! She's changed a lot since college.", "ko": "봤지! 걔 대학 때랑 많이 달라졌어.", "audio": "audio/lessons/INT1-U06-L03/dlg-02-c78529b2.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Really? How so? She was always so quiet.", "ko": "진짜? 어떻게? 걔 항상 엄청 조용했잖아.", "audio": "audio/lessons/INT1-U06-L03/dlg-03-02d1d1d7.m4a" },
+      { "no": 4, "speaker": "me", "en": "Now she runs her own bakery and talks to everyone.", "ko": "이제 자기 빵집도 하고 모든 사람이랑 얘기하더라.", "audio": "audio/lessons/INT1-U06-L03/dlg-04-b2f44631.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Wow, good for her! What about Mike?", "ko": "와, 잘됐다! 마이크는?", "audio": "audio/lessons/INT1-U06-L03/dlg-05-f65166a7.m4a" },
+      { "no": 6, "speaker": "me", "en": "Same old Mike. Still telling the same jokes.", "ko": "마이크는 그대로야. 아직도 똑같은 농담 하더라.", "audio": "audio/lessons/INT1-U06-L03/dlg-06-3d5e05f9.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "How so?", "ko": "'어떻게? 왜 그런데?' 상대 말을 더 자세히 듣고 싶을 때 짧게 묻는 말입니다." },
+      { "en": "Good for her!", "ko": "'잘됐다!' 다른 사람에게 좋은 일이 생겼을 때 진심으로 기뻐하는 말입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "She's changed a lot since college.",
+      "ko": "걔 대학 때랑 많이 달라졌어.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "You saw Emily at the reunion, right? Is she the same as before?", "audio": "audio/lessons/INT1-U06-L03/cue-01-6b4e950c.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U06-L03/drill-01-a5df42f1.m4a", "slow": "audio/lessons/INT1-U06-L03/drill-01-a5df42f1.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "You've changed a lot since high school.",
+      "ko": "너 고등학교 때랑 많이 달라졌다.",
+      "point": "주어 변경: She → You",
+      "cue": { "lang": "en", "text": "It's been ten years! Do I look different to you?", "audio": "audio/lessons/INT1-U06-L03/cue-02-28c8e873.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U06-L03/drill-02-eea63d4e.m4a", "slow": "audio/lessons/INT1-U06-L03/drill-02-eea63d4e.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "This neighborhood has changed a lot since I moved here.",
+      "ko": "이 동네 내가 이사 온 뒤로 많이 바뀌었어.",
+      "point": "단어 교체: 사람 → 장소, since + 문장",
+      "cue": { "lang": "en", "text": "Is the area around your place still the same as before?", "audio": "audio/lessons/INT1-U06-L03/cue-03-fca66f87.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U06-L03/drill-03-a067538a.m4a", "slow": "audio/lessons/INT1-U06-L03/drill-03-a067538a.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Has Jason changed much since college?",
+      "ko": "제이슨 대학 때랑 많이 달라졌어?",
+      "point": "질문형: Has ~ changed much?",
+      "cue": { "lang": "ko", "text": "대학 친구 제이슨이 많이 달라졌는지 친구에게 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U06-L03/drill-04-13a758dc.m4a", "slow": "audio/lessons/INT1-U06-L03/drill-04-13a758dc.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "He hasn't changed at all since high school.",
+      "ko": "걔는 고등학교 때랑 하나도 안 변했어.",
+      "point": "부정형: hasn't changed at all",
+      "cue": { "lang": "en", "text": "Is Mike still the class clown?", "audio": "audio/lessons/INT1-U06-L03/cue-05-c835646d.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U06-L03/drill-05-edb6fc7f.m4a", "slow": "audio/lessons/INT1-U06-L03/drill-05-edb6fc7f.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "She's changed even more than I expected.",
+      "ko": "걔 생각보다 훨씬 더 많이 달라졌어.",
+      "point": "비교: even more than I expected",
+      "cue": { "lang": "en", "text": "I heard Emily looks totally different now. Is that true?", "audio": "audio/lessons/INT1-U06-L03/cue-06-2fa513e1.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U06-L03/drill-06-b2d973d4.m4a", "slow": "audio/lessons/INT1-U06-L03/drill-06-b2d973d4.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I saw online that Emily runs a bakery now. Wasn't she super shy back in school?",
+        "ko": "인터넷에서 봤는데 에밀리 지금 빵집 한다며? 걔 학교 다닐 때 엄청 수줍어하지 않았어?",
+        "audio": "audio/lessons/INT1-U06-L03/rp-01-c74c0738.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "She's changed a lot since college.",
+        "exampleKo": "걔 대학 때랑 많이 달라졌어.",
+        "requiredKeywords": ["changed a lot", "college"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Hey, it's me, from your old high school band! Do you even recognize me?", "ko": "야, 나야, 고등학교 때 밴드 같이 했던! 나 알아보겠어?", "audio": "audio/lessons/INT1-U06-L03/rp-03-c862eb46.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "You've changed a lot since high school.",
+        "exampleKo": "너 고등학교 때랑 많이 달라졌다.",
+        "requiredKeywords": ["you've changed", "high school"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I'm visiting your part of town next week. Is that old diner still on the corner?",
+        "ko": "다음 주에 너네 동네 가. 모퉁이에 있던 그 오래된 식당 아직 있어?",
+        "audio": "audio/lessons/INT1-U06-L03/rp-05-eff4cb13.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "This neighborhood has changed a lot since I moved here.",
+        "exampleKo": "이 동네 내가 이사 온 뒤로 많이 바뀌었어.",
+        "requiredKeywords": ["neighborhood", "since I moved here"]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "I ran into Jason from our college dorm yesterday! We talked for an hour.",
+        "ko": "어제 대학 기숙사에 있던 제이슨 우연히 만났어! 한 시간이나 얘기했어.",
+        "audio": "audio/lessons/INT1-U06-L03/rp-07-74784d36.m4a"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Has Jason changed much since college?",
+        "exampleKo": "제이슨 대학 때랑 많이 달라졌어?",
+        "requiredKeywords": ["has Jason", "changed much"]
+      },
+      { "no": 9, "speaker": "partner", "en": "I'm meeting Mike tomorrow for the first time in years. What's he like now?", "ko": "내일 마이크를 몇 년 만에 처음 만나. 걔 요즘 어때?", "audio": "audio/lessons/INT1-U06-L03/rp-09-a7d8a5cc.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "He hasn't changed at all since high school.",
+        "exampleKo": "걔는 고등학교 때랑 하나도 안 변했어.",
+        "requiredKeywords": ["hasn't changed", "high school"]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "You saw Emily at the wedding, right? You said she'd look a little different.",
+        "ko": "결혼식에서 에밀리 봤지? 걔 좀 달라졌을 거라고 했잖아.",
+        "audio": "audio/lessons/INT1-U06-L03/rp-11-17bf8f2a.m4a"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "She's changed even more than I expected.",
+        "exampleKo": "걔 생각보다 훨씬 더 많이 달라졌어.",
+        "requiredKeywords": ["even more", "expected"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

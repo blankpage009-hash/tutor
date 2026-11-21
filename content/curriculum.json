@@ -297,10 +297,10 @@
               "no": 6,
               "title": "친구와 근황 이야기하기",
               "lessons": [
-                { "no": 1, "title": "옛 친구에 대해 묻기", "id": "INT1-U06-L01", "ready": false},
-                { "no": 2, "title": "예전 모습에 대해 이야기하기", "id": "INT1-U06-L02", "ready": false},
-                { "no": 3, "title": "어떻게 변했는지 이야기하기", "id": "INT1-U06-L03", "ready": false},
-                { "no": 4, "title": "근황과 소문", "id": "INT1-U06-L04", "ready": false}
+                { "no": 1, "title": "옛 친구에 대해 묻기", "id": "INT1-U06-L01", "ready": true, "file": "lessons/INT1/INT1-U06-L01.json" },
+                { "no": 2, "title": "예전 모습에 대해 이야기하기", "id": "INT1-U06-L02", "ready": true, "file": "lessons/INT1/INT1-U06-L02.json" },
+                { "no": 3, "title": "어떻게 변했는지 이야기하기", "id": "INT1-U06-L03", "ready": true, "file": "lessons/INT1/INT1-U06-L03.json" },
+                { "no": 4, "title": "근황과 소문", "id": "INT1-U06-L04", "ready": true, "file": "lessons/INT1/INT1-U06-L04.json" }
               ]
             }
           ]
