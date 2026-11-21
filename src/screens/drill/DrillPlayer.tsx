@@ -27,6 +27,8 @@ type Props = {
   where?: { left: string; right: string }; // 카드 위 줄. 없으면 "READ · ROUND 5" ↔ "3 / 6" (보관함 연습은 회차가 없어 따로 준다)
 };
 
+const PEEK_ANIM = { fromBelow: 'peekFromBelow', fromAbove: 'peekFromAbove' } as const;
+
 // 드릴 카드 화면 (디자인 v2 06): 모드 막대, 회차 줄, 카드 한 장, 아래 버튼.
 // 카드를 위로 쓸면 다음, 아래로 쓸면 이전 카드 (사용자 요청 2026-11-19)
 export function DrillPlayer(p: Props) {
@@ -46,7 +48,9 @@ export function DrillPlayer(p: Props) {
       {/* touch-action: none — 아이폰에서 쓸 때 화면이 같이 밀리지 않게 (CSS) */}
       <div className={styles.swipeArea} {...swipe}>
         {/* 이전 카드의 아랫부분이 살짝 보인다. 첫 카드에서도 칸은 비워 두어 카드 위치가 문장마다 달라지지 않게 한다 */}
-        <div className={`${styles.peek} ${p.index > 0 ? '' : styles.peekEmpty}`} aria-hidden="true" />
+        {/* key로 카드가 바뀔 때마다 조각도 다시 움직인다: 이전 카드가 위로 밀려 올라와 조각이 되는 느낌 */}
+        <div key={`peek-${p.index}`} aria-hidden="true"
+          className={`${styles.peek} ${p.index > 0 ? '' : styles.peekEmpty} ${dir === 'none' ? '' : styles[PEEK_ANIM[dir]]}`} />
         <article key={p.index} className={`${styles.card} ${styles[dir]}`}>
           <DrillCard step={step} outcome={p.attempt.outcome} saved={p.saved} onSave={p.onSave} />
         </article>

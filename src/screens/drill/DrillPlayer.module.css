@@ -83,21 +83,35 @@
   background: var(--surface);
 }
 
-.fromBelow { animation: fromBelow 240ms ease-out; }
-.fromAbove { animation: fromAbove 240ms ease-out; }
+/* 처음엔 빠르고 끝에서 천천히 멈추는 곡선: 딱딱하게 툭 바뀌지 않고 미끄러져 자리 잡는다 */
+.fromBelow { animation: fromBelow 380ms cubic-bezier(0.22, 1, 0.36, 1); }
+.fromAbove { animation: fromAbove 380ms cubic-bezier(0.22, 1, 0.36, 1); }
+/* 위 조각: 이전 카드가 카드 뒤에서 위로 올라와 자리 잡는다 (뒤로 갈 때는 반대) */
+.peekFromBelow { animation: peekFromBelow 380ms cubic-bezier(0.22, 1, 0.36, 1); }
+.peekFromAbove { animation: peekFromAbove 380ms cubic-bezier(0.22, 1, 0.36, 1); }
 
 @keyframes fromBelow {
-  from { transform: translateY(48px); opacity: 0; }
+  from { transform: translateY(72px) scale(0.98); opacity: 0; }
   to { transform: none; opacity: 1; }
 }
 
 @keyframes fromAbove {
-  from { transform: translateY(-48px); opacity: 0; }
+  from { transform: translateY(-72px) scale(0.98); opacity: 0; }
   to { transform: none; opacity: 1; }
 }
 
+@keyframes peekFromBelow {
+  from { transform: translateY(56px); opacity: 0; }
+  to { transform: none; opacity: 0.6; }
+}
+
+@keyframes peekFromAbove {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: none; opacity: 0.6; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .fromBelow, .fromAbove { animation: none; }
+  .fromBelow, .fromAbove, .peekFromBelow, .peekFromAbove { animation: none; }
 }
 
 .cardTop {
