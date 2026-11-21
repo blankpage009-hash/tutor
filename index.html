@@ -61,9 +61,9 @@
     <div id="root"></div>
     <script>
       // 앱 화면이 #root에 처음 그려지면 로딩화면을 서서히 지운다.
-      // 최소 0.9초는 보여 준다 — 저장된 앱이 너무 빨리 뜨면 파란 화면이 번쩍 지나가 보기 불편하다.
+      // 최소 1.3초는 보여 준다 — 저장된 앱이 너무 빨리 뜨면 파란 화면이 번쩍 지나가 보기 불편하다.
       (function () {
-        var MIN_SHOW_MS = 900;
+        var MIN_SHOW_MS = 1300;
         var FADE_MS = 400;
         var splash = document.getElementById('splash');
         var root = document.getElementById('root');
