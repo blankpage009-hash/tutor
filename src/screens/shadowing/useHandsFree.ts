@@ -144,12 +144,16 @@ export function useHandsFree(input: HandsFreeInput) {
     latest.current.attempt.stop(); // 듣는 중이면 듣기가 끝난다 (결과는 순서 쪽에서 버림)
   }, []);
 
-  const start = useCallback(() => {
+  // tapCtx: 앞 화면에서 탭한 순간 미리 만든 마이크 장치 (보관함 자동 시작). 없으면 지금 만든다 (지금이 탭한 순간)
+  const start = useCallback((tapCtx?: AudioContext | null) => {
     const p = latest.current;
-    if (!stoppedRef.current || !p.lesson) return;
+    if (!stoppedRef.current || !p.lesson) {
+      tapCtx?.close().catch(() => undefined);
+      return;
+    }
     // 둘 다 탭 순간(await 전)에 해야 iOS가 재생·마이크 소리를 허락한다
     unlockAudio();
-    const ctx = createCaptureContext();
+    const ctx = tapCtx ?? createCaptureContext();
     if (!ctx) return setNotice('이 기기에서는 마이크 소리를 받을 수 없어요.');
     stoppedRef.current = false;
     p.active.current = true;

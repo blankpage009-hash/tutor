@@ -9,6 +9,7 @@ import { savedExportFormats } from './library/exportFormats';
 import styles from './library/Library.module.css';
 import { LibraryRow } from './library/LibraryRow';
 import { loadPracticeOptions, REPEAT_CHOICES, savePracticeOptions, type PracticeOptions } from './library/practiceOptions';
+import { armPracticeLaunch } from './library/practiceLaunch';
 import { useLibrary } from './library/useLibrary';
 import { useSelection } from './library/useSelection';
 
@@ -27,12 +28,14 @@ function TopButtons({ sel, opts, change }: { sel: ReturnType<typeof useSelection
     </Button>
   );
   const toggleOrder = () => change({ ...opts, order: random ? 'inOrder' : 'random' });
+  // 연습 화면이 열리자마자 튜터가 말하게, 탭한 순간 소리·마이크 허락을 받아 둔다 (practiceLaunch.ts)
+  const go = (path: string) => { armPracticeLaunch(); nav(path); };
   if (sel.selecting) {
     // 고르는 중에도 순서를 보고 바꿀 수 있어야, 고른 문장이 섞여 나올지 알 수 있다.
     // 자리가 모자라 글자 없이 아이콘만 둔다 (사용자 요청 2026-11-21)
     return (
       <div className={`${styles.pair} ${styles.withOrderRepeat}`}>
-        <Button variant="primary" disabled={sel.ids.length === 0} onClick={() => nav(sel.practicePath())}><IconHeadphones />{`Shadow · ${sel.ids.length}`}</Button>
+        <Button variant="primary" disabled={sel.ids.length === 0} onClick={() => go(sel.practicePath())}><IconHeadphones />{`Shadow · ${sel.ids.length}`}</Button>
         <Button onClick={sel.cancel}>Cancel</Button>
         <Button className={styles.orderIcon} aria-label={random ? '순서: 랜덤' : '순서: 차례대로'} onClick={toggleOrder}>
           {random ? <IconShuffle /> : <IconInOrder />}
@@ -43,7 +46,7 @@ function TopButtons({ sel, opts, change }: { sel: ReturnType<typeof useSelection
   }
   return (
     <div className={`${styles.pair} ${styles.withRepeat}`}>
-      <Button variant="primary" onClick={() => nav('/library/practice/all')}><IconHeadphones />Shadow All</Button>
+      <Button variant="primary" onClick={() => go('/library/practice/all')}><IconHeadphones />Shadow All</Button>
       <Button onClick={toggleOrder}>
         {random ? <><IconShuffle />Random</> : <><IconInOrder />In Order</>}
       </Button>

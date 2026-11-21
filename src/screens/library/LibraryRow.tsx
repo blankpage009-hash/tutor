@@ -7,6 +7,7 @@ import type { SavedSentence } from '../../db/types';
 import type { DueLabel } from '../../dueLabel';
 import { playAudio, unlockAudio } from '../../speech/audioPlayer';
 import styles from './Library.module.css';
+import { armPracticeLaunch } from './practiceLaunch';
 
 type Props = {
   row: SavedSentence;
@@ -31,7 +32,11 @@ export function LibraryRow({ row, due, open, onOpenChange, onRemove, selecting, 
     playAudio(contentUrl(row.audio), 1).catch(() => setPlayError(true));
   };
   const ready = Boolean(row.en);
-  const tap = () => (selecting ? onSelect(row.id) : nav(`/library/practice/${encodeURIComponent(row.id)}`));
+  const tap = () => {
+    if (selecting) return onSelect(row.id);
+    armPracticeLaunch(); // 연습 화면이 열리자마자 튜터가 말하게, 탭한 순간 소리·마이크 허락을 받아 둔다
+    nav(`/library/practice/${encodeURIComponent(row.id)}`);
+  };
   return (
     <SwipeRow open={open} onOpenChange={onOpenChange} swipeEnabled={!selecting}
       onLongPress={selecting ? undefined : () => onSelect(row.id)}

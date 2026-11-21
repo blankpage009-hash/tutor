@@ -29,7 +29,7 @@ function useCancellableWait() {
 
 // 보관함 "듣기만": 드릴 카드 화면의 ▶ 자리에 붙인다. 마이크를 쓰지 않으므로 인식 엔진을 기다리지 않는다.
 // 듣기만 한 카드는 통과로 세지 않는다 (recordPass를 부르지 않음 → 활동·스트릭에 안 들어감)
-export function useListenLoop(plan: DrillStep[], steps: Steps): HandsFreeView & { stop: () => void } {
+export function useListenLoop(plan: DrillStep[], steps: Steps): HandsFreeView & { start: () => void; stop: () => void } {
   const [running, setRunning] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const stoppedRef = useRef(true);
@@ -68,6 +68,6 @@ export function useListenLoop(plan: DrillStep[], steps: Steps): HandsFreeView & 
   return {
     available: true, running, step: running ? 'reading' : null, notice,
     onToggle: () => { if (stoppedRef.current) start(); else stop(); },
-    stop
+    start, stop
   };
 }

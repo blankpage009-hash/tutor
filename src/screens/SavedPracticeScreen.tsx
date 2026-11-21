@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import type { SavedSentence } from '../db/types';
 import type { DrillStep } from '../drillPlan';
@@ -7,6 +7,7 @@ import { DrillPlayer } from './drill/DrillPlayer';
 import { useDrillSpeaking } from './drill/useDrillSpeaking';
 import { useDrillSteps } from './drill/useDrillSteps';
 import { fillMissing, loadRows } from './library/useLibrary';
+import { peekPracticeLaunch, takePracticeLaunch } from './library/practiceLaunch';
 import { loadPracticeOptions } from './library/practiceOptions';
 import { SavedFinish } from './library/SavedFinish';
 import { toSavedPlan } from './library/savedPlan';
@@ -49,6 +50,25 @@ export function SavedPracticeScreen() {
   return <SavedDrill key={`${startId}:${pickedKey}`} plan={plan} listening={opts.listening} />;
 }
 
+// 보관함에서 탭해 들어왔으면(바통이 있으면) ▶를 누르지 않아도 시작한다 (사용자 요청 2026-11-21).
+// 말하기는 인식 엔진이 준비된 뒤에 시작. 새로고침·뒤로 가기로 열린 화면은 바통이 없어 그대로 ▶를 기다린다
+function useAutoStart(ready: boolean, begin: (ctx: AudioContext | null) => void) {
+  const [launch] = useState(() => peekPracticeLaunch()); // 보기만: 개발 모드에서 두 번 그려져도 바통이 남게
+  const done = useRef(false);
+  const latest = useRef(begin);
+  latest.current = begin;
+  useEffect(() => {
+    if (!launch || done.current || !ready) return;
+    // 한 박자 늦게: 개발 모드(StrictMode)가 화면을 붙였다 떼었다 해도 한 번만, 멈춤 없이 시작하게
+    const t = setTimeout(() => {
+      done.current = true;
+      const ticket = takePracticeLaunch();
+      if (ticket) latest.current(ticket.ctx);
+    }, 0);
+    return () => clearTimeout(t);
+  }, [launch, ready]);
+}
+
 // listening: 켜져 있으면 ▶가 말하기 없이 카드 소리만 차례로 들려준다 (사용자 요청 2026-11-21)
 function SavedDrill({ plan, listening }: { plan: DrillStep[]; listening: boolean }) {
   const nav = useNavigate();
@@ -56,6 +76,11 @@ function SavedDrill({ plan, listening }: { plan: DrillStep[]; listening: boolean
   const sp = useDrillSpeaking(plan, steps);
   const listen = useListenLoop(plan, steps);
   const { hf } = sp;
+  useAutoStart(listening || (sp.voskReady && !sp.micLocked), (ctx) => {
+    if (listening) { ctx?.close().catch(() => undefined); listen.start(); return; }
+    sp.armLeadIn(); // 코스 드릴 시작과 같이 1초 쉬고 튜터가 읽는다
+    hf.start(ctx);
+  });
   // 재생 중에 넘기거나 닫으면 일시정지하고 옮긴다 (코스 드릴과 같은 규칙)
   const move = (go: () => void) => { hf.stop(); listen.stop(); go(); };
   // 반복하면 카드 수가 문장 수 × 반복이라, 위 표시는 문장 기준으로 보여 준다
