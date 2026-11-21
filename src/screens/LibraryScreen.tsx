@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { ExportSheet } from '../components/ExportSheet';
-import { IconExport, IconHeadphones, IconShuffle } from '../components/icons/icons';
+import { IconExport, IconHeadphones, IconInOrder, IconShuffle } from '../components/icons/icons';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { dueLabel } from '../dueLabel';
 import { savedExportFormats } from './library/exportFormats';
@@ -39,17 +39,20 @@ function PracticeChoices() {
   return (
     <>
       <Button onClick={() => change({ ...opts, order: random ? 'inOrder' : 'random' })}>
-        {random ? <><IconShuffle />Random</> : 'In Order'}
+        {random ? <><IconShuffle />Random</> : <><IconInOrder />In Order</>}
       </Button>
-      {/* 기본 select를 쓰면 아이폰에서 시스템 고르기 창이 떠서 손가락으로 고르기 쉽다 */}
-      <span className={styles.repeatWrap}>
-        <select className={styles.repeat} value={opts.reps} aria-label="문장마다 반복 횟수"
-          onChange={(e) => change({ ...opts, reps: Number(e.target.value) })}>
-          {REPEAT_CHOICES.map((n) => <option key={n} value={n}>{`${n}×`}</option>)}
-        </select>
-      </span>
+      {/* 누를 때마다 1 → 3 → 5 → 10 → 1 로 돈다 (드롭다운 대신, 사용자 요청 2026-11-21) */}
+      <Button className={styles.repeat} aria-label={`문장마다 ${opts.reps}번 반복`}
+        onClick={() => change({ ...opts, reps: nextRepeat(opts.reps) })}>
+        {opts.reps}<span className={styles.times}>×</span>
+      </Button>
     </>
   );
+}
+
+function nextRepeat(n: number): number {
+  const i = REPEAT_CHOICES.indexOf(n as 1);
+  return REPEAT_CHOICES[(i + 1) % REPEAT_CHOICES.length];
 }
 
 // 디자인 v2 09 LIBRARY: N SENTENCES · Library · 내보내기 아이콘, Shadow All · Random, 줄 목록
