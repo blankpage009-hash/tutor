@@ -26,11 +26,17 @@ function TopButtons({ sel }: { sel: ReturnType<typeof useSelection> }) {
       {opts.reps}<span className={styles.times}>×</span>
     </Button>
   );
+  const toggleOrder = () => change({ ...opts, order: random ? 'inOrder' : 'random' });
   if (sel.selecting) {
+    // 고르는 중에도 순서를 보고 바꿀 수 있어야, 고른 문장이 섞여 나올지 알 수 있다.
+    // 자리가 모자라 글자 없이 아이콘만 둔다 (사용자 요청 2026-11-21)
     return (
-      <div className={`${styles.pair} ${styles.withRepeat}`}>
+      <div className={`${styles.pair} ${styles.withOrderRepeat}`}>
         <Button variant="primary" disabled={sel.ids.length === 0} onClick={() => nav(sel.practicePath())}><IconHeadphones />{`Shadow · ${sel.ids.length}`}</Button>
         <Button onClick={sel.cancel}>Cancel</Button>
+        <Button className={styles.orderIcon} aria-label={random ? '순서: 랜덤' : '순서: 차례대로'} onClick={toggleOrder}>
+          {random ? <IconShuffle /> : <IconInOrder />}
+        </Button>
         {repeat}
       </div>
     );
@@ -38,7 +44,7 @@ function TopButtons({ sel }: { sel: ReturnType<typeof useSelection> }) {
   return (
     <div className={`${styles.pair} ${styles.withRepeat}`}>
       <Button variant="primary" onClick={() => nav('/library/practice/all')}><IconHeadphones />Shadow All</Button>
-      <Button onClick={() => change({ ...opts, order: random ? 'inOrder' : 'random' })}>
+      <Button onClick={toggleOrder}>
         {random ? <><IconShuffle />Random</> : <><IconInOrder />In Order</>}
       </Button>
       {repeat}

@@ -25,6 +25,12 @@
 /* 문장당 반복 횟수 버튼: 숫자가 1→10으로 바뀌어도 폭이 흔들리지 않게 고정 폭.
    "1 ×"의 띄어쓰기는 버튼의 flex gap으로 만들고(공백 문자는 flex에서 사라짐), × 는 120% */
 .withRepeat > .repeat { width: 68px; gap: 3px; padding: 0; }
+
+/* 고르는 중: Shadow · Cancel · 순서 아이콘 · 반복 (순서·반복은 고정 폭) */
+.withOrderRepeat { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto auto; }
+.withOrderRepeat > button { padding: 0 var(--space-2); white-space: nowrap; }
+.withOrderRepeat > .repeat { width: 56px; gap: 3px; padding: 0; }
+.withOrderRepeat > .orderIcon { width: 52px; padding: 0; }
 .times { font-size: 1.2em; line-height: 1; }
 
 .list {
