@@ -11,7 +11,6 @@ import { useDrillSteps } from './drill/useDrillSteps';
 import { fillMissing, loadRows } from './library/useLibrary';
 import { peekPracticeLaunch, takePracticeLaunch } from './library/practiceLaunch';
 import { loadPracticeOptions } from './library/practiceOptions';
-import { SavedFinish } from './library/SavedFinish';
 import { toSavedPlan } from './library/savedPlan';
 import { useListenLoop } from './library/useListenLoop';
 import styles from './library/Library.module.css';
@@ -92,13 +91,9 @@ function SavedDrill({ plan, listening }: { plan: DrillStep[]; listening: boolean
   const sentenceTotal = plan.length / reps;
   const cur = plan[Math.min(steps.index, plan.length - 1)];
   const label = listening ? 'Listening' : 'Library';
+  // 완료 화면을 탭하면 바로 보관함으로 (따로 마무리 화면은 두지 않는다, 사용자 요청 2026-11-21)
   if (steps.finished) {
-    return (
-      <>
-        <SavedFinish total={sentenceTotal} />
-        {celebrate.show && <StepComplete title="Practice Complete!" onClose={celebrate.close} />}
-      </>
-    );
+    return celebrate.show ? <StepComplete title="Practice Complete!" onClose={() => nav('/library')} /> : null;
   }
   return (
     <DrillPlayer plan={plan} index={steps.index} sentenceCount={sentenceTotal}
