@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState, type MutableRefObject } from 
 import type { Model } from 'vosk-browser';
 import { contentUrl } from '../../content/loader';
 import type { NewLesson, RolePlayLine } from '../../content/lessonTypes';
+import { logSpoken } from '../../db/activity';
 import { finishNewStep } from '../../db/progress';
 import type { NewLessonStep } from '../../newLessonFlow';
 import { judgeKeywords, type KeywordJudgement } from '../../scoring/keywordJudge';
@@ -151,6 +152,7 @@ async function hearLine(c: Ctx, line: MyLine): Promise<RpHear> {
   // 틀리면 판정 소리 동안 마이크를 닫으므로 바로 "마이크 준비 중"으로 (듣는 중으로 보이면 일찍 말해 첫 단어가 잘린다)
   c.setTurn(() => ({ live: null, last: { pass: judgement.pass, judgement, source }, preparing: !judgement.pass, checking: false }));
   if (judgement.pass) c.record(line.no, judgement.heard);
+  logSpoken();
   await judgedSound(c, judgement.pass);
   return judgement.pass ? 'passed' : 'failed';
 }

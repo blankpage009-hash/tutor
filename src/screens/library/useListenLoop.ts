@@ -4,6 +4,7 @@ import type { DrillStep } from '../../drillPlan';
 import { getBaseRate, onPlayerTime, pauseAudio, playAudio, playSource, resumeAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
 import { cardAt, stitchTrack } from '../../speech/audioStitch';
 import { clearLockScreen, setLockScreen, setLockScreenTitle } from '../../speech/mediaSession';
+import { setListening } from '../../studyClock';
 import type { useDrillSteps } from '../drill/useDrillSteps';
 import type { HandsFreeView } from '../shadowing/ShadowingStage';
 import { runListenLoop } from './listenLoop';
@@ -51,9 +52,13 @@ async function playTrack(d: TrackDeps): Promise<void> {
     d.goTo(d.start + i);
     setLockScreenTitle(rest[i].drill.en);
   });
+  // 화면을 꺼도 공부 시간에 들어가게, 파일이 끝날 예정 시각을 시계에 알린다.
+  // 플레이어가 말하기 속도(rate)를 파일 전체에 곱하므로 실제 재생 시간은 길이 ÷ 속도
+  setListening(Date.now() + (track.total / rate) * 1000);
   try {
     await playSource(track.url, 1);
   } finally {
+    setListening(null);
     off();
     clearLockScreen();
     URL.revokeObjectURL(track.url);

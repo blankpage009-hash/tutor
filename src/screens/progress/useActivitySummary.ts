@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { currentStreak, dayKey, goalProgress, longestStreak, type GoalProgress } from '../../activity';
+import { currentStreak, dayKey, goalProgress, lifetimeTotals, longestStreak, type GoalProgress, type LifetimeTotals } from '../../activity';
 import { listActivity } from '../../db/activity';
 import { listProgress } from '../../db/progress';
 import { useSettings } from '../../settings/SettingsProvider';
 
-export type ActivitySummary = { goal: GoalProgress; streak: number; longest: number };
+export type ActivitySummary = { goal: GoalProgress; streak: number; longest: number; totals: LifetimeTotals };
 
 // 활동 기록과 레슨 완료일을 합쳐 연속 학습일·오늘 목표를 계산한다.
 // 활동 표는 7-B부터 쌓여서, 그 전에 끝낸 레슨은 완료일(completedAt)로 학습일을 채워 준다.
@@ -22,7 +22,8 @@ export function useActivitySummary(): ActivitySummary | null {
       setSummary({
         goal: goalProgress(rows.find((r) => r.date === today), dailyGoal),
         streak: currentStreak(dates, today),
-        longest: longestStreak(dates)
+        longest: longestStreak(dates),
+        totals: lifetimeTotals(rows)
       });
     }, () => undefined);
     return () => { alive = false; };

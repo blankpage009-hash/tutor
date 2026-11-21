@@ -65,7 +65,9 @@ export type SrsState = {
 
 // 하루치 활동 횟수. date는 기기 현지 날짜('YYYY-MM-DD'). 스트릭·일일 목표 계산용 (Phase 7-B)
 // practice: 쉐도잉·대화문·드릴 통과 + 끝낸 레슨 단계, review: 복습 기록(문장·단어). 둘은 겹쳐 세지 않는다
-export type Activity = { date: string; practice: number; review: number };
+// spoken: 판정이 나온 말하기 횟수(통과+틀림), seconds: 앱을 열어 둔(+잠금화면 듣기) 시간. 둘은 설정 화면 누적 표시용.
+// 옛 줄·옛 백업에는 없을 수 있어서 선택 칸이다 (없으면 spoken은 practice로 본다 — 사용자 결정 2026-11-21)
+export type Activity = { date: string; practice: number; review: number; spoken?: number; seconds?: number };
 
 export type Recording = {
   id?: number;

@@ -31,6 +31,7 @@ const isObj = (v: unknown): v is Record<string, unknown> => typeof v === 'object
 const str = (v: unknown) => typeof v === 'string';
 const num = (v: unknown) => typeof v === 'number' && Number.isFinite(v);
 const optStr = (v: unknown) => v === undefined || str(v);
+const optCount = (v: unknown) => v === undefined || (num(v) && (v as number) >= 0);
 
 // 표마다 "이 행이 앱이 읽을 수 있는 모양인가"만 본다. 모양이 맞지 않는 행은 버리고 개수를 센다
 const ROW_CHECKS = {
@@ -46,7 +47,7 @@ const ROW_CHECKS = {
     num(r.dueAt) && num(r.intervalDays) && num(r.ease) && num(r.reps) && num(r.lapses),
   activity: (r: Record<string, unknown>) =>
     str(r.date) && /^\d{4}-\d{2}-\d{2}$/.test(r.date as string) && num(r.practice) && num(r.review) &&
-    (r.practice as number) >= 0 && (r.review as number) >= 0
+    (r.practice as number) >= 0 && (r.review as number) >= 0 && optCount(r.spoken) && optCount(r.seconds)
 };
 
 type TableKey = keyof typeof ROW_CHECKS;

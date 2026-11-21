@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState, type MutableRefObject } from 
 import type { Model } from 'vosk-browser';
 import { contentUrl } from '../../content/loader';
 import type { Sentence } from '../../content/types';
+import { logSpoken } from '../../db/activity';
 import { isPass, type Judgement, type WordMark } from '../../scoring/types';
 import { keepMatched, wordMatchJudge } from '../../scoring/wordMatchJudge';
 import { playAudio, preloadAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
@@ -262,7 +263,9 @@ function useHearFor(
     const out = evaluate(s, res, o.threshold);
     o.log(`이어 말하기 판정 ${Math.round(out.judgement.ratio * 100)}% · 들린 말 "${out.judgement.heard}"`);
     setOutcome(out);
-    return toHearStatus(out, res);
+    const status = toHearStatus(out, res);
+    if (status === 'passed' || status === 'failed') logSpoken();
+    return status;
   }, [opts, listening, setStored]);
 }
 
@@ -328,6 +331,8 @@ export function useShadowingAttempt(sentence: Sentence | null, opts: AttemptOpti
     const out = evaluate(sentence, res, o.threshold);
     o.log(`판정 ${Math.round(out.judgement.ratio * 100)}% · 들린 말 "${out.judgement.heard}"${res.error ? ` · 오류 ${res.error}` : ''}`);
     setOutcome(out);
+    // 설정 화면 "SPOKEN": 판정이 나온 말하기는 통과·틀림 모두 센다 (사용자 결정 2026-11-21)
+    if (out.status === 'passed' || out.status === 'failed') logSpoken();
     if (voice) setMyVoice(voice);
     o.onResult?.(sentence.id, out.status);
     // 실패 피드백: 문장 전체를 느리게 다시 들려준다 (탭 없이 재생 — iOS가 허락하는지 확인 대상)

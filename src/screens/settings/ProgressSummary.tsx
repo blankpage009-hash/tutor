@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { ProgressBar } from '../../components/ProgressBar';
 import { SettingsRow } from '../../components/SettingsRow';
 import type { CurriculumProgress } from '../progress/useCurriculumProgress';
-import { useActivitySummary } from '../progress/useActivitySummary';
+import { useActivitySummary, type ActivitySummary } from '../progress/useActivitySummary';
 import styles from './Settings.module.css';
 
 type Props = { progress: CurriculumProgress | 'error' | null };
@@ -29,6 +29,7 @@ function Habit() {
   const a = useActivitySummary();
   if (!a) return null;
   return (
+    <>
     <div className={styles.stats}>
       <div className={styles.stat}>
         <span className={styles.small}>STREAK</span>
@@ -41,6 +42,25 @@ function Habit() {
       <div className={styles.stat}>
         <span className={styles.small}>TODAY</span>
         <p className={`${styles.statValue} ${a.goal.met ? styles.met : ''}`}>{a.goal.count}/{a.goal.goal}</p>
+      </div>
+    </div>
+    <Totals a={a} />
+    </>
+  );
+}
+
+const comma = (n: number) => n.toLocaleString('en-US');
+
+function Totals({ a }: { a: ActivitySummary }) {
+  return (
+    <div className={`${styles.stats} ${styles.stats2}`}>
+      <div className={styles.stat}>
+        <span className={styles.small}>SPOKEN</span>
+        <p className={styles.statValue}>{comma(a.totals.spoken)}</p>
+      </div>
+      <div className={styles.stat}>
+        <span className={styles.small}>STUDY TIME</span>
+        <p className={styles.statValue}>{comma(a.totals.minutes)}<span className={styles.unit}> min</span></p>
       </div>
     </div>
   );

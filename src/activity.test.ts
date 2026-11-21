@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { addDays, currentStreak, dayKey, goalProgress, longestStreak } from './activity';
+import { addDays, currentStreak, dayKey, goalProgress, lifetimeTotals, longestStreak } from './activity';
 
 const set = (...d: string[]) => new Set(d);
 
@@ -56,5 +56,17 @@ describe('goalProgress', () => {
     expect(goalProgress({ date: 'x', practice: 4, review: 6 }, 10)).toEqual({ count: 10, goal: 10, met: true });
     expect(goalProgress({ date: 'x', practice: 4, review: 5 }, 10).met).toBe(false);
     expect(goalProgress(undefined, 10)).toEqual({ count: 0, goal: 10, met: false });
+  });
+});
+
+describe('lifetimeTotals', () => {
+  it('말한 문장은 spoken 합, 없는 옛 줄은 practice로 보고, 시간은 분으로 내림', () => {
+    const rows = [
+      { date: '2026-11-01', practice: 7, review: 2 },
+      { date: '2026-11-20', practice: 3, review: 0, spoken: 10, seconds: 125 },
+      { date: '2026-11-21', practice: 0, review: 0, spoken: 1, seconds: 3600 }
+    ];
+    expect(lifetimeTotals(rows)).toEqual({ spoken: 18, minutes: 62 });
+    expect(lifetimeTotals([])).toEqual({ spoken: 0, minutes: 0 });
   });
 });

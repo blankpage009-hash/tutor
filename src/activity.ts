@@ -40,6 +40,19 @@ export function longestStreak(dates: ReadonlySet<string>): number {
   return best;
 }
 
+export type LifetimeTotals = { spoken: number; minutes: number };
+
+// 설정 화면 SPOKEN·STUDY TIME 누적값. spoken이 없는 옛 줄은 통과 기록(practice)으로 본다
+export function lifetimeTotals(rows: readonly DayRow[]): LifetimeTotals {
+  let spoken = 0;
+  let seconds = 0;
+  for (const r of rows) {
+    spoken += r.spoken ?? r.practice;
+    seconds += r.seconds ?? 0;
+  }
+  return { spoken, minutes: Math.floor(seconds / 60) };
+}
+
 export type GoalProgress = { count: number; goal: number; met: boolean };
 
 export function goalProgress(row: DayRow | undefined, goal: number): GoalProgress {

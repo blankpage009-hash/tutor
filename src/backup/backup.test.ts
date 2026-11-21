@@ -63,6 +63,20 @@ describe('parseBackup 거절', () => {
 });
 
 describe('parseBackup 일부 깨진 행', () => {
+  it('활동 줄의 말한 문장·공부 시간 칸: 없어도 되고, 있으면 0 이상 숫자', () => {
+    const r = parseBackup(wrap({
+      tables: { activity: [
+        { date: '2026-11-20', practice: 1, review: 0, spoken: 5, seconds: 90 },
+        { date: '2026-11-21', practice: 1, review: 0, spoken: -1 },
+        { date: '2026-11-22', practice: 1, review: 0, seconds: 'x' },
+        sample.activity[0]
+      ] }
+    }));
+    expect(r.ok).toBe(true);
+    if (!r.ok) return;
+    expect(r.data.activity.map((a) => a.date)).toEqual(['2026-11-20', '2026-11-19']);
+  });
+
   it('모양이 틀린 행은 빼고 개수를 알린다', () => {
     const r = parseBackup(wrap({
       tables: {

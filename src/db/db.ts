@@ -31,6 +31,11 @@ export class TutorDb extends Dexie {
     });
     // 7-B: 날짜별 활동 표만 더한다. Dexie는 새 표만 만들고 기존 표의 데이터는 그대로 둔다
     this.version(2).stores({ activity: 'date' });
+    // 말한 문장 수는 "학습 시작부터"라서 지난 통과 기록(practice)으로 시작한다. 공부 시간은 지난 기록이 없어 0
+    this.version(3).stores({}).upgrade((tx) => tx.table('activity').toCollection().modify((r: Activity) => {
+      r.spoken ??= r.practice;
+      r.seconds ??= 0;
+    }));
   }
 }
 

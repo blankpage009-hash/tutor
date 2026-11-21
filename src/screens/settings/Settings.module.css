@@ -38,6 +38,9 @@
 .stat:first-child { padding-left: 0; border-left: 0; }
 .statValue { margin: var(--space-1) 0 0; font-family: var(--type-label-family); font-size: 26px; line-height: 1.1; font-weight: 600; }
 .met { color: var(--accent-ink); }
+/* 누적 줄(SPOKEN·STUDY TIME): 위 3칸 줄의 아래 선을 같이 쓰도록 위 선은 뺀다 */
+.stats2 { grid-template-columns: repeat(2, 1fr); border-top: 0; }
+.unit { font-size: var(--type-label-size); font-weight: var(--type-label-weight); color: var(--ink-muted); }
 
 /* 시작 레벨 고르기 목록 */
 .pick {
