@@ -53,7 +53,7 @@ function Sentence({ step, outcome: o }: { step: DrillStep; outcome: Outcome }) {
       {o && showEn && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} onWordTap={onWordTap} masked={masked} />}
       {/* 모두 가림 회차는 영어 대신 한글 뜻이 단서다 — 안내 문구 없이 뜻만 보여 준다 (사용자 요청 2026-11-21) */}
       {!showEn && show !== 'none' && <p className={styles.hidden} lang="ko">영어로 말해 보세요</p>}
-      {(show === 'en+ko' || show === 'ko' || show === 'none') && <p className={styles.ko} lang="ko">{step.drill.ko}</p>}
+      {(show === 'en+ko' || show === 'ko' || show === 'none') && <p className={show === 'none' ? `${styles.ko} ${styles.koLarge}` : styles.ko} lang="ko">{step.drill.ko}</p>}
     </>
   );
 }
