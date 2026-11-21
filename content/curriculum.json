@@ -381,10 +381,10 @@
               "no": 3,
               "title": "계획과 실행",
               "lessons": [
-                { "no": 1, "title": "근황 나누기", "id": "INT3-U03-L01", "ready": false},
-                { "no": 2, "title": "시간을 어떻게 보냈는지 말하기", "id": "INT3-U03-L02", "ready": false},
-                { "no": 3, "title": "계획 변경 이야기하기", "id": "INT3-U03-L03", "ready": false},
-                { "no": 4, "title": "변명하기", "id": "INT3-U03-L04", "ready": false}
+                { "no": 1, "title": "근황 나누기", "id": "INT3-U03-L01", "ready": true, "file": "lessons/INT3/INT3-U03-L01.json" },
+                { "no": 2, "title": "시간을 어떻게 보냈는지 말하기", "id": "INT3-U03-L02", "ready": true, "file": "lessons/INT3/INT3-U03-L02.json" },
+                { "no": 3, "title": "계획 변경 이야기하기", "id": "INT3-U03-L03", "ready": true, "file": "lessons/INT3/INT3-U03-L03.json" },
+                { "no": 4, "title": "변명하기", "id": "INT3-U03-L04", "ready": true, "file": "lessons/INT3/INT3-U03-L04.json" }
               ]
             },
             {

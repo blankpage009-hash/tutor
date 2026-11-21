@@ -1,0 +1,221 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U03-L04",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 3,
+  "unitTitle": "계획과 실행",
+  "lessonNo": 4,
+  "lessonTitle": "변명하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Sorry, I totally lost track of time.",
+    "ko": "죄송해요, 시간 가는 줄 몰랐어요.",
+    "stress": "SORry, I TOtally LOST TRACK of TIME.",
+    "audio": { "normal": "audio/lessons/INT3-U03-L04/key-855cb756.m4a", "slow": "audio/lessons/INT3-U03-L04/key-855cb756.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "'시간 가는 줄 몰랐다'는 뜻입니다. 무언가에 빠져 있다가 약속이나 회의에 늦었을 때 사과하며 씁니다.",
+      "lose track of는 '~을 놓치다'입니다. lose track of time은 시간이 얼마나 지났는지 놓쳤다는 말입니다.",
+      "totally를 넣으면 '완전히'라는 느낌이 더해져 미안한 마음이 잘 전해집니다.",
+      "I forgot the time.이라고 하면 어색합니다. 시간 가는 걸 몰랐다는 말은 lost track of time이 자연스럽습니다."
+    ],
+    "en": "Say \"Sorry, I totally lost track of time\" when you are late because you didn't notice the time. It is a common, friendly excuse.",
+    "enKo": "시간이 가는 걸 몰라서 늦었을 때 \"Sorry, I totally lost track of time\"이라고 합니다. 흔히 쓰는 부드러운 변명입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "TO, LOST, TRACK, TIME에 힘을 줍니다." },
+    { "focus": "연음", "tip": "track of는 끊지 않고 '트래커v'처럼 이어 붙입니다. of는 '어v'로 약하게 들립니다." },
+    { "focus": "약화", "tip": "totally의 가운데 t는 부드럽게 굴러 '토럴리'처럼 들립니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "lost의 l은 혀끝을 윗잇몸에 붙이고 시작합니다. r처럼 혀를 말지 않습니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "Sorry, I didn't know the time goes.", "right": "Sorry, I totally lost track of time.", "note": "'시간 가는 줄 몰랐다'를 그대로 옮긴 문장이라 통하지 않습니다." },
+    { "wrong": "Sorry, I lost the time.", "right": "Sorry, I totally lost track of time.", "note": "lose the time은 뜻이 통하지 않습니다. track of를 꼭 넣습니다." },
+    { "wrong": "Sorry, I totally lose track of time.", "right": "Sorry, I totally lost track of time.", "note": "이미 일어난 일이니 과거형 lost로 말합니다." }
+  ],
+  "dialogue": {
+    "situation": "회의에 15분 늦게 들어가자 팀장님이 무슨 일 있었는지 묻습니다.",
+    "partnerRole": "팀장",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "There you are! We started fifteen minutes ago. Is everything okay?", "ko": "오셨네요! 15분 전에 시작했어요. 별일 없죠?", "audio": "audio/lessons/INT3-U03-L04/dlg-01-7a91a0cc.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Sorry, I totally lost track of time. I was fixing the client slides.",
+        "ko": "죄송해요, 시간 가는 줄 몰랐어요. 고객사 슬라이드 고치고 있었거든요.",
+        "audio": "audio/lessons/INT3-U03-L04/dlg-02-036ae855.m4a",
+        "hasKeySentence": true
+      },
+      { "no": 3, "speaker": "partner", "en": "Ah, the slides for Thursday? How are they coming along?", "ko": "아, 목요일 발표 슬라이드요? 잘 돼 가요?", "audio": "audio/lessons/INT3-U03-L04/dlg-03-1cc6676e.m4a" },
+      { "no": 4, "speaker": "me", "en": "Almost done. I just need to add the sales numbers.", "ko": "거의 다 했어요. 매출 숫자만 넣으면 돼요.", "audio": "audio/lessons/INT3-U03-L04/dlg-04-0d8059bb.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Great. Just set a reminder next time, okay?", "ko": "좋아요. 다음엔 알림 맞춰 두세요, 알았죠?", "audio": "audio/lessons/INT3-U03-L04/dlg-05-d16e73f9.m4a" },
+      { "no": 6, "speaker": "me", "en": "Will do. It won't happen again.", "ko": "그럴게요. 다시는 이런 일 없을 거예요.", "audio": "audio/lessons/INT3-U03-L04/dlg-06-510b3917.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "How are they coming along?", "ko": "'잘 돼 가요?'. 진행 중인 일이 어떻게 되고 있는지 물을 때 씁니다." },
+      { "en": "Will do.", "ko": "'그럴게요', '알겠습니다'. 부탁이나 지시에 짧게 대답할 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Sorry, I totally lost track of time.",
+      "ko": "죄송해요, 시간 가는 줄 몰랐어요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "You're twenty minutes late. What happened?", "audio": "audio/lessons/INT3-U03-L04/cue-01-ff3033f0.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U03-L04/drill-01-855cb756.m4a", "slow": "audio/lessons/INT3-U03-L04/drill-01-855cb756.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "Sorry, I totally lost track of the date.",
+      "ko": "죄송해요, 날짜 가는 줄 몰랐어요.",
+      "point": "단어 교체: time → the date",
+      "cue": { "lang": "en", "text": "The report was due yesterday. Did you forget?", "audio": "audio/lessons/INT3-U03-L04/cue-02-88464ab2.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U03-L04/drill-02-cafd249c.m4a", "slow": "audio/lessons/INT3-U03-L04/drill-02-cafd249c.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "We totally lost track of time.",
+      "ko": "저희가 시간 가는 줄 완전히 몰랐어요.",
+      "point": "주어 변경: I → we",
+      "cue": { "lang": "en", "text": "The movie ended at nine. Why are you two so late?", "audio": "audio/lessons/INT3-U03-L04/cue-03-a9ead743.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U03-L04/drill-03-8f3db6f7.m4a", "slow": "audio/lessons/INT3-U03-L04/drill-03-8f3db6f7.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Did you lose track of time again?",
+      "ko": "또 시간 가는 줄 몰랐어요?",
+      "point": "질문형: Did you lose ~? (원형 lose)",
+      "cue": { "lang": "ko", "text": "동료가 또 점심시간에 한참 늦게 돌아왔습니다. 또 시간 가는 줄 몰랐냐고 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U03-L04/drill-04-b7f293ce.m4a", "slow": "audio/lessons/INT3-U03-L04/drill-04-b7f293ce.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I didn't lose track of time, I swear.",
+      "ko": "시간 놓친 거 아니에요, 진짜로요.",
+      "point": "부정형: didn't lose",
+      "cue": { "lang": "en", "text": "Were you just chatting and forgot about the meeting?", "audio": "audio/lessons/INT3-U03-L04/cue-05-9354d527.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U03-L04/drill-05-dbd20496.m4a", "slow": "audio/lessons/INT3-U03-L04/drill-05-dbd20496.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I always lose track of time reading.",
+      "ko": "책 읽다 보면 늘 시간 가는 줄 몰라요.",
+      "point": "시제: 현재형 습관 always lose",
+      "cue": { "lang": "en", "text": "Do you read a lot? You always have a book with you.", "audio": "audio/lessons/INT3-U03-L04/cue-06-31879f8f.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U03-L04/drill-06-72147c19.m4a", "slow": "audio/lessons/INT3-U03-L04/drill-06-72147c19.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Your call with the client was supposed to start at two. It's two-thirty!", "ko": "고객 통화 2시에 시작하기로 했잖아요. 지금 2시 반이에요!", "audio": "audio/lessons/INT3-U03-L04/rp-01-28a6140e.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Sorry, I totally lost track of time.",
+        "exampleKo": "죄송해요, 시간 가는 줄 몰랐어요.",
+        "requiredKeywords": ["totally", "lost track", "time"]
+      },
+      { "no": 3, "speaker": "partner", "en": "The team lunch for my birthday was yesterday. Where were you?", "ko": "제 생일 팀 점심이 어제였어요. 어디 계셨어요?", "audio": "audio/lessons/INT3-U03-L04/rp-03-f747d663.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Sorry, I totally lost track of the date.",
+        "exampleKo": "죄송해요, 날짜 가는 줄 몰랐어요.",
+        "requiredKeywords": ["lost track", "the date"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "You two were supposed to return the rental bikes by five. It's almost seven.",
+        "ko": "두 분 대여 자전거 5시까지 반납하셨어야 해요. 벌써 7시 다 됐어요.",
+        "audio": "audio/lessons/INT3-U03-L04/rp-05-64acb7aa.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We totally lost track of time.",
+        "exampleKo": "저희가 시간 가는 줄 완전히 몰랐어요.",
+        "requiredKeywords": ["We", "lost track", "time"]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Sorry I'm late from lunch again. That bookstore next door is dangerous.",
+        "ko": "점심 먹고 또 늦게 와서 미안해요. 옆 서점은 들어가면 위험해요.",
+        "audio": "audio/lessons/INT3-U03-L04/rp-07-ed7ffc38.m4a"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you lose track of time again?",
+        "exampleKo": "또 시간 가는 줄 몰랐어요?",
+        "requiredKeywords": ["Did you", "lose track", "again"]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Were you watching videos at your desk again? You missed the whole meeting.",
+        "ko": "또 자리에서 영상 보고 있었어요? 회의 통째로 놓쳤잖아요.",
+        "audio": "audio/lessons/INT3-U03-L04/rp-09-bd47d650.m4a"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't lose track of time, I swear.",
+        "exampleKo": "시간 놓친 거 아니에요, 진짜로요.",
+        "requiredKeywords": ["didn't", "lose track", "I swear"]
+      },
+      { "no": 11, "speaker": "partner", "en": "You stayed at the library until it closed again? Didn't you get hungry?", "ko": "또 도서관 문 닫을 때까지 있었어요? 배 안 고팠어요?", "audio": "audio/lessons/INT3-U03-L04/rp-11-401f51ff.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I always lose track of time reading.",
+        "exampleKo": "책 읽다 보면 늘 시간 가는 줄 몰라요.",
+        "requiredKeywords": ["always", "reading"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U03-L02",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 3,
+  "unitTitle": "계획과 실행",
+  "lessonNo": 2,
+  "lessonTitle": "시간을 어떻게 보냈는지 말하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I spent the whole weekend cleaning.",
+    "ko": "주말 내내 청소만 했어요.",
+    "stress": "I SPENT the WHOLE WEEKend CLEANing.",
+    "audio": {
+      "normal": "int3-u03-l02_key.mp3",
+      "slow": "int3-u03-l02_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'주말 내내 청소하면서 보냈다'는 뜻입니다. 월요일에 주말을 어떻게 보냈냐는 질문에 자주 씁니다.",
+      "spend + 시간 + 동사ing는 '~하면서 시간을 보내다'입니다. spend 뒤에 to clean처럼 to를 쓰지 않습니다.",
+      "the whole weekend는 '주말 내내'입니다. all weekend라고 해도 같은 뜻입니다.",
+      "spent는 spend의 과거형입니다. 지난 주말 이야기이므로 spent로 말합니다."
+    ],
+    "en": "Say \"I spent the whole weekend cleaning\" when cleaning took up all of your weekend. Use \"spend\" + time + a verb with -ing.",
+    "enKo": "주말을 전부 청소하는 데 썼을 때 \"I spent the whole weekend cleaning\"이라고 합니다. \"spend\" + 시간 + -ing 동사로 씁니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "SPENT, WHOLE, WEEK, CLEAN에 힘을 줍니다. the는 아주 약하게 지나갑니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "spent the는 t가 거의 안 들려 '스펜더'처럼 이어집니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "whole은 '홀'이 아니라 입을 둥글게 오므려 '호울'처럼 냅니다. 끝의 l은 혀끝을 윗잇몸에 붙입니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I spent the whole weekend to clean.",
+      "right": "I spent the whole weekend cleaning.",
+      "note": "spend 뒤에는 to 부정사가 아니라 -ing를 씁니다."
+    },
+    {
+      "wrong": "I cleaned during all weekend.",
+      "right": "I spent the whole weekend cleaning.",
+      "note": "during 뒤에 all weekend를 붙이지 않습니다. '주말 내내'는 the whole weekend로 충분합니다."
+    },
+    {
+      "wrong": "I used the whole weekend for cleaning.",
+      "right": "I spent the whole weekend cleaning.",
+      "note": "'시간을 쓰다'를 use로 직역하면 어색합니다. 시간은 spend로 씁니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "월요일 아침, 사무실 탕비실에서 동료와 마주쳤습니다.",
+    "partnerRole": "동료",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Morning! How was your weekend? Did you do anything fun?",
+        "ko": "좋은 아침이에요! 주말 어땠어요? 재밌는 거 했어요?",
+        "audio": "int3-u03-l02_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Not really. I spent the whole weekend cleaning.",
+        "ko": "별로요. 주말 내내 청소만 했어요.",
+        "audio": "int3-u03-l02_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "The whole weekend? Was your place really that messy?",
+        "ko": "주말 내내요? 집이 그렇게 지저분했어요?",
+        "audio": "int3-u03-l02_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "My parents are visiting next week, so I had to.",
+        "ko": "다음 주에 부모님이 오셔서 어쩔 수 없었어요.",
+        "audio": "int3-u03-l02_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "That makes sense. At least it's done now, right?",
+        "ko": "그럴 만하네요. 그래도 이제 다 끝났죠?",
+        "audio": "int3-u03-l02_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Almost. I still have to tackle the garage.",
+        "ko": "거의요. 아직 차고 정리가 남았어요.",
+        "audio": "int3-u03-l02_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "That makes sense.",
+        "ko": "'그럴 만하네요', '이해가 돼요'. 상대의 사정을 듣고 납득할 때 씁니다."
+      },
+      {
+        "en": "tackle",
+        "ko": "'(힘든 일에) 달려들다, 손대다'. 귀찮거나 큰 일을 처리할 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I spent the whole weekend cleaning.",
+      "ko": "주말 내내 청소만 했어요.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "So, what did you get up to over the weekend?"
+      },
+      "audio": {
+        "normal": "int3-u03-l02_drill_01.mp3",
+        "slow": "int3-u03-l02_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I spent the whole day studying.",
+      "ko": "하루 종일 공부했어요.",
+      "point": "단어 교체: weekend cleaning → day studying",
+      "cue": {
+        "lang": "en",
+        "text": "Why didn't you come to the beach with us yesterday?"
+      },
+      "audio": {
+        "normal": "int3-u03-l02_drill_02.mp3",
+        "slow": "int3-u03-l02_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "My son spent the whole weekend gaming.",
+      "ko": "아들이 주말 내내 게임만 했어요.",
+      "point": "주어 변경: I → my son",
+      "cue": {
+        "lang": "en",
+        "text": "Did your son finish his homework this weekend?"
+      },
+      "audio": {
+        "normal": "int3-u03-l02_drill_03.mp3",
+        "slow": "int3-u03-l02_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "How did you spend your weekend?",
+      "ko": "주말 어떻게 보내셨어요?",
+      "point": "질문형: How did you spend ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "월요일 아침 동료를 만났습니다. 주말을 어떻게 보냈는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u03-l02_drill_04.mp3",
+        "slow": "int3-u03-l02_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "I didn't spend much time cleaning.",
+      "ko": "청소하는 데 시간을 별로 안 썼어요.",
+      "point": "부정형: didn't spend much time",
+      "cue": {
+        "lang": "en",
+        "text": "Did cleaning out the closet take you all day?"
+      },
+      "audio": {
+        "normal": "int3-u03-l02_drill_05.mp3",
+        "slow": "int3-u03-l02_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I'll spend the whole weekend packing.",
+      "ko": "주말 내내 짐을 쌀 거예요.",
+      "point": "시제: 미래형 will + packing",
+      "cue": {
+        "lang": "en",
+        "text": "Is your new place ready? When are you moving?"
+      },
+      "audio": {
+        "normal": "int3-u03-l02_drill_06.mp3",
+        "slow": "int3-u03-l02_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Your apartment looks amazing! Did you hire someone, or do it all yourself?",
+        "ko": "집 완전 깨끗하네요! 사람 불렀어요, 아니면 혼자 다 했어요?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I spent the whole weekend cleaning.",
+        "exampleKo": "주말 내내 청소만 했어요.",
+        "requiredKeywords": [
+          "spent",
+          "whole weekend",
+          "cleaning"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "You missed the barbecue yesterday. Was it because of your exam today?",
+        "ko": "어제 바비큐 파티에 안 오셨잖아요. 오늘 시험 때문이었어요?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I spent the whole day studying.",
+        "exampleKo": "하루 종일 공부했어요.",
+        "requiredKeywords": [
+          "whole day",
+          "studying"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Did your son like the new video game he got for his birthday?",
+        "ko": "아드님이 생일 선물로 받은 새 게임 좋아했어요?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My son spent the whole weekend gaming.",
+        "exampleKo": "아들이 주말 내내 게임만 했어요.",
+        "requiredKeywords": [
+          "My son",
+          "gaming"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Ugh, I'm so tired. My weekend was not relaxing at all.",
+        "ko": "아, 너무 피곤해요. 주말에 전혀 못 쉬었어요."
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How did you spend your weekend?",
+        "exampleKo": "주말 어떻게 보내셨어요?",
+        "requiredKeywords": [
+          "How did you",
+          "spend",
+          "weekend"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Your desk was a mess on Friday. Did it take you all morning to clean?",
+        "ko": "금요일에 책상 엉망이었잖아요. 치우는 데 오전 내내 걸렸어요?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't spend much time cleaning.",
+        "exampleKo": "청소하는 데 시간을 별로 안 썼어요.",
+        "requiredKeywords": [
+          "didn't",
+          "much time",
+          "cleaning"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "You're moving out on Monday, right? Want to hang out this weekend?",
+        "ko": "월요일에 이사 나가시죠? 이번 주말에 같이 놀래요?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'll spend the whole weekend packing.",
+        "exampleKo": "주말 내내 짐을 쌀 거예요.",
+        "requiredKeywords": [
+          "I'll spend",
+          "packing"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

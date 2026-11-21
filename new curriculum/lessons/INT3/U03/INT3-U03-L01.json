@@ -1,0 +1,366 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U03-L01",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 3,
+  "unitTitle": "계획과 실행",
+  "lessonNo": 1,
+  "lessonTitle": "근황 나누기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I've been swamped with work lately.",
+    "ko": "요즘 일 때문에 정신없이 바빴어.",
+    "stress": "I've been SWAMPED with WORK LATEly.",
+    "audio": {
+      "normal": "int3-u03-l01_key.mp3",
+      "slow": "int3-u03-l01_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'요즘 일이 너무 많아서 정신없었다'는 뜻입니다. 오랜만에 만난 사람이 근황을 물을 때 바로 쓸 수 있습니다.",
+      "swamped는 원래 '물에 잠긴'이라는 뜻입니다. 할 일에 파묻혀 숨 돌릴 틈이 없다는 느낌입니다.",
+      "I've been busy.보다 훨씬 바쁘다는 느낌이 강합니다. 비슷한 말로 I've been slammed at work.도 씁니다.",
+      "I've been + 형용사 + lately는 '요즘 계속 ~한 상태'라는 현재완료입니다. 지금도 이어지고 있다는 뜻이 담깁니다."
+    ],
+    "en": "Say \"I've been swamped with work lately\" when you have had too much work recently. \"Swamped\" means very, very busy.",
+    "enKo": "최근에 일이 너무 많았을 때 \"I've been swamped with work lately\"라고 합니다. \"Swamped\"는 아주아주 바쁘다는 뜻입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "SWAMPED, WORK, LATE에 힘을 줍니다. I've been은 '아빈'처럼 약하고 빠르게 지나갑니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "swamped with는 끊지 않고 '스웜트위드'처럼 이어집니다. -ped의 d는 거의 t처럼 짧게 들립니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "work의 or는 혀를 말아 '워r크'처럼 냅니다. 입을 크게 벌리면 walk로 들리니 주의합니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I was very busy because of work these days.",
+      "right": "I've been swamped with work lately.",
+      "note": "'요즘'은 지금까지 이어지는 일이라 과거형 was보다 I've been이 자연스럽습니다."
+    },
+    {
+      "wrong": "I'm swamped of work lately.",
+      "right": "I've been swamped with work lately.",
+      "note": "swamped 뒤에는 of가 아니라 with를 씁니다."
+    },
+    {
+      "wrong": "Work makes me so busy lately.",
+      "right": "I've been swamped with work lately.",
+      "note": "일을 주어로 한 직역은 어색합니다. 사람을 주어로 말합니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "몇 주 만에 동네 카페에서 친구를 우연히 만났습니다.",
+    "partnerRole": "친구",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Hey, stranger! I haven't seen you in weeks. Where have you been?",
+        "ko": "야, 이게 누구야! 몇 주 동안 못 봤네. 어디 있었어?",
+        "audio": "int3-u03-l01_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "I know, sorry. I've been swamped with work lately.",
+        "ko": "그러게, 미안. 요즘 일 때문에 정신없이 바빴어.",
+        "audio": "int3-u03-l01_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Still working on that big project you told me about?",
+        "ko": "전에 말했던 그 큰 프로젝트 아직 하는 거야?",
+        "audio": "int3-u03-l01_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Yeah, the deadline's next Friday. I'm barely sleeping.",
+        "ko": "응, 마감이 다음 주 금요일이야. 잠도 거의 못 자.",
+        "audio": "int3-u03-l01_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "That sounds rough. Once it's over, let's grab dinner and catch up.",
+        "ko": "힘들겠다. 끝나면 저녁 먹으면서 밀린 얘기 하자.",
+        "audio": "int3-u03-l01_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Definitely. I'll text you as soon as I'm free.",
+        "ko": "당연하지. 한가해지면 바로 문자할게.",
+        "audio": "int3-u03-l01_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "Hey, stranger!",
+        "ko": "'이게 누구야!'. 오랜만에 본 친구에게 장난스럽게 하는 인사입니다."
+      },
+      {
+        "en": "catch up",
+        "ko": "'밀린 이야기를 나누다'. 오랜만에 만나 서로 근황을 주고받을 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I've been swamped with work lately.",
+      "ko": "요즘 일 때문에 정신없이 바빴어.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "Hey, you look exhausted. What's been going on with you?"
+      },
+      "audio": {
+        "normal": "int3-u03-l01_drill_01.mp3",
+        "slow": "int3-u03-l01_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I've been swamped with wedding plans lately.",
+      "ko": "요즘 결혼 준비 때문에 정신없이 바빴어.",
+      "point": "단어 교체: work → wedding plans",
+      "cue": {
+        "lang": "en",
+        "text": "You haven't answered my texts in a while. Busy with something?"
+      },
+      "audio": {
+        "normal": "int3-u03-l01_drill_02.mp3",
+        "slow": "int3-u03-l01_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "We've been swamped with orders lately.",
+      "ko": "요즘 주문이 밀려서 우리 가게 정신없이 바빴어.",
+      "point": "주어 변경: I → we (가게 입장)",
+      "cue": {
+        "lang": "en",
+        "text": "Your bakery always seems so busy now. How's business?"
+      },
+      "audio": {
+        "normal": "int3-u03-l01_drill_03.mp3",
+        "slow": "int3-u03-l01_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "Have you been swamped with work lately?",
+      "ko": "요즘 일 때문에 많이 바빴어?",
+      "point": "질문형: Have you been ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "친구가 요즘 통 연락이 없었습니다. 일 때문에 많이 바빴는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u03-l01_drill_04.mp3",
+        "slow": "int3-u03-l01_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "I haven't been that swamped lately.",
+      "ko": "요즘은 그렇게 바쁘진 않았어.",
+      "point": "부정형: haven't been that swamped",
+      "cue": {
+        "lang": "en",
+        "text": "Is work still crazy for you, or has it calmed down?"
+      },
+      "audio": {
+        "normal": "int3-u03-l01_drill_05.mp3",
+        "slow": "int3-u03-l01_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I was swamped with work last month.",
+      "ko": "지난달엔 일 때문에 정신없이 바빴어.",
+      "point": "시제: 과거형 was + last month",
+      "cue": {
+        "lang": "en",
+        "text": "Why did you miss the reunion last month?"
+      },
+      "audio": {
+        "normal": "int3-u03-l01_drill_06.mp3",
+        "slow": "int3-u03-l01_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "You've been leaving the office at ten every night. Is everything okay?",
+        "ko": "요즘 매일 밤 10시에 퇴근하던데. 괜찮아?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've been swamped with work lately.",
+        "exampleKo": "요즘 일 때문에 정신없이 바빴어.",
+        "requiredKeywords": [
+          "swamped",
+          "work",
+          "lately"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "I heard you got engaged! Is that why you skipped book club this month?",
+        "ko": "약혼했다며! 그래서 이번 달 독서 모임 빠진 거야?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've been swamped with wedding plans lately.",
+        "exampleKo": "요즘 결혼 준비 때문에 정신없이 바빴어.",
+        "requiredKeywords": [
+          "wedding plans",
+          "lately"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "There's a line out the door at your bakery every morning now. What happened?",
+        "ko": "요즘 아침마다 너희 빵집 밖까지 줄이 서 있던데. 무슨 일이야?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We've been swamped with orders lately.",
+        "exampleKo": "요즘 주문이 밀려서 우리 가게 정신없이 바빴어.",
+        "requiredKeywords": [
+          "We",
+          "orders",
+          "lately"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Sorry I missed your call again. Things at the office have been... a lot.",
+        "ko": "또 전화 못 받아서 미안. 요즘 회사 일이 좀... 많아서."
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Have you been swamped with work lately?",
+        "exampleKo": "요즘 일 때문에 많이 바빴어?",
+        "requiredKeywords": [
+          "Have you",
+          "swamped",
+          "lately"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Last time we talked, you were working weekends. Is it still that bad?",
+        "ko": "지난번 얘기할 땐 주말에도 일했잖아. 아직도 그렇게 심해?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I haven't been that swamped lately.",
+        "exampleKo": "요즘은 그렇게 바쁘진 않았어.",
+        "requiredKeywords": [
+          "haven't",
+          "that swamped"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "You never replied to my message last month. Did you even see it?",
+        "ko": "지난달에 내가 보낸 메시지 답 안 했잖아. 보긴 했어?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I was swamped with work last month.",
+        "exampleKo": "지난달엔 일 때문에 정신없이 바빴어.",
+        "requiredKeywords": [
+          "was swamped",
+          "last month"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

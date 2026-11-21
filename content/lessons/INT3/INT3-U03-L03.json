@@ -1,0 +1,207 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U03-L03",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 3,
+  "unitTitle": "계획과 실행",
+  "lessonNo": 3,
+  "lessonTitle": "계획 변경 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "We ended up staying home instead.",
+    "ko": "결국 그냥 집에 있었어.",
+    "stress": "We ENDed up STAYing HOME inSTEAD.",
+    "audio": { "normal": "audio/lessons/INT3-U03-L03/key-31430cc8.m4a", "slow": "audio/lessons/INT3-U03-L03/key-31430cc8.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "'원래 계획과 달리 결국 집에 있었다'는 뜻입니다. 계획이 틀어져서 다른 걸 하게 됐을 때 씁니다.",
+      "end up + 동사ing는 '(뜻하지 않게) 결국 ~하게 되다'입니다. end up 뒤에 to stay처럼 to를 쓰지 않습니다.",
+      "instead는 '(원래 하려던 것) 대신에'라는 뜻으로, 보통 문장 맨 끝에 붙입니다.",
+      "Our plans fell through.는 '계획이 무산됐어'라는 말입니다. ended up은 그 뒤에 실제로 한 일까지 말해 줍니다."
+    ],
+    "en": "Say \"We ended up staying home instead\" when your plans changed and you stayed home. \"End up\" means what happened in the end, often not as planned.",
+    "enKo": "계획이 바뀌어서 집에 있었을 때 \"We ended up staying home instead\"라고 합니다. \"End up\"은 결국 어떻게 됐는지를 말하며, 계획대로가 아닐 때가 많습니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "END, STAY, HOME, STEAD에 힘을 줍니다. instead의 in은 짧고 약하게 지나갑니다." },
+    { "focus": "연음", "tip": "ended up은 끊지 않고 '엔디덥'처럼 이어집니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "home의 o는 '홈'이 아니라 입을 둥글게 오므리며 '호움'처럼 냅니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "We finally stayed home.", "right": "We ended up staying home instead.", "note": "finally는 '드디어'라는 좋은 뜻입니다. 계획이 틀어진 '결국'에는 ended up을 씁니다." },
+    { "wrong": "We ended up to stay home.", "right": "We ended up staying home instead.", "note": "end up 뒤에는 to 부정사가 아니라 -ing를 씁니다." },
+    { "wrong": "We stayed home instead of.", "right": "We ended up staying home instead.", "note": "instead of 뒤에는 반드시 말이 와야 합니다. 문장 끝에서는 of 없이 instead만 씁니다." }
+  ],
+  "dialogue": {
+    "situation": "출장에서 돌아온 룸메이트가 지난 주말 캠핑이 어땠는지 묻습니다.",
+    "partnerRole": "룸메이트",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "I'm back! So how was the camping trip with Dana and Leo?", "ko": "나 왔어! 그래서 데이나랑 레오랑 간 캠핑 어땠어?", "audio": "audio/lessons/INT3-U03-L03/dlg-01-6ee51fe0.m4a" },
+      { "no": 2, "speaker": "me", "en": "It didn't happen. We ended up staying home instead.", "ko": "못 갔어. 결국 그냥 집에 있었어.", "audio": "audio/lessons/INT3-U03-L03/dlg-02-5823ff26.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "What? You'd been planning that trip for a month!", "ko": "뭐? 한 달 동안 그 여행 계획했잖아!", "audio": "audio/lessons/INT3-U03-L03/dlg-03-c9bb3b6d.m4a" },
+      { "no": 4, "speaker": "me", "en": "I know. It rained all weekend, so we called it off.", "ko": "그러니까. 주말 내내 비가 와서 취소했어.", "audio": "audio/lessons/INT3-U03-L03/dlg-04-9ac4e51b.m4a" },
+      { "no": 5, "speaker": "partner", "en": "That's too bad. So what did you guys do here?", "ko": "아쉽다. 그럼 여기서 뭐 했어?", "audio": "audio/lessons/INT3-U03-L03/dlg-05-fa6bddfc.m4a" },
+      { "no": 6, "speaker": "me", "en": "We made s'mores in the oven and watched movies.", "ko": "오븐에 스모어 구워 먹고 영화 봤어.", "audio": "audio/lessons/INT3-U03-L03/dlg-06-52a2a5ae.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "call it off", "ko": "'(계획을) 취소하다'. cancel보다 일상 대화에서 더 자주 씁니다." },
+      { "en": "That's too bad.", "ko": "'아쉽다', '안됐다'. 상대의 안 좋은 소식에 가볍게 공감할 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "We ended up staying home instead.",
+      "ko": "결국 그냥 집에 있었어.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Didn't you have tickets to the concert last night? How was it?", "audio": "audio/lessons/INT3-U03-L03/cue-01-555bf04e.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U03-L03/drill-01-31430cc8.m4a", "slow": "audio/lessons/INT3-U03-L03/drill-01-31430cc8.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "We ended up eating at home instead.",
+      "ko": "결국 그냥 집에서 밥 먹었어.",
+      "point": "단어 교체: staying → eating at home",
+      "cue": { "lang": "en", "text": "Did you get a table at that new Thai place?", "audio": "audio/lessons/INT3-U03-L03/cue-02-03c92f10.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U03-L03/drill-02-4b45c763.m4a", "slow": "audio/lessons/INT3-U03-L03/drill-02-4b45c763.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "Dana ended up staying home instead.",
+      "ko": "데이나는 결국 그냥 집에 있었어.",
+      "point": "주어 변경: we → Dana (3인칭)",
+      "cue": { "lang": "en", "text": "How was the hike? Did Dana like the view?", "audio": "audio/lessons/INT3-U03-L03/cue-03-c23ec3d6.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U03-L03/drill-03-5d2630af.m4a", "slow": "audio/lessons/INT3-U03-L03/drill-03-5d2630af.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Did you end up staying home?",
+      "ko": "너 결국 집에 있었어?",
+      "point": "질문형: Did you end up ~?",
+      "cue": { "lang": "ko", "text": "친구가 어제 몸이 안 좋아서 외출을 망설였습니다. 결국 집에 있었는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U03-L03/drill-04-0ee3068f.m4a", "slow": "audio/lessons/INT3-U03-L03/drill-04-0ee3068f.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "We didn't end up staying home.",
+      "ko": "결국 집에 있진 않았어.",
+      "point": "부정형: didn't end up",
+      "cue": { "lang": "en", "text": "Did the rain ruin your plans yesterday?", "audio": "audio/lessons/INT3-U03-L03/cue-05-529b92f4.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U03-L03/drill-05-9b537779.m4a", "slow": "audio/lessons/INT3-U03-L03/drill-05-9b537779.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "We'll probably end up staying home.",
+      "ko": "아마 결국 집에 있게 될 거야.",
+      "point": "시제: 미래 추측 will probably",
+      "cue": { "lang": "en", "text": "Your sister has a fever. Are you still going to the parade tomorrow?", "audio": "audio/lessons/INT3-U03-L03/cue-06-19c6c46b.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U03-L03/drill-06-559a7e82.m4a", "slow": "audio/lessons/INT3-U03-L03/drill-06-559a7e82.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "You were so excited about the Tahoe ski trip. Did you make it up there?", "ko": "타호 스키 여행 엄청 기대했잖아. 결국 갔어?", "audio": "audio/lessons/INT3-U03-L03/rp-01-96d14062.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We ended up staying home instead.",
+        "exampleKo": "결국 그냥 집에 있었어.",
+        "requiredKeywords": ["ended up", "staying home", "instead"]
+      },
+      { "no": 3, "speaker": "partner", "en": "I saw you had a reservation at that fancy steakhouse. Was it worth it?", "ko": "그 비싼 스테이크집 예약했던데. 갈 만했어?", "audio": "audio/lessons/INT3-U03-L03/rp-03-c408c5b4.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We ended up eating at home instead.",
+        "exampleKo": "결국 그냥 집에서 밥 먹었어.",
+        "requiredKeywords": ["eating at home", "instead"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I didn't see Dana at the beach yesterday. Wasn't she coming with you guys?",
+        "ko": "어제 해변에서 데이나 못 봤는데. 너희랑 같이 온다고 하지 않았어?",
+        "audio": "audio/lessons/INT3-U03-L03/rp-05-4f9741f5.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Dana ended up staying home instead.",
+        "exampleKo": "데이나는 결국 그냥 집에 있었어.",
+        "requiredKeywords": ["Dana", "staying home"]
+      },
+      { "no": 7, "speaker": "partner", "en": "The storm got really bad last night. I almost didn't drive to my mom's.", "ko": "어젯밤 폭풍이 엄청 심해서, 엄마네 차 몰고 갈까 말까 했어.", "audio": "audio/lessons/INT3-U03-L03/rp-07-87fca1ad.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you end up staying home?",
+        "exampleKo": "너 결국 집에 있었어?",
+        "requiredKeywords": ["Did you", "end up", "staying home"]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Your car broke down Friday. So I'm guessing you guys stayed in all weekend?",
+        "ko": "금요일에 차 고장 났잖아. 그럼 주말 내내 집에만 있었겠네?",
+        "audio": "audio/lessons/INT3-U03-L03/rp-09-3865efb6.m4a"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We didn't end up staying home.",
+        "exampleKo": "결국 집에 있진 않았어.",
+        "requiredKeywords": ["didn't", "end up", "staying home"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Are you still doing the picnic on Saturday? The forecast says thunderstorms.", "ko": "토요일에 아직 피크닉 가? 일기예보에 뇌우 온대.", "audio": "audio/lessons/INT3-U03-L03/rp-11-4bde630b.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We'll probably end up staying home.",
+        "exampleKo": "아마 결국 집에 있게 될 거야.",
+        "requiredKeywords": ["probably", "staying home"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
