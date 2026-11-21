@@ -1,0 +1,363 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U04-L05",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 4,
+  "unitTitle": "가정 & 상상",
+  "lessonNo": 5,
+  "lessonTitle": "놀람 표현하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Wait, seriously? I had no idea!",
+    "ko": "잠깐, 진짜? 전혀 몰랐어!",
+    "stress": "WAIT, SEriously? I had NO iDEa!",
+    "audio": {
+      "normal": "int3-u04-l05_key.mp3",
+      "slow": "int3-u04-l05_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'잠깐, 진짜? 전혀 몰랐어!'라는 뜻입니다. 생각지도 못한 소식을 듣고 깜짝 놀랐을 때 씁니다.",
+      "Wait는 '잠깐만'이라는 뜻으로, 놀라서 상대 말을 멈춰 세울 때 앞에 붙입니다.",
+      "Seriously?는 '진짜?', '정말이야?'입니다. Really?보다 놀란 느낌이 더 큽니다.",
+      "I had no idea는 '전혀 몰랐어'입니다. 지금까지 몰랐던 거라 과거형 had를 씁니다. I didn't know보다 놀람이 강합니다."
+    ],
+    "en": "Say \"Wait, seriously? I had no idea!\" when news really surprises you. \"I had no idea\" means you didn't know at all.",
+    "enKo": "소식을 듣고 정말 놀랐을 때 \"Wait, seriously? I had no idea!\"라고 합니다. \"I had no idea\"는 전혀 몰랐다는 뜻입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "WAIT, SE, NO, DE에 힘을 줍니다. idea는 앞이 아니라 가운데 DE에 강세가 옵니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "had no는 d가 거의 안 들려 '해노'처럼 이어집니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "seriously의 r은 혀를 입천장에 대지 않고 굴려서 냅니다. '시리어슬리'보다 '씨어r리어슬리'에 가깝습니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I didn't have any idea!",
+      "right": "I had no idea!",
+      "note": "틀리진 않지만 길고 놀란 느낌이 약합니다."
+    },
+    {
+      "wrong": "Wait, really serious?",
+      "right": "Wait, seriously?",
+      "note": "serious는 '심각한'이라는 형용사입니다. '진짜?'는 seriously?로 말합니다."
+    },
+    {
+      "wrong": "I don't know that!",
+      "right": "I had no idea!",
+      "note": "지금 처음 알게 된 일이라 현재형 don't know는 어색합니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "점심시간에 친구가 아는 사람들의 소식을 전합니다.",
+    "partnerRole": "친구",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Did you hear? Jenna and Tom got engaged last weekend.",
+        "ko": "얘기 들었어? 제나랑 톰이 지난 주말에 약혼했대.",
+        "audio": "int3-u04-l05_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Wait, seriously? I had no idea!",
+        "ko": "잠깐, 진짜? 전혀 몰랐어!",
+        "audio": "int3-u04-l05_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Yeah, he proposed on a hike at sunset.",
+        "ko": "응, 해 질 녘에 등산하다가 청혼했대.",
+        "audio": "int3-u04-l05_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "That's so sweet. How long have they been dating?",
+        "ko": "완전 로맨틱하다. 둘이 사귄 지 얼마나 됐지?",
+        "audio": "int3-u04-l05_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Only about a year, but I guess they just knew.",
+        "ko": "1년 정도밖에 안 됐는데, 서로 딱 확신이 있었나 봐.",
+        "audio": "int3-u04-l05_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Good for them. We should take them out to celebrate.",
+        "ko": "잘됐다. 우리가 축하 자리 한번 만들어 주자.",
+        "audio": "int3-u04-l05_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "Good for them.",
+        "ko": "'잘됐다'. 다른 사람에게 좋은 일이 생겼을 때 함께 기뻐하며 씁니다."
+      },
+      {
+        "en": "take someone out",
+        "ko": "'~를 데리고 나가서 (밥 등을) 사 주다'. take them out to celebrate는 '축하 자리를 만들어 주다'."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Wait, seriously? I had no idea!",
+      "ko": "잠깐, 진짜? 전혀 몰랐어!",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "Guess what? Our old high school teacher is going to be on TV tonight!"
+      },
+      "audio": {
+        "normal": "int3-u04-l05_drill_01.mp3",
+        "slow": "int3-u04-l05_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "Wait, seriously? I had no clue!",
+      "ko": "잠깐, 진짜? 하나도 몰랐어!",
+      "point": "단어 교체: idea → clue",
+      "cue": {
+        "lang": "en",
+        "text": "Did you know our coworker Ben speaks five languages?"
+      },
+      "audio": {
+        "normal": "int3-u04-l05_drill_02.mp3",
+        "slow": "int3-u04-l05_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "Wow, she had no idea at all.",
+      "ko": "와, 걔는 정말 전혀 몰랐대.",
+      "point": "주어 변경: I → she",
+      "cue": {
+        "lang": "en",
+        "text": "Did Amy know about her own surprise party?"
+      },
+      "audio": {
+        "normal": "int3-u04-l05_drill_03.mp3",
+        "slow": "int3-u04-l05_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I have no idea what happened.",
+      "ko": "무슨 일이 있었는지 전혀 모르겠어.",
+      "point": "시제: 현재 have no idea",
+      "cue": {
+        "lang": "en",
+        "text": "Why is the street blocked off with police tape?"
+      },
+      "audio": {
+        "normal": "int3-u04-l05_drill_04.mp3",
+        "slow": "int3-u04-l05_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Wait, seriously? Did you have any idea?",
+      "ko": "잠깐, 진짜? 너는 알고 있었어?",
+      "point": "질문형: Did you have any idea?",
+      "cue": {
+        "lang": "ko",
+        "text": "친구가 동료의 갑작스러운 퇴사 소식을 전합니다. 친구는 미리 알고 있었는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u04-l05_drill_05.mp3",
+        "slow": "int3-u04-l05_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "Wait, seriously? I didn't know that!",
+      "ko": "잠깐, 진짜? 그건 몰랐어!",
+      "point": "부정형: didn't know",
+      "cue": {
+        "lang": "en",
+        "text": "Did you know that tomatoes are actually a fruit?"
+      },
+      "audio": {
+        "normal": "int3-u04-l05_drill_06.mp3",
+        "slow": "int3-u04-l05_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Remember the photo I sent to that contest? It won first prize, and they're printing it!",
+        "ko": "내가 대회에 보낸 사진 기억나? 그게 1등 해서 인쇄된대!"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Wait, seriously? I had no idea!",
+        "exampleKo": "잠깐, 진짜? 전혀 몰랐어!",
+        "requiredKeywords": [
+          "seriously",
+          "no idea"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Did you know our landlord used to be a famous chef? He was on a cooking show!",
+        "ko": "우리 집주인이 원래 유명한 요리사였던 거 알아? 요리 프로그램에도 나왔대!"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Wait, seriously? I had no clue!",
+        "exampleKo": "잠깐, 진짜? 하나도 몰랐어!",
+        "requiredKeywords": [
+          "seriously",
+          "no clue"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "We threw Lisa a surprise party last night. Did she suspect anything?",
+        "ko": "어젯밤에 리사 깜짝 파티 해 줬잖아. 걔 눈치챈 것 같았어?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Wow, she had no idea at all.",
+        "exampleKo": "와, 걔는 정말 전혀 몰랐대.",
+        "requiredKeywords": [
+          "she had",
+          "at all"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Hey, why is everyone standing outside the building? Did something happen?",
+        "ko": "야, 왜 다들 건물 밖에 서 있어? 무슨 일 있었어?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I have no idea what happened.",
+        "exampleKo": "무슨 일이 있었는지 전혀 모르겠어.",
+        "requiredKeywords": [
+          "have no idea",
+          "what happened"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Kevin is moving to London next week. Everyone at work just found out today.",
+        "ko": "케빈이 다음 주에 런던으로 이사 간대. 회사 사람들도 오늘 처음 알았어."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Wait, seriously? Did you have any idea?",
+        "exampleKo": "잠깐, 진짜? 너는 알고 있었어?",
+        "requiredKeywords": [
+          "Did you have",
+          "any idea"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Fun fact: this building used to be a chocolate factory a hundred years ago.",
+        "ko": "재밌는 사실 하나 알려 줄게. 이 건물 100년 전엔 초콜릿 공장이었대."
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Wait, seriously? I didn't know that!",
+        "exampleKo": "잠깐, 진짜? 그건 몰랐어!",
+        "requiredKeywords": [
+          "didn't know",
+          "that"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

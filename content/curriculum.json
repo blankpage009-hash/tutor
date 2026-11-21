@@ -391,11 +391,11 @@
               "no": 4,
               "title": "가정 & 상상",
               "lessons": [
-                { "no": 1, "title": "의견 물어보기", "id": "INT3-U04-L01", "ready": false},
-                { "no": 2, "title": "가정 상황 이야기하기 (What would you do?)", "id": "INT3-U04-L02", "ready": false},
-                { "no": 3, "title": "의견 말하기", "id": "INT3-U04-L03", "ready": false},
-                { "no": 4, "title": "소식과 소문에 대해 이야기하기", "id": "INT3-U04-L04", "ready": false},
-                { "no": 5, "title": "놀람 표현하기", "id": "INT3-U04-L05", "ready": false}
+                { "no": 1, "title": "의견 물어보기", "id": "INT3-U04-L01", "ready": true, "file": "lessons/INT3/INT3-U04-L01.json" },
+                { "no": 2, "title": "가정 상황 이야기하기 (What would you do?)", "id": "INT3-U04-L02", "ready": true, "file": "lessons/INT3/INT3-U04-L02.json" },
+                { "no": 3, "title": "의견 말하기", "id": "INT3-U04-L03", "ready": true, "file": "lessons/INT3/INT3-U04-L03.json" },
+                { "no": 4, "title": "소식과 소문에 대해 이야기하기", "id": "INT3-U04-L04", "ready": true, "file": "lessons/INT3/INT3-U04-L04.json" },
+                { "no": 5, "title": "놀람 표현하기", "id": "INT3-U04-L05", "ready": true, "file": "lessons/INT3/INT3-U04-L05.json" }
               ]
             },
             {

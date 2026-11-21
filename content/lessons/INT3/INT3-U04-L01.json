@@ -1,0 +1,207 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U04-L01",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 4,
+  "unitTitle": "가정 & 상상",
+  "lessonNo": 1,
+  "lessonTitle": "의견 물어보기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "What's your take on the new office?",
+    "ko": "새 사무실 어떻게 생각해요?",
+    "stress": "WHAT'S your TAKE on the NEW OFfice?",
+    "audio": { "normal": "audio/lessons/INT3-U04-L01/key-9e60c380.m4a", "slow": "audio/lessons/INT3-U04-L01/key-9e60c380.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "'새 사무실에 대해 어떻게 생각해요?'라는 뜻입니다. 상대의 솔직한 의견이나 느낌을 물을 때 씁니다.",
+      "여기서 take는 '의견, 관점'이라는 명사입니다. What's your take on + 명사로 씁니다.",
+      "What do you think about ~?과 뜻은 같지만, 조금 더 편하고 '당신 생각은 어때요?' 하는 느낌이 납니다.",
+      "take 뒤에는 about이 아니라 on을 씁니다. take on이 짝으로 붙어 다닙니다."
+    ],
+    "en": "Ask \"What's your take on...?\" when you want someone's opinion about something. Here, \"take\" means your view or opinion.",
+    "enKo": "무언가에 대한 상대의 의견을 듣고 싶을 때 \"What's your take on...?\"이라고 묻습니다. 여기서 \"take\"는 생각이나 의견이라는 뜻입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "TAKE와 NEW OFfice에 힘을 줍니다. what's your는 빠르고 가볍게 지나갑니다." },
+    { "focus": "연음", "tip": "what's your는 '왓츄어'처럼, take on은 '테이컨'처럼 이어서 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "office의 o는 '오'가 아니라 입을 크게 벌린 '아'에 가깝습니다. '아피스'처럼 냅니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "How do you think about the new office?", "right": "What's your take on the new office?", "note": "'어떻게 생각해요'를 how로 직역하면 틀립니다. 의견은 what으로 묻습니다." },
+    { "wrong": "What's your take about the new office?", "right": "What's your take on the new office?", "note": "take는 about이 아니라 on과 함께 씁니다." },
+    { "wrong": "What is your opinion of the new office?", "right": "What's your take on the new office?", "note": "틀리진 않지만 딱딱하게 들립니다. 동료끼리는 take를 더 자주 씁니다." }
+  ],
+  "dialogue": {
+    "situation": "회사가 새 사무실로 옮긴 첫 주, 엘리베이터 앞에서 동료와 마주쳤습니다.",
+    "partnerRole": "동료",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "So, we've officially moved in. It still feels kind of weird.", "ko": "이제 정말 이사 온 거네요. 아직 좀 어색해요.", "audio": "audio/lessons/INT3-U04-L01/dlg-01-7c6479a1.m4a" },
+      { "no": 2, "speaker": "me", "en": "Same here. What's your take on the new office?", "ko": "저도요. 새 사무실 어떻게 생각해요?", "audio": "audio/lessons/INT3-U04-L01/dlg-02-7e8422bc.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "I love the view, but the open space is pretty loud.", "ko": "전망은 정말 좋은데, 탁 트인 공간이라 꽤 시끄러워요.", "audio": "audio/lessons/INT3-U04-L01/dlg-03-266886d6.m4a" },
+      { "no": 4, "speaker": "me", "en": "I know what you mean. It's hard to focus sometimes.", "ko": "무슨 말인지 알아요. 가끔 집중하기 힘들더라고요.", "audio": "audio/lessons/INT3-U04-L01/dlg-04-20f5d36e.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Maybe we should grab one of the quiet rooms after lunch.", "ko": "점심 먹고 조용한 방 하나 잡을까요?", "audio": "audio/lessons/INT3-U04-L01/dlg-05-3fbf0729.m4a" },
+      { "no": 6, "speaker": "me", "en": "Good idea. I'll book one for two o'clock.", "ko": "좋은 생각이에요. 제가 두 시로 하나 예약할게요.", "audio": "audio/lessons/INT3-U04-L01/dlg-06-5af471ab.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "I know what you mean.", "ko": "'무슨 말인지 알아요'. 상대 말에 공감할 때 씁니다." },
+      { "en": "grab", "ko": "'(자리·방 등을) 잡다'. 가볍게 얻거나 차지할 때 씁니다. grab a coffee는 '커피 한잔하다'." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "What's your take on the new office?",
+      "ko": "새 사무실 어떻게 생각해요?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "새 사무실로 옮긴 첫 주입니다. 동료에게 새 사무실이 어떤지 의견을 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U04-L01/drill-01-9e60c380.m4a", "slow": "audio/lessons/INT3-U04-L01/drill-01-9e60c380.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "What's your take on the new manager?",
+      "ko": "새 매니저 어떻게 생각해요?",
+      "point": "단어 교체: office → manager",
+      "cue": { "lang": "ko", "text": "팀에 새 매니저가 왔습니다. 동료에게 새 매니저가 어떤지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U04-L01/drill-02-ade51c01.m4a", "slow": "audio/lessons/INT3-U04-L01/drill-02-ade51c01.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "What's their take on the plan?",
+      "ko": "그쪽은 그 계획을 어떻게 생각한대요?",
+      "point": "주어 변경: your → their",
+      "cue": { "lang": "ko", "text": "동료가 다른 팀에 계획을 발표했습니다. 그 사람들은 계획을 어떻게 생각하는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U04-L01/drill-03-3073d81f.m4a", "slow": "audio/lessons/INT3-U04-L01/drill-03-3073d81f.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "What was your take on the meeting?",
+      "ko": "회의 어떻게 보셨어요?",
+      "point": "시제: 과거 What was ~?",
+      "cue": { "lang": "ko", "text": "어제 회의가 끝났습니다. 동료에게 그 회의를 어떻게 봤는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U04-L01/drill-04-efbe7c57.m4a", "slow": "audio/lessons/INT3-U04-L01/drill-04-efbe7c57.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I'd love to hear your take on this.",
+      "ko": "이거에 대한 의견 꼭 듣고 싶어요.",
+      "point": "공손형: I'd love to hear ~",
+      "cue": { "lang": "en", "text": "Do you want me to look over your slides before the meeting?", "audio": "audio/lessons/INT3-U04-L01/cue-05-ff678eda.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U04-L01/drill-05-b2466cb2.m4a", "slow": "audio/lessons/INT3-U04-L01/drill-05-b2466cb2.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I don't have a take on it yet.",
+      "ko": "아직 그거에 대해선 딱히 의견이 없어요.",
+      "point": "부정형: don't have a take",
+      "cue": { "lang": "en", "text": "What do you think about the new parking rules?", "audio": "audio/lessons/INT3-U04-L01/cue-06-bfeb0f63.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U04-L01/drill-06-3b0323ad.m4a", "slow": "audio/lessons/INT3-U04-L01/drill-06-3b0323ad.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "I've been working in the new office for a week, and I have a lot to say.", "ko": "새 사무실에서 일한 지 일주일 됐는데, 할 말이 많아요.", "audio": "audio/lessons/INT3-U04-L01/rp-01-5c35980a.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What's your take on the new office?",
+        "exampleKo": "새 사무실 어떻게 생각해요?",
+        "requiredKeywords": ["What's your take", "new office"]
+      },
+      { "no": 3, "speaker": "partner", "en": "I finally had my first one-on-one meeting with the new manager today.", "ko": "오늘 드디어 새 매니저랑 처음으로 일대일 면담을 했어요.", "audio": "audio/lessons/INT3-U04-L01/rp-03-9f61504d.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What's your take on the new manager?",
+        "exampleKo": "새 매니저 어떻게 생각해요?",
+        "requiredKeywords": ["your take", "new manager"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I presented our plan to the sales team this morning. They asked a lot of questions.",
+        "ko": "오늘 아침 영업팀에 우리 계획을 발표했어요. 질문을 많이 하더라고요.",
+        "audio": "audio/lessons/INT3-U04-L01/rp-05-3cb2ae8d.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What's their take on the plan?",
+        "exampleKo": "그쪽은 그 계획을 어떻게 생각한대요?",
+        "requiredKeywords": ["their take", "the plan"]
+      },
+      { "no": 7, "speaker": "partner", "en": "You were in that long meeting with the clients yesterday too, right?", "ko": "어제 고객들이랑 한 그 긴 회의에 당신도 있었죠?", "audio": "audio/lessons/INT3-U04-L01/rp-07-1a50648f.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What was your take on the meeting?",
+        "exampleKo": "회의 어떻게 보셨어요?",
+        "requiredKeywords": ["What was", "meeting"]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I've worked in sales for ten years. Need a second pair of eyes on your pitch?",
+        "ko": "제가 영업만 10년 했어요. 발표 내용 한번 봐 드릴까요?",
+        "audio": "audio/lessons/INT3-U04-L01/rp-09-44be7ced.m4a"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'd love to hear your take on this.",
+        "exampleKo": "이거에 대한 의견 꼭 듣고 싶어요.",
+        "requiredKeywords": ["I'd love", "hear", "on this"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Everyone's arguing about the new dress code. Whose side are you on?", "ko": "다들 새 복장 규정 때문에 말이 많아요. 당신은 어느 쪽이에요?", "audio": "audio/lessons/INT3-U04-L01/rp-11-e52e26aa.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I don't have a take on it yet.",
+        "exampleKo": "아직 그거에 대해선 딱히 의견이 없어요.",
+        "requiredKeywords": ["don't have", "yet"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

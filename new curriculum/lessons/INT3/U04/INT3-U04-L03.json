@@ -1,0 +1,364 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U04-L03",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 4,
+  "unitTitle": "가정 & 상상",
+  "lessonNo": 3,
+  "lessonTitle": "의견 말하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "If you ask me, it's not worth it.",
+    "ko": "내가 보기엔 그럴 가치 없어.",
+    "stress": "if you ASK me, it's NOT WORTH it.",
+    "audio": {
+      "normal": "int3-u04-l03_key.mp3",
+      "slow": "int3-u04-l03_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'내가 보기엔 그럴 만한 가치가 없어'라는 뜻입니다. 돈이나 시간을 쓸 만하지 않다는 솔직한 의견을 말할 때 씁니다.",
+      "If you ask me는 '내 생각을 말하자면', '내가 보기엔'입니다. 상대가 묻지 않았어도 의견을 꺼낼 때 앞에 붙입니다.",
+      "worth it은 '그만한 가치가 있다'입니다. it's worth it ↔ it's not worth it으로 씁니다.",
+      "In my opinion보다 훨씬 편하고 대화체에 가까운 말투입니다."
+    ],
+    "en": "Say \"If you ask me, it's not worth it\" to give your honest opinion that something isn't worth the money or time. \"If you ask me\" is a casual way to say \"in my opinion.\"",
+    "enKo": "무언가가 돈이나 시간을 쓸 만하지 않다는 솔직한 의견을 말할 때 \"If you ask me, it's not worth it\"이라고 합니다. \"If you ask me\"는 \"in my opinion\"을 편하게 말하는 방식입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "ASK, NOT, WORTH에 힘을 줍니다. if you와 it은 약하게 지나갑니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "ask me는 '애슥미'처럼, worth it은 끊지 않고 '워씻'처럼 이어서 말합니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "worth의 th는 혀끝을 윗니와 아랫니 사이에 살짝 물고 바람을 내보냅니다. '워스'가 되지 않게 주의합니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "If you ask me, it's not worth.",
+      "right": "If you ask me, it's not worth it.",
+      "note": "worth 뒤에는 it이나 대상이 꼭 와야 합니다."
+    },
+    {
+      "wrong": "In my thinking, it's not worth it.",
+      "right": "If you ask me, it's not worth it.",
+      "note": "in my thinking은 원어민이 쓰지 않는 표현입니다."
+    },
+    {
+      "wrong": "It doesn't have value.",
+      "right": "It's not worth it.",
+      "note": "'가치가 없다'를 value로 직역하면 어색합니다. 돈·시간 이야기엔 worth it을 씁니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "저녁에 거실에서 룸메이트가 새 휴대폰 이야기를 꺼냅니다.",
+    "partnerRole": "룸메이트",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I'm thinking about getting the new phone. It's twelve hundred dollars.",
+        "ko": "새로 나온 폰 살까 생각 중이야. 1,200달러래.",
+        "audio": "int3-u04-l03_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Twelve hundred? If you ask me, it's not worth it.",
+        "ko": "1,200달러? 내가 보기엔 그럴 가치 없어.",
+        "audio": "int3-u04-l03_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "But the camera is way better than mine.",
+        "ko": "근데 카메라가 내 거보다 훨씬 좋단 말이야.",
+        "audio": "int3-u04-l03_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Your phone already takes great pictures. You barely use the camera anyway.",
+        "ko": "네 폰도 이미 사진 잘 나와. 어차피 카메라 거의 안 쓰잖아.",
+        "audio": "int3-u04-l03_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Okay, fair point. Maybe I'll wait for a sale.",
+        "ko": "그래, 일리 있네. 할인할 때까지 기다려 볼까.",
+        "audio": "int3-u04-l03_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Good call. Prices always drop after a few months.",
+        "ko": "잘 생각했어. 몇 달 지나면 항상 가격 내려가.",
+        "audio": "int3-u04-l03_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "fair point",
+        "ko": "'일리 있네'. 상대 말이 맞다고 인정할 때 씁니다."
+      },
+      {
+        "en": "Good call.",
+        "ko": "'잘 생각했어', '좋은 판단이야'. 상대의 결정을 칭찬할 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "If you ask me, it's not worth it.",
+      "ko": "내가 보기엔 그럴 가치 없어.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "Do you think I should pay fifty dollars for express shipping?"
+      },
+      "audio": {
+        "normal": "int3-u04-l03_drill_01.mp3",
+        "slow": "int3-u04-l03_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "If you ask me, it's worth the wait.",
+      "ko": "내가 보기엔 기다릴 만해.",
+      "point": "단어 교체: not worth it → worth the wait",
+      "cue": {
+        "lang": "en",
+        "text": "The line for that new ramen place is two hours long. Should we still go?"
+      },
+      "audio": {
+        "normal": "int3-u04-l03_drill_02.mp3",
+        "slow": "int3-u04-l03_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "If you ask me, this one is better.",
+      "ko": "내가 보기엔 이게 더 나아.",
+      "point": "비교: this one is better",
+      "cue": {
+        "lang": "en",
+        "text": "Which jacket should I get, the blue one or the black one?"
+      },
+      "audio": {
+        "normal": "int3-u04-l03_drill_03.mp3",
+        "slow": "int3-u04-l03_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "If you ask me, it wasn't worth it.",
+      "ko": "내가 보기엔 그럴 가치 없었어.",
+      "point": "시제: 과거 wasn't",
+      "cue": {
+        "lang": "en",
+        "text": "So how was that expensive concert last night?"
+      },
+      "audio": {
+        "normal": "int3-u04-l03_drill_04.mp3",
+        "slow": "int3-u04-l03_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Do you think it's worth it?",
+      "ko": "그럴 가치 있다고 생각해?",
+      "point": "질문형: Do you think ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "친구가 비싼 헬스장 연간 회원권을 끊으려고 합니다. 그럴 가치가 있다고 생각하는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u04-l03_drill_05.mp3",
+        "slow": "int3-u04-l03_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I don't think it would be worth it.",
+      "ko": "그럴 가치는 없을 것 같아.",
+      "point": "부정형 + 공손형: I don't think + would",
+      "cue": {
+        "lang": "en",
+        "text": "Should we drive all the way to the city just for that one store?"
+      },
+      "audio": {
+        "normal": "int3-u04-l03_drill_06.mp3",
+        "slow": "int3-u04-l03_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "This weekend course costs five hundred dollars, and it's just basic spreadsheet stuff. Should I sign up?",
+        "ko": "이 주말 강좌가 500달러인데, 그냥 기초 스프레드시트 내용이야. 신청할까?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If you ask me, it's not worth it.",
+        "exampleKo": "내가 보기엔 그럴 가치 없어.",
+        "requiredKeywords": [
+          "ask me",
+          "not worth it"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "The new bakery downtown always has a line out the door. Is it any good?",
+        "ko": "시내에 새로 생긴 빵집은 항상 줄이 밖까지 서 있더라. 거기 맛있어?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If you ask me, it's worth the wait.",
+        "exampleKo": "내가 보기엔 기다릴 만해.",
+        "requiredKeywords": [
+          "worth",
+          "the wait"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I can't decide between these two laptops. Which one would you pick?",
+        "ko": "이 노트북 두 개 중에 못 고르겠어. 너라면 뭐 고를래?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If you ask me, this one is better.",
+        "exampleKo": "내가 보기엔 이게 더 나아.",
+        "requiredKeywords": [
+          "this one",
+          "better"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "You took that pricey cooking class last month, right? How'd it go?",
+        "ko": "너 지난달에 그 비싼 요리 수업 들었지? 어땠어?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If you ask me, it wasn't worth it.",
+        "exampleKo": "내가 보기엔 그럴 가치 없었어.",
+        "requiredKeywords": [
+          "wasn't",
+          "worth it"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I'm thinking of paying extra for the VIP tickets, but I'm not sure.",
+        "ko": "VIP 티켓으로 돈 더 낼까 생각 중인데, 잘 모르겠어."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you think it's worth it?",
+        "exampleKo": "그럴 가치 있다고 생각해?",
+        "requiredKeywords": [
+          "Do you think",
+          "worth it"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Should we take a taxi to the airport? It's almost a hundred dollars.",
+        "ko": "공항까지 택시 탈까? 거의 100달러야."
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I don't think it would be worth it.",
+        "exampleKo": "그럴 가치는 없을 것 같아.",
+        "requiredKeywords": [
+          "don't think",
+          "would be",
+          "worth it"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

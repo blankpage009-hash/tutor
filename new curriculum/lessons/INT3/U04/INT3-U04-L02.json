@@ -1,0 +1,364 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U04-L02",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 4,
+  "unitTitle": "가정 & 상상",
+  "lessonNo": 2,
+  "lessonTitle": "가정 상황 이야기하기 (What would you do?)",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "What would you do with a million dollars?",
+    "ko": "100만 달러가 생기면 뭐 할 거야?",
+    "stress": "WHAT would you DO with a MILlion DOLlars?",
+    "audio": {
+      "normal": "int3-u04-l02_key.mp3",
+      "slow": "int3-u04-l02_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'100만 달러가 생기면 뭐 할 거야?'라는 뜻입니다. 친구끼리 재미로 상상 이야기를 할 때 자주 씁니다.",
+      "would는 실제가 아닌 상상 속 상황을 말할 때 씁니다. What would you do ~?는 '(그렇다면) 너는 뭐 하겠어?'입니다.",
+      "with a million dollars는 '100만 달러를 가지고'입니다. if you had a million dollars를 짧게 줄인 말이라고 보면 됩니다.",
+      "대답할 때도 would를 써서 I'd travel the world.처럼 말합니다."
+    ],
+    "en": "Ask \"What would you do with a million dollars?\" when you want to imagine something fun with a friend. \"Would\" shows it's not real, just imagined.",
+    "enKo": "친구와 재미있는 상상을 해 보고 싶을 때 \"What would you do with a million dollars?\"라고 묻습니다. \"Would\"는 실제가 아니라 상상이라는 걸 보여 줍니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "WHAT, DO, MILlion, DOLlars에 힘을 줍니다. would you와 with a는 약하게 지나갑니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "would you는 d와 y가 만나 '우쥬'처럼 붙어서 소리 납니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "million과 dollars의 l은 혀끝을 윗잇몸에 붙여 냅니다. dollars의 o는 '오'가 아니라 '아'에 가까워 '달러즈'처럼 들립니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "What will you do if you have a million dollars?",
+      "right": "What would you do with a million dollars?",
+      "note": "실제로 일어날 일이 아니라 상상이라 will 대신 would를 씁니다."
+    },
+    {
+      "wrong": "What would you do with one million dollar?",
+      "right": "What would you do with a million dollars?",
+      "note": "dollar는 복수형 dollars로 씁니다. one million보다 a million이 자연스럽습니다."
+    },
+    {
+      "wrong": "If you have a million dollars, what do you do?",
+      "right": "What would you do with a million dollars?",
+      "note": "현재형으로 말하면 상상하는 느낌이 나지 않습니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "카페에서 친구와 복권 광고를 보며 이야기하고 있습니다.",
+    "partnerRole": "친구",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Did you see the lottery jackpot? It's over a hundred million now.",
+        "ko": "복권 당첨금 봤어? 이제 1억 달러가 넘어.",
+        "audio": "int3-u04-l02_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "That's crazy. What would you do with a million dollars?",
+        "ko": "말도 안 돼. 너는 100만 달러가 생기면 뭐 할 거야?",
+        "audio": "int3-u04-l02_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Easy. I'd quit my job and travel for a year.",
+        "ko": "그건 쉽지. 회사 그만두고 1년 동안 여행 다닐 거야.",
+        "audio": "int3-u04-l02_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Not me. I'd probably pay off my student loans first.",
+        "ko": "나는 아니야. 아마 학자금 대출부터 갚을 것 같아.",
+        "audio": "int3-u04-l02_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "That's so responsible. Come on, dream a little bigger!",
+        "ko": "너무 모범생 같다. 에이, 좀 더 크게 꿈꿔 봐!",
+        "audio": "int3-u04-l02_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Fine, then I'd buy a little house by the beach.",
+        "ko": "알았어, 그럼 바닷가에 작은 집 하나 살래.",
+        "audio": "int3-u04-l02_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "pay off",
+        "ko": "'(빚을) 다 갚다'. pay off my loans는 '대출을 다 갚다'입니다."
+      },
+      {
+        "en": "Come on",
+        "ko": "'에이, 왜 그래'. 상대를 부추기거나 가볍게 핀잔을 줄 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "What would you do with a million dollars?",
+      "ko": "100만 달러가 생기면 뭐 할 거야?",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "ko",
+        "text": "친구와 복권 이야기를 하고 있습니다. 100만 달러가 생기면 뭘 할지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u04-l02_drill_01.mp3",
+        "slow": "int3-u04-l02_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "What would you do with a free day?",
+      "ko": "하루 쉬는 날이 생기면 뭐 할 거야?",
+      "point": "단어 교체: a million dollars → a free day",
+      "cue": {
+        "lang": "ko",
+        "text": "친구가 다음 주에 하루 쉰다고 합니다. 쉬는 날이 생기면 뭘 할지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u04-l02_drill_02.mp3",
+        "slow": "int3-u04-l02_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "I'd buy a house with a million dollars.",
+      "ko": "100만 달러가 생기면 집을 살 거야.",
+      "point": "주어 변경: you → I (대답형 I'd)",
+      "cue": {
+        "lang": "en",
+        "text": "If you got rich overnight, what's one thing you'd buy?"
+      },
+      "audio": {
+        "normal": "int3-u04-l02_drill_03.mp3",
+        "slow": "int3-u04-l02_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I wouldn't know what to do with it.",
+      "ko": "그걸로 뭘 해야 할지 모르겠어.",
+      "point": "부정형: wouldn't know",
+      "cue": {
+        "lang": "en",
+        "text": "If you won a fancy sailboat in a contest, would you keep it?"
+      },
+      "audio": {
+        "normal": "int3-u04-l02_drill_04.mp3",
+        "slow": "int3-u04-l02_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Would you quit your job for that?",
+      "ko": "그것 때문에 회사 그만둘 거야?",
+      "point": "질문형: Would you ~? (예/아니오)",
+      "cue": {
+        "lang": "ko",
+        "text": "친구가 큰돈을 받는 대신 회사를 그만둬야 하는 제안을 받았습니다. 그것 때문에 회사를 그만둘 건지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u04-l02_drill_05.mp3",
+        "slow": "int3-u04-l02_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "What will you do with your bonus?",
+      "ko": "보너스 받으면 뭐 할 거야?",
+      "point": "시제: would → will (실제로 일어날 일)",
+      "cue": {
+        "lang": "ko",
+        "text": "친구가 곧 보너스를 받는다고 합니다. 보너스로 뭘 할 건지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u04-l02_drill_06.mp3",
+        "slow": "int3-u04-l02_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "They say this week's lottery winner gets a million dollars. Fun to imagine, right?",
+        "ko": "이번 주 복권 당첨되면 100만 달러래. 상상만 해도 재밌지?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What would you do with a million dollars?",
+        "exampleKo": "100만 달러가 생기면 뭐 할 거야?",
+        "requiredKeywords": [
+          "would you do",
+          "million dollars"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "My boss said I might get a whole day off next week, with nothing planned.",
+        "ko": "사장님이 다음 주에 하루 통째로 쉬게 해 줄 수도 있대. 아무 계획도 없는데."
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What would you do with a free day?",
+        "exampleKo": "하루 쉬는 날이 생기면 뭐 할 거야?",
+        "requiredKeywords": [
+          "What would you do",
+          "free day"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "My uncle won big in the lottery and bought a beach house. Would you do the same?",
+        "ko": "우리 삼촌이 복권에 크게 당첨돼서 바닷가 집을 샀어. 너도 그렇게 할 거야?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'd buy a house with a million dollars.",
+        "exampleKo": "100만 달러가 생기면 집을 살 거야.",
+        "requiredKeywords": [
+          "I'd buy",
+          "house",
+          "million dollars"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "My neighbor is moving and wants to give me his old piano. Want it?",
+        "ko": "이웃이 이사 가면서 자기 옛날 피아노를 나한테 준대. 너 가질래?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I wouldn't know what to do with it.",
+        "exampleKo": "그걸로 뭘 해야 할지 모르겠어.",
+        "requiredKeywords": [
+          "wouldn't know",
+          "with it"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "A startup offered me a huge signing bonus, but I'd have to leave my job.",
+        "ko": "스타트업에서 입사 보너스를 엄청 준대. 근데 지금 회사를 그만둬야 해."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Would you quit your job for that?",
+        "exampleKo": "그것 때문에 회사 그만둘 거야?",
+        "requiredKeywords": [
+          "Would you quit",
+          "for that"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "I'm getting my year-end bonus next Friday. It's way bigger than last year's.",
+        "ko": "다음 주 금요일에 연말 보너스 받아. 작년보다 훨씬 많아."
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What will you do with your bonus?",
+        "exampleKo": "보너스 받으면 뭐 할 거야?",
+        "requiredKeywords": [
+          "What will you",
+          "your bonus"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U04-L04",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 4,
+  "unitTitle": "가정 & 상상",
+  "lessonNo": 4,
+  "lessonTitle": "소식과 소문에 대해 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Rumor has it they're closing the cafe.",
+    "ko": "소문에 그 카페 문 닫는대요.",
+    "stress": "RUmor HAS it they're CLOSing the caFE.",
+    "audio": {
+      "normal": "int3-u04-l04_key.mp3",
+      "slow": "int3-u04-l04_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'소문에 그 카페가 문을 닫는대요'라는 뜻입니다. 확실하지 않은 소식을 전할 때 씁니다.",
+      "Rumor has it (that) + 문장은 '소문에 ~래요'입니다. that은 보통 빼고 말합니다.",
+      "I heard (that) ~도 비슷하지만, Rumor has it은 '아직 확실하지 않은 소문'이라는 느낌이 더 강합니다.",
+      "they're closing은 현재진행형이지만 '곧 닫을 예정'이라는 가까운 미래를 나타냅니다."
+    ],
+    "en": "Say \"Rumor has it...\" when you share news you heard but aren't sure is true. \"They're closing\" means they plan to close soon.",
+    "enKo": "들은 소식이지만 사실인지 확실하지 않을 때 \"Rumor has it...\"이라고 전합니다. \"They're closing\"은 곧 문을 닫을 예정이라는 뜻입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "RU, HAS, CLOS, FE에 힘을 줍니다. cafe는 뒤쪽 FE에 강세가 옵니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "has it은 끊지 않고 '해짓'처럼 이어서 말합니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "they're는 '데이어'가 아니라 짧게 '데어r'처럼 지나갑니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "rumor의 r은 혀를 입천장에 대지 않고 입술을 살짝 오므려 냅니다. '루머'보다 '(우)루머r'에 가깝습니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "The rumor has it they're closing the cafe.",
+      "right": "Rumor has it they're closing the cafe.",
+      "note": "굳어진 표현이라 앞에 the를 붙이지 않습니다."
+    },
+    {
+      "wrong": "Rumor says they're closing the cafe.",
+      "right": "Rumor has it they're closing the cafe.",
+      "note": "'소문에 따르면'을 says로 직역하지 않습니다. has it으로 고정해서 씁니다."
+    },
+    {
+      "wrong": "There is a rumor that they will close the cafe.",
+      "right": "Rumor has it they're closing the cafe.",
+      "note": "틀리진 않지만 딱딱합니다. 대화에서는 Rumor has it이 훨씬 자연스럽습니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "회의 전, 사무실 자리에서 동료가 커피 마시러 가자고 합니다.",
+    "partnerRole": "동료",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Want to grab a coffee downstairs before the meeting?",
+        "ko": "회의 전에 아래층에서 커피 한잔할래요?",
+        "audio": "int3-u04-l04_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Sure, while we still can. Rumor has it they're closing the cafe.",
+        "ko": "좋아요, 아직 갈 수 있을 때 가요. 소문에 그 카페 문 닫는대요.",
+        "audio": "int3-u04-l04_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Seriously? Where did you hear that?",
+        "ko": "정말요? 어디서 들었어요?",
+        "audio": "int3-u04-l04_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Someone at the front desk mentioned it. Their lease is up next month.",
+        "ko": "안내 데스크 직원이 그러더라고요. 다음 달에 임대 계약이 끝난대요.",
+        "audio": "int3-u04-l04_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "That's a shame. Their lattes are the best in the building.",
+        "ko": "아쉽네요. 거기 라테가 이 건물에서 제일 맛있는데.",
+        "audio": "int3-u04-l04_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "I know. But it's just a rumor, so who knows?",
+        "ko": "그러니까요. 그래도 아직 소문일 뿐이니까 모르죠.",
+        "audio": "int3-u04-l04_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "That's a shame.",
+        "ko": "'아쉽네요', '안타깝네요'. 아쉬운 소식을 들었을 때 씁니다."
+      },
+      {
+        "en": "Who knows?",
+        "ko": "'누가 알겠어요', '모르는 일이죠'. 확실하지 않다는 걸 가볍게 말할 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Rumor has it they're closing the cafe.",
+      "ko": "소문에 그 카페 문 닫는대요.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "Why does everyone at the cafe downstairs look so sad today?"
+      },
+      "audio": {
+        "normal": "int3-u04-l04_drill_01.mp3",
+        "slow": "int3-u04-l04_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "Rumor has it they're opening a gym.",
+      "ko": "소문에 헬스장이 생긴대요.",
+      "point": "단어 교체: closing the cafe → opening a gym",
+      "cue": {
+        "lang": "en",
+        "text": "Why is there so much construction on the second floor?"
+      },
+      "audio": {
+        "normal": "int3-u04-l04_drill_02.mp3",
+        "slow": "int3-u04-l04_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "Rumor has it Mark is leaving the company.",
+      "ko": "소문에 마크가 회사를 그만둔대요.",
+      "point": "주어 변경: they → Mark",
+      "cue": {
+        "lang": "en",
+        "text": "Why is Mark packing up his desk?"
+      },
+      "audio": {
+        "normal": "int3-u04-l04_drill_03.mp3",
+        "slow": "int3-u04-l04_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "Rumor has it they already hired someone.",
+      "ko": "소문에 벌써 사람을 뽑았대요.",
+      "point": "시제: 과거 already hired",
+      "cue": {
+        "lang": "en",
+        "text": "Is the marketing team still interviewing people for that job?"
+      },
+      "audio": {
+        "normal": "int3-u04-l04_drill_04.mp3",
+        "slow": "int3-u04-l04_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Is it true they're closing the cafe?",
+      "ko": "그 카페 문 닫는다는 거 진짜예요?",
+      "point": "질문형: Is it true ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "동료가 아래층 카페 이야기를 꺼냈습니다. 카페가 문을 닫는다는 게 사실인지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u04-l04_drill_05.mp3",
+        "slow": "int3-u04-l04_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "Rumor has it they're not closing after all.",
+      "ko": "소문에 결국 문 안 닫는대요.",
+      "point": "부정형: not closing after all",
+      "cue": {
+        "lang": "en",
+        "text": "Should we start looking for a new coffee place?"
+      },
+      "audio": {
+        "normal": "int3-u04-l04_drill_06.mp3",
+        "slow": "int3-u04-l04_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I just saw boxes piled up inside the coffee shop in the lobby. What's going on?",
+        "ko": "방금 로비 커피숍 안에 상자가 잔뜩 쌓여 있는 걸 봤어요. 무슨 일이에요?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Rumor has it they're closing the cafe.",
+        "exampleKo": "소문에 그 카페 문 닫는대요.",
+        "requiredKeywords": [
+          "Rumor has it",
+          "closing"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "There's a big \"Coming Soon\" sign on the empty second floor. Any idea what it is?",
+        "ko": "비어 있던 2층에 \"곧 오픈\"이라는 큰 간판이 붙었어요. 뭔지 알아요?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Rumor has it they're opening a gym.",
+        "exampleKo": "소문에 헬스장이 생긴대요.",
+        "requiredKeywords": [
+          "opening",
+          "gym"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Mark has been really quiet lately, and he took a lot of days off. Is something up?",
+        "ko": "마크가 요즘 너무 조용하고 휴가도 많이 냈어요. 무슨 일 있어요?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Rumor has it Mark is leaving the company.",
+        "exampleKo": "소문에 마크가 회사를 그만둔대요.",
+        "requiredKeywords": [
+          "Mark is leaving",
+          "company"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "I was going to apply for that open position on the design team. Is it too late?",
+        "ko": "디자인팀에 난 자리에 지원하려고 했는데, 너무 늦었을까요?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Rumor has it they already hired someone.",
+        "exampleKo": "소문에 벌써 사람을 뽑았대요.",
+        "requiredKeywords": [
+          "already hired",
+          "someone"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Everyone's whispering about the cafe downstairs. I don't want to spread anything, though.",
+        "ko": "다들 아래층 카페 이야기를 수군거려요. 근데 저는 괜히 말 옮기고 싶진 않아요."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Is it true they're closing the cafe?",
+        "exampleKo": "그 카페 문 닫는다는 거 진짜예요?",
+        "requiredKeywords": [
+          "Is it true",
+          "closing"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Last week everyone said the cafe was shutting down. Did anything change?",
+        "ko": "지난주엔 다들 그 카페 문 닫는다고 했잖아요. 뭐 바뀐 거 있어요?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Rumor has it they're not closing after all.",
+        "exampleKo": "소문에 결국 문 안 닫는대요.",
+        "requiredKeywords": [
+          "not closing",
+          "after all"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
