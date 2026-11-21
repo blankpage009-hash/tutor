@@ -12,7 +12,7 @@ type Props = { word: string; source: WordSource; onClose: () => void };
 
 type Loaded = { saved: VocabWord | null; fromGlossary: boolean };
 
-// 사전에 뜻이 없는 단어(또는 바로 저장이 안 된 단어)를 눌렀을 때만 올라오는 저장 창: 뜻·품사를 직접 적어 저장한다.
+// 단어를 눌렀을 때 아래에서 올라오는 저장 창: 사전이 있으면 뜻·품사를 미리 채우고, 사용자가 고쳐서 저장한다.
 // 저장 취소는 단어장 화면에서만 한다(사용자 결정 2026-11-21)
 export function WordSheet({ word, source, onClose }: Props) {
   const key = normalizeWord(word);
@@ -62,7 +62,10 @@ export function WordSheet({ word, source, onClose }: Props) {
         </div>
         {!loaded && !error && <p className={styles.hint} lang="ko">불러오는 중…</p>}
         {saved && (
-          <p className={styles.saved} lang="ko"><b>{posLabel(saved.pos)}</b> · {saved.meaning}</p>
+          <>
+            <p className={styles.saved} lang="ko"><b>{posLabel(saved.pos)}</b> · {saved.meaning}</p>
+            <p className={styles.hint} lang="ko">이미 단어장에 있어요. 고치거나 빼기는 단어장 화면에서 할 수 있어요.</p>
+          </>
         )}
         {loaded && !saved && (
           <EditView meaning={meaning} pos={pos} fromGlossary={loaded.fromGlossary} onMeaning={setMeaning} onPos={setPos} onSave={save} />

@@ -1,6 +1,7 @@
 import { IconBookmark } from '../../components/icons/icons';
 import { ResultMark } from '../../components/ResultMark';
 import { WordHighlight } from '../../components/WordHighlight';
+import { usePickWord } from '../../components/wordPicker/WordPicker';
 import type { DrillStep } from '../../drillPlan';
 import type { useShadowingAttempt } from '../shadowing/useShadowingAttempt';
 import styles from './DrillPlayer.module.css';
@@ -38,10 +39,13 @@ function Sentence({ step, outcome: o }: { step: DrillStep; outcome: Outcome }) {
   const { show } = step.stage;
   const showEn = show === 'en+ko' || show === 'en' || o?.status === 'passed';
   const final = o?.status === 'passed' || o?.status === 'failed';
+  const pick = usePickWord();
+  const source = { id: step.saveId, en: step.drill.en, ko: step.drill.ko };
+  const onWordTap = pick ? (w: string) => pick(w, source) : undefined;
   return (
     <>
       {show === 'cue' && <p className={styles.cue} lang={step.drill.cue.lang}>{step.drill.cue.text}</p>}
-      {o && showEn && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} />}
+      {o && showEn && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} onWordTap={onWordTap} />}
       {!showEn && <p className={styles.hidden} lang="ko">영어로 말해 보세요</p>}
       {(show === 'en+ko' || show === 'ko') && <p className={styles.ko} lang="ko">{step.drill.ko}</p>}
     </>

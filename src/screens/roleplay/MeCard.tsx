@@ -1,3 +1,4 @@
+import { TapText } from '../../components/wordPicker/TapText';
 import { judgeKeywords, markKeywords } from '../../scoring/keywordJudge';
 import { snapToSentence } from '../../scoring/snapHeard';
 import dialogueStyles from '../dialogue/Dialogue.module.css';
@@ -34,7 +35,11 @@ export function MeCard({ line, turn, showExample }: Props) {
         ? <Heard keywords={keys} text={heard} expected={line.exampleEn} snap={!(turn.last?.source === 'whisper' && !turn.live)} />
         : <p className={styles.prompt} lang="ko">{keys.length ? '꼭 넣을 말을 넣어 영어로 대답해 보세요' : '자유롭게 영어로 대답해 보세요'}</p>}
       <p className={dialogueStyles.cardKo} lang="ko">예: {line.exampleKo}</p>
-      {showExample && <p className={styles.example} lang="en">{line.exampleEn}</p>}
+      {showExample && (
+        <p className={styles.example} lang="en">
+          <TapText text={line.exampleEn} source={{ id: `roleplay-${line.no}`, en: line.exampleEn, ko: line.exampleKo }} />
+        </p>
+      )}
     </article>
   );
 }

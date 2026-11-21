@@ -1,3 +1,4 @@
+import { TapText } from '../../components/wordPicker/TapText';
 import type { RolePlayLine } from '../../content/lessonTypes';
 import dialogueStyles from '../dialogue/Dialogue.module.css';
 import { SpeakerTag } from '../dialogue/SpeakerTag';
@@ -17,7 +18,7 @@ export function RolePlayLines({ lines, partnerRole, said }: Props) {
           <SpeakerTag me={l.speaker === 'me'} partnerRole={partnerRole} />
           {l.speaker === 'partner'
             ? <>
-              <p className={dialogueStyles.en} lang="en">{l.en}</p>
+              <p className={dialogueStyles.en} lang="en"><TapText text={l.en} source={{ id: `roleplay-${l.no}`, en: l.en, ko: l.ko }} /></p>
               <p className={dialogueStyles.ko} lang="ko">{l.ko}</p>
             </>
             : <p className={dialogueStyles.en} lang="en">{said[l.no] || <span lang="ko" className={dialogueStyles.ko}>(건너뜀)</span>}</p>}

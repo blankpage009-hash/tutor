@@ -1,8 +1,6 @@
 import { liveQuery } from 'dexie';
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
-import { loadGlossary, lookupWord } from '../../content/glossary';
 import { db } from '../../db/db';
-import { saveWord } from '../../db/vocab';
 import { normalizeWord } from '../../wordTap';
 import { WordSheet } from './WordSheet';
 
@@ -27,28 +25,12 @@ function useSavedWordSet(): ReadonlySet<string> {
   return saved;
 }
 
-// 사전에 뜻이 있으면 창 없이 바로 저장한다. 사전에 없거나 저장이 확인되지 않으면 false — 그때는 창을 열어 직접 적게 한다
-async function quickSave(word: string, source: WordSource): Promise<boolean> {
-  try {
-    const hit = lookupWord(await loadGlossary(), word);
-    if (!hit) return false;
-    const row = await saveWord({ word, meaning: hit.ko, pos: hit.pos, sourceSentenceId: source.id, sourceEn: source.en, sourceKo: source.ko });
-    return Boolean(row);
-  } catch {
-    return false;
-  }
-}
-
 // 화면마다 저장 창을 따로 두지 않고 앱 전체에 하나만 둔다 (눌린 단어를 이 안에서 받는다)
 export function WordPickerProvider({ children }: { children: ReactNode }) {
   const [target, setTarget] = useState<{ word: string; source: WordSource } | null>(null);
   const saved = useSavedWordSet();
-  // 저장 취소는 단어장 화면에서만 한다(사용자 결정 2026-11-21): 이미 저장된 단어는 다시 눌러도 아무 일 없게
-  const pick = useCallback<PickWord>((word, source) => {
-    const key = normalizeWord(word);
-    if (saved.has(key)) return;
-    quickSave(key, source).then((ok) => { if (!ok) setTarget({ word, source }); });
-  }, [saved]);
+  // 누르면 늘 저장 창을 띄워 뜻을 확인하고 저장한다 (바로 저장은 사용자 요청으로 되돌림 2026-11-21)
+  const pick = useCallback<PickWord>((word, source) => setTarget({ word, source }), []);
   const close = useCallback(() => setTarget(null), []);
   return (
     <PickContext.Provider value={pick}>

@@ -1,5 +1,6 @@
 import { Button } from '../../components/Button';
 import { IconChevronRight, IconMic, IconPlay, IconStop } from '../../components/icons/icons';
+import { TapText } from '../../components/wordPicker/TapText';
 import type { NewLesson } from '../../content/lessonTypes';
 import { DialogueLines } from './DialogueLines';
 import type { DialogueSaved } from './useDialogueSaved';
@@ -51,7 +52,7 @@ function DoneNotes({ lesson, onAgain, onNext }: { lesson: NewLesson; onAgain: ()
         <ul className={styles.notes}>
           {lesson.dialogue.expressionNotes.map((n) => (
             <li key={n.en}>
-              <p className={styles.en} lang="en">{n.en}</p>
+              <p className={styles.en} lang="en"><TapText text={n.en} source={{ id: `${lesson.lessonId}-note`, en: n.en, ko: n.ko }} /></p>
               <p className={styles.ko} lang="ko">{n.ko}</p>
             </li>
           ))}

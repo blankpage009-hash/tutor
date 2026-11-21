@@ -1,4 +1,4 @@
-/* 글자 모양은 감싸는 문장 그대로. 평소엔 표시 없이, 단어장에 저장된 단어에만 밑줄을 긋는다 (사용자 요청 2026-11-21) */
+/* 글자 모양은 감싸는 문장 그대로. 평소엔 표시 없이, 단어장에 저장된 단어에만 점선 밑줄을 긋는다 (사용자 요청 2026-11-21) */
 .word {
   display: inline;
   margin: 0;
@@ -15,9 +15,5 @@
 /* 밑줄이 없어도 눌렸다는 느낌은 남긴다 */
 .word:active { background: var(--accent-tint); }
 
-.saved {
-  text-decoration: underline;
-  text-decoration-color: var(--accent-ink);
-  text-decoration-thickness: var(--rule-weight);
-  text-underline-offset: 4px;
-}
+/* 저장된 단어: 예전의 점선 밑줄 (사용자 요청 2026-11-21) */
+.saved { border-bottom: 1px dotted var(--ink-muted); }

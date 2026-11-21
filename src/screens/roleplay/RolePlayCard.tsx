@@ -1,4 +1,5 @@
 import { IconPlay } from '../../components/icons/icons';
+import { TapText } from '../../components/wordPicker/TapText';
 import type { RolePlayLine } from '../../content/lessonTypes';
 import dialogueStyles from '../dialogue/Dialogue.module.css';
 import { SpeakerTag } from '../dialogue/SpeakerTag';
@@ -27,7 +28,7 @@ export function RolePlayCard({ line, partnerRole, current, onReplay, replayDisab
           </button>
         )}
       </div>
-      <p className={styles.partnerEn} lang="en">{line.en}</p>
+      <p className={styles.partnerEn} lang="en"><TapText text={line.en} source={{ id: `roleplay-${line.no}`, en: line.en, ko: line.ko }} /></p>
       <p className={dialogueStyles.cardKo} lang="ko">{line.ko}</p>
     </article>
   );

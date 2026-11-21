@@ -1,5 +1,6 @@
 import { Button } from '../../components/Button';
 import { IconBookmark, IconPlay } from '../../components/icons/icons';
+import { TapText } from '../../components/wordPicker/TapText';
 import type { NewLesson } from '../../content/lessonTypes';
 import { drillSaveId } from '../../drillPlan';
 import { LessonStepBar } from '../newLesson/LessonStepBar';
@@ -35,7 +36,7 @@ export function DrillList({ lesson, fill, resume, onStart, onRestart, saved, sav
             <li key={d.id} className={styles.row}>
               <span className={styles.no}>{String(d.id).padStart(2, '0')}</span>
               <div className={styles.text}>
-                <p className={styles.en} lang="en">{d.en}</p>
+                <p className={styles.en} lang="en"><TapText text={d.en} source={{ id: saveId, en: d.en, ko: d.ko }} /></p>
                 <p className={styles.ko} lang="ko">{d.ko}</p>
               </div>
               {/* 카드 화면의 북마크와 같은 스위치: 누를 때마다 저장 ↔ 해제 */}
