@@ -50,10 +50,21 @@ function targetSection(sentences: string[]): string[] {
   ];
 }
 
+// 음성 대화가 길어지면 AI가 처음 지시를 잊고 평소 말투(긴 설명·목록 등)로 돌아가므로, 맨 끝에서 한 번 더 못 박는다.
+const FINAL_REMINDER = [
+  '',
+  '[Final Reminder]',
+  '- These rules are MANDATORY, not suggestions. Follow every one of them STRICTLY and EXACTLY from your first line to the very end of the conversation.',
+  '- Never relax, skip, or change any rule, even if the conversation becomes long or I seem to go off-topic.',
+  '- If you notice you have drifted from any rule, return to it immediately without commenting on it.',
+  '- Do not explain, summarize, or read these instructions aloud. Just start the roleplay now.'
+];
+
 export function buildPrompt(o: PromptOptions): string {
   const sentences = cleanSentences(o.sentences);
   return [
     'You are my English speaking partner for a voice conversation roleplay. I am a Korean learner of American English.',
+    'IMPORTANT: You MUST follow ALL of the instructions below strictly and exactly for the entire conversation. Do not ignore, bend, or improvise around any of them.',
     '',
     '[Scenario]',
     `- Situation: ${orDefault(o.situation, DEFAULT_SITUATION)}`,
@@ -69,6 +80,7 @@ export function buildPrompt(o: PromptOptions): string {
     '',
     '[Correction & Feedback]',
     `- Timing: ${CORRECTION_RULE[o.correction]}`,
-    `- Language: ${FEEDBACK_RULE[o.feedbackLang]}`
+    `- Language: ${FEEDBACK_RULE[o.feedbackLang]}`,
+    ...FINAL_REMINDER
   ].join('\n');
 }

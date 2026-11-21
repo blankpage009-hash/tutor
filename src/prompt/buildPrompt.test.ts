@@ -50,6 +50,13 @@ describe('buildPrompt', () => {
     expect(p).toContain('- My role: myself');
   });
 
+  it('맨 앞과 맨 끝에 규칙을 엄격히 지키라는 강조 문구가 들어간다', () => {
+    const p = buildPrompt(base);
+    expect(p).toContain('You MUST follow ALL of the instructions below strictly');
+    expect(p.indexOf('[Final Reminder]')).toBeGreaterThan(p.indexOf('[Correction & Feedback]'));
+    expect(p.trimEnd().endsWith('Just start the roleplay now.')).toBe(true);
+  });
+
   it('문장이 없으면 목표 문장 칸을 통째로 뺀다', () => {
     const p = buildPrompt({ ...base, sentences: [] });
     expect(p).not.toContain('[Target Expressions]');
