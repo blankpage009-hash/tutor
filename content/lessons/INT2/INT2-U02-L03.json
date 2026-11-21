@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT2-U02-L03",
+  "level": "중급 2",
+  "levelCode": "INT2",
+  "unit": 2,
+  "unitTitle": "커리어 방향과 계획",
+  "lessonNo": 3,
+  "lessonTitle": "커리어 조언하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "If I were you, I'd go for it.",
+    "ko": "나라면 해 볼 것 같아.",
+    "stress": "If I WERE you, I'd GO for it.",
+    "audio": { "normal": "audio/lessons/INT2-U02-L03/key-a49005b8.m4a", "slow": "audio/lessons/INT2-U02-L03/key-a49005b8.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "If I were you, I'd ~는 '내가 너라면 ~할 거야', 즉 '나라면 ~하겠어'라는 뜻입니다. 조언할 때 가장 흔하게 쓰는 표현입니다.",
+      "사실이 아닌 가정이라서 I was가 아니라 I were를 씁니다. (말할 때 was도 들리지만 were가 표준입니다.) 뒤에는 I'd(I would) + 동사원형이 옵니다.",
+      "go for it은 '한번 해 봐, 도전해'라는 뜻입니다. 망설이는 사람의 등을 밀어 줄 때 씁니다.",
+      "말리고 싶을 때는 If I were you, I wouldn't ~라고 합니다. 더 가볍게 권할 때는 You should go for it.이라고 말합니다."
+    ],
+    "en": "When a friend can't decide, say \"If I were you, I'd go for it.\" It's a kind way to give advice because you imagine yourself in their place.",
+    "enKo": "친구가 결정을 못 할 때 \"If I were you, I'd go for it.\"이라고 말합니다. 상대 입장이 되어 보고 말하는 거라서 부드럽게 조언하는 방법입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "WERE와 GO에 힘을 줍니다. If I와 for it은 약하고 빠르게 말합니다." },
+    { "focus": "연음", "tip": "If I는 붙여서 '이f아이'처럼, go for it은 for it이 이어져서 '고퍼릿'처럼 들립니다." },
+    { "focus": "약화", "tip": "I'd의 d는 아주 짧게 멈추는 소리만 납니다. 그래도 빼면 I go(나는 가)가 되니 살짝 끊어 주세요." },
+    { "focus": "한국인이 어려운 소리", "tip": "were의 r은 혀끝을 입천장에 닿지 않게 뒤로 말아서 냅니다. '워'가 아니라 'wər'에 가깝습니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "If I am you, I will go for it.", "right": "If I were you, I'd go for it.", "note": "내가 네가 될 수는 없으니 가정입니다. 가정은 were와 would로 말합니다." },
+    { "wrong": "If I were you, I'd challenge it.", "right": "If I were you, I'd go for it.", "note": "challenge는 '이의를 제기하다'라는 뜻으로 들리기 쉽습니다. '도전해 보다'는 go for it, give it a shot이라고 합니다." },
+    { "wrong": "In my opinion, you must do it.", "right": "If I were you, I'd go for it.", "note": "must는 강요처럼 들립니다. 조언은 상대 입장에서 If I were you로 말하면 부드럽습니다." }
+  ],
+  "dialogue": {
+    "situation": "친구가 다른 회사에서 이직 제안을 받고 받아들일지 고민합니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "So, I got an offer from another company. I can't decide.", "ko": "있잖아, 다른 회사에서 제안을 받았는데 결정을 못 하겠어.", "audio": "audio/lessons/INT2-U02-L03/dlg-01-d7eeda12.m4a" },
+      { "no": 2, "speaker": "me", "en": "That's huge! What's holding you back?", "ko": "대박이다! 뭐 때문에 망설이는데?", "audio": "audio/lessons/INT2-U02-L03/dlg-02-cdf0b138.m4a" },
+      { "no": 3, "speaker": "partner", "en": "The pay is better, but I'd have to start over.", "ko": "연봉은 더 좋은데, 처음부터 다시 시작해야 해.", "audio": "audio/lessons/INT2-U02-L03/dlg-03-bc4a1aa1.m4a" },
+      { "no": 4, "speaker": "me", "en": "Honestly? If I were you, I'd go for it.", "ko": "솔직히? 나라면 해 볼 것 같아.", "audio": "audio/lessons/INT2-U02-L03/dlg-04-a5fe65d6.m4a", "hasKeySentence": true},
+      { "no": 5, "speaker": "partner", "en": "Really? What if it doesn't work out?", "ko": "진짜? 잘 안 되면 어떡해?", "audio": "audio/lessons/INT2-U02-L03/dlg-05-1af0faeb.m4a" },
+      { "no": 6, "speaker": "me", "en": "Then you learn something. You can't grow if you always play it safe.", "ko": "그럼 뭐라도 배우는 거지. 늘 안전하게만 가면 성장 못 해.", "audio": "audio/lessons/INT2-U02-L03/dlg-06-4f47596a.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "What's holding you back?", "ko": "'뭐 때문에 망설여?'. 하고 싶은데 못 하고 있는 사람에게 이유를 물을 때 씁니다." },
+      { "en": "play it safe", "ko": "'안전하게 가다, 모험하지 않다'. 위험을 피하려고 익숙한 쪽을 고를 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "If I were you, I'd go for it.",
+      "ko": "나라면 해 볼 것 같아.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "I really want to try this new job, but I'm scared. What do you think?", "audio": "audio/lessons/INT2-U02-L03/cue-01-c25e079b.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U02-L03/drill-01-a49005b8.m4a", "slow": "audio/lessons/INT2-U02-L03/drill-01-a49005b8.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "If I were you, I'd take the offer.",
+      "ko": "나라면 그 제안 받을 것 같아.",
+      "point": "단어 교체: go for it → take the offer",
+      "cue": { "lang": "en", "text": "My friend offered me a job at her company. Should I accept?", "audio": "audio/lessons/INT2-U02-L03/cue-02-5a5ed9ed.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U02-L03/drill-02-aaa9237a.m4a", "slow": "audio/lessons/INT2-U02-L03/drill-02-aaa9237a.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "If I were him, I'd go for it.",
+      "ko": "내가 걔라면 해 볼 것 같아.",
+      "point": "대상 변경: you → him",
+      "cue": { "lang": "en", "text": "My brother wants to start his own business, but he can't decide.", "audio": "audio/lessons/INT2-U02-L03/cue-03-08396611.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U02-L03/drill-03-201c557d.m4a", "slow": "audio/lessons/INT2-U02-L03/drill-03-201c557d.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "If I were you, I wouldn't quit yet.",
+      "ko": "나라면 아직 그만두진 않을 것 같아.",
+      "point": "부정형: I wouldn't ~",
+      "cue": { "lang": "en", "text": "I hate my job. Should I quit tomorrow?", "audio": "audio/lessons/INT2-U02-L03/cue-04-37711f65.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U02-L03/drill-04-21df6e80.m4a", "slow": "audio/lessons/INT2-U02-L03/drill-04-21df6e80.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "What would you do if you were me?",
+      "ko": "너라면 어떻게 할 거야?",
+      "point": "질문형: What would you do if you were me?",
+      "cue": { "lang": "ko", "text": "이직 제안을 받고 고민 중입니다. 친구에게 자기라면 어떻게 할지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT2-U02-L03/drill-05-9463509b.m4a", "slow": "audio/lessons/INT2-U02-L03/drill-05-9463509b.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "If I were you, I might wait.",
+      "ko": "나라면 좀 기다려 볼 것 같아.",
+      "point": "부드러운 조언: I'd → I might",
+      "cue": { "lang": "en", "text": "Should I buy a house now or wait until prices drop?", "audio": "audio/lessons/INT2-U02-L03/cue-06-bd0e9bca.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U02-L03/drill-06-251a27b8.m4a", "slow": "audio/lessons/INT2-U02-L03/drill-06-251a27b8.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "A startup in Austin offered me a job, but moving there scares me.", "ko": "오스틴에 있는 스타트업에서 일하자고 했는데, 거기로 이사 가는 게 겁나.", "audio": "audio/lessons/INT2-U02-L03/rp-01-32f9e4bf.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If I were you, I'd go for it.",
+        "exampleKo": "나라면 해 볼 것 같아.",
+        "requiredKeywords": ["were you", "go for it"]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "My boss offered me the Seattle position with a big raise. Should I say yes?",
+        "ko": "상사가 연봉 많이 올려 주고 시애틀 자리를 제안했어. 받아들일까?",
+        "audio": "audio/lessons/INT2-U02-L03/rp-03-dcb3ea6d.m4a"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If I were you, I'd take the offer.",
+        "exampleKo": "나라면 그 제안 받을 것 같아.",
+        "requiredKeywords": ["I'd take", "the offer"]
+      },
+      { "no": 5, "speaker": "partner", "en": "My cousin wants to open a coffee shop, but he's nervous about it.", "ko": "사촌이 카페를 차리고 싶어 하는데, 겁을 내.", "audio": "audio/lessons/INT2-U02-L03/rp-05-872f6cd8.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If I were him, I'd go for it.",
+        "exampleKo": "내가 걔라면 해 볼 것 같아.",
+        "requiredKeywords": ["were him", "go for it"]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "My manager yelled at me today. I'm writing my resignation letter tonight.",
+        "ko": "오늘 팀장이 나한테 소리 질렀어. 오늘 밤에 사직서 쓸 거야.",
+        "audio": "audio/lessons/INT2-U02-L03/rp-07-6c409d53.m4a"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If I were you, I wouldn't quit yet.",
+        "exampleKo": "나라면 아직 그만두진 않을 것 같아.",
+        "requiredKeywords": ["wouldn't quit", "yet"]
+      },
+      { "no": 9, "speaker": "partner", "en": "I was in the same spot last year when I got a job offer, so I get it.", "ko": "나도 작년에 이직 제안 받았을 때 똑같은 처지였어서 이해해.", "audio": "audio/lessons/INT2-U02-L03/rp-09-01c6cca6.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What would you do if you were me?",
+        "exampleKo": "너라면 어떻게 할 거야?",
+        "requiredKeywords": ["what would you do", "were me"]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "I just started at this company last month, and I want to ask for a raise.",
+        "ko": "이 회사 지난달에 막 들어왔는데, 연봉 올려 달라고 하고 싶어.",
+        "audio": "audio/lessons/INT2-U02-L03/rp-11-77aa742e.m4a"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If I were you, I might wait.",
+        "exampleKo": "나라면 좀 기다려 볼 것 같아.",
+        "requiredKeywords": ["were you", "might wait"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

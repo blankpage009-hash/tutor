@@ -323,9 +323,9 @@
               "no": 2,
               "title": "커리어 방향과 계획",
               "lessons": [
-                { "no": 1, "title": "직무와 경력 이야기하기", "id": "INT2-U02-L01", "ready": false},
-                { "no": 2, "title": "커리어 목표 공유하기", "id": "INT2-U02-L02", "ready": false},
-                { "no": 3, "title": "커리어 조언하기", "id": "INT2-U02-L03", "ready": false}
+                { "no": 1, "title": "직무와 경력 이야기하기", "id": "INT2-U02-L01", "ready": true, "file": "lessons/INT2/INT2-U02-L01.json" },
+                { "no": 2, "title": "커리어 목표 공유하기", "id": "INT2-U02-L02", "ready": true, "file": "lessons/INT2/INT2-U02-L02.json" },
+                { "no": 3, "title": "커리어 조언하기", "id": "INT2-U02-L03", "ready": true, "file": "lessons/INT2/INT2-U02-L03.json" }
               ]
             },
             {

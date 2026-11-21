@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT2-U02-L02",
+  "level": "중급 2",
+  "levelCode": "INT2",
+  "unit": 2,
+  "unitTitle": "커리어 방향과 계획",
+  "lessonNo": 2,
+  "lessonTitle": "커리어 목표 공유하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I'm hoping to move into management.",
+    "ko": "관리직 쪽으로 가 보고 싶어요.",
+    "stress": "I'm HOPing to MOVE into MANagement.",
+    "audio": { "normal": "audio/lessons/INT2-U02-L02/key-a838fbf5.m4a", "slow": "audio/lessons/INT2-U02-L02/key-a838fbf5.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "I'm hoping to ~는 '~하고 싶어요, ~해 보려고 해요'라는 뜻입니다. 앞으로의 목표를 부드럽게 말할 때 씁니다.",
+      "I want to보다 덜 직설적이고 겸손하게 들려서, 직장에서 커리어 목표를 말할 때 잘 어울립니다. I hope to보다 I'm hoping to가 더 가볍고 대화체입니다.",
+      "move into ~는 '~ 분야나 자리로 옮겨 가다'라는 뜻입니다. move into management(관리직), move into design(디자인 쪽)처럼 씁니다.",
+      "이미 정한 계획이면 I'm planning to ~, 먼 꿈이면 Someday I'd love to ~라고 말합니다."
+    ],
+    "en": "To share a career goal politely, say \"I'm hoping to move into management.\" \"I'm hoping to\" sounds softer and more modest than \"I want to.\"",
+    "enKo": "커리어 목표를 예의 있게 말할 때 \"I'm hoping to move into management.\"라고 합니다. \"I'm hoping to\"는 \"I want to\"보다 부드럽고 겸손하게 들립니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "HOPing, MOVE, MANagement에 힘을 줍니다. I'm과 to는 약하게 말합니다." },
+    { "focus": "연음", "tip": "hoping to의 to는 '투'가 아니라 '터'처럼 약하게 붙입니다. move into는 이어서 '무v인투'처럼 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "move의 v는 아랫입술을 윗니에 대고 떨리게 냅니다. '무브'처럼 '브'를 따로 붙이지 않습니다." },
+    { "focus": "약화", "tip": "management의 가운데 e는 거의 들리지 않습니다. '매니지먼트'보다 'MAN-ij-ment'처럼 세 박자로 말합니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "My dream is to be a manager.", "right": "I'm hoping to move into management.", "note": "dream은 직장 대화에서 너무 거창하게 들립니다. 현실적인 목표는 I'm hoping to ~로 말합니다." },
+    { "wrong": "I'm hoping to move to management.", "right": "I'm hoping to move into management.", "note": "분야나 역할로 옮겨 갈 때는 to보다 into를 씁니다. move to는 주로 장소(도시, 사무실)에 씁니다." },
+    { "wrong": "I'm hoping to promotion.", "right": "I'm hoping to get promoted.", "note": "hoping to 뒤에는 동사가 옵니다. promotion은 명사라서 get promoted로 말합니다." }
+  ],
+  "dialogue": {
+    "situation": "회사 동료와 커피를 마시다가 몇 년 뒤의 계획을 이야기합니다.",
+    "partnerRole": "직장 동료",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "So, where do you see yourself in a few years?", "ko": "그런데 몇 년 뒤에는 뭘 하고 있을 것 같아요?", "audio": "audio/lessons/INT2-U02-L02/dlg-01-41f298a7.m4a" },
+      { "no": 2, "speaker": "me", "en": "Honestly, I'm hoping to move into management.", "ko": "솔직히 관리직 쪽으로 가 보고 싶어요.", "audio": "audio/lessons/INT2-U02-L02/dlg-02-c394d36f.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Really? I didn't know you wanted to lead a team.", "ko": "정말요? 팀을 이끌고 싶어 하시는 줄 몰랐어요.", "audio": "audio/lessons/INT2-U02-L02/dlg-03-3fc2cdb9.m4a" },
+      { "no": 4, "speaker": "me", "en": "Yeah. After five years, I'm ready for something new.", "ko": "네. 5년 했으니까 이제 새로운 걸 해 볼 때가 된 것 같아요.", "audio": "audio/lessons/INT2-U02-L02/dlg-04-8458c83b.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Have you talked to your boss about it?", "ko": "상사분이랑 그 얘기 해 보셨어요?", "audio": "audio/lessons/INT2-U02-L02/dlg-05-f872dfc4.m4a" },
+      { "no": 6, "speaker": "me", "en": "Not yet. I want to bring it up at my review.", "ko": "아직요. 평가 면담 때 얘기를 꺼내 보려고요.", "audio": "audio/lessons/INT2-U02-L02/dlg-06-eac697ac.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "Where do you see yourself in ~?", "ko": "'~ 뒤에는 뭘 하고 있을 것 같아요?'. 앞으로의 계획이나 목표를 물을 때 면접과 일상 대화에서 모두 씁니다." },
+      { "en": "bring it up", "ko": "'그 얘기를 꺼내다'. 하기 조심스러운 주제를 대화에 처음 올릴 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I'm hoping to move into management.",
+      "ko": "관리직 쪽으로 가 보고 싶어요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "What kind of role do you want next in your career?", "audio": "audio/lessons/INT2-U02-L02/cue-01-81f7274c.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U02-L02/drill-01-a838fbf5.m4a", "slow": "audio/lessons/INT2-U02-L02/drill-01-a838fbf5.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I'm hoping to move into product design.",
+      "ko": "제품 디자인 쪽으로 옮겨 가고 싶어요.",
+      "point": "단어 교체: management → product design",
+      "cue": { "lang": "en", "text": "Is there another field you would like to try?", "audio": "audio/lessons/INT2-U02-L02/cue-02-ca87e830.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U02-L02/drill-02-b159b9d4.m4a", "slow": "audio/lessons/INT2-U02-L02/drill-02-b159b9d4.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "Jake's hoping to move into a leadership role.",
+      "ko": "제이크는 리더 역할을 맡고 싶어 해요.",
+      "point": "주어 변경: I'm → Jake's",
+      "cue": { "lang": "en", "text": "What does Jake want to do next at work?", "audio": "audio/lessons/INT2-U02-L02/cue-03-cab5a87c.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U02-L02/drill-03-fa316c9b.m4a", "slow": "audio/lessons/INT2-U02-L02/drill-03-fa316c9b.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "I was hoping to move into management.",
+      "ko": "관리직으로 가고 싶었는데요.",
+      "point": "과거 시제: I was hoping to (이루지 못한 바람)",
+      "cue": { "lang": "en", "text": "Why do you look so disappointed about the promotion news?", "audio": "audio/lessons/INT2-U02-L02/cue-04-e9f54702.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U02-L02/drill-04-a414e8b0.m4a", "slow": "audio/lessons/INT2-U02-L02/drill-04-a414e8b0.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Are you hoping to move into management?",
+      "ko": "관리직 쪽으로 가고 싶으세요?",
+      "point": "질문형: Are you hoping to ~?",
+      "cue": { "lang": "ko", "text": "동료가 요즘 팀을 이끄는 일에 관심이 많아 보입니다. 관리직으로 가고 싶은지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT2-U02-L02/drill-05-6cdce321.m4a", "slow": "audio/lessons/INT2-U02-L02/drill-05-6cdce321.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I'm in no rush to move into management.",
+      "ko": "관리직으로 가는 게 급하진 않아요.",
+      "point": "부정형: I'm in no rush to ~",
+      "cue": { "lang": "en", "text": "Do you want to become a manager as soon as possible?", "audio": "audio/lessons/INT2-U02-L02/cue-06-14c659c6.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U02-L02/drill-06-b2df6672.m4a", "slow": "audio/lessons/INT2-U02-L02/drill-06-b2df6672.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "In our one-on-one today, let's talk about your goals. What's next for you?",
+        "ko": "오늘 일대일 면담에서는 목표 얘기를 해 봐요. 다음엔 뭘 해 보고 싶어요?",
+        "audio": "audio/lessons/INT2-U02-L02/rp-01-a7f1b237.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm hoping to move into management.",
+        "exampleKo": "관리직 쪽으로 가 보고 싶어요.",
+        "requiredKeywords": ["hoping to", "management"]
+      },
+      { "no": 3, "speaker": "partner", "en": "You're always sketching app screens in meetings. Is that just a hobby?", "ko": "회의 때마다 앱 화면을 그리시던데, 그냥 취미예요?", "audio": "audio/lessons/INT2-U02-L02/rp-03-027cab6e.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm hoping to move into product design.",
+        "exampleKo": "제품 디자인 쪽으로 옮겨 가고 싶어요.",
+        "requiredKeywords": ["move into", "product design"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Jake keeps asking to lead projects lately. What's going on with him?", "ko": "제이크가 요즘 자꾸 프로젝트를 맡겠다고 하네요. 무슨 일 있어요?", "audio": "audio/lessons/INT2-U02-L02/rp-05-45d93d07.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Jake's hoping to move into a leadership role.",
+        "exampleKo": "제이크는 리더 역할을 맡고 싶어 해요.",
+        "requiredKeywords": ["Jake's hoping", "leadership role"]
+      },
+      { "no": 7, "speaker": "partner", "en": "They gave the manager job to someone from outside. How do you feel?", "ko": "관리자 자리를 외부 사람한테 줬대요. 기분 어때요?", "audio": "audio/lessons/INT2-U02-L02/rp-07-5d2fcb22.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I was hoping to move into management.",
+        "exampleKo": "관리직으로 가고 싶었는데요.",
+        "requiredKeywords": ["I was hoping", "into management"]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I've been taking a leadership class on weekends. Don't tell anyone yet.",
+        "ko": "주말마다 리더십 수업을 듣고 있어요. 아직 아무한테도 말하지 마세요.",
+        "audio": "audio/lessons/INT2-U02-L02/rp-09-98cb7021.m4a"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are you hoping to move into management?",
+        "exampleKo": "관리직 쪽으로 가고 싶으세요?",
+        "requiredKeywords": ["are you hoping", "management"]
+      },
+      { "no": 11, "speaker": "partner", "en": "There's a team lead opening next month. You should apply right away!", "ko": "다음 달에 팀장 자리가 나요. 바로 지원하세요!", "audio": "audio/lessons/INT2-U02-L02/rp-11-503e834a.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm in no rush to move into management.",
+        "exampleKo": "관리직으로 가는 게 급하진 않아요.",
+        "requiredKeywords": ["no rush", "management"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
