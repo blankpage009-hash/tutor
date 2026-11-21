@@ -82,5 +82,10 @@
   letter-spacing: 0.01em;
   text-transform: uppercase;
 }
-/* 지금 단계 이름은 110% (사용자 요청 2026-11-21) — 색만으론 지금 어디인지 덜 눈에 띄어서 */
-.on .name { font-size: 13.2px; }
+/* 지금 단계 이름은 크게 (사용자 요청 2026-11-21) — 색만으론 지금 어디인지 덜 눈에 띄어서.
+   목표 14.5px, 단 막대 폭을 넘지 않게: 긴 이름(EXPLANATION ≈ 글씨 크기의 4.92배 폭, ROLE-PLAY ≈ 3.95배)은
+   칸 폭(cqi)에 맞춰 줄어든다. 컨테이너 단위를 모르는 옛 브라우저는 앞줄의 13.2px를 쓴다 */
+.step { container-type: inline-size; }
+.on .name { font-size: 14.5px; }
+.step:nth-child(1).on .name { font-size: 13.2px; font-size: min(14.5px, 20cqi); }
+.step:nth-child(4).on .name { font-size: 13.2px; font-size: min(14.5px, 25cqi); }
