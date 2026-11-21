@@ -1,0 +1,240 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "ADV1-U01-L01",
+  "level": "고급 1",
+  "levelCode": "ADV1",
+  "unit": 1,
+  "unitTitle": "Connecting With People",
+  "lessonNo": 1,
+  "lessonTitle": "Chat about ghosting",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "He totally ghosted me after our third date.",
+    "ko": "세 번째 데이트 끝나고 걔가 완전히 잠수 탔어.",
+    "stress": "He TOtally GHOSTed me after our THIRD DATE.",
+    "audio": { "normal": "audio/lessons/ADV1-U01-L01/key-f95c95f9.m4a", "slow": "audio/lessons/ADV1-U01-L01/key-f95c95f9.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "ghost someone은 '~에게 아무 말 없이 연락을 끊다, 잠수 타다'라는 뜻입니다. 문자·전화에 갑자기 답이 없어질 때 씁니다.",
+      "동사로 쓰고 사람을 바로 뒤에 둡니다. ghosted me(나한테 잠수 탔어)처럼 to나 on 없이 말합니다.",
+      "totally는 '완전히'라는 강조입니다. 서운하거나 황당한 기분을 함께 전합니다.",
+      "당한 쪽을 주어로 하면 I got ghosted.(나 잠수 당했어)입니다. 회사가 면접 뒤 연락을 끊을 때도 똑같이 씁니다.",
+      "ghost는 이 레슨 주제라서 쓰는 말입니다. 처음 만난 어른 앞에선 He stopped replying.(답이 끊겼어)이 더 무난합니다."
+    ],
+    "en": "To \"ghost\" someone means to suddenly stop answering their calls and texts with no explanation. You can say \"He ghosted me,\" or \"I got ghosted.\"",
+    "enKo": "누군가를 ghost한다는 건 아무 설명 없이 갑자기 전화와 문자에 답하지 않는다는 뜻입니다. \"He ghosted me\" 또는 \"I got ghosted\"라고 말할 수 있습니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "TOtally, GHOSTed, THIRD DATE에 힘을 줍니다. me after our는 가볍게 이어 갑니다." },
+    { "focus": "연음", "tip": "ghosted me는 d가 거의 안 들려 '고스팃미'처럼 붙입니다. after our도 이어서 '애프터라워'." },
+    { "focus": "약화", "tip": "totally의 가운데 t는 부드럽게 굴러 '토럴리'에 가깝습니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "third의 th는 혀끝을 윗니에 살짝 대고 바람을 내보냅니다. '써r드'에 가깝고 '서드'가 아닙니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "He ghosted to me after our date.", "right": "He ghosted me after our date.", "note": "ghost는 사람을 바로 목적어로 받습니다. to를 넣지 않습니다." },
+    { "wrong": "I was ghosting by him.", "right": "I got ghosted.", "note": "당한 쪽은 수동형 got ghosted(또는 was ghosted)로 말합니다. ghosting by는 틀린 형태입니다." },
+    { "wrong": "He cut his contact with me suddenly.", "right": "He just stopped answering my texts.", "note": "'연락을 끊다'를 직역하면 어색합니다. stopped answering(답을 안 하기 시작했다)이 자연스럽습니다." }
+  ],
+  "dialogue": {
+    "situation": "친구 집에서 친구가 요즘 만나던 사람 이야기를 묻습니다.",
+    "partnerRole": "친한 친구",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "So how are things with that guy from the climbing gym? You two seemed really into each other.",
+        "ko": "그래서 클라이밍장 그 남자랑은 어떻게 돼 가? 너네 서로 꽤 좋아하는 것 같던데.",
+        "audio": "audio/lessons/ADV1-U01-L01/dlg-01-70e6bb59.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Honestly, it's over. He totally ghosted me after our third date.",
+        "ko": "솔직히 끝났어. 세 번째 데이트 끝나고 걔가 완전히 잠수 탔어.",
+        "audio": "audio/lessons/ADV1-U01-L01/dlg-02-1c0c48ca.m4a",
+        "hasKeySentence": true
+      },
+      { "no": 3, "speaker": "partner", "en": "Wait, seriously? No text, no explanation, nothing at all?", "ko": "잠깐, 진짜? 문자도 없고, 설명도 없고, 아무것도?", "audio": "audio/lessons/ADV1-U01-L01/dlg-03-384ce670.m4a" },
+      { "no": 4, "speaker": "me", "en": "Nothing. I sent him a message the next day, and he never wrote back.", "ko": "아무것도. 다음 날 내가 메시지 보냈는데 끝내 답이 없었어.", "audio": "audio/lessons/ADV1-U01-L01/dlg-04-630903e2.m4a" },
+      { "no": 5, "speaker": "partner", "en": "That's so rude. If he wasn't interested, he should've just said so.", "ko": "진짜 예의 없다. 관심 없었으면 그냥 그렇다고 말했어야지.", "audio": "audio/lessons/ADV1-U01-L01/dlg-05-84230d33.m4a" },
+      { "no": 6, "speaker": "me", "en": "Exactly. I'd rather hear the truth than get no answer at all.", "ko": "내 말이. 아무 대답 없는 것보단 차라리 솔직하게 듣는 게 낫지.", "audio": "audio/lessons/ADV1-U01-L01/dlg-06-95eb6df6.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "be into someone", "ko": "'~를 좋아하다, ~에게 끌리다.' 연애 감정이 있을 때 일상에서 아주 많이 씁니다." },
+      { "en": "I'd rather A than B", "ko": "'B보다는 차라리 A가 낫다.' 둘 다 별로지만 하나를 고를 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "He totally ghosted me after our third date.",
+      "ko": "세 번째 데이트 끝나고 걔가 완전히 잠수 탔어.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Whatever happened with that guy you went out with?", "audio": "audio/lessons/ADV1-U01-L01/cue-01-f4376c44.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L01/drill-01-f95c95f9.m4a", "slow": "audio/lessons/ADV1-U01-L01/drill-01-f95c95f9.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "He totally ghosted me after that weekend trip.",
+      "ko": "그 주말여행 다녀오고 나서 걔가 완전히 잠수 탔어.",
+      "point": "단어 교체: our third date → that weekend trip",
+      "cue": { "lang": "en", "text": "So did that weekend trip bring you two closer?", "audio": "audio/lessons/ADV1-U01-L01/cue-02-afdf128c.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L01/drill-02-60ea8171.m4a", "slow": "audio/lessons/ADV1-U01-L01/drill-02-60ea8171.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "The company ghosted me after my final interview.",
+      "ko": "그 회사가 최종 면접 끝나고 연락을 뚝 끊었어.",
+      "point": "주어 변경: He → The company",
+      "cue": { "lang": "en", "text": "Did you ever hear back about that job?", "audio": "audio/lessons/ADV1-U01-L01/cue-03-c8cf36be.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L01/drill-03-219517e4.m4a", "slow": "audio/lessons/ADV1-U01-L01/drill-03-219517e4.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "I'd never ghost someone after a date.",
+      "ko": "난 데이트하고 나서 절대 잠수 안 타.",
+      "point": "부정형: I'd never ghost ~",
+      "cue": { "lang": "en", "text": "Have you ever just disappeared on someone you were seeing?", "audio": "audio/lessons/ADV1-U01-L01/cue-04-4c9d2260.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L01/drill-04-29e0bbe5.m4a", "slow": "audio/lessons/ADV1-U01-L01/drill-04-29e0bbe5.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Did he really ghost you after your third date?",
+      "ko": "걔가 진짜 세 번째 데이트 끝나고 잠수 탔어?",
+      "point": "질문형: Did he really ghost you ~?",
+      "cue": { "lang": "ko", "text": "친구가 세 번째 데이트 뒤로 상대가 연락을 끊었다고 해요. 정말 그랬는지 되물어 보세요." },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L01/drill-05-5c8fad95.m4a", "slow": "audio/lessons/ADV1-U01-L01/drill-05-5c8fad95.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "He's been ghosting me ever since our third date.",
+      "ko": "세 번째 데이트 이후로 걔가 계속 잠수 타고 있어.",
+      "point": "시제: 현재완료진행 has been ghosting",
+      "cue": { "lang": "en", "text": "How have things been with Ethan this week?", "audio": "audio/lessons/ADV1-U01-L01/cue-06-8a1b3e97.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L01/drill-06-eec7aed6.m4a", "slow": "audio/lessons/ADV1-U01-L01/drill-06-eec7aed6.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "You stopped mentioning Ethan lately. Didn't you two go on a few dates?",
+        "ko": "너 요즘 이선 얘기를 안 하더라. 너네 데이트 몇 번 하지 않았어?",
+        "audio": "audio/lessons/ADV1-U01-L01/rp-01-3dfaa7b9.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "He totally ghosted me after our third date.",
+        "exampleKo": "세 번째 데이트 끝나고 걔가 완전히 잠수 탔어.",
+        "requiredKeywords": ["ghosted me", "third date"]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "You went on that weekend trip with Chris last month, right? How are things with him now?",
+        "ko": "너 지난달에 크리스랑 주말여행 갔었지? 지금 걔랑은 어때?",
+        "audio": "audio/lessons/ADV1-U01-L01/rp-03-a242a211.m4a"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "He totally ghosted me after that weekend trip.",
+        "exampleKo": "그 주말여행 다녀오고 나서 걔가 완전히 잠수 탔어.",
+        "requiredKeywords": ["ghosted me", "weekend trip"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Any news from that tech company? You said your final round went really well.",
+        "ko": "그 IT 회사에서 소식 있어? 최종 면접 진짜 잘 봤다며.",
+        "audio": "audio/lessons/ADV1-U01-L01/rp-05-dec33bd2.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "The company ghosted me after my final interview.",
+        "exampleKo": "그 회사가 최종 면접 끝나고 연락을 뚝 끊었어.",
+        "requiredKeywords": ["the company", "final interview"]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Honestly, when a date goes badly, I just stop replying. Isn't that easier?",
+        "ko": "솔직히 난 데이트가 별로면 그냥 답을 안 해. 그게 더 편하지 않아?",
+        "audio": "audio/lessons/ADV1-U01-L01/rp-07-84fcfc19.m4a"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'd never ghost someone after a date.",
+        "exampleKo": "난 데이트하고 나서 절대 잠수 안 타.",
+        "requiredKeywords": ["never ghost", "after a date"]
+      },
+      { "no": 9, "speaker": "partner", "en": "Ryan hasn't texted me since our third date. It's been two weeks now.", "ko": "라이언이 세 번째 데이트 이후로 문자가 없어. 벌써 2주째야.", "audio": "audio/lessons/ADV1-U01-L01/rp-09-afb2eca5.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did he really ghost you after your third date?",
+        "exampleKo": "걔가 진짜 세 번째 데이트 끝나고 잠수 탔어?",
+        "requiredKeywords": ["did he really", "third date"]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "You've checked your phone like twenty times tonight. Is Ethan still not answering?",
+        "ko": "너 오늘 밤에 폰을 스무 번은 봤어. 이선이 아직도 답이 없어?",
+        "audio": "audio/lessons/ADV1-U01-L01/rp-11-091d1e3d.m4a"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "He's been ghosting me ever since our third date.",
+        "exampleKo": "세 번째 데이트 이후로 걔가 계속 잠수 타고 있어.",
+        "requiredKeywords": ["been ghosting", "third date"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

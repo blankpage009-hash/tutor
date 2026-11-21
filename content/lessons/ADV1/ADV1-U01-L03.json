@@ -1,0 +1,256 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "ADV1-U01-L03",
+  "level": "고급 1",
+  "levelCode": "ADV1",
+  "unit": 1,
+  "unitTitle": "Connecting With People",
+  "lessonNo": 3,
+  "lessonTitle": "Discuss where to hang out",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "How about somewhere we can actually hear each other?",
+    "ko": "우리 서로 말소리 좀 들리는 데 어때?",
+    "stress": "How aBOUT SOMEwhere we can ACtually HEAR each OTHer?",
+    "audio": { "normal": "audio/lessons/ADV1-U01-L03/key-c41fc536.m4a", "slow": "audio/lessons/ADV1-U01-L03/key-c41fc536.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "How about somewhere ~?는 '~한 데 어때?'라는 제안입니다. 상대가 고른 장소 대신 다른 곳을 부드럽게 제안할 때 씁니다.",
+      "somewhere 뒤에 바로 '주어 + 동사'를 붙여 어떤 곳인지 설명합니다. somewhere we can talk(얘기할 수 있는 데)처럼 where를 또 넣지 않습니다.",
+      "actually는 '진짜로, 제대로'라는 강조입니다. 지금 말한 곳은 시끄러워서 그게 안 된다는 느낌을 줍니다.",
+      "비슷하게 Can we go somewhere quieter?(좀 조용한 데 갈까?)도 씁니다. How about ~?가 조금 더 가볍고 제안하는 말투입니다.",
+      "친구와 '놀다'는 play가 아니라 hang out입니다. Where should we hang out?(어디서 놀까?)"
+    ],
+    "en": "Say \"How about somewhere ~?\" to suggest a different kind of place. \"Somewhere we can actually hear each other\" means a place quiet enough to talk.",
+    "enKo": "다른 종류의 장소를 제안할 때 \"How about somewhere ~?\"라고 말합니다. \"Somewhere we can actually hear each other\"는 대화할 수 있을 만큼 조용한 곳을 뜻합니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "aBOUT, SOMEwhere, ACtually, HEAR, OTHer에 힘을 줍니다. we can은 가볍게 지나갑니다." },
+    { "focus": "연음", "tip": "How about은 '하워바웃'처럼 이어 말하고, hear each other는 '히어리치아더r'처럼 붙입니다." },
+    { "focus": "약화", "tip": "can은 '캔'이 아니라 아주 짧게 '큰'에 가깝습니다. 힘을 주면 can't로 들릴 수 있습니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "other의 th는 혀끝을 윗니에 대고 목을 울리는 소리입니다. '아더'의 ㄷ이 아니라 부드러운 '아th어r'." }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Let's go to a quiet place where we can talk each other.",
+      "right": "How about somewhere we can actually hear each other?",
+      "note": "talk each other는 틀립니다(talk to each other). somewhere로 짧게 말하는 게 더 자연스럽습니다."
+    },
+    { "wrong": "Where do you want to play on Friday?", "right": "Where do you want to hang out on Friday?", "note": "어른끼리 '놀다'는 play가 아니라 hang out입니다. play는 아이들 놀이나 운동에 씁니다." },
+    { "wrong": "That place is too much people.", "right": "That place gets way too crowded.", "note": "'사람이 너무 많다'는 crowded(붐비는)로 말합니다. too much people은 문법이 틀립니다." }
+  ],
+  "dialogue": {
+    "situation": "금요일에 만나기로 한 친구와 어디서 놀지 정합니다.",
+    "partnerRole": "친한 친구",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Friday's still on, right? I was thinking we could check out that new sports bar downtown.",
+        "ko": "금요일 그대로 하는 거지? 시내에 새로 생긴 스포츠 바 가 볼까 했거든.",
+        "audio": "audio/lessons/ADV1-U01-L03/dlg-01-95119ab1.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Eh, those places get so packed. How about somewhere we can actually hear each other?",
+        "ko": "음, 그런 데는 사람이 너무 꽉 차. 우리 서로 말소리 좀 들리는 데 어때?",
+        "audio": "audio/lessons/ADV1-U01-L03/dlg-02-9056306f.m4a",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Fair point. There's a cozy wine bar near my place with a little patio.",
+        "ko": "맞는 말이네. 우리 집 근처에 작은 테라스 있는 아늑한 와인 바 있어.",
+        "audio": "audio/lessons/ADV1-U01-L03/dlg-03-0a943f0c.m4a"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "That sounds perfect. Do they take reservations, or is it first come, first served?",
+        "ko": "완전 좋다. 거기 예약 받아, 아니면 먼저 온 순서대로야?",
+        "audio": "audio/lessons/ADV1-U01-L03/dlg-04-b764a6de.m4a"
+      },
+      { "no": 5, "speaker": "partner", "en": "No reservations, but it's usually pretty quiet before eight.", "ko": "예약은 안 받는데, 8시 전엔 보통 꽤 한산해.", "audio": "audio/lessons/ADV1-U01-L03/dlg-05-10dffd43.m4a" },
+      { "no": 6, "speaker": "me", "en": "Great, let's meet there at seven, then. I'll text Maya too.", "ko": "좋아, 그럼 7시에 거기서 만나자. 마야한테도 문자할게.", "audio": "audio/lessons/ADV1-U01-L03/dlg-06-3b4fe684.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "Fair point.", "ko": "'맞는 말이네.' 상대 의견이 일리 있다고 가볍게 인정할 때 씁니다." },
+      { "en": "first come, first served", "ko": "'선착순, 먼저 온 순서대로.' 예약 없이 도착한 순서대로 자리를 줄 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "How about somewhere we can actually hear each other?",
+      "ko": "우리 서로 말소리 좀 들리는 데 어때?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "친구가 시끄러운 노래방에 또 가자고 해요. 서로 말소리가 들리는 곳을 제안하세요." },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L03/drill-01-c41fc536.m4a", "slow": "audio/lessons/ADV1-U01-L03/drill-01-c41fc536.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "How about somewhere we can actually sit outside?",
+      "ko": "우리 밖에 앉을 수 있는 데 어때?",
+      "point": "단어 교체: hear each other → sit outside",
+      "cue": { "lang": "ko", "text": "날씨 좋은 저녁이에요. 친구에게 밖에 앉을 수 있는 곳을 제안하세요." },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L03/drill-02-201a12c1.m4a", "slow": "audio/lessons/ADV1-U01-L03/drill-02-201a12c1.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "How about somewhere quieter than last time?",
+      "ko": "지난번보다 좀 조용한 데 어때?",
+      "point": "비교: somewhere quieter than ~",
+      "cue": { "lang": "ko", "text": "지난번에 간 곳이 너무 시끄러웠어요. 친구에게 그보다 조용한 곳을 제안하세요." },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L03/drill-03-a96c6d78.m4a", "slow": "audio/lessons/ADV1-U01-L03/drill-03-a96c6d78.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "I don't want to go somewhere we can't even talk.",
+      "ko": "말도 제대로 못 하는 데는 가기 싫어.",
+      "point": "부정형: I don't want to go somewhere ~",
+      "cue": { "lang": "en", "text": "Want to try that packed rooftop club everyone's talking about?", "audio": "audio/lessons/ADV1-U01-L03/cue-04-5f6cf34c.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L03/drill-04-8b339f5c.m4a", "slow": "audio/lessons/ADV1-U01-L03/drill-04-8b339f5c.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Last time, we couldn't even hear each other.",
+      "ko": "지난번엔 서로 말소리도 안 들렸잖아.",
+      "point": "과거 시제: couldn't even hear",
+      "cue": { "lang": "en", "text": "Why didn't you like that bar we went to last time?", "audio": "audio/lessons/ADV1-U01-L03/cue-05-b045519d.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L03/drill-05-bb028bb0.m4a", "slow": "audio/lessons/ADV1-U01-L03/drill-05-bb028bb0.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "Maya wants somewhere we can actually hear each other.",
+      "ko": "마야는 서로 말소리 들리는 데로 가고 싶대.",
+      "point": "주어 변경: we → Maya wants",
+      "cue": { "lang": "en", "text": "What kind of place is Maya looking for?", "audio": "audio/lessons/ADV1-U01-L03/cue-06-a5555630.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L03/drill-06-a6fd4d8d.m4a", "slow": "audio/lessons/ADV1-U01-L03/drill-06-a6fd4d8d.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "My cousin's band is playing at a club downtown tonight. Want to meet there to catch up?",
+        "ko": "오늘 밤에 내 사촌 밴드가 시내 클럽에서 공연해. 거기서 만나서 수다 떨래?",
+        "audio": "audio/lessons/ADV1-U01-L03/rp-01-95acbe8d.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How about somewhere we can actually hear each other?",
+        "exampleKo": "우리 서로 말소리 좀 들리는 데 어때?",
+        "requiredKeywords": ["how about somewhere", "each other"]
+      },
+      { "no": 3, "speaker": "partner", "en": "The weather is finally warm! Where should we have lunch on Saturday?", "ko": "드디어 날이 따뜻해졌다! 토요일에 어디서 점심 먹을까?", "audio": "audio/lessons/ADV1-U01-L03/rp-03-d96e857b.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How about somewhere we can actually sit outside?",
+        "exampleKo": "우리 밖에 앉을 수 있는 데 어때?",
+        "requiredKeywords": ["how about somewhere", "sit outside"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "The music at that bar last Friday was so loud my ears are still ringing. Where to this time?",
+        "ko": "지난 금요일 그 바 음악이 너무 커서 아직도 귀가 울려. 이번엔 어디 갈까?",
+        "audio": "audio/lessons/ADV1-U01-L03/rp-05-49a40926.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How about somewhere quieter than last time?",
+        "exampleKo": "지난번보다 좀 조용한 데 어때?",
+        "requiredKeywords": ["quieter", "last time"]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "My coworker invited us to a huge warehouse party with a live DJ tonight. Want to come?",
+        "ko": "회사 동료가 오늘 밤 라이브 DJ 나오는 대형 창고 파티에 우리를 초대했어. 갈래?",
+        "audio": "audio/lessons/ADV1-U01-L03/rp-07-467d3f7f.m4a"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I don't want to go somewhere we can't even talk.",
+        "exampleKo": "말도 제대로 못 하는 데는 가기 싫어.",
+        "requiredKeywords": ["don't want", "even talk"]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Why don't you want to go back to that karaoke place? I thought you had fun.",
+        "ko": "왜 그 노래방 다시 가기 싫어? 너 재밌어하는 줄 알았는데.",
+        "audio": "audio/lessons/ADV1-U01-L03/rp-09-87aff9a3.m4a"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Last time, we couldn't even hear each other.",
+        "exampleKo": "지난번엔 서로 말소리도 안 들렸잖아.",
+        "requiredKeywords": ["couldn't even hear", "each other"]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "I'm booking a table for the three of us. Did Maya say what kind of place she wants?",
+        "ko": "우리 셋 자리 예약하려고. 마야가 어떤 데 가고 싶다고 했어?",
+        "audio": "audio/lessons/ADV1-U01-L03/rp-11-df43ca69.m4a"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Maya wants somewhere we can actually hear each other.",
+        "exampleKo": "마야는 서로 말소리 들리는 데로 가고 싶대.",
+        "requiredKeywords": ["Maya wants", "each other"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "ADV1-U01-L02",
+  "level": "고급 1",
+  "levelCode": "ADV1",
+  "unit": 1,
+  "unitTitle": "Connecting With People",
+  "lessonNo": 2,
+  "lessonTitle": "Compare small talk cultures",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Small talk is a much bigger thing here.",
+    "ko": "여기선 스몰토크가 훨씬 일상적이에요.",
+    "stress": "SMALL talk is a MUCH BIGger thing HERE.",
+    "audio": { "normal": "audio/lessons/ADV1-U01-L02/key-1100fc60.m4a", "slow": "audio/lessons/ADV1-U01-L02/key-1100fc60.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "a big thing은 '흔하고 다들 중요하게 여기는 것'이라는 뜻입니다. 나라나 회사의 문화를 비교할 때 아주 많이 씁니다.",
+      "much bigger처럼 비교급 앞에 much나 way를 넣으면 '훨씬'이 됩니다. more bigger처럼 more를 겹쳐 쓰지 않습니다.",
+      "here(여기, 미국)와 back home / in Korea(우리나라에선)를 맞세워 두 문화를 비교합니다.",
+      "반대로 말할 땐 isn't as big a thing(그만큼 흔하진 않다)입니다. as big a thing처럼 a가 형용사 뒤로 가는 어순에 주의하세요.",
+      "Korea doesn't have small talk culture.처럼 '문화가 없다'로 직역하는 것보다 훨씬 자연스럽습니다."
+    ],
+    "en": "Use \"a big thing\" to say something is common and important in a place. \"Small talk is a much bigger thing here\" means people chat casually much more here than where you're from.",
+    "enKo": "어떤 곳에서 무언가가 흔하고 중요하다고 말할 때 \"a big thing\"을 씁니다. \"Small talk is a much bigger thing here\"는 내가 살던 곳보다 여기 사람들이 가볍게 대화를 훨씬 많이 한다는 뜻입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "SMALL, MUCH BIGger, HERE에 힘을 줍니다. is a는 아주 짧게 지나갑니다." },
+    { "focus": "연음", "tip": "talk is a는 이어서 '토키저'처럼 말합니다. 단어마다 끊지 않습니다." },
+    { "focus": "약화", "tip": "a much의 a는 '어' 정도로 아주 약하게 냅니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "thing의 th는 혀끝을 윗니 사이로 살짝 내밀고 바람을 냅니다. '씽'이지 '띵'이 아닙니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "Small talk is more bigger here.", "right": "Small talk is a much bigger thing here.", "note": "bigger 앞에 more를 겹쳐 쓰지 않습니다. '훨씬'은 much나 way로 말합니다." },
+    { "wrong": "Korea doesn't have small talk culture.", "right": "Small talk isn't as big a thing in Korea.", "note": "'문화가 없다'는 직역이라 어색합니다. 실제로는 '그만큼 흔하지 않다'고 말합니다." },
+    { "wrong": "Americans talk with strangers very well.", "right": "People here chat with strangers a lot.", "note": "very well은 '능숙하게'라는 뜻이라 어색합니다. 자주 한다는 말은 a lot으로 합니다." }
+  ],
+  "dialogue": {
+    "situation": "회사 탕비실에서 미국인 동료와 커피를 마시며 이야기합니다.",
+    "partnerRole": "미국인 동료",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "The barista asked about my weekend plans again this morning. Do people do that in Korea too?",
+        "ko": "오늘 아침에 바리스타가 또 제 주말 계획을 물어보더라고요. 한국에서도 그래요?",
+        "audio": "audio/lessons/ADV1-U01-L02/dlg-01-b63cd778.m4a"
+      },
+      { "no": 2, "speaker": "me", "en": "Not really. Small talk is a much bigger thing here.", "ko": "별로 안 그래요. 여기선 스몰토크가 훨씬 일상적이에요.", "audio": "audio/lessons/ADV1-U01-L02/dlg-02-001d9e33.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Really? So what do people usually say to strangers back in Korea?", "ko": "그래요? 그럼 한국에선 보통 모르는 사람한테 뭐라고 해요?", "audio": "audio/lessons/ADV1-U01-L02/dlg-03-fdb1901a.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Usually nothing. Chatting with a cashier would feel a little awkward back home.",
+        "ko": "보통 아무 말 안 해요. 한국에서 계산원이랑 수다 떨면 좀 어색할 거예요.",
+        "audio": "audio/lessons/ADV1-U01-L02/dlg-04-77096930.m4a"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Interesting. Do you think it makes people here friendlier, or just more polite?",
+        "ko": "흥미롭네요. 그래서 여기 사람들이 더 친근한 것 같아요, 아니면 그냥 예의상 그러는 것 같아요?",
+        "audio": "audio/lessons/ADV1-U01-L02/dlg-05-49b55d70.m4a"
+      },
+      { "no": 6, "speaker": "me", "en": "A bit of both, honestly. But I've actually started to enjoy it.", "ko": "솔직히 둘 다 조금씩이요. 근데 저 사실 요즘 그게 좋아지기 시작했어요.", "audio": "audio/lessons/ADV1-U01-L02/dlg-06-b2f84e14.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "back home", "ko": "'우리나라에서는, 고향에서는.' 외국에 살면서 내가 온 곳을 말할 때 씁니다." },
+      { "en": "A bit of both.", "ko": "'둘 다 조금씩이요.' A냐 B냐 묻는 질문에 딱 하나를 고르기 어려울 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Small talk is a much bigger thing here.",
+      "ko": "여기선 스몰토크가 훨씬 일상적이에요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Do people chat with strangers more here or in Korea?", "audio": "audio/lessons/ADV1-U01-L02/cue-01-34349ab6.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L02/drill-01-1100fc60.m4a", "slow": "audio/lessons/ADV1-U01-L02/drill-01-1100fc60.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "Tipping is a much bigger thing here.",
+      "ko": "여기선 팁 문화가 훨씬 강해요.",
+      "point": "단어 교체: Small talk → Tipping",
+      "cue": { "lang": "en", "text": "What surprised you most about eating out in America?", "audio": "audio/lessons/ADV1-U01-L02/cue-02-e557ce74.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L02/drill-02-3b19e373.m4a", "slow": "audio/lessons/ADV1-U01-L02/drill-02-3b19e373.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "Team dinners are a much bigger thing in Korea.",
+      "ko": "한국에선 회식이 훨씬 중요한 문화예요.",
+      "point": "복수 주어·장소: are, in Korea",
+      "cue": { "lang": "en", "text": "What's work culture like after hours in Korea?", "audio": "audio/lessons/ADV1-U01-L02/cue-03-dafc1024.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L02/drill-03-6e798983.m4a", "slow": "audio/lessons/ADV1-U01-L02/drill-03-6e798983.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Small talk isn't as big a thing in Korea.",
+      "ko": "한국에선 스몰토크가 그만큼 흔하진 않아요.",
+      "point": "부정 비교: isn't as big a thing",
+      "cue": { "lang": "en", "text": "Do Koreans chat with cashiers and baristas a lot?", "audio": "audio/lessons/ADV1-U01-L02/cue-04-fa2ff85d.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L02/drill-04-1fb7d5f9.m4a", "slow": "audio/lessons/ADV1-U01-L02/drill-04-1fb7d5f9.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Is small talk a big thing in your country?",
+      "ko": "그쪽 나라에서도 스몰토크 많이 하세요?",
+      "point": "질문형: Is ~ a big thing in ~?",
+      "cue": { "lang": "ko", "text": "다른 나라에서 온 동료에게 그 나라에서도 스몰토크를 많이 하는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L02/drill-05-b7b7fc5e.m4a", "slow": "audio/lessons/ADV1-U01-L02/drill-05-b7b7fc5e.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "Small talk was a much bigger thing at my last job.",
+      "ko": "전 직장에선 스몰토크를 훨씬 많이 했어요.",
+      "point": "과거 시제: was",
+      "cue": { "lang": "en", "text": "Did you chat much with coworkers at your previous company?", "audio": "audio/lessons/ADV1-U01-L02/cue-06-8fadd292.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U01-L02/drill-06-4e7870f4.m4a", "slow": "audio/lessons/ADV1-U01-L02/drill-06-4e7870f4.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "My rideshare driver talked to me the whole way to the office today. Is that normal for you?",
+        "ko": "오늘 출근길에 차량 호출 기사님이 가는 내내 말을 거시더라고요. 그쪽한테도 그런 게 흔해요?",
+        "audio": "audio/lessons/ADV1-U01-L02/rp-01-869ac26d.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Small talk is a much bigger thing here.",
+        "exampleKo": "여기선 스몰토크가 훨씬 일상적이에요.",
+        "requiredKeywords": ["much bigger thing", "here"]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "I just paid for lunch, and the screen asked me for twenty percent. Is that normal?",
+        "ko": "방금 점심값 냈는데 화면에 20퍼센트를 달라고 나오더라고요. 원래 그래요?",
+        "audio": "audio/lessons/ADV1-U01-L02/rp-03-e411af1a.m4a"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Tipping is a much bigger thing here.",
+        "exampleKo": "여기선 팁 문화가 훨씬 강해요.",
+        "requiredKeywords": ["tipping", "bigger thing"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I heard Korean teams go out to eat together a lot after work. Is that true?",
+        "ko": "한국 팀들은 퇴근하고 같이 밥 먹으러 자주 간다고 들었어요. 진짜예요?",
+        "audio": "audio/lessons/ADV1-U01-L02/rp-05-95af9933.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Team dinners are a much bigger thing in Korea.",
+        "exampleKo": "한국에선 회식이 훨씬 중요한 문화예요.",
+        "requiredKeywords": ["team dinners", "in Korea"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Do people in Seoul chat with strangers on the subway like we do here?", "ko": "서울 사람들도 우리처럼 지하철에서 모르는 사람이랑 얘기해요?", "audio": "audio/lessons/ADV1-U01-L02/rp-07-bb176fa9.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Small talk isn't as big a thing in Korea.",
+        "exampleKo": "한국에선 스몰토크가 그만큼 흔하진 않아요.",
+        "requiredKeywords": ["isn't as big", "in Korea"]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I just moved here from Brazil, and I'm still getting used to how people talk here.",
+        "ko": "저는 브라질에서 막 이사 왔는데, 여기 사람들 말하는 방식에 아직 적응 중이에요.",
+        "audio": "audio/lessons/ADV1-U01-L02/rp-09-187afc97.m4a"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Is small talk a big thing in your country?",
+        "exampleKo": "그쪽 나라에서도 스몰토크 많이 하세요?",
+        "requiredKeywords": ["is small talk", "your country"]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "You seem really comfortable chatting with clients. Where did you learn that?",
+        "ko": "고객이랑 얘기하는 게 정말 편해 보이세요. 그거 어디서 배우셨어요?",
+        "audio": "audio/lessons/ADV1-U01-L02/rp-11-2897800f.m4a"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Small talk was a much bigger thing at my last job.",
+        "exampleKo": "전 직장에선 스몰토크를 훨씬 많이 했어요.",
+        "requiredKeywords": ["was a much bigger", "last job"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

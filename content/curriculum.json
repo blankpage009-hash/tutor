@@ -497,44 +497,44 @@
       "name": "고급",
       "levels": [
         {
-          "key": "level-09",
-          "code": null,
+          "key": "ADV1",
+          "code": "ADV1",
           "name": "고급 1",
           "units": [
             {
               "no": 1,
               "title": "Connecting With People",
               "lessons": [
-                { "no": 1, "title": "Chat about ghosting", "id": null, "ready": false},
-                { "no": 2, "title": "Compare small talk cultures", "id": null, "ready": false},
-                { "no": 3, "title": "Discuss where to hang out", "id": null, "ready": false}
+                { "no": 1, "title": "Chat about ghosting", "id": "ADV1-U01-L01", "ready": true, "file": "lessons/ADV1/ADV1-U01-L01.json" },
+                { "no": 2, "title": "Compare small talk cultures", "id": "ADV1-U01-L02", "ready": true, "file": "lessons/ADV1/ADV1-U01-L02.json" },
+                { "no": 3, "title": "Discuss where to hang out", "id": "ADV1-U01-L03", "ready": true, "file": "lessons/ADV1/ADV1-U01-L03.json" }
               ]
             },
             {
               "no": 2,
               "title": "Interesting Hobbies",
               "lessons": [
-                { "no": 1, "title": "Redefine sleeping", "id": null, "ready": false},
-                { "no": 2, "title": "Dive into livestreaming", "id": null, "ready": false},
-                { "no": 3, "title": "Chat about memes", "id": null, "ready": false}
+                { "no": 1, "title": "Redefine sleeping", "id": "ADV1-U02-L01", "ready": false},
+                { "no": 2, "title": "Dive into livestreaming", "id": "ADV1-U02-L02", "ready": false},
+                { "no": 3, "title": "Chat about memes", "id": "ADV1-U02-L03", "ready": false}
               ]
             },
             {
               "no": 3,
               "title": "Travel Talk",
               "lessons": [
-                { "no": 1, "title": "Compare lodging options", "id": null, "ready": false},
-                { "no": 2, "title": "Re-experience culture shock", "id": null, "ready": false},
-                { "no": 3, "title": "Discuss overtourism", "id": null, "ready": false}
+                { "no": 1, "title": "Compare lodging options", "id": "ADV1-U03-L01", "ready": false},
+                { "no": 2, "title": "Re-experience culture shock", "id": "ADV1-U03-L02", "ready": false},
+                { "no": 3, "title": "Discuss overtourism", "id": "ADV1-U03-L03", "ready": false}
               ]
             },
             {
               "no": 4,
               "title": "Movies, TV, and Beyond",
               "lessons": [
-                { "no": 1, "title": "Explore reboots", "id": null, "ready": false},
-                { "no": 2, "title": "Compare subtitles and dubbing", "id": null, "ready": false},
-                { "no": 3, "title": "Chat about streaming", "id": null, "ready": false}
+                { "no": 1, "title": "Explore reboots", "id": "ADV1-U04-L01", "ready": false},
+                { "no": 2, "title": "Compare subtitles and dubbing", "id": "ADV1-U04-L02", "ready": false},
+                { "no": 3, "title": "Chat about streaming", "id": "ADV1-U04-L03", "ready": false}
               ]
             }
           ]
