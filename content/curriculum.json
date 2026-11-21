@@ -514,9 +514,9 @@
               "no": 2,
               "title": "Interesting Hobbies",
               "lessons": [
-                { "no": 1, "title": "Redefine sleeping", "id": "ADV1-U02-L01", "ready": false},
-                { "no": 2, "title": "Dive into livestreaming", "id": "ADV1-U02-L02", "ready": false},
-                { "no": 3, "title": "Chat about memes", "id": "ADV1-U02-L03", "ready": false}
+                { "no": 1, "title": "Redefine sleeping", "id": "ADV1-U02-L01", "ready": true, "file": "lessons/ADV1/ADV1-U02-L01.json" },
+                { "no": 2, "title": "Dive into livestreaming", "id": "ADV1-U02-L02", "ready": true, "file": "lessons/ADV1/ADV1-U02-L02.json" },
+                { "no": 3, "title": "Chat about memes", "id": "ADV1-U02-L03", "ready": true, "file": "lessons/ADV1/ADV1-U02-L03.json" }
               ]
             },
             {

@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "ADV1-U02-L02",
+  "level": "고급 1",
+  "levelCode": "ADV1",
+  "unit": 2,
+  "unitTitle": "Interesting Hobbies",
+  "lessonNo": 2,
+  "lessonTitle": "Dive into livestreaming",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I've been getting into livestreaming lately.",
+    "ko": "요즘 라이브 방송 하는 재미에 빠졌어요.",
+    "stress": "I've been GETting INto LIVEstreaming LATEly.",
+    "audio": {
+      "normal": "adv1-u02-l02_key.mp3",
+      "slow": "adv1-u02-l02_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "get into ~는 '~에 재미를 붙이다, 빠져들다'라는 뜻입니다. 새 취미를 시작해서 점점 좋아지고 있을 때 씁니다.",
+      "I've been -ing lately는 '요즘 계속 ~하고 있다'는 현재완료진행형입니다. 최근에 시작해서 지금도 이어지는 일을 말합니다.",
+      "이미 푹 빠진 상태를 말할 땐 I'm really into ~를 씁니다. get into는 빠져드는 '과정', be into는 빠져 있는 '상태'입니다.",
+      "livestreaming은 방송을 하는 것과 보는 것 둘 다 될 수 있어서, 이어지는 말로 어느 쪽인지 밝혀 줍니다."
+    ],
+    "en": "\"Get into something\" means you start to enjoy a new activity more and more. Add \"lately\" to show it started recently and is still going on.",
+    "enKo": "\"Get into something\"은 새로운 활동이 점점 더 재미있어진다는 뜻입니다. \"lately\"를 붙이면 최근에 시작해서 지금도 이어지고 있다는 뜻이 됩니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "GET, IN, LIVE, LATE에 힘을 줍니다. I've been은 '아이빈'처럼 짧게 지나갑니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "getting into는 미국식으로 t가 부드러워져 '게링인투'처럼 들립니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "been은 '빈'보다 '번'에 가깝게 약하게 냅니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "lately의 l은 혀끝을 윗잇몸에 붙이고 시작합니다. '레잇리'처럼 가운데 t는 거의 멈추듯 짧게 냅니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I'm falling in livestreaming these days.",
+      "right": "I've been getting into livestreaming lately.",
+      "note": "'빠지다'를 fall in으로 직역하면 안 됩니다. 취미에 빠질 땐 get into를 씁니다."
+    },
+    {
+      "wrong": "I do live broadcasting.",
+      "right": "I do livestreams on weekends.",
+      "note": "broadcasting은 방송국 느낌입니다. 개인 방송은 livestream이나 stream이라고 합니다."
+    },
+    {
+      "wrong": "I'm interesting in livestreaming.",
+      "right": "I'm interested in livestreaming.",
+      "note": "interesting은 '흥미를 주는'이라는 뜻입니다. 내가 관심이 있을 땐 interested를 씁니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "월요일 아침 사무실에서 미국인 동료와 주말 이야기를 합니다.",
+    "partnerRole": "미국인 동료",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "You look a little tired. Did you stay up late doing something fun this weekend?",
+        "ko": "좀 피곤해 보이시네요. 주말에 뭐 재밌는 거 하느라 늦게 주무셨어요?",
+        "audio": "adv1-u02-l02_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Kind of. I've been getting into livestreaming lately.",
+        "ko": "그런 셈이에요. 요즘 라이브 방송 하는 재미에 빠졌어요.",
+        "audio": "adv1-u02-l02_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "No way! What do you stream? Video games?",
+        "ko": "설마요! 뭘 방송하세요? 게임이요?",
+        "audio": "adv1-u02-l02_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Mostly cooking. I make Korean home food while people ask questions in the chat.",
+        "ko": "주로 요리요. 한국 집밥을 만들면 사람들이 채팅으로 질문해요.",
+        "audio": "adv1-u02-l02_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "That's so cool. Do you actually get a lot of viewers?",
+        "ko": "진짜 멋지네요. 보는 사람이 실제로 많아요?",
+        "audio": "adv1-u02-l02_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Not yet, maybe twenty on a good night. But the regulars make it worth it.",
+        "ko": "아직은요, 잘 되는 날 한 스무 명이요. 그래도 단골들 덕분에 할 맛이 나요.",
+        "audio": "adv1-u02-l02_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "No way!",
+        "ko": "'설마요! 진짜요?' 놀랍고 신기한 소식을 들었을 때 반갑게 반응하는 말입니다."
+      },
+      {
+        "en": "make it worth it",
+        "ko": "'~ 덕분에 할 만하다, 보람이 있다.' 힘든 일에도 계속하는 이유를 말할 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I've been getting into livestreaming lately.",
+      "ko": "요즘 라이브 방송 하는 재미에 빠졌어요.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "What have you been doing in your free time lately?"
+      },
+      "audio": {
+        "normal": "adv1-u02-l02_drill_01.mp3",
+        "slow": "adv1-u02-l02_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I've been getting into rock climbing lately.",
+      "ko": "요즘 암벽 등반에 푹 빠졌어요.",
+      "point": "단어 교체: livestreaming → rock climbing",
+      "cue": {
+        "lang": "en",
+        "text": "What new hobby have you picked up this year?"
+      },
+      "audio": {
+        "normal": "adv1-u02-l02_drill_02.mp3",
+        "slow": "adv1-u02-l02_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "My brother's been getting into livestreaming lately.",
+      "ko": "요즘 남동생이 라이브 방송에 빠졌어요.",
+      "point": "주어 변경: My brother's been",
+      "cue": {
+        "lang": "en",
+        "text": "Why did your brother buy a new camera and microphone?"
+      },
+      "audio": {
+        "normal": "adv1-u02-l02_drill_03.mp3",
+        "slow": "adv1-u02-l02_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I got really into livestreaming last winter.",
+      "ko": "지난겨울에 라이브 방송에 푹 빠졌었어요.",
+      "point": "과거 시제: got really into, last winter",
+      "cue": {
+        "lang": "en",
+        "text": "When did you start streaming?"
+      },
+      "audio": {
+        "normal": "adv1-u02-l02_drill_04.mp3",
+        "slow": "adv1-u02-l02_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Have you been getting into anything new lately?",
+      "ko": "요즘 새로 재미 붙이신 거 있으세요?",
+      "point": "질문형: Have you been getting into ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "동료에게 요즘 새로 재미 붙인 게 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "adv1-u02-l02_drill_05.mp3",
+        "slow": "adv1-u02-l02_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I'm not that into livestreaming anymore.",
+      "ko": "이제 라이브 방송에 그렇게 빠져 있진 않아요.",
+      "point": "부정형: not that into ~ anymore",
+      "cue": {
+        "lang": "en",
+        "text": "Are you still streaming every weekend?"
+      },
+      "audio": {
+        "normal": "adv1-u02-l02_drill_06.mp3",
+        "slow": "adv1-u02-l02_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I saw a ring light and a fancy mic behind you on our video call. What's that for?",
+        "ko": "화상 회의 때 뒤에 링 조명이랑 좋은 마이크가 보이던데요. 그거 뭐에 쓰세요?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've been getting into livestreaming lately.",
+        "exampleKo": "요즘 라이브 방송 하는 재미에 빠졌어요.",
+        "requiredKeywords": [
+          "getting into livestreaming",
+          "lately"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Your hands are covered in chalk again. Where have you been going after work?",
+        "ko": "손에 또 초크가 잔뜩 묻었네요. 퇴근하고 어디 다니세요?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've been getting into rock climbing lately.",
+        "exampleKo": "요즘 암벽 등반에 푹 빠졌어요.",
+        "requiredKeywords": [
+          "rock climbing",
+          "lately"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "You said your brother talks to a camera every night now. What's he doing?",
+        "ko": "남동생이 요즘 매일 밤 카메라 보고 이야기한다고 하셨잖아요. 뭐 하는 거예요?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My brother's been getting into livestreaming lately.",
+        "exampleKo": "요즘 남동생이 라이브 방송에 빠졌어요.",
+        "requiredKeywords": [
+          "brother",
+          "livestreaming lately"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "I found your cooking channel online, and the first video is pretty old. When did all that start?",
+        "ko": "온라인에서 요리 채널 찾았는데 첫 영상이 꽤 오래됐더라고요. 그게 다 언제 시작된 거예요?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I got really into livestreaming last winter.",
+        "exampleKo": "지난겨울에 라이브 방송에 푹 빠졌었어요.",
+        "requiredKeywords": [
+          "got really into",
+          "last winter"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Sorry I've been so quiet at lunch lately. I've been busy with something outside of work.",
+        "ko": "요즘 점심때 말이 별로 없어서 죄송해요. 회사 밖에서 하는 일 때문에 좀 바빠서요."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Have you been getting into anything new lately?",
+        "exampleKo": "요즘 새로 재미 붙이신 거 있으세요?",
+        "requiredKeywords": [
+          "have you been",
+          "anything new"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "You used to stream every Saturday night. Why haven't I seen any new videos?",
+        "ko": "예전엔 토요일 밤마다 방송하셨잖아요. 요즘은 왜 새 영상이 안 보여요?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm not that into livestreaming anymore.",
+        "exampleKo": "이제 라이브 방송에 그렇게 빠져 있진 않아요.",
+        "requiredKeywords": [
+          "not that into",
+          "anymore"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

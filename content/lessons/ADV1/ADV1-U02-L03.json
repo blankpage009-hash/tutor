@@ -1,0 +1,226 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "ADV1-U02-L03",
+  "level": "고급 1",
+  "levelCode": "ADV1",
+  "unit": 2,
+  "unitTitle": "Interesting Hobbies",
+  "lessonNo": 3,
+  "lessonTitle": "Chat about memes",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "That meme has been all over my feed.",
+    "ko": "그 밈 요즘 내 피드에 계속 떠.",
+    "stress": "THAT MEME has been ALL Over my FEED.",
+    "audio": { "normal": "audio/lessons/ADV1-U02-L03/key-b5ba80af.m4a", "slow": "audio/lessons/ADV1-U02-L03/key-b5ba80af.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "be all over ~는 '~에 온통 깔려 있다, 어디를 봐도 보인다'는 뜻입니다. 같은 게시물이 계속 눈에 띌 때 씁니다.",
+      "has been을 쓰면 '요즘 계속 그렇다'는 느낌입니다. 한동안 그랬다가 지금은 아니면 was all over를 씁니다.",
+      "my feed는 SNS 앱을 열면 쭉 나오는 게시물 목록입니다. 어떤 앱이든 그냥 my feed라고 하면 통합니다.",
+      "SNS는 한국식 표현이라 미국에선 잘 안 씁니다. social media나 my feed라고 말합니다."
+    ],
+    "en": "\"Be all over something\" means you see it everywhere. \"That meme has been all over my feed\" means it keeps showing up every time you open your social media app.",
+    "enKo": "\"Be all over something\"은 어디서나 보인다는 뜻입니다. \"That meme has been all over my feed\"는 SNS 앱을 열 때마다 그 밈이 계속 나온다는 말입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "THAT, MEME, ALL, FEED에 힘을 줍니다. has been은 짧게 지나갑니다." },
+    { "focus": "연음", "tip": "all over는 이어서 '올로버'처럼 말합니다." },
+    { "focus": "약화", "tip": "has been의 h는 거의 빠져서 '(어)즈빈'처럼 아주 짧게 들립니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "feed의 f는 윗니를 아랫입술에 살짝 대고 바람을 냅니다. '피드'처럼 입술을 붙였다 떼지 않습니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "That meme is appearing a lot on my SNS.", "right": "That meme has been all over my feed.", "note": "SNS는 한국식 표현입니다. 미국에선 social media나 my feed라고 합니다." },
+    { "wrong": "I saw that meme many times.", "right": "I keep seeing that meme.", "note": "자꾸 보인다는 느낌은 keep -ing가 자연스럽습니다. many times는 횟수를 세는 느낌입니다." },
+    { "wrong": "That meme is very famous now.", "right": "Everyone's sharing that meme right now.", "note": "famous는 주로 사람이나 장소에 씁니다. 밈이 퍼질 땐 다들 공유한다고 말합니다." }
+  ],
+  "dialogue": {
+    "situation": "집 거실에서 룸메이트와 휴대폰을 보며 이야기합니다.",
+    "partnerRole": "룸메이트",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Have you seen the one with the cat staring at a cucumber? I can't stop laughing.",
+        "ko": "고양이가 오이 쳐다보는 거 봤어? 웃음이 안 멈춰.",
+        "audio": "audio/lessons/ADV1-U02-L03/dlg-01-bc93fe6d.m4a"
+      },
+      { "no": 2, "speaker": "me", "en": "Oh my gosh, yes! That meme has been all over my feed.", "ko": "완전 봤지! 그 밈 요즘 내 피드에 계속 떠.", "audio": "audio/lessons/ADV1-U02-L03/dlg-02-59ae6c43.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Same here. My mom even sent it to me this morning.", "ko": "나도. 오늘 아침엔 엄마까지 나한테 보냈어.", "audio": "audio/lessons/ADV1-U02-L03/dlg-03-0fc88c55.m4a" },
+      { "no": 4, "speaker": "me", "en": "When your mom sends you a meme, you know it's everywhere.", "ko": "엄마까지 밈을 보내면 진짜 어디에나 퍼진 거지.", "audio": "audio/lessons/ADV1-U02-L03/dlg-04-2e850e8c.m4a" },
+      { "no": 5, "speaker": "partner", "en": "True. Do you think people will still be posting it next week?", "ko": "맞아. 다음 주에도 사람들이 계속 올릴까?", "audio": "audio/lessons/ADV1-U02-L03/dlg-05-1d74e027.m4a" },
+      { "no": 6, "speaker": "me", "en": "Probably not. Memes like that usually die out in a few days.", "ko": "아마 아닐걸. 그런 밈은 보통 며칠이면 시들해져.", "audio": "audio/lessons/ADV1-U02-L03/dlg-06-23751b39.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "Same here.", "ko": "'나도 그래.' 상대와 같은 경험이나 생각일 때 짧게 맞장구치는 말입니다." },
+      { "en": "die out", "ko": "'서서히 사라지다, 시들해지다.' 유행이나 관심이 점점 줄어들 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "That meme has been all over my feed.",
+      "ko": "그 밈 요즘 내 피드에 계속 떠.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Have you seen that dancing cat meme?", "audio": "audio/lessons/ADV1-U02-L03/cue-01-c0b475f7.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U02-L03/drill-01-b5ba80af.m4a", "slow": "audio/lessons/ADV1-U02-L03/drill-01-b5ba80af.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "That song has been all over my feed.",
+      "ko": "그 노래 요즘 내 피드에 계속 떠.",
+      "point": "단어 교체: meme → song",
+      "cue": { "lang": "en", "text": "Have you heard that new pop song everyone's using in videos?", "audio": "audio/lessons/ADV1-U02-L03/cue-02-d1653ec4.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U02-L03/drill-02-356ce380.m4a", "slow": "audio/lessons/ADV1-U02-L03/drill-02-356ce380.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "Those memes have been all over my feed.",
+      "ko": "그 밈들 요즘 내 피드에 계속 떠.",
+      "point": "복수: Those memes have",
+      "cue": { "lang": "en", "text": "Have you seen all the jokes about the new phone?", "audio": "audio/lessons/ADV1-U02-L03/cue-03-dfb7ce6a.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U02-L03/drill-03-24ea9579.m4a", "slow": "audio/lessons/ADV1-U02-L03/drill-03-24ea9579.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "That meme was all over my feed last month.",
+      "ko": "그 밈 지난달에 내 피드에 엄청 떴었어.",
+      "point": "과거 시제: was, last month",
+      "cue": { "lang": "en", "text": "Is that cat meme still popular?", "audio": "audio/lessons/ADV1-U02-L03/cue-04-0f440d5d.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U02-L03/drill-04-923e58fd.m4a", "slow": "audio/lessons/ADV1-U02-L03/drill-04-923e58fd.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Has that meme been all over your feed too?",
+      "ko": "그 밈 너 피드에도 계속 떠?",
+      "point": "질문형: Has ~ been all over your feed?",
+      "cue": { "lang": "ko", "text": "룸메이트에게 그 밈이 너 피드에도 계속 뜨는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/ADV1-U02-L03/drill-05-a0358875.m4a", "slow": "audio/lessons/ADV1-U02-L03/drill-05-a0358875.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "That meme hasn't shown up on my feed yet.",
+      "ko": "그 밈 아직 내 피드엔 안 떴어.",
+      "point": "부정형: hasn't shown up ~ yet",
+      "cue": { "lang": "en", "text": "Did you see the meme everyone's sharing today?", "audio": "audio/lessons/ADV1-U02-L03/cue-06-3d7c7481.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U02-L03/drill-06-a0b9aaab.m4a", "slow": "audio/lessons/ADV1-U02-L03/drill-06-a0b9aaab.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "My coworkers keep sending me that cat and cucumber meme. Have you seen it?",
+        "ko": "회사 동료들이 그 고양이랑 오이 밈을 자꾸 보내. 너도 봤어?",
+        "audio": "audio/lessons/ADV1-U02-L03/rp-01-fbd02d5b.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "That meme has been all over my feed.",
+        "exampleKo": "그 밈 요즘 내 피드에 계속 떠.",
+        "requiredKeywords": ["meme has been", "my feed"]
+      },
+      { "no": 3, "speaker": "partner", "en": "That catchy song is in every video I watch. Have you noticed it too?", "ko": "그 귀에 꽂히는 노래가 내가 보는 영상마다 나와. 너도 느꼈어?", "audio": "audio/lessons/ADV1-U02-L03/rp-03-0df7d6bf.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "That song has been all over my feed.",
+        "exampleKo": "그 노래 요즘 내 피드에 계속 떠.",
+        "requiredKeywords": ["song", "all over my feed"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "People keep making jokes about the new phone that bends. Seen any of them?",
+        "ko": "사람들이 휘어지는 새 휴대폰 갖고 계속 농담하더라. 너도 좀 봤어?",
+        "audio": "audio/lessons/ADV1-U02-L03/rp-05-9909f726.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Those memes have been all over my feed.",
+        "exampleKo": "그 밈들 요즘 내 피드에 계속 떠.",
+        "requiredKeywords": ["those memes have", "my feed"]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "I just found this hilarious dancing grandpa meme. Have you seen it before?",
+        "ko": "방금 진짜 웃긴 춤추는 할아버지 밈을 찾았어. 전에 본 적 있어?",
+        "audio": "audio/lessons/ADV1-U02-L03/rp-07-d451be73.m4a"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "That meme was all over my feed last month.",
+        "exampleKo": "그 밈 지난달에 내 피드에 엄청 떴었어.",
+        "requiredKeywords": ["was all over", "last month"]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Wait, I think I've seen that cat meme somewhere before, but I can't remember where.",
+        "ko": "잠깐, 나 그 고양이 밈 어디서 본 것 같은데, 어디서였는지 기억이 안 나.",
+        "audio": "audio/lessons/ADV1-U02-L03/rp-09-b2da1a99.m4a"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Has that meme been all over your feed too?",
+        "exampleKo": "그 밈 너 피드에도 계속 떠?",
+        "requiredKeywords": ["has that meme", "your feed too"]
+      },
+      { "no": 11, "speaker": "partner", "en": "That vacuum cat meme is everywhere today! Did it make you laugh too?", "ko": "오늘 그 청소기 고양이 밈 어디에나 있더라! 너도 보고 웃었어?", "audio": "audio/lessons/ADV1-U02-L03/rp-11-00f3ca46.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "That meme hasn't shown up on my feed yet.",
+        "exampleKo": "그 밈 아직 내 피드엔 안 떴어.",
+        "requiredKeywords": ["hasn't shown up", "yet"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
