@@ -12,12 +12,12 @@ import { loadPracticeOptions, REPEAT_CHOICES, savePracticeOptions, type Practice
 import { useLibrary } from './library/useLibrary';
 import { useSelection } from './library/useSelection';
 
+type OptionsProps = { opts: PracticeOptions; change: (next: PracticeOptions) => void };
+
 // 위 버튼 줄: 평소 Shadow All · 순서 전환 · 반복, 고르는 중 Shadow · N · Cancel · 반복.
-// 반복·순서 값은 두 상태가 함께 쓰려고 여기서 들고, 연습 화면은 기기에 저장된 값을 읽어 간다
-function TopButtons({ sel }: { sel: ReturnType<typeof useSelection> }) {
+// 연습 화면은 기기에 저장된 반복·순서·듣기만 값을 읽어 간다
+function TopButtons({ sel, opts, change }: { sel: ReturnType<typeof useSelection> } & OptionsProps) {
   const nav = useNavigate();
-  const [opts, setOpts] = useState(loadPracticeOptions);
-  const change = (next: PracticeOptions) => { setOpts(next); savePracticeOptions(next); };
   const random = opts.order === 'random';
   // 누를 때마다 1 → 3 → 5 → 10 → 1 로 돈다 (드롭다운 대신, 사용자 요청 2026-11-21)
   const repeat = (
@@ -64,13 +64,22 @@ export function LibraryScreen() {
   const [exporting, setExporting] = useState(false);
   const sel = useSelection(rows?.map((r) => r.id) ?? []);
   const now = Date.now();
+  // 반복·순서(위 버튼 줄)와 듣기만(제목 줄 토글)이 같은 저장값을 쓰므로 여기서 함께 든다
+  const [opts, setOpts] = useState(loadPracticeOptions);
+  const change = (next: PracticeOptions) => { setOpts(next); savePracticeOptions(next); };
   const removeRow = (id: string) => { setOpenId(null); remove(id); };
-  const exportButton = rows && rows.length > 0 && (
-    <button type="button" className={styles.iconBtn} onClick={() => setExporting(true)} aria-label="내보내기"><IconExport /></button>
+  const headerActions = rows && rows.length > 0 && (
+    <div className={styles.headerActions}>
+      <button type="button" className={styles.iconBtn} onClick={() => setExporting(true)} aria-label="내보내기"><IconExport /></button>
+      <button type="button" className={styles.listenToggle} aria-pressed={opts.listening}
+        onClick={() => change({ ...opts, listening: !opts.listening })}>
+        <IconHeadphones />Listening
+      </button>
+    </div>
   );
   return (
     <>
-      <ScreenHeader eyebrow={sel.selecting ? `${sel.ids.length} SELECTED` : `${rows?.length ?? 0} SENTENCES`} title="Library" action={exportButton} />
+      <ScreenHeader eyebrow={sel.selecting ? `${sel.ids.length} SELECTED` : `${rows?.length ?? 0} SENTENCES`} title="Library" action={headerActions} />
       {error && <p className={styles.note} lang="ko">{error}</p>}
       {!rows && !error && <p className={styles.note} lang="ko">불러오는 중…</p>}
       {rows?.length === 0 && (
@@ -78,7 +87,7 @@ export function LibraryScreen() {
       )}
       {rows && rows.length > 0 && (
         <>
-          <TopButtons sel={sel} />
+          <TopButtons sel={sel} opts={opts} change={change} />
           <ul className={styles.list}>
             {rows.map((r) => (
               <LibraryRow key={r.id} row={r} due={dueLabel(dueAt.get(r.id), now)} onRemove={removeRow}

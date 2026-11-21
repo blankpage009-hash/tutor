@@ -16,6 +16,32 @@
 .iconBtn:active { background: var(--accent-tint); }
 .iconBtn:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
 
+/* 제목 줄 오른쪽: 내보내기 · Listening 토글. "Library" 글자 높이에 맞춰 아래쪽으로 붙인다 */
+.headerActions { display: flex; align-items: center; gap: var(--space-1); align-self: flex-end; flex: none; }
+.headerActions > .iconBtn { margin-right: 0; }
+
+/* Listening 토글 (사용자 요청 2026-11-21): 끄면 테두리만, 켜면 강조색으로 채운다 */
+.listenToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 var(--space-3);
+  border: var(--rule-weight) solid var(--line-strong);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  font-weight: var(--type-label-weight);
+  letter-spacing: var(--type-label-tracking);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.listenToggle svg { width: 16px; height: 16px; flex: none; }
+.listenToggle[aria-pressed='true'] { border-color: var(--accent); background: var(--accent); color: var(--on-accent); }
+.listenToggle:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
+
 .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: calc(var(--space-2) * -1); }
 .pair svg { width: 18px; height: 18px; flex: none; }
 /* 반복 상자 자리만큼 두 버튼을 좁힌다. minmax(0, …)라야 좁은 폭에서 버튼 글자가 줄을 밀어내지 않는다 */
