@@ -99,9 +99,9 @@
               "no": 3,
               "title": "약속 잡기",
               "lessons": [
-                { "no": 1, "title": "초대하기", "id": "BEG2-U03-L01", "ready": false},
-                { "no": 2, "title": "초대 거절하기", "id": "BEG2-U03-L02", "ready": false},
-                { "no": 3, "title": "초대 수락하기", "id": "BEG2-U03-L03", "ready": false}
+                { "no": 1, "title": "초대하기", "id": "BEG2-U03-L01", "ready": true, "file": "lessons/BEG2/BEG2-U03-L01.json" },
+                { "no": 2, "title": "초대 거절하기", "id": "BEG2-U03-L02", "ready": true, "file": "lessons/BEG2/BEG2-U03-L02.json" },
+                { "no": 3, "title": "초대 수락하기", "id": "BEG2-U03-L03", "ready": true, "file": "lessons/BEG2/BEG2-U03-L03.json" }
               ]
             },
             {

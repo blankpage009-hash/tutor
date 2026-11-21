@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG2-U03-L03",
+  "level": "초급 2",
+  "levelCode": "BEG2",
+  "unit": 3,
+  "unitTitle": "약속 잡기",
+  "lessonNo": 3,
+  "lessonTitle": "초대 수락하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Sure, that sounds like fun!",
+    "ko": "좋아요, 재밌겠네요!",
+    "stress": "SURE, that SOUNDS like FUN!",
+    "audio": {
+      "normal": "beg2-u03-l03_key.mp3",
+      "slow": "beg2-u03-l03_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'좋아요, 재밌겠네요!'라는 뜻입니다. 초대를 받고 기쁘게 받아들일 때 씁니다.",
+      "That sounds like ~는 '~인 것 같네요, ~겠네요'라는 뜻입니다. 들은 계획에 대한 느낌을 말할 때 씁니다.",
+      "sound 뒤에 명사가 오면 like를 넣고(sounds like fun), 형용사가 오면 like 없이 씁니다(sounds great).",
+      "편할 때는 That을 빼고 Sounds like fun!이라고도 많이 말합니다."
+    ],
+    "en": "Say \"That sounds like fun!\" when you like a plan. It shows you are happy to go.",
+    "enKo": "계획이 마음에 들 때 \"That sounds like fun!\"이라고 말합니다. 기쁘게 가겠다는 마음이 전해져요."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "SURE, SOUNDS, FUN에 힘을 주고, that과 like는 가볍게 말합니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "like는 '라이크'가 아니라 끝의 k를 거의 안 터뜨리고 '라잌'처럼 짧게 말합니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "sounds like는 ds와 l이 붙어 '사운즐라잌'처럼 이어서 들립니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "fun의 f는 윗니로 아랫입술을 살짝 물고 바람을 내보냅니다. '펀'의 'ㅍ'으로 하면 pun처럼 들립니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Sure, that sounds funny!",
+      "right": "Sure, that sounds like fun!",
+      "note": "funny는 '웃기다'라는 뜻입니다. '재밌겠다'는 fun을 씁니다."
+    },
+    {
+      "wrong": "Sure, that sound like fun!",
+      "right": "Sure, that sounds like fun!",
+      "note": "that은 하나라서 sound 뒤에 s를 붙입니다."
+    },
+    {
+      "wrong": "Sure, that sounds like great!",
+      "right": "Sure, that sounds great!",
+      "note": "great 같은 형용사 앞에는 like를 넣지 않습니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "집 앞에서 옆집 이웃을 만났습니다.",
+    "partnerRole": "이웃",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Hi! We're having a barbecue on Sunday.",
+        "ko": "안녕하세요! 저희 일요일에 바비큐 해요.",
+        "audio": "beg2-u03-l03_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Oh, really? In your backyard?",
+        "ko": "아, 정말요? 뒷마당에서요?",
+        "audio": "beg2-u03-l03_dlg_02.mp3"
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Yes. Would you like to come?",
+        "ko": "네. 오실래요?",
+        "audio": "beg2-u03-l03_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Sure, that sounds like fun!",
+        "ko": "좋아요, 재밌겠네요!",
+        "audio": "beg2-u03-l03_dlg_04.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Great! It starts at four.",
+        "ko": "잘됐네요! 4시에 시작해요.",
+        "audio": "beg2-u03-l03_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Can I bring anything?",
+        "ko": "뭐 좀 가져갈까요?",
+        "audio": "beg2-u03-l03_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "Would you like to come?",
+        "ko": "'오실래요?' 공손하게 초대할 때 씁니다. Do you want to come?보다 정중합니다."
+      },
+      {
+        "en": "Can I bring anything?",
+        "ko": "'뭐 가져갈까요?' 미국에서는 초대를 받으면 이렇게 묻는 경우가 많습니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Sure, that sounds like fun!",
+      "ko": "좋아요, 재밌겠네요!",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "I'm having a pizza party on Friday."
+      },
+      "audio": {
+        "normal": "beg2-u03-l03_drill_01.mp3",
+        "slow": "beg2-u03-l03_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "Sure, that sounds like a great idea!",
+      "ko": "좋아요, 좋은 생각이네요!",
+      "point": "단어 교체: fun → a great idea",
+      "cue": {
+        "lang": "en",
+        "text": "Let's meet at the park at ten."
+      },
+      "audio": {
+        "normal": "beg2-u03-l03_drill_02.mp3",
+        "slow": "beg2-u03-l03_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "That sounds like more fun than staying home.",
+      "ko": "집에 있는 것보다 그게 더 재밌겠네요.",
+      "point": "비교: more fun than",
+      "cue": {
+        "lang": "en",
+        "text": "Want to go bowling tonight, or just stay in?"
+      },
+      "audio": {
+        "normal": "beg2-u03-l03_drill_03.mp3",
+        "slow": "beg2-u03-l03_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "Sure, that would be fun!",
+      "ko": "좋아요, 그럼 재밌겠어요!",
+      "point": "공손형: sounds like → would be",
+      "cue": {
+        "lang": "en",
+        "text": "Maybe we could all go to the beach someday."
+      },
+      "audio": {
+        "normal": "beg2-u03-l03_drill_04.mp3",
+        "slow": "beg2-u03-l03_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "That doesn't sound like much fun.",
+      "ko": "그건 별로 재밌을 것 같지 않네요.",
+      "point": "부정형: doesn't sound",
+      "cue": {
+        "lang": "en",
+        "text": "Want to help me clean my garage all day?"
+      },
+      "audio": {
+        "normal": "beg2-u03-l03_drill_05.mp3",
+        "slow": "beg2-u03-l03_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "Does that sound like fun to you?",
+      "ko": "그거 재밌을 것 같아요?",
+      "point": "질문형: Does that sound ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "이웃에게 등산을 같이 가자고 했어요. 재밌을 것 같은지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg2-u03-l03_drill_06.mp3",
+        "slow": "beg2-u03-l03_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "My daughter's birthday party is Saturday. Please come!",
+        "ko": "토요일에 딸 생일 파티가 있어요. 꼭 오세요!"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Sure, that sounds like fun!",
+        "exampleKo": "좋아요, 재밌겠네요!",
+        "requiredKeywords": [
+          "that sounds",
+          "like fun"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Let's meet at the café, then walk to the museum.",
+        "ko": "카페에서 만나서 박물관까지 걸어가요."
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Sure, that sounds like a great idea!",
+        "exampleKo": "좋아요, 좋은 생각이네요!",
+        "requiredKeywords": [
+          "sounds like",
+          "great idea"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Movie night at my place, or stay home tonight?",
+        "ko": "저희 집에서 영화 볼래요, 아니면 오늘은 집에 있을래요?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "That sounds like more fun than staying home.",
+        "exampleKo": "집에 있는 것보다 그게 더 재밌겠네요.",
+        "requiredKeywords": [
+          "more fun than",
+          "staying home"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "It'd be nice to cook dinner together sometime.",
+        "ko": "언젠가 같이 저녁 해 먹으면 좋겠어요."
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Sure, that would be fun!",
+        "exampleKo": "좋아요, 그럼 재밌겠어요!",
+        "requiredKeywords": [
+          "that would",
+          "be fun"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "This weekend I'm sorting old tax papers. Want to help?",
+        "ko": "이번 주말에 옛날 세금 서류 정리해요. 도와주실래요?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "That doesn't sound like much fun.",
+        "exampleKo": "그건 별로 재밌을 것 같지 않네요.",
+        "requiredKeywords": [
+          "doesn't sound",
+          "much fun"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Kayaking on Saturday? Hmm, let me think about it.",
+        "ko": "토요일에 카약이요? 음, 생각 좀 해 볼게요."
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Does that sound like fun to you?",
+        "exampleKo": "그거 재밌을 것 같아요?",
+        "requiredKeywords": [
+          "does that sound",
+          "to you"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

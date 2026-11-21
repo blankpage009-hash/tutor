@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG2-U03-L01",
+  "level": "초급 2",
+  "levelCode": "BEG2",
+  "unit": 3,
+  "unitTitle": "약속 잡기",
+  "lessonNo": 1,
+  "lessonTitle": "초대하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Do you want to come over for dinner?",
+    "ko": "우리 집에 저녁 먹으러 올래?",
+    "stress": "Do you WANT to come OVer for DINner?",
+    "audio": { "normal": "audio/lessons/BEG2-U03-L01/key-15fd3a28.m4a", "slow": "audio/lessons/BEG2-U03-L01/key-15fd3a28.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "'우리 집에 저녁 먹으러 올래?'라는 뜻입니다. 친구를 집으로 편하게 초대할 때 씁니다.",
+      "come over는 '(우리 집에) 놀러 오다'라는 뜻입니다. come to my house라고 길게 말하지 않아도 됩니다.",
+      "Do you want to ~?는 '~할래?'라는 편한 제안입니다. 더 공손하게 말할 때는 Would you like to ~?를 씁니다.",
+      "for dinner는 '저녁 먹으러'라는 뜻입니다. for lunch, for coffee처럼 바꿔서 씁니다."
+    ],
+    "en": "Say \"Do you want to come over...?\" to invite a friend to your home. It sounds warm and easy.",
+    "enKo": "친구를 집에 초대할 때 \"Do you want to come over...?\"라고 말합니다. 따뜻하고 편하게 들려요."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "WANT, O(ver), DIN(ner)에 힘을 주고, Do you와 for는 가볍게 말합니다." },
+    { "focus": "약화", "tip": "want to는 빠르게 말하면 '워너(wanna)'처럼 들립니다. Do you도 '두유'보다 '뎌'처럼 짧아집니다." },
+    { "focus": "연음", "tip": "come over는 m과 o가 이어져 '커모버'처럼 한 단어로 들립니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "over의 v는 윗니로 아랫입술을 살짝 물고 소리 냅니다. 'ㅂ'으로 하면 어색하게 들립니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "Do you want to come my house for dinner?", "right": "Do you want to come over for dinner?", "note": "come 뒤에 장소를 쓰려면 to가 필요합니다. come over라고 하면 짧고 자연스럽습니다." },
+    { "wrong": "Do you want come over for dinner?", "right": "Do you want to come over for dinner?", "note": "want 뒤에는 to가 와야 합니다. 빠르게 말해도 wanna처럼 소리는 남습니다." },
+    { "wrong": "Do you want to come over for eating dinner?", "right": "Do you want to come over for dinner?", "note": "'저녁 먹으러'는 for dinner면 충분합니다. eating을 넣지 않습니다." }
+  ],
+  "dialogue": {
+    "situation": "친구와 통화하며 주말 이야기를 합니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hey! What are you doing this Saturday?", "ko": "야! 이번 토요일에 뭐 해?", "audio": "audio/lessons/BEG2-U03-L01/dlg-01-cbc2bc40.m4a" },
+      { "no": 2, "speaker": "me", "en": "Nothing much. I'm making pasta at home.", "ko": "별거 없어. 집에서 파스타 만들 거야.", "audio": "audio/lessons/BEG2-U03-L01/dlg-02-b931ca63.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Oh, nice. I love your pasta!", "ko": "오, 좋다. 나 네 파스타 진짜 좋아하잖아!", "audio": "audio/lessons/BEG2-U03-L01/dlg-03-96ebddbd.m4a" },
+      { "no": 4, "speaker": "me", "en": "Do you want to come over for dinner?", "ko": "우리 집에 저녁 먹으러 올래?", "audio": "audio/lessons/BEG2-U03-L01/dlg-04-15fd3a28.m4a", "hasKeySentence": true},
+      { "no": 5, "speaker": "partner", "en": "Yes! What time should I come?", "ko": "응! 몇 시에 갈까?", "audio": "audio/lessons/BEG2-U03-L01/dlg-05-3d120c4e.m4a" },
+      { "no": 6, "speaker": "me", "en": "Come around six. See you then!", "ko": "6시쯤 와. 그때 보자!", "audio": "audio/lessons/BEG2-U03-L01/dlg-06-133c4b15.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "Nothing much.", "ko": "'별거 없어.' 무엇을 하냐는 질문에 특별한 계획이 없을 때 씁니다." },
+      { "en": "What time should I ~?", "ko": "'몇 시에 ~할까?' 약속 시간을 물을 때 씁니다. What time should I come?처럼 말합니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Do you want to come over for dinner?",
+      "ko": "우리 집에 저녁 먹으러 올래?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "친구가 내가 만든 파스타를 또 먹고 싶대요. 집에 저녁 먹으러 오라고 해 보세요." },
+      "audio": { "normal": "audio/lessons/BEG2-U03-L01/drill-01-15fd3a28.m4a", "slow": "audio/lessons/BEG2-U03-L01/drill-01-15fd3a28.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "Do you want to come over for lunch?",
+      "ko": "우리 집에 점심 먹으러 올래?",
+      "point": "단어 교체: dinner → lunch",
+      "cue": { "lang": "ko", "text": "친구가 주말 점심 메뉴를 고민해요. 우리 집에 점심 먹으러 오라고 해 보세요." },
+      "audio": { "normal": "audio/lessons/BEG2-U03-L01/drill-02-c4bc7b42.m4a", "slow": "audio/lessons/BEG2-U03-L01/drill-02-c4bc7b42.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "Would you like to come over for dinner?",
+      "ko": "저희 집에 저녁 드시러 오실래요?",
+      "point": "공손형: Would you like to ~?",
+      "cue": { "lang": "ko", "text": "회사 팀장님을 집 저녁 식사에 공손하게 초대해 보세요." },
+      "audio": { "normal": "audio/lessons/BEG2-U03-L01/drill-03-cbea5cba.m4a", "slow": "audio/lessons/BEG2-U03-L01/drill-03-cbea5cba.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Do you guys want to come over?",
+      "ko": "너희 우리 집에 놀러 올래?",
+      "point": "주어 변경: you → you guys (여러 명)",
+      "cue": { "lang": "ko", "text": "친구 커플이 내 새 게임기를 보고 싶대요. 둘 다 놀러 오라고 해 보세요." },
+      "audio": { "normal": "audio/lessons/BEG2-U03-L01/drill-04-077f3d2b.m4a", "slow": "audio/lessons/BEG2-U03-L01/drill-04-077f3d2b.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Why don't you come over for dinner?",
+      "ko": "우리 집에 저녁 먹으러 오지 그래?",
+      "point": "부정형으로 권하기: Why don't you ~?",
+      "cue": { "lang": "ko", "text": "친구가 배고픈데 냉장고가 텅 비었대요. 우리 집에 저녁 먹으러 오라고 권해 보세요." },
+      "audio": { "normal": "audio/lessons/BEG2-U03-L01/drill-05-98f25228.m4a", "slow": "audio/lessons/BEG2-U03-L01/drill-05-98f25228.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "You should come over for dinner sometime.",
+      "ko": "언제 우리 집에 저녁 먹으러 와.",
+      "point": "평서문 제안: You should ~ sometime",
+      "cue": { "lang": "en", "text": "I've never tried your cooking.", "audio": "audio/lessons/BEG2-U03-L01/cue-06-4fb0a248.m4a" },
+      "audio": { "normal": "audio/lessons/BEG2-U03-L01/drill-06-0ac6a00f.m4a", "slow": "audio/lessons/BEG2-U03-L01/drill-06-0ac6a00f.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "I'm free Saturday night, but I have no plans.", "ko": "토요일 저녁에 시간 되는데 할 게 없어.", "audio": "audio/lessons/BEG2-U03-L01/rp-01-178933bf.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you want to come over for dinner?",
+        "exampleKo": "우리 집에 저녁 먹으러 올래?",
+        "requiredKeywords": ["come over", "for dinner"]
+      },
+      { "no": 3, "speaker": "partner", "en": "I'm off tomorrow. I'll be free around noon.", "ko": "나 내일 쉬어. 점심쯤 한가할 거야.", "audio": "audio/lessons/BEG2-U03-L01/rp-03-6f062fbd.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you want to come over for lunch?",
+        "exampleKo": "우리 집에 점심 먹으러 올래?",
+        "requiredKeywords": ["come over", "for lunch"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Hi, I'm Linda. I just moved in next door.", "ko": "안녕하세요, 린다예요. 옆집에 막 이사 왔어요.", "audio": "audio/lessons/BEG2-U03-L01/rp-05-6a5970ee.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Would you like to come over for dinner?",
+        "exampleKo": "저희 집에 저녁 드시러 오실래요?",
+        "requiredKeywords": ["would you like", "for dinner"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Jen and I are so bored. Nothing to do.", "ko": "젠이랑 나 너무 심심해. 할 게 없어.", "audio": "audio/lessons/BEG2-U03-L01/rp-07-dd1fca1e.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you guys want to come over?",
+        "exampleKo": "너희 우리 집에 놀러 올래?",
+        "requiredKeywords": ["you guys", "come over"]
+      },
+      { "no": 9, "speaker": "partner", "en": "My roommate is away, so I'm eating alone tonight.", "ko": "룸메이트가 없어서 오늘 저녁 혼자 먹어.", "audio": "audio/lessons/BEG2-U03-L01/rp-09-dbb17d3f.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Why don't you come over for dinner?",
+        "exampleKo": "우리 집에 저녁 먹으러 오지 그래?",
+        "requiredKeywords": ["why don't you", "for dinner"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Your new place looks so nice in the photos!", "ko": "네 새 집 사진으로 보니까 너무 좋다!", "audio": "audio/lessons/BEG2-U03-L01/rp-11-e7f02a92.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "You should come over for dinner sometime.",
+        "exampleKo": "언제 우리 집에 저녁 먹으러 와.",
+        "requiredKeywords": ["you should", "dinner sometime"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
