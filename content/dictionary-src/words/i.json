@@ -1,0 +1,90 @@
+{
+  "i": {
+    "ipa": "aɪ",
+    "senses": [{ "pos": "pronoun", "ko": "나, 저" }]
+  },
+  "i'd": {
+    "ipa": "aɪd",
+    "senses": [
+      { "pos": "phrase", "ko": "I would의 줄임말 — 나라면 ~하겠다, ~하고 싶다 (I'd like = ~하고 싶어요)" },
+      { "pos": "phrase", "ko": "I had의 줄임말" }
+    ],
+    "phrases": [{ "en": "I'd like to", "ko": "~하고 싶어요" }]
+  },
+  "i'll": {
+    "ipa": "aɪl",
+    "senses": [{ "pos": "phrase", "ko": "I will의 줄임말 — ~할게요, ~하겠어요 (지금 정한 일)" }],
+    "examples": [{ "en": "I'll take it.", "ko": "이걸로 할게요." }]
+  },
+  "i'm": {
+    "ipa": "aɪm",
+    "senses": [{ "pos": "phrase", "ko": "I am의 줄임말 — 나는 ~이다, ~하는 중이다" }]
+  },
+  "i've": {
+    "ipa": "aɪv",
+    "senses": [
+      { "pos": "phrase", "ko": "I have의 줄임말 (have + 과거분사: ~했다, ~해 왔다)" },
+      { "pos": "phrase", "ko": "(I've got) 나는 ~을 가지고 있다" }
+    ]
+  },
+  "iced": {
+    "ipa": "aɪst",
+    "senses": [{ "pos": "adjective", "ko": "얼음을 넣은, 아이스 ~" }],
+    "phrases": [{ "en": "iced tea", "ko": "아이스티" }, { "en": "iced coffee", "ko": "아이스커피" }]
+  },
+  "idea": {
+    "ipa": "aɪˈdiːə",
+    "forms": { "pl": "ideas" },
+    "senses": [
+      { "pos": "noun", "ko": "생각, 아이디어" },
+      { "pos": "noun", "ko": "짐작, 알고 있는 것 (I have no idea = 전혀 몰라요)" }
+    ],
+    "phrases": [{ "en": "good idea", "ko": "좋은 생각이에요" }]
+  },
+  "if": {
+    "ipa": "ɪf",
+    "senses": [
+      { "pos": "conjunction", "ko": "만약 ~라면" },
+      { "pos": "conjunction", "ko": "~인지 (아닌지)" }
+    ],
+    "examples": [{ "en": "If it rains, we'll stay home.", "ko": "비 오면 집에 있을 거예요." }],
+    "phrases": [{ "en": "If I were you", "ko": "내가 너라면" }]
+  },
+  "imagine": {
+    "ipa": "ɪˈmædʒɪn",
+    "forms": { "3s": "imagines", "past": "imagined", "pp": "imagined", "ing": "imagining" },
+    "senses": [{ "pos": "verb", "ko": "상상하다, (마음속으로) 그려 보다" }],
+    "examples": [{ "en": "Imagine you're on a beach.", "ko": "해변에 있다고 상상해 봐요." }]
+  },
+  "in": {
+    "ipa": "ɪn",
+    "senses": [
+      { "pos": "preposition", "ko": "(장소) ~ 안에, ~에서" },
+      { "pos": "preposition", "ko": "(시간) ~에 (in the morning)" },
+      { "pos": "preposition", "ko": "(언어·방식) ~으로 (in English)" }
+    ],
+    "phrases": [{ "en": "in front of something", "ko": "~ 앞에" }, { "en": "in here", "ko": "이 안에" }]
+  },
+  "instead": {
+    "ipa": "ɪnˈsted",
+    "senses": [{ "pos": "adverb", "ko": "대신에, 그 대신" }],
+    "examples": [{ "en": "Let's take the bus instead.", "ko": "대신 버스 타요." }],
+    "phrases": [{ "en": "instead of something", "ko": "~ 대신에" }]
+  },
+  "isn't": {
+    "ipa": "ˈɪzənt",
+    "senses": [{ "pos": "phrase", "ko": "is not의 줄임말 — ~이 아니다, ~하지 않다" }]
+  },
+  "it": {
+    "ipa": "ɪt",
+    "senses": [
+      { "pos": "pronoun", "ko": "그것, 그거" },
+      { "pos": "pronoun", "ko": "(날씨·시간·상황) 해석하지 않는 주어 (It's hot.)" }
+    ]
+  },
+  "it's": {
+    "ipa": "ɪts",
+    "senses": [{ "pos": "phrase", "ko": "it is / it has의 줄임말 — 그것은 ~이다" }],
+    "phrases": [{ "en": "it's time to", "ko": "~할 때예요" }]
+  }
+}

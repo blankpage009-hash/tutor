@@ -8,6 +8,9 @@ export const POS_OPTIONS = [
   { value: 'preposition', label: '전치사' },
   { value: 'conjunction', label: '접속사' },
   { value: 'interjection', label: '감탄사' },
+  // 관사·조동사: 새 사전(2026-11-21)이 a·the·can 같은 단어를 이 품사로 보여 줘서 더함. 레슨 파일 검사의 품사 목록은 그대로
+  { value: 'determiner', label: '한정사' },
+  { value: 'auxiliary', label: '조동사' },
   { value: 'phrase', label: '표현' },
   { value: 'phrasal-verb', label: '구동사' },
   { value: 'idiom', label: '관용구' }
@@ -20,7 +23,7 @@ export function posLabel(pos: string): string {
 // 디자인 v2 단어장 줄의 짧은 영어 품사(n. / v.)와 퀴즈 카드의 긴 영어 품사(noun)
 const SHORT: Record<string, string> = {
   noun: 'n.', verb: 'v.', adjective: 'adj.', adverb: 'adv.', pronoun: 'pron.', preposition: 'prep.',
-  conjunction: 'conj.', interjection: 'interj.', phrase: 'phr.', 'phrasal-verb': 'phr. v.', idiom: 'idiom'
+  conjunction: 'conj.', interjection: 'interj.', determiner: 'det.', auxiliary: 'aux.', phrase: 'phr.', 'phrasal-verb': 'phr. v.', idiom: 'idiom'
 };
 
 export function posShort(pos: string): string {

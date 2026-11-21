@@ -141,3 +141,118 @@
 .delete:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
 .saved { margin: var(--space-3) 0 0; font-size: var(--type-body-kr-size); line-height: var(--type-body-kr-line); }
+
+/* ── 사전 내용 (2026-11-21 네이버 수준 사전) ── */
+.dict { margin-top: var(--space-2); }
+
+.headLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  margin: 0 0 var(--space-3);
+}
+
+.ipa { font-family: var(--font-mono); font-size: var(--type-body-size); color: var(--ink-muted); }
+
+.formNote { font-size: var(--type-caption-size); color: var(--accent-ink); }
+
+/* 이 문장에 맞는 뜻: 사전 전체보다 먼저 눈에 들어오게 파란 띠로 */
+.context {
+  margin: 0 0 var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-left: calc(var(--rule-weight) * 2) solid var(--accent);
+  background: var(--accent-tint);
+  border-radius: var(--radius-sm);
+}
+
+.contextTitle { margin: 0 0 var(--space-1); font-size: var(--type-label-size); color: var(--accent-ink); font-weight: 600; }
+
+.contextText { margin: 0; font-size: var(--type-body-kr-size); line-height: var(--type-body-kr-line); }
+
+.senses { display: grid; gap: var(--space-2); }
+
+.senseLabel {
+  margin: 0 0 var(--space-1);
+  font-size: var(--type-label-size);
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.senseList { margin: 0; padding-left: var(--space-5); }
+
+.senseList li { margin: 0; }
+
+/* 뜻 한 줄 = 누르는 버튼. 손가락으로 누르기 쉽게 줄 높이를 tap-min에 가깝게 둔다 */
+.sense {
+  display: block;
+  width: 100%;
+  min-height: calc(var(--tap-min) - var(--space-2));
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--type-body-kr-size);
+  line-height: var(--type-body-kr-line);
+  text-align: left;
+}
+
+button.sense { cursor: pointer; }
+button.sense:active { background: var(--surface-sunk); }
+button.sense:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+.sensePicked { border-color: var(--accent); background: var(--accent-tint); }
+
+.forms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin: var(--space-3) 0 0;
+  font-size: var(--type-caption-size);
+  color: var(--ink-muted);
+}
+
+.formItem b { color: var(--ink); font-weight: 600; }
+
+.pairs { margin-top: var(--space-3); }
+
+.pair { display: grid; gap: var(--space-1); margin: 0 0 var(--space-2); }
+
+.pairEn { font-size: var(--type-body-size); line-height: var(--type-body-line); }
+
+.pairKo { font-size: var(--type-caption-size); line-height: var(--type-caption-line); color: var(--ink-muted); }
+
+.naver {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-min);
+  margin-top: var(--space-2);
+  color: var(--accent-ink);
+  font-size: var(--type-body-kr-size);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.naver:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* 사전 내용이 길어져 창 안에서 스크롤해도 위 손잡이·X와 아래 저장·삭제 버튼은 늘 보이게 붙여 둔다.
+   창의 안쪽 여백(space-4)만큼 음수로 붙여야 스크롤할 때 틈 없이 가장자리에 붙는다 */
+.top {
+  position: sticky;
+  top: calc(var(--space-4) * -1);
+  z-index: 1;
+  background: var(--surface);
+}
+
+.actions {
+  position: sticky;
+  bottom: calc((var(--space-4) + env(safe-area-inset-bottom)) * -1);
+  z-index: 1;
+  margin-left: calc(var(--space-4) * -1);
+  margin-right: calc(var(--space-4) * -1);
+  padding: var(--space-2) var(--space-4);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}

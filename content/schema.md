@@ -138,3 +138,23 @@ node scripts/content/make-sample-page.mjs   ← 아이폰 확인용 샘플 페�
 - `content/`는 Vite의 `public/` 밖에 있다. 앱에서 쓰려면 빌드 때 `content/`를 그대로 복사하거나 `publicDir`로 지정한다. 모든 `audio` 경로는 `content/` 기준이다.
 - 음성은 전체 약 36MB → PWA가 처음 설치할 때 한꺼번에 받지(precache) 말고, 재생할 때 받아 저장(runtime cache)한다.
 - 판정(Phase 4)은 축약을 양쪽으로 맞춰야 한다. 아이폰 받아쓰기는 `should've`를 `should have`로, `how's`를 `how is`로 돌려줄 때가 많다. 콘텐츠에는 gonna, wanna, should've, I'd, how's, it's 등이 들어 있다.
+
+## 8. 단어 사전 (2026-11-21)
+
+단어 저장 창이 읽는 사전. 원고를 고친 뒤 `node scripts/content/build-dictionary.mjs`를 실행하면 `content/dictionary.json`이 다시 만들어진다(검사에 걸리면 만들지 않음). 새 레슨을 만들면 스크립트가 알려 주는 "사전에 없는 단어"를 원고에 더한다.
+
+- `dictionary-src/words/*.json` — 표제어(소문자, 줄임말 `i'm`·붙임표 `two-year`도 한 단어)
+  ```json
+  "go": {
+    "ipa": "ɡoʊ",
+    "forms": { "3s": "goes", "past": "went", "pp": "gone", "ing": "going" },
+    "senses": [{ "pos": "verb", "ko": "가다" }, { "pos": "verb", "ko": "(일이) 진행되다" }],
+    "examples": [{ "en": "Let's go home.", "ko": "집에 가요." }],
+    "phrases": [{ "en": "go with something", "ko": "~으로 하다, ~을 고르다" }]
+  }
+  ```
+  - `senses`만 필수. 자주 쓰는 뜻을 앞에. `pos`는 레슨 품사 목록 + `determiner`(한정사)·`auxiliary`(조동사).
+  - `forms` 이름: `3s`·`past`·`pp`·`ing`·`pl`·`er`·`est`. 여기 적은 변화형은 원래 단어로 찾아진다(went → go).
+  - `ko`의 괄호 설명은 단어장에 저장할 때 빠진다(화면에는 보임).
+  - `phrases`의 `something`·`someone`·`someone's`는 아무 말 1~3단어 자리(화면에는 `~`). 표제어 단어는 변화형도 맞는 것으로 본다(went out → go out).
+- `dictionary-src/context/<레슨>.json` — `"레슨 영어 문장 그대로": { "누른 단어": 뜻 번호(0부터) }`. 모양이 같은 다른 단어면 `"shop:0"`처럼 표제어를 적는다. 문장 글자가 레슨과 다르면 스크립트가 경고한다.

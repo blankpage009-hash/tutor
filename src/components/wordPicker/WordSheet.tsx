@@ -1,17 +1,28 @@
 import { useEffect, useRef, useState, type PointerEvent } from 'react';
-import { loadGlossary, lookupWord } from '../../content/glossary';
+import {
+  contextSense, loadDictionary, lookupEntry, meaningForSave, phraseInSentence, type Sense,
+} from '../../content/dictionary';
 import { findWord, removeWord, saveWord } from '../../db/vocab';
 import type { VocabWord } from '../../db/types';
 import { POS_OPTIONS, posLabel } from '../../posLabels';
 import { normalizeWord } from '../../wordTap';
 import { Button } from '../Button';
 import { IconClose } from '../icons/icons';
+import { DictEntryView, type DictInfo } from './DictEntryView';
 import type { WordSource } from './WordPicker';
 import styles from './WordSheet.module.css';
 
 type Props = { word: string; source: WordSource; onClose: () => void };
 
-type Loaded = { saved: VocabWord | null; fromGlossary: boolean };
+type Loaded = { saved: VocabWord | null; dict: DictInfo };
+
+// 이 문장에 적어 둔 뜻이 있으면 그 단어(shopping → shop처럼 바뀔 수 있음)로, 없으면 누른 단어로 찾는다
+async function readDict(key: string, sentenceEn: string): Promise<DictInfo> {
+  const dict = await loadDictionary();
+  const ctx = contextSense(dict, sentenceEn, key);
+  const hit = ctx?.hit ?? lookupEntry(dict, key);
+  return { hit, contextIndex: ctx?.index ?? null, phrase: hit ? phraseInSentence(hit, sentenceEn) : null };
+}
 
 // 이만큼(px) 넘게 아래로 쓸어내리면 창을 닫는다. 덜 내리면 제자리로 돌아간다
 const CLOSE_DISTANCE = 80;
@@ -56,19 +67,22 @@ function useWordEntry(key: string, source: WordSource, onClose: () => void) {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
+  // 뜻 칸 기본값 = 이 문장에서의 뜻 → 없으면 첫 번째 뜻
   const fill = async (saved: VocabWord | null) => {
-    const hit = saved ? null : lookupWord(await loadGlossary(), key);
-    setMeaning(hit?.ko ?? '');
-    setPos(hit?.pos ?? 'noun');
-    setLoaded({ saved, fromGlossary: Boolean(hit) });
+    const dict = await readDict(key, source.en);
+    const first = dict.hit?.entry.senses[dict.contextIndex ?? 0];
+    setMeaning(first ? meaningForSave(first.ko) : '');
+    setPos(first?.pos ?? 'noun');
+    setLoaded({ saved, dict });
   };
+  const pick = (s: Sense) => { setMeaning(meaningForSave(s.ko)); setPos(s.pos); };
 
   useEffect(() => {
     let alive = true;
     findWord(key).then((saved) => (alive ? fill(saved ?? null) : undefined))
       .catch((e) => alive && setError(`단어장을 못 읽었어요: ${String(e)}`));
     return () => { alive = false; };
-    // fill은 key만 쓰므로 key가 바뀔 때만 다시 읽는다
+    // 문장(source)이 바뀌면 WordPicker가 창을 새로 만들므로(key에 문장 id) 여기서는 key만 본다
   }, [key]);
 
   const save = async () => {
@@ -96,7 +110,7 @@ function useWordEntry(key: string, source: WordSource, onClose: () => void) {
     }
   };
 
-  return { loaded, meaning, setMeaning, pos, setPos, message, error, save, remove };
+  return { loaded, meaning, setMeaning, pos, setPos, pick, message, error, save, remove };
 }
 
 // 단어를 눌렀을 때 아래에서 올라오는 저장 창 (2026-11-21 사용자 요청: 위 손잡이 바로 쓸어 닫기, 오른쪽 위 X, 저장 옆 빨간 삭제)
@@ -129,8 +143,12 @@ export function WordSheet({ word, source, onClose }: Props) {
         </div>
         {!w.loaded && !w.error && <p className={styles.hint} lang="ko">불러오는 중…</p>}
         {saved && <SavedInfo saved={saved} />}
+        {w.loaded && (
+          <DictEntryView word={key} info={w.loaded.dict}
+            {...(saved ? {} : { picked: { ko: w.meaning, pos: w.pos }, onPick: w.pick })} />
+        )}
         {w.loaded && !saved && (
-          <EditFields meaning={w.meaning} pos={w.pos} fromGlossary={w.loaded.fromGlossary} onMeaning={w.setMeaning} onPos={w.setPos} />
+          <EditFields meaning={w.meaning} pos={w.pos} fromDict={Boolean(w.loaded.dict.hit)} onMeaning={w.setMeaning} onPos={w.setPos} />
         )}
         {w.loaded && (
           <Actions key={saved ? 'saved' : 'new'} saved={Boolean(saved)} canSave={Boolean(w.meaning.trim())} onSave={w.save} onRemove={w.remove} />
@@ -152,11 +170,11 @@ function SavedInfo({ saved }: { saved: VocabWord }) {
 }
 
 type EditProps = {
-  meaning: string; pos: string; fromGlossary: boolean;
+  meaning: string; pos: string; fromDict: boolean;
   onMeaning: (v: string) => void; onPos: (v: string) => void;
 };
 
-function EditFields({ meaning, pos, fromGlossary, onMeaning, onPos }: EditProps) {
+function EditFields({ meaning, pos, fromDict, onMeaning, onPos }: EditProps) {
   return (
     <>
       <label className={styles.field}>
@@ -165,7 +183,7 @@ function EditFields({ meaning, pos, fromGlossary, onMeaning, onPos }: EditProps)
           placeholder="뜻을 적어 주세요" autoComplete="off" />
       </label>
       <p className={styles.hint} lang="ko">
-        {fromGlossary ? '사전에서 채웠어요. 고쳐서 저장해도 돼요.' : '사전에 없는 단어예요. 뜻을 직접 적어 주세요.'}
+        {fromDict ? '위 뜻을 누르면 여기에 들어가요. 고쳐서 저장해도 돼요.' : '앱 사전에 없는 단어예요. 네이버 사전을 보고 뜻을 적어 주세요.'}
       </p>
       <label className={styles.field}>
         <span className={styles.label} lang="ko">품사</span>

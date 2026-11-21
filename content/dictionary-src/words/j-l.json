@@ -1,0 +1,223 @@
+{
+  "jacket": {
+    "ipa": "ˈdʒækɪt",
+    "forms": { "pl": "jackets" },
+    "senses": [{ "pos": "noun", "ko": "재킷, 겉옷" }]
+  },
+  "jeans": {
+    "ipa": "dʒiːnz",
+    "senses": [{ "pos": "noun", "ko": "청바지 (늘 복수: these jeans)" }]
+  },
+  "job": {
+    "ipa": "dʒɑːb",
+    "forms": { "pl": "jobs" },
+    "senses": [
+      { "pos": "noun", "ko": "직장, 일자리" },
+      { "pos": "noun", "ko": "(해야 할) 일" }
+    ],
+    "examples": [{ "en": "I got a new job.", "ko": "새 직장을 구했어요." }],
+    "phrases": [{ "en": "job offer", "ko": "채용 제안, 일자리 제의" }, { "en": "take the job", "ko": "그 일자리를 받아들이다" }, { "en": "good job", "ko": "잘했어요" }]
+  },
+  "join": {
+    "ipa": "dʒɔɪn",
+    "forms": { "3s": "joins", "past": "joined", "pp": "joined", "ing": "joining" },
+    "senses": [
+      { "pos": "verb", "ko": "(모임·헬스장에) 가입하다, 등록하다" },
+      { "pos": "verb", "ko": "함께하다, 합류하다" }
+    ],
+    "examples": [{ "en": "Do you want to join us?", "ko": "우리랑 같이 갈래요?" }]
+  },
+  "just": {
+    "ipa": "dʒʌst",
+    "senses": [
+      { "pos": "adverb", "ko": "그냥, 단지, 그저" },
+      { "pos": "adverb", "ko": "방금, 막 (just got canceled = 방금 취소됐다)" },
+      { "pos": "adverb", "ko": "딱, 정확히" }
+    ],
+    "examples": [{ "en": "I just got here.", "ko": "방금 왔어요." }]
+  },
+  "keep": {
+    "ipa": "kiːp",
+    "forms": { "3s": "keeps", "past": "kept", "pp": "kept", "ing": "keeping" },
+    "senses": [
+      { "pos": "verb", "ko": "(keep -ing) 계속 ~하다, 자꾸 ~하다" },
+      { "pos": "verb", "ko": "가지고 있다, 보관하다" }
+    ],
+    "examples": [{ "en": "I keep forgetting his name.", "ko": "자꾸 그 사람 이름을 까먹어요." }]
+  },
+  "know": {
+    "ipa": "noʊ",
+    "forms": { "3s": "knows", "past": "knew", "pp": "known", "ing": "knowing" },
+    "senses": [{ "pos": "verb", "ko": "알다" }],
+    "examples": [{ "en": "Do you know her?", "ko": "그녀를 알아요?" }]
+  },
+  "la": {
+    "ipa": "ˌel ˈeɪ",
+    "senses": [{ "pos": "noun", "ko": "LA, 로스앤젤레스 (Los Angeles)" }]
+  },
+  "landlord": {
+    "ipa": "ˈlændlɔːrd",
+    "forms": { "pl": "landlords" },
+    "senses": [{ "pos": "noun", "ko": "집주인 (세를 놓은 사람)" }]
+  },
+  "land": {
+    "ipa": "lænd",
+    "forms": { "3s": "lands", "past": "landed", "pp": "landed", "ing": "landing" },
+    "senses": [
+      { "pos": "verb", "ko": "(비행기가) 착륙하다, 도착하다" },
+      { "pos": "noun", "ko": "땅, 육지" }
+    ],
+    "examples": [{ "en": "We landed at 10.", "ko": "10시에 도착했어요." }]
+  },
+  "laptop": {
+    "ipa": "ˈlæptɑːp",
+    "forms": { "pl": "laptops" },
+    "senses": [{ "pos": "noun", "ko": "노트북 컴퓨터" }]
+  },
+  "last": {
+    "ipa": "læst",
+    "senses": [
+      { "pos": "adjective", "ko": "지난 (last weekend = 지난 주말)" },
+      { "pos": "adjective", "ko": "마지막의" },
+      { "pos": "verb", "ko": "계속되다, 오래가다" }
+    ],
+    "examples": [{ "en": "I saw him last week.", "ko": "지난주에 그를 봤어요." }],
+    "phrases": [{ "en": "last year", "ko": "작년" }, { "en": "last weekend", "ko": "지난 주말" }]
+  },
+  "late": {
+    "ipa": "leɪt",
+    "forms": { "er": "later", "est": "latest" },
+    "senses": [
+      { "pos": "adjective", "ko": "늦은 (the late one = 늦은 쪽 것)" },
+      { "pos": "adverb", "ko": "늦게" }
+    ],
+    "examples": [{ "en": "Sorry I'm late.", "ko": "늦어서 미안해요." }]
+  },
+  "later": {
+    "ipa": "ˈleɪtər",
+    "senses": [
+      { "pos": "adverb", "ko": "나중에, 이따가" },
+      { "pos": "adjective", "ko": "더 늦은 (late의 비교급)" }
+    ],
+    "examples": [{ "en": "See you later.", "ko": "이따 봐요." }]
+  },
+  "lease": {
+    "ipa": "liːs",
+    "forms": { "pl": "leases" },
+    "senses": [{ "pos": "noun", "ko": "임대 계약, 임대차 계약서" }],
+    "phrases": [{ "en": "sign a lease", "ko": "임대 계약서에 서명하다" }]
+  },
+  "lee": {
+    "ipa": "liː",
+    "senses": [{ "pos": "noun", "ko": "(사람 성) 리, 이" }]
+  },
+  "lemon": {
+    "ipa": "ˈlemən",
+    "forms": { "pl": "lemons" },
+    "senses": [{ "pos": "noun", "ko": "레몬; 레몬 맛" }]
+  },
+  "lemonade": {
+    "ipa": "ˌleməˈneɪd",
+    "senses": [{ "pos": "noun", "ko": "레모네이드 (미국은 탄산 없는 레몬 음료)" }]
+  },
+  "less": {
+    "ipa": "les",
+    "senses": [
+      { "pos": "determiner", "ko": "더 적은" },
+      { "pos": "adverb", "ko": "덜, 더 적게 (twenty dollars less = 20달러 더 싼)" }
+    ],
+    "examples": [{ "en": "I'm trying to eat less sugar.", "ko": "설탕을 덜 먹으려고 해요." }]
+  },
+  "let": {
+    "ipa": "let",
+    "forms": { "3s": "lets", "past": "let", "pp": "let", "ing": "letting" },
+    "senses": [{ "pos": "verb", "ko": "~하게 하다, ~하도록 두다" }],
+    "phrases": [{ "en": "Let me", "ko": "제가 ~할게요, ~해 볼게요" }, { "en": "Let me check", "ko": "확인해 볼게요" }]
+  },
+  "let's": {
+    "ipa": "lets",
+    "senses": [{ "pos": "phrase", "ko": "let us의 줄임말 — (우리) ~하자, ~해요" }],
+    "examples": [{ "en": "Let's eat.", "ko": "먹자." }]
+  },
+  "life": {
+    "ipa": "laɪf",
+    "forms": { "pl": "lives" },
+    "senses": [
+      { "pos": "noun", "ko": "삶, 인생, 생활" },
+      { "pos": "noun", "ko": "(물건의) 수명, 사용 시간" }
+    ],
+    "phrases": [{ "en": "battery life", "ko": "배터리 사용 시간" }]
+  },
+  "light": {
+    "ipa": "laɪt",
+    "forms": { "er": "lighter", "est": "lightest", "pl": "lights" },
+    "senses": [
+      { "pos": "adjective", "ko": "가벼운" },
+      { "pos": "noun", "ko": "빛, 불, 전등" },
+      { "pos": "adjective", "ko": "(색이) 연한, 밝은" }
+    ],
+    "examples": [{ "en": "This bag is really light.", "ko": "이 가방 정말 가벼워요." }]
+  },
+  "like": {
+    "ipa": "laɪk",
+    "forms": { "3s": "likes", "past": "liked", "pp": "liked", "ing": "liking" },
+    "senses": [
+      { "pos": "verb", "ko": "좋아하다, 마음에 들다" },
+      { "pos": "verb", "ko": "(would like) ~하고 싶다, ~을 원하다" },
+      { "pos": "preposition", "ko": "~처럼, ~ 같은" }
+    ],
+    "examples": [{ "en": "I like your shoes.", "ko": "신발 예쁘네요." }],
+    "phrases": [{ "en": "like better", "ko": "~을 더 좋아하다" }, { "en": "like best", "ko": "~을 가장 좋아하다" }, { "en": "would like", "ko": "~하고 싶다, ~을 원하다" }]
+  },
+  "limited": {
+    "ipa": "ˈlɪmɪtɪd",
+    "senses": [{ "pos": "adjective", "ko": "한정된, 제한된, 많지 않은" }],
+    "examples": [{ "en": "We have limited time.", "ko": "시간이 얼마 없어요." }]
+  },
+  "limp": {
+    "ipa": "lɪmp",
+    "forms": { "3s": "limps", "past": "limped", "pp": "limped", "ing": "limping" },
+    "senses": [{ "pos": "verb", "ko": "다리를 절다, 절뚝거리다" }]
+  },
+  "long": {
+    "ipa": "lɔːŋ",
+    "forms": { "er": "longer", "est": "longest" },
+    "senses": [
+      { "pos": "adjective", "ko": "긴, 오래가는" },
+      { "pos": "adverb", "ko": "오래" }
+    ],
+    "examples": [{ "en": "How long does it take?", "ko": "얼마나 걸려요?" }]
+  },
+  "look": {
+    "ipa": "lʊk",
+    "forms": { "3s": "looks", "past": "looked", "pp": "looked", "ing": "looking" },
+    "senses": [
+      { "pos": "verb", "ko": "보다 (look at)" },
+      { "pos": "verb", "ko": "~해 보이다, ~인 것 같다 (look great, look the same)" },
+      { "pos": "interjection", "ko": "(Look!) 이것 봐요" }
+    ],
+    "examples": [{ "en": "You look tired.", "ko": "피곤해 보여요." }],
+    "phrases": [{ "en": "look at something", "ko": "~을 보다" }, { "en": "look for something", "ko": "~을 찾다" }]
+  },
+  "lot": {
+    "ipa": "lɑːt",
+    "senses": [{ "pos": "noun", "ko": "(a lot) 많이, 훨씬; 많은 것" }],
+    "examples": [{ "en": "Thanks a lot!", "ko": "정말 고마워요!" }],
+    "phrases": [{ "en": "a lot", "ko": "많이, 훨씬 (a lot cheaper = 훨씬 싼)" }, { "en": "a lot of something", "ko": "많은 ~" }]
+  },
+  "love": {
+    "ipa": "lʌv",
+    "forms": { "3s": "loves", "past": "loved", "pp": "loved", "ing": "loving" },
+    "senses": [
+      { "pos": "verb", "ko": "아주 좋아하다, 정말 마음에 들다" },
+      { "pos": "verb", "ko": "사랑하다" },
+      { "pos": "noun", "ko": "사랑" }
+    ],
+    "examples": [{ "en": "I love this song.", "ko": "이 노래 정말 좋아요." }]
+  },
+  "lunch": {
+    "ipa": "lʌntʃ",
+    "senses": [{ "pos": "noun", "ko": "점심, 점심 식사" }],
+    "phrases": [{ "en": "after lunch", "ko": "점심 먹고" }, { "en": "lunch special", "ko": "점심 특선 메뉴" }]
+  }
+}

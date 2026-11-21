@@ -11,7 +11,8 @@ const SRC = path.join(root, 'content');
 const DEST = path.join(root, 'public', 'content');
 // schema.md 같은 설명 문서는 앱에 필요 없다
 // curriculum.json·lessons/는 새 커리큘럼(make_lesson_audio.py가 만듦)
-const INCLUDE = ['audio', 'curriculum.json', 'lessons', 'glossary.json'];
+// dictionary.json은 단어 저장 창의 사전(build-dictionary.mjs가 만듦). glossary.json은 지금 앱이 안 읽지만 지우기 전까지 그대로 둔다
+const INCLUDE = ['audio', 'curriculum.json', 'lessons', 'glossary.json', 'dictionary.json'];
 
 function walk(dir, base = dir, out = []) {
   if (!fs.existsSync(dir)) return out;

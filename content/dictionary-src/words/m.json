@@ -1,0 +1,151 @@
+{
+  "m": {
+    "ipa": "em",
+    "senses": [{ "pos": "phrase", "ko": "(a.m.·p.m.의 m) — a.m. 오전, p.m. 오후" }]
+  },
+  "make": {
+    "ipa": "meɪk",
+    "forms": { "3s": "makes", "past": "made", "pp": "made", "ing": "making" },
+    "senses": [
+      { "pos": "verb", "ko": "만들다" },
+      { "pos": "verb", "ko": "(약속·결정 등을) 하다 (make an appointment)" },
+      { "pos": "verb", "ko": "~하게 만들다" }
+    ],
+    "examples": [{ "en": "I'll make dinner.", "ko": "제가 저녁 만들게요." }],
+    "phrases": [{ "en": "make sense", "ko": "말이 되다, 이해가 되다" }, { "en": "make an appointment", "ko": "예약을 잡다" }]
+  },
+  "maple": {
+    "ipa": "ˈmeɪpəl",
+    "senses": [{ "pos": "noun", "ko": "단풍나무 (여기서는 병원 이름의 일부)" }]
+  },
+  "maybe": {
+    "ipa": "ˈmeɪbi",
+    "senses": [{ "pos": "adverb", "ko": "아마, 어쩌면 (제안을 부드럽게: Maybe we should ~)" }],
+    "phrases": [{ "en": "maybe we should", "ko": "우리 ~하는 게 좋을 것 같아요 (부드러운 제안)" }]
+  },
+  "me": {
+    "ipa": "miː",
+    "senses": [{ "pos": "pronoun", "ko": "나를, 나에게, 나" }],
+    "phrases": [{ "en": "for me", "ko": "나한테는, 나에게" }]
+  },
+  "mean": {
+    "ipa": "miːn",
+    "forms": { "3s": "means", "past": "meant", "pp": "meant", "ing": "meaning" },
+    "senses": [
+      { "pos": "verb", "ko": "뜻하다, 의미하다" },
+      { "pos": "verb", "ko": "(말하려는) ~라는 뜻이다 (I mean ~)" },
+      { "pos": "adjective", "ko": "못된, 심술궂은" }
+    ],
+    "examples": [{ "en": "What does this word mean?", "ko": "이 단어 무슨 뜻이에요?" }]
+  },
+  "meet": {
+    "ipa": "miːt",
+    "forms": { "3s": "meets", "past": "met", "pp": "met", "ing": "meeting" },
+    "senses": [
+      { "pos": "verb", "ko": "만나다" },
+      { "pos": "verb", "ko": "처음 만나다, 알게 되다" }
+    ],
+    "examples": [{ "en": "Nice to meet you.", "ko": "만나서 반가워요." }]
+  },
+  "meeting": {
+    "ipa": "ˈmiːtɪŋ",
+    "forms": { "pl": "meetings" },
+    "senses": [{ "pos": "noun", "ko": "회의, 모임" }],
+    "phrases": [{ "en": "meeting room", "ko": "회의실" }]
+  },
+  "menu": {
+    "ipa": "ˈmenjuː",
+    "forms": { "pl": "menus" },
+    "senses": [{ "pos": "noun", "ko": "메뉴, 메뉴판" }]
+  },
+  "midnight": {
+    "ipa": "ˈmɪdnaɪt",
+    "senses": [{ "pos": "noun", "ko": "자정, 밤 12시" }],
+    "phrases": [{ "en": "after midnight", "ko": "자정이 넘어서" }]
+  },
+  "might": {
+    "ipa": "maɪt",
+    "senses": [{ "pos": "auxiliary", "ko": "~일지도 모른다, ~할 수도 있다" }],
+    "examples": [{ "en": "It might rain.", "ko": "비가 올지도 몰라요." }]
+  },
+  "minute": {
+    "ipa": "ˈmɪnɪt",
+    "forms": { "pl": "minutes" },
+    "senses": [
+      { "pos": "noun", "ko": "(시간) 분" },
+      { "pos": "noun", "ko": "잠깐, 잠시 (for a minute)" }
+    ],
+    "examples": [{ "en": "Wait a minute.", "ko": "잠깐만요." }],
+    "phrases": [{ "en": "for a minute", "ko": "잠깐 동안" }]
+  },
+  "model": {
+    "ipa": "ˈmɑːdəl",
+    "forms": { "pl": "models" },
+    "senses": [
+      { "pos": "noun", "ko": "(제품의) 모델, 형" },
+      { "pos": "noun", "ko": "모형; (패션) 모델" }
+    ],
+    "examples": [{ "en": "This is last year's model.", "ko": "이건 작년 모델이에요." }]
+  },
+  "month": {
+    "ipa": "mʌnθ",
+    "forms": { "pl": "months" },
+    "senses": [{ "pos": "noun", "ko": "달, 개월" }],
+    "phrases": [{ "en": "every six months", "ko": "6개월마다" }]
+  },
+  "more": {
+    "ipa": "mɔːr",
+    "senses": [
+      { "pos": "adverb", "ko": "(긴 형용사 앞) 더 ~한 (more comfortable)" },
+      { "pos": "determiner", "ko": "더 많은, 더" },
+      { "pos": "adverb", "ko": "(금액 뒤) 더 비싼 (fifty dollars more = 50달러 더 비싼)" }
+    ],
+    "examples": [{ "en": "Can I have some more?", "ko": "좀 더 먹어도 돼요?" }]
+  },
+  "morning": {
+    "ipa": "ˈmɔːrnɪŋ",
+    "forms": { "pl": "mornings" },
+    "senses": [{ "pos": "noun", "ko": "아침, 오전" }],
+    "phrases": [{ "en": "in the morning", "ko": "아침에, 오전에" }, { "en": "good morning", "ko": "좋은 아침이에요" }]
+  },
+  "most": {
+    "ipa": "moʊst",
+    "senses": [
+      { "pos": "adverb", "ko": "(형용사 앞) 가장 ~한 (most popular)" },
+      { "pos": "determiner", "ko": "대부분의" }
+    ],
+    "examples": [{ "en": "Most people agree.", "ko": "대부분 동의해요." }]
+  },
+  "move": {
+    "ipa": "muːv",
+    "forms": { "3s": "moves", "past": "moved", "pp": "moved", "ing": "moving" },
+    "senses": [
+      { "pos": "verb", "ko": "이사하다, 옮겨 가다" },
+      { "pos": "verb", "ko": "움직이다, 옮기다" }
+    ],
+    "examples": [{ "en": "We're moving next month.", "ko": "다음 달에 이사해요." }]
+  },
+  "movie": {
+    "ipa": "ˈmuːvi",
+    "forms": { "pl": "movies" },
+    "senses": [{ "pos": "noun", "ko": "영화" }]
+  },
+  "much": {
+    "ipa": "mʌtʃ",
+    "senses": [
+      { "pos": "determiner", "ko": "(셀 수 없는 것) 많은 (much data)" },
+      { "pos": "adverb", "ko": "많이, 훨씬 (not much cheaper = 별로 안 싼)" }
+    ],
+    "examples": [{ "en": "How much is it?", "ko": "얼마예요?" }],
+    "phrases": [{ "en": "how much", "ko": "얼마, 얼마나" }]
+  },
+  "mug": {
+    "ipa": "mʌɡ",
+    "forms": { "pl": "mugs" },
+    "senses": [{ "pos": "noun", "ko": "머그잔" }]
+  },
+  "my": {
+    "ipa": "maɪ",
+    "senses": [{ "pos": "determiner", "ko": "나의, 내" }]
+  }
+}

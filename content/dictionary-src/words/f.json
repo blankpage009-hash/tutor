@@ -1,0 +1,144 @@
+{
+  "fall": {
+    "ipa": "fɔːl",
+    "forms": { "3s": "falls", "past": "fell", "pp": "fallen", "ing": "falling" },
+    "senses": [
+      { "pos": "verb", "ko": "떨어지다, 넘어지다" },
+      { "pos": "noun", "ko": "가을" }
+    ],
+    "examples": [{ "en": "Be careful not to fall.", "ko": "넘어지지 않게 조심해요." }],
+    "phrases": [{ "en": "fall down", "ko": "넘어지다; (옷이) 흘러내리다" }]
+  },
+  "family": {
+    "ipa": "ˈfæməli",
+    "forms": { "pl": "families" },
+    "senses": [{ "pos": "noun", "ko": "가족" }],
+    "examples": [{ "en": "I'm visiting my family.", "ko": "가족을 보러 가요." }]
+  },
+  "fan": {
+    "ipa": "fæn",
+    "forms": { "pl": "fans" },
+    "senses": [
+      { "pos": "noun", "ko": "선풍기, 환풍기" },
+      { "pos": "noun", "ko": "팬, 좋아하는 사람" }
+    ],
+    "examples": [{ "en": "I'm a big fan of jazz.", "ko": "재즈 정말 좋아해요." }]
+  },
+  "far": {
+    "ipa": "fɑːr",
+    "senses": [
+      { "pos": "adverb", "ko": "멀리" },
+      { "pos": "adjective", "ko": "먼" }
+    ],
+    "examples": [{ "en": "Is it far from here?", "ko": "여기서 멀어요?" }],
+    "phrases": [{ "en": "so far", "ko": "그렇게 멀리; 지금까지" }]
+  },
+  "foot": {
+    "ipa": "fʊt",
+    "forms": { "pl": "feet" },
+    "senses": [
+      { "pos": "noun", "ko": "발" },
+      { "pos": "noun", "ko": "피트 (길이 단위, 약 30cm)" }
+    ],
+    "examples": [{ "en": "My feet hurt.", "ko": "발이 아파요." }],
+    "phrases": [{ "en": "on foot", "ko": "걸어서" }]
+  },
+  "few": {
+    "ipa": "fjuː",
+    "senses": [
+      { "pos": "determiner", "ko": "(a few) 몇몇의, 조금의" },
+      { "pos": "determiner", "ko": "(few) 거의 없는" }
+    ],
+    "examples": [{ "en": "I need a few more days.", "ko": "며칠만 더 필요해요." }],
+    "phrases": [{ "en": "a few", "ko": "몇 개의, 조금" }]
+  },
+  "fifty": {
+    "ipa": "ˈfɪfti",
+    "senses": [{ "pos": "noun", "ko": "50, 쉰" }]
+  },
+  "find": {
+    "ipa": "faɪnd",
+    "forms": { "3s": "finds", "past": "found", "pp": "found", "ing": "finding" },
+    "senses": [
+      { "pos": "verb", "ko": "찾다, 발견하다" },
+      { "pos": "verb", "ko": "(해 보니) ~라고 느끼다" }
+    ],
+    "examples": [{ "en": "I can't find my phone.", "ko": "폰을 못 찾겠어요." }],
+    "phrases": [{ "en": "find everything okay", "ko": "(매장에서) 찾으시는 거 잘 보고 계세요?" }]
+  },
+  "fine": {
+    "ipa": "faɪn",
+    "senses": [
+      { "pos": "adjective", "ko": "괜찮은, 좋은" },
+      { "pos": "adjective", "ko": "(몸이) 괜찮은, 건강한" },
+      { "pos": "noun", "ko": "벌금" }
+    ],
+    "examples": [{ "en": "I'm fine, thanks.", "ko": "괜찮아요, 고마워요." }]
+  },
+  "fit": {
+    "ipa": "fɪt",
+    "forms": { "3s": "fits", "past": "fit", "pp": "fit", "ing": "fitting" },
+    "senses": [
+      { "pos": "verb", "ko": "(크기·조건이) 맞다" },
+      { "pos": "noun", "ko": "잘 맞는 것 (a good fit = 딱 맞는 것)" },
+      { "pos": "adjective", "ko": "건강한, 몸이 탄탄한" }
+    ],
+    "examples": [{ "en": "These shoes don't fit.", "ko": "이 신발 안 맞아요." }],
+    "phrases": [{ "en": "fit someone's budget", "ko": "예산에 맞다" }, { "en": "a better fit", "ko": "더 잘 맞는 것" }]
+  },
+  "flexible": {
+    "ipa": "ˈfleksəbəl",
+    "senses": [
+      { "pos": "adjective", "ko": "(일정이) 융통성 있는, 아무 때나 괜찮은" },
+      { "pos": "adjective", "ko": "잘 휘는, 유연한" }
+    ],
+    "examples": [{ "en": "My schedule is flexible.", "ko": "제 일정은 조정 가능해요." }]
+  },
+  "flight": {
+    "ipa": "flaɪt",
+    "forms": { "pl": "flights" },
+    "senses": [{ "pos": "noun", "ko": "비행기 편, 항공편" }],
+    "examples": [{ "en": "My flight leaves at 7.", "ko": "제 비행기는 7시에 떠나요." }]
+  },
+  "for": {
+    "ipa": "fər, fɔːr",
+    "senses": [
+      { "pos": "preposition", "ko": "~을 위해, ~에게 (for me = 나한테)" },
+      { "pos": "preposition", "ko": "(기간) ~ 동안 (for ten minutes)" },
+      { "pos": "preposition", "ko": "(목적) ~하러, ~용으로" }
+    ],
+    "phrases": [{ "en": "thanks for something", "ko": "~해 줘서 고마워요" }, { "en": "ask for something", "ko": "~을 요청하다" }]
+  },
+  "free": {
+    "ipa": "friː",
+    "senses": [
+      { "pos": "adjective", "ko": "(사람·장소가) 비어 있는, 시간이 있는" },
+      { "pos": "adjective", "ko": "무료의, 공짜의" },
+      { "pos": "adjective", "ko": "자유로운" }
+    ],
+    "examples": [{ "en": "Are you free tonight?", "ko": "오늘 밤 시간 있어요?" }]
+  },
+  "friday": {
+    "ipa": "ˈfraɪdeɪ",
+    "senses": [{ "pos": "noun", "ko": "금요일" }],
+    "phrases": [{ "en": "on Friday", "ko": "금요일에" }]
+  },
+  "friendly": {
+    "ipa": "ˈfrendli",
+    "senses": [{ "pos": "adjective", "ko": "친절한, 다정한, 상냥한" }],
+    "examples": [{ "en": "The staff were very friendly.", "ko": "직원들이 정말 친절했어요." }]
+  },
+  "from": {
+    "ipa": "frəm, frʌm",
+    "senses": [
+      { "pos": "preposition", "ko": "~에서, ~로부터" },
+      { "pos": "preposition", "ko": "(from A to B) A부터 B까지" }
+    ],
+    "examples": [{ "en": "I'm from Korea.", "ko": "한국에서 왔어요." }]
+  },
+  "front": {
+    "ipa": "frʌnt",
+    "senses": [{ "pos": "noun", "ko": "앞, 앞쪽" }],
+    "phrases": [{ "en": "in front of something", "ko": "~ 앞에" }, { "en": "in front", "ko": "앞에" }]
+  }
+}

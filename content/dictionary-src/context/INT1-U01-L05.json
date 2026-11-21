@@ -1,0 +1,23 @@
+{
+  "If I were you, I'd get this one.": { "if": 0, "were": 1, "i'd": 0, "get": 0, "this": 1, "one": 0 },
+  "\"If I were you, I'd...\" is a polite way to give advice. You imagine yourself in the other person's situation and say what you would do. It sounds helpful, not bossy.": { "were": 1, "i'd": 0, "way": 0, "give": 1, "other": 0, "would": 0, "sounds": 0 },
+  "I can't decide which gym to join. Can I get your opinion?": { "which": 0, "join": 0, "can": 1, "get": 1 },
+  "Sure. What are you choosing between?": { "sure": 0, "between": 0 },
+  "This one is closer to home, and that one has a pool.": { "this": 1, "one": 0, "closer": 0, "home": 0, "that": 1, "has": 0 },
+  "You hate driving, right? If I were you, I'd get this one.": { "driving": 0, "right": 0, "were": 1, "i'd": 0, "get": 0, "this": 1, "one": 0 },
+  "That makes sense. I probably wouldn't use the pool much anyway.": { "that": 0, "use": 0, "much": 1, "anyway": 0 },
+  "Exactly. And you can always switch later if you want.": { "exactly": 1, "can": 0, "always": 1, "switch": 0, "later": 0, "if": 0, "want": 0 },
+  "Can I get your opinion?": { "can": 1, "get": 1 },
+  "That makes sense.": { "that": 0 },
+  "If I were you, I'd take the earlier flight.": { "were": 1, "i'd": 0, "take": 1, "earlier": 0 },
+  "If I were you, I wouldn't sign that lease.": { "were": 1, "sign": 0, "that": 1 },
+  "If I were her, I'd take the job.": { "were": 1, "her": 0, "i'd": 0, "take": 2, "job": 0 },
+  "What would you do if you were me?": { "would": 0, "do": 1, "if": 0, "were": 1 },
+  "If I were you, I'd get the cheaper one.": { "were": 1, "i'd": 0, "get": 0, "cheaper": 0, "one": 0 },
+  "This phone has a better camera, but that one has a longer battery life.": { "this": 1, "has": 0, "better": 0, "that": 1, "one": 0, "longer": 0, "life": 1 },
+  "There are two flights, one at 6 a.m. and one at 9 p.m. The late one lands after midnight.": { "there": 0, "one": 0, "at": 0, "a": 2, "late": 0, "lands": 0, "after": 0 },
+  "The landlord wants a two-year contract, and the rent goes up every six months.": { "wants": 0, "rent": 0, "goes": 1, "up": 0, "every": 1 },
+  "My daughter got a job offer in New York, but she's scared to move so far.": { "got": 1, "job": 0, "offer": 0, "move": 0, "so": 0, "far": 0 },
+  "So you're thinking about quitting your job? That's a big decision.": { "so": 2, "thinking": 1, "about": 0, "job": 0, "big": 1 },
+  "These two blenders are almost the same, but this one is fifty dollars more.": { "these": 0, "this": 1, "one": 0, "more": 2 }
+}

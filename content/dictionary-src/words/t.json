@@ -1,0 +1,264 @@
+{
+  "table": {
+    "ipa": "ˈteɪbəl",
+    "forms": { "pl": "tables" },
+    "senses": [
+      { "pos": "noun", "ko": "(식당의) 자리, 테이블" },
+      { "pos": "noun", "ko": "탁자, 식탁" }
+    ]
+  },
+  "take": {
+    "ipa": "teɪk",
+    "forms": { "3s": "takes", "past": "took", "pp": "taken", "ing": "taking" },
+    "senses": [
+      { "pos": "verb", "ko": "(물건을) 사다, 고르다 (I'll take this one = 이걸로 할게요)" },
+      { "pos": "verb", "ko": "(교통수단을) 타다" },
+      { "pos": "verb", "ko": "(일자리·제안을) 받아들이다" },
+      { "pos": "verb", "ko": "가져가다, 잡다; (시간이) 걸리다" }
+    ],
+    "phrases": [{ "en": "take your time", "ko": "천천히 하세요" }, { "en": "take the job", "ko": "그 일자리를 받아들이다" }]
+  },
+  "talk": {
+    "ipa": "tɔːk",
+    "forms": { "3s": "talks", "past": "talked", "pp": "talked", "ing": "talking" },
+    "senses": [{ "pos": "verb", "ko": "이야기하다, 말하다" }],
+    "phrases": [{ "en": "talk about something", "ko": "~에 대해 이야기하다" }]
+  },
+  "tea": {
+    "ipa": "tiː",
+    "senses": [{ "pos": "noun", "ko": "차, 홍차" }],
+    "phrases": [{ "en": "iced tea", "ko": "아이스티" }]
+  },
+  "team": {
+    "ipa": "tiːm",
+    "forms": { "pl": "teams" },
+    "senses": [{ "pos": "noun", "ko": "팀" }],
+    "phrases": [{ "en": "team dinner", "ko": "팀 회식" }, { "en": "team call", "ko": "팀 통화 회의" }]
+  },
+  "technician": {
+    "ipa": "tekˈnɪʃən",
+    "forms": { "pl": "technicians" },
+    "senses": [{ "pos": "noun", "ko": "기사, 기술자 (수리 기사 등)" }]
+  },
+  "tell": {
+    "ipa": "tel",
+    "forms": { "3s": "tells", "past": "told", "pp": "told", "ing": "telling" },
+    "senses": [
+      { "pos": "verb", "ko": "말하다, 알려 주다 (tell someone ~)" },
+      { "pos": "verb", "ko": "구별하다, 알다 (tell the difference)" }
+    ]
+  },
+  "ten": {
+    "ipa": "ten",
+    "senses": [{ "pos": "noun", "ko": "10, 열" }]
+  },
+  "than": {
+    "ipa": "ðən, ðæn",
+    "senses": [{ "pos": "conjunction", "ko": "(비교) ~보다 (cheaper than that one)" }]
+  },
+  "thanks": {
+    "ipa": "θæŋks",
+    "senses": [{ "pos": "interjection", "ko": "고마워요" }],
+    "phrases": [{ "en": "thanks for something", "ko": "~해 줘서 고마워요" }]
+  },
+  "that": {
+    "ipa": "ðæt",
+    "forms": { "pl": "those" },
+    "senses": [
+      { "pos": "pronoun", "ko": "저것, 그것" },
+      { "pos": "determiner", "ko": "저, 그 (that one = 저것)" },
+      { "pos": "conjunction", "ko": "~라는 것, ~하는 (앞말을 꾸밈)" }
+    ],
+    "phrases": [{ "en": "that one", "ko": "저것" }]
+  },
+  "that's": {
+    "ipa": "ðæts",
+    "senses": [{ "pos": "phrase", "ko": "that is의 줄임말 — 그건 ~이다" }]
+  },
+  "the": {
+    "ipa": "ðə, ði",
+    "senses": [{ "pos": "determiner", "ko": "그 (서로 아는 것·하나뿐인 것 앞)" }]
+  },
+  "their": {
+    "ipa": "ðer",
+    "senses": [{ "pos": "determiner", "ko": "그들의" }]
+  },
+  "them": {
+    "ipa": "ðəm, ðem",
+    "senses": [{ "pos": "pronoun", "ko": "그들을, 그것들을" }]
+  },
+  "then": {
+    "ipa": "ðen",
+    "senses": [
+      { "pos": "adverb", "ko": "그러면, 그럼" },
+      { "pos": "adverb", "ko": "그다음에; 그때" }
+    ]
+  },
+  "there": {
+    "ipa": "ðer",
+    "senses": [
+      { "pos": "adverb", "ko": "(there is/are) ~이 있다" },
+      { "pos": "adverb", "ko": "거기에, 그곳에" }
+    ],
+    "phrases": [{ "en": "hi there", "ko": "안녕하세요 (가볍게 말을 걸 때)" }]
+  },
+  "these": {
+    "ipa": "ðiːz",
+    "senses": [
+      { "pos": "determiner", "ko": "이 ~들 (these two = 이 두 개)" },
+      { "pos": "pronoun", "ko": "이것들" }
+    ]
+  },
+  "they": {
+    "ipa": "ðeɪ",
+    "senses": [{ "pos": "pronoun", "ko": "그들, 그것들" }]
+  },
+  "they're": {
+    "ipa": "ðer",
+    "senses": [{ "pos": "phrase", "ko": "they are의 줄임말 — 그들은(그것들은) ~이다" }]
+  },
+  "thing": {
+    "ipa": "θɪŋ",
+    "forms": { "pl": "things" },
+    "senses": [{ "pos": "noun", "ko": "것, 물건, 일" }]
+  },
+  "think": {
+    "ipa": "θɪŋk",
+    "forms": { "3s": "thinks", "past": "thought", "pp": "thought", "ing": "thinking" },
+    "senses": [
+      { "pos": "verb", "ko": "생각하다, ~라고 생각하다" },
+      { "pos": "verb", "ko": "(think about) ~을 고려하다, 할까 생각 중이다" }
+    ],
+    "phrases": [{ "en": "think something over", "ko": "~을 곰곰이 생각해 보다" }, { "en": "think about something", "ko": "~을 고려하다" }, { "en": "What do you think", "ko": "어떻게 생각해요?" }]
+  },
+  "this": {
+    "ipa": "ðɪs",
+    "forms": { "pl": "these" },
+    "senses": [
+      { "pos": "pronoun", "ko": "이것" },
+      { "pos": "determiner", "ko": "이 (this one = 이것, this week = 이번 주)" }
+    ],
+    "phrases": [{ "en": "this one", "ko": "이것" }]
+  },
+  "those": {
+    "ipa": "ðoʊz",
+    "senses": [
+      { "pos": "determiner", "ko": "저 ~들, 그 ~들" },
+      { "pos": "pronoun", "ko": "저것들" }
+    ]
+  },
+  "thousand": {
+    "ipa": "ˈθaʊzənd",
+    "senses": [{ "pos": "noun", "ko": "1,000, 천" }]
+  },
+  "three": {
+    "ipa": "θriː",
+    "senses": [{ "pos": "noun", "ko": "3, 셋" }]
+  },
+  "thursday": {
+    "ipa": "ˈθɜːrzdeɪ",
+    "senses": [{ "pos": "noun", "ko": "목요일" }]
+  },
+  "time": {
+    "ipa": "taɪm",
+    "forms": { "pl": "times" },
+    "senses": [
+      { "pos": "noun", "ko": "시간, 때" },
+      { "pos": "noun", "ko": "~번, ~회" }
+    ],
+    "phrases": [{ "en": "take your time", "ko": "천천히 하세요" }, { "en": "it's time to", "ko": "~할 때예요" }, { "en": "any time", "ko": "언제든지" }]
+  },
+  "to": {
+    "ipa": "tə, tuː",
+    "senses": [
+      { "pos": "preposition", "ko": "~으로, ~에 (방향·목적지)" },
+      { "pos": "preposition", "ko": "(to + 동사) ~하는 것, ~하기 위해" },
+      { "pos": "preposition", "ko": "~에게, ~한테" }
+    ]
+  },
+  "toaster": {
+    "ipa": "ˈtoʊstər",
+    "forms": { "pl": "toasters" },
+    "senses": [{ "pos": "noun", "ko": "토스터" }]
+  },
+  "today": {
+    "ipa": "təˈdeɪ",
+    "senses": [{ "pos": "adverb", "ko": "오늘" }]
+  },
+  "together": {
+    "ipa": "təˈɡeðər",
+    "senses": [{ "pos": "adverb", "ko": "함께, 같이" }]
+  },
+  "tomorrow": {
+    "ipa": "təˈmɑːroʊ",
+    "senses": [{ "pos": "adverb", "ko": "내일" }]
+  },
+  "torn": {
+    "ipa": "tɔːrn",
+    "senses": [
+      { "pos": "adjective", "ko": "(be torn between) 둘 사이에서 고민하는, 못 고르는" },
+      { "pos": "adjective", "ko": "찢어진 (tear의 과거분사)" }
+    ],
+    "examples": [{ "en": "I'm torn between the red one and the blue one.", "ko": "빨간 것과 파란 것 사이에서 고민돼요." }],
+    "phrases": [{ "en": "torn between something", "ko": "~ 사이에서 고민하는" }]
+  },
+  "tour": {
+    "ipa": "tʊr",
+    "forms": { "pl": "tours" },
+    "senses": [
+      { "pos": "noun", "ko": "(집·건물) 둘러보기, 견학" },
+      { "pos": "noun", "ko": "관광, 여행" }
+    ]
+  },
+  "train": {
+    "ipa": "treɪn",
+    "forms": { "pl": "trains" },
+    "senses": [
+      { "pos": "noun", "ko": "기차" },
+      { "pos": "verb", "ko": "훈련하다, 교육하다" }
+    ]
+  },
+  "try": {
+    "ipa": "traɪ",
+    "forms": { "3s": "tries", "past": "tried", "pp": "tried", "ing": "trying" },
+    "senses": [
+      { "pos": "verb", "ko": "(옷 등을) 입어 보다, 해 보다" },
+      { "pos": "verb", "ko": "노력하다, 애쓰다" }
+    ],
+    "phrases": [{ "en": "try on something", "ko": "~을 입어 보다" }]
+  },
+  "tuesday": {
+    "ipa": "ˈtuːzdeɪ",
+    "senses": [{ "pos": "noun", "ko": "화요일" }]
+  },
+  "turn": {
+    "ipa": "tɜːrn",
+    "forms": { "3s": "turns", "past": "turned", "pp": "turned", "ing": "turning" },
+    "senses": [
+      { "pos": "verb", "ko": "(turn on/off) 켜다·끄다" },
+      { "pos": "verb", "ko": "돌다, 돌리다" },
+      { "pos": "noun", "ko": "차례" }
+    ],
+    "phrases": [{ "en": "turn on something", "ko": "~을 켜다" }, { "en": "turn on", "ko": "켜다" }]
+  },
+  "tv": {
+    "ipa": "ˌtiː ˈviː",
+    "senses": [{ "pos": "noun", "ko": "텔레비전, TV" }]
+  },
+  "twelve": {
+    "ipa": "twelv",
+    "senses": [{ "pos": "noun", "ko": "12, 열둘" }]
+  },
+  "twenty": {
+    "ipa": "ˈtwenti",
+    "senses": [{ "pos": "noun", "ko": "20, 스물" }]
+  },
+  "two": {
+    "ipa": "tuː",
+    "senses": [{ "pos": "noun", "ko": "2, 둘 (you two = 너희 둘)" }]
+  },
+  "two-year": {
+    "ipa": "ˈtuː jɪr",
+    "senses": [{ "pos": "adjective", "ko": "2년짜리의, 2년 동안의" }]
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "need": {
+    "ipa": "niːd",
+    "forms": { "3s": "needs", "past": "needed", "pp": "needed", "ing": "needing" },
+    "senses": [
+      { "pos": "verb", "ko": "필요하다, ~해야 하다 (need to)" },
+      { "pos": "noun", "ko": "필요" }
+    ],
+    "examples": [{ "en": "I need some help.", "ko": "도움이 좀 필요해요." }]
+  },
+  "new": {
+    "ipa": "nuː",
+    "forms": { "er": "newer", "est": "newest" },
+    "senses": [
+      { "pos": "adjective", "ko": "새로운, 새" },
+      { "pos": "adjective", "ko": "최신의 (the newest model)" }
+    ],
+    "phrases": [{ "en": "New York", "ko": "뉴욕" }]
+  },
+  "next": {
+    "ipa": "nekst",
+    "senses": [
+      { "pos": "adjective", "ko": "다음의 (next week = 다음 주)" },
+      { "pos": "adverb", "ko": "그다음에" }
+    ],
+    "phrases": [{ "en": "next to something", "ko": "~ 옆에" }, { "en": "next week", "ko": "다음 주" }]
+  },
+  "nice": {
+    "ipa": "naɪs",
+    "senses": [
+      { "pos": "adjective", "ko": "좋은, 멋진" },
+      { "pos": "adjective", "ko": "친절한, 착한" }
+    ],
+    "examples": [{ "en": "Have a nice day.", "ko": "좋은 하루 보내세요." }]
+  },
+  "night": {
+    "ipa": "naɪt",
+    "forms": { "pl": "nights" },
+    "senses": [{ "pos": "noun", "ko": "밤, 저녁; 하룻밤 (a night = 하룻밤에)" }],
+    "phrases": [{ "en": "a night", "ko": "하룻밤에, 1박에" }, { "en": "last night", "ko": "어젯밤" }]
+  },
+  "not": {
+    "ipa": "nɑːt",
+    "senses": [{ "pos": "adverb", "ko": "~ 아니다, ~하지 않다" }],
+    "phrases": [{ "en": "not yet", "ko": "아직이요, 아직 아니에요" }]
+  },
+  "now": {
+    "ipa": "naʊ",
+    "senses": [
+      { "pos": "adverb", "ko": "지금, 이제" },
+      { "pos": "adverb", "ko": "(이제) 어떻게 (What do we do now?)" }
+    ],
+    "phrases": [{ "en": "right now", "ko": "지금 바로" }]
+  },
+  "of": {
+    "ipa": "əv, ʌv",
+    "senses": [
+      { "pos": "preposition", "ko": "~의" },
+      { "pos": "preposition", "ko": "(전체 중) ~ 중에서 (the cheapest of the three)" },
+      { "pos": "preposition", "ko": "(수) ~ 명 (twelve of us = 우리 12명)" }
+    ],
+    "phrases": [{ "en": "both of something", "ko": "~ 둘 다" }, { "en": "in front of something", "ko": "~ 앞에" }]
+  },
+  "offer": {
+    "ipa": "ˈɔːfər",
+    "forms": { "3s": "offers", "past": "offered", "pp": "offered", "ing": "offering", "pl": "offers" },
+    "senses": [
+      { "pos": "noun", "ko": "제안, 제의 (job offer = 채용 제안)" },
+      { "pos": "verb", "ko": "제안하다, 권하다" }
+    ],
+    "examples": [{ "en": "Thanks for the offer.", "ko": "제안해 줘서 고마워요." }],
+    "phrases": [{ "en": "job offer", "ko": "채용 제안" }]
+  },
+  "often": {
+    "ipa": "ˈɔːfən",
+    "senses": [{ "pos": "adverb", "ko": "자주, 흔히" }],
+    "examples": [{ "en": "How often do you go?", "ko": "얼마나 자주 가요?" }]
+  },
+  "oh": {
+    "ipa": "oʊ",
+    "senses": [{ "pos": "interjection", "ko": "아, 오 (놀람·깨달음)" }]
+  },
+  "okay": {
+    "ipa": "ˌoʊˈkeɪ",
+    "senses": [
+      { "pos": "adjective", "ko": "괜찮은, 좋은" },
+      { "pos": "interjection", "ko": "좋아요, 알겠어요; 자 (말을 꺼낼 때)" }
+    ],
+    "examples": [{ "en": "Is that okay?", "ko": "괜찮아요?" }]
+  },
+  "on": {
+    "ipa": "ɑːn",
+    "senses": [
+      { "pos": "preposition", "ko": "(요일·날짜) ~에 (on Friday)" },
+      { "pos": "preposition", "ko": "~ 위에" },
+      { "pos": "adverb", "ko": "켜진 (turn on = 켜다)" }
+    ],
+    "phrases": [{ "en": "on sale", "ko": "할인 중인" }, { "en": "turn on", "ko": "켜다" }]
+  },
+  "one": {
+    "ipa": "wʌn",
+    "forms": { "pl": "ones" },
+    "senses": [
+      { "pos": "pronoun", "ko": "(앞에 나온 것 중) ~것 (this one = 이것, the bigger one = 더 큰 것)" },
+      { "pos": "noun", "ko": "1, 하나" }
+    ],
+    "phrases": [{ "en": "this one", "ko": "이것" }, { "en": "that one", "ko": "저것" }, { "en": "which one", "ko": "어느 것" }]
+  },
+  "one's": {
+    "ipa": "wʌnz",
+    "senses": [
+      { "pos": "phrase", "ko": "one is의 줄임말 (This one's cheaper = 이게 더 싸요)" },
+      { "pos": "determiner", "ko": "(사전 표현에서) 자기의, ~의 (quit one's job)" }
+    ]
+  },
+  "opening": {
+    "ipa": "ˈoʊpənɪŋ",
+    "forms": { "pl": "openings" },
+    "senses": [
+      { "pos": "noun", "ko": "(예약이 가능한) 빈자리, 빈 시간" },
+      { "pos": "noun", "ko": "(일자리) 빈자리; 개업, 개장" }
+    ],
+    "examples": [{ "en": "Do you have any openings this week?", "ko": "이번 주에 예약 가능한 시간 있어요?" }]
+  },
+  "opinion": {
+    "ipa": "əˈpɪnjən",
+    "forms": { "pl": "opinions" },
+    "senses": [{ "pos": "noun", "ko": "의견, 생각" }],
+    "phrases": [{ "en": "get someone's opinion", "ko": "~의 의견을 듣다" }, { "en": "in my opinion", "ko": "제 생각에는" }]
+  },
+  "option": {
+    "ipa": "ˈɑːpʃən",
+    "forms": { "pl": "options" },
+    "senses": [{ "pos": "noun", "ko": "선택지, 고를 수 있는 것" }],
+    "examples": [{ "en": "We have two options.", "ko": "선택지가 두 개 있어요." }]
+  },
+  "or": {
+    "ipa": "ər, ɔːr",
+    "senses": [
+      { "pos": "conjunction", "ko": "또는, 아니면" },
+      { "pos": "conjunction", "ko": "(either A or B) A 아니면 B" }
+    ]
+  },
+  "other": {
+    "ipa": "ˈʌðər",
+    "senses": [
+      { "pos": "determiner", "ko": "다른" },
+      { "pos": "pronoun", "ko": "(the other one) 나머지 하나" }
+    ],
+    "phrases": [{ "en": "the other one", "ko": "다른 하나, 나머지 하나" }, { "en": "other person", "ko": "상대방" }]
+  },
+  "our": {
+    "ipa": "aʊər",
+    "senses": [{ "pos": "determiner", "ko": "우리의" }]
+  },
+  "out": {
+    "ipa": "aʊt",
+    "senses": [
+      { "pos": "adverb", "ko": "밖에, 밖으로" },
+      { "pos": "adverb", "ko": "(날씨) 바깥은 (It's beautiful out = 밖에 날씨가 아주 좋아요)" }
+    ],
+    "phrases": [{ "en": "beautiful out", "ko": "바깥 날씨가 아주 좋은" }, { "en": "go out", "ko": "외출하다" }]
+  },
+  "outside": {
+    "ipa": "ˌaʊtˈsaɪd",
+    "senses": [
+      { "pos": "adverb", "ko": "밖에, 바깥에" },
+      { "pos": "noun", "ko": "바깥" }
+    ],
+    "phrases": [{ "en": "table outside", "ko": "바깥(테라스) 자리" }]
+  },
+  "over": {
+    "ipa": "ˈoʊvər",
+    "senses": [
+      { "pos": "adverb", "ko": "(think it over) 곰곰이, 다시 한번" },
+      { "pos": "adverb", "ko": "(have someone over) 집으로 (오게)" },
+      { "pos": "preposition", "ko": "~ 위에; ~을 넘어" }
+    ],
+    "phrases": [{ "en": "think something over", "ko": "~을 곰곰이 생각해 보다" }, { "en": "go over something", "ko": "~을 검토하다, 살펴보다" }, { "en": "have someone over", "ko": "~을 집에 초대하다" }]
+  }
+}

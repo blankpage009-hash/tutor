@@ -1,0 +1,124 @@
+{
+  "haircut": {
+    "ipa": "ˈherkʌt",
+    "forms": { "pl": "haircuts" },
+    "senses": [{ "pos": "noun", "ko": "머리 자르기, 이발, 커트" }],
+    "examples": [{ "en": "I need a haircut.", "ko": "머리 좀 잘라야겠어요." }],
+    "phrases": [{ "en": "get a haircut", "ko": "머리를 자르다" }]
+  },
+  "happen": {
+    "ipa": "ˈhæpən",
+    "forms": { "3s": "happens", "past": "happened", "pp": "happened", "ing": "happening" },
+    "senses": [{ "pos": "verb", "ko": "(일이) 일어나다, 생기다" }],
+    "examples": [{ "en": "What happened?", "ko": "무슨 일 있었어요?" }]
+  },
+  "hate": {
+    "ipa": "heɪt",
+    "forms": { "3s": "hates", "past": "hated", "pp": "hated", "ing": "hating" },
+    "senses": [{ "pos": "verb", "ko": "아주 싫어하다" }],
+    "examples": [{ "en": "I hate waiting.", "ko": "기다리는 거 정말 싫어요." }]
+  },
+  "have": {
+    "ipa": "hæv",
+    "forms": { "3s": "has", "past": "had", "pp": "had", "ing": "having" },
+    "senses": [
+      { "pos": "verb", "ko": "가지고 있다, 있다" },
+      { "pos": "verb", "ko": "먹다, 마시다 (I'll have the tea = 차로 할게요)" },
+      { "pos": "auxiliary", "ko": "(have + 과거분사) ~했다, ~한 적 있다, 계속 ~해 왔다" },
+      { "pos": "verb", "ko": "(have someone over) ~을 집에 초대하다" }
+    ],
+    "examples": [{ "en": "Do you have a minute?", "ko": "잠깐 시간 있어요?" }],
+    "phrases": [{ "en": "have someone over", "ko": "~을 집에 초대하다" }, { "en": "have a chance to", "ko": "~할 틈(기회)이 있다" }]
+  },
+  "hear": {
+    "ipa": "hɪr",
+    "forms": { "3s": "hears", "past": "heard", "pp": "heard", "ing": "hearing" },
+    "senses": [
+      { "pos": "verb", "ko": "듣다, 들리다" },
+      { "pos": "verb", "ko": "(소식을) 듣다, 전해 듣다" }
+    ],
+    "examples": [{ "en": "Can you hear me?", "ko": "제 말 들려요?" }]
+  },
+  "help": {
+    "ipa": "help",
+    "forms": { "3s": "helps", "past": "helped", "pp": "helped", "ing": "helping" },
+    "senses": [
+      { "pos": "verb", "ko": "돕다, 도와주다" },
+      { "pos": "noun", "ko": "도움" }
+    ],
+    "examples": [{ "en": "Can you help me?", "ko": "좀 도와줄래요?" }],
+    "phrases": [{ "en": "How can I help you", "ko": "무엇을 도와드릴까요?" }]
+  },
+  "helpful": {
+    "ipa": "ˈhelpfəl",
+    "senses": [{ "pos": "adjective", "ko": "도움이 되는, 유용한" }],
+    "examples": [{ "en": "Thanks, that's really helpful.", "ko": "고마워요, 정말 도움이 돼요." }]
+  },
+  "her": {
+    "ipa": "hər, hɜːr",
+    "senses": [
+      { "pos": "pronoun", "ko": "그녀를, 그녀에게" },
+      { "pos": "determiner", "ko": "그녀의" }
+    ]
+  },
+  "here": {
+    "ipa": "hɪr",
+    "senses": [{ "pos": "adverb", "ko": "여기에, 여기" }],
+    "examples": [{ "en": "Come here.", "ko": "이리 와요." }],
+    "phrases": [{ "en": "in here", "ko": "이 안에, 여기 안은" }]
+  },
+  "hi": {
+    "ipa": "haɪ",
+    "senses": [{ "pos": "interjection", "ko": "안녕, 안녕하세요" }],
+    "phrases": [{ "en": "hi there", "ko": "안녕하세요 (가볍게 말을 걸 때)" }]
+  },
+  "hmm": {
+    "ipa": "hm",
+    "senses": [{ "pos": "interjection", "ko": "음… (생각할 때)" }]
+  },
+  "hold": {
+    "ipa": "hoʊld",
+    "forms": { "3s": "holds", "past": "held", "pp": "held", "ing": "holding" },
+    "senses": [
+      { "pos": "verb", "ko": "들고 있다, 잡고 있다" },
+      { "pos": "verb", "ko": "(행사를) 열다; (자리를) 잡아 두다" }
+    ],
+    "examples": [{ "en": "Can you hold this for a second?", "ko": "이것 좀 잠깐 들어 줄래요?" }]
+  },
+  "home": {
+    "ipa": "hoʊm",
+    "senses": [
+      { "pos": "noun", "ko": "집" },
+      { "pos": "adverb", "ko": "집에, 집으로 (go home, be home)" }
+    ],
+    "examples": [{ "en": "I'm going home.", "ko": "집에 가요." }],
+    "phrases": [{ "en": "be home", "ko": "집에 있다" }, { "en": "close to home", "ko": "집에서 가까운" }]
+  },
+  "hotel": {
+    "ipa": "hoʊˈtel",
+    "forms": { "pl": "hotels" },
+    "senses": [{ "pos": "noun", "ko": "호텔" }]
+  },
+  "how": {
+    "ipa": "haʊ",
+    "senses": [
+      { "pos": "adverb", "ko": "어떻게" },
+      { "pos": "adverb", "ko": "얼마나 (how much, how long)" }
+    ],
+    "phrases": [{ "en": "How about something", "ko": "~은 어때요?" }, { "en": "How can I help you", "ko": "무엇을 도와드릴까요?" }]
+  },
+  "huge": {
+    "ipa": "hjuːdʒ",
+    "senses": [{ "pos": "adjective", "ko": "아주 큰, 거대한" }],
+    "examples": [{ "en": "Their house is huge.", "ko": "그 집 엄청 커요." }]
+  },
+  "hurt": {
+    "ipa": "hɜːrt",
+    "forms": { "3s": "hurts", "past": "hurt", "pp": "hurt", "ing": "hurting" },
+    "senses": [
+      { "pos": "verb", "ko": "아프다" },
+      { "pos": "verb", "ko": "다치게 하다, 아프게 하다" }
+    ],
+    "examples": [{ "en": "My back hurts.", "ko": "허리가 아파요." }]
+  }
+}

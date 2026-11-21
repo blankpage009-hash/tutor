@@ -1,0 +1,83 @@
+{
+  "get": {
+    "ipa": "ɡet",
+    "forms": { "3s": "gets", "past": "got", "pp": "gotten", "ing": "getting" },
+    "senses": [
+      { "pos": "verb", "ko": "사다, 고르다, (주문해서) 먹다" },
+      { "pos": "verb", "ko": "얻다, 받다" },
+      { "pos": "verb", "ko": "가져다주다 (get you something = 뭘 갖다 드리다)" },
+      { "pos": "verb", "ko": "(get + 과거분사) ~되다 (got canceled = 취소됐다)" },
+      { "pos": "verb", "ko": "이해하다, 알아듣다 (I don't get it)" },
+      { "pos": "verb", "ko": "(have got) 가지고 있다" }
+    ],
+    "examples": [{ "en": "I'll get the salad.", "ko": "저는 샐러드로 할게요." }],
+    "phrases": [{ "en": "get it", "ko": "이해하다" }, { "en": "Can I get something", "ko": "~ 주시겠어요? / ~ 드릴까요?" }, { "en": "get someone's opinion", "ko": "~의 의견을 듣다" }]
+  },
+  "give": {
+    "ipa": "ɡɪv",
+    "forms": { "3s": "gives", "past": "gave", "pp": "given", "ing": "giving" },
+    "senses": [
+      { "pos": "verb", "ko": "주다" },
+      { "pos": "verb", "ko": "(조언·설명 등을) 해 주다" }
+    ],
+    "examples": [{ "en": "Give me a minute.", "ko": "잠깐만요." }],
+    "phrases": [{ "en": "give advice", "ko": "조언하다" }]
+  },
+  "go": {
+    "ipa": "ɡoʊ",
+    "forms": { "3s": "goes", "past": "went", "pp": "gone", "ing": "going" },
+    "senses": [
+      { "pos": "verb", "ko": "가다" },
+      { "pos": "verb", "ko": "(수치가) 오르다·내리다 (go up = 오르다)" },
+      { "pos": "verb", "ko": "(일이) 되어 가다, 진행되다" }
+    ],
+    "examples": [{ "en": "Let's go home.", "ko": "집에 가요." }],
+    "phrases": [
+      { "en": "go with something", "ko": "~으로 하다, ~을 고르다" },
+      { "en": "go up", "ko": "오르다" },
+      { "en": "go over something", "ko": "~을 검토하다, 살펴보다" },
+      { "en": "go out", "ko": "외출하다" }
+    ]
+  },
+  "good": {
+    "ipa": "ɡʊd",
+    "forms": { "er": "better", "est": "best" },
+    "senses": [
+      { "pos": "adjective", "ko": "좋은" },
+      { "pos": "adjective", "ko": "(시간·조건이) 괜찮은, 맞는 (a good time for you)" },
+      { "pos": "adjective", "ko": "잘하는 (good at)" }
+    ],
+    "examples": [{ "en": "That's a good idea.", "ko": "좋은 생각이에요." }],
+    "phrases": [{ "en": "good point", "ko": "좋은 지적이에요, 일리 있네요" }, { "en": "good idea", "ko": "좋은 생각" }]
+  },
+  "grab": {
+    "ipa": "ɡræb",
+    "forms": { "3s": "grabs", "past": "grabbed", "pp": "grabbed", "ing": "grabbing" },
+    "senses": [
+      { "pos": "verb", "ko": "(얼른) 잡다, 집다" },
+      { "pos": "verb", "ko": "(얼른) 사다, 먹다 (grab lunch = 간단히 점심 먹다)" }
+    ],
+    "examples": [{ "en": "Let's grab a coffee.", "ko": "커피 한잔해요." }]
+  },
+  "great": {
+    "ipa": "ɡreɪt",
+    "senses": [
+      { "pos": "adjective", "ko": "아주 좋은, 훌륭한" },
+      { "pos": "adjective", "ko": "큰, 엄청난" }
+    ],
+    "examples": [{ "en": "That sounds great!", "ko": "좋아요!" }]
+  },
+  "green": {
+    "ipa": "ɡriːn",
+    "senses": [
+      { "pos": "adjective", "ko": "초록색의" },
+      { "pos": "noun", "ko": "초록색" }
+    ]
+  },
+  "gym": {
+    "ipa": "dʒɪm",
+    "forms": { "pl": "gyms" },
+    "senses": [{ "pos": "noun", "ko": "헬스장, 체육관" }],
+    "examples": [{ "en": "I go to the gym after work.", "ko": "퇴근하고 헬스장에 가요." }]
+  }
+}

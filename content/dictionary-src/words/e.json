@@ -1,0 +1,92 @@
+{
+  "early": {
+    "ipa": "ˈɜːrli",
+    "forms": { "er": "earlier", "est": "earliest" },
+    "senses": [
+      { "pos": "adjective", "ko": "이른, 초반의 (early next week = 다음 주 초)" },
+      { "pos": "adverb", "ko": "일찍" }
+    ],
+    "examples": [{ "en": "I got up early.", "ko": "일찍 일어났어요." }]
+  },
+  "easy": {
+    "ipa": "ˈiːzi",
+    "forms": { "er": "easier", "est": "easiest" },
+    "senses": [
+      { "pos": "adjective", "ko": "쉬운" },
+      { "pos": "adjective", "ko": "(형편에) 편한, 수월한" }
+    ],
+    "examples": [{ "en": "That's easy.", "ko": "그건 쉬워요." }]
+  },
+  "eight": {
+    "ipa": "eɪt",
+    "senses": [{ "pos": "noun", "ko": "8, 여덟" }]
+  },
+  "eighty": {
+    "ipa": "ˈeɪti",
+    "senses": [{ "pos": "noun", "ko": "80, 여든" }]
+  },
+  "either": {
+    "ipa": "ˈiːðər",
+    "senses": [
+      { "pos": "pronoun", "ko": "(둘 중) 어느 쪽이든, 어느 하나" },
+      { "pos": "conjunction", "ko": "(either A or B) A 아니면 B" },
+      { "pos": "adverb", "ko": "(부정문 끝) ~도 (I don't either = 나도 아니에요)" }
+    ],
+    "examples": [{ "en": "Either is fine.", "ko": "둘 다 괜찮아요." }],
+    "phrases": [{ "en": "either something or something", "ko": "~ 아니면 ~" }]
+  },
+  "english": {
+    "ipa": "ˈɪŋɡlɪʃ",
+    "senses": [
+      { "pos": "noun", "ko": "영어" },
+      { "pos": "adjective", "ko": "영어의; 영국의" }
+    ]
+  },
+  "er": {
+    "ipa": "ər",
+    "senses": [
+      { "pos": "phrase", "ko": "(-er) 형용사 뒤에 붙어 '더 ~한'을 만드는 꼬리 (cheap → cheaper)" },
+      { "pos": "interjection", "ko": "어…, 음… (말을 고를 때)" }
+    ]
+  },
+  "every": {
+    "ipa": "ˈevri",
+    "senses": [
+      { "pos": "determiner", "ko": "모든" },
+      { "pos": "determiner", "ko": "~마다 (every six months = 6개월마다)" }
+    ],
+    "examples": [{ "en": "I run every morning.", "ko": "매일 아침 달려요." }]
+  },
+  "everyday": {
+    "ipa": "ˈevrideɪ",
+    "senses": [{ "pos": "adjective", "ko": "매일의, 일상의 (every day 두 단어는 '매일')" }],
+    "examples": [{ "en": "everyday life", "ko": "일상생활" }]
+  },
+  "everything": {
+    "ipa": "ˈevriθɪŋ",
+    "senses": [{ "pos": "pronoun", "ko": "모든 것, 전부" }],
+    "examples": [{ "en": "Thanks for everything.", "ko": "다 고마워요." }]
+  },
+  "exactly": {
+    "ipa": "ɪɡˈzæktli",
+    "senses": [
+      { "pos": "adverb", "ko": "정확히" },
+      { "pos": "interjection", "ko": "(맞장구) 바로 그거예요, 맞아요" }
+    ],
+    "examples": [{ "en": "Exactly! That's what I mean.", "ko": "맞아요! 제 말이 그거예요." }]
+  },
+  "expensive": {
+    "ipa": "ɪkˈspensɪv",
+    "senses": [{ "pos": "adjective", "ko": "비싼" }],
+    "examples": [{ "en": "It's too expensive.", "ko": "너무 비싸요." }]
+  },
+  "eye": {
+    "ipa": "aɪ",
+    "forms": { "pl": "eyes" },
+    "senses": [
+      { "pos": "noun", "ko": "눈" },
+      { "pos": "noun", "ko": "눈길, 보는 눈" }
+    ],
+    "phrases": [{ "en": "catch someone's eye", "ko": "눈길을 끌다, 눈에 들어오다 (Anything catch your eye? = 마음에 드는 거 있어요?)" }]
+  }
+}

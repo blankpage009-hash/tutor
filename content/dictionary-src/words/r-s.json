@@ -1,0 +1,308 @@
+{
+  "really": {
+    "ipa": "ˈriːəli",
+    "senses": [
+      { "pos": "adverb", "ko": "정말, 아주" },
+      { "pos": "interjection", "ko": "(Really?) 정말요?" }
+    ]
+  },
+  "rent": {
+    "ipa": "rent",
+    "forms": { "3s": "rents", "past": "rented", "pp": "rented", "ing": "renting" },
+    "senses": [
+      { "pos": "noun", "ko": "집세, 월세" },
+      { "pos": "verb", "ko": "빌리다, 세를 내다" }
+    ],
+    "examples": [{ "en": "The rent is due on the first.", "ko": "월세는 1일에 내요." }]
+  },
+  "restaurant": {
+    "ipa": "ˈrestərɑːnt",
+    "forms": { "pl": "restaurants" },
+    "senses": [{ "pos": "noun", "ko": "식당, 레스토랑" }]
+  },
+  "right": {
+    "ipa": "raɪt",
+    "senses": [
+      { "pos": "adjective", "ko": "맞는, 옳은 (Right. = 맞아요 / ~, right? = ~죠?)" },
+      { "pos": "adverb", "ko": "바로, 딱 (right in front of you)" },
+      { "pos": "noun", "ko": "오른쪽" }
+    ],
+    "phrases": [{ "en": "right now", "ko": "지금 바로" }, { "en": "coming right up", "ko": "(주문) 바로 나옵니다" }]
+  },
+  "room": {
+    "ipa": "ruːm",
+    "forms": { "pl": "rooms" },
+    "senses": [
+      { "pos": "noun", "ko": "방, 실 (meeting room = 회의실)" },
+      { "pos": "noun", "ko": "공간, 자리" }
+    ]
+  },
+  "salad": {
+    "ipa": "ˈsæləd",
+    "forms": { "pl": "salads" },
+    "senses": [{ "pos": "noun", "ko": "샐러드" }]
+  },
+  "sale": {
+    "ipa": "seɪl",
+    "forms": { "pl": "sales" },
+    "senses": [
+      { "pos": "noun", "ko": "할인 판매, 세일" },
+      { "pos": "noun", "ko": "판매" }
+    ],
+    "phrases": [{ "en": "on sale", "ko": "할인 중인" }, { "en": "for sale", "ko": "팝니다, 판매 중인" }]
+  },
+  "same": {
+    "ipa": "seɪm",
+    "senses": [{ "pos": "adjective", "ko": "같은, 똑같은 (늘 the same)" }],
+    "phrases": [{ "en": "the same", "ko": "같은 것, 똑같은" }]
+  },
+  "sample": {
+    "ipa": "ˈsæmpəl",
+    "forms": { "pl": "samples" },
+    "senses": [{ "pos": "noun", "ko": "견본, 샘플 (페인트 색 견본 등)" }]
+  },
+  "sandwich": {
+    "ipa": "ˈsænwɪtʃ",
+    "forms": { "pl": "sandwiches" },
+    "senses": [{ "pos": "noun", "ko": "샌드위치" }]
+  },
+  "say": {
+    "ipa": "seɪ",
+    "forms": { "3s": "says", "past": "said", "pp": "said", "ing": "saying" },
+    "senses": [{ "pos": "verb", "ko": "말하다" }],
+    "examples": [{ "en": "What did you say?", "ko": "뭐라고 했어요?" }]
+  },
+  "scared": {
+    "ipa": "skerd",
+    "senses": [{ "pos": "adjective", "ko": "무서운, 겁이 나는, 두려운" }],
+    "examples": [{ "en": "I'm scared of dogs.", "ko": "개가 무서워요." }]
+  },
+  "schedule": {
+    "ipa": "ˈskedʒuːl",
+    "forms": { "pl": "schedules" },
+    "senses": [{ "pos": "noun", "ko": "일정, 스케줄" }]
+  },
+  "screen": {
+    "ipa": "skriːn",
+    "forms": { "pl": "screens" },
+    "senses": [{ "pos": "noun", "ko": "화면, 스크린" }]
+  },
+  "see": {
+    "ipa": "siː",
+    "forms": { "3s": "sees", "past": "saw", "pp": "seen", "ing": "seeing" },
+    "senses": [
+      { "pos": "verb", "ko": "보다, 보이다" },
+      { "pos": "verb", "ko": "(의사를) 만나다, 진료받다 (see a doctor)" },
+      { "pos": "verb", "ko": "알다, 이해하다 (I see = 그렇군요)" }
+    ],
+    "examples": [{ "en": "See you tomorrow!", "ko": "내일 봐요!" }]
+  },
+  "sense": {
+    "ipa": "sens",
+    "senses": [{ "pos": "noun", "ko": "의미, 이치; 감각" }],
+    "phrases": [{ "en": "make sense", "ko": "말이 되다, 이해가 되다" }]
+  },
+  "set": {
+    "ipa": "set",
+    "forms": { "3s": "sets", "past": "set", "pp": "set", "ing": "setting" },
+    "senses": [
+      { "pos": "verb", "ko": "(set up) 정하다, 마련하다, 잡다" },
+      { "pos": "verb", "ko": "놓다, 맞추다" }
+    ],
+    "phrases": [{ "en": "set up something", "ko": "~을 잡다, 마련하다 (set up a call = 통화 일정을 잡다)" }]
+  },
+  "she": {
+    "ipa": "ʃiː",
+    "senses": [{ "pos": "pronoun", "ko": "그녀, 그 여자" }]
+  },
+  "she's": {
+    "ipa": "ʃiːz",
+    "senses": [{ "pos": "phrase", "ko": "she is / she has의 줄임말 — 그녀는 ~이다" }]
+  },
+  "shoe": {
+    "ipa": "ʃuː",
+    "forms": { "pl": "shoes" },
+    "senses": [{ "pos": "noun", "ko": "신발 (보통 shoes)" }]
+  },
+  "shop": {
+    "ipa": "ʃɑːp",
+    "forms": { "3s": "shops", "past": "shopped", "pp": "shopped", "ing": "shopping" },
+    "senses": [
+      { "pos": "verb", "ko": "쇼핑하다, (물건을) 사러 다니다" },
+      { "pos": "noun", "ko": "가게" }
+    ],
+    "phrases": [{ "en": "shop for something", "ko": "~을 사러 다니다" }]
+  },
+  "shopping": {
+    "ipa": "ˈʃɑːpɪŋ",
+    "senses": [{ "pos": "noun", "ko": "쇼핑, 장보기" }],
+    "phrases": [{ "en": "go shopping", "ko": "쇼핑하러 가다" }]
+  },
+  "should": {
+    "ipa": "ʃʊd",
+    "senses": [
+      { "pos": "auxiliary", "ko": "~하는 게 좋겠다, ~해야 한다" },
+      { "pos": "auxiliary", "ko": "(Should I ~?) 제가 ~할까요?" }
+    ],
+    "phrases": [{ "en": "maybe we should", "ko": "우리 ~하는 게 좋을 것 같아요" }]
+  },
+  "shouldn't": {
+    "ipa": "ˈʃʊdənt",
+    "senses": [{ "pos": "auxiliary", "ko": "~하지 않는 게 좋겠다 (should not의 줄임말)" }]
+  },
+  "show": {
+    "ipa": "ʃoʊ",
+    "forms": { "3s": "shows", "past": "showed", "pp": "shown", "ing": "showing" },
+    "senses": [
+      { "pos": "verb", "ko": "보여 주다" },
+      { "pos": "noun", "ko": "공연, 쇼, (TV) 프로그램" }
+    ]
+  },
+  "sign": {
+    "ipa": "saɪn",
+    "forms": { "3s": "signs", "past": "signed", "pp": "signed", "ing": "signing" },
+    "senses": [
+      { "pos": "verb", "ko": "서명하다, 사인하다" },
+      { "pos": "noun", "ko": "표지판; 신호" }
+    ],
+    "phrases": [{ "en": "sign a lease", "ko": "임대 계약서에 서명하다" }, { "en": "sign up", "ko": "가입하다, 등록하다" }]
+  },
+  "sit": {
+    "ipa": "sɪt",
+    "forms": { "3s": "sits", "past": "sat", "pp": "sat", "ing": "sitting" },
+    "senses": [{ "pos": "verb", "ko": "앉다" }],
+    "phrases": [{ "en": "sit by the window", "ko": "창가에 앉다" }]
+  },
+  "situation": {
+    "ipa": "ˌsɪtʃuˈeɪʃən",
+    "forms": { "pl": "situations" },
+    "senses": [{ "pos": "noun", "ko": "상황, 처지" }]
+  },
+  "six": {
+    "ipa": "sɪks",
+    "senses": [{ "pos": "noun", "ko": "6, 여섯" }]
+  },
+  "size": {
+    "ipa": "saɪz",
+    "forms": { "pl": "sizes" },
+    "senses": [{ "pos": "noun", "ko": "크기, 사이즈, 치수" }]
+  },
+  "skateboard": {
+    "ipa": "ˈskeɪtbɔːrd",
+    "forms": { "pl": "skateboards" },
+    "senses": [{ "pos": "noun", "ko": "스케이트보드" }]
+  },
+  "small": {
+    "ipa": "smɔːl",
+    "forms": { "er": "smaller", "est": "smallest" },
+    "senses": [{ "pos": "adjective", "ko": "작은" }]
+  },
+  "so": {
+    "ipa": "soʊ",
+    "senses": [
+      { "pos": "adverb", "ko": "아주, 너무 (so stuffy, so far)" },
+      { "pos": "conjunction", "ko": "그래서" },
+      { "pos": "interjection", "ko": "(말을 꺼낼 때) 그래서, 그럼, 자" }
+    ]
+  },
+  "soft": {
+    "ipa": "sɔːft",
+    "senses": [
+      { "pos": "adjective", "ko": "부드러운, (말투가) 부드러운" },
+      { "pos": "adjective", "ko": "(소리가) 작은, 조용한" }
+    ]
+  },
+  "some": {
+    "ipa": "səm, sʌm",
+    "senses": [
+      { "pos": "determiner", "ko": "약간의, 조금의 (권할 때 질문에도: Would you like some ~?)" },
+      { "pos": "determiner", "ko": "어떤, 몇몇의" }
+    ]
+  },
+  "someone": {
+    "ipa": "ˈsʌmwʌn",
+    "senses": [{ "pos": "pronoun", "ko": "누군가, 어떤 사람" }]
+  },
+  "something": {
+    "ipa": "ˈsʌmθɪŋ",
+    "senses": [{ "pos": "pronoun", "ko": "무언가, 어떤 것" }],
+    "phrases": [{ "en": "something to drink", "ko": "마실 것" }]
+  },
+  "son": {
+    "ipa": "sʌn",
+    "forms": { "pl": "sons" },
+    "senses": [{ "pos": "noun", "ko": "아들" }]
+  },
+  "sound": {
+    "ipa": "saʊnd",
+    "forms": { "3s": "sounds", "past": "sounded", "pp": "sounded", "ing": "sounding", "pl": "sounds" },
+    "senses": [
+      { "pos": "verb", "ko": "~하게 들리다, ~인 것 같다 (sounds like ~)" },
+      { "pos": "noun", "ko": "소리" }
+    ],
+    "examples": [{ "en": "That sounds great.", "ko": "좋아요." }],
+    "phrases": [{ "en": "sound like something", "ko": "~인 것 같다, ~처럼 들리다" }]
+  },
+  "soup": {
+    "ipa": "suːp",
+    "senses": [{ "pos": "noun", "ko": "수프" }]
+  },
+  "speaker": {
+    "ipa": "ˈspiːkər",
+    "forms": { "pl": "speakers" },
+    "senses": [
+      { "pos": "noun", "ko": "스피커 (소리 나는 기계)" },
+      { "pos": "noun", "ko": "말하는 사람, 연설자" }
+    ]
+  },
+  "special": {
+    "ipa": "ˈspeʃəl",
+    "forms": { "pl": "specials" },
+    "senses": [
+      { "pos": "noun", "ko": "(식당의) 특선 메뉴, 오늘의 메뉴" },
+      { "pos": "adjective", "ko": "특별한" }
+    ],
+    "phrases": [{ "en": "lunch special", "ko": "점심 특선" }]
+  },
+  "stop": {
+    "ipa": "stɑːp",
+    "forms": { "3s": "stops", "past": "stopped", "pp": "stopped", "ing": "stopping" },
+    "senses": [
+      { "pos": "verb", "ko": "멈추다, 그치다 (stop -ing = ~하던 걸 멈추다)" },
+      { "pos": "verb", "ko": "(stop by) 잠깐 들르다" }
+    ],
+    "phrases": [{ "en": "stop by", "ko": "잠깐 들르다" }]
+  },
+  "stuffy": {
+    "ipa": "ˈstʌfi",
+    "senses": [
+      { "pos": "adjective", "ko": "(방이) 답답한, 공기가 탁한" },
+      { "pos": "adjective", "ko": "(코가) 막힌" }
+    ]
+  },
+  "suggest": {
+    "ipa": "səɡˈdʒest",
+    "forms": { "3s": "suggests", "past": "suggested", "pp": "suggested", "ing": "suggesting" },
+    "senses": [{ "pos": "verb", "ko": "제안하다, 권하다" }]
+  },
+  "superhero": {
+    "ipa": "ˈsuːpərhɪroʊ",
+    "forms": { "pl": "superheroes" },
+    "senses": [{ "pos": "noun", "ko": "슈퍼히어로" }]
+  },
+  "sure": {
+    "ipa": "ʃʊr",
+    "senses": [
+      { "pos": "interjection", "ko": "(대답) 그럼요, 물론이죠" },
+      { "pos": "adjective", "ko": "확실한, 확신하는" }
+    ]
+  },
+  "switch": {
+    "ipa": "swɪtʃ",
+    "forms": { "3s": "switches", "past": "switched", "pp": "switched", "ing": "switching" },
+    "senses": [
+      { "pos": "verb", "ko": "바꾸다, 갈아타다" },
+      { "pos": "noun", "ko": "스위치" }
+    ]
+  }
+}

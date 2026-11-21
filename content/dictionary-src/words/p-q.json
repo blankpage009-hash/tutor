@@ -1,0 +1,151 @@
+{
+  "p": {
+    "ipa": "piː",
+    "senses": [{ "pos": "phrase", "ko": "(p.m.의 p) — p.m. = 오후" }]
+  },
+  "paint": {
+    "ipa": "peɪnt",
+    "forms": { "3s": "paints", "past": "painted", "pp": "painted", "ing": "painting" },
+    "senses": [
+      { "pos": "verb", "ko": "(벽에) 페인트를 칠하다" },
+      { "pos": "verb", "ko": "(그림을) 그리다" },
+      { "pos": "noun", "ko": "페인트" }
+    ],
+    "examples": [{ "en": "We painted the kitchen white.", "ko": "부엌을 하얗게 칠했어요." }]
+  },
+  "party": {
+    "ipa": "ˈpɑːrti",
+    "forms": { "pl": "parties" },
+    "senses": [{ "pos": "noun", "ko": "파티" }]
+  },
+  "pasta": {
+    "ipa": "ˈpɑːstə",
+    "senses": [{ "pos": "noun", "ko": "파스타" }]
+  },
+  "perfect": {
+    "ipa": "ˈpɜːrfɪkt",
+    "senses": [
+      { "pos": "adjective", "ko": "완벽한, 딱 좋은" },
+      { "pos": "interjection", "ko": "(대답) 좋아요, 딱이에요" }
+    ],
+    "examples": [{ "en": "Perfect, see you then.", "ko": "좋아요, 그때 봐요." }]
+  },
+  "person": {
+    "ipa": "ˈpɜːrsən",
+    "forms": { "pl": "people" },
+    "senses": [{ "pos": "noun", "ko": "사람" }],
+    "phrases": [{ "en": "other person", "ko": "상대방" }]
+  },
+  "phone": {
+    "ipa": "foʊn",
+    "forms": { "pl": "phones" },
+    "senses": [{ "pos": "noun", "ko": "전화기, 휴대폰" }]
+  },
+  "pick": {
+    "ipa": "pɪk",
+    "forms": { "3s": "picks", "past": "picked", "pp": "picked", "ing": "picking" },
+    "senses": [
+      { "pos": "verb", "ko": "고르다, 선택하다" },
+      { "pos": "verb", "ko": "(pick up) 집어 들다; 데리러 가다" }
+    ],
+    "examples": [{ "en": "Pick a card.", "ko": "카드 한 장 골라요." }],
+    "phrases": [{ "en": "pick up something", "ko": "~을 집어 들다" }, { "en": "pick something up", "ko": "~을 집어 들다" }]
+  },
+  "place": {
+    "ipa": "pleɪs",
+    "forms": { "pl": "places" },
+    "senses": [
+      { "pos": "noun", "ko": "장소, 곳" },
+      { "pos": "noun", "ko": "(누구의) 집 (your place = 당신 집)" },
+      { "pos": "noun", "ko": "(살) 집, 매물" }
+    ],
+    "examples": [{ "en": "Let's meet at my place.", "ko": "우리 집에서 만나요." }]
+  },
+  "plan": {
+    "ipa": "plæn",
+    "forms": { "pl": "plans" },
+    "senses": [
+      { "pos": "noun", "ko": "(휴대폰 등의) 요금제" },
+      { "pos": "noun", "ko": "계획" },
+      { "pos": "verb", "ko": "계획하다" }
+    ],
+    "examples": [{ "en": "Do you have any plans tonight?", "ko": "오늘 밤 약속 있어요?" }]
+  },
+  "please": {
+    "ipa": "pliːz",
+    "senses": [{ "pos": "adverb", "ko": "(부탁·주문) ~해 주세요, 부디" }]
+  },
+  "point": {
+    "ipa": "pɔɪnt",
+    "forms": { "pl": "points" },
+    "senses": [
+      { "pos": "noun", "ko": "(말의) 요점, 일리 있는 말" },
+      { "pos": "noun", "ko": "점수; 점" },
+      { "pos": "verb", "ko": "가리키다" }
+    ],
+    "phrases": [{ "en": "good point", "ko": "좋은 지적이에요, 일리 있네요" }]
+  },
+  "polite": {
+    "ipa": "pəˈlaɪt",
+    "senses": [{ "pos": "adjective", "ko": "예의 바른, 공손한" }]
+  },
+  "pool": {
+    "ipa": "puːl",
+    "forms": { "pl": "pools" },
+    "senses": [{ "pos": "noun", "ko": "수영장" }]
+  },
+  "popular": {
+    "ipa": "ˈpɑːpjələr",
+    "senses": [{ "pos": "adjective", "ko": "인기 있는" }],
+    "examples": [{ "en": "This place is really popular.", "ko": "여기 정말 인기 많아요." }]
+  },
+  "prefer": {
+    "ipa": "prɪˈfɜːr",
+    "forms": { "3s": "prefers", "past": "preferred", "pp": "preferred", "ing": "preferring" },
+    "senses": [{ "pos": "verb", "ko": "더 좋아하다, 선호하다" }],
+    "examples": [{ "en": "I prefer tea to coffee.", "ko": "커피보다 차가 좋아요." }]
+  },
+  "preference": {
+    "ipa": "ˈprefərəns",
+    "forms": { "pl": "preferences" },
+    "senses": [{ "pos": "noun", "ko": "더 좋아하는 것, 선호" }]
+  },
+  "preferred": {
+    "ipa": "prɪˈfɜːrd",
+    "senses": [{ "pos": "adjective", "ko": "선호하는, 원하는 (preferred time = 원하는 시간)" }]
+  },
+  "pretty": {
+    "ipa": "ˈprɪti",
+    "senses": [
+      { "pos": "adverb", "ko": "꽤, 상당히" },
+      { "pos": "adjective", "ko": "예쁜" }
+    ],
+    "examples": [{ "en": "It's pretty good.", "ko": "꽤 괜찮아요." }]
+  },
+  "probably": {
+    "ipa": "ˈprɑːbəbli",
+    "senses": [{ "pos": "adverb", "ko": "아마 (꽤 확실할 때)" }]
+  },
+  "pushy": {
+    "ipa": "ˈpʊʃi",
+    "senses": [{ "pos": "adjective", "ko": "밀어붙이는, 강요하는 듯한" }]
+  },
+  "put": {
+    "ipa": "pʊt",
+    "forms": { "3s": "puts", "past": "put", "pp": "put", "ing": "putting" },
+    "senses": [{ "pos": "verb", "ko": "놓다, 두다, 넣다" }],
+    "examples": [{ "en": "Put it on the table.", "ko": "테이블에 놓아 줘요." }]
+  },
+  "quiet": {
+    "ipa": "ˈkwaɪət",
+    "forms": { "er": "quieter", "est": "quietest" },
+    "senses": [{ "pos": "adjective", "ko": "조용한" }],
+    "examples": [{ "en": "It's quiet here.", "ko": "여기 조용하네요." }]
+  },
+  "quit": {
+    "ipa": "kwɪt",
+    "forms": { "3s": "quits", "past": "quit", "pp": "quit", "ing": "quitting" },
+    "senses": [{ "pos": "verb", "ko": "그만두다 (quit one's job = 회사를 그만두다)" }],
+    "phrases": [{ "en": "quit someone's job", "ko": "회사를 그만두다" }]
+  }
+}

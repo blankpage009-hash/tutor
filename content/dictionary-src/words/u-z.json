@@ -1,0 +1,217 @@
+{
+  "ugh": {
+    "ipa": "ʌɡ",
+    "senses": [{ "pos": "interjection", "ko": "으, 아휴 (짜증·곤란할 때)" }]
+  },
+  "up": {
+    "ipa": "ʌp",
+    "senses": [
+      { "pos": "adverb", "ko": "위로, 올라 (go up = 오르다)" },
+      { "pos": "adverb", "ko": "(동사와 붙어 새 뜻을 만듦) pick up 집어 들다, set up 잡다·마련하다" }
+    ],
+    "phrases": [{ "en": "go up", "ko": "오르다" }, { "en": "set up something", "ko": "~을 잡다, 마련하다" }, { "en": "pick up something", "ko": "~을 집어 들다" }, { "en": "coming right up", "ko": "(주문) 바로 나옵니다" }]
+  },
+  "us": {
+    "ipa": "əs, ʌs",
+    "senses": [{ "pos": "pronoun", "ko": "우리를, 우리에게, 우리 (twelve of us = 우리 12명)" }]
+  },
+  "use": {
+    "ipa": "juːz (동사) · juːs (명사)",
+    "forms": { "3s": "uses", "past": "used", "pp": "used", "ing": "using" },
+    "senses": [
+      { "pos": "verb", "ko": "쓰다, 사용하다" },
+      { "pos": "noun", "ko": "사용, 쓸모" }
+    ]
+  },
+  "usually": {
+    "ipa": "ˈjuːʒuəli",
+    "senses": [{ "pos": "adverb", "ko": "보통, 대개" }]
+  },
+  "very": {
+    "ipa": "ˈveri",
+    "senses": [{ "pos": "adverb", "ko": "아주, 매우" }]
+  },
+  "want": {
+    "ipa": "wɑːnt",
+    "forms": { "3s": "wants", "past": "wanted", "pp": "wanted", "ing": "wanting" },
+    "senses": [
+      { "pos": "verb", "ko": "원하다, 갖고 싶다" },
+      { "pos": "verb", "ko": "(want to) ~하고 싶다" }
+    ]
+  },
+  "was": {
+    "ipa": "wəz, wʌz",
+    "senses": [{ "pos": "verb", "ko": "~였다, ~에 있었다 (be의 과거: I·he·she·it)" }]
+  },
+  "way": {
+    "ipa": "weɪ",
+    "forms": { "pl": "ways" },
+    "senses": [
+      { "pos": "noun", "ko": "방법, 방식" },
+      { "pos": "noun", "ko": "길, 방향" }
+    ],
+    "phrases": [{ "en": "a polite way to", "ko": "~하는 공손한 방법" }]
+  },
+  "we": {
+    "ipa": "wiː",
+    "senses": [{ "pos": "pronoun", "ko": "우리, 저희" }]
+  },
+  "we're": {
+    "ipa": "wɪr",
+    "senses": [{ "pos": "phrase", "ko": "we are의 줄임말 — 우리는 ~이다" }]
+  },
+  "week": {
+    "ipa": "wiːk",
+    "forms": { "pl": "weeks" },
+    "senses": [{ "pos": "noun", "ko": "주, 일주일" }],
+    "phrases": [{ "en": "this week", "ko": "이번 주" }, { "en": "next week", "ko": "다음 주" }]
+  },
+  "weekend": {
+    "ipa": "ˈwiːkend",
+    "forms": { "pl": "weekends" },
+    "senses": [{ "pos": "noun", "ko": "주말" }],
+    "phrases": [{ "en": "last weekend", "ko": "지난 주말" }]
+  },
+  "weekly": {
+    "ipa": "ˈwiːkli",
+    "senses": [{ "pos": "adjective", "ko": "매주의, 주 1회의" }]
+  },
+  "well": {
+    "ipa": "wel",
+    "senses": [
+      { "pos": "interjection", "ko": "음, 글쎄, 그게 (말을 꺼낼 때)" },
+      { "pos": "adverb", "ko": "잘" }
+    ]
+  },
+  "were": {
+    "ipa": "wər, wɜːr",
+    "senses": [
+      { "pos": "verb", "ko": "~였다 (be의 과거: you·we·they)" },
+      { "pos": "verb", "ko": "(If I were you) 만약 ~라면 (사실이 아닌 가정)" }
+    ],
+    "phrases": [{ "en": "If I were you", "ko": "내가 너라면" }]
+  },
+  "what": {
+    "ipa": "wʌt",
+    "senses": [
+      { "pos": "pronoun", "ko": "무엇, 뭐" },
+      { "pos": "determiner", "ko": "무슨, 어떤 (what day = 무슨 요일)" }
+    ],
+    "phrases": [{ "en": "What do you think", "ko": "어떻게 생각해요?" }]
+  },
+  "what's": {
+    "ipa": "wʌts",
+    "senses": [{ "pos": "phrase", "ko": "what is의 줄임말 — ~은 뭐예요?" }]
+  },
+  "when": {
+    "ipa": "wen",
+    "senses": [
+      { "pos": "adverb", "ko": "언제" },
+      { "pos": "conjunction", "ko": "~할 때" }
+    ]
+  },
+  "when's": {
+    "ipa": "wenz",
+    "senses": [{ "pos": "phrase", "ko": "when is의 줄임말 — ~은 언제예요?" }]
+  },
+  "which": {
+    "ipa": "wɪtʃ",
+    "senses": [
+      { "pos": "determiner", "ko": "(정해진 것 중) 어느, 어떤 (which one = 어느 것)" },
+      { "pos": "pronoun", "ko": "어느 것" }
+    ],
+    "phrases": [{ "en": "which one", "ko": "어느 것" }]
+  },
+  "why": {
+    "ipa": "waɪ",
+    "senses": [{ "pos": "adverb", "ko": "왜" }]
+  },
+  "will": {
+    "ipa": "wɪl",
+    "senses": [{ "pos": "auxiliary", "ko": "~할 것이다, ~할게요" }]
+  },
+  "window": {
+    "ipa": "ˈwɪndoʊ",
+    "forms": { "pl": "windows" },
+    "senses": [{ "pos": "noun", "ko": "창문, 창가" }],
+    "phrases": [{ "en": "by the window", "ko": "창가에" }]
+  },
+  "with": {
+    "ipa": "wɪð",
+    "senses": [
+      { "pos": "preposition", "ko": "~와 함께, ~을 넣은 (lemon with it = 레몬을 곁들여)" },
+      { "pos": "preposition", "ko": "~에게는, ~한테 (fine with us = 우린 괜찮다)" }
+    ],
+    "phrases": [{ "en": "go with something", "ko": "~으로 하다, ~을 고르다" }]
+  },
+  "without": {
+    "ipa": "wɪˈðaʊt",
+    "senses": [{ "pos": "preposition", "ko": "~ 없이, ~하지 않고" }]
+  },
+  "work": {
+    "ipa": "wɜːrk",
+    "forms": { "3s": "works", "past": "worked", "pp": "worked", "ing": "working" },
+    "senses": [
+      { "pos": "verb", "ko": "(일정이) 괜찮다, 맞다 (Tuesday works for me = 화요일 괜찮아요)" },
+      { "pos": "verb", "ko": "일하다" },
+      { "pos": "verb", "ko": "(기계·방법이) 되다, 효과가 있다" },
+      { "pos": "noun", "ko": "일, 직장" }
+    ],
+    "phrases": [{ "en": "work for someone", "ko": "~에게 (일정이) 괜찮다" }, { "en": "work best", "ko": "가장 잘 맞다" }, { "en": "work better", "ko": "더 잘 맞다" }]
+  },
+  "would": {
+    "ipa": "wəd, wʊd",
+    "senses": [
+      { "pos": "auxiliary", "ko": "~할 텐데, ~하겠다 (가정)" },
+      { "pos": "auxiliary", "ko": "(Would you like ~?) ~하시겠어요? (공손한 말)" }
+    ],
+    "phrases": [{ "en": "would like", "ko": "~하고 싶다, ~을 원하다" }]
+  },
+  "wouldn't": {
+    "ipa": "ˈwʊdənt",
+    "senses": [{ "pos": "auxiliary", "ko": "~하지 않을 것이다 (would not의 줄임말)" }]
+  },
+  "yeah": {
+    "ipa": "jeə",
+    "senses": [{ "pos": "interjection", "ko": "응, 네 (yes의 편한 말)" }]
+  },
+  "year": {
+    "ipa": "jɪr",
+    "forms": { "pl": "years" },
+    "senses": [{ "pos": "noun", "ko": "해, 년 (last year's = 작년 것)" }],
+    "phrases": [{ "en": "last year", "ko": "작년" }]
+  },
+  "yet": {
+    "ipa": "jet",
+    "senses": [{ "pos": "adverb", "ko": "(부정·질문) 아직" }],
+    "phrases": [{ "en": "not yet", "ko": "아직이요" }]
+  },
+  "york": {
+    "ipa": "jɔːrk",
+    "senses": [{ "pos": "noun", "ko": "(New York) 뉴욕" }],
+    "phrases": [{ "en": "New York", "ko": "뉴욕" }]
+  },
+  "you": {
+    "ipa": "juː",
+    "senses": [
+      { "pos": "pronoun", "ko": "당신, 너, 너희" },
+      { "pos": "pronoun", "ko": "(일반적인) 사람, 누구든" }
+    ]
+  },
+  "you're": {
+    "ipa": "jʊr",
+    "senses": [{ "pos": "phrase", "ko": "you are의 줄임말 — 당신은 ~이다" }]
+  },
+  "you've": {
+    "ipa": "juːv",
+    "senses": [{ "pos": "phrase", "ko": "you have의 줄임말 (have + 과거분사: ~했다, 계속 ~해 왔다)" }]
+  },
+  "your": {
+    "ipa": "jʊr",
+    "senses": [{ "pos": "determiner", "ko": "당신의, 너의" }]
+  },
+  "yourself": {
+    "ipa": "jʊrˈself",
+    "senses": [{ "pos": "pronoun", "ko": "당신 자신, 너 자신" }]
+  }
+}

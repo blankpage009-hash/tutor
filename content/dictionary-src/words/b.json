@@ -1,0 +1,179 @@
+{
+  "back": {
+    "ipa": "bæk",
+    "senses": [
+      { "pos": "noun", "ko": "뒤쪽, 안쪽 (in the back = 안쪽 자리에)" },
+      { "pos": "noun", "ko": "등, 허리" },
+      { "pos": "adverb", "ko": "다시, 돌아와서" }
+    ],
+    "examples": [{ "en": "I'll be right back.", "ko": "금방 돌아올게요." }],
+    "phrases": [{ "en": "in the back", "ko": "뒤쪽에, 안쪽에" }, { "en": "come back", "ko": "돌아오다" }]
+  },
+  "basic": {
+    "ipa": "ˈbeɪsɪk",
+    "senses": [
+      { "pos": "adjective", "ko": "기본의, 기본적인" },
+      { "pos": "adjective", "ko": "간단한, 최소한의" }
+    ],
+    "examples": [{ "en": "I just need a basic phone.", "ko": "그냥 기본 폰이면 돼요." }]
+  },
+  "battery": {
+    "ipa": "ˈbætəri",
+    "forms": { "pl": "batteries" },
+    "senses": [{ "pos": "noun", "ko": "배터리, 건전지" }],
+    "examples": [{ "en": "My phone battery is low.", "ko": "폰 배터리가 얼마 없어요." }],
+    "phrases": [{ "en": "battery life", "ko": "배터리 사용 시간" }]
+  },
+  "be": {
+    "ipa": "biː",
+    "forms": { "3s": "is", "past": "was", "pp": "been", "ing": "being" },
+    "senses": [
+      { "pos": "verb", "ko": "~이다" },
+      { "pos": "verb", "ko": "(장소에) 있다" },
+      { "pos": "auxiliary", "ko": "(be + -ing) ~하는 중이다" }
+    ],
+    "examples": [{ "en": "Be careful!", "ko": "조심해요!" }]
+  },
+  "beautiful": {
+    "ipa": "ˈbjuːtɪfəl",
+    "senses": [
+      { "pos": "adjective", "ko": "아름다운, 예쁜" },
+      { "pos": "adjective", "ko": "(날씨가) 아주 좋은" }
+    ],
+    "examples": [{ "en": "It's a beautiful day.", "ko": "날씨 정말 좋네요." }]
+  },
+  "because": {
+    "ipa": "bɪˈkɔːz",
+    "senses": [{ "pos": "conjunction", "ko": "~ 때문에, 왜냐하면" }],
+    "examples": [{ "en": "I stayed home because I was tired.", "ko": "피곤해서 집에 있었어요." }],
+    "phrases": [{ "en": "because of something", "ko": "~ 때문에" }]
+  },
+  "been": {
+    "ipa": "bɪn",
+    "senses": [
+      { "pos": "verb", "ko": "be의 과거분사 (have been = 계속 ~였다, ~에 가 본 적 있다)" },
+      { "pos": "auxiliary", "ko": "(have been + -ing) 계속 ~하고 있다" }
+    ]
+  },
+  "before": {
+    "ipa": "bɪˈfɔːr",
+    "senses": [
+      { "pos": "preposition", "ko": "~ 전에, ~ 앞에" },
+      { "pos": "adverb", "ko": "전에, 예전에" }
+    ],
+    "examples": [{ "en": "Have you been here before?", "ko": "여기 전에 와 본 적 있어요?" }]
+  },
+  "best": {
+    "ipa": "best",
+    "senses": [
+      { "pos": "adjective", "ko": "가장 좋은, 최고의 (good의 최상급)" },
+      { "pos": "adverb", "ko": "가장 잘, 가장 (like best = 가장 좋아하다, well의 최상급)" }
+    ],
+    "examples": [{ "en": "This is the best pizza in town.", "ko": "이게 동네에서 제일 맛있는 피자예요." }],
+    "phrases": [{ "en": "like best", "ko": "~을 가장 좋아하다" }, { "en": "work best", "ko": "가장 잘 맞다, 가장 좋다" }]
+  },
+  "better": {
+    "ipa": "ˈbetər",
+    "senses": [
+      { "pos": "adjective", "ko": "더 좋은, 더 나은 (good의 비교급)" },
+      { "pos": "adverb", "ko": "더 잘, 더 (like better = 더 좋아하다, well의 비교급)" }
+    ],
+    "examples": [{ "en": "I feel better today.", "ko": "오늘은 몸이 좀 나아요." }],
+    "phrases": [{ "en": "like better", "ko": "~을 더 좋아하다" }, { "en": "work better", "ko": "더 잘 맞다, 더 좋다" }]
+  },
+  "between": {
+    "ipa": "bɪˈtwiːn",
+    "senses": [
+      { "pos": "preposition", "ko": "(둘) 사이에, ~ 중에서" },
+      { "pos": "preposition", "ko": "(시간) ~ 사이에" }
+    ],
+    "examples": [{ "en": "Come between 2 and 4.", "ko": "2시에서 4시 사이에 오세요." }],
+    "phrases": [{ "en": "torn between something", "ko": "~ 사이에서 고민하는" }, { "en": "difference between something", "ko": "~ 사이의 차이" }, { "en": "choose between something", "ko": "~ 중에서 고르다" }]
+  },
+  "big": {
+    "ipa": "bɪɡ",
+    "forms": { "er": "bigger", "est": "biggest" },
+    "senses": [
+      { "pos": "adjective", "ko": "큰" },
+      { "pos": "adjective", "ko": "중요한, 큰일인 (a big decision)" }
+    ],
+    "examples": [{ "en": "That's a big house.", "ko": "집 크네요." }]
+  },
+  "bike": {
+    "ipa": "baɪk",
+    "forms": { "pl": "bikes" },
+    "senses": [{ "pos": "noun", "ko": "자전거" }],
+    "examples": [{ "en": "I ride my bike to work.", "ko": "자전거로 출근해요." }]
+  },
+  "birthday": {
+    "ipa": "ˈbɜːrθdeɪ",
+    "senses": [{ "pos": "noun", "ko": "생일" }],
+    "examples": [{ "en": "Happy birthday!", "ko": "생일 축하해요!" }]
+  },
+  "blender": {
+    "ipa": "ˈblendər",
+    "forms": { "pl": "blenders" },
+    "senses": [{ "pos": "noun", "ko": "믹서기, 블렌더" }]
+  },
+  "blue": {
+    "ipa": "bluː",
+    "senses": [
+      { "pos": "adjective", "ko": "파란, 파란색의" },
+      { "pos": "noun", "ko": "파란색" }
+    ]
+  },
+  "book": {
+    "ipa": "bʊk",
+    "forms": { "3s": "books", "past": "booked", "pp": "booked", "ing": "booking", "pl": "books" },
+    "senses": [
+      { "pos": "verb", "ko": "예약하다" },
+      { "pos": "noun", "ko": "책" }
+    ],
+    "examples": [{ "en": "I booked a table for two.", "ko": "두 명 자리 예약했어요." }]
+  },
+  "bossy": {
+    "ipa": "ˈbɔːsi",
+    "senses": [{ "pos": "adjective", "ko": "이래라저래라 하는, 명령조의" }],
+    "examples": [{ "en": "Don't be so bossy.", "ko": "너무 명령하지 마." }]
+  },
+  "both": {
+    "ipa": "boʊθ",
+    "senses": [
+      { "pos": "determiner", "ko": "둘 다의, 양쪽의" },
+      { "pos": "pronoun", "ko": "둘 다" }
+    ],
+    "examples": [{ "en": "I like both.", "ko": "둘 다 좋아요." }],
+    "phrases": [{ "en": "both of something", "ko": "~ 둘 다" }]
+  },
+  "bring": {
+    "ipa": "brɪŋ",
+    "forms": { "3s": "brings", "past": "brought", "pp": "brought", "ing": "bringing" },
+    "senses": [{ "pos": "verb", "ko": "가져오다, 데려오다" }],
+    "examples": [{ "en": "Can you bring some water?", "ko": "물 좀 가져다줄래요?" }]
+  },
+  "budget": {
+    "ipa": "ˈbʌdʒɪt",
+    "senses": [{ "pos": "noun", "ko": "예산, 쓸 수 있는 돈" }],
+    "examples": [{ "en": "It's over my budget.", "ko": "제 예산을 넘어요." }],
+    "phrases": [{ "en": "fit someone's budget", "ko": "예산에 맞다" }]
+  },
+  "burger": {
+    "ipa": "ˈbɜːrɡər",
+    "forms": { "pl": "burgers" },
+    "senses": [{ "pos": "noun", "ko": "햄버거" }]
+  },
+  "but": {
+    "ipa": "bət, bʌt",
+    "senses": [{ "pos": "conjunction", "ko": "그러나, 하지만, 그런데" }],
+    "examples": [{ "en": "It's nice, but it's expensive.", "ko": "좋긴 한데 비싸요." }]
+  },
+  "by": {
+    "ipa": "baɪ",
+    "senses": [
+      { "pos": "preposition", "ko": "~ 옆에, ~ 가에 (by the window = 창가에)" },
+      { "pos": "preposition", "ko": "~까지 (기한)" },
+      { "pos": "preposition", "ko": "~에 의해, ~으로" }
+    ],
+    "phrases": [{ "en": "stop by", "ko": "잠깐 들르다" }]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "_설명": "사전 원고(Claude가 씀). 표제어(소문자) -> { ipa, forms, senses, examples, phrases }. 형식은 content/schema.md '사전' 참조. 고친 뒤 node scripts/content/build-dictionary.mjs 실행.",
+  "a": {
+    "ipa": "ə, eɪ",
+    "senses": [
+      { "pos": "determiner", "ko": "하나의, 어떤 (셀 수 있는 명사 하나 앞)" },
+      { "pos": "determiner", "ko": "~마다, ~당 (eighty dollars a night = 하룻밤에 80달러)" },
+      { "pos": "phrase", "ko": "(a.m.의 a) 오전 — a.m. = 오전" }
+    ],
+    "phrases": [{ "en": "a lot", "ko": "많이, 훨씬" }, { "en": "a few", "ko": "몇 개의, 조금" }]
+  },
+  "about": {
+    "ipa": "əˈbaʊt",
+    "senses": [
+      { "pos": "preposition", "ko": "~에 대하여, ~에 관해" },
+      { "pos": "adverb", "ko": "대략, 쯤" }
+    ],
+    "examples": [{ "en": "What's the movie about?", "ko": "그 영화는 무슨 내용이에요?" }],
+    "phrases": [{ "en": "think about something", "ko": "~에 대해 생각하다, ~을 고려하다" }, { "en": "How about something", "ko": "~은 어때요?" }]
+  },
+  "add": {
+    "ipa": "æd",
+    "forms": { "3s": "adds", "past": "added", "pp": "added", "ing": "adding" },
+    "senses": [
+      { "pos": "verb", "ko": "더하다, 덧붙이다" },
+      { "pos": "verb", "ko": "(말을) 덧붙이다" }
+    ],
+    "examples": [{ "en": "Add a little salt.", "ko": "소금을 조금 넣으세요." }]
+  },
+  "adjective": {
+    "ipa": "ˈædʒɪktɪv",
+    "senses": [{ "pos": "noun", "ko": "형용사 (cheap, big처럼 모양·성질을 나타내는 말)" }]
+  },
+  "advice": {
+    "ipa": "ədˈvaɪs",
+    "senses": [{ "pos": "noun", "ko": "조언, 충고 (셀 수 없음: an advice X)" }],
+    "examples": [{ "en": "Can I give you some advice?", "ko": "조언 하나 해도 될까요?" }],
+    "phrases": [{ "en": "give someone advice", "ko": "~에게 조언하다" }]
+  },
+  "after": {
+    "ipa": "ˈæftər",
+    "senses": [
+      { "pos": "preposition", "ko": "~ 후에, ~ 뒤에" },
+      { "pos": "conjunction", "ko": "~한 뒤에" }
+    ],
+    "examples": [{ "en": "Let's talk after lunch.", "ko": "점심 먹고 얘기해요." }],
+    "phrases": [{ "en": "after all", "ko": "결국, 어쨌든 (after all the tours = 투어를 다 하고 나서)" }]
+  },
+  "afternoon": {
+    "ipa": "ˌæftərˈnuːn",
+    "forms": { "pl": "afternoons" },
+    "senses": [{ "pos": "noun", "ko": "오후" }],
+    "examples": [{ "en": "I'm free this afternoon.", "ko": "오늘 오후에 시간 있어요." }],
+    "phrases": [{ "en": "in the afternoon", "ko": "오후에" }]
+  },
+  "all": {
+    "ipa": "ɔːl",
+    "senses": [
+      { "pos": "determiner", "ko": "모든, 전부의" },
+      { "pos": "pronoun", "ko": "모두, 전부" },
+      { "pos": "adverb", "ko": "완전히, 아주" }
+    ],
+    "examples": [{ "en": "I ate all the cookies.", "ko": "쿠키를 다 먹었어요." }],
+    "phrases": [{ "en": "after all", "ko": "결국, 어쨌든" }, { "en": "all day", "ko": "하루 종일" }]
+  },
+  "almost": {
+    "ipa": "ˈɔːlmoʊst",
+    "senses": [{ "pos": "adverb", "ko": "거의, 하마터면" }],
+    "examples": [{ "en": "I almost missed the bus.", "ko": "하마터면 버스를 놓칠 뻔했어요." }]
+  },
+  "always": {
+    "ipa": "ˈɔːlweɪz",
+    "senses": [
+      { "pos": "adverb", "ko": "항상, 언제나" },
+      { "pos": "adverb", "ko": "(can always) 언제든지 ~할 수 있다" }
+    ],
+    "examples": [{ "en": "She's always late.", "ko": "그녀는 항상 늦어요." }]
+  },
+  "american": {
+    "ipa": "əˈmerɪkən",
+    "senses": [
+      { "pos": "adjective", "ko": "미국의, 미국인의" },
+      { "pos": "noun", "ko": "미국인" }
+    ],
+    "phrases": [{ "en": "American English", "ko": "미국 영어" }]
+  },
+  "an": {
+    "ipa": "ən, æn",
+    "senses": [{ "pos": "determiner", "ko": "하나의 (모음 소리 앞의 a: an apple, an hour)" }]
+  },
+  "and": {
+    "ipa": "ənd, ænd",
+    "senses": [
+      { "pos": "conjunction", "ko": "그리고, ~와" },
+      { "pos": "conjunction", "ko": "그래서, 그러면" }
+    ],
+    "phrases": [{ "en": "between something and something", "ko": "~와 ~ 사이에" }]
+  },
+  "any": {
+    "ipa": "ˈeni",
+    "senses": [
+      { "pos": "determiner", "ko": "(질문·부정) 조금이라도, 어떤" },
+      { "pos": "determiner", "ko": "(긍정) 어떤 ~이든, 아무 ~나" },
+      { "pos": "adverb", "ko": "(비교급 앞) 조금이라도 (any cheaper = 조금이라도 더 싼)" }
+    ],
+    "examples": [{ "en": "Do you have any questions?", "ko": "질문 있으세요?" }],
+    "phrases": [{ "en": "any time", "ko": "언제든지" }]
+  },
+  "anymore": {
+    "ipa": "ˌeniˈmɔːr",
+    "senses": [{ "pos": "adverb", "ko": "(부정문에서) 더 이상, 이제는" }],
+    "examples": [{ "en": "I don't live there anymore.", "ko": "이제 거기 안 살아요." }]
+  },
+  "anything": {
+    "ipa": "ˈeniθɪŋ",
+    "senses": [
+      { "pos": "pronoun", "ko": "(질문) 뭐라도, 무엇이든" },
+      { "pos": "pronoun", "ko": "(부정) 아무것도" },
+      { "pos": "pronoun", "ko": "(긍정) 무엇이든" }
+    ],
+    "examples": [{ "en": "Do you need anything?", "ko": "뭐 필요한 거 있어요?" }]
+  },
+  "anytime": {
+    "ipa": "ˈenitaɪm",
+    "senses": [
+      { "pos": "adverb", "ko": "언제든지" },
+      { "pos": "interjection", "ko": "(고맙다는 말에) 언제든지요, 별말씀을요" }
+    ],
+    "examples": [{ "en": "Call me anytime.", "ko": "언제든 전화해요." }]
+  },
+  "anyway": {
+    "ipa": "ˈeniweɪ",
+    "senses": [
+      { "pos": "adverb", "ko": "어차피, 어쨌든" },
+      { "pos": "adverb", "ko": "(말을 바꿀 때) 아무튼, 그건 그렇고" }
+    ],
+    "examples": [{ "en": "It was raining, but we went anyway.", "ko": "비가 왔지만 어쨌든 갔어요." }]
+  },
+  "apartment": {
+    "ipa": "əˈpɑːrtmənt",
+    "forms": { "pl": "apartments" },
+    "senses": [{ "pos": "noun", "ko": "아파트, (공동 주택의) 집 한 채" }],
+    "examples": [{ "en": "My apartment is small.", "ko": "제 집은 작아요." }]
+  },
+  "appointment": {
+    "ipa": "əˈpɔɪntmənt",
+    "forms": { "pl": "appointments" },
+    "senses": [{ "pos": "noun", "ko": "(병원·미용실 등의) 예약, (만날) 약속" }],
+    "examples": [{ "en": "I have a dentist appointment at 3.", "ko": "3시에 치과 예약이 있어요." }],
+    "phrases": [{ "en": "make an appointment", "ko": "예약을 잡다" }]
+  },
+  "are": {
+    "ipa": "ɑːr",
+    "senses": [{ "pos": "verb", "ko": "~이다, ~에 있다 (be의 현재형: you·we·they·복수)" }],
+    "phrases": [{ "en": "there are", "ko": "~들이 있다" }]
+  },
+  "ask": {
+    "ipa": "æsk",
+    "forms": { "3s": "asks", "past": "asked", "pp": "asked", "ing": "asking" },
+    "senses": [
+      { "pos": "verb", "ko": "묻다, 질문하다" },
+      { "pos": "verb", "ko": "부탁하다, 요청하다" }
+    ],
+    "examples": [{ "en": "Can I ask you something?", "ko": "뭐 하나 물어봐도 돼요?" }],
+    "phrases": [{ "en": "ask for something", "ko": "~을 달라고 하다, 요청하다" }]
+  },
+  "at": {
+    "ipa": "ət, æt",
+    "senses": [
+      { "pos": "preposition", "ko": "(시각) ~에 (at 9:30)" },
+      { "pos": "preposition", "ko": "(장소·지점) ~에서" },
+      { "pos": "preposition", "ko": "(보다·가리키다) ~을 (look at)" }
+    ],
+    "phrases": [{ "en": "look at something", "ko": "~을 보다" }]
+  }
+}

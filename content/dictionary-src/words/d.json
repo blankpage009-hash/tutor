@@ -1,0 +1,137 @@
+{
+  "data": {
+    "ipa": "ˈdeɪtə",
+    "senses": [
+      { "pos": "noun", "ko": "(휴대폰) 데이터, 데이터 용량" },
+      { "pos": "noun", "ko": "자료, 정보" }
+    ],
+    "examples": [{ "en": "I ran out of data.", "ko": "데이터를 다 썼어요." }]
+  },
+  "daughter": {
+    "ipa": "ˈdɔːtər",
+    "forms": { "pl": "daughters" },
+    "senses": [{ "pos": "noun", "ko": "딸" }]
+  },
+  "day": {
+    "ipa": "deɪ",
+    "forms": { "pl": "days" },
+    "senses": [
+      { "pos": "noun", "ko": "날, 하루" },
+      { "pos": "noun", "ko": "요일" },
+      { "pos": "noun", "ko": "낮" }
+    ],
+    "examples": [{ "en": "Have a nice day!", "ko": "좋은 하루 보내세요!" }]
+  },
+  "deal": {
+    "ipa": "diːl",
+    "forms": { "pl": "deals" },
+    "senses": [
+      { "pos": "noun", "ko": "(물건·요금의) 거래 조건, 싸게 사는 것" },
+      { "pos": "noun", "ko": "거래, 합의" }
+    ],
+    "examples": [{ "en": "That's a good deal.", "ko": "그거 싸게 잘 샀네요." }],
+    "phrases": [{ "en": "a better deal", "ko": "더 나은 조건, 더 이득인 것" }, { "en": "big deal", "ko": "큰일, 대단한 것" }]
+  },
+  "decide": {
+    "ipa": "dɪˈsaɪd",
+    "forms": { "3s": "decides", "past": "decided", "pp": "decided", "ing": "deciding" },
+    "senses": [{ "pos": "verb", "ko": "결정하다, 정하다" }],
+    "examples": [{ "en": "I can't decide.", "ko": "못 정하겠어요." }]
+  },
+  "decision": {
+    "ipa": "dɪˈsɪʒən",
+    "forms": { "pl": "decisions" },
+    "senses": [{ "pos": "noun", "ko": "결정" }],
+    "examples": [{ "en": "It's your decision.", "ko": "당신이 정할 일이에요." }],
+    "phrases": [{ "en": "make a decision", "ko": "결정하다" }]
+  },
+  "difference": {
+    "ipa": "ˈdɪfrəns",
+    "forms": { "pl": "differences" },
+    "senses": [{ "pos": "noun", "ko": "차이, 다른 점" }],
+    "examples": [{ "en": "I can't tell the difference.", "ko": "차이를 모르겠어요." }],
+    "phrases": [{ "en": "difference between something", "ko": "~ 사이의 차이" }]
+  },
+  "different": {
+    "ipa": "ˈdɪfrənt",
+    "senses": [
+      { "pos": "adjective", "ko": "다른" },
+      { "pos": "adjective", "ko": "여러 가지의" }
+    ],
+    "examples": [{ "en": "These two are different.", "ko": "이 둘은 달라요." }]
+  },
+  "dinner": {
+    "ipa": "ˈdɪnər",
+    "forms": { "pl": "dinners" },
+    "senses": [
+      { "pos": "noun", "ko": "저녁 식사" },
+      { "pos": "noun", "ko": "(회식 같은) 만찬, 저녁 모임" }
+    ],
+    "phrases": [{ "en": "team dinner", "ko": "팀 회식" }]
+  },
+  "do": {
+    "ipa": "duː",
+    "forms": { "3s": "does", "past": "did", "pp": "done", "ing": "doing" },
+    "senses": [
+      { "pos": "auxiliary", "ko": "(질문·부정을 만드는 말) Do you ~? / I don't ~" },
+      { "pos": "verb", "ko": "하다" }
+    ],
+    "examples": [{ "en": "What do you do?", "ko": "무슨 일 하세요?" }]
+  },
+  "doesn't": {
+    "ipa": "ˈdʌzənt",
+    "senses": [{ "pos": "auxiliary", "ko": "~하지 않다 (does not의 줄임말)" }],
+    "examples": [{ "en": "It doesn't matter.", "ko": "상관없어요." }]
+  },
+  "don't": {
+    "ipa": "doʊnt",
+    "senses": [
+      { "pos": "auxiliary", "ko": "~하지 않다 (do not의 줄임말)" },
+      { "pos": "auxiliary", "ko": "(Don't ~) ~하지 마세요" }
+    ],
+    "examples": [{ "en": "I don't know.", "ko": "모르겠어요." }],
+    "phrases": [{ "en": "don't get it", "ko": "이해가 안 되다" }]
+  },
+  "doctor": {
+    "ipa": "ˈdɑːktər",
+    "forms": { "pl": "doctors" },
+    "senses": [{ "pos": "noun", "ko": "의사" }],
+    "examples": [{ "en": "You should see a doctor.", "ko": "병원에 가 보는 게 좋겠어요." }]
+  },
+  "dollar": {
+    "ipa": "ˈdɑːlər",
+    "forms": { "pl": "dollars" },
+    "senses": [{ "pos": "noun", "ko": "달러 (미국 돈)" }]
+  },
+  "down": {
+    "ipa": "daʊn",
+    "senses": [
+      { "pos": "adverb", "ko": "아래로, 내려" },
+      { "pos": "preposition", "ko": "(길을) 따라, 아래쪽으로" }
+    ],
+    "phrases": [{ "en": "fall down", "ko": "넘어지다, (옷이) 흘러내리다" }, { "en": "sit down", "ko": "앉다" }]
+  },
+  "dr": {
+    "ipa": "ˈdɑːktər",
+    "senses": [{ "pos": "noun", "ko": "(Dr.) ~ 선생님, ~ 박사 (의사·박사 이름 앞, doctor의 줄임말)" }]
+  },
+  "drink": {
+    "ipa": "drɪŋk",
+    "forms": { "3s": "drinks", "past": "drank", "pp": "drunk", "ing": "drinking" },
+    "senses": [
+      { "pos": "verb", "ko": "마시다" },
+      { "pos": "noun", "ko": "음료, 마실 것" }
+    ],
+    "examples": [{ "en": "Do you want something to drink?", "ko": "뭐 마실래요?" }],
+    "phrases": [{ "en": "something to drink", "ko": "마실 것" }]
+  },
+  "drive": {
+    "ipa": "draɪv",
+    "forms": { "3s": "drives", "past": "drove", "pp": "driven", "ing": "driving" },
+    "senses": [
+      { "pos": "verb", "ko": "운전하다" },
+      { "pos": "verb", "ko": "차로 데려다주다" }
+    ],
+    "examples": [{ "en": "I'll drive you home.", "ko": "집까지 태워 줄게요." }]
+  }
+}

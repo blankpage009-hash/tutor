@@ -1,0 +1,214 @@
+{
+  "cafe": {
+    "ipa": "kæˈfeɪ",
+    "forms": { "pl": "cafes" },
+    "senses": [{ "pos": "noun", "ko": "카페, 작은 식당" }]
+  },
+  "cake": {
+    "ipa": "keɪk",
+    "forms": { "pl": "cakes" },
+    "senses": [{ "pos": "noun", "ko": "케이크" }],
+    "examples": [{ "en": "I baked a cake.", "ko": "케이크를 구웠어요." }]
+  },
+  "call": {
+    "ipa": "kɔːl",
+    "forms": { "3s": "calls", "past": "called", "pp": "called", "ing": "calling" },
+    "senses": [
+      { "pos": "verb", "ko": "전화하다" },
+      { "pos": "verb", "ko": "부르다, ~라고 부르다" },
+      { "pos": "noun", "ko": "통화, 전화 (회의)" }
+    ],
+    "examples": [{ "en": "I'll call you later.", "ko": "이따 전화할게요." }],
+    "phrases": [{ "en": "team call", "ko": "팀 통화 회의" }]
+  },
+  "camera": {
+    "ipa": "ˈkæmərə",
+    "forms": { "pl": "cameras" },
+    "senses": [{ "pos": "noun", "ko": "카메라" }]
+  },
+  "can": {
+    "ipa": "kən, kæn",
+    "forms": { "past": "could" },
+    "senses": [
+      { "pos": "auxiliary", "ko": "~할 수 있다" },
+      { "pos": "auxiliary", "ko": "(Can I ~?) ~해도 될까요?" },
+      { "pos": "auxiliary", "ko": "(Can you ~?) ~해 줄래요?" }
+    ],
+    "examples": [{ "en": "Can I sit here?", "ko": "여기 앉아도 돼요?" }],
+    "phrases": [{ "en": "can I get something", "ko": "~ 주시겠어요? / ~ 드릴까요?" }]
+  },
+  "can't": {
+    "ipa": "kænt",
+    "senses": [{ "pos": "auxiliary", "ko": "~할 수 없다 (cannot의 줄임말)" }],
+    "examples": [{ "en": "I can't find my keys.", "ko": "열쇠를 못 찾겠어요." }]
+  },
+  "cancel": {
+    "ipa": "ˈkænsəl",
+    "forms": { "3s": "cancels", "past": "canceled", "pp": "canceled", "ing": "canceling" },
+    "senses": [{ "pos": "verb", "ko": "취소하다" }],
+    "examples": [{ "en": "The meeting was canceled.", "ko": "회의가 취소됐어요." }],
+    "phrases": [{ "en": "get canceled", "ko": "취소되다" }]
+  },
+  "catch": {
+    "ipa": "kætʃ",
+    "forms": { "3s": "catches", "past": "caught", "pp": "caught", "ing": "catching" },
+    "senses": [
+      { "pos": "verb", "ko": "잡다" },
+      { "pos": "verb", "ko": "(버스·기차를) 타다, 잡아타다" },
+      { "pos": "verb", "ko": "(눈길·관심을) 끌다" }
+    ],
+    "examples": [{ "en": "I need to catch the 7:00 train.", "ko": "7시 기차를 타야 해요." }],
+    "phrases": [{ "en": "catch someone's eye", "ko": "눈길을 끌다, 눈에 들어오다" }]
+  },
+  "chance": {
+    "ipa": "tʃæns",
+    "forms": { "pl": "chances" },
+    "senses": [
+      { "pos": "noun", "ko": "기회, (할) 틈" },
+      { "pos": "noun", "ko": "가능성" }
+    ],
+    "examples": [{ "en": "I didn't get a chance to call.", "ko": "전화할 틈이 없었어요." }],
+    "phrases": [{ "en": "have a chance to", "ko": "~할 기회(틈)가 있다" }]
+  },
+  "cheap": {
+    "ipa": "tʃiːp",
+    "forms": { "er": "cheaper", "est": "cheapest" },
+    "senses": [
+      { "pos": "adjective", "ko": "(값이) 싼" },
+      { "pos": "adjective", "ko": "싸구려의, 질이 낮은" }
+    ],
+    "examples": [{ "en": "This is cheap, but it's good.", "ko": "이거 싼데 좋아요." }]
+  },
+  "check": {
+    "ipa": "tʃek",
+    "forms": { "3s": "checks", "past": "checked", "pp": "checked", "ing": "checking" },
+    "senses": [
+      { "pos": "verb", "ko": "확인하다, 알아보다" },
+      { "pos": "noun", "ko": "계산서; 수표" }
+    ],
+    "examples": [{ "en": "Let me check my schedule.", "ko": "제 일정 좀 확인해 볼게요." }],
+    "phrases": [{ "en": "Let me check", "ko": "확인해 볼게요" }]
+  },
+  "chocolate": {
+    "ipa": "ˈtʃɔːklət",
+    "senses": [{ "pos": "noun", "ko": "초콜릿" }]
+  },
+  "choice": {
+    "ipa": "tʃɔɪs",
+    "forms": { "pl": "choices" },
+    "senses": [
+      { "pos": "noun", "ko": "선택, 고르기" },
+      { "pos": "noun", "ko": "(고를 수 있는) 선택지, 고른 것" }
+    ],
+    "examples": [{ "en": "Good choice!", "ko": "잘 고르셨어요!" }],
+    "phrases": [{ "en": "make a choice", "ko": "선택하다" }]
+  },
+  "choose": {
+    "ipa": "tʃuːz",
+    "forms": { "3s": "chooses", "past": "chose", "pp": "chosen", "ing": "choosing" },
+    "senses": [{ "pos": "verb", "ko": "고르다, 선택하다" }],
+    "examples": [{ "en": "Choose one.", "ko": "하나 골라요." }],
+    "phrases": [{ "en": "choose between something", "ko": "~ 중에서 고르다" }]
+  },
+  "cleaning": {
+    "ipa": "ˈkliːnɪŋ",
+    "senses": [
+      { "pos": "noun", "ko": "청소" },
+      { "pos": "noun", "ko": "(치과의) 스케일링, 치아 세정" }
+    ],
+    "examples": [{ "en": "I do the cleaning on Saturdays.", "ko": "토요일마다 청소해요." }]
+  },
+  "clinic": {
+    "ipa": "ˈklɪnɪk",
+    "forms": { "pl": "clinics" },
+    "senses": [{ "pos": "noun", "ko": "병원, 의원 (작은 진료소)" }]
+  },
+  "close": {
+    "ipa": "kloʊs (형용사) · kloʊz (동사)",
+    "forms": { "er": "closer", "est": "closest" },
+    "senses": [
+      { "pos": "adjective", "ko": "가까운" },
+      { "pos": "adjective", "ko": "친한" },
+      { "pos": "verb", "ko": "닫다; (가게가) 문을 닫다" }
+    ],
+    "examples": [{ "en": "The station is close to my house.", "ko": "역이 우리 집에서 가까워요." }],
+    "phrases": [{ "en": "close to something", "ko": "~에서 가까운" }]
+  },
+  "color": {
+    "ipa": "ˈkʌlər",
+    "forms": { "pl": "colors" },
+    "senses": [{ "pos": "noun", "ko": "색, 색깔" }],
+    "examples": [{ "en": "What color do you want?", "ko": "무슨 색으로 할래요?" }]
+  },
+  "come": {
+    "ipa": "kʌm",
+    "forms": { "3s": "comes", "past": "came", "pp": "come", "ing": "coming" },
+    "senses": [
+      { "pos": "verb", "ko": "오다" },
+      { "pos": "verb", "ko": "(상대 쪽으로) 가다 (I'm coming = 지금 가요)" }
+    ],
+    "examples": [{ "en": "Can you come tomorrow?", "ko": "내일 올 수 있어요?" }],
+    "phrases": [{ "en": "come right up", "ko": "(주문) 바로 나옵니다 (Coming right up!)" }, { "en": "come over", "ko": "(집에) 놀러 오다" }]
+  },
+  "comfortable": {
+    "ipa": "ˈkʌmftərbəl",
+    "senses": [
+      { "pos": "adjective", "ko": "편한, 편안한" },
+      { "pos": "adjective", "ko": "(마음이) 편한" }
+    ],
+    "examples": [{ "en": "This chair is really comfortable.", "ko": "이 의자 정말 편해요." }]
+  },
+  "common": {
+    "ipa": "ˈkɑːmən",
+    "senses": [
+      { "pos": "adjective", "ko": "흔한, 자주 쓰는" },
+      { "pos": "adjective", "ko": "공통의" }
+    ],
+    "examples": [{ "en": "It's a common mistake.", "ko": "흔한 실수예요." }]
+  },
+  "company": {
+    "ipa": "ˈkʌmpəni",
+    "forms": { "pl": "companies" },
+    "senses": [
+      { "pos": "noun", "ko": "회사" },
+      { "pos": "noun", "ko": "함께 있음, 손님" }
+    ],
+    "examples": [{ "en": "She works for a big company.", "ko": "그녀는 큰 회사에 다녀요." }]
+  },
+  "compare": {
+    "ipa": "kəmˈper",
+    "forms": { "3s": "compares", "past": "compared", "pp": "compared", "ing": "comparing" },
+    "senses": [{ "pos": "verb", "ko": "비교하다" }],
+    "examples": [{ "en": "Let's compare prices.", "ko": "가격을 비교해 봐요." }]
+  },
+  "contract": {
+    "ipa": "ˈkɑːntrækt",
+    "forms": { "pl": "contracts" },
+    "senses": [{ "pos": "noun", "ko": "계약, 계약서" }],
+    "examples": [{ "en": "Read the contract carefully.", "ko": "계약서를 잘 읽어 보세요." }],
+    "phrases": [{ "en": "sign a contract", "ko": "계약서에 서명하다" }]
+  },
+  "convenient": {
+    "ipa": "kənˈviːniənt",
+    "senses": [
+      { "pos": "adjective", "ko": "편리한" },
+      { "pos": "adjective", "ko": "(시간이) 괜찮은, 형편에 맞는" }
+    ],
+    "examples": [{ "en": "Is 3 o'clock convenient for you?", "ko": "3시 괜찮으세요?" }]
+  },
+  "conversation": {
+    "ipa": "ˌkɑːnvərˈseɪʃən",
+    "forms": { "pl": "conversations" },
+    "senses": [{ "pos": "noun", "ko": "대화" }],
+    "examples": [{ "en": "We had a long conversation.", "ko": "오래 이야기를 나눴어요." }]
+  },
+  "could": {
+    "ipa": "kəd, kʊd",
+    "senses": [
+      { "pos": "auxiliary", "ko": "(제안) ~할 수도 있겠다, ~하면 어때요" },
+      { "pos": "auxiliary", "ko": "(공손한 부탁) ~해 주시겠어요?" },
+      { "pos": "auxiliary", "ko": "~할 수 있었다 (can의 과거)" }
+    ],
+    "examples": [{ "en": "Could you help me?", "ko": "좀 도와주시겠어요?" }]
+  }
+}
