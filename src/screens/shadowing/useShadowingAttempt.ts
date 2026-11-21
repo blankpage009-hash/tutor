@@ -4,7 +4,7 @@ import { contentUrl } from '../../content/loader';
 import type { Sentence } from '../../content/types';
 import { logSpoken } from '../../db/activity';
 import { isPass, type Judgement, type WordMark } from '../../scoring/types';
-import { keepMatched, wordMatchJudge } from '../../scoring/wordMatchJudge';
+import { keepMatched, liveJudge, wordMatchJudge } from '../../scoring/wordMatchJudge';
 import { playAudio, preloadAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
 import { acquireMic, releaseMic } from '../../speech/audioSession';
 import { ensureMicPermission, type MicCheck } from '../../speech/micPermission';
@@ -71,7 +71,8 @@ export async function finishRecording(p: Promise<ActiveRecording | null> | null,
   return r.blob.size > 0 ? URL.createObjectURL(r.blob) : null;
 }
 
-type Outcome = { judgement: Judgement; status: AttemptStatus; message: string | null };
+// live: 말하는 중 화면 표시용 판정 (stickyOutcome이 받아서 쓰고 화면에는 넘기지 않는다)
+type Outcome = { judgement: Judgement; live?: Judgement; status: AttemptStatus; message: string | null };
 
 function evaluate(sentence: Sentence, res: ListenResult, threshold: number): Outcome {
   const judgement = judge(sentence, res.alternatives);
@@ -119,7 +120,7 @@ async function listenAndRecord(
   setOutcome({ judgement: judge(sentence, []), status: 'listening', message: null });
   let rec: Promise<ActiveRecording | null> | null = null;
   const l = listen({
-    onInterim: (alts) => setOutcome({ judgement: judge(sentence, alts), status: 'listening', message: null }),
+    onInterim: (alts) => setOutcome(interimOutcome(sentence, alts)),
     onAudioStart: () => {
       if (o.recordWhileListening) rec = beginRecording(o.log, captureCtx);
     },
@@ -139,14 +140,25 @@ async function listenAndRecord(
 type Heard = { res: ListenResult; voice: string | null };
 type SetOutcome = (o: Outcome) => void;
 
+// 중간 결과: 엄격한 판정과 함께 화면 표시용(소리 비슷 + 앞으로 채우기)도 만든다
+function interimOutcome(sentence: Sentence, alts: string[]): Outcome {
+  return { judgement: judge(sentence, alts), live: liveJudge(sentence.en, alts), status: 'listening', message: null };
+}
+
 // 한 번 말하기(탭 한 번·이어 말하기 한 문장)마다 새로 만든다. 그 안에서 칠해진 단어는 끝까지 남고,
-// 다시 말하면 새 기록부터 시작한다
+// 다시 말하면 새 기록부터 시작한다.
+// 엄격한 기록과 화면 표시 기록을 따로 둔다: 말하는 중엔 표시 기록을 보여 주고, 최종 결과에는 엄격한 기록만
+// 섞는다 — 느슨하게 칠한 단어(소리만 비슷·건너뛴 단어)가 끝난 뒤 결과까지 맞은 것처럼 보이지 않게
 function stickyOutcome(set: SetOutcome): SetOutcome {
-  let prev: WordMark[] | null = null;
-  return (out) => {
-    const judgement = keepMatched(prev, out.judgement);
-    prev = judgement.words;
-    set({ ...out, judgement });
+  let strict: WordMark[] | null = null;
+  let shown: WordMark[] | null = null;
+  return ({ live, ...out }) => {
+    const judgement = keepMatched(strict, out.judgement);
+    strict = judgement.words;
+    if (!live) return set({ ...out, judgement });
+    const display = keepMatched(shown, live);
+    shown = display.words;
+    set({ ...out, judgement: { ...display, ratio: judgement.ratio, heard: judgement.heard } });
   };
 }
 
@@ -211,7 +223,7 @@ async function hearWithVosk(
     // 중간 결과는 말하는 도중의 앞부분이라 80%로 끊으면 마지막 단어를 말하는 중에 끝나 버린다. 다 맞을 때만
     isComplete: (alts) => isPass(judge(sentence, alts), 1),
     isPass: (alts) => isPass(judge(sentence, alts), o.threshold),
-    onInterim: (alts) => setOutcome({ judgement: judge(sentence, alts), status: 'listening', message: null }),
+    onInterim: (alts) => setOutcome(interimOutcome(sentence, alts)),
     onDebug: o.log
   });
   listening.current = l;

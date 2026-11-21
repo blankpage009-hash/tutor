@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { digitsToWords } from './numbers';
 import { isPass } from './types';
-import { keepMatched, wordMatchJudge } from './wordMatchJudge';
+import { keepMatched, liveJudge, wordMatchJudge } from './wordMatchJudge';
 
 const judge = (target: string, ...heard: string[]) => wordMatchJudge.judge(target, heard);
 
@@ -155,6 +155,35 @@ describe('칠한 단어 유지 (keepMatched)', () => {
   it('처음(앞 기록 없음)은 그대로', () => {
     const now = judge(target, 'i was');
     expect(keepMatched(null, now)).toBe(now);
+  });
+});
+
+describe('말하는 중 화면 표시 (liveJudge)', () => {
+  const marks = (j: { words: { status: string }[] }) => j.words.map((w) => w.status === 'matched');
+
+  it('소리가 비슷한 단어(work↔walk)도 칠한다, 점수는 엄격한 값 그대로', () => {
+    const t = 'I work from home.';
+    const live = liveJudge(t, ['i walk from home']);
+    expect(marks(live)).toEqual([true, true, true, true]);
+    expect(live.ratio).toBe(judge(t, 'i walk from home').ratio);
+    expect(live.ratio).toBeLessThan(1);
+  });
+
+  it('가장 뒤에 맞힌 단어까지 앞을 채운다 (빠뜨린 a)', () => {
+    const live = liveJudge('Can I get a refill?', ['can i get uh refill']);
+    expect(marks(live)).toEqual([true, true, true, true, true]);
+    expect(live.nextIndex).toBe(-1);
+  });
+
+  it('아직 말 안 한 뒷부분은 칠하지 않는다', () => {
+    const live = liveJudge('Can I get a refill?', ['can i']);
+    expect(marks(live)).toEqual([true, true, false, false, false]);
+    expect(live.nextIndex).toBe(2);
+  });
+
+  it('문장부호뿐인 토큰 때문에 앞이 칠해지지 않는다', () => {
+    const live = liveJudge('Yes — I can.', []);
+    expect(live.words.filter((w) => w.text !== '—').every((w) => w.status === 'missed')).toBe(true);
   });
 });
 
