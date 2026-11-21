@@ -5,11 +5,13 @@ import { useDueCount } from '../review/useDueCount';
 import { useUnknownWordCount } from '../vocab/useVocab';
 import styles from './ReviewTiles.module.css';
 
-type TileProps = { count: number | null; label: string; to: string; Icon: ComponentType };
+type TileProps = { count: number | null; one: string; many: string; to: string; Icon: ComponentType };
 
 // 복습할 게 있을 때만 눌러서 시작(오른쪽 위 ">" 표시). 0개거나 아직 세는 중이면 그냥 칸만 보인다
-function Tile({ count, label, to, Icon }: TileProps) {
+// 영어라 1개일 때만 단수형(1 Sentence), 나머지는 복수형(0·2 Sentences)
+function Tile({ count, one, many, to, Icon }: TileProps) {
   const active = !!count && count > 0;
+  const label = count === 1 ? one : many;
   const body = (
     <>
       <span className={styles.icons}>
@@ -18,7 +20,7 @@ function Tile({ count, label, to, Icon }: TileProps) {
       </span>
       <span className={styles.value}>
         <span className={styles.count}>{count ?? '–'}</span>
-        <span className={styles.label} lang="ko">{label}</span>
+        <span className={styles.label} lang="en">{label}</span>
       </span>
     </>
   );
@@ -39,8 +41,8 @@ export function ReviewTiles() {
         <span className={styles.today}>TODAY</span>
       </div>
       <div className={styles.grid}>
-        <Tile count={sentences} label="문장" to="/review" Icon={IconBookmark} />
-        <Tile count={words} label="단어" to="/vocab/quiz?scope=unknown" Icon={IconVocab} />
+        <Tile count={sentences} one="Sentence" many="Sentences" to="/review" Icon={IconBookmark} />
+        <Tile count={words} one="Word" many="Words" to="/vocab/quiz?scope=unknown" Icon={IconVocab} />
       </div>
     </section>
   );
