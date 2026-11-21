@@ -4,14 +4,14 @@ import { IconCircle, IconPlay, IconPrompt, IconTrash } from '../../components/ic
 import { SwipeRow } from '../../components/SwipeRow';
 import { contentUrl } from '../../content/loader';
 import type { SavedSentence } from '../../db/types';
-import type { DueLabel } from '../../dueLabel';
+import type { SavedLabel } from '../../savedLabel';
 import { playAudio, unlockAudio } from '../../speech/audioPlayer';
 import styles from './Library.module.css';
 import { armPracticeLaunch } from './practiceLaunch';
 
 type Props = {
   row: SavedSentence;
-  due: DueLabel | null;
+  saved: SavedLabel;
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onRemove: (id: string) => void;
@@ -21,8 +21,8 @@ type Props = {
   onSelect: (id: string) => void;
 };
 
-// 저장 문장 한 줄: 영어 · 한글 · 다음 복습 날짜 · 재생. 줄을 누르면 그 문장부터 쉐도잉, 왼쪽으로 밀면 삭제(2번 눌러 확정)
-export function LibraryRow({ row, due, open, onOpenChange, onRemove, selecting, selected, onSelect }: Props) {
+// 저장 문장 한 줄: 영어 · 저장한 지 얼마나 됐는지 · 재생. 줄을 누르면 그 문장부터 쉐도잉, 왼쪽으로 밀면 삭제(2번 눌러 확정)
+export function LibraryRow({ row, saved, open, onOpenChange, onRemove, selecting, selected, onSelect }: Props) {
   const nav = useNavigate();
   const [playError, setPlayError] = useState(false);
   const play = () => {
@@ -51,8 +51,7 @@ export function LibraryRow({ row, due, open, onOpenChange, onRemove, selecting, 
         <button type="button" className={styles.main} onClick={tap} disabled={!ready && !selecting}
           aria-pressed={selecting ? selected : undefined}>
           <span className={styles.en} lang="en">{row.en || '문장을 찾는 중…'}</span>
-          {row.ko && <span className={styles.ko} lang="ko">{row.ko}</span>}
-          {due && <span className={`${styles.tag} ${due.today ? styles.tagToday : ''}`} lang="en">{due.text}</span>}
+          <span className={`${styles.tag} ${saved.today ? styles.tagToday : ''}`} lang="ko">{saved.text}</span>
           {playError && <span className={styles.error} lang="ko">재생하지 못했어요. 인터넷 연결을 확인해 주세요.</span>}
         </button>
         <button type="button" className={styles.play} onClick={play} disabled={!row.audio} aria-label="문장 듣기"><IconPlay /></button>

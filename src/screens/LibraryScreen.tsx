@@ -4,7 +4,7 @@ import { Button } from '../components/Button';
 import { ExportSheet } from '../components/ExportSheet';
 import { IconExport, IconHeadphones, IconInOrder, IconShuffle } from '../components/icons/icons';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { dueLabel } from '../dueLabel';
+import { savedLabel } from '../savedLabel';
 import { savedExportFormats } from './library/exportFormats';
 import styles from './library/Library.module.css';
 import { LibraryRow } from './library/LibraryRow';
@@ -62,7 +62,7 @@ function nextRepeat(n: number): number {
 
 // 디자인 v2 09 LIBRARY: N SENTENCES · Library · 내보내기 아이콘, Shadow All · Random, 줄 목록
 export function LibraryScreen() {
-  const { rows, error, remove, dueAt } = useLibrary();
+  const { rows, error, remove } = useLibrary();
   const [openId, setOpenId] = useState<string | null>(null);
   const [exporting, setExporting] = useState(false);
   const sel = useSelection(rows?.map((r) => r.id) ?? []);
@@ -93,7 +93,7 @@ export function LibraryScreen() {
           <TopButtons sel={sel} opts={opts} change={change} />
           <ul className={styles.list}>
             {rows.map((r) => (
-              <LibraryRow key={r.id} row={r} due={dueLabel(dueAt.get(r.id), now)} onRemove={removeRow}
+              <LibraryRow key={r.id} row={r} saved={savedLabel(r.savedAt, now)} onRemove={removeRow}
                 open={openId === r.id} onOpenChange={(o) => setOpenId(o ? r.id : null)}
                 selecting={sel.selecting} selected={sel.has(r.id)} onSelect={(id) => { setOpenId(null); sel.toggle(id); }} />
             ))}
