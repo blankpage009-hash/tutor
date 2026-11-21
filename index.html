@@ -38,8 +38,9 @@
         position: fixed; inset: 0; z-index: 9999;
         display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;
         background: #1a3fbf; color: #fff;
-        /* 아이폰에서 정중앙에 놓으면 로고가 아래로 처져 보여서, 아래쪽 여백을 늘려 전체를 위로 올린다(12vh의 절반인 약 6vh만큼) */
-        padding-bottom: 12vh;
+        /* 아이폰에서 정중앙에 놓으면 로고가 아래로 처져 보여서, 아래쪽 여백을 늘려 전체를 위로 올린다.
+           너무 위로 보여 8vh로 줄임 → 이전(12vh)보다 약 2vh 내려옴 */
+        padding-bottom: 8vh;
         transition: opacity .4s ease;
       }
       #splash.hide { opacity: 0; pointer-events: none; }
