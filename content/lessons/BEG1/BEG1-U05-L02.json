@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U05-L02",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 5,
+  "unitTitle": "친구와 약속 잡기",
+  "lessonNo": 2,
+  "lessonTitle": "허락 구하기 또는 요청하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Can I bring my sister along?",
+    "ko": "내 여동생 데려가도 돼?",
+    "stress": "Can I BRING my SISter aLONG?",
+    "audio": { "normal": "audio/lessons/BEG1-U05-L02/key-799d8ead.m4a", "slow": "audio/lessons/BEG1-U05-L02/key-799d8ead.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "Can I bring ~ along?은 '~ 데려가도 돼?'라는 뜻으로, 약속에 다른 사람을 데려가도 되는지 물을 때 씁니다.",
+      "친구 사이에는 Can I ~?가 가장 편합니다. 조금 더 공손하게 물을 때는 Could I ~?라고 합니다.",
+      "along은 '함께'라는 느낌을 더해 줍니다. 빼도 뜻은 통하지만 넣으면 더 자연스럽습니다.",
+      "사람뿐 아니라 강아지나 물건에도 씁니다. Can I bring my dog along?처럼 말합니다."
+    ],
+    "en": "Ask \"Can I bring ... along?\" when you want to take someone with you. It is a friendly way to ask for permission.",
+    "enKo": "누군가를 함께 데려가고 싶을 때 \"Can I bring ... along?\"이라고 묻습니다. 허락을 구하는 친근한 말입니다."
+  },
+  "pronunciation": [
+    { "focus": "약화", "tip": "Can I는 이어서 '캐나이'처럼 말하고, can은 약하게 말합니다." },
+    { "focus": "연음", "tip": "sister along은 붙여서 '시스터럴롱'처럼 이어서 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "bring의 r은 입술을 살짝 둥글게 모으고 혀를 입천장에 닿지 않게 냅니다." },
+    { "focus": "강세", "tip": "BRING, SIS, LONG에 힘을 주고, 질문 끝을 살짝 올립니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "Can I bring my sister together?", "right": "Can I bring my sister along?", "note": "'같이'를 together로 옮기면 어색합니다. along을 씁니다." },
+    { "wrong": "Can I bring with my sister?", "right": "Can I bring my sister along?", "note": "bring 바로 뒤에 데려갈 사람을 씁니다. with는 필요 없습니다." },
+    { "wrong": "Can I bringing my sister along?", "right": "Can I bring my sister along?", "note": "Can I 뒤에는 동사원형 bring이 옵니다." }
+  ],
+  "dialogue": {
+    "situation": "금요일 저녁 약속 전날, 친구 샘에게 전화합니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "So we're still on for Friday, right?", "ko": "그럼 금요일 약속 그대로지?", "audio": "audio/lessons/BEG1-U05-L02/dlg-01-33fa673b.m4a" },
+      { "no": 2, "speaker": "me", "en": "Yes! Can I bring my sister along?", "ko": "응! 내 여동생 데려가도 돼?", "audio": "audio/lessons/BEG1-U05-L02/dlg-02-3a2842f6.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Of course! The more, the merrier.", "ko": "당연하지! 많을수록 좋지.", "audio": "audio/lessons/BEG1-U05-L02/dlg-03-f61d018e.m4a" },
+      { "no": 4, "speaker": "me", "en": "Thanks. She just moved here last week.", "ko": "고마워. 걔 지난주에 막 이사 왔어.", "audio": "audio/lessons/BEG1-U05-L02/dlg-04-2cf7a460.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Oh, nice! Does she like tacos?", "ko": "오, 잘됐다! 걔 타코 좋아해?", "audio": "audio/lessons/BEG1-U05-L02/dlg-05-d6fedcd7.m4a" },
+      { "no": 6, "speaker": "me", "en": "She loves them. She'll be so happy.", "ko": "엄청 좋아해. 진짜 좋아하겠다.", "audio": "audio/lessons/BEG1-U05-L02/dlg-06-7b2702cc.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "We're still on for Friday.", "ko": "'금요일 약속 그대로야.' 약속이 바뀌지 않았는지 확인할 때 씁니다." },
+      { "en": "The more, the merrier.", "ko": "'많을수록 좋지.' 누가 더 와도 괜찮다고 반길 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Can I bring my sister along?",
+      "ko": "내 여동생 데려가도 돼?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "친구와 저녁 약속이 있어요. 여동생도 데려가도 되는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U05-L02/drill-01-799d8ead.m4a", "slow": "audio/lessons/BEG1-U05-L02/drill-01-799d8ead.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "Can I bring my dog along?",
+      "ko": "우리 강아지 데려가도 돼?",
+      "point": "단어 교체: my sister → my dog",
+      "cue": { "lang": "ko", "text": "친구와 공원에 가기로 했어요. 강아지도 데려가도 되는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U05-L02/drill-02-59f471b0.m4a", "slow": "audio/lessons/BEG1-U05-L02/drill-02-59f471b0.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "Can we bring our kids along?",
+      "ko": "우리 애들 데려가도 돼?",
+      "point": "주어 변경·복수: I → we, my sister → our kids",
+      "cue": { "lang": "ko", "text": "친구 집 파티에 초대받았어요. 아이들도 데려가도 되는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U05-L02/drill-03-1bbb4b9d.m4a", "slow": "audio/lessons/BEG1-U05-L02/drill-03-1bbb4b9d.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Could I bring my sister along?",
+      "ko": "여동생도 데려가도 될까?",
+      "point": "공손형: Can → Could",
+      "cue": { "lang": "ko", "text": "친구 어머니의 생신 저녁이에요. 여동생도 데려가도 될지 조금 더 조심스럽게 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U05-L02/drill-04-04c27ddf.m4a", "slow": "audio/lessons/BEG1-U05-L02/drill-04-04c27ddf.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I'm bringing my sister along.",
+      "ko": "나 여동생 데려갈 거야.",
+      "point": "평서문: 내 계획 말하기 (I'm bringing)",
+      "cue": { "lang": "en", "text": "Your sister is free on Friday, right?", "audio": "audio/lessons/BEG1-U05-L02/cue-05-839e23d7.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U05-L02/drill-05-97848a02.m4a", "slow": "audio/lessons/BEG1-U05-L02/drill-05-97848a02.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I can't bring my sister along.",
+      "ko": "여동생은 못 데려가겠어.",
+      "point": "부정형: I can't",
+      "cue": { "lang": "en", "text": "Your sister is coming too, right?", "audio": "audio/lessons/BEG1-U05-L02/cue-06-0c992145.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U05-L02/drill-06-c37792fd.m4a", "slow": "audio/lessons/BEG1-U05-L02/drill-06-c37792fd.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Party at my house Friday! Who's coming with you?", "ko": "금요일에 우리 집에서 파티해! 누구랑 올 거야?", "audio": "audio/lessons/BEG1-U05-L02/rp-01-48e7999c.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Can I bring my sister along?",
+        "exampleKo": "내 여동생 데려가도 돼?",
+        "requiredKeywords": ["bring my sister", "along"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Let's go to the park on Sunday.", "ko": "일요일에 공원 가자.", "audio": "audio/lessons/BEG1-U05-L02/rp-03-8c9bc472.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Can I bring my dog along?",
+        "exampleKo": "우리 강아지 데려가도 돼?",
+        "requiredKeywords": ["bring my dog", "along"]
+      },
+      { "no": 5, "speaker": "partner", "en": "We're having a barbecue in the backyard Saturday.", "ko": "토요일에 우리 뒷마당에서 바비큐 해.", "audio": "audio/lessons/BEG1-U05-L02/rp-05-328c6f86.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Can we bring our kids along?",
+        "exampleKo": "우리 애들 데려가도 돼?",
+        "requiredKeywords": ["can we bring", "our kids"]
+      },
+      { "no": 7, "speaker": "partner", "en": "It's my mom's birthday dinner. It's a small one.", "ko": "우리 엄마 생신 저녁이야. 조촐하게 해.", "audio": "audio/lessons/BEG1-U05-L02/rp-07-0a3292a5.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Could I bring my sister along?",
+        "exampleKo": "여동생도 데려가도 될까?",
+        "requiredKeywords": ["could i bring", "along"]
+      },
+      { "no": 9, "speaker": "partner", "en": "Who's coming to the beach with you?", "ko": "바닷가에 누구랑 같이 와?", "audio": "audio/lessons/BEG1-U05-L02/rp-09-084af286.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm bringing my sister along.",
+        "exampleKo": "나 여동생 데려갈 거야.",
+        "requiredKeywords": ["i'm bringing", "my sister"]
+      },
+      { "no": 11, "speaker": "partner", "en": "I got three movie tickets. One is for your sister!", "ko": "영화표 세 장 샀어. 한 장은 네 여동생 거야!", "audio": "audio/lessons/BEG1-U05-L02/rp-11-cba3acdd.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I can't bring my sister along.",
+        "exampleKo": "여동생은 못 데려가겠어.",
+        "requiredKeywords": ["can't bring", "my sister"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

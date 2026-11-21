@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U05-L03",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 5,
+  "unitTitle": "친구와 약속 잡기",
+  "lessonNo": 3,
+  "lessonTitle": "하고 싶은 일 묻기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "What do you feel like doing?",
+    "ko": "뭐 하고 싶으세요?",
+    "stress": "What do you FEEL like DOing?",
+    "audio": {
+      "normal": "beg1-u05-l03_key.mp3",
+      "slow": "beg1-u05-l03_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "What do you feel like doing?은 '뭐 하고 싶어요?'라는 뜻으로, 상대가 지금 끌리는 것을 부드럽게 물을 때 씁니다.",
+      "약속에서 할 일을 정할 때, 상대에게 먼저 고르게 해 주는 표현입니다.",
+      "What do you want to do?와 뜻은 비슷하지만, 더 편하고 부드럽게 들립니다.",
+      "feel like 뒤에는 -ing가 옵니다. feel like doing, feel like eating처럼 말합니다."
+    ],
+    "en": "Ask \"What do you feel like doing?\" to find out what someone wants to do. It sounds soft and friendly.",
+    "enKo": "상대가 무엇을 하고 싶은지 알고 싶을 때 \"What do you feel like doing?\"이라고 묻습니다. 부드럽고 친근하게 들립니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "연음",
+      "tip": "What do you는 빠르게 이어서 '와더유'처럼 말합니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "feel like는 l 소리를 이어서 '필라익'처럼 말합니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "feel의 f는 윗니를 아랫입술에 살짝 대고 바람을 내보냅니다. 'ㅍ'과 다릅니다."
+    },
+    {
+      "focus": "강세",
+      "tip": "FEEL과 DO에 힘을 주고, 질문 끝은 내립니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "What do you feel like to do?",
+      "right": "What do you feel like doing?",
+      "note": "feel like 뒤에는 to가 아니라 -ing를 씁니다."
+    },
+    {
+      "wrong": "What do you feel like do?",
+      "right": "What do you feel like doing?",
+      "note": "feel like 뒤에는 동사원형이 아니라 doing이 옵니다."
+    },
+    {
+      "wrong": "What are you feel like doing?",
+      "right": "What do you feel like doing?",
+      "note": "feel은 일반동사라서 are가 아니라 do를 씁니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "점심시간, 친한 동료와 토요일 약속을 잡습니다.",
+    "partnerRole": "동료",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Are you free this Saturday?",
+        "ko": "이번 토요일에 시간 되세요?",
+        "audio": "beg1-u05-l03_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "I am! What do you feel like doing?",
+        "ko": "네! 뭐 하고 싶으세요?",
+        "audio": "beg1-u05-l03_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Maybe a hike? It's supposed to be sunny.",
+        "ko": "등산 어때요? 맑을 거래요.",
+        "audio": "beg1-u05-l03_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Good idea. What time do you want to meet?",
+        "ko": "좋아요. 몇 시에 만날까요?",
+        "audio": "beg1-u05-l03_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "How about nine at the park?",
+        "ko": "아홉 시에 공원에서 어때요?",
+        "audio": "beg1-u05-l03_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Perfect. I'll bring some snacks.",
+        "ko": "좋아요. 제가 간식 챙겨 갈게요.",
+        "audio": "beg1-u05-l03_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "Are you free this Saturday?",
+        "ko": "'이번 토요일에 시간 되세요?' 약속을 잡기 전에 먼저 묻는 말입니다."
+      },
+      {
+        "en": "It's supposed to be sunny.",
+        "ko": "'맑을 거래요.' 일기예보처럼 들은 이야기를 전할 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "What do you feel like doing?",
+      "ko": "뭐 하고 싶으세요?",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "ko",
+        "text": "동료와 주말에 만나기로 했어요. 뭐 하고 싶은지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u05-l03_drill_01.mp3",
+        "slow": "beg1-u05-l03_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "What do you feel like eating?",
+      "ko": "뭐 드시고 싶으세요?",
+      "point": "단어 교체: doing → eating",
+      "cue": {
+        "lang": "ko",
+        "text": "동료와 점심 먹으러 나왔어요. 뭐 먹고 싶은지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u05-l03_drill_02.mp3",
+        "slow": "beg1-u05-l03_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "What does your son feel like doing?",
+      "ko": "아드님은 뭐 하고 싶어 해요?",
+      "point": "주어 변경: you → your son (do → does)",
+      "cue": {
+        "lang": "ko",
+        "text": "동료가 아들과 주말을 보낸대요. 아들은 뭐 하고 싶어 하는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u05-l03_drill_03.mp3",
+        "slow": "beg1-u05-l03_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I don't feel like doing anything.",
+      "ko": "아무것도 하고 싶지 않아요.",
+      "point": "부정형: I don't feel like",
+      "cue": {
+        "lang": "en",
+        "text": "Do you want to go out this weekend?"
+      },
+      "audio": {
+        "normal": "beg1-u05-l03_drill_04.mp3",
+        "slow": "beg1-u05-l03_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "I feel like doing something fun.",
+      "ko": "뭔가 재미있는 걸 하고 싶어요.",
+      "point": "평서문: 내 마음 말하기",
+      "cue": {
+        "lang": "en",
+        "text": "What do you want to do this weekend?"
+      },
+      "audio": {
+        "normal": "beg1-u05-l03_drill_05.mp3",
+        "slow": "beg1-u05-l03_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "Do you feel like going for a walk?",
+      "ko": "산책하러 가실래요?",
+      "point": "질문형: Do you feel like ~ing?",
+      "cue": {
+        "lang": "ko",
+        "text": "점심을 먹고 나서, 동료에게 산책하러 가고 싶은지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u05-l03_drill_06.mp3",
+        "slow": "beg1-u05-l03_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Our meeting got canceled. Now we have free time.",
+        "ko": "회의가 취소됐어요. 이제 시간이 비네요."
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What do you feel like doing?",
+        "exampleKo": "뭐 하고 싶으세요?",
+        "requiredKeywords": [
+          "what do you feel like",
+          "doing"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "I'm hungry, but I don't know what to get.",
+        "ko": "배고픈데, 뭘 먹을지 모르겠어요."
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What do you feel like eating?",
+        "exampleKo": "뭐 드시고 싶으세요?",
+        "requiredKeywords": [
+          "feel like",
+          "eating"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "My son is home this weekend. I need ideas.",
+        "ko": "이번 주말에 아들이 집에 있어요. 뭘 할지 고민이에요."
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What does your son feel like doing?",
+        "exampleKo": "아드님은 뭐 하고 싶어 해요?",
+        "requiredKeywords": [
+          "does your son",
+          "doing"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "You look tired. Want to go out after work?",
+        "ko": "피곤해 보이시네요. 퇴근하고 한잔하러 갈래요?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I don't feel like doing anything.",
+        "exampleKo": "아무것도 하고 싶지 않아요.",
+        "requiredKeywords": [
+          "don't feel like",
+          "anything"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "It's Friday! Do you just want to rest tonight?",
+        "ko": "금요일이에요! 오늘 밤엔 그냥 쉬고 싶으세요?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I feel like doing something fun.",
+        "exampleKo": "뭔가 재미있는 걸 하고 싶어요.",
+        "requiredKeywords": [
+          "i feel like",
+          "something fun"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Lunch was so big. I'm too full to work.",
+        "ko": "점심을 너무 많이 먹었어요. 배불러서 일이 안 돼요."
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you feel like going for a walk?",
+        "exampleKo": "산책하러 가실래요?",
+        "requiredKeywords": [
+          "do you feel like",
+          "for a walk"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

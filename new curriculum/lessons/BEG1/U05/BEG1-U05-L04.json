@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U05-L04",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 5,
+  "unitTitle": "친구와 약속 잡기",
+  "lessonNo": 4,
+  "lessonTitle": "관찰한 내용 말하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "It looks like they're closed today.",
+    "ko": "오늘 문 닫은 것 같아.",
+    "stress": "It LOOKS like they're CLOSED toDAY.",
+    "audio": {
+      "normal": "beg1-u05-l04_key.mp3",
+      "slow": "beg1-u05-l04_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "It looks like ~는 '~인 것 같아'라는 뜻으로, 눈으로 보고 짐작한 것을 말할 때 씁니다.",
+      "불이 꺼져 있거나 문이 잠겨 있는 것처럼, 보이는 것을 근거로 말할 때 씁니다.",
+      "I think ~는 내 생각을 말하고, It looks like ~는 본 것을 바탕으로 말한다는 느낌이 있습니다.",
+      "they는 가게 사람들을 가리킵니다. 가게 이야기를 할 때 they를 자주 씁니다."
+    ],
+    "en": "Say \"It looks like ...\" when you guess something from what you see. For example, the lights are off, so the store is probably closed.",
+    "enKo": "눈에 보이는 것으로 짐작할 때 \"It looks like ...\"라고 말합니다. 예를 들어 불이 꺼져 있으니 가게가 문을 닫은 것 같다는 뜻입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "연음",
+      "tip": "looks like는 이어서 '룩스라익'처럼 말합니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "they're는 약하고 짧게 '데r'처럼 말합니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "closed 끝은 '즈드'를 짧게 붙입니다. '클로즈드으'처럼 모음을 넣지 않습니다."
+    },
+    {
+      "focus": "강세",
+      "tip": "LOOKS, CLOSED, DAY에 힘을 줍니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "It looks like they're close today.",
+      "right": "It looks like they're closed today.",
+      "note": "'닫혀 있는 상태'는 closed입니다. close는 '닫다'라는 동사입니다."
+    },
+    {
+      "wrong": "It looks they're closed today.",
+      "right": "It looks like they're closed today.",
+      "note": "looks 뒤에 문장이 올 때는 like를 넣습니다."
+    },
+    {
+      "wrong": "They look like closed today.",
+      "right": "It looks like they're closed today.",
+      "note": "'~인 것 같아'는 It looks like로 시작합니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "금요일 저녁, 친구 샘과 타코 집 앞에 도착했습니다.",
+    "partnerRole": "친구",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "We're here! Wait, why is it so dark?",
+        "ko": "다 왔다! 잠깐, 왜 이렇게 어둡지?",
+        "audio": "beg1-u05-l04_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Hmm. It looks like they're closed today.",
+        "ko": "음. 오늘 문 닫은 것 같아.",
+        "audio": "beg1-u05-l04_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Oh no. There's a sign on the door.",
+        "ko": "아 이런. 문에 뭐가 붙어 있어.",
+        "audio": "beg1-u05-l04_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "It says they open again on Monday.",
+        "ko": "월요일에 다시 연대.",
+        "audio": "beg1-u05-l04_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Ugh. Now what? I'm really hungry.",
+        "ko": "아 진짜. 이제 어쩌지? 나 엄청 배고파.",
+        "audio": "beg1-u05-l04_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "The pizza place next door looks busy. Let's try it.",
+        "ko": "옆에 피자 집 사람 많아 보여. 거기 가 보자.",
+        "audio": "beg1-u05-l04_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "Now what?",
+        "ko": "'이제 어쩌지?' 계획이 틀어졌을 때 씁니다."
+      },
+      {
+        "en": "It says ...",
+        "ko": "'~라고 써 있어.' 안내문이나 표지판 내용을 전할 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "It looks like they're closed today.",
+      "ko": "오늘 문 닫은 것 같아.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "Why are the lights off at the café?"
+      },
+      "audio": {
+        "normal": "beg1-u05-l04_drill_01.mp3",
+        "slow": "beg1-u05-l04_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "It looks like they're closed on Sundays.",
+      "ko": "일요일엔 문 닫는 것 같아.",
+      "point": "단어 교체: today → on Sundays",
+      "cue": {
+        "lang": "en",
+        "text": "The bakery is dark every Sunday. Why?"
+      },
+      "audio": {
+        "normal": "beg1-u05-l04_drill_02.mp3",
+        "slow": "beg1-u05-l04_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "It looks like the store is closed today.",
+      "ko": "그 가게 오늘 문 닫은 것 같아.",
+      "point": "주어 변경: they're → the store is",
+      "cue": {
+        "lang": "en",
+        "text": "Can we go to the store now?"
+      },
+      "audio": {
+        "normal": "beg1-u05-l04_drill_03.mp3",
+        "slow": "beg1-u05-l04_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "It doesn't look like they're open.",
+      "ko": "문 연 것 같지 않아.",
+      "point": "부정형: It doesn't look like",
+      "cue": {
+        "lang": "en",
+        "text": "Is the shoe store open yet?"
+      },
+      "audio": {
+        "normal": "beg1-u05-l04_drill_04.mp3",
+        "slow": "beg1-u05-l04_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "It looked like they were closed.",
+      "ko": "문 닫은 것 같더라.",
+      "point": "시제: 과거 looked, were",
+      "cue": {
+        "lang": "en",
+        "text": "Did you go to the bakery yesterday?"
+      },
+      "audio": {
+        "normal": "beg1-u05-l04_drill_05.mp3",
+        "slow": "beg1-u05-l04_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "Does it look like they're closed?",
+      "ko": "문 닫은 것 같아?",
+      "point": "질문형: Does it look like ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "친구가 가게 앞에 먼저 도착했어요. 문 닫은 것 같은지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u05-l04_drill_06.mp3",
+        "slow": "beg1-u05-l04_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "The café lights are off, and the door is locked.",
+        "ko": "카페 불이 꺼져 있고, 문도 잠겨 있어."
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It looks like they're closed today.",
+        "exampleKo": "오늘 문 닫은 것 같아.",
+        "requiredKeywords": [
+          "looks like",
+          "closed today"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "I tried the bakery last Sunday. Nobody was there.",
+        "ko": "지난 일요일에 그 빵집 가 봤는데, 아무도 없더라."
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It looks like they're closed on Sundays.",
+        "exampleKo": "일요일엔 문 닫는 것 같아.",
+        "requiredKeywords": [
+          "closed",
+          "on sundays"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Let's buy some milk at the corner store.",
+        "ko": "모퉁이 가게에서 우유 좀 사자."
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It looks like the store is closed today.",
+        "exampleKo": "그 가게 오늘 문 닫은 것 같아.",
+        "requiredKeywords": [
+          "the store is",
+          "closed today"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "The shoe store opens at ten. It's ten now.",
+        "ko": "신발 가게 열 시에 연대. 지금 열 시야."
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It doesn't look like they're open.",
+        "exampleKo": "문 연 것 같지 않아.",
+        "requiredKeywords": [
+          "doesn't look like",
+          "open"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "You came home with no bread yesterday. What happened?",
+        "ko": "어제 빵 안 사 왔더라. 무슨 일 있었어?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It looked like they were closed.",
+        "exampleKo": "문 닫은 것 같더라.",
+        "requiredKeywords": [
+          "looked like",
+          "were closed"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "I'm at the taco place now. I'm by the door.",
+        "ko": "나 지금 타코 집이야. 문 앞에 있어."
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Does it look like they're closed?",
+        "exampleKo": "문 닫은 것 같아?",
+        "requiredKeywords": [
+          "does it look like",
+          "closed"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
