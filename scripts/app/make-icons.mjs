@@ -1,9 +1,10 @@
-// 앱 아이콘 생성기: "Natter App Icon.html"의 3C 시안(코랄 바탕 + 흰 음성 막대 5개).
+// 앱 아이콘 생성기: 앱의 진한 파란색(--accent #1a3fbf) 바탕 + 흰 음성 막대 5개 (막대 모양은 "Natter App Icon.html" 3C 시안).
 // 외부 라이브러리 없이 PNG를 직접 만든다. 실행: node scripts/app/make-icons.mjs
 import { deflateSync } from 'node:zlib';
 import { writeFileSync, mkdirSync } from 'node:fs';
 
-const BG = [0xff, 0x5a, 0x4e];
+// 바탕을 투명하게 두면 아이폰이 그 자리를 검게 채울 수 있어서 불투명한 꽉 찬 색으로 둔다
+const BG = [0x1a, 0x3f, 0xbf];
 const FG = [0xff, 0xff, 0xff];
 
 // 시안 SVG(100x100 좌표)의 막대 값 그대로. 폭 7, 양끝은 반지름 3.5로 완전히 둥글다.
