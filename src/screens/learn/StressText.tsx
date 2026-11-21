@@ -1,6 +1,6 @@
 import { segmentWords } from '../../wordTap';
 import tapStyles from '../../components/wordPicker/TapText.module.css';
-import { usePickWord, type WordSource } from '../../components/wordPicker/WordPicker';
+import { useIsSaved, usePickWord, type WordSource } from '../../components/wordPicker/WordPicker';
 import styles from './Learn.module.css';
 
 type Props = { text: string; source: WordSource };
@@ -16,13 +16,14 @@ function Stressed({ text }: { text: string }) {
 // 저장할 때 단어는 소문자로 바뀌므로(normalizeWord) MORnings를 눌러도 mornings로 저장된다
 export function StressText({ text, source }: Props) {
   const pick = usePickWord();
+  const isSaved = useIsSaved();
   return (
     <>
       {segmentWords(text).map((s, i) => {
         if (!s.word) return <span key={i}>{s.text}</span>;
         if (!pick) return <Stressed key={i} text={s.text} />;
         return (
-          <button key={i} type="button" className={tapStyles.word} onClick={() => pick(s.text, source)}>
+          <button key={i} type="button" className={isSaved(s.text) ? `${tapStyles.word} ${tapStyles.saved}` : tapStyles.word} onClick={() => pick(s.text, source)}>
             <Stressed text={s.text} />
           </button>
         );

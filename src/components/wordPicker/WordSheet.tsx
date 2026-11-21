@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { loadGlossary, lookupWord } from '../../content/glossary';
-import { findWord, removeWord, saveWord } from '../../db/vocab';
+import { findWord, saveWord } from '../../db/vocab';
 import type { VocabWord } from '../../db/types';
 import { POS_OPTIONS, posLabel } from '../../posLabels';
 import { normalizeWord } from '../../wordTap';
@@ -12,15 +12,14 @@ type Props = { word: string; source: WordSource; onClose: () => void };
 
 type Loaded = { saved: VocabWord | null; fromGlossary: boolean };
 
-// 단어를 눌렀을 때 아래에서 올라오는 저장 창: 사전이 있으면 뜻·품사를 미리 채우고, 사용자가 고쳐서 저장한다
+// 사전에 뜻이 없는 단어(또는 바로 저장이 안 된 단어)를 눌렀을 때만 올라오는 저장 창: 뜻·품사를 직접 적어 저장한다.
+// 저장 취소는 단어장 화면에서만 한다(사용자 결정 2026-11-21)
 export function WordSheet({ word, source, onClose }: Props) {
   const key = normalizeWord(word);
   const [loaded, setLoaded] = useState<Loaded | null>(null);
   const [meaning, setMeaning] = useState('');
   const [pos, setPos] = useState('noun');
-  const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const [confirming, setConfirming] = useState(false);
 
   useEffect(() => {
     let alive = true;
@@ -45,21 +44,10 @@ export function WordSheet({ word, source, onClose }: Props) {
     try {
       const row = await saveWord({ word: key, meaning: meaning.trim(), pos, sourceSentenceId: source.id, sourceEn: source.en, sourceKo: source.ko });
       if (!row) throw new Error('저장이 확인되지 않았어요');
-      setLoaded({ saved: row, fromGlossary: false });
-      setMessage('단어장에 저장했어요. 내일부터 복습에 나와요.');
+      // 저장되면 문장 속 단어에 밑줄이 생기는 것으로 알 수 있으니 창은 바로 닫는다
+      onClose();
     } catch (e) {
       setError(`저장하지 못했어요: ${String(e)}`);
-    }
-  };
-
-  const remove = async (id: number) => {
-    try {
-      await removeWord(id);
-      setLoaded((l) => l && { ...l, saved: null });
-      setConfirming(false);
-      setMessage('단어장에서 뺐어요.');
-    } catch (e) {
-      setError(`지우지 못했어요: ${String(e)}`);
     }
   };
 
@@ -73,14 +61,12 @@ export function WordSheet({ word, source, onClose }: Props) {
           {source.ko && <p className={styles.sourceKo} lang="ko">{source.ko}</p>}
         </div>
         {!loaded && !error && <p className={styles.hint} lang="ko">불러오는 중…</p>}
-        {saved?.id !== undefined && (
-          <SavedView saved={saved} confirming={confirming} onAskRemove={() => setConfirming(true)}
-            onRemove={() => remove(saved.id!)} onCancel={() => setConfirming(false)} />
+        {saved && (
+          <p className={styles.saved} lang="ko"><b>{posLabel(saved.pos)}</b> · {saved.meaning}</p>
         )}
         {loaded && !saved && (
           <EditView meaning={meaning} pos={pos} fromGlossary={loaded.fromGlossary} onMeaning={setMeaning} onPos={setPos} onSave={save} />
         )}
-        {message && <p className={styles.saved} lang="ko" role="status">{message}</p>}
         {error && <p className={styles.error} lang="ko">{error}</p>}
         <div className={styles.actions}>
           <Button onClick={onClose}>닫기</Button>
@@ -114,25 +100,6 @@ function EditView({ meaning, pos, fromGlossary, onMeaning, onPos, onSave }: Edit
       </label>
       <div className={styles.actions}>
         <Button variant="primary" onClick={onSave} disabled={!meaning.trim()}>단어장에 저장</Button>
-      </div>
-    </>
-  );
-}
-
-type SavedProps = { saved: VocabWord; confirming: boolean; onAskRemove: () => void; onRemove: () => void; onCancel: () => void };
-
-function SavedView({ saved, confirming, onAskRemove, onRemove, onCancel }: SavedProps) {
-  return (
-    <>
-      <p className={styles.saved} lang="ko"><b>{posLabel(saved.pos)}</b> · {saved.meaning}</p>
-      <p className={styles.hint} lang="ko">이미 단어장에 있어요. 뜻은 단어장 화면에서 고칠 수 있어요.</p>
-      <div className={styles.actions}>
-        {confirming
-          ? <>
-            <Button variant="primary" onClick={onRemove}>빼기</Button>
-            <Button onClick={onCancel}>취소</Button>
-          </>
-          : <Button variant="ghost" onClick={onAskRemove}>단어장에서 빼기</Button>}
       </div>
     </>
   );

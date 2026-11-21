@@ -2,6 +2,7 @@ import { segmentWords } from '../wordTap';
 import type { WordMark } from '../scoring/types';
 import styles from './WordHighlight.module.css';
 import tapStyles from './wordPicker/TapText.module.css';
+import { useIsSaved } from './wordPicker/WordPicker';
 
 type Props = {
   words: WordMark[];
@@ -15,10 +16,11 @@ type Props = {
 
 // 눌러서 저장할 단어(문장부호를 뺀 글자)를 버튼으로, 나머지는 그대로 보여 준다
 function TapWord({ text, onTap }: { text: string; onTap: (word: string) => void }) {
+  const isSaved = useIsSaved();
   return (
     <>
       {segmentWords(text).map((s, i) => (s.word
-        ? <button key={i} type="button" className={tapStyles.word} onClick={() => onTap(s.text)}>{s.text}</button>
+        ? <button key={i} type="button" className={isSaved(s.text) ? `${tapStyles.word} ${tapStyles.saved}` : tapStyles.word} onClick={() => onTap(s.text)}>{s.text}</button>
         : <span key={i}>{s.text}</span>))}
     </>
   );
