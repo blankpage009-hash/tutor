@@ -1,0 +1,197 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG2-U01-L01",
+  "level": "초급 2",
+  "levelCode": "BEG2",
+  "unit": 1,
+  "unitTitle": "관심사 & 취미",
+  "lessonNo": 1,
+  "lessonTitle": "관심사 공유하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I'm really into hiking these days.",
+    "ko": "요즘 등산에 푹 빠졌어요.",
+    "stress": "I'm REALly INto HIKing these DAYS.",
+    "audio": { "normal": "audio/lessons/BEG2-U01-L01/key-7b6feb0d.m4a", "slow": "audio/lessons/BEG2-U01-L01/key-7b6feb0d.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "be into ~는 '~에 빠져 있다, ~를 아주 좋아한다'는 뜻입니다. 요즘 관심 있는 것을 말할 때 씁니다.",
+      "really를 넣으면 '푹 빠졌다'처럼 좋아하는 마음이 더 강하게 들립니다.",
+      "I like hiking은 그냥 좋아한다는 말이고, I'm into hiking은 요즘 자주 하거나 관심이 많다는 느낌입니다.",
+      "into 뒤에는 명사나 -ing가 옵니다. I'm into hike라고 하지 않습니다.",
+      "these days는 '요즘'이라는 뜻으로, 보통 문장 끝에 둡니다."
+    ],
+    "en": "Say \"I'm really into ...\" to share something you love right now. Your coworker asks about your weekend, and you talk about hiking.",
+    "enKo": "지금 푹 빠져 있는 것을 말할 때 \"I'm really into ...\"라고 합니다. 동료가 주말 이야기를 묻자, 등산 이야기를 하는 거예요."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "REAL, IN, HIK, DAYS에 힘을 주고, I'm은 가볍게 말합니다." },
+    { "focus": "연음", "tip": "really into는 끊지 않고 '륄리인투'처럼 한 번에 이어서 말합니다." },
+    { "focus": "약화", "tip": "I'm은 '아이 엠'으로 끊지 않고 '암'처럼 짧게 한 소리로 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "really의 r은 혀가 입천장에 닿지 않게 뒤로 말고, l은 혀끝을 윗잇몸에 댑니다. 둘 다 'ㄹ'로 하면 흐릿하게 들립니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I'm really into hike these days.", "right": "I'm really into hiking these days.", "note": "into 뒤에는 동사원형이 올 수 없습니다. -ing를 붙여 hiking으로 말합니다." },
+    { "wrong": "I'm really interesting in hiking.", "right": "I'm really into hiking these days.", "note": "interesting은 '흥미로운'이라는 뜻이라 '내가 흥미로운 사람'이 됩니다. 일상 대화에서는 I'm into가 더 자연스럽습니다." },
+    { "wrong": "My hobby is hiking these days.", "right": "I'm really into hiking these days.", "note": "틀린 말은 아니지만 자기소개서처럼 딱딱하게 들립니다. 대화에서는 I'm into ~를 훨씬 자주 씁니다." }
+  ],
+  "dialogue": {
+    "situation": "월요일 점심시간, 회사 동료가 주말을 어떻게 보냈는지 묻습니다.",
+    "partnerRole": "회사 동료",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "How was your weekend?", "ko": "주말 어떻게 보내셨어요?", "audio": "audio/lessons/BEG2-U01-L01/dlg-01-b77e8139.m4a" },
+      { "no": 2, "speaker": "me", "en": "Great! I went hiking on Saturday.", "ko": "좋았어요! 토요일에 등산 갔어요.", "audio": "audio/lessons/BEG2-U01-L01/dlg-02-7503ed63.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Hiking? I didn't know you liked that.", "ko": "등산이요? 그런 거 좋아하시는 줄 몰랐어요.", "audio": "audio/lessons/BEG2-U01-L01/dlg-03-c4c1d55f.m4a" },
+      { "no": 4, "speaker": "me", "en": "Yeah, I'm really into hiking these days.", "ko": "네, 요즘 등산에 푹 빠졌어요.", "audio": "audio/lessons/BEG2-U01-L01/dlg-04-37ebe0fe.m4a", "hasKeySentence": true},
+      { "no": 5, "speaker": "partner", "en": "Cool. Where do you usually go?", "ko": "멋지네요. 주로 어디로 가세요?", "audio": "audio/lessons/BEG2-U01-L01/dlg-05-f4e7445b.m4a" },
+      { "no": 6, "speaker": "me", "en": "Usually in Marin. The views are amazing.", "ko": "주로 마린 쪽이요. 경치가 정말 끝내줘요.", "audio": "audio/lessons/BEG2-U01-L01/dlg-06-349e242b.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "How was your weekend?", "ko": "'주말 어떻게 보냈어요?' 월요일에 동료와 가장 흔하게 나누는 인사입니다." },
+      { "en": "The views are amazing.", "ko": "'경치가 끝내줘요.' views는 산이나 높은 곳에서 보이는 풍경을 말합니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I'm really into hiking these days.",
+      "ko": "요즘 등산에 푹 빠졌어요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "What do you like doing lately?", "audio": "audio/lessons/BEG2-U01-L01/cue-01-ebce081b.m4a" },
+      "audio": { "normal": "audio/lessons/BEG2-U01-L01/drill-01-7b6feb0d.m4a", "slow": "audio/lessons/BEG2-U01-L01/drill-01-7b6feb0d.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I'm really into yoga these days.",
+      "ko": "요즘 요가에 푹 빠졌어요.",
+      "point": "단어 교체: hiking → yoga",
+      "cue": { "lang": "en", "text": "Are you doing any exercise these days?", "audio": "audio/lessons/BEG2-U01-L01/cue-02-7df54444.m4a" },
+      "audio": { "normal": "audio/lessons/BEG2-U01-L01/drill-02-c4717d4d.m4a", "slow": "audio/lessons/BEG2-U01-L01/drill-02-c4717d4d.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "My sister is really into hiking.",
+      "ko": "제 여동생은 등산을 정말 좋아해요.",
+      "point": "주어 변경: I → My sister",
+      "cue": { "lang": "en", "text": "Does anyone in your family like the outdoors?", "audio": "audio/lessons/BEG2-U01-L01/cue-03-dc3908e6.m4a" },
+      "audio": { "normal": "audio/lessons/BEG2-U01-L01/drill-03-2c23307e.m4a", "slow": "audio/lessons/BEG2-U01-L01/drill-03-2c23307e.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "I'm not really into hiking.",
+      "ko": "저는 등산은 별로예요.",
+      "point": "부정형: not really",
+      "cue": { "lang": "en", "text": "Want to come hiking with us?", "audio": "audio/lessons/BEG2-U01-L01/cue-04-e0f00e22.m4a" },
+      "audio": { "normal": "audio/lessons/BEG2-U01-L01/drill-04-011359cc.m4a", "slow": "audio/lessons/BEG2-U01-L01/drill-04-011359cc.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Are you into hiking these days?",
+      "ko": "요즘 등산에 빠지셨어요?",
+      "point": "질문형: Are you into ~?",
+      "cue": { "lang": "ko", "text": "동료가 새 등산화를 샀대요. 요즘 등산에 빠져 있는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG2-U01-L01/drill-05-5ce891af.m4a", "slow": "audio/lessons/BEG2-U01-L01/drill-05-5ce891af.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I was really into hiking in college.",
+      "ko": "대학 때는 등산에 푹 빠져 있었어요.",
+      "point": "시제: 과거 (was, these days → in college)",
+      "cue": { "lang": "en", "text": "Did you have a hobby when you were a student?", "audio": "audio/lessons/BEG2-U01-L01/cue-06-193f92b9.m4a" },
+      "audio": { "normal": "audio/lessons/BEG2-U01-L01/drill-06-38927379.m4a", "slow": "audio/lessons/BEG2-U01-L01/drill-06-38927379.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Nice hiking boots! Do you hike a lot?", "ko": "등산화 멋지네요! 등산 자주 하세요?", "audio": "audio/lessons/BEG2-U01-L01/rp-01-e98220ca.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm really into hiking these days.",
+        "exampleKo": "요즘 등산에 푹 빠졌어요.",
+        "requiredKeywords": ["really into hiking", "these days"]
+      },
+      { "no": 3, "speaker": "partner", "en": "You've been carrying a yoga mat every day lately.", "ko": "요즘 매일 요가 매트를 들고 다니시네요.", "audio": "audio/lessons/BEG2-U01-L01/rp-03-01e68cb1.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm really into yoga these days.",
+        "exampleKo": "요즘 요가에 푹 빠졌어요.",
+        "requiredKeywords": ["into yoga", "these days"]
+      },
+      { "no": 5, "speaker": "partner", "en": "I'm buying your sister a gift. What does she like?", "ko": "여동생분 선물 사려고요. 뭘 좋아하세요?", "audio": "audio/lessons/BEG2-U01-L01/rp-05-7fbe6cf3.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My sister is really into hiking.",
+        "exampleKo": "제 여동생은 등산을 정말 좋아해요.",
+        "requiredKeywords": ["my sister", "into hiking"]
+      },
+      { "no": 7, "speaker": "partner", "en": "We're hiking ten miles on Sunday. Want to join?", "ko": "일요일에 16킬로미터 등산 가요. 같이 갈래요?", "audio": "audio/lessons/BEG2-U01-L01/rp-07-d8ab5172.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm not really into hiking.",
+        "exampleKo": "저는 등산은 별로예요.",
+        "requiredKeywords": ["not really", "into hiking"]
+      },
+      { "no": 9, "speaker": "partner", "en": "I just bought new hiking boots. Don't laugh!", "ko": "저 방금 새 등산화 샀어요. 웃지 마세요!", "audio": "audio/lessons/BEG2-U01-L01/rp-09-0f180578.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are you into hiking these days?",
+        "exampleKo": "요즘 등산에 빠지셨어요?",
+        "requiredKeywords": ["are you into", "these days"]
+      },
+      { "no": 11, "speaker": "partner", "en": "I found an old photo of you on a mountain!", "ko": "산 위에 있는 네 옛날 사진을 찾았어!", "audio": "audio/lessons/BEG2-U01-L01/rp-11-d9255958.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I was really into hiking in college.",
+        "exampleKo": "대학 때는 등산에 푹 빠져 있었어요.",
+        "requiredKeywords": ["was really into", "in college"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

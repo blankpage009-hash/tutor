@@ -73,44 +73,44 @@
           ]
         },
         {
-          "key": "level-02",
-          "code": null,
+          "key": "BEG2",
+          "code": "BEG2",
           "name": "초급 2",
           "units": [
             {
               "no": 1,
               "title": "관심사 & 취미",
               "lessons": [
-                { "no": 1, "title": "관심사 공유하기", "id": null, "ready": false},
-                { "no": 2, "title": "취미에 대해 이야기하기", "id": null, "ready": false},
-                { "no": 3, "title": "함께 놀 계획 세우기", "id": null, "ready": false}
+                { "no": 1, "title": "관심사 공유하기", "id": "BEG2-U01-L01", "ready": true, "file": "lessons/BEG2/BEG2-U01-L01.json" },
+                { "no": 2, "title": "취미에 대해 이야기하기", "id": "BEG2-U01-L02", "ready": true, "file": "lessons/BEG2/BEG2-U01-L02.json" },
+                { "no": 3, "title": "함께 놀 계획 세우기", "id": "BEG2-U01-L03", "ready": true, "file": "lessons/BEG2/BEG2-U01-L03.json" }
               ]
             },
             {
               "no": 2,
               "title": "일상 생활",
               "lessons": [
-                { "no": 1, "title": "하루 일과 공유하기", "id": null, "ready": false},
-                { "no": 2, "title": "주말과 평일 루틴 공유하기", "id": null, "ready": false},
-                { "no": 3, "title": "활동 빈도 이야기하기", "id": null, "ready": false}
+                { "no": 1, "title": "하루 일과 공유하기", "id": "BEG2-U02-L01", "ready": false},
+                { "no": 2, "title": "주말과 평일 루틴 공유하기", "id": "BEG2-U02-L02", "ready": false},
+                { "no": 3, "title": "활동 빈도 이야기하기", "id": "BEG2-U02-L03", "ready": false}
               ]
             },
             {
               "no": 3,
               "title": "약속 잡기",
               "lessons": [
-                { "no": 1, "title": "초대하기", "id": null, "ready": false},
-                { "no": 2, "title": "초대 거절하기", "id": null, "ready": false},
-                { "no": 3, "title": "초대 수락하기", "id": null, "ready": false}
+                { "no": 1, "title": "초대하기", "id": "BEG2-U03-L01", "ready": false},
+                { "no": 2, "title": "초대 거절하기", "id": "BEG2-U03-L02", "ready": false},
+                { "no": 3, "title": "초대 수락하기", "id": "BEG2-U03-L03", "ready": false}
               ]
             },
             {
               "no": 4,
               "title": "일 & 학교",
               "lessons": [
-                { "no": 1, "title": "일과 학업 이야기하기", "id": null, "ready": false},
-                { "no": 2, "title": "과거 경험 나누기", "id": null, "ready": false},
-                { "no": 3, "title": "미래 계획 이야기하기", "id": null, "ready": false}
+                { "no": 1, "title": "일과 학업 이야기하기", "id": "BEG2-U04-L01", "ready": false},
+                { "no": 2, "title": "과거 경험 나누기", "id": "BEG2-U04-L02", "ready": false},
+                { "no": 3, "title": "미래 계획 이야기하기", "id": "BEG2-U04-L03", "ready": false}
               ]
             }
           ]

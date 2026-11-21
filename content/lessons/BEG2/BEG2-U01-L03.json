@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG2-U01-L03",
+  "level": "초급 2",
+  "levelCode": "BEG2",
+  "unit": 1,
+  "unitTitle": "관심사 & 취미",
+  "lessonNo": 3,
+  "lessonTitle": "함께 놀 계획 세우기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "We should go hiking together sometime.",
+    "ko": "언제 같이 등산 가자.",
+    "stress": "We should GO HIKing toGETHer SOMEtime.",
+    "audio": { "normal": "audio/lessons/BEG2-U01-L03/key-8e5c5d82.m4a", "slow": "audio/lessons/BEG2-U01-L03/key-8e5c5d82.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "'언제 같이 등산 가자'라는 뜻입니다. 친구에게 같이 놀자고 가볍게 제안할 때 씁니다.",
+      "We should ~는 '우리 ~하자, ~하면 좋겠다'는 부드러운 제안입니다. Let's ~보다 덜 밀어붙이는 느낌입니다.",
+      "sometime은 '언젠가, 날 잡아서'라는 뜻입니다. sometimes(가끔)와 헷갈리지 않게 조심합니다.",
+      "go 뒤에 -ing를 붙이면 '~하러 가다'가 됩니다. go hiking, go shopping, go swimming처럼 씁니다."
+    ],
+    "en": "Say \"We should ... sometime\" to invite a friend in a casual way. You don't pick a day yet. You just share the idea.",
+    "enKo": "친구에게 가볍게 같이 하자고 할 때 \"We should ... sometime\"이라고 합니다. 아직 날짜를 정하는 게 아니라, 하고 싶다는 생각을 나누는 거예요."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "GO, HIK, GETH, SOME에 힘을 주고, We should는 가볍게 말합니다." },
+    { "focus": "약화", "tip": "should는 '슈드'가 아니라 '슏'처럼 짧고 약하게 말합니다. 끝의 d는 거의 들리지 않습니다." },
+    { "focus": "연음", "tip": "should go는 d를 터뜨리지 않고 바로 go로 넘어가 '슈고'처럼 들립니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "together의 th는 혀끝을 윗니 끝에 살짝 대고 소리 냅니다. 'ㄷ'으로만 하면 어색하게 들립니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "We should go to hiking together sometime.", "right": "We should go hiking together sometime.", "note": "go hiking처럼 '~하러 가다'에는 to를 넣지 않습니다." },
+    { "wrong": "We should go hiking together sometimes.", "right": "We should go hiking together sometime.", "note": "sometimes는 '가끔'이라는 뜻입니다. '언제 한번'은 s 없이 sometime입니다." },
+    { "wrong": "We should hiking together sometime.", "right": "We should go hiking together sometime.", "note": "should 뒤에는 동사원형이 와야 합니다. go를 빼먹지 않습니다." }
+  ],
+  "dialogue": {
+    "situation": "친구가 내 휴대폰에서 등산 사진을 보고 관심을 보입니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Wow, where did you take this photo?", "ko": "와, 이 사진 어디서 찍었어?", "audio": "audio/lessons/BEG2-U01-L03/dlg-01-bb7ca472.m4a" },
+      { "no": 2, "speaker": "me", "en": "In Marin. I went hiking last weekend.", "ko": "마린에서. 지난 주말에 등산 갔거든.", "audio": "audio/lessons/BEG2-U01-L03/dlg-02-40d3a96d.m4a" },
+      { "no": 3, "speaker": "partner", "en": "It's so pretty! I want to try hiking.", "ko": "너무 예쁘다! 나도 등산 해 보고 싶어.", "audio": "audio/lessons/BEG2-U01-L03/dlg-03-5d44b352.m4a" },
+      { "no": 4, "speaker": "me", "en": "We should go hiking together sometime.", "ko": "언제 같이 등산 가자.", "audio": "audio/lessons/BEG2-U01-L03/dlg-04-8e5c5d82.m4a", "hasKeySentence": true},
+      { "no": 5, "speaker": "partner", "en": "Sure! How about next Saturday?", "ko": "좋아! 다음 주 토요일 어때?", "audio": "audio/lessons/BEG2-U01-L03/dlg-05-cc177747.m4a" },
+      { "no": 6, "speaker": "me", "en": "Perfect. I'll pick you up at eight.", "ko": "딱 좋아. 8시에 데리러 갈게.", "audio": "audio/lessons/BEG2-U01-L03/dlg-06-2750827e.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "I want to try ~.", "ko": "'~ 해 보고 싶어.' 아직 안 해 본 일을 해 보고 싶을 때 씁니다." },
+      { "en": "How about ~?", "ko": "'~ 어때?' 날짜나 장소를 제안할 때 씁니다. How about next Saturday?처럼 말합니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "We should go hiking together sometime.",
+      "ko": "언제 같이 등산 가자.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Your hiking photos look so fun!", "audio": "audio/lessons/BEG2-U01-L03/cue-01-b4c32467.m4a" },
+      "audio": { "normal": "audio/lessons/BEG2-U01-L03/drill-01-8e5c5d82.m4a", "slow": "audio/lessons/BEG2-U01-L03/drill-01-8e5c5d82.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "We should go camping together sometime.",
+      "ko": "언제 같이 캠핑 가자.",
+      "point": "단어 교체: hiking → camping",
+      "cue": { "lang": "en", "text": "I bought a new tent last week.", "audio": "audio/lessons/BEG2-U01-L03/cue-02-c3c12b24.m4a" },
+      "audio": { "normal": "audio/lessons/BEG2-U01-L03/drill-02-6bcd84ba.m4a", "slow": "audio/lessons/BEG2-U01-L03/drill-02-6bcd84ba.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "You should go hiking with us sometime.",
+      "ko": "너도 언제 우리랑 등산 가자.",
+      "point": "주어 변경: We → You (with us)",
+      "cue": { "lang": "en", "text": "You and your sister hike a lot, right?", "audio": "audio/lessons/BEG2-U01-L03/cue-03-67e401e8.m4a" },
+      "audio": { "normal": "audio/lessons/BEG2-U01-L03/drill-03-7b9397c3.m4a", "slow": "audio/lessons/BEG2-U01-L03/drill-03-7b9397c3.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Should we go hiking together sometime?",
+      "ko": "언제 같이 등산 갈까?",
+      "point": "질문형: Should we ~?",
+      "cue": { "lang": "ko", "text": "친구가 운동을 하고 싶어 해요. 언제 같이 등산 갈지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG2-U01-L03/drill-04-4ca60a5e.m4a", "slow": "audio/lessons/BEG2-U01-L03/drill-04-4ca60a5e.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "We shouldn't go hiking in this rain.",
+      "ko": "이렇게 비 오는데 등산은 안 되겠다.",
+      "point": "부정형: shouldn't",
+      "cue": { "lang": "en", "text": "It's raining hard. Still want to hike?", "audio": "audio/lessons/BEG2-U01-L03/cue-05-e6ee485d.m4a" },
+      "audio": { "normal": "audio/lessons/BEG2-U01-L03/drill-05-f1ea517e.m4a", "slow": "audio/lessons/BEG2-U01-L03/drill-05-f1ea517e.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "We could go hiking together this weekend.",
+      "ko": "이번 주말에 같이 등산 가도 되겠다.",
+      "point": "공손형: could (sometime → this weekend)",
+      "cue": { "lang": "en", "text": "I'm free this weekend. Any ideas?", "audio": "audio/lessons/BEG2-U01-L03/cue-06-40a54c3b.m4a" },
+      "audio": { "normal": "audio/lessons/BEG2-U01-L03/drill-06-8e864d96.m4a", "slow": "audio/lessons/BEG2-U01-L03/drill-06-8e864d96.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Your mountain photos are amazing. I want to try!", "ko": "네 산 사진 진짜 멋지다. 나도 해 보고 싶어!", "audio": "audio/lessons/BEG2-U01-L03/rp-01-9306f65b.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We should go hiking together sometime.",
+        "exampleKo": "언제 같이 등산 가자.",
+        "requiredKeywords": ["go hiking together", "sometime"]
+      },
+      { "no": 3, "speaker": "partner", "en": "I love sleeping under the stars.", "ko": "나 별 보면서 자는 거 진짜 좋아해.", "audio": "audio/lessons/BEG2-U01-L03/rp-03-91a29fd7.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We should go camping together sometime.",
+        "exampleKo": "언제 같이 캠핑 가자.",
+        "requiredKeywords": ["go camping", "sometime"]
+      },
+      { "no": 5, "speaker": "partner", "en": "I want to try hiking, but I don't know where.", "ko": "등산 해 보고 싶은데 어디로 가야 할지 모르겠어.", "audio": "audio/lessons/BEG2-U01-L03/rp-05-a3b12559.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "You should go hiking with us sometime.",
+        "exampleKo": "너도 언제 우리랑 등산 가자.",
+        "requiredKeywords": ["you should", "with us sometime"]
+      },
+      { "no": 7, "speaker": "partner", "en": "I need more exercise, but I hate the gym.", "ko": "운동 좀 더 해야 하는데 헬스장은 너무 싫어.", "audio": "audio/lessons/BEG2-U01-L03/rp-07-85222d2f.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Should we go hiking together sometime?",
+        "exampleKo": "언제 같이 등산 갈까?",
+        "requiredKeywords": ["should we go hiking", "sometime"]
+      },
+      { "no": 9, "speaker": "partner", "en": "The trail is muddy, and it's pouring outside.", "ko": "산길은 진흙투성이고 밖에 비가 쏟아져.", "audio": "audio/lessons/BEG2-U01-L03/rp-09-d1e2914f.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We shouldn't go hiking in this rain.",
+        "exampleKo": "이렇게 비 오는데 등산은 안 되겠다.",
+        "requiredKeywords": ["shouldn't go hiking", "this rain"]
+      },
+      { "no": 11, "speaker": "partner", "en": "I have no plans this weekend. I'm so bored.", "ko": "이번 주말에 아무 약속이 없어. 너무 심심해.", "audio": "audio/lessons/BEG2-U01-L03/rp-11-243bda16.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We could go hiking together this weekend.",
+        "exampleKo": "이번 주말에 같이 등산 가도 되겠다.",
+        "requiredKeywords": ["could go hiking", "this weekend"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
