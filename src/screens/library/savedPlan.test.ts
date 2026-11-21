@@ -52,6 +52,11 @@ describe('보관함 연습 드릴 계획', () => {
     expect(shows(10)).toEqual(['en+ko', 'en', 'en', 'en', 'masked', 'masked', 'masked', 'none', 'none', 'none']);
   });
 
+  it('모두 가림 회차는 튜터 음성 없이 바로 말한다', () => {
+    const plan = toSavedPlan([rows[0]], 'all', 0.8, { reps: 3 }) ?? [];
+    expect(plan.map(promptAudio)).toEqual(['audio/a.m4a', 'audio/a.m4a', null]);
+  });
+
   it('연습할 문장이 없으면 null', () => {
     expect(toSavedPlan([row('a')], 'all', 0.8)).toBeNull();
   });
