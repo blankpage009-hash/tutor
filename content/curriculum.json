@@ -256,10 +256,10 @@
               "no": 2,
               "title": "컨디션이 안좋아",
               "lessons": [
-                { "no": 1, "title": "몸이 아프다고 말하기", "id": "INT1-U02-L01", "ready": false},
-                { "no": 2, "title": "안부 묻기", "id": "INT1-U02-L02", "ready": false},
-                { "no": 3, "title": "회복에 대해 이야기하기", "id": "INT1-U02-L03", "ready": false},
-                { "no": 4, "title": "다쳤다고 말하기", "id": "INT1-U02-L04", "ready": false}
+                { "no": 1, "title": "몸이 아프다고 말하기", "id": "INT1-U02-L01", "ready": true, "file": "lessons/INT1/INT1-U02-L01.json" },
+                { "no": 2, "title": "안부 묻기", "id": "INT1-U02-L02", "ready": true, "file": "lessons/INT1/INT1-U02-L02.json" },
+                { "no": 3, "title": "회복에 대해 이야기하기", "id": "INT1-U02-L03", "ready": true, "file": "lessons/INT1/INT1-U02-L03.json" },
+                { "no": 4, "title": "다쳤다고 말하기", "id": "INT1-U02-L04", "ready": true, "file": "lessons/INT1/INT1-U02-L04.json" }
               ]
             },
             {

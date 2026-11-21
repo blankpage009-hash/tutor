@@ -1,0 +1,221 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U02-L01",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 2,
+  "unitTitle": "컨디션이 안좋아",
+  "lessonNo": 1,
+  "lessonTitle": "몸이 아프다고 말하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I think I'm coming down with something.",
+    "ko": "아무래도 몸살 기운이 있는 것 같아요.",
+    "stress": "I THINK I'm COMing DOWN with SOMEthing.",
+    "audio": { "normal": "audio/lessons/INT1-U02-L01/key-99f073de.m4a", "slow": "audio/lessons/INT1-U02-L01/key-99f073de.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "come down with는 '(병에) 걸리기 시작하다'라는 뜻입니다. 아직 확실히 아픈 건 아니지만 뭔가 오는 느낌이 들 때 씁니다.",
+      "something을 쓰면 무슨 병인지 모르지만 '몸이 이상하다'는 뜻이 됩니다. 감기인 걸 알면 a cold로 바꿔 말합니다.",
+      "\"I'm sick.\"은 이미 아픈 상태지만, coming down with는 '아프려고 한다'는 시작 단계라 조퇴하거나 약속을 미룰 때 부드럽게 들립니다.",
+      "지금 진행 중인 변화라서 -ing(coming)로 씁니다. I think를 앞에 붙이면 '아무래도 ~인 것 같아요'처럼 덜 단정적으로 들립니다."
+    ],
+    "en": "When you start to feel sick but aren't sure what it is, you can say you're \"coming down with something.\" It's a soft, common way to explain why you're tired or want to go home early.",
+    "enKo": "몸이 아프기 시작하는데 무슨 병인지 확실하지 않을 때 \"coming down with something\"이라고 말할 수 있습니다. 피곤한 이유나 일찍 들어가고 싶은 이유를 부드럽게 말하는 흔한 표현입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "I THINK I'm COMing DOWN with SOMEthing — coming과 down, something의 앞부분을 또렷하게 말합니다." },
+    { "focus": "연음", "tip": "coming down은 ng와 d를 끊지 않고 '커밍다운'처럼 한 번에 이어 말합니다." },
+    { "focus": "약화", "tip": "with는 '윗'처럼 짧고 약하게 말하고 바로 something으로 넘어갑니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "think와 something의 th는 혀끝을 윗니 끝에 살짝 대고 바람을 내보냅니다. '씽크', '썸씽'의 ㅆ 소리가 되지 않게 합니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "My condition is bad today.", "right": "I'm not feeling well today.", "note": "'컨디션'을 condition으로 직역하면 지병이나 건강 상태처럼 무겁게 들립니다. 그날 몸 상태는 feeling으로 말합니다." },
+    { "wrong": "I think I have a body ache.", "right": "I think I'm coming down with something.", "note": "'몸살'을 body ache로 직역하면 근육이 쑤신다는 뜻에 가깝습니다. 아프려는 기운은 coming down with something입니다." },
+    { "wrong": "I think I'm coming down a cold.", "right": "I think I'm coming down with a cold.", "note": "come down with는 한 덩어리 표현입니다. with를 빼먹으면 뜻이 통하지 않습니다." }
+  ],
+  "dialogue": {
+    "situation": "샌프란시스코의 사무실에서 오후에 머리가 아파 힘들어하는데 옆자리 동료가 말을 겁니다.",
+    "partnerRole": "직장 동료",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hey, you don't look so good. Are you okay?", "ko": "저기, 안색이 별로 안 좋아 보여요. 괜찮아요?", "audio": "audio/lessons/INT1-U02-L01/dlg-01-53625adc.m4a" },
+      { "no": 2, "speaker": "me", "en": "Not really. I've had a headache since this morning.", "ko": "별로요. 아침부터 머리가 아파요.", "audio": "audio/lessons/INT1-U02-L01/dlg-02-6fbbff1b.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Oh no. Do you think you're getting sick?", "ko": "어떡해요. 아프려는 것 같아요?", "audio": "audio/lessons/INT1-U02-L01/dlg-03-e2fb0147.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Yeah, I think I'm coming down with something. My throat's sore too.",
+        "ko": "네, 아무래도 몸살 기운이 있는 것 같아요. 목도 아프고요.",
+        "audio": "audio/lessons/INT1-U02-L01/dlg-04-09aefd76.m4a",
+        "hasKeySentence": true
+      },
+      { "no": 5, "speaker": "partner", "en": "You should head home early and get some rest.", "ko": "일찍 들어가서 좀 쉬세요.", "audio": "audio/lessons/INT1-U02-L01/dlg-05-be7c48b9.m4a" },
+      { "no": 6, "speaker": "me", "en": "Maybe I will. I'll let my manager know.", "ko": "그래야겠어요. 팀장님께 말씀드릴게요.", "audio": "audio/lessons/INT1-U02-L01/dlg-06-ae33d058.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "You don't look so good.", "ko": "'안색이 안 좋아 보여요.' 상대가 아파 보일 때 걱정하며 하는 말입니다. 외모를 깎아내리는 뜻이 아닙니다." },
+      { "en": "head home early", "ko": "'일찍 집에 들어가다.' head는 '~쪽으로 가다'라는 뜻으로, go보다 가볍고 자연스럽게 들립니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I think I'm coming down with something.",
+      "ko": "아무래도 몸살 기운이 있는 것 같아요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "You look a little pale. What's wrong?", "audio": "audio/lessons/INT1-U02-L01/cue-01-c0b9e4a1.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U02-L01/drill-01-99f073de.m4a", "slow": "audio/lessons/INT1-U02-L01/drill-01-99f073de.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I think I'm coming down with a cold.",
+      "ko": "아무래도 감기에 걸리려나 봐요.",
+      "point": "단어 교체 (something → a cold)",
+      "cue": { "lang": "en", "text": "You keep sniffling. Are you okay?", "audio": "audio/lessons/INT1-U02-L01/cue-02-d4272135.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U02-L01/drill-02-64e1b29b.m4a", "slow": "audio/lessons/INT1-U02-L01/drill-02-64e1b29b.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "I think my son is coming down with something.",
+      "ko": "아들이 어디 아프려는 것 같아요.",
+      "point": "주어 변경 (I → my son)",
+      "cue": { "lang": "en", "text": "Why do you need to leave work early today?", "audio": "audio/lessons/INT1-U02-L01/cue-03-4e451d5a.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U02-L01/drill-03-9ad2f3eb.m4a", "slow": "audio/lessons/INT1-U02-L01/drill-03-9ad2f3eb.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "I was coming down with something last week.",
+      "ko": "지난주엔 몸이 좀 안 좋았어요.",
+      "point": "과거형 (I'm → I was)",
+      "cue": { "lang": "en", "text": "You seemed really tired at the meeting last week. What was up?", "audio": "audio/lessons/INT1-U02-L01/cue-04-19ce93e3.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U02-L01/drill-04-64f9e738.m4a", "slow": "audio/lessons/INT1-U02-L01/drill-04-64f9e738.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Are you coming down with something?",
+      "ko": "어디 아프려고 그래요?",
+      "point": "질문형",
+      "cue": { "lang": "ko", "text": "동료가 아침부터 계속 기침을 해요. 어디 아프려는 건지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U02-L01/drill-05-525b61b1.m4a", "slow": "audio/lessons/INT1-U02-L01/drill-05-525b61b1.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I don't think I'm coming down with anything.",
+      "ko": "어디 아픈 건 아닌 것 같아요.",
+      "point": "부정형 (don't think ~ anything)",
+      "cue": { "lang": "en", "text": "Your voice sounds a little different. Are you getting sick?", "audio": "audio/lessons/INT1-U02-L01/cue-06-9647dee1.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U02-L01/drill-06-2d34b82e.m4a", "slow": "audio/lessons/INT1-U02-L01/drill-06-2d34b82e.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "You've barely touched your lunch, and you look kind of tired. What's going on?",
+        "ko": "점심을 거의 안 먹었네. 좀 피곤해 보이기도 하고. 무슨 일 있어?",
+        "audio": "audio/lessons/INT1-U02-L01/rp-01-a0ccb510.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I think I'm coming down with something.",
+        "exampleKo": "아무래도 몸살 기운이 있는 것 같아요.",
+        "requiredKeywords": ["coming down", "something"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Bless you! That's like the tenth time you've sneezed this morning.", "ko": "어이구! 오늘 아침에만 재채기를 열 번은 하셨네요.", "audio": "audio/lessons/INT1-U02-L01/rp-03-4fbd0ae5.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I think I'm coming down with a cold.",
+        "exampleKo": "아무래도 감기에 걸리려나 봐요.",
+        "requiredKeywords": ["coming down", "cold"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "You're leaving already? It's only two o'clock. Is everything okay at home?",
+        "ko": "벌써 가세요? 이제 겨우 두 시인데요. 집에 무슨 일 있어요?",
+        "audio": "audio/lessons/INT1-U02-L01/rp-05-242b0fb1.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I think my son is coming down with something.",
+        "exampleKo": "아들이 어디 아프려는 것 같아요.",
+        "requiredKeywords": ["my son", "coming down", "something"]
+      },
+      { "no": 7, "speaker": "partner", "en": "I didn't see you at yoga class at all last week. Where were you?", "ko": "지난주에 요가 수업에서 한 번도 못 봤네요. 어디 갔었어요?", "audio": "audio/lessons/INT1-U02-L01/rp-07-dece7514.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I was coming down with something last week.",
+        "exampleKo": "지난주엔 몸이 좀 안 좋았어요.",
+        "requiredKeywords": ["was", "coming down", "last week"]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Sorry, I'm a little slow today. I can't stop coughing, and I feel so tired.",
+        "ko": "미안해요, 오늘 제가 좀 굼떠요. 기침이 안 멈추고 너무 피곤하네요.",
+        "audio": "audio/lessons/INT1-U02-L01/rp-09-4dfed4ea.m4a"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are you coming down with something?",
+        "exampleKo": "어디 아프려고 그래요?",
+        "requiredKeywords": ["are you", "coming down"]
+      },
+      { "no": 11, "speaker": "partner", "en": "You've been yawning all afternoon. Should I be worried about you?", "ko": "오후 내내 하품만 하네. 걱정해야 하는 거야?", "audio": "audio/lessons/INT1-U02-L01/rp-11-54645207.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I don't think I'm coming down with anything.",
+        "exampleKo": "어디 아픈 건 아닌 것 같아요.",
+        "requiredKeywords": ["don't think", "anything"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

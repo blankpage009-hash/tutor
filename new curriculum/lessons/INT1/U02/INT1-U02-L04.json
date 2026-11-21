@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U02-L04",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 2,
+  "unitTitle": "컨디션이 안좋아",
+  "lessonNo": 4,
+  "lessonTitle": "다쳤다고 말하기",
+  "estimatedMinutes": 10,
+
+  "keySentence": {
+    "en": "I hurt my back at the gym.",
+    "ko": "헬스장에서 허리를 다쳤어요.",
+    "stress": "I HURT my BACK at the GYM.",
+    "audio": {
+      "normal": "int1-u02-l04_key.mp3",
+      "slow": "int1-u02-l04_key_slow.mp3"
+    }
+  },
+
+  "explanation": {
+    "ko": [
+      "hurt + 몸 부위는 '(어디를) 다쳤다'는 뜻으로, 원어민이 가장 흔하게 쓰는 말입니다.",
+      "hurt는 과거형도 hurt입니다. 그래서 I hurt my back은 '지금 아프다'가 아니라 '다쳤다(과거)'입니다.",
+      "어디서 다쳤는지는 at the gym, 무엇을 하다 다쳤는지는 playing soccer처럼 -ing로 뒤에 붙입니다.",
+      "back은 등 전체를 말하지만, 한국어 '허리가 아프다'도 보통 back(lower back)으로 말합니다. waist는 허리 둘레(치수)입니다."
+    ],
+    "en": "To say you injured a part of your body, use \"hurt my\" plus the body part. Add where it happened, like \"at the gym,\" or what you were doing, like \"playing soccer.\"",
+    "enKo": "몸의 어딘가를 다쳤다고 말할 때는 \"hurt my\" 뒤에 몸 부위를 붙입니다. 어디서 다쳤는지(at the gym)나 무엇을 하다가 다쳤는지(playing soccer)를 덧붙입니다."
+  },
+
+  "pronunciation": [
+    { "focus": "강세", "tip": "I HURT my BACK at the GYM — hurt, back, gym 세 단어를 또렷하게 말합니다." },
+    { "focus": "연음", "tip": "back at은 k와 a를 이어서 '배캣'처럼 한 번에 말합니다." },
+    { "focus": "약화", "tip": "hurt my의 t는 거의 터뜨리지 않고 멈추듯 넘어가 '헐마이'처럼 들립니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "hurt의 ur는 혀를 뒤로 말아 '허-r'로 길게 냅니다. '허트'로 끊어 말하면 hut처럼 들립니다." }
+  ],
+
+  "commonMistakes": [
+    { "wrong": "I was hurt my back.", "right": "I hurt my back.", "note": "hurt가 이미 '다쳤다'라는 동작이라 be동사(was)를 넣지 않습니다." },
+    { "wrong": "My waist hurts.", "right": "My back hurts.", "note": "waist는 허리 둘레(치수)를 말합니다. 아픈 허리는 back이나 lower back입니다." },
+    { "wrong": "I got injured at my ankle.", "right": "I hurt my ankle.", "note": "injured at은 어색합니다. 일상 대화에서는 hurt my + 부위로 간단히 말합니다." }
+  ],
+
+  "dialogue": {
+    "situation": "샌프란시스코의 사무실에서 허리를 붙잡고 천천히 걷고 있는데 동료가 말을 겁니다.",
+    "partnerRole": "직장 동료",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Are you okay? You're walking kind of funny.", "ko": "괜찮아요? 걸음걸이가 좀 이상하네요.", "audio": "int1-u02-l04_dlg_01.mp3" },
+      { "no": 2, "speaker": "me", "en": "Not really. I hurt my back at the gym yesterday.", "ko": "별로요. 어제 헬스장에서 허리를 다쳤어요.", "audio": "int1-u02-l04_dlg_02.mp3", "hasKeySentence": true },
+      { "no": 3, "speaker": "partner", "en": "Ouch. How did that happen?", "ko": "아이고. 어쩌다가요?", "audio": "int1-u02-l04_dlg_03.mp3" },
+      { "no": 4, "speaker": "me", "en": "I tried to lift something way too heavy.", "ko": "너무 무거운 걸 들려다가요.", "audio": "int1-u02-l04_dlg_04.mp3" },
+      { "no": 5, "speaker": "partner", "en": "You should take it easy for a few days.", "ko": "며칠은 무리하지 마세요.", "audio": "int1-u02-l04_dlg_05.mp3" },
+      { "no": 6, "speaker": "me", "en": "Yeah, no more gym for me this week.", "ko": "네, 이번 주는 헬스장 안 가려고요.", "audio": "int1-u02-l04_dlg_06.mp3" }
+    ],
+    "expressionNotes": [
+      { "en": "You're walking kind of funny.", "ko": "'걸음걸이가 좀 이상하네요.' funny는 '웃기다'가 아니라 '이상하다, 평소와 다르다'라는 뜻입니다." },
+      { "en": "take it easy", "ko": "'무리하지 마세요, 살살 하세요.' 다치거나 아픈 사람에게 쉬라고 할 때 자주 씁니다." }
+    ]
+  },
+
+  "drills": [
+    {
+      "id": 1,
+      "en": "I hurt my back at the gym.",
+      "ko": "헬스장에서 허리를 다쳤어요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Why are you sitting so stiffly?" },
+      "audio": { "normal": "int1-u02-l04_drill_01.mp3", "slow": "int1-u02-l04_drill_01_slow.mp3" }
+    },
+    {
+      "id": 2,
+      "en": "I hurt my ankle playing soccer.",
+      "ko": "축구하다가 발목을 다쳤어요.",
+      "point": "단어 교체 (부위 + ~하다가)",
+      "cue": { "lang": "en", "text": "Why are you limping?" },
+      "audio": { "normal": "int1-u02-l04_drill_02.mp3", "slow": "int1-u02-l04_drill_02_slow.mp3" }
+    },
+    {
+      "id": 3,
+      "en": "My brother hurt his knee skiing.",
+      "ko": "남동생이 스키 타다가 무릎을 다쳤어요.",
+      "point": "주어 변경 (I → My brother, my → his)",
+      "cue": { "lang": "en", "text": "Why couldn't your brother come to the wedding?" },
+      "audio": { "normal": "int1-u02-l04_drill_03.mp3", "slow": "int1-u02-l04_drill_03_slow.mp3" }
+    },
+    {
+      "id": 4,
+      "en": "Did you hurt your wrist?",
+      "ko": "손목 다쳤어요?",
+      "point": "질문형",
+      "cue": { "lang": "ko", "text": "친구가 손목을 계속 주무르고 있어요. 손목을 다친 건지 물어보세요." },
+      "audio": { "normal": "int1-u02-l04_drill_04.mp3", "slow": "int1-u02-l04_drill_04_slow.mp3" }
+    },
+    {
+      "id": 5,
+      "en": "I didn't hurt myself too badly.",
+      "ko": "그렇게 심하게 다치진 않았어요.",
+      "point": "부정형 (didn't ~ myself)",
+      "cue": { "lang": "en", "text": "I saw you fall off your bike! Are you okay?" },
+      "audio": { "normal": "int1-u02-l04_drill_05.mp3", "slow": "int1-u02-l04_drill_05_slow.mp3" }
+    },
+    {
+      "id": 6,
+      "en": "Be careful, or you'll hurt your back.",
+      "ko": "조심해요, 그러다 허리 다쳐요.",
+      "point": "미래형 (or you'll ~)",
+      "cue": { "lang": "en", "text": "I'm going to carry all these boxes at once." },
+      "audio": { "normal": "int1-u02-l04_drill_06.mp3", "slow": "int1-u02-l04_drill_06_slow.mp3" }
+    }
+  ],
+
+  "drillStages": [
+    { "reps": [1, 2, 3], "mode": "repeat",  "show": "en+ko", "playAudio": true,  "passScore": 80 },
+    { "reps": [4, 5, 6], "mode": "read",    "show": "en",    "playAudio": false, "passScore": 80 },
+    { "reps": [7, 8],    "mode": "recall",  "show": "ko",    "playAudio": false, "passScore": 80 },
+    { "reps": [9, 10],   "mode": "respond", "show": "cue",   "playAudio": false, "passScore": 80 }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Why are you holding your lower back like that? Did something happen?", "ko": "왜 허리를 그렇게 붙잡고 있어? 무슨 일 있었어?" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I hurt my back at the gym.",
+        "exampleKo": "헬스장에서 허리를 다쳤어요.",
+        "requiredKeywords": ["hurt my back", "gym"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Whoa, why the crutches? Were you in an accident or something?", "ko": "어, 웬 목발이에요? 사고라도 났어요?" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I hurt my ankle playing soccer.",
+        "exampleKo": "축구하다가 발목을 다쳤어요.",
+        "requiredKeywords": ["ankle", "soccer"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Is your brother still coming on the hiking trip next month?", "ko": "다음 달 등산 여행에 남동생분도 아직 오시는 거죠?" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My brother hurt his knee skiing.",
+        "exampleKo": "남동생이 스키 타다가 무릎을 다쳤어요.",
+        "requiredKeywords": ["his knee", "skiing"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Ouch! I just slipped on the wet floor and landed on my hand.", "ko": "아야! 방금 젖은 바닥에서 미끄러져서 손으로 짚었어." },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you hurt your wrist?",
+        "exampleKo": "손목 다쳤어요?",
+        "requiredKeywords": ["did you", "wrist"]
+      },
+      { "no": 9, "speaker": "partner", "en": "I saw you trip on the stairs this morning! That looked really bad.", "ko": "아까 아침에 계단에서 넘어지시는 거 봤어요! 엄청 아파 보이던데요." },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't hurt myself too badly.",
+        "exampleKo": "그렇게 심하게 다치진 않았어요.",
+        "requiredKeywords": ["didn't", "badly"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Watch this. I'm going to pick up this whole couch by myself.", "ko": "잘 봐. 이 소파 나 혼자 통째로 들어 볼게." },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Be careful, or you'll hurt your back.",
+        "exampleKo": "조심해요, 그러다 허리 다쳐요.",
+        "requiredKeywords": ["or you'll", "back"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

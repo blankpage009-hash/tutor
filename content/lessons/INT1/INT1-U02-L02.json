@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U02-L02",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 2,
+  "unitTitle": "컨디션이 안좋아",
+  "lessonNo": 2,
+  "lessonTitle": "안부 묻기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Are you feeling any better today?",
+    "ko": "오늘은 좀 괜찮아요?",
+    "stress": "Are you FEELing any BETter toDAY?",
+    "audio": { "normal": "audio/lessons/INT1-U02-L02/key-f337cf6b.m4a", "slow": "audio/lessons/INT1-U02-L02/key-f337cf6b.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "아팠던 사람에게 '좀 나아졌어요?'라고 물을 때 가장 자주 쓰는 말입니다.",
+      "any better는 '조금이라도 나아졌는지'를 묻는 느낌이라, 다 나았냐고 다그치지 않고 부드럽게 들립니다.",
+      "\"How are you?\"는 그냥 인사지만, 이 문장은 상대가 아팠던 걸 기억하고 있다는 마음이 전해집니다.",
+      "any better는 질문과 부정문에서 씁니다. 긍정문에서는 a little better, much better처럼 말합니다."
+    ],
+    "en": "When someone has been sick, you can ask, \"Are you feeling any better?\" Adding \"any\" makes it a gentle question, asking if things have improved even a little.",
+    "enKo": "누군가 아팠을 때 \"Are you feeling any better?\"라고 물을 수 있습니다. any를 붙이면 조금이라도 나아졌는지 묻는 부드러운 질문이 됩니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "Are you FEELing any BETter toDAY — feeling과 better를 힘주어 말하고 끝을 살짝 올립니다." },
+    { "focus": "연음", "tip": "feeling any는 ng와 a를 이어서 '필링애니'처럼 한 번에 말합니다." },
+    { "focus": "약화", "tip": "better의 tt는 미국식으로 부드럽게 굴려 '베러'에 가깝게 말합니다. '베터'로 또박또박 말하지 않습니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "feeling의 f는 윗니를 아랫입술에 살짝 대고 바람을 내보냅니다. '필링'의 ㅍ처럼 터뜨리지 않습니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "How is your condition?", "right": "How are you feeling?", "note": "'컨디션 어때요?'를 condition으로 직역하면 병원에서 병세를 묻는 말처럼 들립니다." },
+    { "wrong": "Are you fine now?", "right": "Are you feeling any better?", "note": "Are you fine?은 다 괜찮은지 딱 잘라 묻는 느낌입니다. 회복 중인 사람에게는 any better가 더 따뜻하게 들립니다." },
+    { "wrong": "Are your mom feeling any better?", "right": "Is your mom feeling any better?", "note": "your mom은 한 사람이라 is를 씁니다. you일 때만 are입니다." }
+  ],
+  "dialogue": {
+    "situation": "감기로 점심 약속을 취소했던 친구를 며칠 만에 동네 카페에서 만났습니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hey! Sorry I missed our lunch on Tuesday.", "ko": "안녕! 화요일 점심 약속 못 가서 미안해.", "audio": "audio/lessons/INT1-U02-L02/dlg-01-bf8126b6.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "No worries. I heard you were sick. Are you feeling any better today?",
+        "ko": "괜찮아. 아팠다며. 오늘은 좀 괜찮아?",
+        "audio": "audio/lessons/INT1-U02-L02/dlg-02-0d2fdf3a.m4a",
+        "hasKeySentence": true
+      },
+      { "no": 3, "speaker": "partner", "en": "A little. I still have a cough, but I'm not as tired.", "ko": "조금. 아직 기침은 나는데 그렇게 피곤하진 않아.", "audio": "audio/lessons/INT1-U02-L02/dlg-03-1f7bc92f.m4a" },
+      { "no": 4, "speaker": "me", "en": "That's good to hear. Did you get some rest?", "ko": "다행이다. 좀 쉬었어?", "audio": "audio/lessons/INT1-U02-L02/dlg-04-76d7fe46.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Yeah, I slept most of the weekend.", "ko": "응, 주말 내내 거의 잤어.", "audio": "audio/lessons/INT1-U02-L02/dlg-05-0ee321e7.m4a" },
+      { "no": 6, "speaker": "me", "en": "Good. Let me know if you need anything.", "ko": "잘했어. 필요한 거 있으면 말해.", "audio": "audio/lessons/INT1-U02-L02/dlg-06-48ab72fb.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "That's good to hear.", "ko": "'다행이다.' 좋은 소식을 들었을 때 반갑게 맞장구치는 말입니다." },
+      { "en": "Let me know if you need anything.", "ko": "'필요한 거 있으면 말해.' 아프거나 힘든 사람에게 도움을 건넬 때 자주 하는 말입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Are you feeling any better today?",
+      "ko": "오늘은 좀 괜찮아요?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "어제 아파서 결근한 동료가 오늘 출근했어요. 오늘은 좀 괜찮은지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U02-L02/drill-01-f337cf6b.m4a", "slow": "audio/lessons/INT1-U02-L02/drill-01-f337cf6b.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "Is your mom feeling any better?",
+      "ko": "어머님은 좀 괜찮아지셨어요?",
+      "point": "주어 변경 (you → your mom)",
+      "cue": { "lang": "ko", "text": "친구 어머니가 지난주에 편찮으셨대요. 좀 나아지셨는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U02-L02/drill-02-b93b9f65.m4a", "slow": "audio/lessons/INT1-U02-L02/drill-02-b93b9f65.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "Are you feeling any better than yesterday?",
+      "ko": "어제보다는 좀 나아요?",
+      "point": "비교 (better than yesterday)",
+      "cue": { "lang": "ko", "text": "어제 많이 아팠던 룸메이트가 일어났어요. 어제보다 나은지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U02-L02/drill-03-b9a0672f.m4a", "slow": "audio/lessons/INT1-U02-L02/drill-03-b9a0672f.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Have you been feeling any better?",
+      "ko": "요즘은 좀 괜찮아졌어요?",
+      "point": "시제 (현재완료 have been)",
+      "cue": { "lang": "ko", "text": "한동안 아팠던 이웃을 오랜만에 만났어요. 그동안 좀 나아졌는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U02-L02/drill-04-2c375e05.m4a", "slow": "audio/lessons/INT1-U02-L02/drill-04-2c375e05.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "You're not feeling any better?",
+      "ko": "아직도 안 나아요?",
+      "point": "부정형 (놀라서 되묻기)",
+      "cue": { "lang": "ko", "text": "친구가 푹 쉬었는데도 여전히 몸이 안 좋대요. 아직도 안 나은 거냐고 놀라서 되물어 보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U02-L02/drill-05-69cd99b3.m4a", "slow": "audio/lessons/INT1-U02-L02/drill-05-69cd99b3.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "Is your throat feeling any better?",
+      "ko": "목은 좀 괜찮아졌어요?",
+      "point": "단어 교체 (you → 아픈 곳)",
+      "cue": { "lang": "ko", "text": "어제 목이 아프다던 동료가 출근했어요. 목은 좀 나아졌는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U02-L02/drill-06-aa6fac4f.m4a", "slow": "audio/lessons/INT1-U02-L02/drill-06-aa6fac4f.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Morning. I'm back at work, but honestly, I was in bed all day yesterday.",
+        "ko": "좋은 아침이에요. 출근은 했는데, 사실 어제는 하루 종일 누워 있었어요.",
+        "audio": "audio/lessons/INT1-U02-L02/rp-01-20ef1400.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are you feeling any better today?",
+        "exampleKo": "오늘은 좀 괜찮아요?",
+        "requiredKeywords": ["feeling", "better", "today"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Sorry I'm late. I was on the phone with my mom. She's been sick all week.", "ko": "늦어서 미안. 엄마랑 통화했어. 일주일 내내 아프셨거든.", "audio": "audio/lessons/INT1-U02-L02/rp-03-b46e4373.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Is your mom feeling any better?",
+        "exampleKo": "어머님은 좀 괜찮아지셨어요?",
+        "requiredKeywords": ["your mom", "better"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Last night I could barely get out of bed. This morning's a little different, I guess.",
+        "ko": "어젯밤엔 침대에서 일어나지도 못했어. 오늘 아침은 좀 다른 것 같긴 해.",
+        "audio": "audio/lessons/INT1-U02-L02/rp-05-0f78137a.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are you feeling any better than yesterday?",
+        "exampleKo": "어제보다는 좀 나아요?",
+        "requiredKeywords": ["better than", "yesterday"]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Thanks for the soup you dropped off last week. It's been a rough couple of weeks.",
+        "ko": "지난주에 수프 갖다줘서 고마워요. 몇 주 동안 정말 힘들었어요.",
+        "audio": "audio/lessons/INT1-U02-L02/rp-07-3efcb562.m4a"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Have you been feeling any better?",
+        "exampleKo": "요즘은 좀 괜찮아졌어요?",
+        "requiredKeywords": ["have you been", "better"]
+      },
+      { "no": 9, "speaker": "partner", "en": "Ugh. I took the whole day off and slept, but I still feel awful.", "ko": "으. 하루 통째로 쉬면서 잤는데도 여전히 너무 안 좋아.", "audio": "audio/lessons/INT1-U02-L02/rp-09-631d52a0.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "You're not feeling any better?",
+        "exampleKo": "아직도 안 나아요?",
+        "requiredKeywords": ["not", "any better"]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Sorry, my voice still sounds weird. It hurt to swallow all weekend.",
+        "ko": "미안해요, 아직 목소리가 이상하죠. 주말 내내 침 삼킬 때마다 아팠어요.",
+        "audio": "audio/lessons/INT1-U02-L02/rp-11-48b67b20.m4a"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Is your throat feeling any better?",
+        "exampleKo": "목은 좀 괜찮아졌어요?",
+        "requiredKeywords": ["throat", "better"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
