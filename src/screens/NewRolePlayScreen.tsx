@@ -17,7 +17,7 @@ export function NewRolePlayScreen() {
   const { lesson, error } = useNewLesson(lessonId, 'roleplay');
   if (error) return <p className={dialogueStyles.note} lang="ko">{error}</p>;
   if (!lesson) return <p className={dialogueStyles.note} lang="ko">불러오는 중…</p>;
-  return <RolePlayBody key={lesson.lessonId} lesson={lesson} />;
+  return <RolePlayBody key={lesson.lessonId} lesson={lesson} examples={lesson.drills.map((d) => d.en)} />;
 }
 
 // 레슨 STEP 4와 Gemini가 만든 새 상황(levelCode가 null, /roleplay/custom)이 같은 화면을 쓴다
@@ -29,7 +29,8 @@ function rolePlayFill(phase: Phase, cur: number, total: number): number {
   return phase === 'practice' ? cur / total : 0;
 }
 
-export function RolePlayBody({ lesson }: { lesson: RolePlayView }) {
+// examples = 시작 화면 예문 팝업에 보일 드릴 영어 문장 (새 상황은 드릴이 없어 빈 목록)
+export function RolePlayBody({ lesson, examples = [] }: { lesson: RolePlayView; examples?: string[] }) {
   const nav = useNavigate();
   const s = useRolePlaySession(lesson);
   const rp = lesson.rolePlay;
@@ -40,7 +41,7 @@ export function RolePlayBody({ lesson }: { lesson: RolePlayView }) {
     <div className={dialogueStyles.page}>
       <RolePlayTop lessonId={code === null ? null : lesson.lessonId} fill={rolePlayFill(s.phase, s.cur, rp.lines.length)} />
       {s.phase !== 'practice' && <RolePlayHead lesson={lesson} />}
-      {s.phase === 'intro' && <RolePlayIntro situation={rp.situation} locked={s.micLocked} note={s.engineNote} onStart={() => s.start(0)} />}
+      {s.phase === 'intro' && <RolePlayIntro situation={rp.situation} examples={examples} locked={s.micLocked} note={s.engineNote} onStart={() => s.start(0)} />}
       {s.phase === 'practice' && <RolePlayPractice rp={rp} s={s} />}
       {s.notice && <p className={`${dialogueStyles.result} ${dialogueStyles.fail}`} lang="ko">{s.notice}</p>}
       {s.phase === 'done' && <RolePlayLines lines={rp.lines} partnerRole={rp.partnerRole} said={s.said} />}

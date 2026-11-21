@@ -19,6 +19,21 @@
   border-radius: var(--radius-sm);
 }
 
+/* 시작 화면 상황 박스: 원래 높이(약 92px)의 두 배, 실선 */
+.situationBig {
+  min-height: 184px;
+  border-style: solid;
+}
+
+/* 시작 화면 진행 안내: 상황 박스가 주인공이라 기본 글씨의 85% */
+.introNote {
+  margin: 0;
+  font-size: calc(var(--type-body-kr-size) * 0.85);
+  line-height: var(--type-body-kr-line);
+  color: var(--ink-muted);
+  word-break: keep-all;
+}
+
 .situationText {
   margin: 0;
   font-size: 15px;
@@ -99,6 +114,26 @@
   margin: 0;
   padding-top: var(--space-2);
   border-top: 1px solid var(--line);
+  font-size: var(--type-body-size);
+  line-height: 1.4;
+}
+
+/* 예문 팝업: 문장이 많아도 화면 밖으로 넘치지 않게 목록만 스크롤 */
+.exampleSheet {
+  display: flex;
+  flex-direction: column;
+  max-height: 80dvh;
+}
+.exampleList {
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+  border-top: 1px solid var(--line);
+}
+.exampleRow {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--line);
   font-size: var(--type-body-size);
   line-height: 1.4;
 }
