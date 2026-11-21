@@ -185,8 +185,8 @@ function Actions({ saved, canSave, onSave, onRemove }: ActionsProps) {
   return (
     <div className={styles.actions}>
       {saved
-        ? <Button disabled>저장됨</Button>
-        : <Button variant="primary" onClick={onSave} disabled={!canSave}>단어장에 저장</Button>}
+        ? <Button size="sm" disabled>저장됨</Button>
+        : <Button size="sm" variant="primary" onClick={onSave} disabled={!canSave}>단어장에 저장</Button>}
       <button type="button" className={styles.delete} disabled={!saved}
         onClick={() => (confirming ? onRemove() : setConfirming(true))}>
         {confirming ? '한 번 더 눌러 삭제' : '삭제'}

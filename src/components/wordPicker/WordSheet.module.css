@@ -124,8 +124,10 @@
 
 /* 빨간 삭제 버튼. 글자색을 흰색 대신 surface로 둔 이유: 다크 모드의 danger가 밝은 주황이라 흰 글자가 잘 안 보인다 */
 .delete {
-  min-height: var(--tap-min);
-  padding: 0 var(--space-4);
+  /* 왼쪽 저장 버튼(sm, 44px)과 높이를 똑같이 맞춘다 (사용자 요청 2026-11-21: 버튼 높이 줄이기) */
+  height: var(--tap-min);
+  padding: 0 var(--space-3);
+  line-height: 1;
   border: 1px solid var(--danger);
   border-radius: var(--radius-md);
   background: var(--danger);
