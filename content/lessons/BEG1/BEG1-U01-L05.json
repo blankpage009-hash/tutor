@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U01-L05",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 1,
+  "unitTitle": "과거",
+  "lessonNo": 5,
+  "lessonTitle": "무엇을, 어디서, 왜 했는지 묻기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Where did you go last weekend?",
+    "ko": "지난 주말에 어디 갔었어?",
+    "stress": "WHERE did you GO last WEEKend?",
+    "audio": { "normal": "audio/lessons/BEG1-U01-L05/key-e2e02ade.m4a", "slow": "audio/lessons/BEG1-U01-L05/key-e2e02ade.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "Where(어디), What(무엇), Why(왜) 같은 의문사를 맨 앞에 두고 did you + 동사원형을 붙입니다.",
+      "Where did you go? = 어디 갔었어? / What did you do? = 뭐 했어? / Why did you ~? = 왜 ~했어?",
+      "대답할 때는 과거형으로 말합니다. Where did you go? → I went to the beach.",
+      "'지난 주말'은 last weekend입니다. 앞에 in이나 on을 붙이지 않습니다."
+    ],
+    "en": "Put a question word like \"Where\" first, then \"did you\" and the base verb. \"Where did you go last weekend?\" asks about a place. Answer with the past form: \"I went to...\"",
+    "enKo": "\"Where\" 같은 의문사를 먼저 쓰고, 그 뒤에 \"did you\"와 동사원형을 붙입니다. \"Where did you go last weekend?\"는 장소를 묻는 질문입니다. 대답은 과거형으로 합니다: \"I went to...\""
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "WHERE, GO, WEEK에 힘을 줍니다. 의문사 where를 가장 또렷하게 말합니다." },
+    { "focus": "약화", "tip": "did you는 빠르게 말하면 '디쥬'를 넘어 'Where'd you(웨어쥬)'처럼 짧아집니다." },
+    { "focus": "약화", "tip": "last weekend의 t는 빠지고 '래스위켄'처럼 들립니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "where의 wh는 '웨'처럼 입술을 동그랗게 모았다가 펴면서 시작합니다. '훼어'가 아닙니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "Where did you went last weekend?", "right": "Where did you go last weekend?", "note": "did가 과거를 나타내니 동사는 원래 모양(go)을 씁니다." },
+    { "wrong": "Where you went last weekend?", "right": "Where did you go last weekend?", "note": "질문할 때는 did를 빠뜨리지 않습니다." },
+    { "wrong": "What did you do in last weekend?", "right": "What did you do last weekend?", "note": "last weekend 앞에는 in을 붙이지 않습니다." }
+  ],
+  "dialogue": {
+    "situation": "주말 동안 연락이 없던 친구가 돌아와서 반갑게 인사합니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "I'm back! Did you miss me?", "ko": "나 왔어! 보고 싶었어?", "audio": "audio/lessons/BEG1-U01-L05/dlg-01-766ff72d.m4a" },
+      { "no": 2, "speaker": "me", "en": "Of course! Where did you go last weekend?", "ko": "당연하지! 지난 주말에 어디 갔었어?", "audio": "audio/lessons/BEG1-U01-L05/dlg-02-93b6b9f8.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "I went to Lake Tahoe with my cousins.", "ko": "사촌들이랑 레이크 타호에 갔었어.", "audio": "audio/lessons/BEG1-U01-L05/dlg-03-c7939ce4.m4a" },
+      { "no": 4, "speaker": "me", "en": "Cool! What did you do there?", "ko": "멋지다! 거기서 뭐 했어?", "audio": "audio/lessons/BEG1-U01-L05/dlg-04-6ce23802.m4a" },
+      { "no": 5, "speaker": "partner", "en": "We went skiing and ate a lot of good food.", "ko": "스키 타고 맛있는 거 엄청 먹었어.", "audio": "audio/lessons/BEG1-U01-L05/dlg-05-64cbbc6b.m4a" },
+      { "no": 6, "speaker": "me", "en": "Sounds great! Why didn't you invite me?", "ko": "좋았겠다! 왜 나는 안 불렀어?", "audio": "audio/lessons/BEG1-U01-L05/dlg-06-ace0314d.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "What did you do there?", "ko": "'거기서 뭐 했어?' 상대가 다녀온 곳에서 한 일을 물을 때 씁니다." },
+      { "en": "Sounds great!", "ko": "'좋았겠다!' That sounds great!를 줄인 말로, 친구 사이에 자주 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Where did you go last weekend?",
+      "ko": "지난 주말에 어디 갔었어?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "친구에게 지난 주말에 어디 갔었는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L05/drill-01-e2e02ade.m4a", "slow": "audio/lessons/BEG1-U01-L05/drill-01-e2e02ade.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "What did you do last weekend?",
+      "ko": "지난 주말에 뭐 했어?",
+      "point": "단어 교체: Where / go → What / do",
+      "cue": { "lang": "ko", "text": "친구에게 지난 주말에 뭐 했는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L05/drill-02-c2a5b497.m4a", "slow": "audio/lessons/BEG1-U01-L05/drill-02-c2a5b497.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "Where did they go last weekend?",
+      "ko": "걔네 지난 주말에 어디 갔었어?",
+      "point": "주어 변경: you → they",
+      "cue": { "lang": "ko", "text": "친구가 '걔네 주말에 여행 갔대'라고 해요. 어디 갔었는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L05/drill-03-f5750041.m4a", "slow": "audio/lessons/BEG1-U01-L05/drill-03-f5750041.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Where did you have the best time?",
+      "ko": "어디가 제일 재밌었어?",
+      "point": "비교: the best",
+      "cue": { "lang": "ko", "text": "여행을 다녀온 친구에게 어디가 제일 재밌었는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L05/drill-04-86e1ea77.m4a", "slow": "audio/lessons/BEG1-U01-L05/drill-04-86e1ea77.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Where are you going this weekend?",
+      "ko": "이번 주말에 어디 가?",
+      "point": "미래: did you go → are you going",
+      "cue": { "lang": "ko", "text": "친구에게 이번 주말에 어디 가는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L05/drill-05-4416d309.m4a", "slow": "audio/lessons/BEG1-U01-L05/drill-05-4416d309.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "Why didn't you come last weekend?",
+      "ko": "지난 주말에 왜 안 왔어?",
+      "point": "부정형 + Why: Why didn't you ~?",
+      "cue": { "lang": "ko", "text": "지난 주말 모임에 안 온 친구에게 왜 안 왔는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L05/drill-06-c557eac3.m4a", "slow": "audio/lessons/BEG1-U01-L05/drill-06-c557eac3.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "I didn't stay home last weekend. I took a little trip!", "ko": "나 지난 주말에 집에 안 있었어. 짧게 여행 다녀왔어!", "audio": "audio/lessons/BEG1-U01-L05/rp-01-731a0d9b.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Where did you go last weekend?",
+        "exampleKo": "지난 주말에 어디 갔었어?",
+        "requiredKeywords": ["where did you go", "last weekend"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Last weekend was so busy. I didn't rest at all!", "ko": "지난 주말 너무 바빴어. 하나도 못 쉬었어!", "audio": "audio/lessons/BEG1-U01-L05/rp-03-1c8e8dbb.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What did you do last weekend?",
+        "exampleKo": "지난 주말에 뭐 했어?",
+        "requiredKeywords": ["what did you do", "weekend"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Tom and Amy left town last weekend. Their house was empty.", "ko": "톰이랑 에이미 지난 주말에 어디 갔었나 봐. 집이 비어 있었어.", "audio": "audio/lessons/BEG1-U01-L05/rp-05-882da6de.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Where did they go last weekend?",
+        "exampleKo": "걔네 지난 주말에 어디 갔었어?",
+        "requiredKeywords": ["did they go", "last weekend"]
+      },
+      { "no": 7, "speaker": "partner", "en": "My trip to Mexico was amazing. We visited three cities!", "ko": "멕시코 여행 진짜 최고였어. 도시 세 군데 갔었어!", "audio": "audio/lessons/BEG1-U01-L05/rp-07-de033c7d.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Where did you have the best time?",
+        "exampleKo": "어디가 제일 재밌었어?",
+        "requiredKeywords": ["where did you have", "best time"]
+      },
+      { "no": 9, "speaker": "partner", "en": "This weekend I'm finally taking a trip. I'm so excited!", "ko": "이번 주말에 드디어 여행 가. 완전 신나!", "audio": "audio/lessons/BEG1-U01-L05/rp-09-82f01ed4.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Where are you going this weekend?",
+        "exampleKo": "이번 주말에 어디 가?",
+        "requiredKeywords": ["are you going", "this weekend"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Everyone was at the party last weekend, except me. Sorry!", "ko": "지난 주말 파티에 나만 빼고 다 왔더라. 미안!", "audio": "audio/lessons/BEG1-U01-L05/rp-11-cc7d5d5d.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Why didn't you come last weekend?",
+        "exampleKo": "지난 주말에 왜 안 왔어?",
+        "requiredKeywords": ["why didn't you", "last weekend"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

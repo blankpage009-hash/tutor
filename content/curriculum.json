@@ -5,69 +5,69 @@
       "name": "초급",
       "levels": [
         {
-          "key": "level-01",
-          "code": null,
+          "key": "BEG1",
+          "code": "BEG1",
           "name": "초급 1",
           "units": [
             {
               "no": 1,
               "title": "과거",
               "lessons": [
-                { "no": 1, "title": "과거에 대해 이야기하기", "id": null, "ready": false},
-                { "no": 2, "title": "불규칙 과거 동사", "id": null, "ready": false},
-                { "no": 3, "title": "과거에 하지 않은 일 말하기", "id": null, "ready": false},
-                { "no": 4, "title": "과거에 한 일에 대해 묻기", "id": null, "ready": false},
-                { "no": 5, "title": "무엇을, 어디서, 왜 했는지 묻기", "id": null, "ready": false}
+                { "no": 1, "title": "과거에 대해 이야기하기", "id": "BEG1-U01-L01", "ready": true, "file": "lessons/BEG1/BEG1-U01-L01.json" },
+                { "no": 2, "title": "불규칙 과거 동사", "id": "BEG1-U01-L02", "ready": true, "file": "lessons/BEG1/BEG1-U01-L02.json" },
+                { "no": 3, "title": "과거에 하지 않은 일 말하기", "id": "BEG1-U01-L03", "ready": true, "file": "lessons/BEG1/BEG1-U01-L03.json" },
+                { "no": 4, "title": "과거에 한 일에 대해 묻기", "id": "BEG1-U01-L04", "ready": true, "file": "lessons/BEG1/BEG1-U01-L04.json" },
+                { "no": 5, "title": "무엇을, 어디서, 왜 했는지 묻기", "id": "BEG1-U01-L05", "ready": true, "file": "lessons/BEG1/BEG1-U01-L05.json" }
               ]
             },
             {
               "no": 2,
               "title": "현재",
               "lessons": [
-                { "no": 1, "title": "현재 활동에 대해 이야기하기", "id": null, "ready": false},
-                { "no": 2, "title": "하고 있는 일에 대해 묻기", "id": null, "ready": false},
-                { "no": 3, "title": "더 자세히 물어보기", "id": null, "ready": false},
-                { "no": 4, "title": "방금 전에 대해 말하기", "id": null, "ready": false}
+                { "no": 1, "title": "현재 활동에 대해 이야기하기", "id": "BEG1-U02-L01", "ready": false},
+                { "no": 2, "title": "하고 있는 일에 대해 묻기", "id": "BEG1-U02-L02", "ready": false},
+                { "no": 3, "title": "더 자세히 물어보기", "id": "BEG1-U02-L03", "ready": false},
+                { "no": 4, "title": "방금 전에 대해 말하기", "id": "BEG1-U02-L04", "ready": false}
               ]
             },
             {
               "no": 3,
               "title": "티켓 구매하기",
               "lessons": [
-                { "no": 1, "title": "티켓 구매하기", "id": null, "ready": false},
-                { "no": 2, "title": "가격과 세부 사항 묻기", "id": null, "ready": false},
-                { "no": 3, "title": "주변 환경에 대해 이야기하기", "id": null, "ready": false},
-                { "no": 4, "title": "수량 확인하기", "id": null, "ready": false}
+                { "no": 1, "title": "티켓 구매하기", "id": "BEG1-U03-L01", "ready": false},
+                { "no": 2, "title": "가격과 세부 사항 묻기", "id": "BEG1-U03-L02", "ready": false},
+                { "no": 3, "title": "주변 환경에 대해 이야기하기", "id": "BEG1-U03-L03", "ready": false},
+                { "no": 4, "title": "수량 확인하기", "id": "BEG1-U03-L04", "ready": false}
               ]
             },
             {
               "no": 4,
               "title": "미래 계획",
               "lessons": [
-                { "no": 1, "title": "미래 계획 이야기하기", "id": null, "ready": false},
-                { "no": 2, "title": "여행 세부 사항 이야기하기", "id": null, "ready": false},
-                { "no": 3, "title": "계획하고 있는 일에 대해 묻기", "id": null, "ready": false},
-                { "no": 4, "title": "예측하기", "id": null, "ready": false}
+                { "no": 1, "title": "미래 계획 이야기하기", "id": "BEG1-U04-L01", "ready": false},
+                { "no": 2, "title": "여행 세부 사항 이야기하기", "id": "BEG1-U04-L02", "ready": false},
+                { "no": 3, "title": "계획하고 있는 일에 대해 묻기", "id": "BEG1-U04-L03", "ready": false},
+                { "no": 4, "title": "예측하기", "id": "BEG1-U04-L04", "ready": false}
               ]
             },
             {
               "no": 5,
               "title": "친구와 약속 잡기",
               "lessons": [
-                { "no": 1, "title": "자신의 능력 이야기하기", "id": null, "ready": false},
-                { "no": 2, "title": "허락 구하기 또는 요청하기", "id": null, "ready": false},
-                { "no": 3, "title": "하고 싶은 일 묻기", "id": null, "ready": false},
-                { "no": 4, "title": "관찰한 내용 말하기", "id": null, "ready": false}
+                { "no": 1, "title": "자신의 능력 이야기하기", "id": "BEG1-U05-L01", "ready": false},
+                { "no": 2, "title": "허락 구하기 또는 요청하기", "id": "BEG1-U05-L02", "ready": false},
+                { "no": 3, "title": "하고 싶은 일 묻기", "id": "BEG1-U05-L03", "ready": false},
+                { "no": 4, "title": "관찰한 내용 말하기", "id": "BEG1-U05-L04", "ready": false}
               ]
             },
             {
               "no": 6,
               "title": "약속과 다짐",
               "lessons": [
-                { "no": 1, "title": "무언가를 하겠다고 제안하기", "id": null, "ready": false},
-                { "no": 2, "title": "언제 할지 말하기", "id": null, "ready": false},
-                { "no": 3, "title": "약속하기", "id": null, "ready": false},
-                { "no": 4, "title": "예상하기", "id": null, "ready": false}
+                { "no": 1, "title": "무언가를 하겠다고 제안하기", "id": "BEG1-U06-L01", "ready": false},
+                { "no": 2, "title": "언제 할지 말하기", "id": "BEG1-U06-L02", "ready": false},
+                { "no": 3, "title": "약속하기", "id": "BEG1-U06-L03", "ready": false},
+                { "no": 4, "title": "예상하기", "id": "BEG1-U06-L04", "ready": false}
               ]
             }
           ]

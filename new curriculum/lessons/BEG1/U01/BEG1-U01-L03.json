@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U01-L03",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 1,
+  "unitTitle": "과거",
+  "lessonNo": 3,
+  "lessonTitle": "과거에 하지 않은 일 말하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I didn't go out last night.",
+    "ko": "나 어젯밤에 안 나갔어.",
+    "stress": "I DIDn't GO OUT last NIGHT.",
+    "audio": {
+      "normal": "beg1-u01-l03_key.mp3",
+      "slow": "beg1-u01-l03_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'~하지 않았다'는 didn't + 동사원형으로 말합니다. didn't는 did not을 줄인 말입니다.",
+      "didn't 뒤에는 과거형이 아니라 원래 모양을 씁니다. didn't went(X) → didn't go(O).",
+      "go out은 '놀러 나가다, 외출하다'라는 뜻입니다. 그냥 밖으로 나가는 go outside와 다릅니다.",
+      "'어젯밤'은 yesterday night이 아니라 last night이라고 합니다."
+    ],
+    "en": "To say you did not do something, use \"didn't\" and the base verb. \"Go out\" means going out to have fun. Say \"last night,\" not \"yesterday night.\"",
+    "enKo": "어떤 일을 하지 않았다고 말할 때는 \"didn't\"와 동사원형을 씁니다. \"Go out\"은 놀러 나간다는 뜻입니다. \"yesterday night\"이 아니라 \"last night\"이라고 합니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "약화",
+      "tip": "didn't의 끝 t는 거의 소리 나지 않습니다. '디든트'가 아니라 '디든'처럼 짧게 끊습니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "go out은 이어서 '고우아웃'처럼 한 덩어리로 말합니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "last night의 첫 t는 빠지고 '래스나잇'처럼 들립니다."
+    },
+    {
+      "focus": "강세",
+      "tip": "DIDn't, GO OUT, NIGHT에 힘을 줍니다. 특히 didn't를 또렷하게 해야 '안 했다'는 뜻이 전해집니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I didn't went out last night.",
+      "right": "I didn't go out last night.",
+      "note": "didn't 뒤에는 동사원형을 씁니다."
+    },
+    {
+      "wrong": "I didn't go out yesterday night.",
+      "right": "I didn't go out last night.",
+      "note": "'어젯밤'은 last night이라고 합니다."
+    },
+    {
+      "wrong": "I didn't go outside last night.",
+      "right": "I didn't go out last night.",
+      "note": "go outside는 '바깥으로 나가다'입니다. 놀러 나간 건 go out."
+    }
+  ],
+  "dialogue": {
+    "situation": "아침에 부엌에서 룸메이트가 어젯밤 이야기를 꺼냅니다.",
+    "partnerRole": "룸메이트",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Morning! Did you see the fireworks last night?",
+        "ko": "좋은 아침! 어젯밤에 불꽃놀이 봤어?",
+        "audio": "beg1-u01-l03_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "No. I didn't go out last night.",
+        "ko": "아니. 나 어젯밤에 안 나갔어.",
+        "audio": "beg1-u01-l03_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Really? What did you do?",
+        "ko": "진짜? 뭐 했는데?",
+        "audio": "beg1-u01-l03_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "I was tired, so I stayed home.",
+        "ko": "피곤해서 그냥 집에 있었어.",
+        "audio": "beg1-u01-l03_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Oh, that's too bad. They were so pretty!",
+        "ko": "아, 아쉽다. 진짜 예뻤는데!",
+        "audio": "beg1-u01-l03_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Next time, I'll go with you.",
+        "ko": "다음엔 너랑 같이 갈게.",
+        "audio": "beg1-u01-l03_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "I stayed home.",
+        "ko": "'집에 있었어.' 어디에도 안 가고 집에 있었다고 할 때 씁니다."
+      },
+      {
+        "en": "That's too bad.",
+        "ko": "'아쉽다.' 상대에게 아쉬운 일이 있을 때 맞장구치는 말입니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I didn't go out last night.",
+      "ko": "나 어젯밤에 안 나갔어.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "Where did you go last night?"
+      },
+      "audio": {
+        "normal": "beg1-u01-l03_drill_01.mp3",
+        "slow": "beg1-u01-l03_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I didn't go out last weekend.",
+      "ko": "나 지난 주말에 안 나갔어.",
+      "point": "단어 교체: last night → last weekend",
+      "cue": {
+        "lang": "en",
+        "text": "What did you do last weekend?"
+      },
+      "audio": {
+        "normal": "beg1-u01-l03_drill_02.mp3",
+        "slow": "beg1-u01-l03_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "We didn't go out last night.",
+      "ko": "우리 어젯밤에 안 나갔어.",
+      "point": "주어 변경: I → We",
+      "cue": {
+        "lang": "en",
+        "text": "Where did you two go last night?"
+      },
+      "audio": {
+        "normal": "beg1-u01-l03_drill_03.mp3",
+        "slow": "beg1-u01-l03_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I'm not going out tonight.",
+      "ko": "나 오늘 밤엔 안 나갈 거야.",
+      "point": "미래: didn't → I'm not going",
+      "cue": {
+        "lang": "en",
+        "text": "Do you want to go out tonight?"
+      },
+      "audio": {
+        "normal": "beg1-u01-l03_drill_04.mp3",
+        "slow": "beg1-u01-l03_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Did you go out last night?",
+      "ko": "너 어젯밤에 나갔었어?",
+      "point": "질문형: Did you go out ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "룸메이트가 어젯밤 늦게 들어온 것 같아요. 어젯밤에 나갔었는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u01-l03_drill_05.mp3",
+        "slow": "beg1-u01-l03_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I didn't go out as much this year.",
+      "ko": "올해는 예전만큼 많이 안 나갔어.",
+      "point": "비교: as much (예전만큼)",
+      "cue": {
+        "lang": "en",
+        "text": "Do you still go out a lot?"
+      },
+      "audio": {
+        "normal": "beg1-u01-l03_drill_06.mp3",
+        "slow": "beg1-u01-l03_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "There was a big party downtown last night. Were you there?",
+        "ko": "어젯밤에 시내에서 큰 파티 있었는데. 너도 거기 있었어?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't go out last night.",
+        "exampleKo": "나 어젯밤에 안 나갔어.",
+        "requiredKeywords": [
+          "didn't go out",
+          "last night"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "The weather was so nice on Saturday. Did you go to the beach?",
+        "ko": "토요일에 날씨 진짜 좋았잖아. 바닷가 갔었어?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't go out last weekend.",
+        "exampleKo": "나 지난 주말에 안 나갔어.",
+        "requiredKeywords": [
+          "didn't go out",
+          "weekend"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Jake's party was so fun last night! Where were you and your roommate?",
+        "ko": "어젯밤 제이크 파티 진짜 재밌었는데! 너랑 룸메이트는 어디 있었어?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We didn't go out last night.",
+        "exampleKo": "우리 어젯밤에 안 나갔어.",
+        "requiredKeywords": [
+          "we didn't",
+          "last night"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "We're having dinner downtown at eight tonight. Are you coming?",
+        "ko": "우리 오늘 밤 8시에 시내에서 저녁 먹어. 너도 올 거야?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm not going out tonight.",
+        "exampleKo": "나 오늘 밤엔 안 나갈 거야.",
+        "requiredKeywords": [
+          "not going out",
+          "tonight"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Ugh, I'm so tired. I got home at two in the morning.",
+        "ko": "으, 너무 피곤해. 새벽 두 시에 집에 왔어."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you go out last night?",
+        "exampleKo": "너 어젯밤에 나갔었어?",
+        "requiredKeywords": [
+          "did you go out",
+          "last night"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Last year, you went to a concert almost every month!",
+        "ko": "작년엔 너 거의 매달 콘서트 갔었잖아!"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't go out as much this year.",
+        "exampleKo": "올해는 예전만큼 많이 안 나갔어.",
+        "requiredKeywords": [
+          "as much",
+          "this year"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

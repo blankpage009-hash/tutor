@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U01-L02",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 1,
+  "unitTitle": "과거",
+  "lessonNo": 2,
+  "lessonTitle": "불규칙 과거 동사",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I bought a new jacket.",
+    "ko": "나 새 재킷 샀어.",
+    "stress": "I BOUGHT a NEW JACKet.",
+    "audio": { "normal": "audio/lessons/BEG1-U01-L02/key-7d631a18.m4a", "slow": "audio/lessons/BEG1-U01-L02/key-7d631a18.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "bought는 buy(사다)의 과거형입니다. buy에 -ed를 붙이지 않고 모양이 완전히 바뀌는 '불규칙 동사'입니다.",
+      "자주 쓰는 불규칙 동사: go → went, eat → ate, see → saw, get → got, buy → bought.",
+      "원어민은 '샀다'를 말할 때 got도 많이 씁니다. I got a new jacket도 같은 뜻입니다.",
+      "bought(샀다)와 brought(가져왔다)는 소리가 비슷하니 r이 있는지 잘 들어 보세요."
+    ],
+    "en": "\"Bought\" is the past form of \"buy.\" It's an irregular verb, so we don't add \"-ed.\" Use it to talk about something you got from a store.",
+    "enKo": "\"Bought\"는 \"buy\"의 과거형입니다. 불규칙 동사라서 \"-ed\"를 붙이지 않습니다. 가게에서 산 물건 이야기를 할 때 씁니다."
+  },
+  "pronunciation": [
+    { "focus": "한국인이 어려운 소리", "tip": "bought의 gh는 소리가 나지 않습니다. '보우트'가 아니라 입을 크게 벌리고 '밧'에 가깝게 말합니다." },
+    { "focus": "연음", "tip": "bought a는 이어서 '바러'처럼 들립니다. 미국 영어에서 모음 사이 t는 부드러운 ㄹ처럼 변합니다." },
+    { "focus": "강세", "tip": "jacket은 앞의 JACK에 힘을 줍니다. '재킷'이 아니라 '재낏'에 가깝게, 뒤는 짧게." },
+    { "focus": "약화", "tip": "new는 미국식으로 '뉴'보다 '누'에 가깝게 가볍게 말합니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I buyed a new jacket.", "right": "I bought a new jacket.", "note": "buy는 불규칙 동사라서 -ed를 붙이지 않습니다." },
+    { "wrong": "I goed to the mall.", "right": "I went to the mall.", "note": "go의 과거형은 went입니다." },
+    { "wrong": "Yesterday I buy a new jacket.", "right": "Yesterday I bought a new jacket.", "note": "어제 일이면 과거형 bought를 씁니다." }
+  ],
+  "dialogue": {
+    "situation": "카페에서 만난 친구가 내가 입은 옷을 보고 말을 겁니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hey! Is that a new jacket?", "ko": "야! 그거 새 재킷이야?", "audio": "audio/lessons/BEG1-U01-L02/dlg-01-a424f5a0.m4a" },
+      { "no": 2, "speaker": "me", "en": "Yeah! I bought a new jacket.", "ko": "응! 나 새 재킷 샀어.", "audio": "audio/lessons/BEG1-U01-L02/dlg-02-211e1874.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "It looks great on you. Where did you get it?", "ko": "너한테 잘 어울린다. 어디서 샀어?", "audio": "audio/lessons/BEG1-U01-L02/dlg-03-b1165d19.m4a" },
+      { "no": 4, "speaker": "me", "en": "I got it at a small shop downtown.", "ko": "시내에 있는 작은 가게에서 샀어.", "audio": "audio/lessons/BEG1-U01-L02/dlg-04-eb439c40.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Was it expensive?", "ko": "비쌌어?", "audio": "audio/lessons/BEG1-U01-L02/dlg-05-05f16f17.m4a" },
+      { "no": 6, "speaker": "me", "en": "No, it was on sale. I only paid forty dollars.", "ko": "아니, 세일 중이었어. 40달러밖에 안 줬어.", "audio": "audio/lessons/BEG1-U01-L02/dlg-06-fc9a691a.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "It looks great on you.", "ko": "'너한테 잘 어울린다.' 옷이나 머리 모양을 칭찬할 때 씁니다." },
+      { "en": "It was on sale.", "ko": "'세일 중이었어.' on sale은 '할인 중'이라는 뜻입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I bought a new jacket.",
+      "ko": "나 새 재킷 샀어.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Wow, nice jacket! Where did that come from?", "audio": "audio/lessons/BEG1-U01-L02/cue-01-d0a38530.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L02/drill-01-7d631a18.m4a", "slow": "audio/lessons/BEG1-U01-L02/drill-01-7d631a18.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I bought a new phone.",
+      "ko": "나 새 핸드폰 샀어.",
+      "point": "단어 교체: jacket → phone",
+      "cue": { "lang": "en", "text": "What did you get at the store today?", "audio": "audio/lessons/BEG1-U01-L02/cue-02-c2cf2491.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L02/drill-02-2770a90b.m4a", "slow": "audio/lessons/BEG1-U01-L02/drill-02-2770a90b.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "My dad bought a new car.",
+      "ko": "우리 아빠가 새 차 샀어.",
+      "point": "주어 변경: I → My dad",
+      "cue": { "lang": "en", "text": "Why is your dad so happy these days?", "audio": "audio/lessons/BEG1-U01-L02/cue-03-cd15ae00.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L02/drill-03-1f3da1c2.m4a", "slow": "audio/lessons/BEG1-U01-L02/drill-03-1f3da1c2.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "I'm going to buy a new jacket.",
+      "ko": "나 새 재킷 살 거야.",
+      "point": "미래: bought → going to buy",
+      "cue": { "lang": "en", "text": "What are you going to buy at the mall?", "audio": "audio/lessons/BEG1-U01-L02/cue-04-7c98e0b7.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L02/drill-04-3f74e4c2.m4a", "slow": "audio/lessons/BEG1-U01-L02/drill-04-3f74e4c2.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Did you buy a new jacket?",
+      "ko": "새 재킷 샀어?",
+      "point": "질문형: Did you buy ~?",
+      "cue": { "lang": "ko", "text": "쇼핑 다녀온 친구에게 새 재킷을 샀는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L02/drill-05-99b4c6f8.m4a", "slow": "audio/lessons/BEG1-U01-L02/drill-05-99b4c6f8.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I didn't buy a new jacket.",
+      "ko": "새 재킷은 안 샀어.",
+      "point": "부정형: didn't buy",
+      "cue": { "lang": "en", "text": "So, how was shopping? Did you get one?", "audio": "audio/lessons/BEG1-U01-L02/cue-06-bd32a297.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L02/drill-06-3c0f5107.m4a", "slow": "audio/lessons/BEG1-U01-L02/drill-06-3c0f5107.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hey, I've never seen that jacket before. Is it new?", "ko": "어, 그 재킷 처음 보는데. 새로 산 거야?", "audio": "audio/lessons/BEG1-U01-L02/rp-01-a1a80b05.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I bought a new jacket.",
+        "exampleKo": "나 새 재킷 샀어.",
+        "requiredKeywords": ["bought", "jacket"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Your phone looks different. Did you get a new one?", "ko": "너 핸드폰 달라 보인다. 새로 바꿨어?", "audio": "audio/lessons/BEG1-U01-L02/rp-03-e5a22794.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I bought a new phone.",
+        "exampleKo": "나 새 핸드폰 샀어.",
+        "requiredKeywords": ["bought", "phone"]
+      },
+      { "no": 5, "speaker": "partner", "en": "There's a shiny new car at your parents' house. Whose is it?", "ko": "너희 부모님 집에 반짝이는 새 차가 있던데. 누구 거야?", "audio": "audio/lessons/BEG1-U01-L02/rp-05-fe7a9638.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My dad bought a new car.",
+        "exampleKo": "우리 아빠가 새 차 샀어.",
+        "requiredKeywords": ["dad bought", "car"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Your old jacket has a big hole in it. What's your plan?", "ko": "너 옛날 재킷에 구멍 크게 났더라. 어떡할 거야?", "audio": "audio/lessons/BEG1-U01-L02/rp-07-fc5ed52a.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm going to buy a new jacket.",
+        "exampleKo": "나 새 재킷 살 거야.",
+        "requiredKeywords": ["going to buy", "jacket"]
+      },
+      { "no": 9, "speaker": "partner", "en": "I went shopping for a jacket today, but everything was so expensive.", "ko": "오늘 재킷 사러 갔는데 다 너무 비싸더라.", "audio": "audio/lessons/BEG1-U01-L02/rp-09-73a86c22.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you buy a new jacket?",
+        "exampleKo": "새 재킷 샀어?",
+        "requiredKeywords": ["did you buy", "jacket"]
+      },
+      { "no": 11, "speaker": "partner", "en": "You went to the mall for a jacket, right? Show me!", "ko": "너 재킷 사러 쇼핑몰 갔었잖아? 보여 줘!", "audio": "audio/lessons/BEG1-U01-L02/rp-11-27a730c8.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't buy a new jacket.",
+        "exampleKo": "새 재킷은 안 샀어.",
+        "requiredKeywords": ["didn't buy", "jacket"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

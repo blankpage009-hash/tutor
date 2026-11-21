@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U01-L01",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 1,
+  "unitTitle": "과거",
+  "lessonNo": 1,
+  "lessonTitle": "과거에 대해 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I had a great weekend.",
+    "ko": "주말 정말 잘 보냈어요.",
+    "stress": "I HAD a GREAT WEEKend.",
+    "audio": { "normal": "audio/lessons/BEG1-U01-L01/key-c1739eb5.m4a", "slow": "audio/lessons/BEG1-U01-L01/key-c1739eb5.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "had는 have의 과거형입니다. have a great weekend는 '주말을 잘 보내다'라는 뜻이라, I had a great weekend는 '주말 잘 보냈어요'가 됩니다.",
+      "월요일에 동료나 친구가 How was your weekend?(주말 어땠어요?)라고 물으면 가장 많이 하는 대답입니다.",
+      "great 대신 good(괜찮았어요), nice(좋았어요)도 씁니다. great가 가장 '정말 좋았다'는 느낌입니다.",
+      "지난 일을 말할 때는 동사를 과거형으로 바꿉니다. have → had, go → went, see → saw."
+    ],
+    "en": "Say \"I had a great weekend\" when your weekend was really good. \"Had\" is the past form of \"have.\" People often ask about your weekend on Monday.",
+    "enKo": "주말이 정말 좋았을 때 \"I had a great weekend\"라고 말합니다. \"Had\"는 \"have\"의 과거형입니다. 월요일에는 사람들이 주말을 어떻게 보냈는지 자주 물어봅니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "HAD, GREAT, WEEK에 힘을 주고, I와 a는 가볍게 지나갑니다." },
+    { "focus": "연음", "tip": "had a는 끊지 않고 '해더'처럼 이어 말합니다." },
+    { "focus": "약화", "tip": "great의 끝 t는 뒤에 weekend가 오면 거의 들리지 않습니다. '그레잇 위켄'이 아니라 '그레이위켄'에 가깝습니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "weekend의 w는 '우' 하듯 입술을 동그랗게 내밀었다가 펴면서 '위'라고 말합니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I spent my weekend well.", "right": "I had a great weekend.", "note": "'주말 잘 보냈다'를 직역한 말입니다. 원어민은 had a great weekend라고 합니다." },
+    { "wrong": "Yesterday I go to the park.", "right": "Yesterday I went to the park.", "note": "지난 일이면 동사를 과거형으로 바꿉니다. go → went." },
+    { "wrong": "It was very funny.", "right": "It was really fun.", "note": "funny는 '웃기다'라는 뜻입니다. '재밌었다'는 fun." }
+  ],
+  "dialogue": {
+    "situation": "월요일 아침, 사무실에서 옆자리 동료가 주말 이야기를 꺼냅니다.",
+    "partnerRole": "직장 동료",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Good morning! How was your weekend?", "ko": "좋은 아침이에요! 주말 어떻게 보냈어요?", "audio": "audio/lessons/BEG1-U01-L01/dlg-01-83e32f35.m4a" },
+      { "no": 2, "speaker": "me", "en": "Pretty good! I had a great weekend.", "ko": "꽤 좋았어요! 주말 정말 잘 보냈어요.", "audio": "audio/lessons/BEG1-U01-L01/dlg-02-e6563e05.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Nice! What did you do?", "ko": "좋네요! 뭐 했어요?", "audio": "audio/lessons/BEG1-U01-L01/dlg-03-0150aae4.m4a" },
+      { "no": 4, "speaker": "me", "en": "I went hiking with my friends on Saturday.", "ko": "토요일에 친구들이랑 등산 갔어요.", "audio": "audio/lessons/BEG1-U01-L01/dlg-04-75b814d0.m4a" },
+      { "no": 5, "speaker": "partner", "en": "That sounds fun. Was the weather nice?", "ko": "재밌었겠네요. 날씨는 좋았어요?", "audio": "audio/lessons/BEG1-U01-L01/dlg-05-3b9045b2.m4a" },
+      { "no": 6, "speaker": "me", "en": "Yes, it was sunny and warm all day.", "ko": "네, 하루 종일 맑고 따뜻했어요.", "audio": "audio/lessons/BEG1-U01-L01/dlg-06-7775fc9d.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "How was your weekend?", "ko": "'주말 어떻게 보냈어요?' 월요일에 인사처럼 가장 많이 하는 질문입니다." },
+      { "en": "That sounds fun.", "ko": "'재밌었겠네요.' 상대가 한 일을 듣고 맞장구칠 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I had a great weekend.",
+      "ko": "주말 정말 잘 보냈어요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "How was your weekend?", "audio": "audio/lessons/BEG1-U01-L01/cue-01-b77e8139.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L01/drill-01-c1739eb5.m4a", "slow": "audio/lessons/BEG1-U01-L01/drill-01-c1739eb5.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I had a great vacation.",
+      "ko": "휴가 정말 잘 보냈어요.",
+      "point": "단어 교체: weekend → vacation",
+      "cue": { "lang": "en", "text": "Welcome back! How was your vacation?", "audio": "audio/lessons/BEG1-U01-L01/cue-02-4355c373.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L01/drill-02-9c846632.m4a", "slow": "audio/lessons/BEG1-U01-L01/drill-02-9c846632.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "We had a great weekend.",
+      "ko": "저희 주말 정말 잘 보냈어요.",
+      "point": "주어 변경: I → We",
+      "cue": { "lang": "en", "text": "How was your weekend with your family?", "audio": "audio/lessons/BEG1-U01-L01/cue-03-87fe8d49.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L01/drill-03-7a075e1b.m4a", "slow": "audio/lessons/BEG1-U01-L01/drill-03-7a075e1b.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "I had the best weekend.",
+      "ko": "주말 최고로 잘 보냈어요.",
+      "point": "비교: great → the best",
+      "cue": { "lang": "en", "text": "Was your weekend fun?", "audio": "audio/lessons/BEG1-U01-L01/cue-04-aaebb0d4.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L01/drill-04-c47c7a82.m4a", "slow": "audio/lessons/BEG1-U01-L01/drill-04-c47c7a82.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Did you have a great trip?",
+      "ko": "여행 잘 다녀오셨어요?",
+      "point": "질문형: Did you have ~?",
+      "cue": { "lang": "ko", "text": "여행에서 돌아온 동료에게 여행 잘 다녀왔는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L01/drill-05-66ad46a7.m4a", "slow": "audio/lessons/BEG1-U01-L01/drill-05-66ad46a7.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I didn't have a great weekend.",
+      "ko": "주말이 별로였어요.",
+      "point": "부정형: didn't have",
+      "cue": { "lang": "en", "text": "You look tired. How was your weekend?", "audio": "audio/lessons/BEG1-U01-L01/cue-06-d3fafcec.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U01-L01/drill-06-49580881.m4a", "slow": "audio/lessons/BEG1-U01-L01/drill-06-49580881.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Morning! You look really relaxed today. Good weekend?", "ko": "좋은 아침이에요! 오늘 정말 편안해 보이네요. 주말 잘 보냈어요?", "audio": "audio/lessons/BEG1-U01-L01/rp-01-8f189b3d.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I had a great weekend.",
+        "exampleKo": "주말 정말 잘 보냈어요.",
+        "requiredKeywords": ["had a great", "weekend"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Welcome back to the office! How was Hawaii?", "ko": "사무실 복귀 환영해요! 하와이는 어땠어요?", "audio": "audio/lessons/BEG1-U01-L01/rp-03-d499e195.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I had a great vacation.",
+        "exampleKo": "휴가 정말 잘 보냈어요.",
+        "requiredKeywords": ["great", "vacation"]
+      },
+      { "no": 5, "speaker": "partner", "en": "You went camping with your family, right? How did it go?", "ko": "가족이랑 캠핑 갔었죠? 어땠어요?", "audio": "audio/lessons/BEG1-U01-L01/rp-05-f45908bc.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We had a great weekend.",
+        "exampleKo": "저희 주말 정말 잘 보냈어요.",
+        "requiredKeywords": ["we had", "weekend"]
+      },
+      { "no": 7, "speaker": "partner", "en": "A concert on Saturday and a nice dinner on Sunday? Wow!", "ko": "토요일엔 콘서트, 일요일엔 근사한 저녁이요? 와!", "audio": "audio/lessons/BEG1-U01-L01/rp-07-49476285.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I had the best weekend.",
+        "exampleKo": "주말 최고로 잘 보냈어요.",
+        "requiredKeywords": ["the best", "weekend"]
+      },
+      { "no": 9, "speaker": "partner", "en": "I just got back from New York last night.", "ko": "저 어젯밤에 뉴욕에서 막 돌아왔어요.", "audio": "audio/lessons/BEG1-U01-L01/rp-09-66412540.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you have a great trip?",
+        "exampleKo": "여행 잘 다녀오셨어요?",
+        "requiredKeywords": ["did you have", "trip"]
+      },
+      { "no": 11, "speaker": "partner", "en": "You look a little sad this Monday morning. Are you okay?", "ko": "월요일 아침인데 좀 우울해 보여요. 괜찮아요?", "audio": "audio/lessons/BEG1-U01-L01/rp-11-3d1666f0.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't have a great weekend.",
+        "exampleKo": "주말이 별로였어요.",
+        "requiredKeywords": ["didn't have", "weekend"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
