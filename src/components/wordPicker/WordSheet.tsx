@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type PointerEvent } from 'react';
 import {
-  contextSense, loadDictionary, lookupEntry, meaningForSave, phraseInSentence, type Sense,
+  contextSense, exactAudio, loadDictionary, lookupEntry, meaningForSave, phraseInSentence, type Sense,
 } from '../../content/dictionary';
 import { findWord, removeWord, saveWord } from '../../db/vocab';
 import type { VocabWord } from '../../db/types';
@@ -21,7 +21,7 @@ async function readDict(key: string, sentenceEn: string): Promise<DictInfo> {
   const dict = await loadDictionary();
   const ctx = contextSense(dict, sentenceEn, key);
   const hit = ctx?.hit ?? lookupEntry(dict, key);
-  return { hit, contextIndex: ctx?.index ?? null, phrase: hit ? phraseInSentence(hit, sentenceEn) : null };
+  return { hit, contextIndex: ctx?.index ?? null, phrase: hit ? phraseInSentence(hit, sentenceEn) : null, audio: exactAudio(dict, key) };
 }
 
 // 이만큼(px) 넘게 아래로 쓸어내리면 창을 닫는다. 덜 내리면 제자리로 돌아간다

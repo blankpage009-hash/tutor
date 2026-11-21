@@ -19,6 +19,8 @@ export type DictEntry = {
 export type Dictionary = {
   entries: Record<string, DictEntry>;
   forms: Record<string, string>;
+  // 변화형 자신의 발음 파일 (bigger → audio/dict/bigger-….m4a). 표제어 발음은 entries[head].audio에 있다
+  formAudio?: Record<string, string>;
   context: Record<string, Record<string, number | string>>;
 };
 export type LookupHit = {
@@ -49,6 +51,13 @@ function hitFor(dict: Dictionary, head: string, word: string): LookupHit | null 
 }
 
 // 표제어 그대로 → 변화형 표(went → go) → 복수·과거·진행형을 걷어 낸 모양 순서로 찾는다
+// 누른 그 모양 그대로의 발음 파일. 표제어 자신이면 표제어 파일, 변화형이면 변화형 파일.
+// 표제어 소리(big)로 변화형(bigger)을 대신하지 않으려고 모양이 같을 때만 돌려준다 (없으면 null)
+export function exactAudio(dict: Dictionary, word: string): string | null {
+  const w = normalizeWord(word);
+  return (has(dict.entries, w)?.audio) ?? has(dict.formAudio ?? {}, w) ?? null;
+}
+
 export function lookupEntry(dict: Dictionary, word: string): LookupHit | null {
   const w = normalizeWord(word);
   const formHead = has(dict.forms, w);
@@ -130,7 +139,7 @@ let dictPromise: Promise<Dictionary> | null = null;
 export function loadDictionary(): Promise<Dictionary> {
   dictPromise ??= fetch(contentUrl('dictionary.json'))
     .then((res) => (res.ok ? (res.json() as Promise<Dictionary>) : Promise.reject(new Error(String(res.status)))))
-    .then((d) => ({ entries: d.entries ?? {}, forms: d.forms ?? {}, context: d.context ?? {} }))
+    .then((d) => ({ entries: d.entries ?? {}, forms: d.forms ?? {}, formAudio: d.formAudio ?? {}, context: d.context ?? {} }))
     .catch(() => {
       dictPromise = null;
       return EMPTY_DICTIONARY;

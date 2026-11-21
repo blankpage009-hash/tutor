@@ -86,6 +86,15 @@ for (const [head, e] of Object.entries(entries)) {
   if (rel && fs.existsSync(content(rel))) e.audio = rel;
   else noAudio++;
 }
+// 변화형(bigger·went) 자신의 발음. 표제어 소리로 대신하면 다른 단어가 들려서 따로 둔다 (이 시점의 entries는 원고 표제어뿐)
+const formAudio = {};
+let noFormAudio = 0;
+for (const key of Object.keys(forms)) {
+  if (key in entries) continue; // 그 자체가 표제어면 표제어 발음을 쓴다
+  const rel = audio[key];
+  if (rel && fs.existsSync(content(rel))) formAudio[key] = rel;
+  else noFormAudio++;
+}
 
 // ③ 옛 사전에만 있는 단어 (원고·변화형에 있으면 원고가 이김)
 const written = new Set(Object.keys(entries));
@@ -177,8 +186,8 @@ for (const key of Object.keys(context)) {
 }
 
 const sorted = Object.fromEntries(Object.keys(entries).sort().map((k) => [k, entries[k]]));
-fs.writeFileSync(content('dictionary.json'), JSON.stringify({ schemaVersion: 1, entries: sorted, forms, context }));
+fs.writeFileSync(content('dictionary.json'), JSON.stringify({ schemaVersion: 1, entries: sorted, forms, formAudio, context }));
 if (warnings.length) console.warn(warnings.join('\n'));
 console.log(`dictionary.json: 표제어 ${Object.keys(sorted).length}개(옛 사전에서 ${fromOld}개), 변화형 ${Object.keys(forms).length}개, 문장 ${Object.keys(context).length}개`);
-console.log(`발음 음성: 원고 표제어 ${written.size}개 중 없는 단어 ${noAudio}개${noAudio ? ' → make_word_audio.py 실행' : ''}`);
+console.log(`발음 음성: 원고 표제어 ${written.size}개 중 없는 단어 ${noAudio}개, 변화형 ${Object.keys(formAudio).length}개 연결·없는 것 ${noFormAudio}개${noAudio + noFormAudio ? ' → make_word_audio.py 실행' : ''}`);
 console.log(`레슨 단어 ${lessonWords.size}개 중 사전에 없는 단어 ${missing.length}개${missing.length ? `:\n${missing.join(' ')}` : ''}`);

@@ -3,7 +3,8 @@ import { posLabel } from '../../posLabels';
 import { WordAudioButton } from './WordAudioButton';
 import styles from './WordSheet.module.css';
 
-export type DictInfo = { hit: LookupHit | null; contextIndex: number | null; phrase: Pair | null };
+// audio: 누른 모양 그대로의 발음 파일(변화형이면 변화형 자신의 것). 없으면 표제어 발음으로 대신한다
+export type DictInfo = { hit: LookupHit | null; contextIndex: number | null; phrase: Pair | null; audio: string | null };
 
 type Props = {
   word: string;
@@ -18,7 +19,7 @@ export function DictEntryView({ word, info, picked, onPick }: Props) {
   const { hit } = info;
   return (
     <div className={styles.dict}>
-      {hit && <HeadLine word={word} hit={hit} />}
+      {hit && <HeadLine word={word} hit={hit} audio={info.audio ?? hit.entry.audio ?? null} />}
       {hit && <ContextBox info={info} hit={hit} />}
       {hit && <SenseList senses={hit.entry.senses} picked={picked} onPick={onPick} />}
       {hit?.entry.forms && <FormsLine forms={hit.entry.forms} />}
@@ -39,13 +40,13 @@ function formNote(word: string, hit: LookupHit): string {
   return '';
 }
 
-function HeadLine({ word, hit }: { word: string; hit: LookupHit }) {
+function HeadLine({ word, hit, audio }: { word: string; hit: LookupHit; audio: string | null }) {
   const note = formNote(word, hit);
-  const { ipa, audio } = hit.entry;
+  const { ipa } = hit.entry;
   if (!ipa && !note && !audio) return null;
   return (
     <p className={styles.headLine}>
-      {/* 발음기호·소리는 표제어 것이라(has를 눌러도 have) 표제어가 다르면 이름을 붙여 헷갈리지 않게 한다 */}
+      {/* 발음기호는 표제어 것이라(has를 눌러도 have) 표제어가 다르면 이름을 붙여 헷갈리지 않게 한다. 소리는 변화형 파일이 있으면 그것 */}
       {ipa && <span className={styles.ipa} lang="en">{hit.head !== word ? `${hit.head} ` : ''}/{ipa}/</span>}
       {audio && <WordAudioButton audio={audio} head={hit.head} />}
       {note && <span className={styles.formNote} lang="ko">{note}</span>}

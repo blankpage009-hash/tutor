@@ -3,6 +3,7 @@
 실행: .venv\\Scripts\\python.exe scripts\\audio\\make_word_audio.py
 - content/dictionary-src/words/*.json의 표제어마다 튜터 목소리로 발음을 만든다
   → content/audio/dict/<단어>-<지문8자>.m4a (이미 있으면 건너뜀)
+- 표제어의 변화형(bigger·went 등, 표제어 자신이 아닌 것)도 같은 방식으로 만든다 (2026-11-21).
 - 결과 목록(단어 → 파일 경로)을 content/dictionary-src/audio.json에 쓴다
   → 그다음 node scripts/content/build-dictionary.mjs를 돌리면 사전에 붙는다.
 - audio/dict/ 안에서 더 이상 안 쓰는 파일만 지운다.
@@ -36,12 +37,27 @@ AUDITION_WORDS = ['a', 'the', 'i', 'go', 'read', 'live', 'can', 'get', 'coffee',
 AUDITION_STYLES = {'plain': '', 'period': '.'}
 
 
-def headwords():
-  heads = []
+def source_entries():
   for f in sorted(WORDS_SRC.glob('*.json')):
     data = json.loads(f.read_text(encoding='utf-8-sig'))
-    heads += [h for h in data if not h.startswith('_')]
-  return sorted(set(heads))
+    yield from ((h, e) for h, e in data.items() if not h.startswith('_'))
+
+
+def headwords():
+  return sorted({h for h, _ in source_entries()})
+
+
+def form_words(heads):
+  # 변화형(bigger·went 등)도 자기 발음 파일이 있어야 표제어 소리(big·go)가 대신 나지 않는다.
+  # build-dictionary.mjs의 norm과 같은 규칙으로 적고, 그 자체가 표제어인 단어는 표제어 파일을 쓰므로 뺀다.
+  own = set(heads)
+  out = set()
+  for _, e in source_entries():
+    for f in (e.get('forms') or {}).values():
+      w = f.lower().replace('‘', "'").replace('’', "'").strip()
+      if w and w not in own:
+        out.add(w)
+  return sorted(out)
 
 
 def spoken(head, suffix=None):
@@ -96,8 +112,10 @@ def main():
   if '--audition' in sys.argv:
     return audition()
   heads = headwords()
+  forms = form_words(heads)
+  heads = heads + forms  # 아래는 표제어·변화형을 같은 목록으로 다룬다 (audio.json 키 = 단어)
   new_chars = plan(heads)
-  print(f'표제어 {len(heads)}개, 새로 보낼 글자 {new_chars}자')
+  print(f'표제어 {len(heads) - len(forms)}개 + 변화형 {len(forms)}개, 새로 보낼 글자 {new_chars}자')
   if new_chars > MAX_NEW_CHARS and '--allow-large' not in sys.argv:
     raise SystemExit(f'{MAX_NEW_CHARS}자를 넘어 멈춥니다. 그래도 만들려면 --allow-large')
   b = Builder(VOICE)

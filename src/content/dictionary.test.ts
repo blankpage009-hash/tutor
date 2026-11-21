@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
-  contextSense, lookupEntry, meaningForSave, naverUrl, phraseInSentence, phraseLabel, sentenceKey, type Dictionary,
+  contextSense, exactAudio, lookupEntry, meaningForSave, naverUrl, phraseInSentence, phraseLabel, sentenceKey, type Dictionary,
 } from './dictionary';
 
 const dict: Dictionary = {
@@ -28,6 +28,20 @@ const dict: Dictionary = {
     'i left early.': { left: 'leave:0' },
   },
 };
+
+describe('exactAudio', () => {
+  const withForms: Dictionary = { ...dict, formAudio: { went: 'audio/dict/went-test.m4a' } };
+
+  it('표제어는 표제어 파일, 변화형은 변화형 파일을 준다 (대소문자 무시)', () => {
+    expect(exactAudio(withForms, 'Go')).toBe('audio/dict/go-test.m4a');
+    expect(exactAudio(withForms, 'went')).toBe('audio/dict/went-test.m4a');
+  });
+
+  it('변화형 파일이 없으면 표제어 소리로 대신하지 않고 null', () => {
+    expect(exactAudio(withForms, 'gone')).toBeNull();
+    expect(exactAudio(dict, 'went')).toBeNull();
+  });
+});
 
 describe('lookupEntry', () => {
   it('표제어를 그대로 찾는다 (대소문자 무시)', () => {
