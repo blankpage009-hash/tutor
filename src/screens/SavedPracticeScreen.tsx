@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { StepComplete } from '../components/StepComplete';
+import { useCelebration } from '../components/useCelebration';
 import type { SavedSentence } from '../db/types';
 import type { DrillStep } from '../drillPlan';
 import { useSettings } from '../settings/SettingsProvider';
@@ -76,6 +78,8 @@ function SavedDrill({ plan, listening }: { plan: DrillStep[]; listening: boolean
   const sp = useDrillSpeaking(plan, steps);
   const listen = useListenLoop(plan, steps, sp.handsFreeActive);
   const { hf } = sp;
+  // 이어 말하기·듣기가 멈춘 뒤(마이크 반납 후)에 띄운다 — 마이크가 켜진 채 소리를 틀면 iOS 통화 모드 잡음 (코스 드릴과 같은 규칙)
+  const celebrate = useCelebration(steps.finished && !hf.running && !listen.running);
   useAutoStart(listening || (sp.voskReady && !sp.micLocked), (ctx) => {
     if (listening) { ctx?.close().catch(() => undefined); listen.start(); return; }
     sp.armLeadIn(); // 코스 드릴 시작과 같이 1초 쉬고 튜터가 읽는다
@@ -88,7 +92,14 @@ function SavedDrill({ plan, listening }: { plan: DrillStep[]; listening: boolean
   const sentenceTotal = plan.length / reps;
   const cur = plan[Math.min(steps.index, plan.length - 1)];
   const label = listening ? 'Listening' : 'Library';
-  if (steps.finished) return <SavedFinish total={sentenceTotal} />;
+  if (steps.finished) {
+    return (
+      <>
+        <SavedFinish total={sentenceTotal} />
+        {celebrate.show && <StepComplete title="Practice Complete!" onClose={celebrate.close} />}
+      </>
+    );
+  }
   return (
     <DrillPlayer plan={plan} index={steps.index} sentenceCount={sentenceTotal}
       where={{ left: reps > 1 ? `${label} · ${cur.rep}/${reps}` : label, right: `${cur.drill.id} / ${sentenceTotal}` }}
