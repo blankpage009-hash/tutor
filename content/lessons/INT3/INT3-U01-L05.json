@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U01-L05",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 1,
+  "unitTitle": "과거 경험",
+  "lessonNo": 5,
+  "lessonTitle": "얼마나 오래 됐는지 묻기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "How long have you been living here?",
+    "ko": "여기 사신 지 얼마나 되셨어요?",
+    "stress": "how LONG have you been LIVing HERE?",
+    "audio": { "normal": "audio/lessons/INT3-U01-L05/key-a69a0ca1.m4a", "slow": "audio/lessons/INT3-U01-L05/key-a69a0ca1.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "'여기 사신 지 얼마나 되셨어요?'라는 뜻입니다. 이웃처럼 새로 알게 된 사람에게 기간을 물을 때 씁니다.",
+      "How long have you been + -ing?는 '언제부터 지금까지 얼마 동안 ~해 왔어요?'입니다. 지금도 계속하는 일의 기간을 묻습니다.",
+      "How long do you live here?처럼 현재형으로 물으면 틀린 문장이 됩니다. 지금까지의 기간은 have been으로 묻습니다.",
+      "대답은 For about ten years.(10년쯤이요)처럼 for + 기간이나, Since college.처럼 since + 시작한 때로 합니다."
+    ],
+    "en": "Ask \"How long have you been living here?\" to find out how much time someone has lived in a place. They can answer with \"for\" and a length of time.",
+    "enKo": "누군가 어떤 곳에 얼마나 오래 살았는지 알고 싶을 때 \"How long have you been living here?\"라고 묻습니다. 상대는 \"for\"와 기간으로 대답할 수 있습니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "LONG, LIV, HERE에 힘을 줍니다." },
+    { "focus": "약화", "tip": "have you been은 힘을 빼고 빠르게 '해뷰빈'처럼 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "long과 living의 l은 혀끝을 윗니 뒤에 확실히 붙이고 냅니다. r처럼 굴리지 않습니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "How long do you live here?", "right": "How long have you been living here?", "note": "현재형은 지금까지의 기간을 묻지 못합니다. have been -ing로 물어야 합니다." },
+    { "wrong": "How long time have you been living here?", "right": "How long have you been living here?", "note": "How long 자체가 '얼마나 오래'라서 time을 붙이지 않습니다." },
+    { "wrong": "Since when do you live here?", "right": "How long have you been living here?", "note": "Since when은 '언제부터 그랬다고?'처럼 따지는 말투로 들릴 수 있습니다. 기간은 How long으로 묻습니다." }
+  ],
+  "dialogue": {
+    "situation": "새 아파트로 이사 온 내가 복도에서 이웃을 처음 만났습니다.",
+    "partnerRole": "이웃",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hi there! You must be the one who just moved into 3B.", "ko": "안녕하세요! 3B호에 새로 이사 오신 분이죠?", "audio": "audio/lessons/INT3-U01-L05/dlg-01-67a07008.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Yes, I moved in last week. How long have you been living here?",
+        "ko": "네, 지난주에 이사 왔어요. 여기 사신 지 얼마나 되셨어요?",
+        "audio": "audio/lessons/INT3-U01-L05/dlg-02-64b7b502.m4a",
+        "hasKeySentence": true
+      },
+      { "no": 3, "speaker": "partner", "en": "Almost ten years now. I love this neighborhood.", "ko": "이제 거의 10년 됐어요. 이 동네 정말 좋아요.", "audio": "audio/lessons/INT3-U01-L05/dlg-03-ec164889.m4a" },
+      { "no": 4, "speaker": "me", "en": "Ten years! Then you must know all the good spots.", "ko": "10년이요! 그럼 좋은 데는 다 아시겠네요.", "audio": "audio/lessons/INT3-U01-L05/dlg-04-d2f9700f.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Definitely. The bakery on the corner is the best.", "ko": "그럼요. 모퉁이에 있는 빵집이 최고예요.", "audio": "audio/lessons/INT3-U01-L05/dlg-05-9e2d38e5.m4a" },
+      { "no": 6, "speaker": "me", "en": "Thanks for the tip. I'll check it out this weekend.", "ko": "알려 주셔서 감사해요. 이번 주말에 가 볼게요.", "audio": "audio/lessons/INT3-U01-L05/dlg-06-5d686516.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "You must be ~", "ko": "'~이시죠?', '~인가 보네요'. 처음 보는 사람이 누구인지 짐작할 때 씁니다. You must be Sarah.(사라 씨죠?)처럼 말합니다." },
+      { "en": "check it out", "ko": "'가 보다', '한번 보다'. 추천받은 가게나 장소에 가 보겠다고 할 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "How long have you been living here?",
+      "ko": "여기 사신 지 얼마나 되셨어요?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "새로 만난 이웃에게 여기 산 지 얼마나 됐는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U01-L05/drill-01-a69a0ca1.m4a", "slow": "audio/lessons/INT3-U01-L05/drill-01-a69a0ca1.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "How long have you been working here?",
+      "ko": "여기서 일하신 지 얼마나 되셨어요?",
+      "point": "단어 교체: living → working",
+      "cue": { "lang": "ko", "text": "단골 카페 직원에게 여기서 일한 지 얼마나 됐는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U01-L05/drill-02-cc3b7d34.m4a", "slow": "audio/lessons/INT3-U01-L05/drill-02-cc3b7d34.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "How long has your family been living here?",
+      "ko": "가족분들은 여기 사신 지 얼마나 되셨어요?",
+      "point": "주어 변경: your family (has)",
+      "cue": { "lang": "ko", "text": "이웃이 가족 이야기를 합니다. 가족이 여기 산 지 얼마나 됐는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U01-L05/drill-03-a645d1cf.m4a", "slow": "audio/lessons/INT3-U01-L05/drill-03-a645d1cf.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "How long did you live in Seattle?",
+      "ko": "시애틀에는 얼마나 사셨어요?",
+      "point": "시제: 과거형 did you live",
+      "cue": { "lang": "ko", "text": "시애틀에서 이사 왔다는 동료에게 거기서 얼마나 살았는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U01-L05/drill-04-5433d518.m4a", "slow": "audio/lessons/INT3-U01-L05/drill-04-5433d518.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I haven't been living here very long.",
+      "ko": "저는 여기 산 지 얼마 안 됐어요.",
+      "point": "부정형: haven't been ~ very long",
+      "cue": { "lang": "en", "text": "Do you know any good places to eat around here?", "audio": "audio/lessons/INT3-U01-L05/cue-05-e3fb5d14.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U01-L05/drill-05-1004addc.m4a", "slow": "audio/lessons/INT3-U01-L05/drill-05-1004addc.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "Have you been living here long?",
+      "ko": "여기 오래 사셨어요?",
+      "point": "질문형: 예/아니오 질문 Have you been ~ long?",
+      "cue": { "lang": "ko", "text": "엘리베이터에서 만난 이웃에게 여기 오래 살았는지 예/아니오로 가볍게 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U01-L05/drill-06-beccef1f.m4a", "slow": "audio/lessons/INT3-U01-L05/drill-06-beccef1f.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Welcome to the building! I'm Linda from 2A. I've seen lots of people come and go.",
+        "ko": "이 건물에 오신 걸 환영해요! 2A호 린다예요. 사람들 이사 오고 가는 걸 많이 봤죠.",
+        "audio": "audio/lessons/INT3-U01-L05/rp-01-4f988f9a.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How long have you been living here?",
+        "exampleKo": "여기 사신 지 얼마나 되셨어요?",
+        "requiredKeywords": ["how long", "living here"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Here's your latte. You come in every day, and I'm always here too!", "ko": "라테 나왔습니다. 손님도 매일 오시고, 저도 늘 여기 있네요!", "audio": "audio/lessons/INT3-U01-L05/rp-03-7b3d54f1.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How long have you been working here?",
+        "exampleKo": "여기서 일하신 지 얼마나 되셨어요?",
+        "requiredKeywords": ["how long", "working here"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "My grandparents bought this house, and then my parents grew up in it too.",
+        "ko": "조부모님이 이 집을 사셨고, 그다음엔 부모님도 여기서 자라셨어요.",
+        "audio": "audio/lessons/INT3-U01-L05/rp-05-be8191b7.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How long has your family been living here?",
+        "exampleKo": "가족분들은 여기 사신 지 얼마나 되셨어요?",
+        "requiredKeywords": ["your family", "living here"]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "I just moved here from Seattle. I still miss the rain, believe it or not.",
+        "ko": "시애틀에서 막 이사 왔어요. 믿기 힘드시겠지만 아직도 비가 그리워요.",
+        "audio": "audio/lessons/INT3-U01-L05/rp-07-7b491f46.m4a"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How long did you live in Seattle?",
+        "exampleKo": "시애틀에는 얼마나 사셨어요?",
+        "requiredKeywords": ["did you live", "Seattle"]
+      },
+      { "no": 9, "speaker": "partner", "en": "Excuse me, do you know where the closest post office is?", "ko": "실례합니다, 제일 가까운 우체국이 어디 있는지 아세요?", "audio": "audio/lessons/INT3-U01-L05/rp-09-521e73fd.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I haven't been living here very long.",
+        "exampleKo": "저는 여기 산 지 얼마 안 됐어요.",
+        "requiredKeywords": ["haven't been", "very long"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Hi, I'm Tom from upstairs. I don't think we've really met yet.", "ko": "안녕하세요, 위층 사는 톰이에요. 우리 제대로 인사한 적 없죠?", "audio": "audio/lessons/INT3-U01-L05/rp-11-40e5a34e.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Have you been living here long?",
+        "exampleKo": "여기 오래 사셨어요?",
+        "requiredKeywords": ["have you been", "long"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

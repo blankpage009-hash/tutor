@@ -28,7 +28,7 @@ AUDIO_DIR = CONTENT / 'audio' / 'lessons'
 LESSONS_OUT = CONTENT / 'lessons'
 
 # new curriculum/CLAUDE.md 규칙. 나머지 레벨은 코드가 정해지면 여기에 추가한다
-LEVEL_CODES = {'초급 1': 'BEG1', '중급 1': 'INT1', '중급 2': 'INT2', '고급 1': 'ADV1'}
+LEVEL_CODES = {'초급 1': 'BEG1', '중급 1': 'INT1', '중급 2': 'INT2', '중급 3': 'INT3', '고급 1': 'ADV1'}
 
 # 사용자가 16개 목소리를 들어 보고 고름 (2026-11-20). 예전 목소리는 Piper 'en_US-ryan-high'
 VOICE = 'google:en-US-Chirp3-HD-Sadachbia'

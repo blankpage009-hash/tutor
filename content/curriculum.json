@@ -349,75 +349,75 @@
           ]
         },
         {
-          "key": "level-07",
-          "code": null,
+          "key": "INT3",
+          "code": "INT3",
           "name": "중급 3",
           "units": [
             {
               "no": 1,
               "title": "과거 경험",
               "lessons": [
-                { "no": 1, "title": "여행에 대해 이야기하기", "id": null, "ready": false},
-                { "no": 2, "title": "과거 경험에 대해 묻기", "id": null, "ready": false},
-                { "no": 3, "title": "최신 근황 나누기", "id": null, "ready": false},
-                { "no": 4, "title": "요즘 하고 있는 일 말하기", "id": null, "ready": false},
-                { "no": 5, "title": "얼마나 오래 됐는지 묻기", "id": null, "ready": false},
-                { "no": 6, "title": "언제부터 했는지 말하기", "id": null, "ready": false}
+                { "no": 1, "title": "여행에 대해 이야기하기", "id": "INT3-U01-L01", "ready": true, "file": "lessons/INT3/INT3-U01-L01.json" },
+                { "no": 2, "title": "과거 경험에 대해 묻기", "id": "INT3-U01-L02", "ready": true, "file": "lessons/INT3/INT3-U01-L02.json" },
+                { "no": 3, "title": "최신 근황 나누기", "id": "INT3-U01-L03", "ready": true, "file": "lessons/INT3/INT3-U01-L03.json" },
+                { "no": 4, "title": "요즘 하고 있는 일 말하기", "id": "INT3-U01-L04", "ready": true, "file": "lessons/INT3/INT3-U01-L04.json" },
+                { "no": 5, "title": "얼마나 오래 됐는지 묻기", "id": "INT3-U01-L05", "ready": true, "file": "lessons/INT3/INT3-U01-L05.json" },
+                { "no": 6, "title": "언제부터 했는지 말하기", "id": "INT3-U01-L06", "ready": true, "file": "lessons/INT3/INT3-U01-L06.json" }
               ]
             },
             {
               "no": 2,
               "title": "수입과 지출",
               "lessons": [
-                { "no": 1, "title": "수입에 대해 이야기하기", "id": null, "ready": false},
-                { "no": 2, "title": "부업에 대해 이야기하기", "id": null, "ready": false},
-                { "no": 3, "title": "자신에게 선물하기", "id": null, "ready": false},
-                { "no": 4, "title": "남에게 대접하기", "id": null, "ready": false},
-                { "no": 5, "title": "예산에 대해 이야기하기", "id": null, "ready": false},
-                { "no": 6, "title": "큰 구매를 위해 저축하기", "id": null, "ready": false}
+                { "no": 1, "title": "수입에 대해 이야기하기", "id": "INT3-U02-L01", "ready": false},
+                { "no": 2, "title": "부업에 대해 이야기하기", "id": "INT3-U02-L02", "ready": false},
+                { "no": 3, "title": "자신에게 선물하기", "id": "INT3-U02-L03", "ready": false},
+                { "no": 4, "title": "남에게 대접하기", "id": "INT3-U02-L04", "ready": false},
+                { "no": 5, "title": "예산에 대해 이야기하기", "id": "INT3-U02-L05", "ready": false},
+                { "no": 6, "title": "큰 구매를 위해 저축하기", "id": "INT3-U02-L06", "ready": false}
               ]
             },
             {
               "no": 3,
               "title": "계획과 실행",
               "lessons": [
-                { "no": 1, "title": "근황 나누기", "id": null, "ready": false},
-                { "no": 2, "title": "시간을 어떻게 보냈는지 말하기", "id": null, "ready": false},
-                { "no": 3, "title": "계획 변경 이야기하기", "id": null, "ready": false},
-                { "no": 4, "title": "변명하기", "id": null, "ready": false}
+                { "no": 1, "title": "근황 나누기", "id": "INT3-U03-L01", "ready": false},
+                { "no": 2, "title": "시간을 어떻게 보냈는지 말하기", "id": "INT3-U03-L02", "ready": false},
+                { "no": 3, "title": "계획 변경 이야기하기", "id": "INT3-U03-L03", "ready": false},
+                { "no": 4, "title": "변명하기", "id": "INT3-U03-L04", "ready": false}
               ]
             },
             {
               "no": 4,
               "title": "가정 & 상상",
               "lessons": [
-                { "no": 1, "title": "의견 물어보기", "id": null, "ready": false},
-                { "no": 2, "title": "가정 상황 이야기하기 (What would you do?)", "id": null, "ready": false},
-                { "no": 3, "title": "의견 말하기", "id": null, "ready": false},
-                { "no": 4, "title": "소식과 소문에 대해 이야기하기", "id": null, "ready": false},
-                { "no": 5, "title": "놀람 표현하기", "id": null, "ready": false}
+                { "no": 1, "title": "의견 물어보기", "id": "INT3-U04-L01", "ready": false},
+                { "no": 2, "title": "가정 상황 이야기하기 (What would you do?)", "id": "INT3-U04-L02", "ready": false},
+                { "no": 3, "title": "의견 말하기", "id": "INT3-U04-L03", "ready": false},
+                { "no": 4, "title": "소식과 소문에 대해 이야기하기", "id": "INT3-U04-L04", "ready": false},
+                { "no": 5, "title": "놀람 표현하기", "id": "INT3-U04-L05", "ready": false}
               ]
             },
             {
               "no": 5,
               "title": "조언 주고받기",
               "lessons": [
-                { "no": 1, "title": "조언 고려하기", "id": null, "ready": false},
-                { "no": 2, "title": "해야 할 일 논의하기", "id": null, "ready": false},
-                { "no": 3, "title": "결정하기", "id": null, "ready": false},
-                { "no": 4, "title": "경고하기", "id": null, "ready": false},
-                { "no": 5, "title": "조언하기", "id": null, "ready": false}
+                { "no": 1, "title": "조언 고려하기", "id": "INT3-U05-L01", "ready": false},
+                { "no": 2, "title": "해야 할 일 논의하기", "id": "INT3-U05-L02", "ready": false},
+                { "no": 3, "title": "결정하기", "id": "INT3-U05-L03", "ready": false},
+                { "no": 4, "title": "경고하기", "id": "INT3-U05-L04", "ready": false},
+                { "no": 5, "title": "조언하기", "id": "INT3-U05-L05", "ready": false}
               ]
             },
             {
               "no": 6,
               "title": "선택과 딜레마",
               "lessons": [
-                { "no": 1, "title": "선택지 비교하기", "id": null, "ready": false},
-                { "no": 2, "title": "선택 확정하기", "id": null, "ready": false},
-                { "no": 3, "title": "흔들리는 마음 표현하기", "id": null, "ready": false},
-                { "no": 4, "title": "즉흥적으로 행동하기", "id": null, "ready": false},
-                { "no": 5, "title": "고민에 대해 설명하기", "id": null, "ready": false}
+                { "no": 1, "title": "선택지 비교하기", "id": "INT3-U06-L01", "ready": false},
+                { "no": 2, "title": "선택 확정하기", "id": "INT3-U06-L02", "ready": false},
+                { "no": 3, "title": "흔들리는 마음 표현하기", "id": "INT3-U06-L03", "ready": false},
+                { "no": 4, "title": "즉흥적으로 행동하기", "id": "INT3-U06-L04", "ready": false},
+                { "no": 5, "title": "고민에 대해 설명하기", "id": "INT3-U06-L05", "ready": false}
               ]
             }
           ]

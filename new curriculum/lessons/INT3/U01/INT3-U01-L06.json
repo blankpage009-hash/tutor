@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U01-L06",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 1,
+  "unitTitle": "과거 경험",
+  "lessonNo": 6,
+  "lessonTitle": "언제부터 했는지 말하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I've been doing yoga since college.",
+    "ko": "대학 때부터 요가를 해 왔어요.",
+    "stress": "I've been DOing YOga since COLlege.",
+    "audio": {
+      "normal": "int3-u01-l06_key.mp3",
+      "slow": "int3-u01-l06_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'대학 때부터 요가를 해 왔어요'라는 뜻입니다. 어떤 일을 언제 시작해서 지금까지 계속하고 있는지 말할 때 씁니다.",
+      "since + 시작한 때는 '~부터 (지금까지)'입니다. since college, since last spring처럼 시작점을 넣습니다.",
+      "for + 기간은 '~ 동안'입니다. I've been doing yoga for ten years.처럼 기간의 길이를 말할 때 씁니다.",
+      "from college라고 하면 시작점만 말하고 '지금까지'라는 느낌이 없습니다. 지금도 계속하는 일이면 since를 씁니다."
+    ],
+    "en": "Say \"I've been doing yoga since college\" to tell someone when you started something you still do. Put the starting point after \"since.\"",
+    "enKo": "지금도 하고 있는 일을 언제 시작했는지 말할 때 \"I've been doing yoga since college\"라고 합니다. \"since\" 뒤에 시작한 때를 넣습니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "DO, YO, COL에 힘을 줍니다. since는 약하게 지나갑니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "doing yoga는 '두잉 요가'로 끊지 않고 '두잉요우거'처럼 이어집니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "college의 끝 ge는 '쥐'처럼 약하게 끝내 '칼리쥐'처럼 들립니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "yoga의 o는 '오'가 아니라 '오우'로 말하고, 끝의 a는 '어'처럼 약하게 냅니다. '요우거'에 가깝습니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I'm doing yoga since college.",
+      "right": "I've been doing yoga since college.",
+      "note": "since와 함께 '지금까지 쭉'을 말할 땐 현재형이 아니라 have been -ing를 씁니다."
+    },
+    {
+      "wrong": "I've been doing yoga from college.",
+      "right": "I've been doing yoga since college.",
+      "note": "from은 시작점만 말합니다. 지금까지 이어지는 일이면 since를 씁니다."
+    },
+    {
+      "wrong": "I've been doing yoga since ten years.",
+      "right": "I've been doing yoga for ten years.",
+      "note": "since 뒤에는 시작한 때, for 뒤에는 기간이 옵니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "아침마다 공원에서 요가를 하는 나에게 산책하던 이웃이 말을 겁니다.",
+    "partnerRole": "이웃",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I see you on your yoga mat in the park every morning.",
+        "ko": "매일 아침 공원에서 요가 매트 펴고 계신 거 봐요.",
+        "audio": "int3-u01-l06_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Ha, yes! I've been doing yoga since college.",
+        "ko": "하하, 맞아요! 대학 때부터 요가를 해 왔어요.",
+        "audio": "int3-u01-l06_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Since college? No wonder you're so flexible.",
+        "ko": "대학 때부터요? 어쩐지 몸이 그렇게 유연하시더라.",
+        "audio": "int3-u01-l06_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "It really helps me stay calm before work.",
+        "ko": "출근 전에 마음을 차분하게 하는 데 정말 도움이 돼요.",
+        "audio": "int3-u01-l06_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I've wanted to start, but I'm way too stiff.",
+        "ko": "저도 시작하고 싶었는데, 몸이 너무 뻣뻣해서요.",
+        "audio": "int3-u01-l06_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "That's exactly why you should try it. Join me tomorrow!",
+        "ko": "그러니까 더 해 보셔야죠. 내일 같이 해요!",
+        "audio": "int3-u01-l06_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "No wonder ~",
+        "ko": "'어쩐지 ~하더라'. 이유를 듣고 고개가 끄덕여질 때 씁니다. No wonder you're tired.(어쩐지 피곤해 보이더라)처럼 말합니다."
+      },
+      {
+        "en": "That's exactly why ~",
+        "ko": "'그러니까 더 ~해야죠'. 상대가 말한 걱정이 오히려 해야 하는 이유라고 말할 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I've been doing yoga since college.",
+      "ko": "대학 때부터 요가를 해 왔어요.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "You're so good at yoga. When did you start?"
+      },
+      "audio": {
+        "normal": "int3-u01-l06_drill_01.mp3",
+        "slow": "int3-u01-l06_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I've been doing yoga since last spring.",
+      "ko": "작년 봄부터 요가를 하고 있어요.",
+      "point": "단어 교체: college → last spring",
+      "cue": {
+        "lang": "en",
+        "text": "Is yoga a new thing for you?"
+      },
+      "audio": {
+        "normal": "int3-u01-l06_drill_02.mp3",
+        "slow": "int3-u01-l06_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "My husband has been doing yoga since college.",
+      "ko": "남편은 대학 때부터 요가를 해 왔어요.",
+      "point": "주어 변경: my husband (has)",
+      "cue": {
+        "lang": "en",
+        "text": "Who taught you all these yoga moves?"
+      },
+      "audio": {
+        "normal": "int3-u01-l06_drill_03.mp3",
+        "slow": "int3-u01-l06_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I haven't done yoga since college.",
+      "ko": "대학 졸업하고는 요가를 안 했어요.",
+      "point": "부정형: haven't done",
+      "cue": {
+        "lang": "en",
+        "text": "Want to come to a yoga class with me tonight?"
+      },
+      "audio": {
+        "normal": "int3-u01-l06_drill_04.mp3",
+        "slow": "int3-u01-l06_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Have you been doing yoga since college?",
+      "ko": "대학 때부터 요가 하신 거예요?",
+      "point": "질문형: Have you been ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "요가를 아주 잘하는 이웃에게 대학 때부터 해 온 건지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u01-l06_drill_05.mp3",
+        "slow": "int3-u01-l06_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I started doing yoga in college.",
+      "ko": "요가는 대학 때 시작했어요.",
+      "point": "시제: 과거형 started + in college",
+      "cue": {
+        "lang": "en",
+        "text": "When did you first get into yoga?"
+      },
+      "audio": {
+        "normal": "int3-u01-l06_drill_06.mp3",
+        "slow": "int3-u01-l06_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "You make those yoga poses look so easy! Are you a teacher or something?",
+        "ko": "그 요가 동작들을 정말 쉽게 하시네요! 혹시 선생님이세요?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've been doing yoga since college.",
+        "exampleKo": "대학 때부터 요가를 해 왔어요.",
+        "requiredKeywords": [
+          "doing yoga",
+          "since college"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "You never used to stretch at your desk. Is yoga something you just picked up?",
+        "ko": "예전엔 자리에서 스트레칭 안 하셨잖아요. 요가 새로 시작하신 거예요?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've been doing yoga since last spring.",
+        "exampleKo": "작년 봄부터 요가를 하고 있어요.",
+        "requiredKeywords": [
+          "doing yoga",
+          "since last spring"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Your husband is in our advanced class? He must have years of practice.",
+        "ko": "남편분이 저희 고급반이세요? 몇 년은 하셨겠네요."
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My husband has been doing yoga since college.",
+        "exampleKo": "남편은 대학 때부터 요가를 해 왔어요.",
+        "requiredKeywords": [
+          "my husband",
+          "since college"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Remember our old yoga club? Do you still practice every week?",
+        "ko": "우리 옛날 요가 동아리 기억나요? 아직도 매주 하세요?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I haven't done yoga since college.",
+        "exampleKo": "대학 졸업하고는 요가를 안 했어요.",
+        "requiredKeywords": [
+          "haven't done",
+          "since college"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Honestly, yoga has been part of my life for a long, long time.",
+        "ko": "사실 요가는 아주 오래전부터 제 생활의 일부였어요."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Have you been doing yoga since college?",
+        "exampleKo": "대학 때부터 요가 하신 거예요?",
+        "requiredKeywords": [
+          "have you been",
+          "since college"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Wait, you have practiced yoga all these years? Where did it all begin?",
+        "ko": "잠깐, 그 오랜 세월 요가를 하셨다고요? 처음 시작은 언제였어요?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I started doing yoga in college.",
+        "exampleKo": "요가는 대학 때 시작했어요.",
+        "requiredKeywords": [
+          "started",
+          "in college"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

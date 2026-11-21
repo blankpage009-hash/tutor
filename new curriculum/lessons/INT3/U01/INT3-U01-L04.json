@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U01-L04",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 1,
+  "unitTitle": "과거 경험",
+  "lessonNo": 4,
+  "lessonTitle": "요즘 하고 있는 일 말하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I've been taking a pottery class.",
+    "ko": "요즘 도자기 수업 듣고 있어요.",
+    "stress": "I've been TAKing a POTtery CLASS.",
+    "audio": {
+      "normal": "int3-u01-l04_key.mp3",
+      "slow": "int3-u01-l04_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'요즘 도자기 수업 듣고 있어요'라는 뜻입니다. 최근에 시작해서 지금도 계속하고 있는 일을 말할 때 씁니다.",
+      "have been + -ing는 '얼마 전부터 지금까지 쭉 ~하고 있다'입니다. 그냥 I'm taking...보다 '요즘 꾸준히'라는 느낌이 더 납니다.",
+      "수업을 듣는다는 take a class라고 합니다. listen to a class라고 하지 않습니다.",
+      "이미 끝난 수업이면 과거형으로 I took a pottery class.라고 합니다."
+    ],
+    "en": "Say \"I've been taking a pottery class\" to talk about something you started recently and are still doing. \"Take a class\" means to attend a class.",
+    "enKo": "최근에 시작해서 지금도 하고 있는 일을 말할 때 \"I've been taking a pottery class\"라고 합니다. \"Take a class\"는 수업을 듣는다는 뜻입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "TAK, POT, CLASS에 힘을 줍니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "I've been은 '아이브 빈'으로 또박또박 말하지 않고 '아입빈'처럼 짧게 붙여서 말합니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "taking a는 '테이킹 어'로 끊지 않고 '테이키너'처럼 이어집니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "pottery의 tt는 미국식으로 부드럽게 굴려 '파러리'처럼 들립니다. '포터리'라고 또박또박 말하지 않습니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I'm listening to a pottery class.",
+      "right": "I've been taking a pottery class.",
+      "note": "'수업을 듣다'는 listen이 아니라 take a class입니다."
+    },
+    {
+      "wrong": "I've been taking pottery class.",
+      "right": "I've been taking a pottery class.",
+      "note": "class는 셀 수 있는 말이라 a를 붙입니다. 아니면 class를 빼고 taking pottery라고 해도 됩니다."
+    },
+    {
+      "wrong": "I have taken a pottery class these days.",
+      "right": "I've been taking a pottery class.",
+      "note": "these days처럼 '요즘 계속'을 말할 땐 have been -ing를 씁니다. have taken은 '해 본 적 있다'는 경험으로 들립니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "요즘 정시에 퇴근하는 나를 보고 동료가 무슨 일이 있는지 물어봅니다.",
+    "partnerRole": "직장 동료",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "You've been leaving right at six lately. Got something fun going on?",
+        "ko": "요즘 여섯 시 땡 하면 퇴근하시던데요. 뭐 재밌는 일 있어요?",
+        "audio": "int3-u01-l04_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Yes! I've been taking a pottery class.",
+        "ko": "네! 요즘 도자기 수업 듣고 있어요.",
+        "audio": "int3-u01-l04_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Pottery? That's so cool. What have you made so far?",
+        "ko": "도자기요? 멋지다. 지금까지 뭐 만드셨어요?",
+        "audio": "int3-u01-l04_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Mostly bowls. They're a little uneven, but I love them.",
+        "ko": "주로 그릇이요. 좀 삐뚤빼뚤한데 그래도 너무 좋아요.",
+        "audio": "int3-u01-l04_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I've been looking for a new hobby too.",
+        "ko": "저도 새 취미 찾고 있었거든요.",
+        "audio": "int3-u01-l04_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "You should join us. There's a beginner class on Wednesdays.",
+        "ko": "같이 하세요. 수요일마다 초보반이 있어요.",
+        "audio": "int3-u01-l04_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "right at six",
+        "ko": "'여섯 시 정각에', '여섯 시 땡 하면'. right를 시간 앞에 붙이면 '딱 그 시간에'라는 뜻이 됩니다."
+      },
+      {
+        "en": "Got something fun going on?",
+        "ko": "'뭐 재밌는 일 있어요?'. Have you got something...에서 앞을 줄인 편한 말투입니다. 동료끼리 가볍게 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I've been taking a pottery class.",
+      "ko": "요즘 도자기 수업 듣고 있어요.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "You seem really relaxed lately. What is new with you?"
+      },
+      "audio": {
+        "normal": "int3-u01-l04_drill_01.mp3",
+        "slow": "int3-u01-l04_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I've been taking a cooking class.",
+      "ko": "요즘 요리 수업 듣고 있어요.",
+      "point": "단어 교체: pottery → cooking",
+      "cue": {
+        "lang": "en",
+        "text": "Your lunches look amazing lately. Where did you learn to cook like that?"
+      },
+      "audio": {
+        "normal": "int3-u01-l04_drill_02.mp3",
+        "slow": "int3-u01-l04_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "My wife has been taking a pottery class.",
+      "ko": "아내가 요즘 도자기 수업 듣고 있어요.",
+      "point": "주어 변경: my wife (has)",
+      "cue": {
+        "lang": "en",
+        "text": "Where did all these handmade bowls in your kitchen come from?"
+      },
+      "audio": {
+        "normal": "int3-u01-l04_drill_03.mp3",
+        "slow": "int3-u01-l04_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "Have you been taking a pottery class?",
+      "ko": "요즘 도자기 수업 들으세요?",
+      "point": "질문형: Have you been ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "동료 손에 점토가 묻어 있습니다. 요즘 도자기 수업을 듣는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u01-l04_drill_04.mp3",
+        "slow": "int3-u01-l04_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "I haven't been taking my pottery class lately.",
+      "ko": "요즘은 도자기 수업에 안 나가고 있어요.",
+      "point": "부정형: haven't been ~ lately",
+      "cue": {
+        "lang": "en",
+        "text": "How's your pottery class going? Made anything new?"
+      },
+      "audio": {
+        "normal": "int3-u01-l04_drill_05.mp3",
+        "slow": "int3-u01-l04_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I took a pottery class last summer.",
+      "ko": "작년 여름에 도자기 수업 들었어요.",
+      "point": "시제: 과거형 took + last summer",
+      "cue": {
+        "lang": "en",
+        "text": "Wow, did you make this mug yourself?"
+      },
+      "audio": {
+        "normal": "int3-u01-l04_drill_06.mp3",
+        "slow": "int3-u01-l04_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Your desk is covered in little clay pots! What's going on with you these days?",
+        "ko": "책상이 작은 도자기로 가득하네요! 요즘 무슨 일 있어요?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've been taking a pottery class.",
+        "exampleKo": "요즘 도자기 수업 듣고 있어요.",
+        "requiredKeywords": [
+          "taking",
+          "pottery class"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Hi, neighbor! Your kitchen smells amazing every night now. What's your secret?",
+        "ko": "안녕하세요, 이웃이에요! 요즘 매일 밤 부엌에서 냄새가 너무 좋아요. 비결이 뭐예요?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've been taking a cooking class.",
+        "exampleKo": "요즘 요리 수업 듣고 있어요.",
+        "requiredKeywords": [
+          "taking",
+          "cooking class"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "These vases in your living room are beautiful. Did you buy them somewhere?",
+        "ko": "거실에 있는 꽃병들 정말 예쁘네요. 어디서 사셨어요?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My wife has been taking a pottery class.",
+        "exampleKo": "아내가 요즘 도자기 수업 듣고 있어요.",
+        "requiredKeywords": [
+          "my wife",
+          "pottery class"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Sorry, my hands are a mess. I came straight from the studio again.",
+        "ko": "죄송해요, 손이 엉망이에요. 오늘도 공방에서 바로 왔거든요."
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Have you been taking a pottery class?",
+        "exampleKo": "요즘 도자기 수업 들으세요?",
+        "requiredKeywords": [
+          "have you been",
+          "pottery class"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Your pottery teacher was asking about you. She hasn't seen you in weeks.",
+        "ko": "도자기 선생님이 안부 물으시던데요. 몇 주째 못 봤다고요."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I haven't been taking my pottery class lately.",
+        "exampleKo": "요즘은 도자기 수업에 안 나가고 있어요.",
+        "requiredKeywords": [
+          "haven't been",
+          "lately"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "This mug is so pretty. Is it handmade? Where did you learn to do that?",
+        "ko": "이 머그잔 정말 예쁘다. 손으로 만든 거예요? 어디서 배우셨어요?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I took a pottery class last summer.",
+        "exampleKo": "작년 여름에 도자기 수업 들었어요.",
+        "requiredKeywords": [
+          "took",
+          "last summer"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

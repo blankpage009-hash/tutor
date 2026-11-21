@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U01-L01",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 1,
+  "unitTitle": "과거 경험",
+  "lessonNo": 1,
+  "lessonTitle": "여행에 대해 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I've been to Japan three times.",
+    "ko": "일본엔 세 번 가 봤어.",
+    "stress": "I've BEEN to jaPAN THREE TIMES.",
+    "audio": {
+      "normal": "int3-u01-l01_key.mp3",
+      "slow": "int3-u01-l01_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'일본엔 세 번 가 봤어'라는 뜻입니다. 여행 이야기가 나왔을 때 지금까지 어디에 가 봤는지 말할 때 씁니다.",
+      "have been to + 장소는 '~에 가 본 적이 있다'입니다. 언제 갔는지는 말하지 않고 경험 자체를 말합니다.",
+      "have gone to는 '가 버려서 지금 거기 있다'는 느낌입니다. 다녀온 경험을 말할 때는 been을 씁니다.",
+      "언제 갔는지 콕 집어 말하려면 과거형을 씁니다. I went to Japan last year.처럼 last year 같은 때를 나타내는 말과 함께 씁니다."
+    ],
+    "en": "Say \"I've been to Japan three times\" to share your travel experience. Use \"have been to\" for places you have visited at some point in your life.",
+    "enKo": "여행 경험을 이야기할 때 \"I've been to Japan three times\"라고 말합니다. 살면서 언젠가 가 본 곳을 말할 때 \"have been to\"를 씁니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "BEEN, PAN, THREE, TIMES에 힘을 줍니다. Japan은 앞의 Ja가 아니라 뒤의 pan에 강세가 있어 '저팬'처럼 들립니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "been to는 n 뒤에 바로 t가 붙어 '빈터'처럼 이어집니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "been to의 to는 '투'가 아니라 '터'처럼 아주 짧게 말합니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "three의 th는 혀끝을 윗니 사이로 살짝 내밀고 바람을 냅니다. '쓰리'처럼 s로 말하지 않게 주의합니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I have gone to Japan three times.",
+      "right": "I've been to Japan three times.",
+      "note": "have gone to는 '가 버려서 지금 거기 있다'는 뜻이 됩니다. 다녀온 경험은 been to로 말합니다."
+    },
+    {
+      "wrong": "I've visited to Japan three times.",
+      "right": "I've been to Japan three times.",
+      "note": "visit 뒤에는 to를 쓰지 않습니다. visited Japan 또는 been to Japan이라고 합니다."
+    },
+    {
+      "wrong": "I've been to Japan last year.",
+      "right": "I went to Japan last year.",
+      "note": "last year처럼 지난 때를 콕 집으면 현재완료를 쓰지 않고 과거형을 씁니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "다음 달 도쿄 여행을 앞둔 친구가 일본에 가 본 적 있냐고 물어봅니다.",
+    "partnerRole": "친구",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "You're going to Tokyo next month? Have you been there before?",
+        "ko": "다음 달에 도쿄 간다며? 전에 가 본 적 있어?",
+        "audio": "int3-u01-l01_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Yeah, I've been to Japan three times.",
+        "ko": "응, 일본엔 세 번 가 봤어.",
+        "audio": "int3-u01-l01_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Wow, three times? What keeps bringing you back?",
+        "ko": "와, 세 번이나? 뭐가 좋아서 자꾸 가?",
+        "audio": "int3-u01-l01_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Honestly, the food. And the trains are always on time.",
+        "ko": "솔직히 음식 때문이지. 그리고 기차가 늘 시간을 딱 지켜.",
+        "audio": "int3-u01-l01_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I've never been. Any tips for a first-timer?",
+        "ko": "난 한 번도 안 가 봤어. 처음 가는 사람한테 팁 있어?",
+        "audio": "int3-u01-l01_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Get a train pass, and don't try to see everything.",
+        "ko": "기차 패스 사고, 다 보려고 욕심내지 마.",
+        "audio": "int3-u01-l01_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "What keeps bringing you back?",
+        "ko": "'뭐가 좋아서 자꾸 다시 가?'. 같은 곳에 여러 번 가는 사람에게 이유를 물을 때 씁니다. 식당이나 가게에도 쓸 수 있습니다."
+      },
+      {
+        "en": "first-timer",
+        "ko": "'처음 해 보는 사람'. Any tips for a first-timer?(처음인 사람한테 팁 있어?)처럼 여행, 식당, 행사 어디에나 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I've been to Japan three times.",
+      "ko": "일본엔 세 번 가 봤어.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "Have you ever traveled to Japan?"
+      },
+      "audio": {
+        "normal": "int3-u01-l01_drill_01.mp3",
+        "slow": "int3-u01-l01_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I've been to Mexico twice.",
+      "ko": "멕시코엔 두 번 가 봤어.",
+      "point": "단어 교체: Japan three times → Mexico twice",
+      "cue": {
+        "lang": "en",
+        "text": "You speak a little Spanish. Have you spent time in Mexico?"
+      },
+      "audio": {
+        "normal": "int3-u01-l01_drill_02.mp3",
+        "slow": "int3-u01-l01_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "My parents have been to Japan once.",
+      "ko": "우리 부모님은 일본에 한 번 가 보셨어.",
+      "point": "주어 변경: my parents",
+      "cue": {
+        "lang": "en",
+        "text": "Have your parents ever traveled to Asia?"
+      },
+      "audio": {
+        "normal": "int3-u01-l01_drill_03.mp3",
+        "slow": "int3-u01-l01_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "Have you ever been to Japan?",
+      "ko": "일본 가 본 적 있어?",
+      "point": "질문형: Have you ever ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "친구가 다음 휴가로 아시아를 고민 중입니다. 일본에 가 본 적 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u01-l01_drill_04.mp3",
+        "slow": "int3-u01-l01_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "I've never been to Japan.",
+      "ko": "일본엔 한 번도 안 가 봤어.",
+      "point": "부정형: never",
+      "cue": {
+        "lang": "en",
+        "text": "What's Japan like? You've been there, right?"
+      },
+      "audio": {
+        "normal": "int3-u01-l01_drill_05.mp3",
+        "slow": "int3-u01-l01_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I went to Japan three times last year.",
+      "ko": "작년에 일본에 세 번 갔어.",
+      "point": "시제: 과거형 went + last year",
+      "cue": {
+        "lang": "en",
+        "text": "You took a lot of time off last year. Where did you go?"
+      },
+      "audio": {
+        "normal": "int3-u01-l01_drill_06.mp3",
+        "slow": "int3-u01-l01_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "My coworker says you know Japan really well. Have you traveled there a lot?",
+        "ko": "동료 말로는 네가 일본을 엄청 잘 안다던데. 거기 여행 많이 가 봤어?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've been to Japan three times.",
+        "exampleKo": "일본엔 세 번 가 봤어.",
+        "requiredKeywords": [
+          "been to Japan",
+          "three times"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "This salsa is amazing. By the way, have you ever visited Mexico?",
+        "ko": "이 살사 진짜 맛있다. 근데 너 멕시코 가 본 적 있어?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've been to Mexico twice.",
+        "exampleKo": "멕시코엔 두 번 가 봤어.",
+        "requiredKeywords": [
+          "Mexico",
+          "twice"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Are your parents nervous about their Tokyo trip, or have they gone before?",
+        "ko": "부모님 도쿄 여행 긴장하셔? 아니면 전에 가 보셨어?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My parents have been to Japan once.",
+        "exampleKo": "우리 부모님은 일본에 한 번 가 보셨어.",
+        "requiredKeywords": [
+          "my parents",
+          "once"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "I'm thinking about Japan for my vacation, but I'm not sure. I hear it's expensive.",
+        "ko": "휴가로 일본을 생각 중인데 잘 모르겠어. 물가가 비싸다던데."
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Have you ever been to Japan?",
+        "exampleKo": "일본 가 본 적 있어?",
+        "requiredKeywords": [
+          "have you ever",
+          "Japan"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Our new teammate says you know Tokyo well. Which part of Japan did you like most?",
+        "ko": "새 팀원이 너 도쿄 잘 안다던데. 일본에서 어디가 제일 좋았어?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've never been to Japan.",
+        "exampleKo": "일본엔 한 번도 안 가 봤어.",
+        "requiredKeywords": [
+          "never been",
+          "Japan"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Wow, your passport is full of Japanese stamps! Did you travel a lot last year?",
+        "ko": "와, 여권에 일본 도장이 가득하네! 작년에 여행 많이 다녔어?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I went to Japan three times last year.",
+        "exampleKo": "작년에 일본에 세 번 갔어.",
+        "requiredKeywords": [
+          "went to Japan",
+          "last year"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

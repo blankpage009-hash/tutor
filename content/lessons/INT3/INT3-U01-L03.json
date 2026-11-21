@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U01-L03",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 1,
+  "unitTitle": "과거 경험",
+  "lessonNo": 3,
+  "lessonTitle": "최신 근황 나누기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "What have you been up to lately?",
+    "ko": "요즘 어떻게 지냈어?",
+    "stress": "WHAT have you been UP to LATEly?",
+    "audio": { "normal": "audio/lessons/INT3-U01-L03/key-628ff940.m4a", "slow": "audio/lessons/INT3-U01-L03/key-628ff940.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "'요즘 어떻게 지냈어?'라는 뜻입니다. 오랜만에 만난 사람에게 그동안의 근황을 물을 때 씁니다.",
+      "be up to는 '~을 하며 지내다'라는 뜻입니다. have been up to는 지난번에 만난 뒤부터 지금까지 무엇을 하며 지냈는지 묻습니다.",
+      "How are you?는 지금 기분을 묻는 인사입니다. What have you been up to?는 그동안 있었던 일을 묻는 질문이라 대화가 더 길게 이어집니다.",
+      "별일 없으면 Not much.나 Same old, same old.라고 짧게 대답하고 What about you?라고 되물으면 됩니다."
+    ],
+    "en": "Ask \"What have you been up to lately?\" when you meet someone you haven't seen for a while. It asks what they have been doing since you last met.",
+    "enKo": "한동안 못 본 사람을 만났을 때 \"What have you been up to lately?\"라고 묻습니다. 마지막으로 만난 뒤로 무엇을 하며 지냈는지 묻는 말입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "WHAT, UP, LATE에 힘을 줍니다. have you been은 약하고 빠르게 지나갑니다." },
+    { "focus": "연음", "tip": "What have you는 t가 모음 사이에서 부드러워져 '와래뷰'처럼 이어집니다." },
+    { "focus": "약화", "tip": "up to는 '업 투'로 끊지 않고 '업터'처럼 짧게 붙여 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "lately의 l은 혀끝을 윗니 뒤에 붙였다 떼며 냅니다. 가운데 t는 거의 끊듯이 짧게 '레잇리'처럼 말합니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "What did you do recently?", "right": "What have you been up to lately?", "note": "과거형은 특정한 일 하나를 묻는 느낌입니다. 그동안의 근황은 have been up to로 묻는 게 자연스럽습니다." },
+    { "wrong": "What have you been up lately?", "right": "What have you been up to lately?", "note": "be up to에서 to를 빼먹기 쉽습니다. up to를 한 덩어리로 기억합니다." },
+    { "wrong": "How is your life these days?", "right": "What have you been up to lately?", "note": "'요즘 생활 어때?'를 직역한 말이라 어색합니다. 근황은 What have you been up to?로 묻습니다." }
+  ],
+  "dialogue": {
+    "situation": "파머스 마켓에서 몇 년 만에 대학 친구를 우연히 만났습니다.",
+    "partnerRole": "오랜 친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "No way! Is that you? It's been forever!", "ko": "말도 안 돼! 너야? 진짜 오랜만이다!", "audio": "audio/lessons/INT3-U01-L03/dlg-01-d67032fa.m4a" },
+      { "no": 2, "speaker": "me", "en": "I know! What have you been up to lately?", "ko": "그러게! 요즘 어떻게 지냈어?", "audio": "audio/lessons/INT3-U01-L03/dlg-02-698cbb43.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Not much. I started a new job downtown in the spring.", "ko": "별일 없어. 봄에 시내에 있는 회사로 옮겼어.", "audio": "audio/lessons/INT3-U01-L03/dlg-03-c04b37d5.m4a" },
+      { "no": 4, "speaker": "me", "en": "That's great! How do you like it so far?", "ko": "잘됐다! 다녀 보니까 어때?", "audio": "audio/lessons/INT3-U01-L03/dlg-04-e92be000.m4a" },
+      { "no": 5, "speaker": "partner", "en": "I love it. What about you? Anything new?", "ko": "완전 좋아. 너는? 새로운 일 있어?", "audio": "audio/lessons/INT3-U01-L03/dlg-05-a5380d44.m4a" },
+      { "no": 6, "speaker": "me", "en": "Same old, same old. We should grab coffee soon.", "ko": "늘 똑같지 뭐. 조만간 커피 한잔하자.", "audio": "audio/lessons/INT3-U01-L03/dlg-06-4f005b81.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "It's been forever!", "ko": "'진짜 오랜만이다!'. 오래 못 본 사람을 만났을 때 반갑게 하는 말입니다. Long time no see!와 비슷합니다." },
+      { "en": "How do you like it so far?", "ko": "'지금까지 해 보니 어때?'. 새 직장, 새 집, 새 동네처럼 시작한 지 얼마 안 된 일의 소감을 물을 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "What have you been up to lately?",
+      "ko": "요즘 어떻게 지냈어?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "오랜만에 만난 친구에게 요즘 어떻게 지냈는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U01-L03/drill-01-628ff940.m4a", "slow": "audio/lessons/INT3-U01-L03/drill-01-628ff940.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "What have you been up to since graduation?",
+      "ko": "졸업하고 어떻게 지냈어?",
+      "point": "단어 교체: lately → since graduation",
+      "cue": { "lang": "ko", "text": "대학 졸업 뒤 처음 만난 동기에게 졸업하고 어떻게 지냈는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U01-L03/drill-02-dcf33e0e.m4a", "slow": "audio/lessons/INT3-U01-L03/drill-02-dcf33e0e.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "What have you guys been up to lately?",
+      "ko": "너희는 요즘 어떻게 지냈어?",
+      "point": "주어 변경·복수: you guys",
+      "cue": { "lang": "ko", "text": "오랜만에 만난 친구 부부에게 두 사람이 요즘 어떻게 지냈는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U01-L03/drill-03-f4880bf0.m4a", "slow": "audio/lessons/INT3-U01-L03/drill-03-f4880bf0.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "What were you up to last weekend?",
+      "ko": "지난 주말에 뭐 했어?",
+      "point": "시제: 과거형 were + last weekend",
+      "cue": { "lang": "ko", "text": "월요일에 만난 친구에게 지난 주말에 뭐 했는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U01-L03/drill-04-88132c96.m4a", "slow": "audio/lessons/INT3-U01-L03/drill-04-88132c96.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I haven't been up to much lately.",
+      "ko": "요즘 별거 안 하고 지냈어.",
+      "point": "부정형: haven't been up to much",
+      "cue": { "lang": "en", "text": "Long time no see! Anything exciting going on with you?", "audio": "audio/lessons/INT3-U01-L03/cue-05-c76a30ee.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U01-L03/drill-05-50ed22a8.m4a", "slow": "audio/lessons/INT3-U01-L03/drill-05-50ed22a8.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I've been up to a lot lately.",
+      "ko": "나 요즘 이것저것 많이 하고 지냈어.",
+      "point": "평서문: 내 근황 말하기 (a lot)",
+      "cue": { "lang": "en", "text": "You look like you have a lot going on. What is new?", "audio": "audio/lessons/INT3-U01-L03/cue-06-650893ea.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U01-L03/drill-06-722a91ad.m4a", "slow": "audio/lessons/INT3-U01-L03/drill-06-722a91ad.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Hey, I haven't seen you since Jenna's birthday party last year! How are you?",
+        "ko": "야, 작년 제나 생일 파티 이후로 처음 보네! 잘 지내?",
+        "audio": "audio/lessons/INT3-U01-L03/rp-01-7cf5ec3d.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What have you been up to lately?",
+        "exampleKo": "요즘 어떻게 지냈어?",
+        "requiredKeywords": ["been up to", "lately"]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Oh wow, we were in the same class in college! I haven't seen you since then.",
+        "ko": "와, 우리 대학 때 같은 반이었잖아! 그 뒤로 처음 보네.",
+        "audio": "audio/lessons/INT3-U01-L03/rp-03-31f611c0.m4a"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What have you been up to since graduation?",
+        "exampleKo": "졸업하고 어떻게 지냈어?",
+        "requiredKeywords": ["been up to", "since graduation"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Hi! Remember us? We were your neighbors before we moved to Oakland.", "ko": "안녕! 우리 기억나? 오클랜드로 이사 가기 전에 너네 이웃이었잖아.", "audio": "audio/lessons/INT3-U01-L03/rp-05-d1023957.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What have you guys been up to lately?",
+        "exampleKo": "너희는 요즘 어떻게 지냈어?",
+        "requiredKeywords": ["you guys", "lately"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Ugh, Monday again. My weekend went by way too fast.", "ko": "아, 또 월요일이야. 주말이 너무 빨리 지나갔어.", "audio": "audio/lessons/INT3-U01-L03/rp-07-840f06f1.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What were you up to last weekend?",
+        "exampleKo": "지난 주말에 뭐 했어?",
+        "requiredKeywords": ["were you up to", "last weekend"]
+      },
+      { "no": 9, "speaker": "partner", "en": "It's been months! Tell me everything. Anything new and exciting?", "ko": "몇 달 만이야! 다 얘기해 봐. 새롭고 신나는 일 있어?", "audio": "audio/lessons/INT3-U01-L03/rp-09-f4f36056.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I haven't been up to much lately.",
+        "exampleKo": "요즘 별거 안 하고 지냈어.",
+        "requiredKeywords": ["haven't been", "much"]
+      },
+      { "no": 11, "speaker": "partner", "en": "I texted you three times this week! You must be really busy.", "ko": "이번 주에 문자 세 번이나 보냈잖아! 진짜 바쁜가 보다.", "audio": "audio/lessons/INT3-U01-L03/rp-11-da300d54.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've been up to a lot lately.",
+        "exampleKo": "나 요즘 이것저것 많이 하고 지냈어.",
+        "requiredKeywords": ["a lot", "lately"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

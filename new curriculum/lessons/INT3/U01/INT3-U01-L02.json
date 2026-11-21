@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U01-L02",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 1,
+  "unitTitle": "과거 경험",
+  "lessonNo": 2,
+  "lessonTitle": "과거 경험에 대해 묻기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Have you ever tried rock climbing?",
+    "ko": "암벽 등반 해 보신 적 있어요?",
+    "stress": "have you EVer TRIED ROCK climbing?",
+    "audio": {
+      "normal": "int3-u01-l02_key.mp3",
+      "slow": "int3-u01-l02_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'암벽 등반 해 보신 적 있어요?'라는 뜻입니다. 상대가 어떤 일을 해 본 적 있는지 물을 때 씁니다.",
+      "Have you ever + 과거분사는 '살면서 한 번이라도 ~해 본 적 있어요?'입니다. ever가 '한 번이라도'라는 느낌을 줍니다.",
+      "try는 운동, 활동, 음식에 다 씁니다. 음식이면 Have you ever tried tacos?처럼 '먹어 본 적 있어요?'가 됩니다.",
+      "특정한 때를 물을 때는 과거형을 씁니다. Did you try it last weekend?처럼 말합니다."
+    ],
+    "en": "Ask \"Have you ever tried rock climbing?\" to find out if someone has done something before. \"Ever\" means \"at any time in your life.\"",
+    "enKo": "상대가 전에 어떤 일을 해 본 적이 있는지 알고 싶을 때 \"Have you ever tried rock climbing?\"이라고 묻습니다. \"Ever\"는 \"살면서 한 번이라도\"라는 뜻입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "EV, TRIED, ROCK에 힘을 줍니다. rock climbing처럼 두 단어가 한 덩어리인 말은 앞 단어 ROCK을 더 세게 말합니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "Have you는 v와 y가 붙어 '해뷰'처럼 이어집니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "climbing의 b는 소리 내지 않습니다. '클라이밍'이라고 하고 '클라임빙'이 되지 않게 합니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "rock의 r은 혀끝을 입천장에 대지 않고 입술을 살짝 둥글게 모아 냅니다. 혀를 붙이면 lock(자물쇠)처럼 들립니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Have you ever try rock climbing?",
+      "right": "Have you ever tried rock climbing?",
+      "note": "have 뒤에는 과거분사가 옵니다. try가 아니라 tried입니다."
+    },
+    {
+      "wrong": "Have you experienced rock climbing?",
+      "right": "Have you ever tried rock climbing?",
+      "note": "experience를 동사로 쓰면 딱딱하게 들립니다. 해 본 적을 물을 땐 tried나 done을 씁니다."
+    },
+    {
+      "wrong": "Have you ever tried rock climbing last year?",
+      "right": "Did you try rock climbing last year?",
+      "note": "last year처럼 때를 정하면 현재완료 대신 과거형으로 묻습니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "주말에 할 새 취미를 찾는 동료와 사무실에서 이야기합니다.",
+    "partnerRole": "직장 동료",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I want a new weekend hobby. Something to get me off the couch.",
+        "ko": "주말에 할 새 취미를 찾고 있어요. 소파에서 좀 일어나게 해 줄 거요.",
+        "audio": "int3-u01-l02_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Have you ever tried rock climbing?",
+        "ko": "암벽 등반 해 보신 적 있어요?",
+        "audio": "int3-u01-l02_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "No, never. Isn't it kind of scary?",
+        "ko": "아뇨, 한 번도요. 좀 무섭지 않아요?",
+        "audio": "int3-u01-l02_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Not really. The indoor gyms are pretty safe for beginners.",
+        "ko": "별로요. 실내 암장은 초보자한테 꽤 안전해요.",
+        "audio": "int3-u01-l02_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Hmm, that sounds fun. Do you go often?",
+        "ko": "음, 재밌겠네요. 자주 가세요?",
+        "audio": "int3-u01-l02_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Every Saturday. You should come with me sometime.",
+        "ko": "토요일마다요. 언제 한번 같이 가요.",
+        "audio": "int3-u01-l02_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "get me off the couch",
+        "ko": "'소파에서 일으켜 주다'. 집에서 뒹굴지 않고 몸을 움직이게 해 준다는 뜻입니다. 게으름을 벗어나고 싶을 때 씁니다."
+      },
+      {
+        "en": "You should come with me sometime.",
+        "ko": "'언제 한번 같이 가요'. 날짜를 정하지 않고 가볍게 같이 하자고 제안할 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Have you ever tried rock climbing?",
+      "ko": "암벽 등반 해 보신 적 있어요?",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "ko",
+        "text": "주말 취미를 찾는 동료에게 암벽 등반을 해 본 적 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u01-l02_drill_01.mp3",
+        "slow": "int3-u01-l02_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "Have you ever tried Korean food?",
+      "ko": "한국 음식 드셔 보신 적 있어요?",
+      "point": "단어 교체: rock climbing → Korean food",
+      "cue": {
+        "lang": "ko",
+        "text": "새로 온 동료와 점심 메뉴를 고르고 있습니다. 한국 음식을 먹어 본 적 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u01-l02_drill_02.mp3",
+        "slow": "int3-u01-l02_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "Has your brother ever tried rock climbing?",
+      "ko": "남동생분은 암벽 등반 해 본 적 있으세요?",
+      "point": "주어 변경: your brother (has)",
+      "cue": {
+        "lang": "ko",
+        "text": "동료가 남동생과 놀러 갈 곳을 찾습니다. 남동생이 암벽 등반을 해 본 적 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u01-l02_drill_03.mp3",
+        "slow": "int3-u01-l02_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I've never tried rock climbing.",
+      "ko": "저는 암벽 등반 한 번도 안 해 봤어요.",
+      "point": "부정형: never",
+      "cue": {
+        "lang": "en",
+        "text": "Are you any good at rock climbing?"
+      },
+      "audio": {
+        "normal": "int3-u01-l02_drill_04.mp3",
+        "slow": "int3-u01-l02_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Did you try rock climbing on your trip?",
+      "ko": "여행 가서 암벽 등반 해 보셨어요?",
+      "point": "시제: 과거형 Did you ~ on your trip?",
+      "cue": {
+        "lang": "ko",
+        "text": "여행에서 막 돌아온 동료에게, 여행 가서 암벽 등반을 해 봤는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u01-l02_drill_05.mp3",
+        "slow": "int3-u01-l02_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "Would you ever try rock climbing?",
+      "ko": "암벽 등반 해 볼 생각 있으세요?",
+      "point": "공손형: Would you ever ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "높은 곳을 무서워하는 동료에게, 그래도 암벽 등반을 해 볼 생각이 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u01-l02_drill_06.mp3",
+        "slow": "int3-u01-l02_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I'm so bored on weekends. I need something new and active to do.",
+        "ko": "주말이 너무 심심해요. 뭔가 새롭고 활동적인 걸 하고 싶어요."
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Have you ever tried rock climbing?",
+        "exampleKo": "암벽 등반 해 보신 적 있어요?",
+        "requiredKeywords": [
+          "ever tried",
+          "rock climbing"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "I just joined the team, and I'm not sure what to get for lunch around here.",
+        "ko": "팀에 막 들어와서, 이 근처에서 점심 뭘 먹어야 할지 모르겠어요."
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Have you ever tried Korean food?",
+        "exampleKo": "한국 음식 드셔 보신 적 있어요?",
+        "requiredKeywords": [
+          "ever tried",
+          "Korean food"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "My younger brother is visiting this weekend, and he loves outdoor sports.",
+        "ko": "이번 주말에 남동생이 놀러 오는데, 걔가 야외 스포츠를 엄청 좋아해요."
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Has your brother ever tried rock climbing?",
+        "exampleKo": "남동생분은 암벽 등반 해 본 적 있으세요?",
+        "requiredKeywords": [
+          "your brother",
+          "rock climbing"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "We're all going to the climbing gym tonight. You're probably really good, right?",
+        "ko": "오늘 밤 다 같이 암장 가요. 엄청 잘하시죠?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've never tried rock climbing.",
+        "exampleKo": "저는 암벽 등반 한 번도 안 해 봤어요.",
+        "requiredKeywords": [
+          "never tried",
+          "rock climbing"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I just got back from a hiking trip in Utah. The cliffs there were huge.",
+        "ko": "유타로 하이킹 갔다가 막 왔어요. 거기 절벽이 어마어마하더라고요."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you try rock climbing on your trip?",
+        "exampleKo": "여행 가서 암벽 등반 해 보셨어요?",
+        "requiredKeywords": [
+          "did you try",
+          "on your trip"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "I'm scared of heights, but I want to challenge myself this year.",
+        "ko": "저 높은 데 무서워하는데, 올해는 좀 도전해 보고 싶어요."
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Would you ever try rock climbing?",
+        "exampleKo": "암벽 등반 해 볼 생각 있으세요?",
+        "requiredKeywords": [
+          "would you ever",
+          "rock climbing"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
