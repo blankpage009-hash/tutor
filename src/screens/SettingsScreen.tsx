@@ -4,7 +4,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { SettingsRow } from '../components/SettingsRow';
 import { getGeminiKey } from '../db/settings';
 import { useTheme } from '../theme/useTheme';
-import { DAILY_GOAL_CHOICES, PASS_THRESHOLD_CHOICES, REPEAT_COUNT_CHOICES, SPEECH_RATE_CHOICES } from '../settings/settings';
+import { DAILY_GOAL_CHOICES, PASS_THRESHOLD_CHOICES, SPEECH_RATE_CHOICES } from '../settings/settings';
 import { useSettings } from '../settings/SettingsProvider';
 import { BackupSection } from './settings/BackupSection';
 import { ChoiceRow } from './settings/ChoiceRow';
@@ -59,9 +59,6 @@ export function SettingsScreen() {
       <h2 className={styles.section}>PRACTICE</h2>
       <ChoiceRow name="Pass Score" choices={PASS_THRESHOLD_CHOICES.map((v) => ({ value: v, label: String(Math.round(v * 100)) }))}
         value={settings.passThreshold} onChange={(passThreshold) => update({ passThreshold })} />
-      <ChoiceRow name="Repeats" choices={REPEAT_COUNT_CHOICES.map((v) => ({ value: v, label: String(v) }))}
-        value={settings.repeatCount} onChange={(repeatCount) => update({ repeatCount })} />
-      <SwitchRow name="Auto Next" on={settings.autoAdvance} onChange={(autoAdvance) => update({ autoAdvance })} />
       <SwitchRow name="Fail Feedback" on={settings.failFeedback} onChange={(failFeedback) => update({ failFeedback })} />
       <ChoiceRow name="Daily Goal" choices={DAILY_GOAL_CHOICES.map((v) => ({ value: v, label: String(v) }))}
         value={settings.dailyGoal} onChange={(dailyGoal) => update({ dailyGoal })} />
