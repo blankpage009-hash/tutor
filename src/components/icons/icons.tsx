@@ -88,7 +88,7 @@ export const IconShuffle = () => (
 );
 // 보관함 "In Order": 위에서 아래로 한 줄씩 차례로 돌아 내려오는 U턴 화살표 (사용자가 손으로 그려 준 모양)
 export const IconInOrder = () => (
-  <Svg {...ROUND}><path d="M3 6h12a6 6 0 0 1 0 12H5" /><path d="m9 14-4 4 4 4" /></Svg>
+  <Svg {...ROUND}><path d="M10 5h4.5a5.5 5.5 0 0 1 0 11H4" /><path d="m8 12-4 4 4 4" /></Svg>
 );
 // 밀어서 나오는 줄 버튼: 지우기 / 뜻 고치기
 export const IconTrash = () => <Svg><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v5M14 11v5" /></Svg>;
