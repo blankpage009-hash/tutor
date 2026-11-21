@@ -1,4 +1,4 @@
-/* 디자인 v2 04·05: X + 4칸 막대(4px 선) + 10px 라벨 */
+/* 디자인 v2 04·05: X + 4칸 막대 + 라벨. 2026-11-21 사용자 요청으로 막대·라벨을 120%로 (4→5px, 10→12px) */
 .bar {
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 6px;
+  gap: 7px;
   min-width: 0;
   min-height: var(--tap-min);
   padding: 0;
@@ -52,7 +52,7 @@
 .track {
   position: relative;
   display: block;
-  height: 4px;
+  height: 5px;
   background: var(--line);
 }
 
@@ -74,9 +74,10 @@
   white-space: nowrap;
   text-overflow: clip;
   font-family: var(--type-label-family);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1;
   font-weight: var(--type-label-weight);
-  letter-spacing: 0.12em;
+  /* 글씨를 12px로 키우며 자간을 거의 없앴다 — 0.12em이면 375px 폰에서 EXPLANATION이 14px 넘쳐 잘린다 */
+  letter-spacing: 0.01em;
   text-transform: uppercase;
 }

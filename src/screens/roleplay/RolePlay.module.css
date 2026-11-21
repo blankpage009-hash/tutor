@@ -25,10 +25,13 @@
   border-style: solid;
 }
 
-/* 시작 화면 진행 안내: 상황 박스가 주인공이라 기본 글씨의 85% */
+/* 시작 화면 진행 안내: 상황 박스 안 구분선 아래. 상황 문장이 주인공이라 기본 글씨의 85%에서 1px 더 작게.
+   margin-top: auto로 박스 아래쪽에 붙여 구분선이 박스 가운데쯤 오게 */
 .introNote {
-  margin: 0;
-  font-size: calc(var(--type-body-kr-size) * 0.85);
+  margin: auto 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--line);
+  font-size: calc(var(--type-body-kr-size) * 0.85 - 1px);
   line-height: var(--type-body-kr-line);
   color: var(--ink-muted);
   word-break: keep-all;
