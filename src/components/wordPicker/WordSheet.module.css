@@ -18,7 +18,47 @@
   background: var(--surface);
   color: var(--ink);
   border-top: var(--rule-weight) solid var(--line-strong);
+  /* 손을 떼고 제자리로 돌아갈 때만 부드럽게 (끄는 동안은 코드에서 transition을 끈다) */
+  transition: transform 160ms ease-out;
 }
+
+/* 손잡이 바·제목줄: 여기를 잡고 아래로 쓸어 닫는다.
+   touch-action: none — iOS가 이 터치를 화면 스크롤로 가져가 버리면 끌기가 중간에 끊겨서 막는다 */
+.top {
+  margin: calc(var(--space-4) * -1) calc(var(--space-4) * -1) 0;
+  padding: var(--space-2) var(--space-4) 0;
+  touch-action: none;
+  cursor: grab;
+}
+
+.grab {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin: 0 auto var(--space-2);
+  border-radius: 999px;
+  background: var(--line);
+}
+
+.titleRow { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+
+.close {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  margin-right: calc(var(--space-2) * -1);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.close:active { background: var(--accent-tint); }
+.close:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
 
 .word {
   margin: 0;
@@ -79,6 +119,23 @@
 
 .error { margin: var(--space-2) 0 0; color: var(--danger); font-size: var(--type-body-kr-size); }
 
-.actions { margin-top: var(--space-4); display: flex; flex-wrap: wrap; gap: var(--space-2); }
+/* 저장은 왼쪽, 삭제는 오른쪽 끝 */
+.actions { margin-top: var(--space-4); display: flex; justify-content: space-between; gap: var(--space-2); }
+
+/* 빨간 삭제 버튼. 글자색을 흰색 대신 surface로 둔 이유: 다크 모드의 danger가 밝은 주황이라 흰 글자가 잘 안 보인다 */
+.delete {
+  min-height: var(--tap-min);
+  padding: 0 var(--space-4);
+  border: 1px solid var(--danger);
+  border-radius: var(--radius-md);
+  background: var(--danger);
+  color: var(--surface);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete:disabled { opacity: 0.35; cursor: default; }
+.delete:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
 .saved { margin: var(--space-3) 0 0; font-size: var(--type-body-kr-size); line-height: var(--type-body-kr-line); }
