@@ -26,7 +26,8 @@
   flex: 1;
   min-width: 0;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* 첫 칸만 조금 넓게: 지금 단계 이름을 13.2px로 키우면 EXPLANATION이 65px라 375px 폰의 같은 폭 칸(59px)을 넘친다 */
+  grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 1fr));
   gap: var(--space-1);
 }
 
@@ -43,7 +44,7 @@
   background: transparent;
   color: var(--ink-muted);
   font: inherit;
-  text-align: left;
+  text-align: center; /* 이름을 막대 가운데 아래에 (사용자 요청 2026-11-21) */
   cursor: pointer;
 }
 .step:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
@@ -81,3 +82,5 @@
   letter-spacing: 0.01em;
   text-transform: uppercase;
 }
+/* 지금 단계 이름은 110% (사용자 요청 2026-11-21) — 색만으론 지금 어디인지 덜 눈에 띄어서 */
+.on .name { font-size: 13.2px; }
