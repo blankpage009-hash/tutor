@@ -47,7 +47,7 @@ export function SettingsScreen() {
   const geminiKey = useGeminiKeyValue();
   return (
     <>
-      <BackLink to="/" label="오늘" />
+      <BackLink to="/" label="Today's Practice" />
       <ScreenHeader title="Settings" />
       {saveError && <p className={styles.keyError} lang="ko">설정을 저장하지 못했어요. 앱을 닫으면 바뀐 값이 사라질 수 있어요.</p>}
       <ProgressSummary progress={progress} />
