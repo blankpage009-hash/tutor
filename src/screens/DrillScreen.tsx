@@ -67,6 +67,7 @@ function DrillBody({ lesson, initial }: { lesson: NewLesson; initial?: DrillPosi
     const resume = steps.index > 0 || steps.cleared.size > 0;
     return (
       <DrillList lesson={lesson} fill={steps.index / plan.length} resume={resume} onStart={() => begin(true)}
+        saved={saved.saved} saveError={saved.error} onToggleSave={(id) => { void saved.toggle(id); }}
         onRestart={() => { steps.restart(); begin(false); }} />
     );
   }
