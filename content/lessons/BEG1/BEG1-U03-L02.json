@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U03-L02",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 3,
+  "unitTitle": "티켓 구매하기",
+  "lessonNo": 2,
+  "lessonTitle": "가격과 세부 사항 묻기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "How much is a round-trip ticket?",
+    "ko": "왕복 표는 얼마예요?",
+    "stress": "HOW MUCH is a ROUND-TRIP TICKet?",
+    "audio": { "normal": "audio/lessons/BEG1-U03-L02/key-b92d21c1.m4a", "slow": "audio/lessons/BEG1-U03-L02/key-b92d21c1.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "How much is ~?는 물건 하나의 가격을 물을 때 쓰는 기본 질문입니다.",
+      "round-trip은 '왕복', one-way는 '편도'라는 뜻입니다.",
+      "여러 개의 가격을 물을 때는 is 대신 are를 씁니다. 예) How much are the tickets?",
+      "시간 같은 세부 사항은 When does the next train leave?(다음 기차는 언제 출발해요?)처럼 묻습니다."
+    ],
+    "en": "Use \"How much is ...?\" to ask the price of one thing. A round-trip ticket takes you there and back.",
+    "enKo": "\"How much is ...?\"는 물건 하나의 가격을 물을 때 씁니다. 왕복 표는 갔다가 돌아오는 표입니다."
+  },
+  "pronunciation": [
+    { "focus": "연음", "tip": "How much is a는 이어서 '하우머치저'처럼 말합니다." },
+    { "focus": "약화", "tip": "a는 거의 들리지 않게 '어'로 짧게 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "round와 trip의 r은 혀끝을 입천장에 대지 않고 둥글게 말아서 냅니다." },
+    { "focus": "강세", "tip": "HOW MUCH와 ROUND-TRIP에 힘을 주고, 질문 끝은 내립니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "How many is a round-trip ticket?", "right": "How much is a round-trip ticket?", "note": "가격은 many가 아니라 much로 묻습니다." },
+    { "wrong": "How much a round-trip ticket?", "right": "How much is a round-trip ticket?", "note": "How much 뒤에 is를 빼먹지 않습니다." },
+    { "wrong": "How much is a round ticket?", "right": "How much is a round-trip ticket?", "note": "'왕복'은 round가 아니라 round-trip입니다." }
+  ],
+  "dialogue": {
+    "situation": "공항에 가려고 기차역 매표 창구에 왔습니다.",
+    "partnerRole": "매표소 직원",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Good morning. How can I help you?", "ko": "안녕하세요. 무엇을 도와드릴까요?", "audio": "audio/lessons/BEG1-U03-L02/dlg-01-9159ad73.m4a" },
+      { "no": 2, "speaker": "me", "en": "Hi. How much is a round-trip ticket?", "ko": "안녕하세요. 왕복 표는 얼마예요?", "audio": "audio/lessons/BEG1-U03-L02/dlg-02-54d2fc71.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Where are you going today?", "ko": "오늘 어디 가세요?", "audio": "audio/lessons/BEG1-U03-L02/dlg-03-68719351.m4a" },
+      { "no": 4, "speaker": "me", "en": "To the airport. When does the next train leave?", "ko": "공항이요. 다음 기차는 언제 출발해요?", "audio": "audio/lessons/BEG1-U03-L02/dlg-04-8a34376a.m4a" },
+      { "no": 5, "speaker": "partner", "en": "In ten minutes. Round-trip is twelve dollars.", "ko": "10분 뒤에요. 왕복은 12달러예요.", "audio": "audio/lessons/BEG1-U03-L02/dlg-05-3da28b32.m4a" },
+      { "no": 6, "speaker": "me", "en": "Great. One round-trip ticket, please.", "ko": "좋아요. 왕복 표 한 장 주세요.", "audio": "audio/lessons/BEG1-U03-L02/dlg-06-354f6045.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "When does the next train leave?", "ko": "'다음 기차는 언제 출발해요?' train 자리에 bus를 넣어 버스 정류장에서도 씁니다." },
+      { "en": "One round-trip ticket, please.", "ko": "'왕복 표 한 장 주세요.' 원하는 것 + please로 짧게 주문할 수 있습니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "How much is a round-trip ticket?",
+      "ko": "왕복 표는 얼마예요?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "기차역 창구예요. 갔다가 돌아오는 표가 얼마인지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U03-L02/drill-01-b92d21c1.m4a", "slow": "audio/lessons/BEG1-U03-L02/drill-01-b92d21c1.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "How much is a one-way ticket?",
+      "ko": "편도 표는 얼마예요?",
+      "point": "단어 교체: round-trip → one-way",
+      "cue": { "lang": "ko", "text": "돌아올 때는 친구 차를 타요. 가는 표만 얼마인지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U03-L02/drill-02-a7644318.m4a", "slow": "audio/lessons/BEG1-U03-L02/drill-02-a7644318.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "How much are the tickets for kids?",
+      "ko": "아이들 표는 얼마예요?",
+      "point": "단수 → 복수: is → are",
+      "cue": { "lang": "ko", "text": "아이 둘과 함께 버스를 타요. 아이들 표가 얼마인지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U03-L02/drill-03-dcd8242e.m4a", "slow": "audio/lessons/BEG1-U03-L02/drill-03-dcd8242e.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "How much was your round-trip ticket?",
+      "ko": "왕복 표 얼마 주셨어요?",
+      "point": "시제: 과거 was",
+      "cue": { "lang": "ko", "text": "동료가 여행에서 막 돌아왔어요. 왕복 표를 얼마에 샀는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U03-L02/drill-04-fb4220fa.m4a", "slow": "audio/lessons/BEG1-U03-L02/drill-04-fb4220fa.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "A round-trip ticket is cheaper.",
+      "ko": "왕복 표가 더 싸요.",
+      "point": "비교: cheaper",
+      "cue": { "lang": "en", "text": "Should I buy two one-way tickets?", "audio": "audio/lessons/BEG1-U03-L02/cue-05-a7cf0077.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U03-L02/drill-05-d0bb6735.m4a", "slow": "audio/lessons/BEG1-U03-L02/drill-05-d0bb6735.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "A round-trip ticket isn't very expensive.",
+      "ko": "왕복 표는 별로 안 비싸요.",
+      "point": "부정형: isn't very",
+      "cue": { "lang": "en", "text": "Is the train expensive?", "audio": "audio/lessons/BEG1-U03-L02/cue-06-b6bbde68.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U03-L02/drill-06-4a1fdc86.m4a", "slow": "audio/lessons/BEG1-U03-L02/drill-06-4a1fdc86.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "I'm going to Oakland, and I'm coming back tonight.", "ko": "오클랜드에 갔다가 오늘 밤에 돌아올 거예요.", "audio": "audio/lessons/BEG1-U03-L02/rp-01-e880444e.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How much is a round-trip ticket?",
+        "exampleKo": "왕복 표는 얼마예요?",
+        "requiredKeywords": ["how much", "round-trip ticket"]
+      },
+      { "no": 3, "speaker": "partner", "en": "You're moving to Los Angeles? So you're not coming back?", "ko": "LA로 이사 가신다고요? 그럼 안 돌아오시는 거죠?", "audio": "audio/lessons/BEG1-U03-L02/rp-03-e311b366.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How much is a one-way ticket?",
+        "exampleKo": "편도 표는 얼마예요?",
+        "requiredKeywords": ["how much", "one-way ticket"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Welcome aboard! Your two kids need tickets too.", "ko": "어서 타세요! 아이 두 명도 표가 필요해요.", "audio": "audio/lessons/BEG1-U03-L02/rp-05-2e82c3c6.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How much are the tickets for kids?",
+        "exampleKo": "아이들 표는 얼마예요?",
+        "requiredKeywords": ["how much are", "for kids"]
+      },
+      { "no": 7, "speaker": "partner", "en": "I just got back from New York. It wasn't cheap!", "ko": "뉴욕에서 막 돌아왔어요. 싸지 않더라고요!", "audio": "audio/lessons/BEG1-U03-L02/rp-07-e5c6c6ed.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How much was your round-trip ticket?",
+        "exampleKo": "왕복 표 얼마 주셨어요?",
+        "requiredKeywords": ["how much was", "round-trip ticket"]
+      },
+      { "no": 9, "speaker": "partner", "en": "I'm going to buy two one-way tickets for my trip.", "ko": "여행 가려고 편도 표 두 장 살 거예요.", "audio": "audio/lessons/BEG1-U03-L02/rp-09-39795eeb.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "A round-trip ticket is cheaper.",
+        "exampleKo": "왕복 표가 더 싸요.",
+        "requiredKeywords": ["round-trip ticket", "cheaper"]
+      },
+      { "no": 11, "speaker": "partner", "en": "I want to see my parents, but money is tight.", "ko": "부모님 뵈러 가고 싶은데 돈이 좀 빠듯해요.", "audio": "audio/lessons/BEG1-U03-L02/rp-11-107808e7.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "A round-trip ticket isn't very expensive.",
+        "exampleKo": "왕복 표는 별로 안 비싸요.",
+        "requiredKeywords": ["isn't very expensive", "round-trip ticket"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

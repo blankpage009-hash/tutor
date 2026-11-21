@@ -1,0 +1,368 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U03-L04",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 3,
+  "unitTitle": "티켓 구매하기",
+  "lessonNo": 4,
+  "lessonTitle": "수량 확인하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "So that's two adults and one child, right?",
+    "ko": "그럼 어른 둘, 아이 하나 맞죠?",
+    "stress": "SO THAT'S TWO ADults and ONE CHILD, RIGHT?",
+    "audio": {
+      "normal": "beg1-u03-l04_key.mp3",
+      "slow": "beg1-u03-l04_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "So that's ~, right?은 '그럼 ~ 맞죠?'라는 뜻으로, 숫자나 주문을 다시 확인할 때 씁니다.",
+      "보통 문장 끝에 , right?만 붙이면 확인하는 질문이 됩니다. 끝을 올려 말합니다.",
+      "child(아이)는 여럿이면 children입니다. 예) two adults and two children.",
+      "가격을 확인할 때도 똑같이 씁니다. 예) So that's forty dollars, right?"
+    ],
+    "en": "Say \"So that's ..., right?\" to check a number or an order. Your voice goes up at the end.",
+    "enKo": "\"So that's ..., right?\"는 숫자나 주문을 확인할 때 하는 말입니다. 끝을 올려서 말합니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "연음",
+      "tip": "that's two는 t가 겹쳐서 한 번만 소리 내 '댓츠투'처럼 이어 말합니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "adults의 l은 혀끝을 윗니 뒤에 대고 '어덜츠'처럼 냅니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "and는 '언'처럼 아주 짧게 말합니다."
+    },
+    {
+      "focus": "강세",
+      "tip": "숫자 TWO와 ONE에 힘을 주고, 마지막 right?은 끝을 올립니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "So that's two adult and one child, right?",
+      "right": "So that's two adults and one child, right?",
+      "note": "두 명 이상이면 adults처럼 s를 붙입니다."
+    },
+    {
+      "wrong": "So that's two adults and one children, right?",
+      "right": "So that's two adults and one child, right?",
+      "note": "아이 한 명은 child, 여러 명일 때만 children입니다."
+    },
+    {
+      "wrong": "Two adults and one child, is it right?",
+      "right": "So that's two adults and one child, right?",
+      "note": "'맞죠?'를 is it right?로 직역하지 않습니다. 문장 끝에 right?만 붙입니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "가족과 Golden Hill Zoo 매표소에서 입장권을 삽니다.",
+    "partnerRole": "매표소 직원",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Hi! How many tickets do you need?",
+        "ko": "안녕하세요! 표 몇 장 필요하세요?",
+        "audio": "beg1-u03-l04_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Two for us and one for my son.",
+        "ko": "저희 둘이랑 아들 하나요.",
+        "audio": "beg1-u03-l04_dlg_02.mp3"
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "How old is he? Kids under five are free.",
+        "ko": "아드님 몇 살이에요? 다섯 살 미만은 무료예요.",
+        "audio": "beg1-u03-l04_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "He's seven. So that's two adults and one child, right?",
+        "ko": "일곱 살이에요. 그럼 어른 둘, 아이 하나 맞죠?",
+        "audio": "beg1-u03-l04_dlg_04.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Yes. That's forty-five dollars in total.",
+        "ko": "네. 모두 45달러입니다.",
+        "audio": "beg1-u03-l04_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Here's my card. Thank you!",
+        "ko": "여기 카드요. 감사합니다!",
+        "audio": "beg1-u03-l04_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "How many tickets do you need?",
+        "ko": "'표 몇 장 필요하세요?' 매표소에서 수량을 물을 때 가장 먼저 듣는 말입니다."
+      },
+      {
+        "en": "That's forty-five dollars in total.",
+        "ko": "'모두 45달러입니다.' in total은 '모두 합쳐서'라는 뜻입니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "So that's two adults and one child, right?",
+      "ko": "그럼 어른 둘, 아이 하나 맞죠?",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "ko",
+        "text": "매표소에서 어른 두 명, 아이 한 명 표를 사요. 수량이 맞는지 확인해 보세요."
+      },
+      "audio": {
+        "normal": "beg1-u03-l04_drill_01.mp3",
+        "slow": "beg1-u03-l04_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "So that's three adults and two children, right?",
+      "ko": "그럼 어른 셋, 아이 둘 맞죠?",
+      "point": "단어 교체: 숫자 + child → children",
+      "cue": {
+        "lang": "ko",
+        "text": "부모님까지 다섯 명이 왔어요. 어른 셋, 아이 둘이 맞는지 확인하세요."
+      },
+      "audio": {
+        "normal": "beg1-u03-l04_drill_02.mp3",
+        "slow": "beg1-u03-l04_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "So you said two adults, right?",
+      "ko": "그럼 어른 둘이라고 하셨죠?",
+      "point": "시제: 과거 you said",
+      "cue": {
+        "lang": "ko",
+        "text": "동료가 동물원 표를 대신 주문했어요. 어른 둘이라고 말했는지 확인하세요."
+      },
+      "audio": {
+        "normal": "beg1-u03-l04_drill_03.mp3",
+        "slow": "beg1-u03-l04_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "So we need four tickets, right?",
+      "ko": "그럼 저희 표 네 장 필요한 거죠?",
+      "point": "주어 변경: that's → we need",
+      "cue": {
+        "lang": "ko",
+        "text": "네 명이 함께 영화를 봐요. 표가 네 장 필요한 게 맞는지 확인하세요."
+      },
+      "audio": {
+        "normal": "beg1-u03-l04_drill_04.mp3",
+        "slow": "beg1-u03-l04_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "So the child ticket is cheaper, right?",
+      "ko": "그럼 아이 표가 더 싼 거죠?",
+      "point": "비교: cheaper",
+      "cue": {
+        "lang": "ko",
+        "text": "어른 표와 아이 표 가격이 달라요. 아이 표가 더 싼 게 맞는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u03-l04_drill_05.mp3",
+        "slow": "beg1-u03-l04_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "So the baby doesn't need a ticket, right?",
+      "ko": "그럼 아기는 표가 필요 없는 거죠?",
+      "point": "부정형: doesn't need",
+      "cue": {
+        "lang": "ko",
+        "text": "아기와 함께 왔어요. 아기는 표가 필요 없는 게 맞는지 확인하세요."
+      },
+      "audio": {
+        "normal": "beg1-u03-l04_drill_06.mp3",
+        "slow": "beg1-u03-l04_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Okay, that's you, your husband, and your daughter.",
+        "ko": "네, 고객님, 남편분, 그리고 따님이요."
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "So that's two adults and one child, right?",
+        "exampleKo": "그럼 어른 둘, 아이 하나 맞죠?",
+        "requiredKeywords": [
+          "two adults",
+          "one child",
+          "right"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Let me see... you, your parents, and your two sons.",
+        "ko": "어디 보자… 고객님, 부모님, 그리고 아들 두 명이요."
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "So that's three adults and two children, right?",
+        "exampleKo": "그럼 어른 셋, 아이 둘 맞죠?",
+        "requiredKeywords": [
+          "three adults",
+          "two children"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I called the zoo and ordered our tickets already.",
+        "ko": "제가 동물원에 전화해서 표 벌써 주문했어요."
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "So you said two adults, right?",
+        "exampleKo": "그럼 어른 둘이라고 하셨죠?",
+        "requiredKeywords": [
+          "you said",
+          "two adults"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "There are four of us going to the movie tonight.",
+        "ko": "오늘 밤 영화 보러 가는 사람이 저희 네 명이에요."
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "So we need four tickets, right?",
+        "exampleKo": "그럼 저희 표 네 장 필요한 거죠?",
+        "requiredKeywords": [
+          "need four tickets",
+          "right"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Adult tickets are twenty dollars. Child tickets are twelve.",
+        "ko": "어른 표는 20달러예요. 아이 표는 12달러고요."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "So the child ticket is cheaper, right?",
+        "exampleKo": "그럼 아이 표가 더 싼 거죠?",
+        "requiredKeywords": [
+          "child ticket",
+          "cheaper"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Kids under two get in for free here.",
+        "ko": "여기는 두 살 미만 아이는 무료로 들어가요."
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "So the baby doesn't need a ticket, right?",
+        "exampleKo": "그럼 아기는 표가 필요 없는 거죠?",
+        "requiredKeywords": [
+          "doesn't need",
+          "a ticket"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

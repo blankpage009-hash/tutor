@@ -1,0 +1,368 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U03-L03",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 3,
+  "unitTitle": "티켓 구매하기",
+  "lessonNo": 3,
+  "lessonTitle": "주변 환경에 대해 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "There are so many people here today.",
+    "ko": "오늘 여기 사람 진짜 많다.",
+    "stress": "There are SO MANy PEOple HERE toDAY.",
+    "audio": {
+      "normal": "beg1-u03-l03_key.mp3",
+      "slow": "beg1-u03-l03_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "There is / There are는 '~이 있다'라는 뜻으로, 주변에 무엇이 보이는지 말할 때 씁니다.",
+      "하나면 There is, 여럿이면 There are를 씁니다. people은 여러 사람이라 There are입니다.",
+      "so many는 '정말 많은'이라는 뜻으로 놀란 느낌을 줍니다. 물·돈처럼 셀 수 없는 것에는 so much를 씁니다.",
+      "말할 때는 There is를 줄여 There's라고 많이 합니다. 예) There's a hot dog stand over there."
+    ],
+    "en": "Say \"There is\" for one thing and \"There are\" for many things. Use it to talk about what you see around you.",
+    "enKo": "하나일 때는 \"There is\", 여럿일 때는 \"There are\"라고 합니다. 주변에 보이는 것을 말할 때 씁니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "There의 th는 혀끝을 윗니에 살짝 대고 '더'처럼 냅니다. '데어'처럼 ㄷ으로 세게 내지 않습니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "There are는 이어서 '데어라'처럼 한 번에 말합니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "are는 힘을 빼서 '어'처럼 짧게 말합니다."
+    },
+    {
+      "focus": "강세",
+      "tip": "SO MANY와 PEOple에 힘을 주어 놀란 느낌을 살립니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Here is so many people today.",
+      "right": "There are so many people here today.",
+      "note": "'~이 있다'는 Here is가 아니라 There are로 시작합니다."
+    },
+    {
+      "wrong": "There is so many people here today.",
+      "right": "There are so many people here today.",
+      "note": "people은 복수라서 is가 아니라 are를 씁니다."
+    },
+    {
+      "wrong": "There are so much people here today.",
+      "right": "There are so many people here today.",
+      "note": "사람처럼 셀 수 있는 것에는 much가 아니라 many를 씁니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "친구와 야구 경기를 보러 야구장 입구에 도착했습니다.",
+    "partnerRole": "친구",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Wow, look at this line!",
+        "ko": "와, 이 줄 좀 봐!",
+        "audio": "beg1-u03-l03_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "There are so many people here today.",
+        "ko": "오늘 여기 사람 진짜 많다.",
+        "audio": "beg1-u03-l03_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "It's a big game. Are you hungry?",
+        "ko": "큰 경기잖아. 배고파?",
+        "audio": "beg1-u03-l03_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Yeah. There's a hot dog stand over there.",
+        "ko": "응. 저기 핫도그 파는 데 있어.",
+        "audio": "beg1-u03-l03_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Let's get some before the game starts.",
+        "ko": "경기 시작하기 전에 좀 사 먹자.",
+        "audio": "beg1-u03-l03_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Good idea. I'll get the drinks.",
+        "ko": "좋아. 음료는 내가 살게.",
+        "audio": "beg1-u03-l03_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "It's a big game.",
+        "ko": "'큰 경기잖아.' 중요한 경기라서 사람이 많다는 이유를 말할 때 씁니다."
+      },
+      {
+        "en": "I'll get the drinks.",
+        "ko": "'음료는 내가 살게.' get은 '사다'라는 뜻으로도 자주 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "There are so many people here today.",
+      "ko": "오늘 여기 사람 진짜 많다.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "Wow, what do you think of this place?"
+      },
+      "audio": {
+        "normal": "beg1-u03-l03_drill_01.mp3",
+        "slow": "beg1-u03-l03_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "There are so many cars here today.",
+      "ko": "오늘 여기 차 진짜 많다.",
+      "point": "단어 교체: people → cars",
+      "cue": {
+        "lang": "en",
+        "text": "Why are we driving around the parking lot?"
+      },
+      "audio": {
+        "normal": "beg1-u03-l03_drill_02.mp3",
+        "slow": "beg1-u03-l03_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "There is a long line over there.",
+      "ko": "저기 줄 엄청 길어.",
+      "point": "단수: There are → There is + a long line",
+      "cue": {
+        "lang": "en",
+        "text": "Should we get snacks at that stand?"
+      },
+      "audio": {
+        "normal": "beg1-u03-l03_drill_03.mp3",
+        "slow": "beg1-u03-l03_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "There were so many people here yesterday.",
+      "ko": "어제 여기 사람 진짜 많았어.",
+      "point": "시제: 과거 There were",
+      "cue": {
+        "lang": "en",
+        "text": "Is it always this quiet here?"
+      },
+      "audio": {
+        "normal": "beg1-u03-l03_drill_04.mp3",
+        "slow": "beg1-u03-l03_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Are there any seats over there?",
+      "ko": "저기 빈자리 있어?",
+      "point": "질문형: Are there any ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "친구와 앉을 자리를 찾고 있어요. 저쪽에 자리가 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u03-l03_drill_05.mp3",
+        "slow": "beg1-u03-l03_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "There aren't many people here today.",
+      "ko": "오늘 여기 사람 별로 없다.",
+      "point": "부정형: There aren't many",
+      "cue": {
+        "lang": "en",
+        "text": "Is it busy today?"
+      },
+      "audio": {
+        "normal": "beg1-u03-l03_drill_06.mp3",
+        "slow": "beg1-u03-l03_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "We finally made it to the stadium! Wow, look around.",
+        "ko": "드디어 야구장 왔다! 와, 주변 좀 봐."
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "There are so many people here today.",
+        "exampleKo": "오늘 여기 사람 진짜 많다.",
+        "requiredKeywords": [
+          "so many people",
+          "here today"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "It took us thirty minutes to park the car!",
+        "ko": "주차하는 데 30분이나 걸렸어!"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "There are so many cars here today.",
+        "exampleKo": "오늘 여기 차 진짜 많다.",
+        "requiredKeywords": [
+          "so many cars",
+          "here today"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I'm so hungry. Let's get hot dogs right now.",
+        "ko": "나 너무 배고파. 지금 바로 핫도그 사자."
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "There is a long line over there.",
+        "exampleKo": "저기 줄 엄청 길어.",
+        "requiredKeywords": [
+          "there is",
+          "long line",
+          "over there"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "It's so quiet at the park today, right?",
+        "ko": "오늘 공원 진짜 조용하다, 그치?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "There were so many people here yesterday.",
+        "exampleKo": "어제 여기 사람 진짜 많았어.",
+        "requiredKeywords": [
+          "there were",
+          "yesterday"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "My legs really hurt. I want to sit down.",
+        "ko": "나 다리 너무 아파. 앉고 싶어."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are there any seats over there?",
+        "exampleKo": "저기 빈자리 있어?",
+        "requiredKeywords": [
+          "are there any seats",
+          "over there"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Hey, the mall looks kind of empty, huh?",
+        "ko": "야, 쇼핑몰 좀 텅 빈 것 같지 않아?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "There aren't many people here today.",
+        "exampleKo": "오늘 여기 사람 별로 없다.",
+        "requiredKeywords": [
+          "aren't many people",
+          "here today"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
