@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U04-L02",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 4,
+  "unitTitle": "미래 계획",
+  "lessonNo": 2,
+  "lessonTitle": "여행 세부 사항 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "We're flying out on Friday morning.",
+    "ko": "저희 금요일 아침 비행기로 떠나요.",
+    "stress": "We're FLYing OUT on FRIday MORNing.",
+    "audio": { "normal": "audio/lessons/BEG1-U04-L02/key-12a8d5bb.m4a", "slow": "audio/lessons/BEG1-U04-L02/key-12a8d5bb.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "fly out은 비행기를 타고 떠난다는 뜻입니다. 여행이나 출장의 출발을 말할 때 자주 씁니다.",
+      "We're flying처럼 be + -ing를 쓰면 표를 사 둔 것처럼 날짜가 정해진 일정을 말할 수 있습니다.",
+      "요일 앞에는 on을 붙입니다. on Friday morning, on Sunday night처럼 씁니다.",
+      "We will leave on Friday.도 통하지만, 정해진 여행 일정에는 We're flying out ~이 더 자연스럽습니다."
+    ],
+    "en": "Use \"be + -ing\" for a plan with a set date, like a flight. \"Fly out\" means you leave by plane.",
+    "enKo": "비행기처럼 날짜가 정해진 일정은 \"be + -ing\"로 말합니다. \"Fly out\"은 비행기를 타고 떠난다는 뜻입니다."
+  },
+  "pronunciation": [
+    { "focus": "연음", "tip": "flying out은 이어서 '플라잉아웃'처럼 한 번에 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "flying과 Friday의 f는 윗니를 아랫입술에 대고 바람을 내보냅니다. 'ㅍ'처럼 터뜨리지 않습니다." },
+    { "focus": "약화", "tip": "on은 힘을 빼서 '언'처럼 짧게 말합니다." },
+    { "focus": "강세", "tip": "FLY, OUT, FRI, MORN에 힘을 줍니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "We're flying out in Friday morning.", "right": "We're flying out on Friday morning.", "note": "요일 앞에는 in이 아니라 on을 씁니다." },
+    { "wrong": "We fly to out on Friday morning.", "right": "We're flying out on Friday morning.", "note": "fly out은 한 덩어리입니다. 사이에 to를 넣지 않습니다." },
+    { "wrong": "We are going airplane on Friday morning.", "right": "We're flying out on Friday morning.", "note": "'비행기 타고 가다'는 go airplane이 아니라 fly라고 합니다." }
+  ],
+  "dialogue": {
+    "situation": "회사 휴게실에서 동료가 휴가 여행 일정을 묻습니다.",
+    "partnerRole": "동료",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "I heard you're going to Hawaii. When do you leave?", "ko": "하와이 가신다면서요. 언제 떠나세요?", "audio": "audio/lessons/BEG1-U04-L02/dlg-01-c6527666.m4a" },
+      { "no": 2, "speaker": "me", "en": "We're flying out on Friday morning.", "ko": "저희 금요일 아침 비행기로 떠나요.", "audio": "audio/lessons/BEG1-U04-L02/dlg-02-12a8d5bb.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Nice! Where are you staying?", "ko": "좋네요! 어디서 묵으세요?", "audio": "audio/lessons/BEG1-U04-L02/dlg-03-820c1e1d.m4a" },
+      { "no": 4, "speaker": "me", "en": "We're staying at a hotel near the beach.", "ko": "해변 근처 호텔에 묵어요.", "audio": "audio/lessons/BEG1-U04-L02/dlg-04-8088c56a.m4a" },
+      { "no": 5, "speaker": "partner", "en": "How long is the trip?", "ko": "여행은 얼마나 가세요?", "audio": "audio/lessons/BEG1-U04-L02/dlg-05-e14b4ea2.m4a" },
+      { "no": 6, "speaker": "me", "en": "Five days. We're coming back next Wednesday.", "ko": "5일이요. 다음 주 수요일에 돌아와요.", "audio": "audio/lessons/BEG1-U04-L02/dlg-06-ca181dba.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "Where are you staying?", "ko": "'어디서 묵으세요?' 여행 가는 사람에게 숙소를 물을 때 씁니다." },
+      { "en": "We're coming back next Wednesday.", "ko": "'다음 주 수요일에 돌아와요.' 돌아오는 날도 be + -ing로 말합니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "We're flying out on Friday morning.",
+      "ko": "저희 금요일 아침 비행기로 떠나요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "So, what's your travel schedule?", "audio": "audio/lessons/BEG1-U04-L02/cue-01-e457cd2d.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U04-L02/drill-01-12a8d5bb.m4a", "slow": "audio/lessons/BEG1-U04-L02/drill-01-12a8d5bb.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "We're flying out on Sunday night.",
+      "ko": "저희 일요일 밤 비행기로 떠나요.",
+      "point": "단어 교체: Friday morning → Sunday night",
+      "cue": { "lang": "en", "text": "What day is your flight now?", "audio": "audio/lessons/BEG1-U04-L02/cue-02-0f610a36.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U04-L02/drill-02-09e655c0.m4a", "slow": "audio/lessons/BEG1-U04-L02/drill-02-09e655c0.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "My brother is flying out on Friday morning.",
+      "ko": "제 남동생은 금요일 아침 비행기로 떠나요.",
+      "point": "주어 변경: We → My brother",
+      "cue": { "lang": "en", "text": "When does your brother leave?", "audio": "audio/lessons/BEG1-U04-L02/cue-03-26a9888b.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U04-L02/drill-03-fdbe6fa0.m4a", "slow": "audio/lessons/BEG1-U04-L02/drill-03-fdbe6fa0.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "We're not flying out until Saturday.",
+      "ko": "저희는 토요일이 돼야 떠나요.",
+      "point": "부정형: not ~ until (~가 되어서야)",
+      "cue": { "lang": "en", "text": "Are you leaving tomorrow?", "audio": "audio/lessons/BEG1-U04-L02/cue-04-a3892ea1.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U04-L02/drill-04-5e157098.m4a", "slow": "audio/lessons/BEG1-U04-L02/drill-04-5e157098.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Are you flying out on Friday morning?",
+      "ko": "금요일 아침 비행기로 떠나세요?",
+      "point": "질문형: Are you flying ~?",
+      "cue": { "lang": "ko", "text": "동료가 금요일에 출장을 가요. 금요일 아침 비행기인지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U04-L02/drill-05-0ef757fd.m4a", "slow": "audio/lessons/BEG1-U04-L02/drill-05-0ef757fd.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "We flew out on Friday morning.",
+      "ko": "저희 금요일 아침 비행기로 떠났어요.",
+      "point": "시제: 과거 flew out",
+      "cue": { "lang": "en", "text": "When did your trip start?", "audio": "audio/lessons/BEG1-U04-L02/cue-06-de59b7f5.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U04-L02/drill-06-13984e70.m4a", "slow": "audio/lessons/BEG1-U04-L02/drill-06-13984e70.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Your vacation starts this week, right? When do you go?", "ko": "이번 주에 휴가 시작이죠? 언제 가세요?", "audio": "audio/lessons/BEG1-U04-L02/rp-01-bfb04879.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We're flying out on Friday morning.",
+        "exampleKo": "저희 금요일 아침 비행기로 떠나요.",
+        "requiredKeywords": ["flying out", "friday morning"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Did you change your flight? You said Friday.", "ko": "비행기 바꾸셨어요? 금요일이라고 하셨잖아요.", "audio": "audio/lessons/BEG1-U04-L02/rp-03-ed5bee76.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We're flying out on Sunday night.",
+        "exampleKo": "저희 일요일 밤 비행기로 떠나요.",
+        "requiredKeywords": ["flying out", "sunday night"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Your brother is going to Chicago too? When?", "ko": "남동생분도 시카고에 가요? 언제요?", "audio": "audio/lessons/BEG1-U04-L02/rp-05-4b90c17b.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My brother is flying out on Friday morning.",
+        "exampleKo": "제 남동생은 금요일 아침 비행기로 떠나요.",
+        "requiredKeywords": ["my brother", "friday morning"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Do you need a ride to the airport tomorrow?", "ko": "내일 공항까지 태워 드릴까요?", "audio": "audio/lessons/BEG1-U04-L02/rp-07-cb998b31.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We're not flying out until Saturday.",
+        "exampleKo": "저희는 토요일이 돼야 떠나요.",
+        "requiredKeywords": ["not flying out", "until saturday"]
+      },
+      { "no": 9, "speaker": "partner", "en": "My business trip is this Friday. I'm a little nervous.", "ko": "저 이번 금요일에 출장 가요. 좀 긴장되네요.", "audio": "audio/lessons/BEG1-U04-L02/rp-09-07504c37.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are you flying out on Friday morning?",
+        "exampleKo": "금요일 아침 비행기로 떠나세요?",
+        "requiredKeywords": ["are you", "friday morning"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Welcome back! Did you leave on Thursday night?", "ko": "돌아오셨네요! 목요일 밤에 떠나셨어요?", "audio": "audio/lessons/BEG1-U04-L02/rp-11-f5809874.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We flew out on Friday morning.",
+        "exampleKo": "저희 금요일 아침 비행기로 떠났어요.",
+        "requiredKeywords": ["flew out", "friday morning"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U04-L01",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 4,
+  "unitTitle": "미래 계획",
+  "lessonNo": 1,
+  "lessonTitle": "미래 계획 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I'm going to visit my parents this weekend.",
+    "ko": "이번 주말에 부모님 댁에 갈 거야.",
+    "stress": "I'm GOing to VISit my PARents this WEEKend.",
+    "audio": {
+      "normal": "beg1-u04-l01_key.mp3",
+      "slow": "beg1-u04-l01_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "I'm going to + 동사는 '~할 거야'라는 뜻으로, 이미 마음먹은 계획을 말할 때 씁니다.",
+      "순서는 I'm going to + 동사 + 무엇을 + 언제입니다. 예) I'm going to see a movie tonight.",
+      "I will visit ~도 맞지만, 미리 정해 둔 계획에는 I'm going to가 더 자연스럽습니다. will은 말하는 순간 정한 일에 많이 씁니다.",
+      "'부모님 댁에 가다'는 go to my parents' house보다 visit my parents가 짧고 자연스럽습니다."
+    ],
+    "en": "Use \"I'm going to ...\" for a plan you already made. Say the action first, then the time.",
+    "enKo": "\"I'm going to ...\"는 이미 세워 둔 계획을 말할 때 씁니다. 할 일을 먼저 말하고, 시간은 뒤에 붙입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "약화",
+      "tip": "going to는 빨리 말하면 '거나'처럼 들립니다(gonna). 듣고 알아들을 수 있으면 충분합니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "visit my는 이어서 '비짓마이'처럼 붙여 말합니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "visit의 v는 윗니를 아랫입술에 살짝 대고 냅니다. '비'가 아니라 떨리는 소리입니다."
+    },
+    {
+      "focus": "강세",
+      "tip": "GO, VIS, PAR, WEEK에 힘을 줍니다. this는 약하게 말합니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I'm going to visit my parents' house this weekend.",
+      "right": "I'm going to visit my parents this weekend.",
+      "note": "visit은 사람에게 바로 붙일 수 있습니다. house를 넣지 않아도 됩니다."
+    },
+    {
+      "wrong": "I'm going to visit my parents at this weekend.",
+      "right": "I'm going to visit my parents this weekend.",
+      "note": "this weekend, next week 앞에는 at이나 on을 붙이지 않습니다."
+    },
+    {
+      "wrong": "I going to visit my parents this weekend.",
+      "right": "I'm going to visit my parents this weekend.",
+      "note": "going to 앞에 꼭 am(I'm)을 넣어야 합니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "금요일 오후, 회사 앞에서 친구와 주말 계획을 이야기합니다.",
+    "partnerRole": "친구",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Hey, any big plans for the weekend?",
+        "ko": "야, 주말에 특별한 계획 있어?",
+        "audio": "beg1-u04-l01_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Yeah. I'm going to visit my parents this weekend.",
+        "ko": "응. 이번 주말에 부모님 댁에 갈 거야.",
+        "audio": "beg1-u04-l01_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Nice! Are you going to drive there?",
+        "ko": "좋다! 차 끌고 가?",
+        "audio": "beg1-u04-l01_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "No, I'm going to take the train.",
+        "ko": "아니, 기차 타고 갈 거야.",
+        "audio": "beg1-u04-l01_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Cool. How long are you going to stay?",
+        "ko": "좋네. 얼마나 있다 와?",
+        "audio": "beg1-u04-l01_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Just two days. I'll be back on Sunday.",
+        "ko": "딱 이틀. 일요일에 돌아와.",
+        "audio": "beg1-u04-l01_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "Any big plans for the weekend?",
+        "ko": "'주말에 특별한 계획 있어?' Do you have를 빼고 짧게 묻는 말입니다."
+      },
+      {
+        "en": "I'll be back on Sunday.",
+        "ko": "'일요일에 돌아올 거야.' 돌아오는 날을 말할 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I'm going to visit my parents this weekend.",
+      "ko": "이번 주말에 부모님 댁에 갈 거야.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "What are you doing this weekend?"
+      },
+      "audio": {
+        "normal": "beg1-u04-l01_drill_01.mp3",
+        "slow": "beg1-u04-l01_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I'm going to visit my grandma next week.",
+      "ko": "다음 주에 할머니 댁에 갈 거야.",
+      "point": "단어 교체: my parents → my grandma, this weekend → next week",
+      "cue": {
+        "lang": "en",
+        "text": "Where are you going next week?"
+      },
+      "audio": {
+        "normal": "beg1-u04-l01_drill_02.mp3",
+        "slow": "beg1-u04-l01_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "We're going to visit our parents this weekend.",
+      "ko": "우리 이번 주말에 부모님 댁에 갈 거야.",
+      "point": "주어 변경: I → we, my → our",
+      "cue": {
+        "lang": "ko",
+        "text": "여동생과 이번 주말에 함께 부모님 댁에 가요. 친구에게 말해 보세요."
+      },
+      "audio": {
+        "normal": "beg1-u04-l01_drill_03.mp3",
+        "slow": "beg1-u04-l01_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I'm not going to visit my parents this weekend.",
+      "ko": "이번 주말엔 부모님 댁에 안 갈 거야.",
+      "point": "부정형: I'm not going to",
+      "cue": {
+        "lang": "en",
+        "text": "Are you going home this weekend?"
+      },
+      "audio": {
+        "normal": "beg1-u04-l01_drill_04.mp3",
+        "slow": "beg1-u04-l01_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Are you going to visit your parents this weekend?",
+      "ko": "이번 주말에 부모님 댁에 갈 거야?",
+      "point": "질문형: Are you going to ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "친구가 이번 주말에 부모님 댁에 가는지 궁금해요. 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u04-l01_drill_05.mp3",
+        "slow": "beg1-u04-l01_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I was going to visit my parents this weekend.",
+      "ko": "이번 주말에 부모님 댁에 가려고 했었어.",
+      "point": "시제: 과거 was going to (하려고 했는데 못 함)",
+      "cue": {
+        "lang": "en",
+        "text": "Did you go see your family this weekend?"
+      },
+      "audio": {
+        "normal": "beg1-u04-l01_drill_06.mp3",
+        "slow": "beg1-u04-l01_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I'm free this weekend. What are you up to?",
+        "ko": "나 이번 주말에 한가해. 너는 뭐 해?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm going to visit my parents this weekend.",
+        "exampleKo": "이번 주말에 부모님 댁에 갈 거야.",
+        "requiredKeywords": [
+          "visit my parents",
+          "this weekend"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Your grandma called. When are you seeing her?",
+        "ko": "할머니께서 전화하셨어. 언제 뵈러 가?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm going to visit my grandma next week.",
+        "exampleKo": "다음 주에 할머니 댁에 갈 거야.",
+        "requiredKeywords": [
+          "my grandma",
+          "next week"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Your sister is in town! What are you two doing?",
+        "ko": "여동생 왔다며! 둘이 뭐 해?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We're going to visit our parents this weekend.",
+        "exampleKo": "우리 이번 주말에 부모님 댁에 갈 거야.",
+        "requiredKeywords": [
+          "we're",
+          "our parents",
+          "this weekend"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "You have a big test Monday. Still going home?",
+        "ko": "월요일에 큰 시험 있잖아. 그래도 집에 가?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm not going to visit my parents this weekend.",
+        "exampleKo": "이번 주말엔 부모님 댁에 안 갈 거야.",
+        "requiredKeywords": [
+          "i'm not",
+          "my parents",
+          "this weekend"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I might go home this weekend. I'm not sure.",
+        "ko": "나 이번 주말에 집에 갈지도 몰라. 아직 모르겠어."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are you going to visit your parents this weekend?",
+        "exampleKo": "이번 주말에 부모님 댁에 갈 거야?",
+        "requiredKeywords": [
+          "are you",
+          "your parents",
+          "this weekend"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Wait, why are you still here? I thought you left!",
+        "ko": "어, 너 왜 아직 여기 있어? 간 줄 알았는데!"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I was going to visit my parents this weekend.",
+        "exampleKo": "이번 주말에 부모님 댁에 가려고 했었어.",
+        "requiredKeywords": [
+          "i was",
+          "my parents",
+          "this weekend"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

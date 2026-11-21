@@ -44,10 +44,10 @@
               "no": 4,
               "title": "미래 계획",
               "lessons": [
-                { "no": 1, "title": "미래 계획 이야기하기", "id": "BEG1-U04-L01", "ready": false},
-                { "no": 2, "title": "여행 세부 사항 이야기하기", "id": "BEG1-U04-L02", "ready": false},
-                { "no": 3, "title": "계획하고 있는 일에 대해 묻기", "id": "BEG1-U04-L03", "ready": false},
-                { "no": 4, "title": "예측하기", "id": "BEG1-U04-L04", "ready": false}
+                { "no": 1, "title": "미래 계획 이야기하기", "id": "BEG1-U04-L01", "ready": true, "file": "lessons/BEG1/BEG1-U04-L01.json" },
+                { "no": 2, "title": "여행 세부 사항 이야기하기", "id": "BEG1-U04-L02", "ready": true, "file": "lessons/BEG1/BEG1-U04-L02.json" },
+                { "no": 3, "title": "계획하고 있는 일에 대해 묻기", "id": "BEG1-U04-L03", "ready": true, "file": "lessons/BEG1/BEG1-U04-L03.json" },
+                { "no": 4, "title": "예측하기", "id": "BEG1-U04-L04", "ready": true, "file": "lessons/BEG1/BEG1-U04-L04.json" }
               ]
             },
             {

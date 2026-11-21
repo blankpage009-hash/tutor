@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U04-L04",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 4,
+  "unitTitle": "미래 계획",
+  "lessonNo": 4,
+  "lessonTitle": "예측하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I think it's going to rain tomorrow.",
+    "ko": "내일 비 올 것 같아요.",
+    "stress": "I THINK it's GOing to RAIN toMORrow.",
+    "audio": { "normal": "audio/lessons/BEG1-U04-L04/key-72312cb3.m4a", "slow": "audio/lessons/BEG1-U04-L04/key-72312cb3.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "I think it's going to ~는 '~할 것 같아요'라는 뜻으로, 앞으로 일어날 일을 짐작할 때 씁니다.",
+      "날씨 이야기에 특히 많이 씁니다. 하늘이나 일기예보를 보고 말하는 느낌입니다.",
+      "날씨를 말할 때 주어는 it입니다. It's going to rain, It's going to be hot처럼 씁니다.",
+      "'안 올 것 같아요'는 I think it won't rain보다 I don't think it's going to rain이 자연스럽습니다."
+    ],
+    "en": "Say \"I think it's going to ...\" when you guess what will happen. People use it a lot to talk about the weather.",
+    "enKo": "앞으로 일어날 일을 짐작할 때 \"I think it's going to ...\"라고 말합니다. 날씨 이야기에 특히 많이 씁니다."
+  },
+  "pronunciation": [
+    { "focus": "약화", "tip": "it's going to는 빨리 말하면 '잇츠거나'처럼 들립니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "rain의 r은 혀를 입천장에 닿지 않게 뒤로 말아서 냅니다. '레인'보다 '(우)레인'에 가깝습니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "think의 th는 혀끝을 윗니와 아랫니 사이에 살짝 물고 바람을 냅니다. '씽크'처럼 들립니다." },
+    { "focus": "강세", "tip": "THINK, GO, RAIN, MOR에 힘을 줍니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I think it will raining tomorrow.", "right": "I think it's going to rain tomorrow.", "note": "will이나 going to 뒤에는 -ing가 아니라 동사원형 rain을 씁니다." },
+    { "wrong": "I think tomorrow is going to rain.", "right": "I think it's going to rain tomorrow.", "note": "비가 오는 건 tomorrow가 아니라 날씨입니다. 날씨의 주어는 it으로 씁니다." },
+    { "wrong": "I think it won't rain tomorrow.", "right": "I don't think it's going to rain tomorrow.", "note": "영어는 '안 올 것 같다'를 보통 I don't think로 앞에서 부정합니다." }
+  ],
+  "dialogue": {
+    "situation": "토요일 아침, 아파트 주차장에서 이웃과 마주쳤습니다.",
+    "partnerRole": "이웃",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Good morning! Are you washing your car today?", "ko": "안녕하세요! 오늘 세차하세요?", "audio": "audio/lessons/BEG1-U04-L04/dlg-01-17edf4c9.m4a" },
+      { "no": 2, "speaker": "me", "en": "No. I think it's going to rain tomorrow.", "ko": "아니요. 내일 비 올 것 같아요.", "audio": "audio/lessons/BEG1-U04-L04/dlg-02-fe1c7afa.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Really? I'm having a barbecue tomorrow.", "ko": "정말요? 저 내일 바비큐 하는데요.", "audio": "audio/lessons/BEG1-U04-L04/dlg-03-37037300.m4a" },
+      { "no": 4, "speaker": "me", "en": "Oh no. Maybe it will stop by noon.", "ko": "어떡해요. 아마 점심때쯤엔 그칠 거예요.", "audio": "audio/lessons/BEG1-U04-L04/dlg-04-921fcd3b.m4a" },
+      { "no": 5, "speaker": "partner", "en": "I hope so. Thanks for telling me!", "ko": "그러면 좋겠네요. 알려 주셔서 고마워요!", "audio": "audio/lessons/BEG1-U04-L04/dlg-05-aa784a24.m4a" },
+      { "no": 6, "speaker": "me", "en": "Sure. I think it'll be sunny on Sunday.", "ko": "별말씀을요. 일요일엔 맑을 것 같아요.", "audio": "audio/lessons/BEG1-U04-L04/dlg-06-b455ffa8.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "I hope so.", "ko": "'그러면 좋겠네요.' 상대 말이 그대로 되길 바랄 때 씁니다." },
+      { "en": "Maybe it will stop by noon.", "ko": "'아마 점심때쯤엔 그칠 거예요.' by noon은 '정오까지는'이라는 뜻입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I think it's going to rain tomorrow.",
+      "ko": "내일 비 올 것 같아요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "What's the weather going to be like tomorrow?", "audio": "audio/lessons/BEG1-U04-L04/cue-01-a1a27796.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U04-L04/drill-01-72312cb3.m4a", "slow": "audio/lessons/BEG1-U04-L04/drill-01-72312cb3.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I think it's going to snow tonight.",
+      "ko": "오늘 밤에 눈 올 것 같아요.",
+      "point": "단어 교체: rain → snow, tomorrow → tonight",
+      "cue": { "lang": "en", "text": "Why are you wearing a heavy coat?", "audio": "audio/lessons/BEG1-U04-L04/cue-02-f4fa120f.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U04-L04/drill-02-954a5ca7.m4a", "slow": "audio/lessons/BEG1-U04-L04/drill-02-954a5ca7.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "I think tomorrow is going to be hotter.",
+      "ko": "내일은 더 더울 것 같아요.",
+      "point": "비교: hotter",
+      "cue": { "lang": "en", "text": "Should we go to the beach tomorrow?", "audio": "audio/lessons/BEG1-U04-L04/cue-03-945cd43a.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U04-L04/drill-03-b89dbced.m4a", "slow": "audio/lessons/BEG1-U04-L04/drill-03-b89dbced.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "I don't think it's going to rain tomorrow.",
+      "ko": "내일은 비 안 올 것 같아요.",
+      "point": "부정형: I don't think",
+      "cue": { "lang": "en", "text": "Should we cancel the picnic tomorrow?", "audio": "audio/lessons/BEG1-U04-L04/cue-04-6b01b294.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U04-L04/drill-04-bd6a1667.m4a", "slow": "audio/lessons/BEG1-U04-L04/drill-04-bd6a1667.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Do you think it's going to rain tomorrow?",
+      "ko": "내일 비 올 것 같아요?",
+      "point": "질문형: Do you think ~?",
+      "cue": { "lang": "ko", "text": "내일 이웃과 바비큐를 해요. 이웃에게 내일 비가 올 것 같은지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U04-L04/drill-05-d3332b53.m4a", "slow": "audio/lessons/BEG1-U04-L04/drill-05-d3332b53.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I thought it was going to rain today.",
+      "ko": "오늘 비 올 줄 알았어요.",
+      "point": "시제: 과거 thought, was going to",
+      "cue": { "lang": "en", "text": "Why are you wearing rain boots?", "audio": "audio/lessons/BEG1-U04-L04/cue-06-9a69a752.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U04-L04/drill-06-ac23a453.m4a", "slow": "audio/lessons/BEG1-U04-L04/drill-06-ac23a453.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Should I water my garden tonight?", "ko": "오늘 밤에 정원에 물 줘야 할까요?", "audio": "audio/lessons/BEG1-U04-L04/rp-01-34dae6df.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I think it's going to rain tomorrow.",
+        "exampleKo": "내일 비 올 것 같아요.",
+        "requiredKeywords": ["i think", "rain tomorrow"]
+      },
+      { "no": 3, "speaker": "partner", "en": "It's so cold out here! Look at the sky.", "ko": "밖에 너무 춥네요! 하늘 좀 보세요.", "audio": "audio/lessons/BEG1-U04-L04/rp-03-b44a56f7.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I think it's going to snow tonight.",
+        "exampleKo": "오늘 밤에 눈 올 것 같아요.",
+        "requiredKeywords": ["i think", "snow tonight"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Wow, it's so hot today! Is tomorrow any better?", "ko": "와, 오늘 너무 덥네요! 내일은 좀 나을까요?", "audio": "audio/lessons/BEG1-U04-L04/rp-05-a31e318f.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I think tomorrow is going to be hotter.",
+        "exampleKo": "내일은 더 더울 것 같아요.",
+        "requiredKeywords": ["tomorrow", "hotter"]
+      },
+      { "no": 7, "speaker": "partner", "en": "I'm going hiking tomorrow. Should I bring an umbrella?", "ko": "저 내일 등산 가요. 우산 챙길까요?", "audio": "audio/lessons/BEG1-U04-L04/rp-07-b92a8c77.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I don't think it's going to rain tomorrow.",
+        "exampleKo": "내일은 비 안 올 것 같아요.",
+        "requiredKeywords": ["don't think", "rain tomorrow"]
+      },
+      { "no": 9, "speaker": "partner", "en": "Hmm, I'm not sure about my picnic tomorrow.", "ko": "음, 내일 소풍을 갈지 잘 모르겠어요.", "audio": "audio/lessons/BEG1-U04-L04/rp-09-371f3db7.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you think it's going to rain tomorrow?",
+        "exampleKo": "내일 비 올 것 같아요?",
+        "requiredKeywords": ["do you think", "rain tomorrow"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Why do you have an umbrella? It's so sunny!", "ko": "왜 우산을 들고 계세요? 날씨 이렇게 좋은데!", "audio": "audio/lessons/BEG1-U04-L04/rp-11-2ee73990.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I thought it was going to rain today.",
+        "exampleKo": "오늘 비 올 줄 알았어요.",
+        "requiredKeywords": ["thought", "rain today"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

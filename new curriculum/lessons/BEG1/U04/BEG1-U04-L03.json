@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U04-L03",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 4,
+  "unitTitle": "미래 계획",
+  "lessonNo": 3,
+  "lessonTitle": "계획하고 있는 일에 대해 묻기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Do you have any plans for tonight?",
+    "ko": "오늘 밤에 무슨 계획 있어?",
+    "stress": "Do you HAVE any PLANS for toNIGHT?",
+    "audio": {
+      "normal": "beg1-u04-l03_key.mp3",
+      "slow": "beg1-u04-l03_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "Do you have any plans for ~?는 '~에 무슨 계획 있어?'라는 뜻으로, 상대의 일정을 부드럽게 물을 때 씁니다.",
+      "같이 뭔가 하자고 말하기 전에 먼저 이렇게 물어보는 경우가 많습니다.",
+      "plans는 보통 s를 붙여 씁니다. any plans, no plans, big plans처럼 말합니다.",
+      "What is your plan tonight?은 딱딱하게 들립니다. Do you have any plans for tonight?이 더 자연스럽습니다."
+    ],
+    "en": "Ask \"Do you have any plans for ...?\" to find out if someone is free. People often ask this before inviting a friend.",
+    "enKo": "상대가 시간이 되는지 알고 싶을 때 \"Do you have any plans for ...?\"라고 묻습니다. 친구를 초대하기 전에 자주 하는 질문입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "연음",
+      "tip": "Do you는 이어서 '두유'보다 '쥬'에 가깝게 짧게 말하기도 합니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "have any는 붙여서 '해베니'처럼 말합니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "plans의 l은 혀끝을 윗니 뒤에 붙였다 떼며 냅니다. '프랜즈'가 아니라 '플랜즈'입니다."
+    },
+    {
+      "focus": "강세",
+      "tip": "HAVE, PLANS, NIGHT에 힘을 주고, 질문 끝을 살짝 올립니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "Do you have any plan for tonight?",
+      "right": "Do you have any plans for tonight?",
+      "note": "any 뒤에는 보통 plans처럼 s를 붙입니다."
+    },
+    {
+      "wrong": "Do you have any plans at tonight?",
+      "right": "Do you have any plans for tonight?",
+      "note": "언제의 계획인지 말할 때는 for를 씁니다. tonight 앞에 at은 쓰지 않습니다."
+    },
+    {
+      "wrong": "What is your plan tonight?",
+      "right": "Do you have any plans for tonight?",
+      "note": "직역하면 딱딱한 질문이 됩니다. 친구에게는 Do you have any plans ~?가 자연스럽습니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "금요일 저녁, 집에서 룸메이트와 이야기합니다.",
+    "partnerRole": "룸메이트",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Ugh, finally Friday. I'm so tired.",
+        "ko": "아, 드디어 금요일이다. 진짜 피곤해.",
+        "audio": "beg1-u04-l03_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Me too. Do you have any plans for tonight?",
+        "ko": "나도. 오늘 밤에 무슨 계획 있어?",
+        "audio": "beg1-u04-l03_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Not really. Why? What's up?",
+        "ko": "딱히 없어. 왜? 무슨 일인데?",
+        "audio": "beg1-u04-l03_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Do you want to get pizza with me?",
+        "ko": "나랑 피자 먹으러 갈래?",
+        "audio": "beg1-u04-l03_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Sure! What time are you thinking?",
+        "ko": "좋아! 몇 시쯤 생각해?",
+        "audio": "beg1-u04-l03_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "How about seven? I'm really hungry.",
+        "ko": "일곱 시 어때? 나 진짜 배고파.",
+        "audio": "beg1-u04-l03_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "What's up?",
+        "ko": "'무슨 일이야?' 상대가 왜 묻는지 궁금할 때 가볍게 씁니다."
+      },
+      {
+        "en": "What time are you thinking?",
+        "ko": "'몇 시쯤 생각해?' 약속 시간을 정할 때 자주 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Do you have any plans for tonight?",
+      "ko": "오늘 밤에 무슨 계획 있어?",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "ko",
+        "text": "룸메이트와 저녁에 놀고 싶어요. 오늘 밤에 무슨 계획이 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u04-l03_drill_01.mp3",
+        "slow": "beg1-u04-l03_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "Do you have any plans for Saturday?",
+      "ko": "토요일에 무슨 계획 있어?",
+      "point": "단어 교체: tonight → Saturday",
+      "cue": {
+        "lang": "ko",
+        "text": "주말에 친구와 놀고 싶어요. 토요일에 무슨 계획이 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u04-l03_drill_02.mp3",
+        "slow": "beg1-u04-l03_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "Does Mia have any plans for tonight?",
+      "ko": "미아는 오늘 밤에 무슨 계획 있어?",
+      "point": "주어 변경: you → Mia (Do → Does)",
+      "cue": {
+        "lang": "ko",
+        "text": "다른 친구에게 미아가 오늘 밤에 무슨 계획이 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u04-l03_drill_03.mp3",
+        "slow": "beg1-u04-l03_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I don't have any plans for tonight.",
+      "ko": "나 오늘 밤에 아무 계획 없어.",
+      "point": "부정형: I don't have",
+      "cue": {
+        "lang": "en",
+        "text": "Are you busy tonight?"
+      },
+      "audio": {
+        "normal": "beg1-u04-l03_drill_04.mp3",
+        "slow": "beg1-u04-l03_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Did you have any plans last night?",
+      "ko": "어젯밤에 무슨 약속 있었어?",
+      "point": "시제: 과거 Did you have, last night",
+      "cue": {
+        "lang": "ko",
+        "text": "친구가 어젯밤 늦게 들어왔어요. 어젯밤에 무슨 약속이 있었는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u04-l03_drill_05.mp3",
+        "slow": "beg1-u04-l03_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I already have plans for tonight.",
+      "ko": "나 오늘 밤에 벌써 약속 있어.",
+      "point": "평서문: 내 계획 말하기 (already)",
+      "cue": {
+        "lang": "en",
+        "text": "Let's grab dinner tonight!"
+      },
+      "audio": {
+        "normal": "beg1-u04-l03_drill_06.mp3",
+        "slow": "beg1-u04-l03_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I'm so bored. I don't know what to do.",
+        "ko": "너무 심심해. 뭘 해야 할지 모르겠어."
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you have any plans for tonight?",
+        "exampleKo": "오늘 밤에 무슨 계획 있어?",
+        "requiredKeywords": [
+          "any plans",
+          "tonight"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "The weather will be so nice on Saturday.",
+        "ko": "토요일에 날씨 진짜 좋대."
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you have any plans for Saturday?",
+        "exampleKo": "토요일에 무슨 계획 있어?",
+        "requiredKeywords": [
+          "any plans",
+          "saturday"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Mia came home early today. She looks bored.",
+        "ko": "미아 오늘 일찍 왔어. 심심해 보이더라."
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Does Mia have any plans for tonight?",
+        "exampleKo": "미아는 오늘 밤에 무슨 계획 있어?",
+        "requiredKeywords": [
+          "does mia",
+          "tonight"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "I'm having a movie night. Do you want to come?",
+        "ko": "나 오늘 집에서 영화 볼 건데. 올래?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I don't have any plans for tonight.",
+        "exampleKo": "나 오늘 밤에 아무 계획 없어.",
+        "requiredKeywords": [
+          "don't have",
+          "tonight"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I'm so tired. I got home really late.",
+        "ko": "너무 피곤해. 어제 엄청 늦게 들어왔거든."
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you have any plans last night?",
+        "exampleKo": "어젯밤에 무슨 약속 있었어?",
+        "requiredKeywords": [
+          "did you have",
+          "last night"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Want to watch a movie with me tonight?",
+        "ko": "오늘 밤에 나랑 영화 볼래?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I already have plans for tonight.",
+        "exampleKo": "나 오늘 밤에 벌써 약속 있어.",
+        "requiredKeywords": [
+          "already have plans",
+          "tonight"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
