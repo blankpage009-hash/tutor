@@ -523,9 +523,9 @@
               "no": 3,
               "title": "Travel Talk",
               "lessons": [
-                { "no": 1, "title": "Compare lodging options", "id": "ADV1-U03-L01", "ready": false},
-                { "no": 2, "title": "Re-experience culture shock", "id": "ADV1-U03-L02", "ready": false},
-                { "no": 3, "title": "Discuss overtourism", "id": "ADV1-U03-L03", "ready": false}
+                { "no": 1, "title": "Compare lodging options", "id": "ADV1-U03-L01", "ready": true, "file": "lessons/ADV1/ADV1-U03-L01.json" },
+                { "no": 2, "title": "Re-experience culture shock", "id": "ADV1-U03-L02", "ready": true, "file": "lessons/ADV1/ADV1-U03-L02.json" },
+                { "no": 3, "title": "Discuss overtourism", "id": "ADV1-U03-L03", "ready": true, "file": "lessons/ADV1/ADV1-U03-L03.json" }
               ]
             },
             {

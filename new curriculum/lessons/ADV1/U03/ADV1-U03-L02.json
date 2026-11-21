@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "ADV1-U03-L02",
+  "level": "고급 1",
+  "levelCode": "ADV1",
+  "unit": 3,
+  "unitTitle": "Travel Talk",
+  "lessonNo": 2,
+  "lessonTitle": "Re-experience culture shock",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I didn't expect to get culture shock back home.",
+    "ko": "고향에 가서 문화 충격을 받을 줄은 몰랐어요.",
+    "stress": "I DIDn't exPECT to get CULture SHOCK back HOME.",
+    "audio": {
+      "normal": "adv1-u03-l02_key.mp3",
+      "slow": "adv1-u03-l02_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "외국에서 오래 살다가 고향(한국)에 돌아갔는데 오히려 낯설고 어색했을 때 쓰는 말입니다. 이것을 reverse culture shock(역문화 충격)이라고 합니다.",
+      "I didn't expect to ~는 '~할 줄은 몰랐다'라는 뜻으로, 예상하지 못한 일이 생겼을 때 씁니다.",
+      "'문화 충격을 받다'는 receive가 아니라 get을 씁니다. have culture shock도 맞지만 대화에서는 get이 더 흔합니다.",
+      "back home은 '고향에서, 고국에서'라는 뜻입니다. home 앞에 to나 at을 붙이지 않습니다."
+    ],
+    "en": "Reverse culture shock is when your own home country feels strange after living abroad. \"I didn't expect to\" shows that it surprised you.",
+    "enKo": "역문화 충격은 외국에서 살다 온 뒤 내 나라가 낯설게 느껴지는 것입니다. \"I didn't expect to\"는 그게 뜻밖이었다는 것을 보여 줍니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "DID, PECT, CUL, SHOCK, HOME에 힘을 줍니다. to get은 약하고 빠르게 지나갑니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "didn't expect는 t가 거의 사라지고 '디든익스펙'처럼 이어집니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "expect to는 t가 하나로 합쳐지고 to는 '터'처럼 약하게 냅니다. '익스펙터겟'처럼 들립니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "shock의 sh는 입술을 앞으로 둥글게 내밀고 냅니다. o는 '오'보다 입을 크게 벌린 '아'에 가까워 '샥'처럼 들립니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I didn't expect getting culture shock.",
+      "right": "I didn't expect to get culture shock.",
+      "note": "expect 뒤에는 -ing가 아니라 to + 동사원형이 옵니다."
+    },
+    {
+      "wrong": "When I went to my country, I was shocked by culture.",
+      "right": "When I went back home, I got culture shock.",
+      "note": "'우리나라에 갔을 때'는 back home이 자연스럽고, shocked by culture는 직역이라 어색합니다."
+    },
+    {
+      "wrong": "I received culture shock.",
+      "right": "I got culture shock.",
+      "note": "'충격을 받다'의 '받다'를 receive로 직역하지 않습니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "한국에 2주 다녀온 뒤 출근한 날, 미국인 동료와 이야기합니다.",
+    "partnerRole": "미국인 동료",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Welcome back! How was your trip to Seoul? Did it feel good to be home?",
+        "ko": "잘 다녀오셨어요! 서울 여행 어땠어요? 고향에 가니까 좋았어요?",
+        "audio": "adv1-u03-l02_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "It was great, but honestly, I didn't expect to get culture shock back home.",
+        "ko": "좋았어요. 근데 솔직히 고향에 가서 문화 충격을 받을 줄은 몰랐어요.",
+        "audio": "adv1-u03-l02_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Really? Culture shock in your own country? What felt different?",
+        "ko": "정말요? 자기 나라에서 문화 충격이요? 뭐가 달랐는데요?",
+        "audio": "adv1-u03-l02_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Everything moved so fast. And I kept trying to tip people, which nobody does there.",
+        "ko": "모든 게 너무 빨리 돌아가더라고요. 그리고 자꾸 팁을 주려고 했는데, 거기선 아무도 안 주거든요.",
+        "audio": "adv1-u03-l02_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Ha! I guess you've really gotten used to life here.",
+        "ko": "하하! 여기 생활에 완전히 익숙해지셨나 보네요.",
+        "audio": "adv1-u03-l02_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "I guess so. It took me a few days to feel normal again.",
+        "ko": "그런가 봐요. 다시 적응하는 데 며칠 걸렸어요.",
+        "audio": "adv1-u03-l02_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "Welcome back!",
+        "ko": "'잘 다녀오셨어요!' 여행이나 휴가에서 돌아온 사람을 반길 때 씁니다."
+      },
+      {
+        "en": "get used to ~",
+        "ko": "'~에 익숙해지다.' gotten used to life here는 '여기 생활에 익숙해졌다'는 뜻입니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I didn't expect to get culture shock back home.",
+      "ko": "고향에 가서 문화 충격을 받을 줄은 몰랐어요.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "How did it feel to visit Korea after all these years in the States?"
+      },
+      "audio": {
+        "normal": "adv1-u03-l02_drill_01.mp3",
+        "slow": "adv1-u03-l02_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I didn't expect to get culture shock in Seoul.",
+      "ko": "서울에서 문화 충격을 받을 줄은 몰랐어요.",
+      "point": "단어 교체: back home → in Seoul",
+      "cue": {
+        "lang": "en",
+        "text": "Was Seoul the same as you remembered?"
+      },
+      "audio": {
+        "normal": "adv1-u03-l02_drill_02.mp3",
+        "slow": "adv1-u03-l02_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "My brother didn't expect to get culture shock back home.",
+      "ko": "남동생은 고향에 가서 문화 충격을 받을 줄 몰랐대요.",
+      "point": "주어 변경: I → My brother",
+      "cue": {
+        "lang": "en",
+        "text": "How was your brother's first trip back to Korea?"
+      },
+      "audio": {
+        "normal": "adv1-u03-l02_drill_03.mp3",
+        "slow": "adv1-u03-l02_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "The culture shock back home was worse than in America.",
+      "ko": "고향에서 받은 문화 충격이 미국에서보다 더 심했어요.",
+      "point": "비교: worse than",
+      "cue": {
+        "lang": "en",
+        "text": "Where was the culture shock worse for you?"
+      },
+      "audio": {
+        "normal": "adv1-u03-l02_drill_04.mp3",
+        "slow": "adv1-u03-l02_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Did you get culture shock when you went back home?",
+      "ko": "고향에 돌아갔을 때 문화 충격 받으셨어요?",
+      "point": "질문형: Did you get ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "동료에게 고향에 돌아갔을 때 문화 충격을 받았는지 물어보세요."
+      },
+      "audio": {
+        "normal": "adv1-u03-l02_drill_05.mp3",
+        "slow": "adv1-u03-l02_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I didn't get any culture shock back home this time.",
+      "ko": "이번엔 고향에 가서 문화 충격을 전혀 안 받았어요.",
+      "point": "부정형: didn't get any ~ this time",
+      "cue": {
+        "lang": "en",
+        "text": "How was your trip home compared to last year?"
+      },
+      "audio": {
+        "normal": "adv1-u03-l02_drill_06.mp3",
+        "slow": "adv1-u03-l02_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "You've been quiet since your trip to Korea. Was it hard being back after five years?",
+        "ko": "한국 다녀오신 뒤로 조용하시네요. 5년 만에 가니까 힘드셨어요?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't expect to get culture shock back home.",
+        "exampleKo": "고향에 가서 문화 충격을 받을 줄은 몰랐어요.",
+        "requiredKeywords": [
+          "culture shock",
+          "back home"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "You looked so confused in your photos from Seoul. Did the city change a lot?",
+        "ko": "서울에서 찍은 사진에서 엄청 어리둥절해 보이시던데요. 도시가 많이 변했어요?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't expect to get culture shock in Seoul.",
+        "exampleKo": "서울에서 문화 충격을 받을 줄은 몰랐어요.",
+        "requiredKeywords": [
+          "didn't expect",
+          "in Seoul"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Your brother just got back from visiting Korea, right? How did it go for him?",
+        "ko": "남동생분 한국 갔다가 막 돌아오셨죠? 어땠대요?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My brother didn't expect to get culture shock back home.",
+        "exampleKo": "남동생은 고향에 가서 문화 충격을 받을 줄 몰랐대요.",
+        "requiredKeywords": [
+          "brother",
+          "back home"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "When you first moved to the U.S., was that harder than visiting Korea now?",
+        "ko": "처음 미국에 오셨을 때가 지금 한국 가는 것보다 힘들었어요?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "The culture shock back home was worse than in America.",
+        "exampleKo": "고향에서 받은 문화 충격이 미국에서보다 더 심했어요.",
+        "requiredKeywords": [
+          "worse than",
+          "in America"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I just visited Ohio after ten years away, and it felt so weird. Is that normal?",
+        "ko": "10년 만에 오하이오에 다녀왔는데 너무 이상하더라고요. 그게 정상인가요?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you get culture shock when you went back home?",
+        "exampleKo": "고향에 돌아갔을 때 문화 충격 받으셨어요?",
+        "requiredKeywords": [
+          "did you get",
+          "went back home"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "This was your second trip back to Korea this year. Did it still feel strange?",
+        "ko": "올해 두 번째 한국 방문이셨잖아요. 그래도 여전히 낯설었어요?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't get any culture shock back home this time.",
+        "exampleKo": "이번엔 고향에 가서 문화 충격을 전혀 안 받았어요.",
+        "requiredKeywords": [
+          "didn't get any",
+          "this time"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

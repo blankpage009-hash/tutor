@@ -1,0 +1,257 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "ADV1-U03-L03",
+  "level": "고급 1",
+  "levelCode": "ADV1",
+  "unit": 3,
+  "unitTitle": "Travel Talk",
+  "lessonNo": 3,
+  "lessonTitle": "Discuss overtourism",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Tourists are pricing locals out of the city.",
+    "ko": "관광객 때문에 집값이 올라서 현지 사람들이 밀려나고 있어요.",
+    "stress": "TOURists are PRIcing LOcals OUT of the CIty.",
+    "audio": { "normal": "audio/lessons/ADV1-U03-L03/key-c56ccd50.m4a", "slow": "audio/lessons/ADV1-U03-L03/key-c56ccd50.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "price someone out (of ~)는 '값을 올려서 ~를 밀어내다'라는 뜻입니다. 집값이나 월세가 너무 올라 그 사람이 버티지 못하고 떠날 때 씁니다.",
+      "오버투어리즘(overtourism)은 관광객이 너무 많아 현지 주민의 생활이 힘들어지는 문제입니다. 이 문장은 그 문제를 한 줄로 콕 집어 말합니다.",
+      "are pricing은 현재진행형입니다. 지금도 계속 벌어지고 있는 변화라는 느낌을 줍니다.",
+      "locals는 '현지인, 동네 사람들'입니다. local people보다 짧고 대화에서 더 자주 씁니다."
+    ],
+    "en": "\"Price someone out\" means costs go up so much that people can't afford to stay. People often use it when they talk about rent and tourism.",
+    "enKo": "\"Price someone out\"은 비용이 너무 올라서 사람들이 더는 버티지 못한다는 뜻입니다. 월세나 관광 이야기를 할 때 자주 씁니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "TOUR, PRI, LO, OUT, CI에 힘을 줍니다. are와 of the는 약하게 지나갑니다." },
+    { "focus": "연음", "tip": "locals out of가 이어져 '로컬자우러브'처럼 들립니다. out of의 t는 부드러운 'ㄹ' 소리로 바뀝니다." },
+    { "focus": "약화", "tip": "Tourists are는 '투어리스처'처럼 are가 거의 '어'로 줄어듭니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "locals의 끝 l은 혀끝을 윗잇몸에 대고 '로우컬'처럼 둥글게 끝냅니다. '로컬스'처럼 '스'를 크게 붙이지 않습니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "Tourists are pushing out locals by price.", "right": "Tourists are pricing locals out.", "note": "'가격으로 밀어내다'는 price ~ out을 한 덩어리로 씁니다." },
+    { "wrong": "There are too much tourists.", "right": "There are too many tourists.", "note": "tourists는 셀 수 있는 명사라서 much가 아니라 many를 씁니다." },
+    { "wrong": "Local people can't live there because of expensive.", "right": "Locals can't afford to live there anymore.", "note": "'비싸서 못 산다'는 can't afford to로 말합니다." }
+  ],
+  "dialogue": {
+    "situation": "아파트 복도에서 이웃이 다녀온 유명 관광지 이야기를 합니다.",
+    "partnerRole": "미국인 이웃",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "We just got back from Port Coral. It was beautiful, but wow, it was packed.",
+        "ko": "포트 코랄에서 막 돌아왔어요. 아름답긴 했는데, 와, 사람이 꽉 찼더라고요.",
+        "audio": "audio/lessons/ADV1-U03-L03/dlg-01-f58e1f36.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "So I've heard. My friend lives there, and she says it's getting hard to afford.",
+        "ko": "그렇다더라고요. 제 친구가 거기 사는데, 점점 생활비를 감당하기 힘들대요.",
+        "audio": "audio/lessons/ADV1-U03-L03/dlg-02-8bbeceba.m4a"
+      },
+      { "no": 3, "speaker": "partner", "en": "Yeah, half the apartments downtown are vacation rentals now.", "ko": "맞아요, 이제 시내 아파트 절반이 여행객 숙소래요.", "audio": "audio/lessons/ADV1-U03-L03/dlg-03-9f7be2ac.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Exactly. Tourists are pricing locals out of the city.",
+        "ko": "그러니까요. 관광객 때문에 집값이 올라서 현지 사람들이 밀려나고 있어요.",
+        "audio": "audio/lessons/ADV1-U03-L03/dlg-04-df0ff22e.m4a",
+        "hasKeySentence": true
+      },
+      { "no": 5, "speaker": "partner", "en": "It's tricky, though. The whole town depends on tourism money.", "ko": "근데 좀 애매해요. 그 동네 전체가 관광 수입으로 먹고사니까요.", "audio": "audio/lessons/ADV1-U03-L03/dlg-05-9fa433b5.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "True. Maybe they just need limits, like a cap on short-term rentals.",
+        "ko": "맞아요. 단기 임대 숙소 수를 제한하는 것처럼 선을 좀 정해야 할 것 같아요.",
+        "audio": "audio/lessons/ADV1-U03-L03/dlg-06-c3a08fab.m4a"
+      }
+    ],
+    "expressionNotes": [
+      { "en": "packed", "ko": "'사람이 꽉 찬.' 식당, 해변, 공연장 등이 붐빌 때 crowded보다 더 강하게 씁니다." },
+      { "en": "a cap on ~", "ko": "'~의 상한선, ~ 제한.' 숫자나 양을 일정 이상 못 넘게 막을 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Tourists are pricing locals out of the city.",
+      "ko": "관광객 때문에 집값이 올라서 현지 사람들이 밀려나고 있어요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "What's the biggest problem with overtourism?", "audio": "audio/lessons/ADV1-U03-L03/cue-01-9f4575c8.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U03-L03/drill-01-c56ccd50.m4a", "slow": "audio/lessons/ADV1-U03-L03/drill-01-c56ccd50.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "Tourists are pricing locals out of the neighborhood.",
+      "ko": "관광객 때문에 집값이 올라서 동네 사람들이 밀려나고 있어요.",
+      "point": "단어 교체: the city → the neighborhood",
+      "cue": { "lang": "en", "text": "What's changing on your street with all the visitors?", "audio": "audio/lessons/ADV1-U03-L03/cue-02-5a77641c.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U03-L03/drill-02-599ee63a.m4a", "slow": "audio/lessons/ADV1-U03-L03/drill-02-599ee63a.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "Vacation rentals are pricing locals out of the city.",
+      "ko": "여행객 숙소 때문에 현지 사람들이 도시에서 밀려나고 있어요.",
+      "point": "주어 변경: Tourists → Vacation rentals",
+      "cue": { "lang": "en", "text": "What's the real problem with all those short-term rentals?", "audio": "audio/lessons/ADV1-U03-L03/cue-03-4c6ec50c.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U03-L03/drill-03-5942e71a.m4a", "slow": "audio/lessons/ADV1-U03-L03/drill-03-5942e71a.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "My friend got priced out of her apartment last year.",
+      "ko": "제 친구는 작년에 월세가 올라서 아파트에서 나와야 했어요.",
+      "point": "과거 시제: got priced out, last year",
+      "cue": { "lang": "en", "text": "Is your friend still living in that apartment by the beach?", "audio": "audio/lessons/ADV1-U03-L03/cue-04-13449104.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U03-L03/drill-04-1e56c857.m4a", "slow": "audio/lessons/ADV1-U03-L03/drill-04-1e56c857.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Are tourists pricing locals out of the city?",
+      "ko": "관광객 때문에 현지 사람들이 도시에서 밀려나고 있나요?",
+      "point": "질문형: Are tourists ~?",
+      "cue": { "lang": "ko", "text": "이웃에게 관광객 때문에 현지 사람들이 밀려나고 있는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/ADV1-U03-L03/drill-05-b6c12bf7.m4a", "slow": "audio/lessons/ADV1-U03-L03/drill-05-b6c12bf7.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "Tourists aren't the only ones pricing locals out.",
+      "ko": "현지 사람들을 밀어내는 게 관광객만은 아니에요.",
+      "point": "부정형: aren't the only ones",
+      "cue": { "lang": "en", "text": "Should we just ban tourists to fix the rent problem?", "audio": "audio/lessons/ADV1-U03-L03/cue-06-d5e15af7.m4a" },
+      "audio": { "normal": "audio/lessons/ADV1-U03-L03/drill-06-c5b00149.m4a", "slow": "audio/lessons/ADV1-U03-L03/drill-06-c5b00149.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "My cousin in Port Coral says half her neighbors moved away this year. Why is that happening?",
+        "ko": "포트 코랄에 사는 사촌이 올해 이웃 절반이 이사 갔대요. 왜 그런 걸까요?",
+        "audio": "audio/lessons/ADV1-U03-L03/rp-01-fdaef0dc.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Tourists are pricing locals out of the city.",
+        "exampleKo": "관광객 때문에 집값이 올라서 현지 사람들이 밀려나고 있어요.",
+        "requiredKeywords": ["pricing locals out", "the city"]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Every week I see new suitcases on our block, and rent keeps going up. Have you noticed?",
+        "ko": "우리 동네에 매주 새 여행 가방이 보이고 월세는 계속 오르네요. 눈치채셨어요?",
+        "audio": "audio/lessons/ADV1-U03-L03/rp-03-4cee6fec.m4a"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Tourists are pricing locals out of the neighborhood.",
+        "exampleKo": "관광객 때문에 집값이 올라서 동네 사람들이 밀려나고 있어요.",
+        "requiredKeywords": ["pricing locals out", "neighborhood"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Three buildings downtown were just turned into short-term rentals. What do you think about that?",
+        "ko": "시내 건물 세 채가 얼마 전에 단기 임대 숙소로 바뀌었대요. 어떻게 생각하세요?",
+        "audio": "audio/lessons/ADV1-U03-L03/rp-05-48672081.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Vacation rentals are pricing locals out of the city.",
+        "exampleKo": "여행객 숙소 때문에 현지 사람들이 도시에서 밀려나고 있어요.",
+        "requiredKeywords": ["vacation rentals", "pricing locals out"]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Didn't your friend live right by the old harbor? Why did she move so far out?",
+        "ko": "친구분 예전에 옛 항구 바로 옆에 살지 않았어요? 왜 그렇게 멀리 이사 갔어요?",
+        "audio": "audio/lessons/ADV1-U03-L03/rp-07-5a94f2b1.m4a"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My friend got priced out of her apartment last year.",
+        "exampleKo": "제 친구는 작년에 월세가 올라서 아파트에서 나와야 했어요.",
+        "requiredKeywords": ["got priced out", "last year"]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I read something about Port Coral, but I'm not sure I got it. It was about rent and tourists.",
+        "ko": "포트 코랄 기사를 읽었는데 제대로 이해했는지 모르겠어요. 월세랑 관광객 이야기였어요.",
+        "audio": "audio/lessons/ADV1-U03-L03/rp-09-c4756a10.m4a"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are tourists pricing locals out of the city?",
+        "exampleKo": "관광객 때문에 현지 사람들이 도시에서 밀려나고 있나요?",
+        "requiredKeywords": ["are tourists", "out of the city"]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Honestly, I blame the tourists for everything. Rents here are crazy because of them.",
+        "ko": "솔직히 다 관광객 탓이에요. 그 사람들 때문에 여기 월세가 말도 안 돼요.",
+        "audio": "audio/lessons/ADV1-U03-L03/rp-11-b704e210.m4a"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Tourists aren't the only ones pricing locals out.",
+        "exampleKo": "현지 사람들을 밀어내는 게 관광객만은 아니에요.",
+        "requiredKeywords": ["aren't the only ones", "locals out"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
