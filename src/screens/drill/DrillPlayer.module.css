@@ -164,6 +164,8 @@
   flex-direction: column;
   justify-content: center;
   gap: 18px;
+  /* 문장·한글 뜻·결과를 카드 가운데로 (사용자 요청 2026-11-21) */
+  text-align: center;
 }
 
 .ko, .hidden {
@@ -188,6 +190,7 @@
 .result {
   display: flex;
   align-items: center;
+  justify-content: center; /* flex 줄은 text-align이 안 먹어서 따로 가운데로 */
   gap: var(--space-2);
   margin: 0;
   font-family: var(--type-label-family);

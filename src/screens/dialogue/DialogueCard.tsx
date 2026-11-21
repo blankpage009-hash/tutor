@@ -22,7 +22,7 @@ type Props = {
 export function DialogueCard({ lessonId, line, partnerRole, dim, outcome, onReplay, replayDisabled }: Props) {
   const me = line.speaker === 'me';
   const final = outcome?.status === 'passed' || outcome?.status === 'failed';
-  const cls = [styles.card, me && styles.cardMe, dim ? styles.cardDim : styles.cardMain].filter(Boolean).join(' ');
+  const cls = [styles.card, styles.cardCenter, me && styles.cardMe, dim ? styles.cardDim : styles.cardMain].filter(Boolean).join(' ');
   return (
     <article className={cls}>
       <div className={styles.cardTop}>
