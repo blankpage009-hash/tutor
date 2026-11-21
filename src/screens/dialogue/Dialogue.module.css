@@ -165,6 +165,12 @@
   --type-sentence-line: var(--type-speak-line);
 }
 
+/* 대화문 카드(상대·내 줄 모두) 문장은 26px (사용자 요청 2026-11-21). 롤플레이·드릴은 cardCenter를 안 써서 30px 그대로 */
+.cardCenter.cardMain,
+.cardCenter.cardDim {
+  --type-sentence-size: 26px;
+}
+
 .cardKo {
   margin: 0;
   font-size: 15px;
@@ -235,6 +241,7 @@
 .result {
   margin: 0;
   align-self: stretch;
+  text-align: center;
   font-size: var(--type-body-kr-size);
   line-height: var(--type-body-kr-line);
 }
