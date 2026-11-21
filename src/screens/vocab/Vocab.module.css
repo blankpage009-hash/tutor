@@ -34,6 +34,17 @@
   color: var(--ink-muted);
 }
 
+/* Unknown 시작 버튼: 옅은 빨간색. button 태그를 붙여 Button 기본 색보다 우선하게 함 */
+button.unknownBtn {
+  background: #fbd9d9;
+  border-color: #f2a8a8;
+  color: #9b1c1c;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) button.unknownBtn { background: #4a2020; border-color: #7a3535; color: #ffb4b4; }
+}
+:root[data-theme='dark'] button.unknownBtn { background: #4a2020; border-color: #7a3535; color: #ffb4b4; }
+
 /* 디자인 v2 10 VOCAB 줄 */
 .card {
   display: flex;

@@ -52,7 +52,7 @@ export function VocabScreen() {
         <>
           <div className={styles.pair}>
             <Button variant="primary" onClick={() => nav('/vocab/quiz?mode=card&scope=random')}><IconShuffle />Random All</Button>
-            <Button onClick={() => nav('/vocab/quiz?mode=card&scope=unknown')}><IconPlay />Unknown</Button>
+            <Button className={vocabStyles.unknownBtn} onClick={() => nav('/vocab/quiz?mode=card&scope=unknown')}><IconPlay />Unknown</Button>
           </div>
           <div className={vocabStyles.boxes}>
             {box('known', 'KNOWN', knownCount)}
