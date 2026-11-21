@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { BackLink } from '../components/BackLink';
+import { Link } from 'react-router-dom';
+import { IconClose } from '../components/icons/icons';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { SettingsRow } from '../components/SettingsRow';
 import { getGeminiKey } from '../db/settings';
@@ -47,10 +48,17 @@ export function SettingsScreen() {
   const geminiKey = useGeminiKeyValue();
   return (
     <>
-      <BackLink to="/" label="Today's Practice" />
+      {/* 왼쪽 위 뒤로가기 대신 오른쪽 위 X (사용자 요청 2026-11-21). 오늘 화면으로 돌아간다 */}
+      <div className={styles.closeRow}>
+        <Link to="/" className={styles.closeBtn} aria-label="닫기"><IconClose /></Link>
+      </div>
       <ScreenHeader title="Settings" />
       {saveError && <p className={styles.keyError} lang="ko">설정을 저장하지 못했어요. 앱을 닫으면 바뀐 값이 사라질 수 있어요.</p>}
-      <ProgressSummary progress={progress} />
+      <ProgressSummary progress={progress}
+        beforeAllLevels={<SettingsRow name="Start Level" to="/settings/start-level" value={startLevelValue(progress, settings.startLevel)} />}>
+        <ChoiceRow name="Daily Goal" choices={DAILY_GOAL_CHOICES.map((v) => ({ value: v, label: String(v) }))}
+          value={settings.dailyGoal} onChange={(dailyGoal) => update({ dailyGoal })} />
+      </ProgressSummary>
 
       <h2 className={styles.section}>TUTOR</h2>
       <ChoiceRow name="Speed" choices={SPEECH_RATE_CHOICES.map((v) => ({ value: v, label: v.toFixed(1) }))}
@@ -60,9 +68,6 @@ export function SettingsScreen() {
       <ChoiceRow name="Pass Score" choices={PASS_THRESHOLD_CHOICES.map((v) => ({ value: v, label: String(Math.round(v * 100)) }))}
         value={settings.passThreshold} onChange={(passThreshold) => update({ passThreshold })} />
       <SwitchRow name="Fail Feedback" on={settings.failFeedback} onChange={(failFeedback) => update({ failFeedback })} />
-      <ChoiceRow name="Daily Goal" choices={DAILY_GOAL_CHOICES.map((v) => ({ value: v, label: String(v) }))}
-        value={settings.dailyGoal} onChange={(dailyGoal) => update({ dailyGoal })} />
-      <SettingsRow name="Start Level" to="/settings/start-level" value={startLevelValue(progress, settings.startLevel)} />
 
       <h2 className={styles.section}>DISPLAY</h2>
       <ChoiceRow name="Theme" choices={THEME_CHOICES} value={theme} onChange={setTheme} />

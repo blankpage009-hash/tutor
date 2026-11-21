@@ -101,3 +101,18 @@
 .warn { margin: 0; font-size: var(--type-body-kr-size); line-height: var(--type-body-kr-line); color: var(--danger); }
 
 .hidden { display: none; }
+
+.closeRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.closeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  margin-right: calc(var(--space-2) * -1);
+  color: var(--ink);
+}

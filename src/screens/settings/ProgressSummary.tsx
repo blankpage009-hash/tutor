@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { ProgressBar } from '../../components/ProgressBar';
 import { SettingsRow } from '../../components/SettingsRow';
 import type { CurriculumProgress } from '../progress/useCurriculumProgress';
@@ -47,13 +48,15 @@ function Habit() {
 
 // 설정 맨 위: 내 레벨, 연속·최장·오늘 횟수, 전체 레벨 목록으로 가는 줄.
 // 기록을 못 읽은 부분은 조용히 숨기고 나머지 설정은 그대로 쓰게 한다
-export function ProgressSummary({ progress }: Props) {
+export function ProgressSummary({ progress, beforeAllLevels, children }: Props & { beforeAllLevels?: ReactNode; children?: ReactNode }) {
   return (
     <>
       <h2 className={styles.section}>PROGRESS</h2>
       <Level progress={progress} />
       <Habit />
+      {beforeAllLevels}
       <SettingsRow name="All Levels" to="/settings/progress" />
+      {children}
     </>
   );
 }
