@@ -15,6 +15,9 @@ import { useCurriculumProgress } from './progress/useCurriculumProgress';
 import styles from './settings/Settings.module.css';
 import type { ThemeSetting } from '../theme/theme';
 
+// 배포할 때 이 숫자를 직접 올린다 (사용자 요청 2026-11-21: 현재 1.0.0)
+const APP_VERSION = 'Version 1.0.0';
+
 const THEME_CHOICES: { value: ThemeSetting; label: string }[] = [
   { value: 'system', label: 'Auto' },
   { value: 'light', label: 'Light' },
@@ -75,6 +78,8 @@ export function SettingsScreen() {
       <h2 className={styles.section}>DATA</h2>
       <SettingsRow name="Gemini Key" to="/settings/gemini-key" value={geminiKey} />
       <BackupSection />
+
+      <p className={styles.version}>{APP_VERSION}</p>
     </>
   );
 }

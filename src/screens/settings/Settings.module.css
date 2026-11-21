@@ -15,6 +15,16 @@
 }
 .section:first-of-type { margin-top: var(--space-4); }
 
+/* 설정 맨 아래 버전 표시 */
+.version {
+  margin: var(--space-6) 0 var(--space-4);
+  text-align: center;
+  font-family: var(--type-label-family);
+  font-size: var(--type-label-size);
+  line-height: var(--type-label-line);
+  color: var(--ink-muted);
+}
+
 /* 설정 줄 오른쪽 선택칸: 시안 폭 196px */
 .choice { width: 196px; flex: none; }
 
