@@ -369,12 +369,12 @@
               "no": 2,
               "title": "수입과 지출",
               "lessons": [
-                { "no": 1, "title": "수입에 대해 이야기하기", "id": "INT3-U02-L01", "ready": false},
-                { "no": 2, "title": "부업에 대해 이야기하기", "id": "INT3-U02-L02", "ready": false},
-                { "no": 3, "title": "자신에게 선물하기", "id": "INT3-U02-L03", "ready": false},
-                { "no": 4, "title": "남에게 대접하기", "id": "INT3-U02-L04", "ready": false},
-                { "no": 5, "title": "예산에 대해 이야기하기", "id": "INT3-U02-L05", "ready": false},
-                { "no": 6, "title": "큰 구매를 위해 저축하기", "id": "INT3-U02-L06", "ready": false}
+                { "no": 1, "title": "수입에 대해 이야기하기", "id": "INT3-U02-L01", "ready": true, "file": "lessons/INT3/INT3-U02-L01.json" },
+                { "no": 2, "title": "부업에 대해 이야기하기", "id": "INT3-U02-L02", "ready": true, "file": "lessons/INT3/INT3-U02-L02.json" },
+                { "no": 3, "title": "자신에게 선물하기", "id": "INT3-U02-L03", "ready": true, "file": "lessons/INT3/INT3-U02-L03.json" },
+                { "no": 4, "title": "남에게 대접하기", "id": "INT3-U02-L04", "ready": true, "file": "lessons/INT3/INT3-U02-L04.json" },
+                { "no": 5, "title": "예산에 대해 이야기하기", "id": "INT3-U02-L05", "ready": true, "file": "lessons/INT3/INT3-U02-L05.json" },
+                { "no": 6, "title": "큰 구매를 위해 저축하기", "id": "INT3-U02-L06", "ready": true, "file": "lessons/INT3/INT3-U02-L06.json" }
               ]
             },
             {

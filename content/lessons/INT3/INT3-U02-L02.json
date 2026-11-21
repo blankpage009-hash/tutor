@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U02-L02",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 2,
+  "unitTitle": "수입과 지출",
+  "lessonNo": 2,
+  "lessonTitle": "부업에 대해 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I do some freelance work on the side.",
+    "ko": "부업으로 프리랜서 일을 좀 해요.",
+    "stress": "I do some FREElance WORK on the SIDE.",
+    "audio": { "normal": "audio/lessons/INT3-U02-L02/key-4df53b4e.m4a", "slow": "audio/lessons/INT3-U02-L02/key-4df53b4e.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "'본업 말고 따로 프리랜서 일을 좀 해요'라는 뜻입니다. 부업이 있다고 가볍게 말할 때 씁니다.",
+      "on the side는 '본업 외에 따로'라는 뜻입니다. 문장 끝에 붙이기만 하면 '부업으로'가 됩니다.",
+      "'일'이라는 뜻의 work는 셀 수 없는 말이라 a work, works라고 하지 않고 some work처럼 씁니다.",
+      "부업 자체를 가리킬 때는 side job이라고도 합니다. I have a side job.처럼 씁니다."
+    ],
+    "en": "Say \"I do some freelance work on the side\" when you have extra work besides your main job. \"On the side\" means in addition to your main job.",
+    "enKo": "본업 말고 따로 하는 일이 있을 때 \"I do some freelance work on the side\"라고 합니다. \"On the side\"는 본업 외에 따로라는 뜻입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "FREE, WORK, SIDE에 힘을 줍니다." },
+    { "focus": "약화", "tip": "some은 힘을 빼고 '섬'처럼 짧게 말합니다." },
+    { "focus": "연음", "tip": "on the side는 '온 더 사이드'로 끊지 않고 '온더사이드'처럼 한 번에 이어 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "freelance의 f는 윗니를 아랫입술에 살짝 대고, l은 혀끝을 윗니 뒤에 붙여 소리 냅니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I'm doing an arbeit on the weekends.", "right": "I do some freelance work on the side.", "note": "'알바'는 독일어에서 온 한국식 말이라 영어로는 통하지 않습니다." },
+    { "wrong": "I do some freelance works on the side.", "right": "I do some freelance work on the side.", "note": "'일'이라는 뜻의 work는 셀 수 없어서 s를 붙이지 않습니다." },
+    { "wrong": "I'm a two-job person.", "right": "I do some freelance work on the side.", "note": "'투잡'은 한국식 표현입니다. 영어로는 on the side를 붙여 부업이 있다고 말합니다." }
+  ],
+  "dialogue": {
+    "situation": "점심시간에 노트북으로 다른 작업을 하는 나를 보고 동료가 말을 겁니다.",
+    "partnerRole": "직장 동료",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Working through lunch again? That doesn't look like our project.", "ko": "점심시간에 또 일하세요? 우리 프로젝트는 아닌 것 같은데요.", "audio": "audio/lessons/INT3-U02-L02/dlg-01-c70103b5.m4a" },
+      { "no": 2, "speaker": "me", "en": "Good eye. I do some freelance work on the side.", "ko": "눈썰미 좋으시네요. 부업으로 프리랜서 일을 좀 해요.", "audio": "audio/lessons/INT3-U02-L02/dlg-02-849d978f.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Oh, interesting. What kind of stuff do you do?", "ko": "오, 흥미롭네요. 어떤 일 하세요?", "audio": "audio/lessons/INT3-U02-L02/dlg-03-e3742443.m4a" },
+      { "no": 4, "speaker": "me", "en": "Mostly logos and websites for small businesses.", "ko": "주로 작은 가게들 로고랑 웹사이트요.", "audio": "audio/lessons/INT3-U02-L02/dlg-04-5a8eef99.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Is it worth it? It sounds like a lot of extra hours.", "ko": "할 만해요? 일하는 시간이 꽤 늘 것 같은데요.", "audio": "audio/lessons/INT3-U02-L02/dlg-05-b8e91e25.m4a" },
+      { "no": 6, "speaker": "me", "en": "It's tiring, but the extra money really helps.", "ko": "피곤하긴 한데, 추가 수입이 정말 도움이 돼요.", "audio": "audio/lessons/INT3-U02-L02/dlg-06-2dc1a299.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "Good eye.", "ko": "'눈썰미 좋으시네요'. 상대가 뭔가를 잘 알아챘을 때 하는 말입니다." },
+      { "en": "Working through lunch", "ko": "'점심도 안 먹고 일하다'. through는 '~ 내내 쉬지 않고'라는 느낌입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I do some freelance work on the side.",
+      "ko": "부업으로 프리랜서 일을 좀 해요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "You always seem busy on weekends. Do you have another job?", "audio": "audio/lessons/INT3-U02-L02/cue-01-d65cb424.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L02/drill-01-4df53b4e.m4a", "slow": "audio/lessons/INT3-U02-L02/drill-01-4df53b4e.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I do some tutoring on the side.",
+      "ko": "부업으로 과외를 좀 해요.",
+      "point": "단어 교체: freelance work → tutoring",
+      "cue": { "lang": "en", "text": "How do you know so much about high school math?", "audio": "audio/lessons/INT3-U02-L02/cue-02-c731c661.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L02/drill-02-40a0e213.m4a", "slow": "audio/lessons/INT3-U02-L02/drill-02-40a0e213.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "She does some freelance work on the side.",
+      "ko": "그분은 부업으로 프리랜서 일을 좀 해요.",
+      "point": "주어 변경: she (does)",
+      "cue": { "lang": "en", "text": "How does your coworker afford such nice vacations?", "audio": "audio/lessons/INT3-U02-L02/cue-03-5c017a7d.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L02/drill-03-b9adc89f.m4a", "slow": "audio/lessons/INT3-U02-L02/drill-03-b9adc89f.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Do you do any work on the side?",
+      "ko": "부업으로 따로 하는 일 있으세요?",
+      "point": "질문형: Do you do any ~?",
+      "cue": { "lang": "ko", "text": "동료가 퇴근 후에도 노트북을 들고 카페에 갑니다. 부업으로 따로 하는 일이 있는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U02-L02/drill-04-b35c7d4f.m4a", "slow": "audio/lessons/INT3-U02-L02/drill-04-b35c7d4f.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I don't do any freelance work anymore.",
+      "ko": "이제 프리랜서 일은 안 해요.",
+      "point": "부정형: don't do any ~ anymore",
+      "cue": { "lang": "en", "text": "Are you still making websites for people in your free time?", "audio": "audio/lessons/INT3-U02-L02/cue-05-7f861704.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L02/drill-05-96a07073.m4a", "slow": "audio/lessons/INT3-U02-L02/drill-05-96a07073.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I used to freelance on the side.",
+      "ko": "예전엔 부업으로 프리랜서 일을 했어요.",
+      "point": "시제: used to + freelance(동사)",
+      "cue": { "lang": "en", "text": "Your resume says you worked for yourself for a while. What was that?", "audio": "audio/lessons/INT3-U02-L02/cue-06-68189c4c.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L02/drill-06-e7f152fa.m4a", "slow": "audio/lessons/INT3-U02-L02/drill-06-e7f152fa.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "I saw your name on a bakery's new website. Did you design that?", "ko": "어떤 빵집 새 웹사이트에 성함이 있던데요. 그거 직접 디자인하셨어요?", "audio": "audio/lessons/INT3-U02-L02/rp-01-ce4284db.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I do some freelance work on the side.",
+        "exampleKo": "부업으로 프리랜서 일을 좀 해요.",
+        "requiredKeywords": ["freelance work", "on the side"]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "My neighbor says you help her son with math every Tuesday. Is that true?",
+        "ko": "제 이웃이 그러는데 매주 화요일마다 아들 수학을 봐 주신다면서요. 정말이에요?",
+        "audio": "audio/lessons/INT3-U02-L02/rp-03-2bf80753.m4a"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I do some tutoring on the side.",
+        "exampleKo": "부업으로 과외를 좀 해요.",
+        "requiredKeywords": ["tutoring", "on the side"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Our coworker Jenny just bought a house. How can she afford that?", "ko": "우리 동료 제니 씨가 집을 샀대요. 어떻게 그럴 여유가 있대요?", "audio": "audio/lessons/INT3-U02-L02/rp-05-90f225aa.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "She does some freelance work on the side.",
+        "exampleKo": "그분은 부업으로 프리랜서 일을 좀 해요.",
+        "requiredKeywords": ["She does", "on the side"]
+      },
+      { "no": 7, "speaker": "partner", "en": "I'm always at a café after work with my laptop. It's a long story.", "ko": "저 퇴근하면 늘 노트북 들고 카페에 가요. 얘기하자면 길어요.", "audio": "audio/lessons/INT3-U02-L02/rp-07-792dbed9.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you do any work on the side?",
+        "exampleKo": "부업으로 따로 하는 일 있으세요?",
+        "requiredKeywords": ["Do you do", "on the side"]
+      },
+      { "no": 9, "speaker": "partner", "en": "I'm opening a new shop. Could you make the logo for me, like before?", "ko": "가게를 새로 열거든요. 예전처럼 로고 좀 만들어 주실 수 있어요?", "audio": "audio/lessons/INT3-U02-L02/rp-09-0886d87d.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I don't do any freelance work anymore.",
+        "exampleKo": "이제 프리랜서 일은 안 해요.",
+        "requiredKeywords": ["don't", "anymore"]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "You built this whole website yourself? How do you know how to do this?",
+        "ko": "이 웹사이트 전부 직접 만드셨어요? 이런 걸 어떻게 할 줄 아세요?",
+        "audio": "audio/lessons/INT3-U02-L02/rp-11-b2f1a11f.m4a"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I used to freelance on the side.",
+        "exampleKo": "예전엔 부업으로 프리랜서 일을 했어요.",
+        "requiredKeywords": ["used to", "on the side"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

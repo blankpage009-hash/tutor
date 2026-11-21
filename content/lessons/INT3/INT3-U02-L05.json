@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U02-L05",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 2,
+  "unitTitle": "수입과 지출",
+  "lessonNo": 5,
+  "lessonTitle": "예산에 대해 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I'm trying to stick to a budget.",
+    "ko": "예산 안에서 쓰려고 노력 중이에요.",
+    "stress": "I'm TRYing to STICK to a BUDget.",
+    "audio": { "normal": "audio/lessons/INT3-U02-L05/key-54bdef3b.m4a", "slow": "audio/lessons/INT3-U02-L05/key-54bdef3b.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "'정해 둔 돈 안에서만 쓰려고 노력 중이에요'라는 뜻입니다. 돈을 아끼는 중이라 무언가를 거절하거나 사정을 설명할 때 씁니다.",
+      "stick to는 '(정한 것을) 지키다, 벗어나지 않다'입니다. stick to a plan, stick to a diet처럼도 씁니다.",
+      "I'm trying to를 붙이면 '노력하는 중'이라는 느낌이라 부드럽게 거절할 수 있습니다.",
+      "'예산을 세우다'는 make a budget, '예산을 넘기다'는 go over budget이라고 합니다."
+    ],
+    "en": "Say \"I'm trying to stick to a budget\" when you are trying not to spend more than you planned. \"Stick to\" means to follow a plan and not change it.",
+    "enKo": "계획한 것보다 더 쓰지 않으려고 할 때 \"I'm trying to stick to a budget\"라고 합니다. \"Stick to\"는 계획을 바꾸지 않고 지킨다는 뜻입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "TRY, STICK, BUD에 힘을 줍니다." },
+    { "focus": "약화", "tip": "trying to의 to는 '투'라고 힘주지 않고 '터'처럼 약하게 말합니다." },
+    { "focus": "연음", "tip": "stick to a는 '스틱 투 어'로 끊지 않고 '스틱터어'처럼 이어집니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "budget의 u는 입을 살짝 벌린 '어' 소리라 '버짓'에 가깝습니다. '부젯'이라고 하지 않습니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I have no money these days.", "right": "I'm trying to stick to a budget.", "note": "'요즘 돈이 없어'를 직역하면 형편이 어려운 것처럼 무겁게 들립니다. 아끼는 중이라면 stick to a budget이 가볍습니다." },
+    { "wrong": "I'm trying to stick a budget.", "right": "I'm trying to stick to a budget.", "note": "stick 뒤에 to를 빠뜨리기 쉽습니다. '지키다'는 stick to입니다." },
+    { "wrong": "I'm trying to protect my budget.", "right": "I'm trying to stick to a budget.", "note": "'예산을 지키다'의 '지키다'를 protect로 직역하면 어색합니다." }
+  ],
+  "dialogue": {
+    "situation": "동료들이 비싼 초밥집에 점심 먹으러 가자고 하는데, 나는 돈을 아끼는 중입니다.",
+    "partnerRole": "직장 동료",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "A few of us are going to Harbor Sushi for lunch. Want to come?", "ko": "몇 명이서 점심에 하버 스시 가는데요. 같이 가실래요?", "audio": "audio/lessons/INT3-U02-L05/dlg-01-ed32bc2c.m4a" },
+      { "no": 2, "speaker": "me", "en": "I'd love to, but I'm trying to stick to a budget.", "ko": "가고 싶은데, 예산 안에서 쓰려고 노력 중이에요.", "audio": "audio/lessons/INT3-U02-L05/dlg-02-e5059080.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "I totally get it. That place is pretty pricey.", "ko": "완전 이해해요. 거기 꽤 비싸죠.", "audio": "audio/lessons/INT3-U02-L05/dlg-03-088b78ec.m4a" },
+      { "no": 4, "speaker": "me", "en": "Yeah. I've been bringing lunch from home all month.", "ko": "네. 이번 달 내내 집에서 점심 싸 오고 있어요.", "audio": "audio/lessons/INT3-U02-L05/dlg-04-ecdf1e04.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Honestly, I should do that too. My card bill was scary.", "ko": "솔직히 저도 그래야 해요. 카드값 보고 깜짝 놀랐거든요.", "audio": "audio/lessons/INT3-U02-L05/dlg-05-b2101642.m4a" },
+      { "no": 6, "speaker": "me", "en": "Join me tomorrow. We can eat in the break room.", "ko": "내일 같이 드세요. 휴게실에서 먹으면 돼요.", "audio": "audio/lessons/INT3-U02-L05/dlg-06-c2ef119e.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "pricey", "ko": "'좀 비싼'. expensive보다 가볍게 쓰는 말입니다." },
+      { "en": "I'd love to, but...", "ko": "'그러고 싶은데...'. 초대를 부드럽게 거절할 때 앞에 붙이는 말입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I'm trying to stick to a budget.",
+      "ko": "예산 안에서 쓰려고 노력 중이에요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Do you want to go shopping with us after work?", "audio": "audio/lessons/INT3-U02-L05/cue-01-c139e88f.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L05/drill-01-54bdef3b.m4a", "slow": "audio/lessons/INT3-U02-L05/drill-01-54bdef3b.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I'm trying to stick to my grocery budget.",
+      "ko": "장보기 예산 안에서 쓰려고 노력 중이에요.",
+      "point": "단어 교체: a budget → my grocery budget",
+      "cue": { "lang": "en", "text": "You only picked the cheap brands today. Why is that?", "audio": "audio/lessons/INT3-U02-L05/cue-02-fb427bff.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L05/drill-02-12d2349c.m4a", "slow": "audio/lessons/INT3-U02-L05/drill-02-12d2349c.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "We're trying to stick to a budget.",
+      "ko": "저희 요즘 예산 안에서 쓰려고 노력 중이에요.",
+      "point": "주어 변경: we (are)",
+      "cue": { "lang": "en", "text": "Are you and your husband going anywhere fun for vacation?", "audio": "audio/lessons/INT3-U02-L05/cue-03-948845b2.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L05/drill-03-b8c3c7b8.m4a", "slow": "audio/lessons/INT3-U02-L05/drill-03-b8c3c7b8.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Are you trying to stick to a budget?",
+      "ko": "예산 안에서 쓰려고 하시는 거예요?",
+      "point": "질문형: Are you trying to ~?",
+      "cue": { "lang": "ko", "text": "동료가 요즘 점심을 매일 싸 오고 커피도 안 삽니다. 돈을 아끼는 중인지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U02-L05/drill-04-28ff2e14.m4a", "slow": "audio/lessons/INT3-U02-L05/drill-04-28ff2e14.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I didn't stick to my budget last month.",
+      "ko": "지난달엔 예산을 못 지켰어요.",
+      "point": "부정형: didn't ~ last month",
+      "cue": { "lang": "en", "text": "Why do you look so worried about your credit card bill?", "audio": "audio/lessons/INT3-U02-L05/cue-05-513a58e1.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L05/drill-05-d3342b96.m4a", "slow": "audio/lessons/INT3-U02-L05/drill-05-d3342b96.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I'll stick to a budget this year.",
+      "ko": "올해는 예산 지키면서 쓸 거예요.",
+      "point": "시제: 미래 will + this year",
+      "cue": { "lang": "en", "text": "What's one thing you want to change about your spending?", "audio": "audio/lessons/INT3-U02-L05/cue-06-4ce716fa.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L05/drill-06-0d083e97.m4a", "slow": "audio/lessons/INT3-U02-L05/drill-06-0d083e97.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "There's a big sale at the mall this weekend. You're coming, right?", "ko": "이번 주말에 쇼핑몰에서 큰 세일 해요. 오실 거죠?", "audio": "audio/lessons/INT3-U02-L05/rp-01-7c1c40f4.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm trying to stick to a budget.",
+        "exampleKo": "예산 안에서 쓰려고 노력 중이에요.",
+        "requiredKeywords": ["stick to", "budget"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Wow, only store brands in your cart? That's not like you.", "ko": "와, 장바구니에 전부 마트 자체 브랜드네요? 평소랑 다르시네요.", "audio": "audio/lessons/INT3-U02-L05/rp-03-1266b738.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm trying to stick to my grocery budget.",
+        "exampleKo": "장보기 예산 안에서 쓰려고 노력 중이에요.",
+        "requiredKeywords": ["stick to", "grocery budget"]
+      },
+      { "no": 5, "speaker": "partner", "en": "I heard you and your wife canceled the cruise. Change of plans?", "ko": "두 분 크루즈 취소하셨다면서요. 계획이 바뀌었어요?", "audio": "audio/lessons/INT3-U02-L05/rp-05-794072d1.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We're trying to stick to a budget.",
+        "exampleKo": "저희 요즘 예산 안에서 쓰려고 노력 중이에요.",
+        "requiredKeywords": ["We're trying", "budget"]
+      },
+      { "no": 7, "speaker": "partner", "en": "I've packed lunch every day this month, and I haven't bought coffee once.", "ko": "이번 달 내내 점심 싸 왔고, 커피는 한 번도 안 샀어요.", "audio": "audio/lessons/INT3-U02-L05/rp-07-3c9bf348.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are you trying to stick to a budget?",
+        "exampleKo": "예산 안에서 쓰려고 하시는 거예요?",
+        "requiredKeywords": ["Are you", "budget"]
+      },
+      { "no": 9, "speaker": "partner", "en": "Why are you staring at your bank app like that? Bad news?", "ko": "왜 은행 앱을 그렇게 보고 계세요? 안 좋은 소식이에요?", "audio": "audio/lessons/INT3-U02-L05/rp-09-fe5d522a.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't stick to my budget last month.",
+        "exampleKo": "지난달엔 예산을 못 지켰어요.",
+        "requiredKeywords": ["didn't", "last month"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Happy New Year! Did you set any goals for this year?", "ko": "새해 복 많이 받으세요! 올해 세운 목표 있어요?", "audio": "audio/lessons/INT3-U02-L05/rp-11-fefe8c17.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'll stick to a budget this year.",
+        "exampleKo": "올해는 예산 지키면서 쓸 거예요.",
+        "requiredKeywords": ["stick to", "this year"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

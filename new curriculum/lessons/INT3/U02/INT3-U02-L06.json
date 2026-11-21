@@ -1,0 +1,368 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U02-L06",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 2,
+  "unitTitle": "수입과 지출",
+  "lessonNo": 6,
+  "lessonTitle": "큰 구매를 위해 저축하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I'm saving up for a new car.",
+    "ko": "새 차 사려고 돈 모으고 있어요.",
+    "stress": "I'm SAVing UP for a NEW CAR.",
+    "audio": {
+      "normal": "int3-u02-l06_key.mp3",
+      "slow": "int3-u02-l06_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'새 차를 사려고 돈을 모으는 중이에요'라는 뜻입니다. 큰 물건을 사기 위해 저축하고 있다고 말할 때 씁니다.",
+      "save up for + 물건은 '~을 사려고 돈을 모으다'입니다. up을 붙이면 '조금씩 모아서 채운다'는 느낌이 납니다.",
+      "I'm saving money.는 그냥 '돈을 아끼고 있다'에 가깝고, 무엇을 위해 모으는지 말할 땐 save up for를 씁니다.",
+      "지금 하고 있는 일이라 I'm saving처럼 -ing를 씁니다."
+    ],
+    "en": "Say \"I'm saving up for a new car\" when you are putting money aside to buy something big. \"Save up for\" means to save money little by little for a goal.",
+    "enKo": "큰 물건을 사려고 돈을 따로 모을 때 \"I'm saving up for a new car\"라고 합니다. \"Save up for\"는 목표를 위해 조금씩 돈을 모은다는 뜻입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "SAV, UP, NEW, CAR에 힘을 줍니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "saving up은 '세이빙 업'으로 끊지 않고 '세이비넙'처럼 이어집니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "for a는 '포 어'라고 힘주지 않고 '퍼러'처럼 약하게 붙여 말합니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "car의 r은 혀끝을 살짝 말아 올려 끝까지 소리 냅니다. '카'로 그냥 끝내지 않습니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I'm gathering money for a new car.",
+      "right": "I'm saving up for a new car.",
+      "note": "'돈을 모으다'를 gather로 직역하면 어색합니다. save up for를 씁니다."
+    },
+    {
+      "wrong": "I'm saving up a new car.",
+      "right": "I'm saving up for a new car.",
+      "note": "무엇을 사려고 모으는지 말할 땐 for를 꼭 넣습니다."
+    },
+    {
+      "wrong": "I'm doing savings for a new car.",
+      "right": "I'm saving up for a new car.",
+      "note": "savings는 '모아 둔 돈'이라는 명사라 do와 함께 쓰지 않습니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "아파트 주차장에서 이웃이 낡은 내 차를 보고 말을 겁니다.",
+    "partnerRole": "이웃",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Morning! Is your car making that noise again?",
+        "ko": "안녕하세요! 차에서 또 그 소리 나요?",
+        "audio": "int3-u02-l06_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Every morning. That's why I'm saving up for a new car.",
+        "ko": "매일 아침이요. 그래서 새 차 사려고 돈 모으고 있어요.",
+        "audio": "int3-u02-l06_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Smart. Do you have a model in mind?",
+        "ko": "잘 생각하셨네요. 생각해 둔 차종 있어요?",
+        "audio": "int3-u02-l06_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Something small and electric. I put aside a little every payday.",
+        "ko": "작은 전기차요. 월급날마다 조금씩 떼어 놓고 있어요.",
+        "audio": "int3-u02-l06_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Good plan. It took us two years to save for ours.",
+        "ko": "좋은 계획이네요. 저희는 차 살 돈 모으는 데 2년 걸렸어요.",
+        "audio": "int3-u02-l06_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Two years? Wow, I hope mine lasts that long.",
+        "ko": "2년이요? 와, 제 차가 그때까지 버텨 주면 좋겠네요.",
+        "audio": "int3-u02-l06_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "put aside",
+        "ko": "'(돈을) 따로 떼어 두다'. save와 비슷하지만 '조금씩 따로 빼 둔다'는 느낌이 강합니다."
+      },
+      {
+        "en": "in mind",
+        "ko": "have ~ in mind는 '~을 생각해 두다'입니다. Do you have anything in mind?처럼 자주 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I'm saving up for a new car.",
+      "ko": "새 차 사려고 돈 모으고 있어요.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "You're skipping the ski trip this year? Why not?"
+      },
+      "audio": {
+        "normal": "int3-u02-l06_drill_01.mp3",
+        "slow": "int3-u02-l06_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I'm saving up for a trip to Italy.",
+      "ko": "이탈리아 여행 가려고 돈 모으고 있어요.",
+      "point": "단어 교체: a new car → a trip to Italy",
+      "cue": {
+        "lang": "en",
+        "text": "You've been working extra shifts. What's the big goal?"
+      },
+      "audio": {
+        "normal": "int3-u02-l06_drill_02.mp3",
+        "slow": "int3-u02-l06_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "My son is saving up for a bike.",
+      "ko": "아들이 자전거 사려고 돈 모으고 있어요.",
+      "point": "주어 변경: my son (is)",
+      "cue": {
+        "lang": "en",
+        "text": "Why is your son selling lemonade on the corner every weekend?"
+      },
+      "audio": {
+        "normal": "int3-u02-l06_drill_03.mp3",
+        "slow": "int3-u02-l06_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "What are you saving up for?",
+      "ko": "뭐 사려고 돈 모으세요?",
+      "point": "질문형: What are you ~ for?",
+      "cue": {
+        "lang": "ko",
+        "text": "이웃이 요즘 외식을 전혀 안 한다고 합니다. 무엇을 위해 돈을 모으는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u02-l06_drill_04.mp3",
+        "slow": "int3-u02-l06_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "I've been saving up for two years.",
+      "ko": "2년째 돈 모으고 있어요.",
+      "point": "시제: have been -ing + for two years",
+      "cue": {
+        "lang": "en",
+        "text": "So when did you start putting money away for your car?"
+      },
+      "audio": {
+        "normal": "int3-u02-l06_drill_05.mp3",
+        "slow": "int3-u02-l06_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I'm not saving up for anything right now.",
+      "ko": "지금은 딱히 뭘 위해 모으는 건 없어요.",
+      "point": "부정형: not ~ anything right now",
+      "cue": {
+        "lang": "en",
+        "text": "Do you have any big savings goals this year?"
+      },
+      "audio": {
+        "normal": "int3-u02-l06_drill_06.mp3",
+        "slow": "int3-u02-l06_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Your old car wouldn't start again this morning, right? I heard it from my window.",
+        "ko": "오늘 아침에도 차 시동이 안 걸렸죠? 창문으로 다 들렸어요."
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm saving up for a new car.",
+        "exampleKo": "새 차 사려고 돈 모으고 있어요.",
+        "requiredKeywords": [
+          "saving up",
+          "new car"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "I keep seeing you in the Italian class at the library. Planning something?",
+        "ko": "도서관 이탈리아어 수업에서 자꾸 뵙네요. 뭐 계획하시는 거 있어요?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm saving up for a trip to Italy.",
+        "exampleKo": "이탈리아 여행 가려고 돈 모으고 있어요.",
+        "requiredKeywords": [
+          "trip",
+          "Italy"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Your son offered to wash my car for five dollars. He works so hard!",
+        "ko": "아드님이 5달러에 제 차를 세차해 주겠다고 하더라고요. 정말 부지런해요!"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My son is saving up for a bike.",
+        "exampleKo": "아들이 자전거 사려고 돈 모으고 있어요.",
+        "requiredKeywords": [
+          "My son",
+          "bike"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "I've stopped eating out, and I'm skipping our book club dinners for a while.",
+        "ko": "저 외식 끊었고, 한동안 독서 모임 저녁도 빠지려고요."
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What are you saving up for?",
+        "exampleKo": "뭐 사려고 돈 모으세요?",
+        "requiredKeywords": [
+          "What are you",
+          "saving up"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "You finally bought the house! When did you start saving for the down payment?",
+        "ko": "드디어 집 사셨네요! 계약금은 언제부터 모으셨어요?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've been saving up for two years.",
+        "exampleKo": "2년째 돈 모으고 있어요.",
+        "requiredKeywords": [
+          "been saving",
+          "two years"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "I'm opening a savings account for my goal. Are you saving for something too?",
+        "ko": "목표가 있어서 적금 통장을 만들려고요. 혹시 뭐 모으고 계세요?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm not saving up for anything right now.",
+        "exampleKo": "지금은 딱히 뭘 위해 모으는 건 없어요.",
+        "requiredKeywords": [
+          "not",
+          "anything",
+          "right now"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

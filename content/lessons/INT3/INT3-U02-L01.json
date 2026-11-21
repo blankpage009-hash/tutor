@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U02-L01",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 2,
+  "unitTitle": "수입과 지출",
+  "lessonNo": 1,
+  "lessonTitle": "수입에 대해 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "My new job pays a lot better.",
+    "ko": "새 직장이 돈을 훨씬 많이 줘.",
+    "stress": "My NEW JOB PAYS a LOT BETter.",
+    "audio": { "normal": "audio/lessons/INT3-U02-L01/key-6cb68c48.m4a", "slow": "audio/lessons/INT3-U02-L01/key-6cb68c48.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "'새 직장이 (예전보다) 돈을 훨씬 많이 줘'라는 뜻입니다. 이직한 뒤 수입이 늘었다고 말할 때 씁니다.",
+      "여기서 pay는 '(직장이) 돈을 주다'라는 동사입니다. 주어가 사람이 아니라 job이라는 점이 포인트입니다.",
+      "a lot better는 '훨씬 더 낫게'입니다. much better라고 해도 되지만, 말할 때는 a lot이 더 편하게 들립니다.",
+      "정확한 금액을 말하지 않고 돌려 말하는 표현이라, 수입 이야기를 할 때 부담이 적습니다."
+    ],
+    "en": "Say \"My new job pays a lot better\" when your new job gives you more money than your old one. Here, \"pay\" means a job gives you money.",
+    "enKo": "새 직장이 예전 직장보다 돈을 더 많이 줄 때 \"My new job pays a lot better\"라고 합니다. 여기서 \"pay\"는 직장이 돈을 준다는 뜻입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "NEW, JOB, PAYS, LOT, BET에 힘을 줍니다." },
+    { "focus": "연음", "tip": "a lot은 '어 랏'으로 끊지 않고 '얼랏'처럼 이어서 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "better의 tt는 미국식으로 부드럽게 굴려 '베러'처럼 들립니다. '베터'라고 또박또박 말하지 않습니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "My new job gives more money.", "right": "My new job pays a lot better.", "note": "'돈을 준다'를 give money로 직역하지 않고 pay 하나로 말합니다." },
+    { "wrong": "My new company's salary is more high.", "right": "My new job pays a lot better.", "note": "high의 비교급은 more high가 아니라 higher입니다. 일상 대화에선 pays better가 더 자연스럽습니다." },
+    { "wrong": "My new job pays a lot good.", "right": "My new job pays a lot better.", "note": "예전 직장과 비교하는 말이라 good이 아니라 better를 씁니다." }
+  ],
+  "dialogue": {
+    "situation": "이직한 지 한 달 된 나에게 친구가 새 직장은 어떤지 묻습니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "So how's the new job? Is it worth the longer commute?", "ko": "그래서 새 직장은 어때? 출퇴근 길어진 만큼 괜찮아?", "audio": "audio/lessons/INT3-U02-L01/dlg-01-4f3ee8da.m4a" },
+      { "no": 2, "speaker": "me", "en": "Totally. My new job pays a lot better.", "ko": "완전. 새 직장이 돈을 훨씬 많이 줘.", "audio": "audio/lessons/INT3-U02-L01/dlg-02-74cc562c.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Nice! So you can finally stop worrying about rent.", "ko": "좋다! 그럼 이제 월세 걱정은 좀 덜겠네.", "audio": "audio/lessons/INT3-U02-L01/dlg-03-cc81d852.m4a" },
+      { "no": 4, "speaker": "me", "en": "Pretty much. And I get a bonus at the end of the year.", "ko": "거의 그렇지. 게다가 연말에 보너스도 나와.", "audio": "audio/lessons/INT3-U02-L01/dlg-04-fc941121.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Lucky you. My company hasn't given raises in two years.", "ko": "좋겠다. 우리 회사는 2년째 월급을 안 올려 줬어.", "audio": "audio/lessons/INT3-U02-L01/dlg-05-b2fbfab2.m4a" },
+      { "no": 6, "speaker": "me", "en": "Seriously? You should start looking around, then.", "ko": "진짜? 그럼 너도 다른 데 좀 알아봐.", "audio": "audio/lessons/INT3-U02-L01/dlg-06-8679dfcc.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "Pretty much.", "ko": "'거의 그렇지', '대충 맞아'. 상대 말에 대체로 동의할 때 짧게 하는 대답입니다." },
+      { "en": "Lucky you.", "ko": "'좋겠다', '부럽다'. 상대에게 좋은 일이 생겼을 때 가볍게 하는 말입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "My new job pays a lot better.",
+      "ko": "새 직장이 돈을 훨씬 많이 줘.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "You look a lot less stressed about money these days. What changed?", "audio": "audio/lessons/INT3-U02-L01/cue-01-82f678f7.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L01/drill-01-6cb68c48.m4a", "slow": "audio/lessons/INT3-U02-L01/drill-01-6cb68c48.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "My new job pays a little better.",
+      "ko": "새 직장이 돈을 조금 더 줘.",
+      "point": "단어 교체: a lot → a little",
+      "cue": { "lang": "en", "text": "Was switching jobs worth it for the money?", "audio": "audio/lessons/INT3-U02-L01/cue-02-f1798640.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L01/drill-02-53f15d25.m4a", "slow": "audio/lessons/INT3-U02-L01/drill-02-53f15d25.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "Night shifts pay a lot better.",
+      "ko": "야간 근무가 돈을 훨씬 많이 줘.",
+      "point": "주어 변경: night shifts (복수, pay)",
+      "cue": { "lang": "en", "text": "Why do you keep signing up to work at night?", "audio": "audio/lessons/INT3-U02-L01/cue-03-91dc9074.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L01/drill-03-1b2b19fb.m4a", "slow": "audio/lessons/INT3-U02-L01/drill-03-1b2b19fb.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Does your new job pay better?",
+      "ko": "새 직장은 돈 더 많이 줘?",
+      "point": "질문형: Does ~ pay better?",
+      "cue": { "lang": "ko", "text": "친구가 얼마 전 이직했습니다. 새 직장이 돈을 더 주는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT3-U02-L01/drill-04-ae0442d4.m4a", "slow": "audio/lessons/INT3-U02-L01/drill-04-ae0442d4.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "My new job doesn't pay any better.",
+      "ko": "새 직장이라고 돈을 더 주는 것도 아니야.",
+      "point": "부정형: doesn't pay any better",
+      "cue": { "lang": "en", "text": "So you're making more money now that you switched, right?", "audio": "audio/lessons/INT3-U02-L01/cue-05-5a20301b.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L01/drill-05-42e544cf.m4a", "slow": "audio/lessons/INT3-U02-L01/drill-05-42e544cf.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "My old job paid a lot better.",
+      "ko": "예전 직장이 돈을 훨씬 많이 줬어.",
+      "point": "시제: 과거형 paid + old job",
+      "cue": { "lang": "en", "text": "Do you ever miss working at your old company?", "audio": "audio/lessons/INT3-U02-L01/cue-06-1db22e02.m4a" },
+      "audio": { "normal": "audio/lessons/INT3-U02-L01/drill-06-73a28423.m4a", "slow": "audio/lessons/INT3-U02-L01/drill-06-73a28423.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Whoa, a new couch and a new TV? Did you win the lottery or something?", "ko": "와, 새 소파에 새 TV까지? 복권이라도 당첨됐어?", "audio": "audio/lessons/INT3-U02-L01/rp-01-d8f61518.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My new job pays a lot better.",
+        "exampleKo": "새 직장이 돈을 훨씬 많이 줘.",
+        "requiredKeywords": ["pays", "a lot better"]
+      },
+      { "no": 3, "speaker": "partner", "en": "I heard you got a small raise when you switched. Was it a big jump?", "ko": "이직하면서 월급 좀 올랐다며. 많이 올랐어?", "audio": "audio/lessons/INT3-U02-L01/rp-03-ac8b36f8.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My new job pays a little better.",
+        "exampleKo": "새 직장이 돈을 조금 더 줘.",
+        "requiredKeywords": ["new job", "a little better"]
+      },
+      { "no": 5, "speaker": "partner", "en": "You look exhausted. Why are you working nights at the hospital now?", "ko": "너 엄청 피곤해 보여. 요즘 왜 병원에서 밤 근무해?", "audio": "audio/lessons/INT3-U02-L01/rp-05-eed6f89a.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Night shifts pay a lot better.",
+        "exampleKo": "야간 근무가 돈을 훨씬 많이 줘.",
+        "requiredKeywords": ["Night shifts", "a lot better"]
+      },
+      { "no": 7, "speaker": "partner", "en": "I just started at a new company last week. The office is so much nicer.", "ko": "나 지난주부터 새 회사 다녀. 사무실이 훨씬 좋아.", "audio": "audio/lessons/INT3-U02-L01/rp-07-73be3054.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Does your new job pay better?",
+        "exampleKo": "새 직장은 돈 더 많이 줘?",
+        "requiredKeywords": ["Does", "pay better"]
+      },
+      { "no": 9, "speaker": "partner", "en": "With that fancy new job title, you must be rich now!", "ko": "그 멋진 새 직함이면 이제 부자 됐겠네!", "audio": "audio/lessons/INT3-U02-L01/rp-09-f9d4a83a.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My new job doesn't pay any better.",
+        "exampleKo": "새 직장이라고 돈을 더 주는 것도 아니야.",
+        "requiredKeywords": ["doesn't", "any better"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Why do you keep talking about your last company? Do you regret leaving?", "ko": "왜 자꾸 전 회사 얘기를 해? 그만둔 거 후회해?", "audio": "audio/lessons/INT3-U02-L01/rp-11-3ab6cdbb.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My old job paid a lot better.",
+        "exampleKo": "예전 직장이 돈을 훨씬 많이 줬어.",
+        "requiredKeywords": ["old job", "paid"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT3-U02-L04",
+  "level": "중급 3",
+  "levelCode": "INT3",
+  "unit": 2,
+  "unitTitle": "수입과 지출",
+  "lessonNo": 4,
+  "lessonTitle": "남에게 대접하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Dinner's on me tonight.",
+    "ko": "오늘 저녁은 내가 살게.",
+    "stress": "DINner's on ME toNIGHT.",
+    "audio": {
+      "normal": "int3-u02-l04_key.mp3",
+      "slow": "int3-u02-l04_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'오늘 저녁은 내가 낼게'라는 뜻입니다. 식사나 음료 값을 내가 내겠다고 할 때 씁니다.",
+      "be on me는 '내가 낸다'입니다. Dinner's는 Dinner is의 줄임말입니다.",
+      "계산할 때 짧게 It's on me.나 This one's on me.라고도 합니다.",
+      "I'll buy you dinner.라고 해도 되지만, on me가 더 가볍고 자연스럽게 들립니다."
+    ],
+    "en": "Say \"Dinner's on me tonight\" when you want to pay for someone's dinner. \"On me\" means I will pay.",
+    "enKo": "상대의 저녁값을 내가 내고 싶을 때 \"Dinner's on me tonight\"라고 합니다. \"On me\"는 내가 낸다는 뜻입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "DIN, ME, NIGHT에 힘을 줍니다. 특히 me를 또렷하게 말하면 '내가' 낸다는 뜻이 살아납니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "Dinner's on은 '디너즈 온'으로 끊지 않고 '디너존'처럼 이어집니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "dinner의 er는 혀끝을 살짝 말아 올려 소리 냅니다. '디너'로 그냥 끝내지 않습니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I'll shoot dinner tonight.",
+      "right": "Dinner's on me tonight.",
+      "note": "'한턱 쏜다'의 '쏘다'를 shoot으로 직역하면 통하지 않습니다."
+    },
+    {
+      "wrong": "I will pay the dinner.",
+      "right": "Dinner's on me tonight.",
+      "note": "pay 뒤에 바로 dinner를 쓰지 않고 pay for dinner라고 합니다. 더 자연스러운 건 on me입니다."
+    },
+    {
+      "wrong": "Dinner is to me tonight.",
+      "right": "Dinner's on me tonight.",
+      "note": "'나한테'를 to me로 직역한 실수입니다. 내가 낸다는 뜻은 on me입니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "하루 종일 이사를 도와준 친구와 식당에 왔습니다.",
+    "partnerRole": "친구",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Okay, I'm starving. Let's split an appetizer and keep it cheap.",
+        "ko": "아, 배고파 죽겠다. 애피타이저 하나 나눠 먹고 싸게 먹자.",
+        "audio": "int3-u02-l04_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "No way. You helped me move all day. Dinner's on me tonight.",
+        "ko": "무슨 소리야. 하루 종일 이사 도와줬잖아. 오늘 저녁은 내가 살게.",
+        "audio": "int3-u02-l04_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Are you sure? You just paid a deposit on the new place.",
+        "ko": "진짜 괜찮아? 새 집 보증금 낸 지 얼마 안 됐잖아.",
+        "audio": "int3-u02-l04_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "I'm sure. Get whatever you want, even the steak.",
+        "ko": "괜찮아. 먹고 싶은 거 다 시켜, 스테이크도.",
+        "audio": "int3-u02-l04_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Well, if you insist! Then the next coffee is on me.",
+        "ko": "음, 정 그렇다면! 그럼 다음 커피는 내가 살게.",
+        "audio": "int3-u02-l04_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Deal. Let's order, I'm starving too.",
+        "ko": "콜. 얼른 시키자, 나도 배고파.",
+        "audio": "int3-u02-l04_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "if you insist",
+        "ko": "'정 그렇다면', '그렇게까지 말한다면'. 상대의 호의를 못 이기는 척 받아들일 때 씁니다."
+      },
+      {
+        "en": "Deal.",
+        "ko": "'콜', '좋아, 그러자'. 상대의 제안을 받아들일 때 짧게 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Dinner's on me tonight.",
+      "ko": "오늘 저녁은 내가 살게.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "Wow, this place looks expensive. Should we split the bill?"
+      },
+      "audio": {
+        "normal": "int3-u02-l04_drill_01.mp3",
+        "slow": "int3-u02-l04_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "Lunch is on me today.",
+      "ko": "오늘 점심은 내가 살게.",
+      "point": "단어 교체: dinner tonight → lunch today",
+      "cue": {
+        "lang": "en",
+        "text": "I forgot my wallet at home. Can I pay you back tomorrow?"
+      },
+      "audio": {
+        "normal": "int3-u02-l04_drill_02.mp3",
+        "slow": "int3-u02-l04_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "Drinks are on Jake tonight.",
+      "ko": "오늘 술은 제이크가 쏜대.",
+      "point": "주어·대상 변경: drinks are (복수), on Jake",
+      "cue": {
+        "lang": "en",
+        "text": "Why is everyone ordering so much at the bar tonight?"
+      },
+      "audio": {
+        "normal": "int3-u02-l04_drill_03.mp3",
+        "slow": "int3-u02-l04_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "Are you sure dinner's on you?",
+      "ko": "진짜 저녁 네가 사는 거야?",
+      "point": "질문형: Are you sure ~ on you?",
+      "cue": {
+        "lang": "ko",
+        "text": "친구가 오늘 저녁을 사겠다고 합니다. 정말 친구가 사는 건지 다시 물어보세요."
+      },
+      "audio": {
+        "normal": "int3-u02-l04_drill_04.mp3",
+        "slow": "int3-u02-l04_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Dinner's not on me this time.",
+      "ko": "이번엔 저녁 내가 안 산다.",
+      "point": "부정형: not on me this time",
+      "cue": {
+        "lang": "en",
+        "text": "You'll pay for dinner again tonight, right? You always do."
+      },
+      "audio": {
+        "normal": "int3-u02-l04_drill_05.mp3",
+        "slow": "int3-u02-l04_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "Dinner was on me last time.",
+      "ko": "지난번엔 저녁 내가 샀잖아.",
+      "point": "시제: 과거형 was + last time",
+      "cue": {
+        "lang": "en",
+        "text": "Whose turn is it to pay for dinner?"
+      },
+      "audio": {
+        "normal": "int3-u02-l04_drill_06.mp3",
+        "slow": "int3-u02-l04_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "My card is almost maxed out, so let's go somewhere cheap tonight, okay?",
+        "ko": "카드 한도가 거의 찼어. 오늘은 싼 데 가자, 알았지?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Dinner's on me tonight.",
+        "exampleKo": "오늘 저녁은 내가 살게.",
+        "requiredKeywords": [
+          "on me",
+          "tonight"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Ugh, I left my wallet in the car. Can you wait while I go get it?",
+        "ko": "아, 지갑을 차에 두고 왔어. 가서 가져올 동안 기다려 줄래?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Lunch is on me today.",
+        "exampleKo": "오늘 점심은 내가 살게.",
+        "requiredKeywords": [
+          "Lunch",
+          "on me",
+          "today"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Why is the bartender bringing us free drinks? Did we order these?",
+        "ko": "바텐더가 왜 우리한테 술을 갖다줘? 우리가 시킨 거야?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Drinks are on Jake tonight.",
+        "exampleKo": "오늘 술은 제이크가 쏜대.",
+        "requiredKeywords": [
+          "Drinks",
+          "on Jake"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Don't even look at the prices. I'm paying for all of this tonight.",
+        "ko": "가격은 보지도 마. 오늘 이거 다 내가 낼 거야."
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are you sure dinner's on you?",
+        "exampleKo": "진짜 저녁 네가 사는 거야?",
+        "requiredKeywords": [
+          "Are you sure",
+          "on you"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Hey, I didn't bring any cash. You've got this one, right?",
+        "ko": "야, 나 현금 안 가져왔어. 이번에도 네가 내는 거지?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Dinner's not on me this time.",
+        "exampleKo": "이번엔 저녁 내가 안 산다.",
+        "requiredKeywords": [
+          "not on me",
+          "this time"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "The check is here. Want to flip a coin to see who pays?",
+        "ko": "계산서 나왔다. 누가 낼지 동전 던질래?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Dinner was on me last time.",
+        "exampleKo": "지난번엔 저녁 내가 샀잖아.",
+        "requiredKeywords": [
+          "was on me",
+          "last time"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
