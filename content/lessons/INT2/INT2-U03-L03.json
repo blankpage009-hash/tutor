@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT2-U03-L03",
+  "level": "중급 2",
+  "levelCode": "INT2",
+  "unit": 3,
+  "unitTitle": "영화 이야기하기",
+  "lessonNo": 3,
+  "lessonTitle": "아쉬운 점과 평점 말하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I'd give it a seven out of ten.",
+    "ko": "10점 만점에 7점 줄래.",
+    "stress": "I'd GIVE it a SEVen out of TEN.",
+    "audio": { "normal": "audio/lessons/INT2-U03-L03/key-79363c4f.m4a", "slow": "audio/lessons/INT2-U03-L03/key-79363c4f.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "I'd give it ~ out of ten은 '10점 만점에 ~점 줄래'라는 뜻입니다. 영화·식당·책 등 무엇이든 점수로 평가할 때 씁니다.",
+      "I'd는 I would입니다. '내가 점수를 매긴다면'이라는 느낌이라 부드럽게 들립니다. 숫자 앞에 a를 붙이고(a seven), eight처럼 모음 소리로 시작하면 an을 씁니다(an eight).",
+      "아쉬운 점은 문장 끝에 though를 붙여 말합니다. It was a bit too long, though.(좀 길긴 했지만.)처럼 '좋았지만 ~는 아쉬웠다'는 느낌이 됩니다.",
+      "별점으로 말할 때는 I'd give it four stars.(별 4개 줄래.)라고 합니다. 점수를 물을 때는 What would you give it?이라고 합니다."
+    ],
+    "en": "To rate a movie, say \"I'd give it a seven out of ten.\" Add \"though\" at the end to mention a weak point, like \"It was a bit long, though.\"",
+    "enKo": "영화에 점수를 줄 때 \"I'd give it a seven out of ten.\"이라고 말합니다. 아쉬운 점을 말할 때는 \"It was a bit long, though.\"처럼 끝에 \"though\"를 붙입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "GIVE, SEV, TEN에 힘을 줍니다. 특히 숫자를 분명하게 말해야 점수가 전달됩니다." },
+    { "focus": "연음", "tip": "give it a는 이어서 '기비러'처럼, out of는 t가 부드러워져 '아우러'처럼 들립니다." },
+    { "focus": "약화", "tip": "of는 '오브'가 아니라 아주 약한 '어'로 줄어듭니다. 'seven 아우러 ten'처럼 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "seven의 v는 'ㅂ'이 아닙니다. 윗니를 아랫입술에 살짝 대고 떨리게 냅니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I give seven points.", "right": "I'd give it a seven out of ten.", "note": "점수를 말할 때 points는 잘 쓰지 않고, 평가 대상을 가리키는 it을 꼭 넣습니다." },
+    { "wrong": "I'd give it a eight out of ten.", "right": "I'd give it an eight out of ten.", "note": "eight는 모음 소리로 시작해서 a가 아니라 an을 씁니다." },
+    { "wrong": "The bad point is it's too long.", "right": "It was a bit too long, though.", "note": "'아쉬운 점은'을 직역하면 어색합니다. 끝에 though를 붙여 가볍게 말합니다." }
+  ],
+  "dialogue": {
+    "situation": "다른 친구가 내가 본 영화가 볼 만한지, 몇 점인지 묻습니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "So how was that movie? Worth seeing in theaters?", "ko": "그래서 그 영화 어땠어? 극장에서 볼 만해?", "audio": "audio/lessons/INT2-U03-L03/dlg-01-a5894ec9.m4a" },
+      { "no": 2, "speaker": "me", "en": "It was good, but the middle dragged a bit.", "ko": "괜찮았는데, 중간이 좀 늘어졌어.", "audio": "audio/lessons/INT2-U03-L03/dlg-02-fb31e6fd.m4a" },
+      { "no": 3, "speaker": "partner", "en": "Hmm. So would you recommend it or not?", "ko": "음. 그래서 추천해, 말아?", "audio": "audio/lessons/INT2-U03-L03/dlg-03-42742c17.m4a" },
+      { "no": 4, "speaker": "me", "en": "Yeah. I'd give it a seven out of ten.", "ko": "응. 10점 만점에 7점 줄래.", "audio": "audio/lessons/INT2-U03-L03/dlg-04-659489a0.m4a", "hasKeySentence": true},
+      { "no": 5, "speaker": "partner", "en": "Only a seven? Everyone online is calling it a ten.", "ko": "7점밖에? 인터넷에선 다들 10점이라던데.", "audio": "audio/lessons/INT2-U03-L03/dlg-05-ed0849ed.m4a" },
+      { "no": 6, "speaker": "me", "en": "The ending was great. It was just too long, though.", "ko": "결말은 최고였어. 너무 길긴 했지만.", "audio": "audio/lessons/INT2-U03-L03/dlg-06-d0666955.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "dragged a bit", "ko": "'좀 늘어졌다, 좀 지루했다'. 영화나 회의가 쓸데없이 길게 느껴질 때 씁니다." },
+      { "en": "Worth seeing in theaters?", "ko": "'극장에서 볼 만해?'. worth ~ing는 '~할 만한 가치가 있다'라는 뜻입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I'd give it a seven out of ten.",
+      "ko": "10점 만점에 7점 줄래.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "So, on a scale of one to ten, how was the movie?", "audio": "audio/lessons/INT2-U03-L03/cue-01-38a73856.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U03-L03/drill-01-79363c4f.m4a", "slow": "audio/lessons/INT2-U03-L03/drill-01-79363c4f.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I'd give it an eight out of ten.",
+      "ko": "10점 만점에 8점 줄래.",
+      "point": "숫자 교체: a seven → an eight (an 주의)",
+      "cue": { "lang": "en", "text": "You really liked that sushi place. What score out of ten?", "audio": "audio/lessons/INT2-U03-L03/cue-02-723db90c.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U03-L03/drill-02-cb9315a9.m4a", "slow": "audio/lessons/INT2-U03-L03/drill-02-cb9315a9.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "What would you give it out of ten?",
+      "ko": "넌 10점 만점에 몇 점 줄래?",
+      "point": "질문형: What would you give it?",
+      "cue": { "lang": "ko", "text": "친구가 같은 영화를 봤습니다. 10점 만점에 몇 점 줄지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT2-U03-L03/drill-03-ba82e089.m4a", "slow": "audio/lessons/INT2-U03-L03/drill-03-ba82e089.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "I gave it a five out of ten.",
+      "ko": "난 10점 만점에 5점 줬어.",
+      "point": "과거형: 이미 준 점수",
+      "cue": { "lang": "en", "text": "You rated that movie on the app last night, right? What score?", "audio": "audio/lessons/INT2-U03-L03/cue-04-2f9eba5e.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U03-L03/drill-04-e4b84ea4.m4a", "slow": "audio/lessons/INT2-U03-L03/drill-04-e4b84ea4.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I wouldn't give it more than a six.",
+      "ko": "6점 이상은 못 주겠어.",
+      "point": "부정형: wouldn't give it more than ~",
+      "cue": { "lang": "en", "text": "Was that boring movie at least a seven for you?", "audio": "audio/lessons/INT2-U03-L03/cue-05-3f6f27ce.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U03-L03/drill-05-48b0633b.m4a", "slow": "audio/lessons/INT2-U03-L03/drill-05-48b0633b.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "My mom would give it a ten.",
+      "ko": "우리 엄마는 10점 줄 거야.",
+      "point": "주어 변경: I → my mom",
+      "cue": { "lang": "en", "text": "Do you think your mom would like this romantic movie?", "audio": "audio/lessons/INT2-U03-L03/cue-06-ff5190b6.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U03-L03/drill-06-15280c5e.m4a", "slow": "audio/lessons/INT2-U03-L03/drill-06-15280c5e.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I'm writing a quick movie review for our group chat. What's your score for the mystery one?",
+        "ko": "우리 단톡방에 짧게 영화 후기 쓰는 중인데, 그 미스터리 영화 너는 몇 점이야?",
+        "audio": "audio/lessons/INT2-U03-L03/rp-01-9b312019.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'd give it a seven out of ten.",
+        "exampleKo": "10점 만점에 7점 줄래.",
+        "requiredKeywords": ["a seven", "out of ten"]
+      },
+      { "no": 3, "speaker": "partner", "en": "That new ramen place downtown was so good, right? How would you rate it?", "ko": "시내에 새로 생긴 라멘집 진짜 맛있었지? 몇 점 줄래?", "audio": "audio/lessons/INT2-U03-L03/rp-03-96718c27.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'd give it an eight out of ten.",
+        "exampleKo": "10점 만점에 8점 줄래.",
+        "requiredKeywords": ["an eight", "out of ten"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I just finished that new comedy. Honestly, I'm not sure what I think of it.",
+        "ko": "방금 그 새 코미디 다 봤는데, 솔직히 어떤지 잘 모르겠어.",
+        "audio": "audio/lessons/INT2-U03-L03/rp-05-8d3a9e8b.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What would you give it out of ten?",
+        "exampleKo": "넌 10점 만점에 몇 점 줄래?",
+        "requiredKeywords": ["what would you give", "out of ten"]
+      },
+      { "no": 7, "speaker": "partner", "en": "You left a review for that hotel in Lisbon, didn't you? How did you rate it?", "ko": "리스본 그 호텔 후기 남겼지? 몇 점 줬어?", "audio": "audio/lessons/INT2-U03-L03/rp-07-f33d4d7f.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I gave it a five out of ten.",
+        "exampleKo": "난 10점 만점에 5점 줬어.",
+        "requiredKeywords": ["I gave", "a five"]
+      },
+      { "no": 9, "speaker": "partner", "en": "That superhero movie had a huge budget. It's at least an eight, right?", "ko": "그 슈퍼히어로 영화 제작비 엄청났잖아. 최소 8점은 되지?", "audio": "audio/lessons/INT2-U03-L03/rp-09-25342220.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I wouldn't give it more than a six.",
+        "exampleKo": "6점 이상은 못 주겠어.",
+        "requiredKeywords": ["wouldn't give", "than a six"]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "We're taking your mom to that sweet love story this weekend. Will she like it?",
+        "ko": "이번 주말에 너희 엄마 모시고 그 달달한 사랑 영화 보러 가잖아. 좋아하실까?",
+        "audio": "audio/lessons/INT2-U03-L03/rp-11-06a6892f.m4a"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My mom would give it a ten.",
+        "exampleKo": "우리 엄마는 10점 줄 거야.",
+        "requiredKeywords": ["my mom", "a ten"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

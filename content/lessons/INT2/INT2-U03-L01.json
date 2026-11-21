@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT2-U03-L01",
+  "level": "중급 2",
+  "levelCode": "INT2",
+  "unit": 3,
+  "unitTitle": "영화 이야기하기",
+  "lessonNo": 1,
+  "lessonTitle": "줄거리 요약하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "It's about a guy who loses his memory.",
+    "ko": "기억을 잃은 남자 이야기야.",
+    "stress": "It's aBOUT a GUY who LOSes his MEMory.",
+    "audio": { "normal": "audio/lessons/INT2-U03-L01/key-3b061c6e.m4a", "slow": "audio/lessons/INT2-U03-L01/key-3b061c6e.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "It's about ~는 '~에 관한 이야기야'라는 뜻입니다. 영화·책·드라마 줄거리를 한 문장으로 말할 때 가장 먼저 꺼내는 말입니다.",
+      "a guy who ~는 '~하는 남자'입니다. who 뒤에 동사를 붙여 그 사람을 설명합니다. guy는 man의 편한 말이고, 여자면 a woman who, 가족이면 a family who라고 합니다.",
+      "줄거리는 보통 현재형으로 말합니다. 그래서 lost가 아니라 loses입니다. 영화 속 일은 볼 때마다 '지금' 일어나는 일처럼 말하기 때문입니다.",
+      "상대는 보통 What's it about?(무슨 내용이야?)이라고 묻습니다. 결말을 숨기고 싶으면 I don't want to spoil it.(스포는 안 할게.)이라고 덧붙입니다."
+    ],
+    "en": "When someone asks \"What's it about?\", start with \"It's about...\" Then say who the story follows and what happens to them. Use the present tense for movie plots.",
+    "enKo": "누가 \"What's it about?\"이라고 물으면 \"It's about...\"으로 시작합니다. 그다음 이야기의 주인공이 누구이고 무슨 일이 생기는지 말합니다. 영화 줄거리는 현재형으로 말합니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "GUY, LOSE, MEM에 힘을 줍니다. It's about a와 who, his는 약하고 빠르게 지나갑니다." },
+    { "focus": "연음", "tip": "It's about a는 붙여서 '잇써바우러'처럼 들립니다. about의 t가 뒤의 a와 만나 부드러운 'ㄹ' 소리가 됩니다." },
+    { "focus": "약화", "tip": "loses his의 h는 거의 안 들립니다. '루지지즈'처럼 이어서 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "lose의 s는 'ㅅ'이 아니라 성대가 떨리는 z 소리입니다. 'ㅅ'으로 내면 loose(헐렁한)처럼 들립니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "The story is a man loses his memory.", "right": "It's about a guy who loses his memory.", "note": "'이야기는 ~이다'를 직역하면 문장이 두 개로 엉킵니다. It's about a guy who ~ 한 문장으로 말합니다." },
+    { "wrong": "It's about a guy who lost his memory.", "right": "It's about a guy who loses his memory.", "note": "영화 줄거리는 현재형으로 말하는 게 자연스럽습니다." },
+    { "wrong": "It's about a man who forgets his memory.", "right": "It's about a guy who loses his memory.", "note": "'기억을 잃다'는 forget이 아니라 lose one's memory입니다." }
+  ],
+  "dialogue": {
+    "situation": "친구가 어젯밤 내가 본 새 영화가 무슨 내용인지 묻습니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "You saw that new movie last night, right? What's it about?", "ko": "어젯밤에 그 새 영화 봤지? 무슨 내용이야?", "audio": "audio/lessons/INT2-U03-L01/dlg-01-57dc8404.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "It's about a guy who loses his memory. He wakes up in a small town.",
+        "ko": "기억을 잃은 남자 이야기야. 작은 마을에서 깨어나.",
+        "audio": "audio/lessons/INT2-U03-L01/dlg-02-e11b35ec.m4a",
+        "hasKeySentence": true
+      },
+      { "no": 3, "speaker": "partner", "en": "Whoa. Does he figure out who he is?", "ko": "와. 자기가 누군지 알아내?", "audio": "audio/lessons/INT2-U03-L01/dlg-03-040878de.m4a" },
+      { "no": 4, "speaker": "me", "en": "Kind of. He keeps finding notes he wrote to himself.", "ko": "어느 정도는. 자기가 자기한테 써 둔 쪽지를 계속 발견하거든.", "audio": "audio/lessons/INT2-U03-L01/dlg-04-1514aad1.m4a" },
+      { "no": 5, "speaker": "partner", "en": "That sounds intense. Is it scary?", "ko": "엄청 긴장되겠다. 무서워?", "audio": "audio/lessons/INT2-U03-L01/dlg-05-436514cb.m4a" },
+      { "no": 6, "speaker": "me", "en": "Not really. It's more of a mystery. I don't want to spoil it.", "ko": "별로. 미스터리에 더 가까워. 스포는 안 할게.", "audio": "audio/lessons/INT2-U03-L01/dlg-06-ce826492.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "What's it about?", "ko": "'무슨 내용이야?'. 영화·책·드라마 줄거리를 물을 때 가장 흔하게 씁니다." },
+      { "en": "I don't want to spoil it.", "ko": "'스포는 안 할게'. 결말이나 반전을 말하지 않겠다는 뜻입니다. spoiler(스포일러)가 여기서 나온 말입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "It's about a guy who loses his memory.",
+      "ko": "기억을 잃은 남자 이야기야.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "I heard you saw that new mystery movie. What's the story?", "audio": "audio/lessons/INT2-U03-L01/cue-01-08a6dc5f.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U03-L01/drill-01-3b061c6e.m4a", "slow": "audio/lessons/INT2-U03-L01/drill-01-3b061c6e.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "It's about a family who moves to Alaska.",
+      "ko": "알래스카로 이사 가는 가족 이야기야.",
+      "point": "단어 교체: a guy → a family",
+      "cue": { "lang": "en", "text": "What's that movie with the snowy Alaska poster about?", "audio": "audio/lessons/INT2-U03-L01/cue-02-ad2e80b7.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U03-L01/drill-02-dd220c63.m4a", "slow": "audio/lessons/INT2-U03-L01/drill-02-dd220c63.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "It was about a guy who lost everything.",
+      "ko": "모든 걸 잃은 남자 이야기였어.",
+      "point": "과거형: 예전에 본 영화를 떠올릴 때",
+      "cue": { "lang": "en", "text": "What was that old movie you watched as a kid about?", "audio": "audio/lessons/INT2-U03-L01/cue-03-08dafcd4.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U03-L01/drill-03-513dde3e.m4a", "slow": "audio/lessons/INT2-U03-L01/drill-03-513dde3e.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "What's the new show about?",
+      "ko": "새로 나온 그 드라마 무슨 내용이야?",
+      "point": "질문형: What's ~ about?",
+      "cue": { "lang": "ko", "text": "친구가 새 드라마를 보기 시작했다고 합니다. 무슨 내용인지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT2-U03-L01/drill-04-029e9b23.m4a", "slow": "audio/lessons/INT2-U03-L01/drill-04-029e9b23.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "It's not really about the war.",
+      "ko": "사실 전쟁 이야기는 아니야.",
+      "point": "부정형: It's not really about ~",
+      "cue": { "lang": "en", "text": "That movie has soldiers on the poster. Is it a war movie?", "audio": "audio/lessons/INT2-U03-L01/cue-05-72f4e4ab.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U03-L01/drill-05-59802032.m4a", "slow": "audio/lessons/INT2-U03-L01/drill-05-59802032.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "It's about two sisters who open a bakery.",
+      "ko": "빵집을 차리는 두 자매 이야기야.",
+      "point": "주어 변경·복수: a guy → two sisters",
+      "cue": { "lang": "en", "text": "What's that cute movie with the bakery about?", "audio": "audio/lessons/INT2-U03-L01/cue-06-d46a2aec.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U03-L01/drill-06-6e720475.m4a", "slow": "audio/lessons/INT2-U03-L01/drill-06-6e720475.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "I'm thinking of watching that new mystery movie tonight. What happens in it?",
+        "ko": "오늘 밤에 그 새 미스터리 영화 볼까 하는데, 무슨 내용이야?",
+        "audio": "audio/lessons/INT2-U03-L01/rp-01-f063dd0e.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It's about a guy who loses his memory.",
+        "exampleKo": "기억을 잃은 남자 이야기야.",
+        "requiredKeywords": ["guy who", "his memory"]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Our book club picked a novel set in Alaska. Do you know the story?",
+        "ko": "우리 독서 모임에서 알래스카가 배경인 소설을 골랐어. 무슨 이야기인지 알아?",
+        "audio": "audio/lessons/INT2-U03-L01/rp-03-c5902080.m4a"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It's about a family who moves to Alaska.",
+        "exampleKo": "알래스카로 이사 가는 가족 이야기야.",
+        "requiredKeywords": ["a family", "to Alaska"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "You told me you cried at some old movie when you were ten. What was it?",
+        "ko": "너 열 살 때 어떤 옛날 영화 보고 울었다고 했잖아. 그거 뭐였어?",
+        "audio": "audio/lessons/INT2-U03-L01/rp-05-afba3f62.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It was about a guy who lost everything.",
+        "exampleKo": "모든 걸 잃은 남자 이야기였어.",
+        "requiredKeywords": ["it was", "lost everything"]
+      },
+      { "no": 7, "speaker": "partner", "en": "I started a new show last week, and I can't stop watching it.", "ko": "지난주에 새 드라마 보기 시작했는데, 멈출 수가 없어.", "audio": "audio/lessons/INT2-U03-L01/rp-07-a689ae7f.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What's the new show about?",
+        "exampleKo": "새로 나온 그 드라마 무슨 내용이야?",
+        "requiredKeywords": ["what's", "show about"]
+      },
+      { "no": 9, "speaker": "partner", "en": "The poster has soldiers and tanks on it. So it's a war movie, right?", "ko": "포스터에 군인이랑 탱크가 있던데. 그럼 전쟁 영화지?", "audio": "audio/lessons/INT2-U03-L01/rp-09-06a6aa24.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It's not really about the war.",
+        "exampleKo": "사실 전쟁 이야기는 아니야.",
+        "requiredKeywords": ["not really", "the war"]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "My kids want to see that movie with cupcakes on the poster. Any idea what happens?",
+        "ko": "우리 애들이 포스터에 컵케이크 있는 그 영화 보고 싶대. 무슨 내용인지 알아?",
+        "audio": "audio/lessons/INT2-U03-L01/rp-11-712ddab9.m4a"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It's about two sisters who open a bakery.",
+        "exampleKo": "빵집을 차리는 두 자매 이야기야.",
+        "requiredKeywords": ["two sisters", "a bakery"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

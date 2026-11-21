@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT2-U03-L02",
+  "level": "중급 2",
+  "levelCode": "INT2",
+  "unit": 3,
+  "unitTitle": "영화 이야기하기",
+  "lessonNo": 2,
+  "lessonTitle": "감상 공유하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "The ending totally blew my mind.",
+    "ko": "결말이 완전 충격적이었어요.",
+    "stress": "The ENDing TOtally BLEW my MIND.",
+    "audio": {
+      "normal": "int2-u03-l02_key.mp3",
+      "slow": "int2-u03-l02_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "blow one's mind는 '머리가 띵할 만큼 놀랍다'라는 뜻입니다. 반전이나 결말에 좋은 쪽으로 크게 놀랐을 때 씁니다.",
+      "blow의 과거형은 blew입니다. (blow - blew - blown) totally는 '완전'이라는 강조라서 빼고 The ending blew my mind.라고 해도 됩니다.",
+      "비슷한 말로 I didn't see that coming.(그건 예상 못 했어요.)이 있습니다. It was good.은 그냥 '좋았다'라서, 충격과 감탄을 함께 말하려면 blew my mind가 잘 맞습니다.",
+      "앞부분만 바꾸면 여러 곳에 씁니다. The last scene blew my mind.(마지막 장면), The twist blew my mind.(반전)처럼 말합니다."
+    ],
+    "en": "Say \"The ending totally blew my mind\" when the ending surprised you in a great way. \"Blew my mind\" means something amazed or shocked you.",
+    "enKo": "결말이 좋은 쪽으로 깜짝 놀라게 했을 때 \"The ending totally blew my mind\"라고 말합니다. \"Blew my mind\"는 무언가가 아주 놀랍거나 충격적이었다는 뜻입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "END, TO, BLEW, MIND에 힘을 줍니다. The와 my는 약하게 지나갑니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "totally의 가운데 t는 부드러운 'ㄹ'처럼 바뀌어 '토럴리'처럼 들립니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "mind의 끝 d는 아주 약해서 거의 '마인'처럼 들립니다. 문장 끝이라 살짝 멈추기만 하면 됩니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "blew는 '블루'처럼 두 박자로 끊지 말고 bl을 한 번에 붙여 한 박자로 말합니다. l은 혀끝을 윗니 뒤에 댑니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "The ending was very shocking to me.",
+      "right": "The ending totally blew my mind.",
+      "note": "뜻은 통하지만 딱딱하고 나쁜 충격처럼 들릴 수 있습니다. 감탄까지 담으려면 blew my mind를 씁니다."
+    },
+    {
+      "wrong": "The ending blowed my mind.",
+      "right": "The ending totally blew my mind.",
+      "note": "blow는 불규칙 동사라 과거형이 blowed가 아니라 blew입니다."
+    },
+    {
+      "wrong": "The ending broke my head.",
+      "right": "The ending totally blew my mind.",
+      "note": "'머리가 띵했다'를 직역하면 '머리를 부쉈다'가 됩니다. 영어로는 blew my mind라고 합니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "월요일 아침, 같은 영화를 본 동료와 주말에 본 영화 이야기를 합니다.",
+    "partnerRole": "동료",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Hey, did you end up seeing that memory movie this weekend?",
+        "ko": "주말에 그 기억 잃는 영화 결국 보셨어요?",
+        "audio": "int2-u03-l02_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "I did! The ending totally blew my mind.",
+        "ko": "봤어요! 결말이 완전 충격적이었어요.",
+        "audio": "int2-u03-l02_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Right? I didn't see that twist coming at all.",
+        "ko": "그렇죠? 그 반전은 전혀 예상 못 했어요.",
+        "audio": "int2-u03-l02_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Me neither. I just sat there when the credits rolled.",
+        "ko": "저도요. 엔딩 크레디트 올라갈 때 그냥 멍하니 앉아 있었어요.",
+        "audio": "int2-u03-l02_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "What did you think of the main actor?",
+        "ko": "주인공 배우는 어땠어요?",
+        "audio": "int2-u03-l02_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "He was amazing. I'd watch it again just for him.",
+        "ko": "정말 대단했어요. 그 배우 때문에라도 또 볼 것 같아요.",
+        "audio": "int2-u03-l02_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "I didn't see that coming.",
+        "ko": "'그건 예상 못 했어요'. 반전이나 뜻밖의 일에 놀랐을 때 씁니다. 대화문처럼 that twist를 넣어도 됩니다."
+      },
+      {
+        "en": "when the credits rolled",
+        "ko": "'엔딩 크레디트가 올라갈 때'. 영화가 막 끝난 순간을 말할 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "The ending totally blew my mind.",
+      "ko": "결말이 완전 충격적이었어요.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "How did you feel about the ending of that movie?"
+      },
+      "audio": {
+        "normal": "int2-u03-l02_drill_01.mp3",
+        "slow": "int2-u03-l02_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "The last scene totally blew my mind.",
+      "ko": "마지막 장면이 완전 충격적이었어요.",
+      "point": "단어 교체: the ending → the last scene",
+      "cue": {
+        "lang": "en",
+        "text": "Which part of the movie surprised you the most?"
+      },
+      "audio": {
+        "normal": "int2-u03-l02_drill_02.mp3",
+        "slow": "int2-u03-l02_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "This ending will blow your mind.",
+      "ko": "이 결말 보면 완전 놀라실 거예요.",
+      "point": "미래형: will blow your mind",
+      "cue": {
+        "lang": "en",
+        "text": "I'm about to watch that mystery movie. Anything I should know?"
+      },
+      "audio": {
+        "normal": "int2-u03-l02_drill_03.mp3",
+        "slow": "int2-u03-l02_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "Didn't the ending blow your mind?",
+      "ko": "결말 완전 충격적이지 않았어요?",
+      "point": "질문형: Didn't ~ blow your mind?",
+      "cue": {
+        "lang": "ko",
+        "text": "동료도 같은 영화를 봤습니다. 결말이 충격적이지 않았는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int2-u03-l02_drill_04.mp3",
+        "slow": "int2-u03-l02_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Honestly, the ending didn't blow my mind.",
+      "ko": "솔직히 결말이 그렇게 놀랍진 않았어요.",
+      "point": "부정형: didn't blow my mind",
+      "cue": {
+        "lang": "en",
+        "text": "Everyone says the ending is shocking. Did you think so?"
+      },
+      "audio": {
+        "normal": "int2-u03-l02_drill_05.mp3",
+        "slow": "int2-u03-l02_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "The book's ending blew my mind even more.",
+      "ko": "책 결말이 훨씬 더 충격적이었어요.",
+      "point": "비교: even more",
+      "cue": {
+        "lang": "en",
+        "text": "You read the book too, right? Which ending was better?"
+      },
+      "audio": {
+        "normal": "int2-u03-l02_drill_06.mp3",
+        "slow": "int2-u03-l02_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "We both saw that mystery movie yesterday. What stuck with you the most?",
+        "ko": "어제 둘 다 그 미스터리 영화 봤잖아요. 뭐가 제일 기억에 남아요?"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "The ending totally blew my mind.",
+        "exampleKo": "결말이 완전 충격적이었어요.",
+        "requiredKeywords": [
+          "the ending",
+          "blew my mind"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Welcome to movie night! Which moment of tonight's film got you the most?",
+        "ko": "영화 모임에 오신 걸 환영해요! 오늘 영화에서 어느 순간이 제일 와닿았어요?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "The last scene totally blew my mind.",
+        "exampleKo": "마지막 장면이 완전 충격적이었어요.",
+        "requiredKeywords": [
+          "last scene",
+          "my mind"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I'm finally watching that thriller everyone's talking about tonight. Is it good?",
+        "ko": "다들 얘기하는 그 스릴러 오늘 밤에 드디어 봐요. 재밌어요?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "This ending will blow your mind.",
+        "exampleKo": "이 결말 보면 완전 놀라실 거예요.",
+        "requiredKeywords": [
+          "will blow",
+          "your mind"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "I saw the same movie as you last night, and I still can't stop thinking about it.",
+        "ko": "어젯밤에 저도 같은 영화 봤는데, 아직도 계속 생각나요."
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Didn't the ending blow your mind?",
+        "exampleKo": "결말 완전 충격적이지 않았어요?",
+        "requiredKeywords": [
+          "didn't",
+          "your mind"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I guessed the twist in the first ten minutes. How about you?",
+        "ko": "저는 처음 10분 만에 반전 맞혔어요. 그쪽은요?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Honestly, the ending didn't blow my mind.",
+        "exampleKo": "솔직히 결말이 그렇게 놀랍진 않았어요.",
+        "requiredKeywords": [
+          "didn't blow",
+          "my mind"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "I heard the movie is based on a novel. Did you read that too?",
+        "ko": "그 영화 소설 원작이라던데요. 책도 읽으셨어요?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "The book's ending blew my mind even more.",
+        "exampleKo": "책 결말이 훨씬 더 충격적이었어요.",
+        "requiredKeywords": [
+          "book's ending",
+          "even more"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
