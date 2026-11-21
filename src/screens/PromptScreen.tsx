@@ -4,6 +4,7 @@ import type { SavedSentence } from '../db/types';
 import { Button } from '../components/Button';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { buildPrompt } from '../prompt/buildPrompt';
+import { GeneratingPopup } from './prompt/GeneratingPopup';
 import { PromptFields, type Draft } from './prompt/PromptFields';
 import { PromptPreview } from './prompt/PromptPreview';
 import { SentencePicker } from './prompt/SentencePicker';
@@ -65,6 +66,7 @@ export function PromptScreen() {
         action={generateButton} />
       <PromptFields draft={draft} onChange={(patch) => setDraft((d) => ({ ...d, ...patch }))} />
       <PromptPreview text={text} />
+      {gen.busy && <GeneratingPopup />}
     </>
   );
 }
