@@ -277,10 +277,10 @@
               "no": 4,
               "title": "일이 안 풀릴때",
               "lessons": [
-                { "no": 1, "title": "힘든 하루에 대해 이야기하기", "id": "INT1-U04-L01", "ready": false},
-                { "no": 2, "title": "문제에 대해 도움받기", "id": "INT1-U04-L02", "ready": false},
-                { "no": 3, "title": "안 좋은 일 나누기", "id": "INT1-U04-L03", "ready": false},
-                { "no": 4, "title": "주방에서의 실수", "id": "INT1-U04-L04", "ready": false}
+                { "no": 1, "title": "힘든 하루에 대해 이야기하기", "id": "INT1-U04-L01", "ready": true, "file": "lessons/INT1/INT1-U04-L01.json" },
+                { "no": 2, "title": "문제에 대해 도움받기", "id": "INT1-U04-L02", "ready": true, "file": "lessons/INT1/INT1-U04-L02.json" },
+                { "no": 3, "title": "안 좋은 일 나누기", "id": "INT1-U04-L03", "ready": true, "file": "lessons/INT1/INT1-U04-L03.json" },
+                { "no": 4, "title": "주방에서의 실수", "id": "INT1-U04-L04", "ready": true, "file": "lessons/INT1/INT1-U04-L04.json" }
               ]
             },
             {

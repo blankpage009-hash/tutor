@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U04-L03",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 4,
+  "unitTitle": "일이 안 풀릴때",
+  "lessonNo": 3,
+  "lessonTitle": "안 좋은 일 나누기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "You won't believe what happened today.",
+    "ko": "오늘 무슨 일 있었는지 들으면 깜짝 놀랄걸.",
+    "stress": "You WON'T beLIEVE what HAPpened toDAY.",
+    "audio": { "normal": "audio/lessons/INT1-U04-L03/key-5b653391.m4a", "slow": "audio/lessons/INT1-U04-L03/key-5b653391.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "직역하면 '오늘 무슨 일이 있었는지 너는 안 믿을 거야'. 놀랍거나 황당한 이야기를 꺼낼 때 쓰는 첫마디입니다.",
+      "좋은 일에도 쓰지만, 일이 꼬인 날 하소연을 시작할 때 특히 많이 씁니다.",
+      "won't는 will not입니다. '듣고 나면(미래에) 못 믿을 거야'라서 미래형을 씁니다.",
+      "You'll never guess what happened.도 같은 뜻으로 자주 씁니다.",
+      "이 말을 들은 상대는 보통 What happened?나 Uh-oh로 이야기를 들을 준비를 합니다."
+    ],
+    "en": "Use \"You won't believe what happened today\" to start a story about something surprising. People often say it when something bad or crazy happened. It makes the other person curious to hear more.",
+    "enKo": "놀라운 일에 대한 이야기를 시작할 때 \"You won't believe what happened today\"라고 말합니다. 안 좋은 일이나 황당한 일이 있었을 때 자주 씁니다. 상대가 다음 이야기를 궁금해하게 만드는 말입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "You WON'T beLIEVE what HAPpened toDAY — believe는 뒤 음절, today도 뒤 음절에 힘을 줍니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "won't(워운트)와 want(원트)는 다른 소리입니다. won't는 입을 동그랗게 모아 '오우'를 길게 냅니다." },
+    { "focus": "연음", "tip": "what happened는 t가 부드럽게 바뀌어 '와래펀드'처럼 이어 말합니다." },
+    { "focus": "약화", "tip": "happened 끝의 -ed는 '드'를 크게 내지 않고 [d] 받침처럼 짧게 붙입니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "You can't believe what happened today.", "right": "You won't believe what happened today.", "note": "'듣고 나면 못 믿을 거야'라는 미래 느낌이라 won't를 씁니다." },
+    { "wrong": "I'm so shocking.", "right": "I'm so shocked.", "note": "shocking은 일이 충격적일 때, 내 기분은 shocked입니다." },
+    { "wrong": "Listen my story.", "right": "Let me tell you what happened.", "note": "listen 뒤에는 to가 필요하고, 이야기를 꺼낼 땐 Let me tell you가 자연스럽습니다." }
+  ],
+  "dialogue": {
+    "situation": "저녁에 친구와 통화하면서 오늘 있었던 황당한 일을 털어놓습니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hey! How's it going?", "ko": "안녕! 잘 지내?", "audio": "audio/lessons/INT1-U04-L03/dlg-01-fd24aa61.m4a" },
+      { "no": 2, "speaker": "me", "en": "Ugh. You won't believe what happened today.", "ko": "으. 오늘 무슨 일 있었는지 들으면 깜짝 놀랄걸.", "audio": "audio/lessons/INT1-U04-L03/dlg-02-a685f722.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Uh-oh. What happened?", "ko": "헐. 무슨 일인데?", "audio": "audio/lessons/INT1-U04-L03/dlg-03-2b43678e.m4a" },
+      { "no": 4, "speaker": "me", "en": "I spilled coffee all over my laptop before a meeting.", "ko": "회의 직전에 노트북에 커피를 다 쏟았어.", "audio": "audio/lessons/INT1-U04-L03/dlg-04-a597d226.m4a" },
+      { "no": 5, "speaker": "partner", "en": "No way! Is it still working?", "ko": "말도 안 돼! 아직 켜지긴 해?", "audio": "audio/lessons/INT1-U04-L03/dlg-05-dd4c1792.m4a" },
+      { "no": 6, "speaker": "me", "en": "Nope. It's totally dead. What a day.", "ko": "아니. 완전히 죽었어. 무슨 날이 이래.", "audio": "audio/lessons/INT1-U04-L03/dlg-06-f496e164.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "No way!", "ko": "'말도 안 돼!' 믿기 힘든 이야기를 들었을 때 바로 나오는 반응입니다." },
+      { "en": "What a day.", "ko": "'무슨 날이 이래.' 일이 많이 꼬인 하루를 한마디로 정리하는 말입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "You won't believe what happened today.",
+      "ko": "오늘 무슨 일 있었는지 들으면 깜짝 놀랄걸.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Hey, how was your day?", "audio": "audio/lessons/INT1-U04-L03/cue-01-31658c64.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U04-L03/drill-01-5b653391.m4a", "slow": "audio/lessons/INT1-U04-L03/drill-01-5b653391.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "You won't believe what happened at work.",
+      "ko": "회사에서 무슨 일 있었는지 들으면 깜짝 놀랄걸.",
+      "point": "단어 교체: today → at work",
+      "cue": { "lang": "en", "text": "How was work today?", "audio": "audio/lessons/INT1-U04-L03/cue-02-ce9917c7.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U04-L03/drill-02-91fc97fa.m4a", "slow": "audio/lessons/INT1-U04-L03/drill-02-91fc97fa.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "You guys won't believe what happened today.",
+      "ko": "너희 오늘 무슨 일 있었는지 들으면 깜짝 놀랄걸.",
+      "point": "단수 → 복수: you guys",
+      "cue": { "lang": "en", "text": "Okay, we're all listening. What's the big news?", "audio": "audio/lessons/INT1-U04-L03/cue-03-45a24fe2.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U04-L03/drill-03-6e0a0b6e.m4a", "slow": "audio/lessons/INT1-U04-L03/drill-03-6e0a0b6e.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Did you hear what happened to Mike?",
+      "ko": "마이크한테 무슨 일 있었는지 들었어?",
+      "point": "질문형: Did you hear ~?",
+      "cue": { "lang": "ko", "text": "친구에게 마이크한테 생긴 일을 들었는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U04-L03/drill-04-1d596cdb.m4a", "slow": "audio/lessons/INT1-U04-L03/drill-04-1d596cdb.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I couldn't believe what happened next.",
+      "ko": "그다음에 벌어진 일이 믿기지가 않았어.",
+      "point": "과거 시제: couldn't believe",
+      "cue": { "lang": "en", "text": "And then what happened after that?", "audio": "audio/lessons/INT1-U04-L03/cue-05-e797ef20.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U04-L03/drill-05-e87c01d3.m4a", "slow": "audio/lessons/INT1-U04-L03/drill-05-e87c01d3.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I still can't believe what happened.",
+      "ko": "아직도 그 일이 믿기지가 않아.",
+      "point": "부정형 + still: 지금도 안 믿길 때",
+      "cue": { "lang": "en", "text": "Are you still upset about last weekend?", "audio": "audio/lessons/INT1-U04-L03/cue-06-d324b41f.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U04-L03/drill-06-17975ca0.m4a", "slow": "audio/lessons/INT1-U04-L03/drill-06-17975ca0.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hey, you just got home. Why do you have that look on your face?", "ko": "어, 방금 들어왔네. 표정이 왜 그래?", "audio": "audio/lessons/INT1-U04-L03/rp-01-06303e30.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "You won't believe what happened today.",
+        "exampleKo": "오늘 무슨 일 있었는지 들으면 깜짝 놀랄걸.",
+        "requiredKeywords": ["won't believe", "happened today"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Welcome back! So how did the big presentation at the office go?", "ko": "왔어! 그래서 회사에서 그 중요한 발표는 어떻게 됐어?", "audio": "audio/lessons/INT1-U04-L03/rp-03-3d4cd14e.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "You won't believe what happened at work.",
+        "exampleKo": "회사에서 무슨 일 있었는지 들으면 깜짝 놀랄걸.",
+        "requiredKeywords": ["happened", "at work"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Okay, we're all here! Why did you invite everyone over tonight?", "ko": "자, 다 모였어! 오늘 밤에 왜 다 부른 거야?", "audio": "audio/lessons/INT1-U04-L03/rp-05-09bb56ab.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "You guys won't believe what happened today.",
+        "exampleKo": "너희 오늘 무슨 일 있었는지 들으면 깜짝 놀랄걸.",
+        "requiredKeywords": ["you guys", "happened today"]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "I texted Mike three times, but he hasn't answered. That's not like him.",
+        "ko": "마이크한테 문자를 세 번이나 보냈는데 답이 없어. 걔답지 않은데.",
+        "audio": "audio/lessons/INT1-U04-L03/rp-07-98b4186e.m4a"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you hear what happened to Mike?",
+        "exampleKo": "마이크한테 무슨 일 있었는지 들었어?",
+        "requiredKeywords": ["did you hear", "to Mike"]
+      },
+      { "no": 9, "speaker": "partner", "en": "Wait, so the waiter dropped your plate on the floor? Then what?", "ko": "잠깐, 그러니까 웨이터가 네 접시를 바닥에 떨어뜨렸다고? 그래서?", "audio": "audio/lessons/INT1-U04-L03/rp-09-2c37120e.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I couldn't believe what happened next.",
+        "exampleKo": "그다음에 벌어진 일이 믿기지가 않았어.",
+        "requiredKeywords": ["couldn't believe", "next"]
+      },
+      { "no": 11, "speaker": "partner", "en": "It's been a week since your car got towed. Are you over it yet?", "ko": "네 차 견인된 지 일주일 됐잖아. 이제 좀 괜찮아졌어?", "audio": "audio/lessons/INT1-U04-L03/rp-11-a01b9e7f.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I still can't believe what happened.",
+        "exampleKo": "아직도 그 일이 믿기지가 않아.",
+        "requiredKeywords": ["still can't", "believe", "happened"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

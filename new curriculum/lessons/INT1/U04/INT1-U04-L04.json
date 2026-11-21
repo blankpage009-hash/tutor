@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U04-L04",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 4,
+  "unitTitle": "일이 안 풀릴때",
+  "lessonNo": 4,
+  "lessonTitle": "주방에서의 실수",
+  "estimatedMinutes": 10,
+
+  "keySentence": {
+    "en": "I accidentally burned the rice.",
+    "ko": "실수로 밥을 태웠어.",
+    "stress": "I acciDENtally BURNED the RICE.",
+    "audio": {
+      "normal": "int1-u04-l04_key.mp3",
+      "slow": "int1-u04-l04_key_slow.mp3"
+    }
+  },
+
+  "explanation": {
+    "ko": [
+      "accidentally는 '실수로, 모르고'라는 뜻입니다. 일부러 한 게 아니라는 걸 먼저 알려 줍니다.",
+      "accidentally는 보통 주어 바로 뒤, 동사 앞에 둡니다. I accidentally burned (O).",
+      "burn은 '태우다'. 음식, 냄비, 손을 데었을 때(burned my hand)도 씁니다.",
+      "by mistake를 문장 끝에 붙여 I burned the rice by mistake라고 해도 같은 뜻입니다.",
+      "일부러 그런 게 아니라고 한 번 더 말하고 싶으면 I didn't mean to를 덧붙입니다."
+    ],
+    "en": "When you make a mistake in the kitchen, say \"I accidentally burned the rice.\" \"Accidentally\" shows that you didn't do it on purpose. You can change \"the rice\" to any food.",
+    "enKo": "부엌에서 실수했을 때 \"I accidentally burned the rice.\"라고 말합니다. accidentally는 일부러 한 게 아니라는 걸 보여 줍니다. the rice 자리에 어떤 음식이든 넣을 수 있습니다."
+  },
+
+  "pronunciation": [
+    { "focus": "강세", "tip": "acciDENtally — 세 번째 음절 den에 힘을 줍니다. '액시덴리'처럼 들립니다." },
+    { "focus": "약화", "tip": "accidentally의 t와 a는 빠르게 말할 때 거의 사라져서 '액시덴리'에 가깝게 소리 납니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "burned는 '버언드'처럼 혀를 말아 r을 길게 내고, 끝 d는 짧게 붙입니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "rice의 r은 입술을 살짝 오므리고 시작합니다. l로 말하면 lice(이)로 들릴 수 있습니다." }
+  ],
+
+  "commonMistakes": [
+    { "wrong": "The rice was burned by me.", "right": "I burned the rice.", "note": "내가 한 실수는 I로 시작하는 게 자연스럽습니다. 수동태는 딱딱하게 들립니다." },
+    { "wrong": "I mistaked.", "right": "I made a mistake.", "note": "mistake는 동사로 거의 쓰지 않습니다. '실수했다'는 made a mistake입니다." },
+    { "wrong": "I forgot turning off the stove.", "right": "I forgot to turn off the stove.", "note": "해야 할 일을 깜빡했을 땐 forget 뒤에 to를 씁니다." }
+  ],
+
+  "dialogue": {
+    "situation": "저녁을 하다가 밥을 태워서 화재경보기가 울리자 룸메이트가 달려옵니다.",
+    "partnerRole": "룸메이트",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Whoa, why is the smoke alarm going off?", "ko": "어, 화재경보기가 왜 울려?", "audio": "int1-u04-l04_dlg_01.mp3" },
+      { "no": 2, "speaker": "me", "en": "Sorry! I accidentally burned the rice.", "ko": "미안! 실수로 밥을 태웠어.", "audio": "int1-u04-l04_dlg_02.mp3", "hasKeySentence": true },
+      { "no": 3, "speaker": "partner", "en": "Oh no. Did you forget to set a timer?", "ko": "어떡해. 타이머 맞추는 거 깜빡했어?", "audio": "int1-u04-l04_dlg_03.mp3" },
+      { "no": 4, "speaker": "me", "en": "Yeah, I got distracted by a phone call.", "ko": "응, 전화 받다가 정신이 팔렸어.", "audio": "int1-u04-l04_dlg_04.mp3" },
+      { "no": 5, "speaker": "partner", "en": "Don't worry. We can just order takeout.", "ko": "걱정 마. 그냥 음식 시켜 먹으면 되지.", "audio": "int1-u04-l04_dlg_05.mp3" },
+      { "no": 6, "speaker": "me", "en": "Good idea. Let me open the windows first.", "ko": "좋은 생각이야. 창문부터 먼저 열게.", "audio": "int1-u04-l04_dlg_06.mp3" }
+    ],
+    "expressionNotes": [
+      { "en": "I got distracted.", "ko": "'정신이 팔렸어.' 다른 일에 신경 쓰다가 놓쳤을 때 씁니다." },
+      { "en": "order takeout", "ko": "'음식을 포장·배달로 시켜 먹다.' 미국에서는 배달 음식도 흔히 takeout이라고 합니다." }
+    ]
+  },
+
+  "drills": [
+    {
+      "id": 1,
+      "en": "I accidentally burned the rice.",
+      "ko": "실수로 밥을 태웠어.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Hey, why does the kitchen smell like smoke?" },
+      "audio": { "normal": "int1-u04-l04_drill_01.mp3", "slow": "int1-u04-l04_drill_01_slow.mp3" }
+    },
+    {
+      "id": 2,
+      "en": "I accidentally burned the toast.",
+      "ko": "실수로 토스트를 태웠어.",
+      "point": "단어 교체: rice → toast",
+      "cue": { "lang": "en", "text": "Why is there black smoke coming out of the toaster?" },
+      "audio": { "normal": "int1-u04-l04_drill_02.mp3", "slow": "int1-u04-l04_drill_02_slow.mp3" }
+    },
+    {
+      "id": 3,
+      "en": "My brother accidentally burned the pancakes.",
+      "ko": "남동생이 실수로 팬케이크를 태웠어.",
+      "point": "주어 변경: I → My brother",
+      "cue": { "lang": "en", "text": "Who made these pancakes? They're totally black." },
+      "audio": { "normal": "int1-u04-l04_drill_03.mp3", "slow": "int1-u04-l04_drill_03_slow.mp3" }
+    },
+    {
+      "id": 4,
+      "en": "Did you accidentally leave the stove on?",
+      "ko": "혹시 실수로 가스레인지 켜 두고 나왔어?",
+      "point": "질문형: Did you accidentally ~?",
+      "cue": { "lang": "ko", "text": "룸메이트에게 혹시 실수로 가스레인지를 켜 두고 나왔는지 물어보세요." },
+      "audio": { "normal": "int1-u04-l04_drill_04.mp3", "slow": "int1-u04-l04_drill_04_slow.mp3" }
+    },
+    {
+      "id": 5,
+      "en": "I didn't mean to burn the rice.",
+      "ko": "밥을 태우려던 건 아니었어.",
+      "point": "부정형: didn't mean to",
+      "cue": { "lang": "en", "text": "Were you trying to make crispy rice or something?" },
+      "audio": { "normal": "int1-u04-l04_drill_05.mp3", "slow": "int1-u04-l04_drill_05_slow.mp3" }
+    },
+    {
+      "id": 6,
+      "en": "I'll try not to burn it next time.",
+      "ko": "다음엔 안 태우도록 해 볼게.",
+      "point": "미래 시제: I'll try not to",
+      "cue": { "lang": "en", "text": "Please be more careful in the kitchen, okay?" },
+      "audio": { "normal": "int1-u04-l04_drill_06.mp3", "slow": "int1-u04-l04_drill_06_slow.mp3" }
+    }
+  ],
+
+  "drillStages": [
+    { "reps": [1, 2, 3], "mode": "repeat",  "show": "en+ko", "playAudio": true,  "passScore": 80 },
+    { "reps": [4, 5, 6], "mode": "read",    "show": "en",    "playAudio": false, "passScore": 80 },
+    { "reps": [7, 8],    "mode": "recall",  "show": "ko",    "playAudio": false, "passScore": 80 },
+    { "reps": [9, 10],   "mode": "respond", "show": "cue",   "playAudio": false, "passScore": 80 }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Wait, why is the rice pot soaking in the sink? Wasn't that dinner?", "ko": "잠깐, 밥 하던 냄비가 왜 싱크대에 물에 담가져 있어? 그거 저녁 아니었어?" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I accidentally burned the rice.",
+        "exampleKo": "실수로 밥을 태웠어.",
+        "requiredKeywords": ["accidentally", "burned the rice"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Good morning! Why are you scraping that bread over the trash can?", "ko": "좋은 아침! 왜 쓰레기통 위에서 빵을 긁고 있어?" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I accidentally burned the toast.",
+        "exampleKo": "실수로 토스트를 태웠어.",
+        "requiredKeywords": ["burned", "toast"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Your brother made breakfast today? Why does he look so upset?", "ko": "오늘 아침은 네 남동생이 했어? 근데 왜 저렇게 속상한 얼굴이야?" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My brother accidentally burned the pancakes.",
+        "exampleKo": "남동생이 실수로 팬케이크를 태웠어.",
+        "requiredKeywords": ["my brother", "pancakes"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Ugh, I just left the house, and I have a feeling I forgot something.", "ko": "으, 방금 집에서 나왔는데 뭔가 깜빡한 느낌이 들어." },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you accidentally leave the stove on?",
+        "exampleKo": "혹시 실수로 가스레인지 켜 두고 나왔어?",
+        "requiredKeywords": ["did you", "stove on"]
+      },
+      { "no": 9, "speaker": "partner", "en": "Did you burn the rice on purpose? You don't even like rice!", "ko": "너 일부러 밥 태운 거야? 너 밥 좋아하지도 않잖아!" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't mean to burn the rice.",
+        "exampleKo": "밥을 태우려던 건 아니었어.",
+        "requiredKeywords": ["didn't mean", "burn the rice"]
+      },
+      { "no": 11, "speaker": "partner", "en": "That's the third burned pot this month. We need a new one!", "ko": "이번 달에만 냄비 세 번째 태운 거야. 새로 사야겠어!" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'll try not to burn it next time.",
+        "exampleKo": "다음엔 안 태우도록 해 볼게.",
+        "requiredKeywords": ["try not to", "next time"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

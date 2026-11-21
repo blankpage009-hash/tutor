@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U04-L01",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 4,
+  "unitTitle": "일이 안 풀릴때",
+  "lessonNo": 1,
+  "lessonTitle": "힘든 하루에 대해 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I've had a really rough day.",
+    "ko": "오늘 진짜 힘든 하루였어.",
+    "stress": "I've HAD a REALly ROUGH DAY.",
+    "audio": { "normal": "audio/lessons/INT1-U04-L01/key-1136281a.m4a", "slow": "audio/lessons/INT1-U04-L01/key-1136281a.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "rough는 '거친'이라는 뜻이지만, 하루·한 주에 쓰면 '힘든, 고된'이라는 뜻이 됩니다.",
+      "I've had는 '(오늘 지금까지) ~한 하루를 보냈다'는 느낌입니다. 아직 그날이 끝나지 않았을 때 씁니다.",
+      "이미 끝난 날(어제 등)을 말할 때는 I had a rough day yesterday처럼 과거형을 씁니다.",
+      "hard day, long day도 비슷하지만, rough day는 '이것저것 꼬여서 힘들었다'는 느낌이 더 강합니다.",
+      "really 대신 such a를 써서 I've had such a rough day라고도 많이 말합니다."
+    ],
+    "en": "When everything goes wrong, Americans often say \"I've had a really rough day.\" Use \"I've had\" when the day isn't over yet. It's a simple way to tell someone you're tired and stressed.",
+    "enKo": "일이 다 꼬였을 때 미국 사람들은 \"I've had a really rough day.\"라고 자주 말합니다. 그날이 아직 끝나지 않았을 때는 \"I've had\"를 씁니다. 지치고 스트레스받았다는 걸 간단하게 전하는 말입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "REALly ROUGH DAY — 뒤쪽 세 단어에 힘을 주고, I've had는 가볍게 지나갑니다." },
+    { "focus": "연음", "tip": "had a는 끊지 않고 '해더'처럼 이어 말합니다. I've had a → '아이브해더'." },
+    { "focus": "한국인이 어려운 소리", "tip": "rough의 gh는 [f] 소리입니다. '러프'의 프를 윗니를 아랫입술에 대고 바람만 내보내듯 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "really는 r과 l이 둘 다 들어갑니다. 혀를 말아 시작해서(r), 끝은 혀끝을 윗잇몸에 붙입니다(l)." }
+  ],
+  "commonMistakes": [
+    { "wrong": "Today was so hard day.", "right": "Today was such a hard day.", "note": "명사(day) 앞에서는 so가 아니라 such a를 씁니다." },
+    { "wrong": "I'm so stressful.", "right": "I'm so stressed.", "note": "stressful은 '상황이 스트레스를 주는'이라는 뜻입니다. 내 기분은 stressed." },
+    { "wrong": "I had a tired day.", "right": "I've had a really long day.", "note": "tired는 사람이 피곤할 때 씁니다. 하루가 힘들었다면 long day, rough day라고 합니다." }
+  ],
+  "dialogue": {
+    "situation": "퇴근하고 집에 들어오자 룸메이트가 지친 얼굴을 보고 말을 겁니다.",
+    "partnerRole": "룸메이트",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hey, you look wiped out. You okay?", "ko": "야, 완전 지쳐 보인다. 괜찮아?", "audio": "audio/lessons/INT1-U04-L01/dlg-01-a0105a49.m4a" },
+      { "no": 2, "speaker": "me", "en": "Not really. I've had a really rough day.", "ko": "아니, 별로. 오늘 진짜 힘든 하루였어.", "audio": "audio/lessons/INT1-U04-L01/dlg-02-04ba8618.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Oh no. What happened?", "ko": "어떡해. 무슨 일 있었어?", "audio": "audio/lessons/INT1-U04-L01/dlg-03-3a396f94.m4a" },
+      { "no": 4, "speaker": "me", "en": "My laptop crashed, and I missed a big deadline.", "ko": "노트북이 먹통이 돼서 중요한 마감을 놓쳤어.", "audio": "audio/lessons/INT1-U04-L01/dlg-04-41b63f6f.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Ugh, that's the worst. Want me to order some pizza?", "ko": "으, 최악이다. 피자 시켜 줄까?", "audio": "audio/lessons/INT1-U04-L01/dlg-05-780c78f4.m4a" },
+      { "no": 6, "speaker": "me", "en": "That sounds perfect. Thanks, I really needed that.", "ko": "완전 좋아. 고마워, 딱 그게 필요했어.", "audio": "audio/lessons/INT1-U04-L01/dlg-06-113a3333.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "You look wiped out.", "ko": "'완전 지쳐 보인다.' wiped out은 기운이 하나도 없을 만큼 지쳤다는 뜻입니다." },
+      { "en": "That's the worst.", "ko": "'최악이다.' 상대가 안 좋은 일을 말할 때 맞장구치는 말입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I've had a really rough day.",
+      "ko": "오늘 진짜 힘든 하루였어.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "You look exhausted. What's going on?", "audio": "audio/lessons/INT1-U04-L01/cue-01-a6f4f5ea.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U04-L01/drill-01-1136281a.m4a", "slow": "audio/lessons/INT1-U04-L01/drill-01-1136281a.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I've had a really rough week.",
+      "ko": "이번 주 진짜 힘들었어.",
+      "point": "단어 교체: day → week",
+      "cue": { "lang": "en", "text": "How's your week been so far?", "audio": "audio/lessons/INT1-U04-L01/cue-02-45077ca9.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U04-L01/drill-02-9f477a66.m4a", "slow": "audio/lessons/INT1-U04-L01/drill-02-9f477a66.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "She's had a really rough day.",
+      "ko": "걔 오늘 진짜 힘든 하루였어.",
+      "point": "주어 변경: I've → She's",
+      "cue": { "lang": "en", "text": "Why is Jenny so quiet tonight?", "audio": "audio/lessons/INT1-U04-L01/cue-03-80f86a79.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U04-L01/drill-03-e85cd763.m4a", "slow": "audio/lessons/INT1-U04-L01/drill-03-e85cd763.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Have you had a rough day?",
+      "ko": "오늘 힘든 하루였어?",
+      "point": "질문형: Have you had ~?",
+      "cue": { "lang": "ko", "text": "지쳐 보이는 친구에게 오늘 힘든 하루였는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U04-L01/drill-04-d9b6d54b.m4a", "slow": "audio/lessons/INT1-U04-L01/drill-04-d9b6d54b.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I haven't had a good day all week.",
+      "ko": "이번 주는 하루도 좋은 날이 없었어.",
+      "point": "부정형: haven't had",
+      "cue": { "lang": "en", "text": "Has anything good happened this week?", "audio": "audio/lessons/INT1-U04-L01/cue-05-58b62973.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U04-L01/drill-05-9ef42f6c.m4a", "slow": "audio/lessons/INT1-U04-L01/drill-05-9ef42f6c.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I had a really rough day yesterday.",
+      "ko": "어제 진짜 힘든 하루였어.",
+      "point": "과거 시제: 끝난 날은 I had",
+      "cue": { "lang": "en", "text": "How was your day yesterday?", "audio": "audio/lessons/INT1-U04-L01/cue-06-0e3425f5.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U04-L01/drill-06-0bcf256f.m4a", "slow": "audio/lessons/INT1-U04-L01/drill-06-0bcf256f.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Whoa, you just sighed really loudly. Is everything okay?", "ko": "어, 방금 한숨 엄청 크게 쉬었어. 괜찮아?", "audio": "audio/lessons/INT1-U04-L01/rp-01-f1b55f58.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've had a really rough day.",
+        "exampleKo": "오늘 진짜 힘든 하루였어.",
+        "requiredKeywords": ["really rough", "day"]
+      },
+      { "no": 3, "speaker": "partner", "en": "It's only Wednesday, but you already look ready for the weekend.", "ko": "아직 수요일인데, 벌써 주말만 기다리는 얼굴이네.", "audio": "audio/lessons/INT1-U04-L01/rp-03-09d6490c.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I've had a really rough week.",
+        "exampleKo": "이번 주 진짜 힘들었어.",
+        "requiredKeywords": ["rough", "week"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Your sister just went straight to her room without saying hi. Is she okay?",
+        "ko": "네 여동생 인사도 안 하고 바로 방에 들어갔어. 괜찮은 거야?",
+        "audio": "audio/lessons/INT1-U04-L01/rp-05-523c3918.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "She's had a really rough day.",
+        "exampleKo": "걔 오늘 진짜 힘든 하루였어.",
+        "requiredKeywords": ["she's", "rough day"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Sorry I'm so quiet tonight. I'm just really, really tired.", "ko": "오늘 밤 말이 별로 없어서 미안. 그냥 너무너무 피곤하네.", "audio": "audio/lessons/INT1-U04-L01/rp-07-304c8e88.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Have you had a rough day?",
+        "exampleKo": "오늘 힘든 하루였어?",
+        "requiredKeywords": ["have you had", "rough day"]
+      },
+      { "no": 9, "speaker": "partner", "en": "You've been grumpy since Monday. Is something bothering you?", "ko": "너 월요일부터 계속 기분이 안 좋아 보여. 뭐 신경 쓰이는 거 있어?", "audio": "audio/lessons/INT1-U04-L01/rp-09-affc6c63.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I haven't had a good day all week.",
+        "exampleKo": "이번 주는 하루도 좋은 날이 없었어.",
+        "requiredKeywords": ["haven't had", "all week"]
+      },
+      { "no": 11, "speaker": "partner", "en": "You canceled our dinner plans last night. Was everything all right?", "ko": "어젯밤에 저녁 약속 취소했잖아. 별일 없었어?", "audio": "audio/lessons/INT1-U04-L01/rp-11-bda5d489.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I had a really rough day yesterday.",
+        "exampleKo": "어제 진짜 힘든 하루였어.",
+        "requiredKeywords": ["I had", "rough day", "yesterday"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
