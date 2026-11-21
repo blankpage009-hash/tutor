@@ -46,5 +46,12 @@ export function useDrillSteps(total: number, initial?: DrillPosition) {
     setFinished(false);
   }, []);
 
-  return { index, cleared, recordPass, next, skip, prev, restart, finished };
+  // 보관함 듣기만: 화면을 꺼 둔 사이 여러 카드가 지나갔을 수 있어 한 번에 옮긴다. 끝을 넘으면 마친다
+  const goTo = useCallback((i: number) => {
+    if (i >= total) { setFinished(true); return; }
+    indexRef.current = i;
+    setIndex(i);
+  }, [total]);
+
+  return { index, cleared, recordPass, next, skip, prev, restart, finished, goTo };
 }

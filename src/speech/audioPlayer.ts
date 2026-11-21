@@ -76,6 +76,25 @@ let baseRate = 1;
 export function setBaseRate(rate: number): void {
   baseRate = rate;
 }
+export function getBaseRate(): number {
+  return baseRate;
+}
+
+// 보관함 듣기만(긴 파일 하나)이 재생 위치를 보고 카드를 맞춘다. 돌려준 함수를 부르면 그만 듣는다
+export function onPlayerTime(fn: (t: number) => void): () => void {
+  const a = player();
+  const h = () => fn(a.currentTime);
+  a.addEventListener('timeupdate', h);
+  return () => a.removeEventListener('timeupdate', h);
+}
+
+// 잠금화면 버튼용: stopAudio와 달리 재생 약속을 끝내지 않아서, 다시 누르면 그 자리에서 이어진다
+export function pauseAudio(): void {
+  player().pause();
+}
+export function resumeAudio(): void {
+  player().play().catch(() => undefined);
+}
 
 // 콘텐츠 음성 파일 재생. 끝까지 재생되면(또는 멈추면) 끝나는 약속을 돌려준다
 export async function playAudio(url: string, rate = 1): Promise<void> {
