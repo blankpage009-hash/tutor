@@ -6,7 +6,7 @@ export const REPEAT_COUNT_CHOICES = [1, 2, 3] as const;
 // 0.8 아래는 아이폰의 재생 속도 변환이 뭉개져서 하한으로 둔다
 export const SPEECH_RATE_CHOICES = [0.8, 0.9, 1, 1.1] as const;
 
-export const DAILY_GOAL_CHOICES = [5, 10, 20, 30] as const;
+export const DAILY_GOAL_CHOICES = [10, 20, 30, 50, 100] as const;
 
 export const TUTOR_NAME_MAX = 20;
 const LEVEL_KEY_MAX = 40;
