@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT2-U01-L03",
+  "level": "중급 2",
+  "levelCode": "INT2",
+  "unit": 1,
+  "unitTitle": "여행 경험",
+  "lessonNo": 3,
+  "lessonTitle": "다시 방문하고 싶은지 말하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I'd love to go back someday.",
+    "ko": "언젠가 꼭 다시 가 보고 싶어.",
+    "stress": "I'd LOVE to go BACK SOMEday.",
+    "audio": { "normal": "audio/lessons/INT2-U01-L03/key-743d8af5.m4a", "slow": "audio/lessons/INT2-U01-L03/key-743d8af5.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "I'd love to go back someday.는 '언젠가 꼭 다시 가 보고 싶어'라는 뜻입니다. 좋았던 여행지를 떠올리며 다시 가고 싶은 마음을 말할 때 씁니다.",
+      "I'd love to(= I would love to)는 I want to보다 부드럽고 바라는 마음이 큽니다. 아직 정해진 계획이 없는 소망을 말할 때 잘 어울립니다.",
+      "go back은 '(갔던 곳에) 다시 가다'입니다. visit again보다 대화에서 훨씬 자주 씁니다.",
+      "someday 자리에 next year, in the spring처럼 때를 넣으면 조금 더 구체적인 계획이 됩니다.",
+      "가고 싶지 않을 때는 I wouldn't go back.(다시는 안 갈 것 같아)처럼 wouldn't를 씁니다."
+    ],
+    "en": "If you enjoyed a trip and want to visit again, say \"I'd love to go back someday.\" It shows a warm wish, even if you have no plans yet.",
+    "enKo": "여행이 즐거웠고 다시 가고 싶다면 \"I'd love to go back someday.\"라고 말합니다. 아직 계획이 없어도 다시 가고 싶은 따뜻한 마음을 전합니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "LOVE, BACK, SOMEday에 힘을 줍니다. I'd와 to go는 가볍게 이어 말합니다." },
+    { "focus": "연음", "tip": "love to는 붙여서 '러브투'가 아니라 '러v터'처럼 말합니다. to는 '투'보다 '터'에 가깝게 약해집니다." },
+    { "focus": "약화", "tip": "I'd의 d는 아주 짧게 붙습니다. 빠르게 말하면 I'd love가 '아이러v'처럼 들리지만, d를 살짝 넣어야 I love(난 좋아해)와 구별됩니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "love의 v는 윗니로 아랫입술을 살짝 물고 내는 소리입니다. '러브'처럼 b로 끝내지 않습니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I want to visit there again.", "right": "I'd love to go back someday.", "note": "visit there는 틀린 표현입니다(visit 뒤에 there 불가). 다시 가고 싶을 땐 go back이 자연스럽습니다." },
+    { "wrong": "I hope to go there again someday.", "right": "I'd love to go back someday.", "note": "틀린 문장은 아니지만 딱딱합니다. 대화에서는 I'd love to go back이 더 따뜻하게 들립니다." },
+    { "wrong": "I'd love to go back to there.", "right": "I'd love to go back there.", "note": "there 앞에는 to를 붙이지 않습니다. go back there 또는 go back to Lisbon으로 말합니다." }
+  ],
+  "dialogue": {
+    "situation": "친구 집에서 친구가 내 리스본 여행 사진을 보며 다시 갈 생각이 있는지 묻습니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "These Lisbon photos are gorgeous. Would you ever go again?", "ko": "리스본 사진들 진짜 예쁘다. 또 갈 생각 있어?", "audio": "audio/lessons/INT2-U01-L03/dlg-01-1330aaf7.m4a" },
+      { "no": 2, "speaker": "me", "en": "Oh, totally. I'd love to go back someday.", "ko": "당연하지. 언젠가 꼭 다시 가 보고 싶어.", "audio": "audio/lessons/INT2-U01-L03/dlg-02-901c0c73.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Really? You've already been there, though.", "ko": "진짜? 그래도 이미 가 봤잖아.", "audio": "audio/lessons/INT2-U01-L03/dlg-03-234140da.m4a" },
+      { "no": 4, "speaker": "me", "en": "I know, but I only saw half the city.", "ko": "그렇긴 한데, 도시 반밖에 못 봤어.", "audio": "audio/lessons/INT2-U01-L03/dlg-04-09755e19.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Then go back in the spring. The weather's perfect.", "ko": "그럼 봄에 다시 가. 날씨가 딱 좋대.", "audio": "audio/lessons/INT2-U01-L03/dlg-05-98f1a29f.m4a" },
+      { "no": 6, "speaker": "me", "en": "Good idea. Maybe we can go together next time!", "ko": "좋은 생각이다. 다음엔 우리 같이 가도 되겠다!", "audio": "audio/lessons/INT2-U01-L03/dlg-06-ff84111e.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "~, though.", "ko": "문장 끝의 though는 '그래도, 근데'라는 뜻입니다. 앞에 한 말과 살짝 반대되는 생각을 부드럽게 덧붙입니다." },
+      { "en": "half the city", "ko": "'도시의 절반'. half 뒤에는 of 없이 바로 the를 붙여 말하는 경우가 많습니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I'd love to go back someday.",
+      "ko": "언젠가 꼭 다시 가 보고 싶어.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "So, was Lisbon a one-time trip for you?", "audio": "audio/lessons/INT2-U01-L03/cue-01-576b4506.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U01-L03/drill-01-743d8af5.m4a", "slow": "audio/lessons/INT2-U01-L03/drill-01-743d8af5.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I'd love to go back next spring.",
+      "ko": "내년 봄에 꼭 다시 가 보고 싶어.",
+      "point": "단어 교체: someday → next spring",
+      "cue": { "lang": "en", "text": "When do you think you will visit Lisbon again?", "audio": "audio/lessons/INT2-U01-L03/cue-02-77d364c5.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U01-L03/drill-02-a06052d0.m4a", "slow": "audio/lessons/INT2-U01-L03/drill-02-a06052d0.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "My roommate would love to go back someday.",
+      "ko": "내 룸메이트도 언젠가 꼭 다시 가 보고 싶대.",
+      "point": "주어 변경: I'd → My roommate would",
+      "cue": { "lang": "en", "text": "What did your roommate think of the trip?", "audio": "audio/lessons/INT2-U01-L03/cue-03-46598479.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U01-L03/drill-03-7cab193b.m4a", "slow": "audio/lessons/INT2-U01-L03/drill-03-7cab193b.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Would you ever go back?",
+      "ko": "너 거기 또 갈 생각 있어?",
+      "point": "질문형: Would you ever ~?",
+      "cue": { "lang": "ko", "text": "여행 얘기를 하는 친구에게 거기 다시 갈 생각이 있는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT2-U01-L03/drill-04-4e4dbe4a.m4a", "slow": "audio/lessons/INT2-U01-L03/drill-04-4e4dbe4a.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I wouldn't go back in the summer.",
+      "ko": "여름에는 다시 가고 싶지 않아.",
+      "point": "부정형: I wouldn't go back ~",
+      "cue": { "lang": "en", "text": "When's the worst time to visit Lisbon?", "audio": "audio/lessons/INT2-U01-L03/cue-05-94a26ee1.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U01-L03/drill-05-e3639a1b.m4a", "slow": "audio/lessons/INT2-U01-L03/drill-05-e3639a1b.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I'd rather go back than go somewhere new.",
+      "ko": "새로운 데 가느니 차라리 거기 다시 가고 싶어.",
+      "point": "비교: I'd rather ~ than ~",
+      "cue": { "lang": "en", "text": "For your next trip, do you want to see a new place?", "audio": "audio/lessons/INT2-U01-L03/cue-06-a8e8ad42.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U01-L03/drill-06-7a292778.m4a", "slow": "audio/lessons/INT2-U01-L03/drill-06-7a292778.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "I just saw your Lisbon pictures online. You looked so happy there!", "ko": "방금 인터넷에서 네 리스본 사진 봤어. 거기서 진짜 행복해 보이더라!", "audio": "audio/lessons/INT2-U01-L03/rp-01-5302f51b.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'd love to go back someday.",
+        "exampleKo": "언젠가 꼭 다시 가 보고 싶어.",
+        "requiredKeywords": ["go back", "someday"]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Lisbon is beautiful in April. There are fewer tourists, and the weather is perfect.",
+        "ko": "리스본은 4월에 정말 예뻐. 관광객도 적고 날씨도 완벽해.",
+        "audio": "audio/lessons/INT2-U01-L03/rp-03-e2fac71d.m4a"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'd love to go back next spring.",
+        "exampleKo": "내년 봄에 꼭 다시 가 보고 싶어.",
+        "requiredKeywords": ["go back", "next spring"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Your roommate keeps talking about the trip you two took to Lisbon.", "ko": "네 룸메이트가 너희 둘이 간 리스본 여행 얘기를 계속하더라.", "audio": "audio/lessons/INT2-U01-L03/rp-05-3a10e743.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My roommate would love to go back someday.",
+        "exampleKo": "내 룸메이트도 언젠가 꼭 다시 가 보고 싶대.",
+        "requiredKeywords": ["my roommate", "would love", "someday"]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "I've been to Lisbon three times, but last time the trip was kind of a mess.",
+        "ko": "나 리스본에 세 번 가 봤는데, 지난번엔 여행이 좀 엉망이었어.",
+        "audio": "audio/lessons/INT2-U01-L03/rp-07-ae40f447.m4a"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Would you ever go back?",
+        "exampleKo": "너 거기 또 갈 생각 있어?",
+        "requiredKeywords": ["would you", "go back"]
+      },
+      { "no": 9, "speaker": "partner", "en": "I'm thinking of going to Lisbon in August. Good idea?", "ko": "나 8월에 리스본 갈까 생각 중이야. 괜찮을까?", "audio": "audio/lessons/INT2-U01-L03/rp-09-9e273dd4.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I wouldn't go back in the summer.",
+        "exampleKo": "여름에는 다시 가고 싶지 않아.",
+        "requiredKeywords": ["wouldn't go back", "summer"]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "There are so many places in the world. Why not try a new country next year?",
+        "ko": "세상에 갈 데가 얼마나 많은데. 내년엔 새로운 나라 가 보는 거 어때?",
+        "audio": "audio/lessons/INT2-U01-L03/rp-11-d7e8d9a8.m4a"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'd rather go back than go somewhere new.",
+        "exampleKo": "새로운 데 가느니 차라리 거기 다시 가고 싶어.",
+        "requiredKeywords": ["I'd rather", "somewhere new"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

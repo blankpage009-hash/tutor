@@ -1,0 +1,369 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT2-U01-L01",
+  "level": "중급 2",
+  "levelCode": "INT2",
+  "unit": 1,
+  "unitTitle": "여행 경험",
+  "lessonNo": 1,
+  "lessonTitle": "여행 경험 공유하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I just got back from Lisbon.",
+    "ko": "나 리스본 갔다가 막 돌아왔어.",
+    "stress": "I just got BACK from LISbon.",
+    "audio": {
+      "normal": "int2-u01-l01_key.mp3",
+      "slow": "int2-u01-l01_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "I just got back from ~은 '~에 갔다가 막 돌아왔어'라는 뜻입니다. 여행·출장에서 돌아온 직후, 오랜만에 만난 사람에게 근황을 말할 때 가장 먼저 나오는 말입니다.",
+      "get back from + 장소는 '~에서 돌아오다'입니다. come back from과 뜻은 같지만, 일상 대화에서는 get back from이 더 흔합니다.",
+      "just는 '방금, 막'입니다. 며칠 전에 돌아왔어도 아직 여행 기분이 남아 있으면 just를 씁니다.",
+      "여행지를 강조하고 싶으면 I just got back from a trip to Lisbon.처럼 a trip to를 넣어도 됩니다.",
+      "언제 돌아왔는지 물을 때는 When did you get back?(언제 돌아왔어?)이라고 합니다."
+    ],
+    "en": "When you have just come home from a trip, you can say \"I just got back from Lisbon.\" It is a natural way to start talking about your travels.",
+    "enKo": "여행에서 막 돌아왔을 때 \"I just got back from Lisbon.\"이라고 말할 수 있습니다. 여행 이야기를 꺼내는 자연스러운 방법입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "BACK과 LISbon에 힘을 줍니다. I just got과 from은 빠르고 가볍게 지나갑니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "got back은 got의 t를 거의 소리 내지 않고 바로 back으로 넘어갑니다. '갓 백'이 아니라 '갇백'처럼 짧게 끊깁니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "from은 '프롬'이 아니라 짧게 '프럼'입니다. just의 t도 약해져서 just got → '저스갇'에 가깝습니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "Lisbon의 L은 혀끝을 윗니 뒤에 대고 시작합니다. '리즈번'처럼 s는 z에 가깝게 부드럽게 냅니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I returned from Lisbon just now.",
+      "right": "I just got back from Lisbon.",
+      "note": "return은 딱딱한 글말입니다. 말할 때는 get back from이 자연스럽고, just는 동사 앞에 둡니다."
+    },
+    {
+      "wrong": "I came back to Lisbon yesterday.",
+      "right": "I got back from Lisbon yesterday.",
+      "note": "back to는 '~로 돌아가다'라서 리스본으로 다시 갔다는 뜻이 됩니다. 다녀온 곳은 from을 씁니다."
+    },
+    {
+      "wrong": "I have just got back from Lisbon.",
+      "right": "I just got back from Lisbon.",
+      "note": "미국 영어에서는 just와 함께 과거형(got)을 쓰는 게 가장 자연스럽습니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "몇 주 만에 동네에서 마주친 친구가 그동안 어디 있었는지 묻습니다.",
+    "partnerRole": "친구",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Hey, stranger! I haven't seen you in weeks. Where have you been?",
+        "ko": "어, 오랜만이다! 몇 주 동안 못 봤네. 어디 있었어?",
+        "audio": "int2-u01-l01_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "I just got back from Lisbon. It was amazing!",
+        "ko": "나 리스본 갔다가 막 돌아왔어. 진짜 좋았어!",
+        "audio": "int2-u01-l01_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "No way! How long were you there?",
+        "ko": "진짜? 거기 얼마나 있었어?",
+        "audio": "int2-u01-l01_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "About a week. I walked everywhere and ate way too much.",
+        "ko": "일주일 정도. 어딜 가든 걸어 다니고 엄청 많이 먹었어.",
+        "audio": "int2-u01-l01_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "That sounds perfect. Was it your first time in Portugal?",
+        "ko": "완벽했겠다. 포르투갈은 처음이었어?",
+        "audio": "int2-u01-l01_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Yeah, and it definitely won't be my last.",
+        "ko": "응, 근데 이번이 마지막은 절대 아닐 거야.",
+        "audio": "int2-u01-l01_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "Hey, stranger!",
+        "ko": "'어, 오랜만이다!' 한동안 못 본 친한 사람에게 장난스럽게 건네는 인사입니다."
+      },
+      {
+        "en": "way too much",
+        "ko": "'너무 많이, 지나치게'. too much를 강조할 때 앞에 way를 붙입니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I just got back from Lisbon.",
+      "ko": "나 리스본 갔다가 막 돌아왔어.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "You look so tan! Where have you been?"
+      },
+      "audio": {
+        "normal": "int2-u01-l01_drill_01.mp3",
+        "slow": "int2-u01-l01_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I just got back from Tokyo.",
+      "ko": "나 도쿄 갔다가 막 돌아왔어.",
+      "point": "단어 교체: Lisbon → Tokyo",
+      "cue": {
+        "lang": "en",
+        "text": "Why do you look so tired? Is it jet lag?"
+      },
+      "audio": {
+        "normal": "int2-u01-l01_drill_02.mp3",
+        "slow": "int2-u01-l01_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "My parents just got back from Lisbon.",
+      "ko": "우리 부모님이 리스본 갔다가 막 돌아오셨어.",
+      "point": "주어 변경: I → My parents",
+      "cue": {
+        "lang": "en",
+        "text": "Have your parents been traveling lately?"
+      },
+      "audio": {
+        "normal": "int2-u01-l01_drill_03.mp3",
+        "slow": "int2-u01-l01_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "When did you get back from Lisbon?",
+      "ko": "리스본에서 언제 돌아왔어?",
+      "point": "질문형: When did you get back from ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "리스본 여행을 다녀온 친구에게 언제 돌아왔는지 물어보세요."
+      },
+      "audio": {
+        "normal": "int2-u01-l01_drill_04.mp3",
+        "slow": "int2-u01-l01_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "We didn't get back from Lisbon until Sunday.",
+      "ko": "우리 일요일이 돼서야 리스본에서 돌아왔어.",
+      "point": "부정형: didn't get back ~ until",
+      "cue": {
+        "lang": "en",
+        "text": "Did your trip home go smoothly?"
+      },
+      "audio": {
+        "normal": "int2-u01-l01_drill_05.mp3",
+        "slow": "int2-u01-l01_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I'll be back from Lisbon next Monday.",
+      "ko": "나 리스본에서 다음 주 월요일에 돌아와.",
+      "point": "미래: I'll be back from ~",
+      "cue": {
+        "lang": "en",
+        "text": "When are you coming home from your trip?"
+      },
+      "audio": {
+        "normal": "int2-u01-l01_drill_06.mp3",
+        "slow": "int2-u01-l01_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Whoa, you're so tan! I texted you last week and you never answered.",
+        "ko": "와, 너 엄청 탔다! 지난주에 문자했는데 답이 없더라."
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I just got back from Lisbon.",
+        "exampleKo": "나 리스본 갔다가 막 돌아왔어.",
+        "requiredKeywords": [
+          "got back",
+          "Lisbon"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "You keep yawning. Is that jet lag from your trip to Japan?",
+        "ko": "너 계속 하품한다. 일본 여행 때문에 시차 적응 중이야?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I just got back from Tokyo.",
+        "exampleKo": "나 도쿄 갔다가 막 돌아왔어.",
+        "requiredKeywords": [
+          "just got back",
+          "Tokyo"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Your mom keeps posting photos of old streets and pastries. Are they traveling?",
+        "ko": "너희 엄마가 옛날 골목이랑 빵 사진을 계속 올리시던데. 여행 가셨어?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My parents just got back from Lisbon.",
+        "exampleKo": "우리 부모님이 리스본 갔다가 막 돌아오셨어.",
+        "requiredKeywords": [
+          "my parents",
+          "Lisbon"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Sorry I missed your call. I was in Lisbon with my sister for ten days.",
+        "ko": "전화 못 받아서 미안. 언니랑 열흘 동안 리스본에 있었어."
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "When did you get back from Lisbon?",
+        "exampleKo": "리스본에서 언제 돌아왔어?",
+        "requiredKeywords": [
+          "when did",
+          "get back",
+          "Lisbon"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "I thought your flight home was on Friday. Did something happen?",
+        "ko": "너 돌아오는 비행기 금요일인 줄 알았는데. 무슨 일 있었어?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "We didn't get back from Lisbon until Sunday.",
+        "exampleKo": "우리 일요일이 돼서야 리스본에서 돌아왔어.",
+        "requiredKeywords": [
+          "didn't get back",
+          "Sunday"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Let's grab dinner next week. Wait, are you still in Portugal right now?",
+        "ko": "다음 주에 저녁 먹자. 아, 잠깐, 너 아직 포르투갈이야?"
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'll be back from Lisbon next Monday.",
+        "exampleKo": "나 리스본에서 다음 주 월요일에 돌아와.",
+        "requiredKeywords": [
+          "I'll be back",
+          "next Monday"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

@@ -314,9 +314,9 @@
               "no": 1,
               "title": "여행 경험",
               "lessons": [
-                { "no": 1, "title": "여행 경험 공유하기", "id": "INT2-U01-L01", "ready": false},
-                { "no": 2, "title": "현지에서 꼭 해야 할 것들 공유하기", "id": "INT2-U01-L02", "ready": false},
-                { "no": 3, "title": "다시 방문하고 싶은지 말하기", "id": "INT2-U01-L03", "ready": false}
+                { "no": 1, "title": "여행 경험 공유하기", "id": "INT2-U01-L01", "ready": true, "file": "lessons/INT2/INT2-U01-L01.json" },
+                { "no": 2, "title": "현지에서 꼭 해야 할 것들 공유하기", "id": "INT2-U01-L02", "ready": true, "file": "lessons/INT2/INT2-U01-L02.json" },
+                { "no": 3, "title": "다시 방문하고 싶은지 말하기", "id": "INT2-U01-L03", "ready": true, "file": "lessons/INT2/INT2-U01-L03.json" }
               ]
             },
             {
