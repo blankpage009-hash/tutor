@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG2-U02-L03",
+  "level": "초급 2",
+  "levelCode": "BEG2",
+  "unit": 2,
+  "unitTitle": "일상 생활",
+  "lessonNo": 3,
+  "lessonTitle": "활동 빈도 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "How often do you work out?",
+    "ko": "운동은 얼마나 자주 하세요?",
+    "stress": "HOW OFten do you WORK OUT?",
+    "audio": { "normal": "audio/lessons/BEG2-U02-L03/key-2d4c7316.m4a", "slow": "audio/lessons/BEG2-U02-L03/key-2d4c7316.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "'운동은 얼마나 자주 하세요?'라는 뜻입니다. 어떤 일을 얼마나 자주 하는지 물을 때 How often을 씁니다.",
+      "work out은 '(헬스장 등에서) 운동하다'입니다. exercise보다 일상 대화에서 훨씬 자주 씁니다.",
+      "대답은 Every day(매일), Twice a week(일주일에 두 번), Once in a while(가끔)처럼 횟수로 합니다.",
+      "평소 습관을 묻는 말이라 현재형을 씁니다. How often 뒤에 do you + 동사가 옵니다."
+    ],
+    "en": "Ask \"How often do you work out?\" to learn about someone's exercise habits. You can answer with \"every day\" or \"twice a week.\"",
+    "enKo": "누군가의 운동 습관을 알고 싶을 때 \"How often do you work out?\"이라고 묻습니다. \"every day\"나 \"twice a week\"처럼 대답할 수 있습니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "HOW, OFten의 OF, WORK OUT에 힘을 줍니다. do you는 가볍게 지나갑니다." },
+    { "focus": "연음", "tip": "work out은 k가 뒤의 out에 붙어 '워카웃'처럼 이어집니다." },
+    { "focus": "약화", "tip": "do you는 '두 유'로 또박또박 끊지 않고 '두여'처럼 짧게 붙여 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "often의 t는 보통 소리 내지 않아 '오펀'에 가깝습니다. f는 윗니를 아랫입술에 대고 바람을 냅니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "How many times do you exercise?", "right": "How often do you work out?", "note": "틀린 말은 아니지만 횟수를 세어 보라는 느낌입니다. 평소 습관은 How often으로 묻는 게 자연스럽습니다." },
+    { "wrong": "How often do you do exercise?", "right": "How often do you work out?", "note": "exercise는 그 자체로 동사라서 do를 붙이지 않습니다. 일상 대화에서는 work out을 더 많이 씁니다." },
+    { "wrong": "How often are you working out?", "right": "How often do you work out?", "note": "평소 습관은 진행형이 아니라 현재형 do로 묻습니다." }
+  ],
+  "dialogue": {
+    "situation": "아침에 아파트 엘리베이터에서 운동복 차림의 이웃을 만났습니다.",
+    "partnerRole": "이웃",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Good morning! I'm just back from the gym.", "ko": "안녕하세요! 저 방금 헬스장 다녀왔어요.", "audio": "audio/lessons/BEG2-U02-L03/dlg-01-1fb0c36b.m4a" },
+      { "no": 2, "speaker": "me", "en": "Nice! How often do you work out?", "ko": "좋네요! 운동은 얼마나 자주 하세요?", "audio": "audio/lessons/BEG2-U02-L03/dlg-02-3dee6af9.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "About four times a week. How about you?", "ko": "일주일에 네 번쯤이요. 그쪽은요?", "audio": "audio/lessons/BEG2-U02-L03/dlg-03-6028aabf.m4a" },
+      { "no": 4, "speaker": "me", "en": "Once in a while. I'm pretty lazy.", "ko": "가끔요. 제가 좀 게을러서요.", "audio": "audio/lessons/BEG2-U02-L03/dlg-04-185d7355.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Come with me sometime! It's more fun together.", "ko": "언제 한번 같이 가요! 같이 하면 더 재밌어요.", "audio": "audio/lessons/BEG2-U02-L03/dlg-05-6f436067.m4a" },
+      { "no": 6, "speaker": "me", "en": "Sure, I'd love that.", "ko": "좋아요, 그럼 좋죠.", "audio": "audio/lessons/BEG2-U02-L03/dlg-06-43edcf01.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "Once in a while.", "ko": "'가끔요.' 자주는 아니고 가끔 할 때 쓰는 대답입니다." },
+      { "en": "How about you?", "ko": "'그쪽은요?' 내 대답을 한 뒤 상대에게 같은 질문을 되물을 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "How often do you work out?",
+      "ko": "운동은 얼마나 자주 하세요?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "새 이웃이 운동복 차림이에요. 운동을 얼마나 자주 하는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG2-U02-L03/drill-01-2d4c7316.m4a", "slow": "audio/lessons/BEG2-U02-L03/drill-01-2d4c7316.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "How often do you go swimming?",
+      "ko": "수영은 얼마나 자주 가세요?",
+      "point": "단어 교체: work out → go swimming",
+      "cue": { "lang": "ko", "text": "동료가 수영을 배운대요. 수영장에 얼마나 자주 가는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG2-U02-L03/drill-02-28e1958d.m4a", "slow": "audio/lessons/BEG2-U02-L03/drill-02-28e1958d.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "How often does your son play soccer?",
+      "ko": "아드님은 축구를 얼마나 자주 해요?",
+      "point": "주어 변경: you → your son (does)",
+      "cue": { "lang": "ko", "text": "이웃 아들이 축구공을 들고 나가요. 아들이 축구를 얼마나 자주 하는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG2-U02-L03/drill-03-e73e254b.m4a", "slow": "audio/lessons/BEG2-U02-L03/drill-03-e73e254b.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "How often did you work out in college?",
+      "ko": "대학 때는 운동을 얼마나 자주 하셨어요?",
+      "point": "시제: 과거 (did, in college)",
+      "cue": { "lang": "ko", "text": "이웃이 대학 때 운동을 많이 했대요. 그때는 얼마나 자주 운동했는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG2-U02-L03/drill-04-72061395.m4a", "slow": "audio/lessons/BEG2-U02-L03/drill-04-72061395.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I don't work out very often.",
+      "ko": "저는 운동을 그렇게 자주 안 해요.",
+      "point": "부정형: don't ~ very often (평서문)",
+      "cue": { "lang": "en", "text": "You look so healthy! Do you exercise a lot?", "audio": "audio/lessons/BEG2-U02-L03/cue-05-3595c4fd.m4a" },
+      "audio": { "normal": "audio/lessons/BEG2-U02-L03/drill-05-aef19ed6.m4a", "slow": "audio/lessons/BEG2-U02-L03/drill-05-aef19ed6.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I should work out more often.",
+      "ko": "운동을 더 자주 해야 하는데요.",
+      "point": "비교: more often (평서문)",
+      "cue": { "lang": "en", "text": "How's your workout routine going?", "audio": "audio/lessons/BEG2-U02-L03/cue-06-d63d0838.m4a" },
+      "audio": { "normal": "audio/lessons/BEG2-U02-L03/drill-06-72469b1d.m4a", "slow": "audio/lessons/BEG2-U02-L03/drill-06-72469b1d.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "I feel so much better since I joined a gym.", "ko": "헬스장 다니고 나서 몸이 훨씬 좋아졌어요.", "audio": "audio/lessons/BEG2-U02-L03/rp-01-bcf0387b.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How often do you work out?",
+        "exampleKo": "운동은 얼마나 자주 하세요?",
+        "requiredKeywords": ["how often", "work out"]
+      },
+      { "no": 3, "speaker": "partner", "en": "I just bought a new swimsuit for the pool.", "ko": "수영장 가려고 수영복을 새로 샀어요.", "audio": "audio/lessons/BEG2-U02-L03/rp-03-d69e7c55.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How often do you go swimming?",
+        "exampleKo": "수영은 얼마나 자주 가세요?",
+        "requiredKeywords": ["how often", "go swimming"]
+      },
+      { "no": 5, "speaker": "partner", "en": "My son loves soccer. He has practice again today.", "ko": "우리 아들이 축구를 정말 좋아해요. 오늘도 연습이 있어요.", "audio": "audio/lessons/BEG2-U02-L03/rp-05-2c18afde.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How often does your son play soccer?",
+        "exampleKo": "아드님은 축구를 얼마나 자주 해요?",
+        "requiredKeywords": ["your son", "play soccer"]
+      },
+      { "no": 7, "speaker": "partner", "en": "I was on the college track team, actually.", "ko": "사실 저 대학 때 육상부였어요.", "audio": "audio/lessons/BEG2-U02-L03/rp-07-4c5643ae.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "How often did you work out in college?",
+        "exampleKo": "대학 때는 운동을 얼마나 자주 하셨어요?",
+        "requiredKeywords": ["did you", "in college"]
+      },
+      { "no": 9, "speaker": "partner", "en": "Join my running club! We run every morning.", "ko": "제 달리기 모임에 들어와요! 매일 아침 달려요.", "audio": "audio/lessons/BEG2-U02-L03/rp-09-86653dd1.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I don't work out very often.",
+        "exampleKo": "저는 운동을 그렇게 자주 안 해요.",
+        "requiredKeywords": ["don't work out", "very often"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Your doctor said you need more exercise, right?", "ko": "의사 선생님이 운동 더 하라고 하셨다면서요?", "audio": "audio/lessons/BEG2-U02-L03/rp-11-1cc8d599.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I should work out more often.",
+        "exampleKo": "운동을 더 자주 해야 하는데요.",
+        "requiredKeywords": ["should", "more often"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

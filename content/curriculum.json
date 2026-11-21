@@ -90,9 +90,9 @@
               "no": 2,
               "title": "일상 생활",
               "lessons": [
-                { "no": 1, "title": "하루 일과 공유하기", "id": "BEG2-U02-L01", "ready": false},
-                { "no": 2, "title": "주말과 평일 루틴 공유하기", "id": "BEG2-U02-L02", "ready": false},
-                { "no": 3, "title": "활동 빈도 이야기하기", "id": "BEG2-U02-L03", "ready": false}
+                { "no": 1, "title": "하루 일과 공유하기", "id": "BEG2-U02-L01", "ready": true, "file": "lessons/BEG2/BEG2-U02-L01.json" },
+                { "no": 2, "title": "주말과 평일 루틴 공유하기", "id": "BEG2-U02-L02", "ready": true, "file": "lessons/BEG2/BEG2-U02-L02.json" },
+                { "no": 3, "title": "활동 빈도 이야기하기", "id": "BEG2-U02-L03", "ready": true, "file": "lessons/BEG2/BEG2-U02-L03.json" }
               ]
             },
             {

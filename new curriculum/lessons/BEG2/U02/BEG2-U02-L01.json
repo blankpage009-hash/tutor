@@ -1,0 +1,368 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG2-U02-L01",
+  "level": "초급 2",
+  "levelCode": "BEG2",
+  "unit": 2,
+  "unitTitle": "일상 생활",
+  "lessonNo": 1,
+  "lessonTitle": "하루 일과 공유하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I usually wake up around seven.",
+    "ko": "저는 보통 7시쯤 일어나요.",
+    "stress": "I USually WAKE up aROUND SEVen.",
+    "audio": {
+      "normal": "beg2-u02-l01_key.mp3",
+      "slow": "beg2-u02-l01_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "'저는 보통 7시쯤 일어나요.'라는 뜻입니다. 매일 반복하는 하루 일과를 말할 때 씁니다.",
+      "usually는 '보통, 대개'라는 뜻입니다. always(항상)보다 부드러워서 일과를 말할 때 가장 자주 씁니다.",
+      "around seven은 '7시쯤'입니다. 정확한 시각은 at seven이라고 하지만, 일상 대화에서는 around를 더 많이 씁니다.",
+      "매일 하는 습관이라 현재형 wake up을 씁니다. usually는 동사(wake) 바로 앞에 둡니다."
+    ],
+    "en": "Say \"I usually wake up around seven\" to talk about your daily routine. \"Usually\" means most days, and \"around\" means not exactly.",
+    "enKo": "하루 일과를 말할 때 \"I usually wake up around seven\"이라고 합니다. \"usually\"는 '대부분의 날', \"around\"는 '딱 그 시각은 아니고 쯤'이라는 뜻입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "강세",
+      "tip": "USually, WAKE, aROUND의 ROUND, SEVen에 힘을 줍니다. I와 up은 가볍게 지나갑니다."
+    },
+    {
+      "focus": "연음",
+      "tip": "wake up은 k가 뒤의 up에 붙어 '웨이컵'처럼 한 단어로 이어집니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "usually의 가운데 s는 'ㅅ'이 아니라 '쥬'에 가까운 부드러운 소리입니다. '유쥬얼리'처럼 말합니다."
+    },
+    {
+      "focus": "한국인이 어려운 소리",
+      "tip": "seven의 v는 윗니를 아랫입술에 살짝 대고 떨어 줍니다. 'ㅂ'으로 하면 '세번'처럼 들립니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "I wake up usually around seven.",
+      "right": "I usually wake up around seven.",
+      "note": "usually는 일반동사 앞에 둡니다. wake 뒤에 두면 어색합니다."
+    },
+    {
+      "wrong": "I usually woke up around seven.",
+      "right": "I usually wake up around seven.",
+      "note": "매일 반복하는 일과는 현재형으로 말합니다. woke는 과거 한 번의 일처럼 들립니다."
+    },
+    {
+      "wrong": "I usually wake up seven.",
+      "right": "I usually wake up around seven.",
+      "note": "시각 앞에는 at이나 around가 필요합니다. 그냥 seven만 쓰면 안 됩니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "아침 회의 전, 동료가 늘 일찍 출근하는 나를 보고 신기해합니다.",
+    "partnerRole": "동료",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "You're always here so early!",
+        "ko": "항상 정말 일찍 오시네요!",
+        "audio": "beg2-u02-l01_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "I usually wake up around seven.",
+        "ko": "저는 보통 7시쯤 일어나요.",
+        "audio": "beg2-u02-l01_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Wow. What do you do after that?",
+        "ko": "와. 그다음엔 뭐 하세요?",
+        "audio": "beg2-u02-l01_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "I go for a walk and eat breakfast.",
+        "ko": "산책하고 아침을 먹어요.",
+        "audio": "beg2-u02-l01_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "I usually skip breakfast. I'm always late.",
+        "ko": "저는 보통 아침을 걸러요. 맨날 늦거든요.",
+        "audio": "beg2-u02-l01_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Try going to bed a little earlier.",
+        "ko": "조금 더 일찍 자 보세요.",
+        "audio": "beg2-u02-l01_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "go for a walk",
+        "ko": "'산책하다.' 가볍게 걸으러 나갈 때 씁니다."
+      },
+      {
+        "en": "skip breakfast",
+        "ko": "'아침을 거르다.' skip은 '건너뛰다'라는 뜻입니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I usually wake up around seven.",
+      "ko": "저는 보통 7시쯤 일어나요.",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "en",
+        "text": "What time do you get up in the morning?"
+      },
+      "audio": {
+        "normal": "beg2-u02-l01_drill_01.mp3",
+        "slow": "beg2-u02-l01_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "I usually go to bed around eleven.",
+      "ko": "저는 보통 11시쯤 자요.",
+      "point": "단어 교체: wake up around seven → go to bed around eleven",
+      "cue": {
+        "lang": "en",
+        "text": "What time do you go to bed?"
+      },
+      "audio": {
+        "normal": "beg2-u02-l01_drill_02.mp3",
+        "slow": "beg2-u02-l01_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "My sister usually wakes up around noon.",
+      "ko": "제 여동생은 보통 낮 12시쯤 일어나요.",
+      "point": "주어 변경: I → my sister (wakes)",
+      "cue": {
+        "lang": "en",
+        "text": "Does your sister get up early too?"
+      },
+      "audio": {
+        "normal": "beg2-u02-l01_drill_03.mp3",
+        "slow": "beg2-u02-l01_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "I used to wake up around six.",
+      "ko": "예전엔 6시쯤 일어났어요.",
+      "point": "시제: 과거 습관 (used to)",
+      "cue": {
+        "lang": "en",
+        "text": "Did you always get up at seven?"
+      },
+      "audio": {
+        "normal": "beg2-u02-l01_drill_04.mp3",
+        "slow": "beg2-u02-l01_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "I don't usually wake up this early.",
+      "ko": "저는 평소엔 이렇게 일찍 안 일어나요.",
+      "point": "부정형: don't usually",
+      "cue": {
+        "lang": "en",
+        "text": "Wow, you're up early today!"
+      },
+      "audio": {
+        "normal": "beg2-u02-l01_drill_05.mp3",
+        "slow": "beg2-u02-l01_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "What time do you usually wake up?",
+      "ko": "보통 몇 시에 일어나세요?",
+      "point": "질문형: What time ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "새 동료와 카풀을 하려고 해요. 보통 몇 시에 일어나는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg2-u02-l01_drill_06.mp3",
+        "slow": "beg2-u02-l01_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "You're always so fresh in the morning!",
+        "ko": "아침마다 항상 쌩쌩하시네요!"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I usually wake up around seven.",
+        "exampleKo": "저는 보통 7시쯤 일어나요.",
+        "requiredKeywords": [
+          "usually wake up",
+          "around seven"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "You never look tired. When do you sleep?",
+        "ko": "한 번도 피곤해 보인 적이 없네요. 언제 주무세요?"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I usually go to bed around eleven.",
+        "exampleKo": "저는 보통 11시쯤 자요.",
+        "requiredKeywords": [
+          "go to bed",
+          "around eleven"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Your sister is visiting? Is she an early bird too?",
+        "ko": "여동생분이 놀러 왔어요? 그분도 아침형이에요?"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My sister usually wakes up around noon.",
+        "exampleKo": "제 여동생은 보통 낮 12시쯤 일어나요.",
+        "requiredKeywords": [
+          "my sister",
+          "wakes up",
+          "around noon"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Seven? That's early! Was it always like that?",
+        "ko": "7시요? 이르네요! 예전부터 그랬어요?"
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I used to wake up around six.",
+        "exampleKo": "예전엔 6시쯤 일어났어요.",
+        "requiredKeywords": [
+          "used to",
+          "around six"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "It's only six. Why are you awake?",
+        "ko": "아직 6시인데요. 왜 벌써 깨어 있어요?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I don't usually wake up this early.",
+        "exampleKo": "저는 평소엔 이렇게 일찍 안 일어나요.",
+        "requiredKeywords": [
+          "don't usually",
+          "this early"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Want to carpool? I'm not sure about the time, though.",
+        "ko": "카풀할래요? 근데 시간이 맞을지 모르겠어요."
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What time do you usually wake up?",
+        "exampleKo": "보통 몇 시에 일어나세요?",
+        "requiredKeywords": [
+          "what time",
+          "usually wake up"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
