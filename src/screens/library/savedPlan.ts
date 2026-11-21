@@ -4,6 +4,21 @@ import type { SavedSentence } from '../../db/types';
 import type { DrillStep } from '../../drillPlan';
 import { toSavedLesson } from './savedLesson';
 
+type CardShow = NonNullable<DrillStep['show']>;
+
+// 반복 횟수별 회차 모양: 보고 따라 하기 → 영어만 → 중요 단어 가림 → 모두 가림 (사용자 요청 2026-11-21)
+const SHOW_BY_REPS: Record<number, CardShow[]> = {
+  1: ['en+ko'],
+  3: ['en+ko', 'masked', 'none'],
+  5: ['en+ko', 'en', 'masked', 'none', 'none'],
+  10: ['en+ko', 'en', 'en', 'en', 'masked', 'masked', 'masked', 'none', 'none', 'none']
+};
+
+// 표에 없는 횟수가 들어와도 깨지지 않게, 첫 회차만 보여 주고 나머지는 모두 가린다
+export function showForRep(reps: number, rep: number): CardShow {
+  return SHOW_BY_REPS[reps]?.[rep - 1] ?? (rep === 1 ? 'en+ko' : 'none');
+}
+
 export type SavedPlanOptions = { reps?: number; shuffle?: boolean; random?: () => number };
 
 // 첫 문장(사용자가 누른 문장)은 그대로 두고 나머지만 섞는다
@@ -31,10 +46,10 @@ export function toSavedPlan(rows: SavedSentence[], startId: string, passThreshol
     reps: Array.from({ length: reps }, (_, i) => i + 1),
     mode: 'repeat', show: 'en+ko', playAudio: true, passScore: Math.round(passThreshold * 100)
   };
-  return sentences.flatMap((s, i) => Array.from({ length: reps }, (_, r) => toStep(s, i + 1, r + 1, stage)));
+  return sentences.flatMap((s, i) => Array.from({ length: reps }, (_, r) => toStep(s, i + 1, r + 1, stage, showForRep(reps, r + 1))));
 }
 
-function toStep(s: Sentence, no: number, rep: number, stage: DrillStage): DrillStep {
+function toStep(s: Sentence, no: number, rep: number, stage: DrillStage, show: CardShow): DrillStep {
   // 음성 경로가 없던 옛 저장 문장은 빈 문자열로 두고, 재생 쪽(promptAudio)이 "없음"으로 읽는다
   const audio = s.audio ?? '';
   return {
@@ -47,6 +62,7 @@ function toStep(s: Sentence, no: number, rep: number, stage: DrillStage): DrillS
       audio: { normal: audio, slow: audio }
     },
     rep,
-    stage
+    stage,
+    show
   };
 }

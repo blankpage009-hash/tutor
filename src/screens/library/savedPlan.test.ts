@@ -44,6 +44,14 @@ describe('보관함 연습 드릴 계획', () => {
     expect(all.map((s) => s.saveId)).toEqual(['b', 'c', 'a']);
   });
 
+  it('반복 회차마다 카드 모양이 점점 가려진다', () => {
+    const shows = (reps: number) => (toSavedPlan([rows[0]], 'all', 0.8, { reps }) ?? []).map((s) => s.show);
+    expect(shows(1)).toEqual(['en+ko']);
+    expect(shows(3)).toEqual(['en+ko', 'masked', 'none']);
+    expect(shows(5)).toEqual(['en+ko', 'en', 'masked', 'none', 'none']);
+    expect(shows(10)).toEqual(['en+ko', 'en', 'en', 'en', 'masked', 'masked', 'masked', 'none', 'none', 'none']);
+  });
+
   it('연습할 문장이 없으면 null', () => {
     expect(toSavedPlan([row('a')], 'all', 0.8)).toBeNull();
   });

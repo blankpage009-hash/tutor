@@ -3,6 +3,7 @@ import { ResultMark } from '../../components/ResultMark';
 import { WordHighlight } from '../../components/WordHighlight';
 import { usePickWord } from '../../components/wordPicker/WordPicker';
 import type { DrillStep } from '../../drillPlan';
+import { pickMaskedIndices } from '../library/maskWords';
 import type { useShadowingAttempt } from '../shadowing/useShadowingAttempt';
 import styles from './DrillPlayer.module.css';
 
@@ -35,17 +36,21 @@ export function DrillCard({ step, outcome, saved, onSave }: Props) {
 }
 
 // 기억·상황 응답 회차는 통과하기 전까지 영어 정답을 감춘다 (사용자 결정 2026-11-17: 정답은 3번째 실패에만)
+// 보관함 반복 연습은 카드마다 모양(step.show)을 따로 준다: masked = 중요 단어만 가림, none = 모두 가림
 function Sentence({ step, outcome: o }: { step: DrillStep; outcome: Outcome }) {
-  const { show } = step.stage;
-  const showEn = show === 'en+ko' || show === 'en' || o?.status === 'passed';
+  const show = step.show ?? step.stage.show;
   const final = o?.status === 'passed' || o?.status === 'failed';
+  // 가림 회차도 통과·실패로 끝나면 정답 문장을 다 보여 준다 (기억 카드와 같은 규칙)
+  const showEn = show === 'en+ko' || show === 'en' || show === 'masked' || o?.status === 'passed' || (show === 'none' && final);
+  const words = o?.judgement.words;
+  const masked = show === 'masked' && !final && words ? pickMaskedIndices(words.map((w) => w.text)) : undefined;
   const pick = usePickWord();
   const source = { id: step.saveId, en: step.drill.en, ko: step.drill.ko };
   const onWordTap = pick ? (w: string) => pick(w, source) : undefined;
   return (
     <>
       {show === 'cue' && <p className={styles.cue} lang={step.drill.cue.lang}>{step.drill.cue.text}</p>}
-      {o && showEn && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} onWordTap={onWordTap} />}
+      {o && showEn && <WordHighlight words={o.judgement.words} nextIndex={o.judgement.nextIndex} final={final} onWordTap={onWordTap} masked={masked} />}
       {!showEn && <p className={styles.hidden} lang="ko">영어로 말해 보세요</p>}
       {(show === 'en+ko' || show === 'ko') && <p className={styles.ko} lang="ko">{step.drill.ko}</p>}
     </>

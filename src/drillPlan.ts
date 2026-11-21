@@ -11,6 +11,9 @@ export type DrillStep = {
   drill: Drill;
   rep: number; // 1~10
   stage: DrillStage;
+  // 카드 한 장만의 보이는 모양 (없으면 stage.show). 보관함 반복 연습이 진행 바를 한 칸으로 둔 채
+  // 회차마다 글자를 점점 가리려고 쓴다. masked = 영어만, 중요 단어 가림 / none = 모두 가림
+  show?: DrillStage['show'] | 'masked' | 'none';
 };
 
 // 화면 글자는 디자인 v2대로 영문 (PLAN 7.95 기본값). 뜻: 따라 말하기 · 보고 말하기 · 기억해서 말하기 · 상황 응답

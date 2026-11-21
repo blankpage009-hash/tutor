@@ -34,6 +34,14 @@
   text-underline-offset: 6px;
 }
 
+/* 가린 단어: 글자는 투명, 아래 선만 남겨 빈칸처럼. 복사·선택으로 정답이 보이지 않게 막는다 */
+.masked {
+  color: transparent;
+  border-bottom: var(--rule-weight) solid var(--ink-muted);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .word { transition: none; }
 }

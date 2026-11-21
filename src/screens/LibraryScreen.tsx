@@ -12,41 +12,37 @@ import { loadPracticeOptions, REPEAT_CHOICES, savePracticeOptions, type Practice
 import { useLibrary } from './library/useLibrary';
 import { useSelection } from './library/useSelection';
 
-// 위 버튼 줄: 평소 Shadow All · 순서 전환 · 반복 상자, 고르는 중 Shadow Selected · Cancel
+// 위 버튼 줄: 평소 Shadow All · 순서 전환 · 반복, 고르는 중 Shadow · N · Cancel · 반복.
+// 반복·순서 값은 두 상태가 함께 쓰려고 여기서 들고, 연습 화면은 기기에 저장된 값을 읽어 간다
 function TopButtons({ sel }: { sel: ReturnType<typeof useSelection> }) {
   const nav = useNavigate();
+  const [opts, setOpts] = useState(loadPracticeOptions);
+  const change = (next: PracticeOptions) => { setOpts(next); savePracticeOptions(next); };
+  const random = opts.order === 'random';
+  // 누를 때마다 1 → 3 → 5 → 10 → 1 로 돈다 (드롭다운 대신, 사용자 요청 2026-11-21)
+  const repeat = (
+    <Button className={styles.repeat} aria-label={`문장마다 ${opts.reps}번 반복`}
+      onClick={() => change({ ...opts, reps: nextRepeat(opts.reps) })}>
+      {opts.reps}<span className={styles.times}>×</span>
+    </Button>
+  );
   if (sel.selecting) {
     return (
-      <div className={styles.pair}>
+      <div className={`${styles.pair} ${styles.withRepeat}`}>
         <Button variant="primary" disabled={sel.ids.length === 0} onClick={() => nav(sel.practicePath())}><IconHeadphones />{`Shadow · ${sel.ids.length}`}</Button>
         <Button onClick={sel.cancel}>Cancel</Button>
+        {repeat}
       </div>
     );
   }
   return (
     <div className={`${styles.pair} ${styles.withRepeat}`}>
       <Button variant="primary" onClick={() => nav('/library/practice/all')}><IconHeadphones />Shadow All</Button>
-      <PracticeChoices />
-    </div>
-  );
-}
-
-// 순서(Random ↔ In Order) 전환 버튼 + 문장당 반복 횟수 상자. 고른 값은 연습 화면이 기기에서 읽어 간다
-function PracticeChoices() {
-  const [opts, setOpts] = useState(loadPracticeOptions);
-  const change = (next: PracticeOptions) => { setOpts(next); savePracticeOptions(next); };
-  const random = opts.order === 'random';
-  return (
-    <>
       <Button onClick={() => change({ ...opts, order: random ? 'inOrder' : 'random' })}>
         {random ? <><IconShuffle />Random</> : <><IconInOrder />In Order</>}
       </Button>
-      {/* 누를 때마다 1 → 3 → 5 → 10 → 1 로 돈다 (드롭다운 대신, 사용자 요청 2026-11-21) */}
-      <Button className={styles.repeat} aria-label={`문장마다 ${opts.reps}번 반복`}
-        onClick={() => change({ ...opts, reps: nextRepeat(opts.reps) })}>
-        {opts.reps}<span className={styles.times}>×</span>
-      </Button>
-    </>
+      {repeat}
+    </div>
   );
 }
 
