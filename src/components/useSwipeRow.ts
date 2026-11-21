@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState, type MouseEvent, type PointerEvent } from 'react';
-import { clampOffset, LONG_PRESS_MS, settleOpen, swipeIntent } from './swipeGesture';
+import { clampOffset, LONG_PRESS_MS, settleSide, swipeIntent } from './swipeGesture';
 
 type Options = {
-  width: number; // 나오는 버튼 전체 폭
+  width: number; // 오른쪽에서 나오는 버튼 전체 폭
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  leftWidth?: number; // 오른쪽으로 밀면 왼쪽에서 나오는 버튼 전체 폭 (없으면 0)
+  leftOpen?: boolean;
+  onLeftOpenChange?: (open: boolean) => void;
   swipeEnabled: boolean;
   onLongPress?: () => void;
 };
@@ -37,7 +40,8 @@ function useLongPress(onLongPress: (() => void) | undefined, onFire: () => void)
 
 // 줄을 왼쪽으로 밀어 버튼을 꺼내고, 길게 누르기를 알아챈다. 포인터 이벤트 하나로 손가락·마우스를 같이 받는다.
 // 세로로 움직이면 아무것도 하지 않고 화면 스크롤에 맡긴다 (CSS touch-action: pan-y와 짝)
-export function useSwipeRow({ width, open, onOpenChange, swipeEnabled, onLongPress }: Options) {
+export function useSwipeRow({ width, open, onOpenChange, leftWidth = 0, leftOpen = false, onLeftOpenChange, swipeEnabled, onLongPress }: Options) {
+  const rest = open ? -width : leftOpen ? leftWidth : 0; // 손을 떼고 가만히 있을 때의 위치
   const [drag, setDrag] = useState<number | null>(null);
   const g = useRef<Gesture | null>(null);
   const suppressClick = useRef(false);
@@ -45,7 +49,7 @@ export function useSwipeRow({ width, open, onOpenChange, swipeEnabled, onLongPre
 
   const onPointerDown = (e: PointerEvent<HTMLElement>) => {
     if (e.pointerType === 'mouse' && e.button !== 0) return;
-    g.current = { x: e.clientX, y: e.clientY, base: open ? -width : 0, intent: 'none', lastX: e.clientX, lastT: e.timeStamp, v: 0 };
+    g.current = { x: e.clientX, y: e.clientY, base: rest, intent: 'none', lastX: e.clientX, lastT: e.timeStamp, v: 0 };
     suppressClick.current = false;
     press.start();
   };
@@ -58,7 +62,7 @@ export function useSwipeRow({ width, open, onOpenChange, swipeEnabled, onLongPre
       // 가로 밀기로 정해진 뒤에만 포인터를 붙잡는다 (처음부터 잡으면 세로 스크롤이 막힌다)
       if (s.intent === 'horizontal' && swipeEnabled) e.currentTarget.setPointerCapture(e.pointerId);
     }
-    if (s.intent === 'horizontal' && swipeEnabled) setDrag(clampOffset(s.base, e.clientX - s.x, width));
+    if (s.intent === 'horizontal' && swipeEnabled) setDrag(clampOffset(s.base, e.clientX - s.x, width, leftWidth));
   };
 
   const finish = (cancelled: boolean) => {
@@ -67,21 +71,25 @@ export function useSwipeRow({ width, open, onOpenChange, swipeEnabled, onLongPre
     g.current = null;
     if (!s || s.intent === 'none') return;
     suppressClick.current = true;
-    if (!cancelled && s.intent === 'horizontal' && swipeEnabled && drag !== null) onOpenChange(settleOpen(drag, width, s.v));
+    if (!cancelled && s.intent === 'horizontal' && swipeEnabled && drag !== null) {
+      const side = settleSide(drag, width, leftWidth, s.v);
+      onOpenChange(side === 'right');
+      onLeftOpenChange?.(side === 'left');
+    }
     setDrag(null);
   };
 
   // 밀거나 길게 누른 뒤 손을 떼면 click이 따라오는데, 그건 "누르기"가 아니라서 버린다. 열린 줄을 누르면 닫기만
   const onClickCapture = (e: MouseEvent<HTMLElement>) => {
-    if (!suppressClick.current && !open) return;
+    if (!suppressClick.current && !open && !leftOpen) return;
     e.preventDefault();
     e.stopPropagation();
-    if (!suppressClick.current) onOpenChange(false);
+    if (!suppressClick.current) { onOpenChange(false); onLeftOpenChange?.(false); }
     suppressClick.current = false;
   };
 
   return {
-    offset: drag ?? (open ? -width : 0), dragging: drag !== null,
+    offset: drag ?? rest, dragging: drag !== null,
     handlers: {
       onPointerDown, onPointerMove, onClickCapture,
       onPointerUp: () => finish(false), onPointerCancel: () => finish(true),

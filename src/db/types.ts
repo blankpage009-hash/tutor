@@ -24,6 +24,9 @@ export type VocabWord = {
   // 예전 모양에는 없어서 선택 칸이다 (색인은 그대로라 DB 버전은 그대로)
   sourceEn?: string;
   sourceKo?: string;
+  // 퀴즈에서 맞혔으면 true. 없거나 false면 Unknown (새로 저장한 단어도 Unknown으로 시작).
+  // 칸만 늘렸고 색인은 그대로라 DB 버전은 그대로
+  known?: boolean;
   savedAt: number;
 };
 

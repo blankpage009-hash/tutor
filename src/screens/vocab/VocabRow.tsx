@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from '../../components/Button';
-import { IconEdit, IconTrash } from '../../components/icons/icons';
+import { IconCheck, IconClose, IconEdit, IconTrash } from '../../components/icons/icons';
 import { SwipeRow } from '../../components/SwipeRow';
 import type { VocabWord } from '../../db/types';
 import { POS_OPTIONS, posLabel, posShort } from '../../posLabels';
@@ -10,20 +10,29 @@ type Props = {
   word: VocabWord;
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  leftOpen: boolean;
+  onLeftOpenChange: (open: boolean) => void;
+  onSetKnown: (id: number, known: boolean) => void;
   onRemove: (id: number) => void;
   onEdit: (id: number, fields: Pick<VocabWord, 'meaning' | 'pos'>) => Promise<boolean>;
 };
 
-// 단어 한 줄 (디자인 v2 10): 단어 · 품사 · 뜻 / 예문. 왼쪽으로 밀면 Edit(뜻·품사 고치기) · Delete(2번 눌러 확정)
-export function VocabRow({ word, open, onOpenChange, onRemove, onEdit }: Props) {
+// 단어 한 줄 (디자인 v2 10): 단어 · 품사 · 뜻 / 예문. 왼쪽으로 밀면 Edit(뜻·품사 고치기) · Delete(2번 눌러 확정),
+// 오른쪽으로 밀면 Known 단어는 Don't Know, Unknown 단어는 Know 버튼
+export function VocabRow({ word, open, onOpenChange, leftOpen, onLeftOpenChange, onSetKnown, onRemove, onEdit }: Props) {
   const [editing, setEditing] = useState(false);
   const id = word.id!;
+  const known = !!word.known;
+  const leftActions = [known
+    ? { key: 'unknown', label: "Don't Know", icon: <IconClose />, onClick: () => onSetKnown(id, false) }
+    : { key: 'known', label: 'Know', icon: <IconCheck />, accent: true, onClick: () => onSetKnown(id, true) }];
   const actions = [
     { key: 'edit', label: 'Edit', icon: <IconEdit />, onClick: () => { onOpenChange(false); setEditing(true); } },
     { key: 'delete', label: 'Delete', confirmLabel: 'Confirm', danger: true, icon: <IconTrash />, onClick: () => onRemove(id) }
   ];
   return (
-    <SwipeRow open={open} onOpenChange={onOpenChange} swipeEnabled={!editing} actions={actions}>
+    <SwipeRow open={open} onOpenChange={onOpenChange} swipeEnabled={!editing} actions={actions}
+      leftActions={leftActions} leftOpen={leftOpen} onLeftOpenChange={onLeftOpenChange}>
       <div className={styles.card}>
         <div className={styles.head}>
           <span className={styles.word} lang="en">{word.word}</span>

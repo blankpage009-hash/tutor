@@ -22,10 +22,10 @@ function Empty({ kind, scope, setScope, tabs }: RunProps) {
       <RunTopBar closeTo="/vocab" closeLabel="퀴즈 닫고 단어장으로" />
       {tabs}
       <p className={reviewStyles.note} lang="ko">
-        {scope === 'due' ? '오늘 복습할 단어가 없어요. 저장한 단어는 저장한 다음 날부터 복습에 나와요.'
+        {scope === 'unknown' ? '모르는(Unknown) 단어가 없어요. 전부 알고 있거나 아직 저장한 단어가 없어요.'
           : kind === 'cloze' ? '문장 빈칸으로 풀 수 있는 단어가 없어요. 문장 속 단어를 눌러 저장하면 생겨요.' : '풀 수 있는 저장 단어가 없어요.'}
       </p>
-      {scope === 'due' && <Button variant="primary" block onClick={() => setScope('random')}>Random</Button>}
+      {scope === 'unknown' && <Button variant="primary" block onClick={() => setScope('random')}>Random All</Button>}
     </div>
   );
 }
@@ -49,12 +49,12 @@ function Run(p: RunProps) {
 }
 
 // 디자인 v2 11 VOCAB QUIZ: 위 X·막대 → Card · Meaning · Blank 탭 → 카드. 탭을 바꾸면 그 종류로 새 판을 시작한다.
-// /vocab/quiz?mode=card|write|cloze&scope=due|random (mode가 없으면 Card)
+// /vocab/quiz?mode=card|write|cloze&scope=unknown|random (mode가 없으면 Card, scope가 없으면 Unknown)
 export function VocabQuizScreen() {
   const [params, setParams] = useSearchParams();
   const modeParam = params.get('mode');
   const kind: QuizKind = isQuizKind(modeParam) ? modeParam : 'card';
-  const scope: QuizScope = params.get('scope') === 'random' ? 'random' : 'due';
+  const scope: QuizScope = params.get('scope') === 'random' ? 'random' : 'unknown';
   const update = (m: QuizKind, s: QuizScope) => setParams({ mode: m, scope: s }, { replace: true });
   const tabs = <SegmentedControl tall label="퀴즈 종류" options={KINDS} value={kind} onChange={(k) => update(k, scope)} />;
   return <Run key={`${kind}-${scope}`} kind={kind} scope={scope} setScope={(s) => update(kind, s)} tabs={tabs} />;

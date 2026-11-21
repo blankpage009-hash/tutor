@@ -1,5 +1,23 @@
 import { describe, expect, it } from 'vitest';
-import { clampOffset, settleOpen, swipeIntent } from './swipeGesture';
+import { clampOffset, settleOpen, settleSide, swipeIntent } from './swipeGesture';
+
+describe('왼쪽 버튼(오른쪽으로 밀기)', () => {
+  it('왼쪽 버튼이 없으면 오른쪽 밀기는 무시하고 clamp는 0까지', () => {
+    expect(clampOffset(0, 50, 152)).toBe(0);
+    expect(settleSide(0, 152, 0, 0.9)).toBe('closed');
+  });
+  it('왼쪽 버튼 폭까지만 밀리고, 반 넘게 밀거나 빠르게 밀면 열린다', () => {
+    expect(clampOffset(0, 200, 152, 76)).toBe(76);
+    expect(settleSide(50, 152, 76, 0)).toBe('left');
+    expect(settleSide(20, 152, 76, 0)).toBe('closed');
+    expect(settleSide(20, 152, 76, 0.8)).toBe('left');
+    expect(settleSide(70, 152, 76, -0.8)).toBe('closed');
+  });
+  it('왼쪽으로 밀면 기존처럼 오른쪽 버튼', () => {
+    expect(settleSide(-100, 152, 76, 0)).toBe('right');
+    expect(settleSide(-20, 152, 76, 0)).toBe('closed');
+  });
+});
 
 describe('줄 밀기', () => {
   it('반 넘게 밀면 열리고, 덜 밀면 닫힌다', () => {

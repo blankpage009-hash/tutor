@@ -2,7 +2,7 @@ import type { ComponentType } from 'react';
 import { Link } from 'react-router-dom';
 import { IconBookmark, IconChevronRight, IconVocab } from '../../components/icons/icons';
 import { useDueCount } from '../review/useDueCount';
-import { useDueWordCount } from '../vocab/useVocab';
+import { useUnknownWordCount } from '../vocab/useVocab';
 import styles from './ReviewTiles.module.css';
 
 type TileProps = { count: number | null; label: string; to: string; Icon: ComponentType };
@@ -23,15 +23,15 @@ function Tile({ count, label, to, Icon }: TileProps) {
     </>
   );
   if (active) {
-    return <Link to={to} className={styles.tile} aria-label={`오늘 복습할 ${label} ${count}개 시작`}>{body}</Link>;
+    return <Link to={to} className={styles.tile} aria-label={`복습할 ${label} ${count}개 시작`}>{body}</Link>;
   }
   return <div className={`${styles.tile} ${styles.idle}`}>{body}</div>;
 }
 
-// 오늘 복습: 때가 된 저장 문장 수 → 복습, 단어 수 → 단어 퀴즈(때 된 단어)
+// 오늘 복습: 때가 된 저장 문장 수 → 복습, 모르는(Unknown) 단어 수 → 단어 퀴즈(Unknown)
 export function ReviewTiles() {
   const sentences = useDueCount();
-  const words = useDueWordCount();
+  const words = useUnknownWordCount();
   return (
     <section aria-labelledby="home-review">
       <div className={styles.head}>
@@ -40,7 +40,7 @@ export function ReviewTiles() {
       </div>
       <div className={styles.grid}>
         <Tile count={sentences} label="문장" to="/review" Icon={IconBookmark} />
-        <Tile count={words} label="단어" to="/vocab/quiz?scope=due" Icon={IconVocab} />
+        <Tile count={words} label="단어" to="/vocab/quiz?scope=unknown" Icon={IconVocab} />
       </div>
     </section>
   );

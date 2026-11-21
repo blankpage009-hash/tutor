@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { VocabWord } from './db/types';
 import {
-  blankInSentence, cardReducer, clozeWordMatched, initCards, isClozeUsable, isTypedCorrect, pickQuizWords
+  blankInSentence, cardReducer, clozeWordMatched, initCards, isClozeUsable, isKnownGrade, isTypedCorrect, pickQuizWords
 } from './vocabQuiz';
 
 const w = (id: number, word: string, extra: Partial<VocabWord> = {}): VocabWord => ({
@@ -60,24 +60,32 @@ describe('isTypedCorrect', () => {
   });
 });
 
-describe('pickQuizWords', () => {
-  const words = [w(1, 'a1'), w(2, 'b2'), w(3, 'c3'), w(4, 'd4', { meaning: '' })];
-  const dueAt = new Map([['2', 100], ['1', 300], ['4', 50]]);
+describe('isKnownGrade', () => {
+  it('힌트 없이 한 번에 맞힌 것(good)만 Known', () => {
+    expect(isKnownGrade('good')).toBe(true);
+    expect(isKnownGrade('hard')).toBe(false);
+    expect(isKnownGrade('again')).toBe(false);
+  });
+});
 
-  it('오늘 모드: 때가 된 것만, 밀린 순, 뜻 없는 단어 제외', () => {
-    expect(pickQuizWords({ kind: 'card', scope: 'due', words, dueAt }).map((x) => x.id)).toEqual([2, 1]);
+describe('pickQuizWords', () => {
+  const words = [w(1, 'a1', { known: true }), w(2, 'b2'), w(3, 'c3', { known: false }), w(4, 'd4', { meaning: '' })];
+
+  it('Unknown 모드: Known이 아닌 단어만, 뜻 없는 단어 제외', () => {
+    const got = pickQuizWords({ kind: 'card', scope: 'unknown', words, rng: () => 0 }).map((x) => x.id);
+    expect(got.sort()).toEqual([2, 3]);
   });
 
-  it('랜덤 모드: 때와 상관없이 섞어서 개수 제한', () => {
-    const got = pickQuizWords({ kind: 'card', scope: 'random', words, dueAt, limit: 2, rng: () => 0 });
+  it('Random All 모드: Known 포함 전체에서 섞어서 개수 제한', () => {
+    const got = pickQuizWords({ kind: 'card', scope: 'random', words, limit: 2, rng: () => 0 });
     expect(got).toHaveLength(2);
     expect(got.every((x) => x.id !== 4)).toBe(true);
+    expect(pickQuizWords({ kind: 'card', scope: 'random', words }).map((x) => x.id).sort()).toEqual([1, 2, 3]);
   });
 
   it('문장 빈칸 모드는 빈칸을 만들 수 있는 단어만', () => {
     const ws = [w(1, 'torn', { sourceEn: 'I am torn.' }), w(2, 'zebra', { sourceEn: 'No match here' }), w(3, 'x')];
-    const all = new Map([['1', 1], ['2', 1], ['3', 1]]);
-    expect(pickQuizWords({ kind: 'cloze', scope: 'due', words: ws, dueAt: all }).map((x) => x.id)).toEqual([1]);
+    expect(pickQuizWords({ kind: 'cloze', scope: 'unknown', words: ws }).map((x) => x.id)).toEqual([1]);
   });
 });
 

@@ -9,7 +9,10 @@ import { normalizeWord, segmentWords } from './wordTap';
 export const QUIZ_BATCH = 10; // 한 판에 푸는 단어 수 (문장 복습과 같다)
 
 export type QuizKind = 'card' | 'write' | 'cloze';
-export type QuizScope = 'due' | 'random';
+export type QuizScope = 'unknown' | 'random';
+
+// Known은 힌트 없이 한 번에 맞힌 것(good)뿐. 힌트를 썼거나 틀렸다 맞힌 것(hard)·못 맞힌 것(again)은 Unknown
+export const isKnownGrade = (g: Grade): boolean => g === 'good';
 
 export const QUIZ_KINDS: QuizKind[] = ['card', 'write', 'cloze'];
 export const isQuizKind = (v: string | null): v is QuizKind => QUIZ_KINDS.includes(v as QuizKind);
@@ -55,18 +58,15 @@ type PickInput = {
   kind: QuizKind;
   scope: QuizScope;
   words: VocabWord[];
-  dueAt: ReadonlyMap<string, number>; // 복습 달력에서 때가 된 단어: 단어 번호(글자) → 복습 시각
   limit?: number;
   rng?: () => number;
 };
 
-export function pickQuizWords({ kind, scope, words, dueAt, limit = QUIZ_BATCH, rng = Math.random }: PickInput): VocabWord[] {
+// random = 전체에서 무작위, unknown = 아직 못 맞힌(Known이 아닌) 단어 중에서 무작위
+export function pickQuizWords({ kind, scope, words, limit = QUIZ_BATCH, rng = Math.random }: PickInput): VocabWord[] {
   const usable = words.filter((w) => w.id !== undefined && w.meaning && (kind !== 'cloze' || isClozeUsable(w)));
-  if (scope === 'random') return shuffle(usable, rng).slice(0, limit);
-  return usable
-    .filter((w) => dueAt.has(String(w.id)))
-    .sort((a, b) => (dueAt.get(String(a.id)) ?? 0) - (dueAt.get(String(b.id)) ?? 0))
-    .slice(0, limit);
+  const pool = scope === 'unknown' ? usable.filter((w) => !w.known) : usable;
+  return shuffle(pool, rng).slice(0, limit);
 }
 
 // ── 카드 뒤집기 퀴즈 진행 ─────────────────────────────────

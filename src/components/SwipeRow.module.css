@@ -1,4 +1,14 @@
-.row { position: relative; list-style: none; }
+/* 카드가 오른쪽으로 밀릴 때 화면 밖으로 삐져나가 가로 스크롤이 생기지 않게 자른다 */
+.row { position: relative; list-style: none; overflow: hidden; }
+
+/* 오른쪽으로 밀면 드러나는 왼쪽 버튼 */
+.actionsLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+}
 
 /* 숨은 버튼은 줄 오른쪽 아래에 깔려 있다가, 카드가 왼쪽으로 밀리면 드러난다 */
 .actions {

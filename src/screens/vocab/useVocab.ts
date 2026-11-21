@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { countDueWords } from '../../db/srs';
 import type { VocabWord } from '../../db/types';
-import { listWords, removeWord, updateWord } from '../../db/vocab';
+import { countUnknownWords, listWords, removeWord, setWordKnown, updateWord } from '../../db/vocab';
 
 export function useVocab() {
   const [words, setWords] = useState<VocabWord[] | null>(null);
@@ -33,15 +32,24 @@ export function useVocab() {
     }
   }, []);
 
-  return { words, error, remove, edit };
+  const setKnown = useCallback(async (id: number, known: boolean) => {
+    try {
+      await setWordKnown(id, known);
+      setWords((prev) => prev && prev.map((w) => (w.id === id ? { ...w, known } : w)));
+    } catch (e) {
+      setError(`저장하지 못했어요: ${String(e)}`);
+    }
+  }, []);
+
+  return { words, error, remove, edit, setKnown };
 }
 
-// 홈 "오늘 복습할 단어 N개". null = 세는 중(또는 읽기 실패)
-export function useDueWordCount(): number | null {
+// 홈 "모르는(Unknown) 단어 N개". null = 세는 중(또는 읽기 실패)
+export function useUnknownWordCount(): number | null {
   const [count, setCount] = useState<number | null>(null);
   useEffect(() => {
     let alive = true;
-    countDueWords(Date.now()).then((n) => alive && setCount(n), () => alive && setCount(null));
+    countUnknownWords().then((n) => alive && setCount(n), () => alive && setCount(null));
     return () => { alive = false; };
   }, []);
   return count;

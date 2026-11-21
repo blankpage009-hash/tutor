@@ -11,9 +11,22 @@ export function settleOpen(offset: number, width: number, velocity: number): boo
   return offset < -width / 2;
 }
 
-// 밀린 거리: 왼쪽으로는 버튼 폭까지만, 오른쪽으로는 0을 넘지 않는다
-export function clampOffset(start: number, dx: number, width: number): number {
-  return Math.min(0, Math.max(-width, start + dx));
+export type Side = 'right' | 'left' | 'closed'; // right = 오른쪽에 깔린 버튼이 열림(왼쪽으로 밂), left = 왼쪽 버튼이 열림(오른쪽으로 밂)
+
+// 손가락을 뗐을 때 어느 쪽 버튼을 열지. 왼쪽 버튼이 없으면(leftWidth 0) settleOpen과 같다
+export function settleSide(offset: number, width: number, leftWidth: number, velocity: number): Side {
+  if (offset < 0) return settleOpen(offset, width, velocity) ? 'right' : 'closed';
+  if (offset > 0 && leftWidth > 0) {
+    if (velocity > 0.5) return 'left';
+    if (velocity < -0.5) return 'closed';
+    return offset > leftWidth / 2 ? 'left' : 'closed';
+  }
+  return 'closed';
+}
+
+// 밀린 거리: 왼쪽으로는 버튼 폭까지만, 오른쪽으로는 왼쪽 버튼 폭까지만(없으면 0을 넘지 않는다)
+export function clampOffset(start: number, dx: number, width: number, leftWidth = 0): number {
+  return Math.min(leftWidth, Math.max(-width, start + dx));
 }
 
 // 처음 움직임이 가로인지 세로인지. 세로면 화면 스크롤에 맡긴다
