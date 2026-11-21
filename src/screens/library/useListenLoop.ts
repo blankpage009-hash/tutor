@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type MutableRefObject } from 'react';
 import { contentUrl } from '../../content/loader';
 import type { DrillStep } from '../../drillPlan';
 import { playAudio, stopAudio, unlockAudio } from '../../speech/audioPlayer';
@@ -29,12 +29,14 @@ function useCancellableWait() {
 
 // 보관함 "듣기만": 드릴 카드 화면의 ▶ 자리에 붙인다. 마이크를 쓰지 않으므로 인식 엔진을 기다리지 않는다.
 // 듣기만 한 카드는 통과로 세지 않는다 (recordPass를 부르지 않음 → 활동·스트릭에 안 들어감)
-export function useListenLoop(plan: DrillStep[], steps: Steps): HandsFreeView & { start: () => void; stop: () => void } {
+// active: 말하기 쪽(useShadowingAttempt)과 같이 보는 "저절로 넘기는 중" 표시. 카드가 바뀌면 말하기 쪽이 이전 카드 소리를
+// 끄는데, 켜 두지 않으면 막 시작한 다음 문장까지 끊겨 둘째 카드부터 소리 없이 넘어간다 (아이폰 결과 2026-11-21)
+export function useListenLoop(plan: DrillStep[], steps: Steps, active: MutableRefObject<boolean>): HandsFreeView & { start: () => void; stop: () => void } {
   const [running, setRunning] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const stoppedRef = useRef(true);
-  const latest = useRef({ plan, steps });
-  latest.current = { plan, steps };
+  const latest = useRef({ plan, steps, active });
+  latest.current = { plan, steps, active };
   const { wait, cancel } = useCancellableWait();
 
   const stop = useCallback(() => {
@@ -48,6 +50,7 @@ export function useListenLoop(plan: DrillStep[], steps: Steps): HandsFreeView & 
     if (!stoppedRef.current) return;
     unlockAudio(); // 탭 순간(await 전)에 해야 iOS가 소리를 허락한다
     stoppedRef.current = false;
+    latest.current.active.current = true;
     setRunning(true);
     setNotice(null);
     const { plan: items, steps: s } = latest.current;
@@ -60,6 +63,7 @@ export function useListenLoop(plan: DrillStep[], steps: Steps): HandsFreeView & 
       advance: () => latest.current.steps.next()
     }).finally(() => {
       stoppedRef.current = true;
+      latest.current.active.current = false;
       setRunning(false);
     });
   }, [wait]);

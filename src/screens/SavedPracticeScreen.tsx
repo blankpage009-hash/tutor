@@ -74,7 +74,7 @@ function SavedDrill({ plan, listening }: { plan: DrillStep[]; listening: boolean
   const nav = useNavigate();
   const steps = useDrillSteps(plan.length);
   const sp = useDrillSpeaking(plan, steps);
-  const listen = useListenLoop(plan, steps);
+  const listen = useListenLoop(plan, steps, sp.handsFreeActive);
   const { hf } = sp;
   useAutoStart(listening || (sp.voskReady && !sp.micLocked), (ctx) => {
     if (listening) { ctx?.close().catch(() => undefined); listen.start(); return; }
