@@ -79,10 +79,9 @@ export function initCards(ids: string[]): CardState {
 
 export const cardsFinished = (s: CardState) => s.index >= s.ids.length;
 
-// 뒤집어 보기 전에는 등급을 못 매긴다 (뜻을 안 보고 "알아요"만 누르는 실수 방지)
+// 카드를 탭할 때마다 앞↔뒤. 스와이프로 앞면에서도 바로 채점할 수 있어야 해서 뒤집기 전 채점도 허용한다 (2026-11-21 사용자 결정)
 export function cardReducer(s: CardState, a: CardAction): CardState {
   if (cardsFinished(s)) return s;
-  if (a.type === 'flip') return s.flipped ? s : { ...s, flipped: true };
-  if (!s.flipped) return s;
+  if (a.type === 'flip') return { ...s, flipped: !s.flipped };
   return { ...s, index: s.index + 1, flipped: false, graded: [...s.graded, { id: s.ids[s.index], grade: a.grade }] };
 }

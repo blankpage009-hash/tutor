@@ -8,11 +8,13 @@ type Props<T extends string> = {
   label: string;
   // 설정 줄 오른쪽에 들어가는 낮은 모양(시안 34px). 기본은 터치하기 편한 높이
   compact?: boolean;
+  // 아래 큰 버튼(54px)과 높이를 맞추는 모양 (단어 퀴즈 탭)
+  tall?: boolean;
 };
 
-export function SegmentedControl<T extends string>({ options, value, onChange, label, compact }: Props<T>) {
+export function SegmentedControl<T extends string>({ options, value, onChange, label, compact, tall }: Props<T>) {
   return (
-    <div role="group" aria-label={label} className={`${styles.group} ${compact ? styles.compact : ''}`}>
+    <div role="group" aria-label={label} className={`${styles.group} ${compact ? styles.compact : ''} ${tall ? styles.tall : ''}`}>
       {options.map((o) => (
         <button
           key={o.value}

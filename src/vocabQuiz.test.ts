@@ -82,17 +82,25 @@ describe('pickQuizWords', () => {
 });
 
 describe('cardReducer', () => {
-  it('뒤집기 전에는 등급을 못 매긴다', () => {
-    const s = initCards(['1', '2']);
-    expect(cardReducer(s, { type: 'grade', grade: 'good' })).toBe(s);
-  });
-
-  it('뒤집고 등급을 매기면 기록하고 다음 카드로', () => {
+  it('탭할 때마다 앞↔뒤로 뒤집힌다', () => {
     let s = initCards(['1', '2']);
     s = cardReducer(s, { type: 'flip' });
-    s = cardReducer(s, { type: 'grade', grade: 'hard' });
-    expect(s).toMatchObject({ index: 1, flipped: false, graded: [{ id: '1', grade: 'hard' }] });
-    s = cardReducer(cardReducer(s, { type: 'flip' }), { type: 'grade', grade: 'good' });
+    expect(s.flipped).toBe(true);
+    s = cardReducer(s, { type: 'flip' });
+    expect(s.flipped).toBe(false);
+  });
+
+  it('앞면에서도 등급을 매기면 기록하고 다음 카드(앞면)로', () => {
+    let s = initCards(['1', '2']);
+    s = cardReducer(s, { type: 'grade', grade: 'again' });
+    expect(s).toMatchObject({ index: 1, flipped: false, graded: [{ id: '1', grade: 'again' }] });
+  });
+
+  it('뒤집은 뒤 등급을 매겨도 다음 카드는 앞면, 끝나면 더 못 움직인다', () => {
+    let s = initCards(['1', '2']);
+    s = cardReducer(cardReducer(s, { type: 'flip' }), { type: 'grade', grade: 'hard' });
+    expect(s).toMatchObject({ index: 1, flipped: false });
+    s = cardReducer(s, { type: 'grade', grade: 'good' });
     expect(s.index).toBe(2);
     expect(cardReducer(s, { type: 'flip' })).toBe(s);
   });

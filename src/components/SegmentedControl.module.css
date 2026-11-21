@@ -30,6 +30,9 @@
   font-weight: 600;
 }
 
+/* 값은 Button.module.css의 .btn min-height와 같게 둔다 (둘이 따로 바뀌면 높이가 어긋남) */
+.tall .btn { min-height: 54px; }
+
 .compact .btn {
   min-height: 34px;
   padding: 0 var(--space-1);

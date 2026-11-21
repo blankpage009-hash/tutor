@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { RunTopBar } from '../components/RunTopBar';
 import { SegmentedControl } from '../components/SegmentedControl';
@@ -17,7 +17,6 @@ const KINDS: { value: QuizKind; label: string }[] = [
 type RunProps = { kind: QuizKind; scope: QuizScope; setScope: (s: QuizScope) => void; tabs: ReactNode };
 
 function Empty({ kind, scope, setScope, tabs }: RunProps) {
-  const nav = useNavigate();
   return (
     <div className={reviewStyles.stack}>
       <RunTopBar closeTo="/vocab" closeLabel="퀴즈 닫고 단어장으로" />
@@ -26,10 +25,7 @@ function Empty({ kind, scope, setScope, tabs }: RunProps) {
         {scope === 'due' ? '오늘 복습할 단어가 없어요. 저장한 단어는 저장한 다음 날부터 복습에 나와요.'
           : kind === 'cloze' ? '문장 빈칸으로 풀 수 있는 단어가 없어요. 문장 속 단어를 눌러 저장하면 생겨요.' : '풀 수 있는 저장 단어가 없어요.'}
       </p>
-      <div className={reviewStyles.pair}>
-        {scope === 'due' && <Button variant="primary" onClick={() => setScope('random')}>Random</Button>}
-        <Button onClick={() => nav('/vocab')}>Vocab</Button>
-      </div>
+      {scope === 'due' && <Button variant="primary" block onClick={() => setScope('random')}>Random</Button>}
     </div>
   );
 }
@@ -60,6 +56,6 @@ export function VocabQuizScreen() {
   const kind: QuizKind = isQuizKind(modeParam) ? modeParam : 'card';
   const scope: QuizScope = params.get('scope') === 'random' ? 'random' : 'due';
   const update = (m: QuizKind, s: QuizScope) => setParams({ mode: m, scope: s }, { replace: true });
-  const tabs = <SegmentedControl label="퀴즈 종류" options={KINDS} value={kind} onChange={(k) => update(k, scope)} />;
+  const tabs = <SegmentedControl tall label="퀴즈 종류" options={KINDS} value={kind} onChange={(k) => update(k, scope)} />;
   return <Run key={`${kind}-${scope}`} kind={kind} scope={scope} setScope={(s) => update(kind, s)} tabs={tabs} />;
 }
