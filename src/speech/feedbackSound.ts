@@ -8,36 +8,51 @@ import { encodeWav } from './wav';
 
 export type FeedbackKind = 'pass' | 'fail' | 'complete';
 
-// 효과음이라 음질보다 크기가 중요하다. 22kHz면 높은 음(약 1kHz)도 충분히 깨끗하다
-const RATE = 22050;
+// 마림바의 높은 배음(기본음의 약 9.5배, 최대 10kHz)까지 깨끗이 담으려고 44kHz로 만든다
+const RATE = 44100;
 // 튜터 음성보다 튀지 않게 최대 크기를 절반 정도로
 const PEAK = 0.5;
+// 음 끝을 0으로 부드럽게 닫는 길이. 갑자기 끊기면 '틱' 소리가 난다
+const TAIL = 0.02;
 
 type Note = { freq: number; at: number; len: number }; // 시작·길이는 초
 
+// 2026-11-21 사용자가 아이폰에서 후보 4개를 비교해 마림바를 골랐다. 여운을 늘려 통과 0.6초·실패 0.5초.
+// 드릴·롤플레이는 소리가 끝날 때까지 마이크를 닫고 기다리므로, 더 길게 하면 다음 문장이 그만큼 늦어진다
 const NOTES: Record<FeedbackKind, Note[]> = {
   // 밝게 올라가는 두 음 (솔 → 도)
-  pass: [{ freq: 784, at: 0, len: 0.3 }, { freq: 1047, at: 0.1, len: 0.35 }],
+  pass: [{ freq: 784, at: 0, len: 0.45 }, { freq: 1047, at: 0.1, len: 0.5 }],
   // 내려가는 부드러운 두 음 (미 → 도), 통과보다 낮게. 거친 버저 소리는 피한다.
   // 더 낮추면(300Hz 안팎) 아이폰 스피커에서 잘 안 들려서 이 높이로 둔다
-  fail: [{ freq: 659, at: 0, len: 0.25 }, { freq: 523, at: 0.15, len: 0.3 }],
+  fail: [{ freq: 659, at: 0, len: 0.3 }, { freq: 523, at: 0.15, len: 0.35 }],
   // 도-미-솔-도 짧은 팡파르
   complete: [
     { freq: 523, at: 0, len: 0.3 }, { freq: 659, at: 0.12, len: 0.3 },
-    { freq: 784, at: 0.24, len: 0.3 }, { freq: 1047, at: 0.36, len: 0.7 }
+    { freq: 784, at: 0.24, len: 0.3 }, { freq: 1047, at: 0.36, len: 0.8 }
   ]
 };
 
-// 종소리처럼: 아주 짧게 올라갔다가 서서히 사라진다. 배음을 조금 섞어 '삐' 같은 맨 사인파보다 둥글게
+// 마림바 배음: r = 기본음의 몇 배, a = 크기, d = 기본음보다 몇 배 빨리 사라지는지.
+// 나무 막대는 정수배가 아닌 높은 배음(약 3.9배·9.5배)이 '통' 하고 잠깐 울린 뒤 먼저 사라져서,
+// 정수배(2·3배)를 섞은 전자음보다 둥글고 맑게 들린다
+const PARTIALS = [
+  { r: 1, a: 1, d: 1 },
+  { r: 3.932, a: 0.35, d: 3 },
+  { r: 9.538, a: 0.08, d: 6 }
+];
+
 function addNote(out: Float32Array, n: Note): void {
   const start = Math.round(n.at * RATE);
   const count = Math.round(n.len * RATE);
-  const attack = Math.round(0.005 * RATE);
+  const attack = Math.round(0.003 * RATE);
+  const tail = Math.round(TAIL * RATE);
+  const decay = 4.6 / n.len; // 음 길이 끝에서 기본음이 약 1%(−40dB)까지 줄어드는 빠르기
   for (let i = 0; i < count && start + i < out.length; i++) {
     const t = i / RATE;
-    const env = Math.min(1, i / attack) * Math.exp(-5 * t / n.len);
     const w = 2 * Math.PI * n.freq * t;
-    out[start + i] += env * (Math.sin(w) + 0.25 * Math.sin(2 * w) + 0.1 * Math.sin(3 * w));
+    let s = 0;
+    for (const p of PARTIALS) s += p.a * Math.exp(-t * decay * p.d) * Math.sin(w * p.r);
+    out[start + i] += Math.min(1, i / attack) * Math.min(1, (count - i) / tail) * s;
   }
 }
 

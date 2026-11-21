@@ -2,9 +2,10 @@ import { describe, expect, it } from 'vitest';
 import { feedbackSeconds, renderFeedback } from './feedbackSound';
 
 describe('효과음 만들기', () => {
-  it('통과·실패는 짧고(0.5초 안), 완료는 1초 남짓', () => {
-    expect(feedbackSeconds('pass')).toBeLessThan(0.5);
-    expect(feedbackSeconds('fail')).toBeLessThan(0.5);
+  // 드릴은 소리가 끝날 때까지 기다리므로, 길이가 늘면 다음 문장이 늦어진다 (통과 0.6초는 사용자 결정 2026-11-21)
+  it('통과는 0.6초 안, 실패는 0.5초 남짓, 완료는 1초 남짓', () => {
+    expect(feedbackSeconds('pass')).toBeLessThanOrEqual(0.61);
+    expect(feedbackSeconds('fail')).toBeLessThanOrEqual(0.51);
     expect(feedbackSeconds('complete')).toBeGreaterThan(1);
     expect(feedbackSeconds('complete')).toBeLessThan(1.2);
   });
