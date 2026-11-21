@@ -24,10 +24,10 @@
               "no": 2,
               "title": "현재",
               "lessons": [
-                { "no": 1, "title": "현재 활동에 대해 이야기하기", "id": "BEG1-U02-L01", "ready": false},
-                { "no": 2, "title": "하고 있는 일에 대해 묻기", "id": "BEG1-U02-L02", "ready": false},
-                { "no": 3, "title": "더 자세히 물어보기", "id": "BEG1-U02-L03", "ready": false},
-                { "no": 4, "title": "방금 전에 대해 말하기", "id": "BEG1-U02-L04", "ready": false}
+                { "no": 1, "title": "현재 활동에 대해 이야기하기", "id": "BEG1-U02-L01", "ready": true, "file": "lessons/BEG1/BEG1-U02-L01.json" },
+                { "no": 2, "title": "하고 있는 일에 대해 묻기", "id": "BEG1-U02-L02", "ready": true, "file": "lessons/BEG1/BEG1-U02-L02.json" },
+                { "no": 3, "title": "더 자세히 물어보기", "id": "BEG1-U02-L03", "ready": true, "file": "lessons/BEG1/BEG1-U02-L03.json" },
+                { "no": 4, "title": "방금 전에 대해 말하기", "id": "BEG1-U02-L04", "ready": true, "file": "lessons/BEG1/BEG1-U02-L04.json" }
               ]
             },
             {

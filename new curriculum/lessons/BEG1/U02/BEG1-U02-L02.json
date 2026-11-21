@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U02-L02",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 2,
+  "unitTitle": "현재",
+  "lessonNo": 2,
+  "lessonTitle": "하고 있는 일에 대해 묻기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "What are you doing right now?",
+    "ko": "지금 뭐 하고 계세요?",
+    "stress": "WHAT are you DOing RIGHT NOW?",
+    "audio": {
+      "normal": "beg1-u02-l02_key.mp3",
+      "slow": "beg1-u02-l02_key_slow.mp3"
+    }
+  },
+  "explanation": {
+    "ko": [
+      "상대가 지금 하고 있는 일을 물을 때 What are you doing?이라고 합니다.",
+      "right now를 붙이면 '바로 지금'이 강조됩니다. 부탁하기 전에 바쁜지 확인할 때 자주 씁니다.",
+      "What do you do?는 '직업이 뭐예요?'라는 뜻이라 전혀 다른 질문입니다.",
+      "대답은 I'm + 동사ing로 합니다. 예) I'm writing some emails."
+    ],
+    "en": "Ask \"What are you doing?\" to learn what someone is busy with now. \"What do you do?\" asks about a person's job.",
+    "enKo": "\"What are you doing?\"은 상대가 지금 무엇을 하는지 묻는 말입니다. \"What do you do?\"는 직업을 묻는 말입니다."
+  },
+  "pronunciation": [
+    {
+      "focus": "연음",
+      "tip": "What are you는 t가 r처럼 약해져 '와러유'처럼 한 덩어리로 말합니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "doing의 끝 g는 거의 들리지 않아 '두잉'보다 '두인'에 가깝습니다."
+    },
+    {
+      "focus": "약화",
+      "tip": "right의 t는 끊듯이 멈추고 바로 now로 넘어가 '라잇나우'처럼 들립니다."
+    },
+    {
+      "focus": "강세",
+      "tip": "WHAT, DO, RIGHT NOW에 힘을 주고, 질문 끝은 내립니다."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "wrong": "What do you do right now?",
+      "right": "What are you doing right now?",
+      "note": "지금 하고 있는 일은 are you + 동사ing로 묻습니다."
+    },
+    {
+      "wrong": "What you are doing right now?",
+      "right": "What are you doing right now?",
+      "note": "질문할 때는 are가 you 앞에 옵니다."
+    },
+    {
+      "wrong": "What are you doing at now?",
+      "right": "What are you doing right now?",
+      "note": "now 앞에는 at을 쓰지 않습니다."
+    }
+  ],
+  "dialogue": {
+    "situation": "사무실에서 부탁할 일이 있어 동료 자리로 찾아갔습니다.",
+    "partnerRole": "동료",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Oh, hi! Do you need something?",
+        "ko": "아, 안녕하세요! 뭐 필요하세요?",
+        "audio": "beg1-u02-l02_dlg_01.mp3"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Hi! What are you doing right now?",
+        "ko": "안녕하세요! 지금 뭐 하고 계세요?",
+        "audio": "beg1-u02-l02_dlg_02.mp3",
+        "hasKeySentence": true
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "I'm just writing some emails. Why?",
+        "ko": "그냥 이메일 몇 개 쓰고 있어요. 왜요?",
+        "audio": "beg1-u02-l02_dlg_03.mp3"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "en": "Can you help me with the printer?",
+        "ko": "프린터 좀 도와주실 수 있어요?",
+        "audio": "beg1-u02-l02_dlg_04.mp3"
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Sure. Give me five minutes.",
+        "ko": "그럼요. 5분만 기다려 주세요.",
+        "audio": "beg1-u02-l02_dlg_05.mp3"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "en": "Great, thanks! I'll be at my desk.",
+        "ko": "좋아요, 고마워요! 제 자리에 있을게요.",
+        "audio": "beg1-u02-l02_dlg_06.mp3"
+      }
+    ],
+    "expressionNotes": [
+      {
+        "en": "Give me five minutes.",
+        "ko": "'5분만 기다려 주세요.' 하던 일을 마치고 가겠다는 뜻입니다."
+      },
+      {
+        "en": "I'll be at my desk.",
+        "ko": "'제 자리에 있을게요.' 어디서 기다릴지 알려 줄 때 씁니다."
+      }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "What are you doing right now?",
+      "ko": "지금 뭐 하고 계세요?",
+      "point": "핵심 문장",
+      "cue": {
+        "lang": "ko",
+        "text": "동료에게 부탁할 일이 있어요. 지금 뭐 하고 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u02-l02_drill_01.mp3",
+        "slow": "beg1-u02-l02_drill_01_slow.mp3"
+      }
+    },
+    {
+      "id": 2,
+      "en": "What are you doing this weekend?",
+      "ko": "이번 주말에 뭐 하세요?",
+      "point": "단어 교체: right now → this weekend (가까운 계획)",
+      "cue": {
+        "lang": "ko",
+        "text": "금요일 오후예요. 동료에게 이번 주말 계획을 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u02-l02_drill_02.mp3",
+        "slow": "beg1-u02-l02_drill_02_slow.mp3"
+      }
+    },
+    {
+      "id": 3,
+      "en": "What is she doing right now?",
+      "ko": "그분은 지금 뭐 하고 계세요?",
+      "point": "주어 변경: you → she",
+      "cue": {
+        "lang": "ko",
+        "text": "팀장님 자리가 비어 있어요. 옆자리 동료에게 팀장님이 지금 뭐 하시는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u02-l02_drill_03.mp3",
+        "slow": "beg1-u02-l02_drill_03_slow.mp3"
+      }
+    },
+    {
+      "id": 4,
+      "en": "What were you doing last night?",
+      "ko": "어젯밤에 뭐 하고 계셨어요?",
+      "point": "시제: 과거진행 were you doing",
+      "cue": {
+        "lang": "ko",
+        "text": "동료가 어젯밤에 전화를 안 받았어요. 그때 뭐 하고 있었는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u02-l02_drill_04.mp3",
+        "slow": "beg1-u02-l02_drill_04_slow.mp3"
+      }
+    },
+    {
+      "id": 5,
+      "en": "Are you doing anything right now?",
+      "ko": "지금 하시는 거 있어요?",
+      "point": "질문형: 예/아니오 질문 Are you doing ~?",
+      "cue": {
+        "lang": "ko",
+        "text": "도움이 필요해요. 동료에게 지금 하고 있는 일이 있는지 물어보세요."
+      },
+      "audio": {
+        "normal": "beg1-u02-l02_drill_05.mp3",
+        "slow": "beg1-u02-l02_drill_05_slow.mp3"
+      }
+    },
+    {
+      "id": 6,
+      "en": "I'm not doing anything right now.",
+      "ko": "저 지금 아무것도 안 하고 있어요.",
+      "point": "부정형: I'm not doing anything",
+      "cue": {
+        "lang": "en",
+        "text": "Do you have a minute?"
+      },
+      "audio": {
+        "normal": "beg1-u02-l02_drill_06.mp3",
+        "slow": "beg1-u02-l02_drill_06_slow.mp3"
+      }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [
+        1,
+        2,
+        3
+      ],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        4,
+        5,
+        6
+      ],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        7,
+        8
+      ],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [
+        9,
+        10
+      ],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": {
+    "maxRetriesPerRep": 3,
+    "afterFailPlay": "slow"
+  },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Sorry, I can't talk long. I'm kind of busy.",
+        "ko": "미안해요, 오래 얘기 못 해요. 좀 바빠서요."
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What are you doing right now?",
+        "exampleKo": "지금 뭐 하고 계세요?",
+        "requiredKeywords": [
+          "what are you doing",
+          "right now"
+        ]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Finally, it's Friday! I'm so excited for the weekend.",
+        "ko": "드디어 금요일이네요! 주말이 너무 기대돼요."
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What are you doing this weekend?",
+        "exampleKo": "이번 주말에 뭐 하세요?",
+        "requiredKeywords": [
+          "what are you doing",
+          "this weekend"
+        ]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Lisa has her door closed. She looks really busy.",
+        "ko": "리사 씨 문 닫아 놨네요. 엄청 바빠 보여요."
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What is she doing right now?",
+        "exampleKo": "그분은 지금 뭐 하고 계세요?",
+        "requiredKeywords": [
+          "she doing",
+          "right now"
+        ]
+      },
+      {
+        "no": 7,
+        "speaker": "partner",
+        "en": "Sorry I missed your call last night. I was busy.",
+        "ko": "어젯밤에 전화 못 받아서 미안해요. 바빴어요."
+      },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What were you doing last night?",
+        "exampleKo": "어젯밤에 뭐 하고 계셨어요?",
+        "requiredKeywords": [
+          "were you doing",
+          "last night"
+        ]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "You look stressed. Do you need some help?",
+        "ko": "스트레스 받아 보여요. 도와드릴까요?"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are you doing anything right now?",
+        "exampleKo": "지금 하시는 거 있어요?",
+        "requiredKeywords": [
+          "doing anything",
+          "right now"
+        ]
+      },
+      {
+        "no": 11,
+        "speaker": "partner",
+        "en": "Sorry, are you busy? I can come back later.",
+        "ko": "죄송해요, 바쁘세요? 나중에 다시 올게요."
+      },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm not doing anything right now.",
+        "exampleKo": "저 지금 아무것도 안 하고 있어요.",
+        "requiredKeywords": [
+          "not doing anything",
+          "right now"
+        ]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

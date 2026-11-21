@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U02-L03",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 2,
+  "unitTitle": "현재",
+  "lessonNo": 3,
+  "lessonTitle": "더 자세히 물어보기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "What are you cooking?",
+    "ko": "뭐 만들고 있어?",
+    "stress": "WHAT are you COOKing?",
+    "audio": { "normal": "audio/lessons/BEG1-U02-L03/key-40d3ad80.m4a", "slow": "audio/lessons/BEG1-U02-L03/key-40d3ad80.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "상대가 뭔가 하는 게 보일 때, 정확히 무엇인지 더 물어보는 말입니다.",
+      "What are you + 동사ing? 형태입니다. 동사만 바꾸면 What are you reading? What are you watching?처럼 쓸 수 있습니다.",
+      "더 자세히 묻고 싶으면 What 대신 Who, Where, Why를 넣습니다. Who are you cooking for? = 누구 주려고 만들어?",
+      "cook은 불을 써서 요리하는 것이고, make는 더 넓은 '만들다'입니다. What are you making?도 자연스럽습니다."
+    ],
+    "en": "When you see someone doing something, ask \"What are you + verb-ing?\" to learn more. You can also start with who, where, or why.",
+    "enKo": "누군가 무언가 하는 걸 보면 \"What are you + 동사ing?\"로 더 물어봅니다. who, where, why로 시작해도 됩니다."
+  },
+  "pronunciation": [
+    { "focus": "연음", "tip": "What are는 t가 r처럼 약해져 '와러'로 이어집니다." },
+    { "focus": "약화", "tip": "are you는 또박또박 '아 유'가 아니라 '어유'처럼 짧게 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "cook의 oo는 입을 살짝만 벌린 짧은 '우'입니다. '쿠-킹'처럼 길게 끌지 않습니다." },
+    { "focus": "강세", "tip": "WHAT과 COOK에 힘을 주고, 질문 끝은 내립니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "What do you cook?", "right": "What are you cooking?", "note": "지금 하고 있는 일은 are you + 동사ing로 묻습니다." },
+    { "wrong": "What you are cooking?", "right": "What are you cooking?", "note": "질문할 때는 are가 you 앞에 옵니다." },
+    { "wrong": "Who are you cooking?", "right": "Who are you cooking for?", "note": "for가 빠지면 '누구를 요리해?'라는 이상한 뜻이 됩니다." }
+  ],
+  "dialogue": {
+    "situation": "저녁에 집에 오니 룸메이트가 부엌에서 요리하고 있습니다.",
+    "partnerRole": "룸메이트",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Oh, you're home early today!", "ko": "어, 오늘 일찍 왔네!", "audio": "audio/lessons/BEG1-U02-L03/dlg-01-c40815e3.m4a" },
+      { "no": 2, "speaker": "me", "en": "Yeah. Wow, it smells good. What are you cooking?", "ko": "응. 와, 냄새 좋다. 뭐 만들고 있어?", "audio": "audio/lessons/BEG1-U02-L03/dlg-02-78f1d6d2.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "I'm making pasta and a big salad.", "ko": "파스타랑 샐러드 잔뜩 만들고 있어.", "audio": "audio/lessons/BEG1-U02-L03/dlg-03-d8735b93.m4a" },
+      { "no": 4, "speaker": "me", "en": "That's a lot! Who are you cooking for?", "ko": "엄청 많네! 누구 주려고 만드는 거야?", "audio": "audio/lessons/BEG1-U02-L03/dlg-04-f74fe925.m4a" },
+      { "no": 5, "speaker": "partner", "en": "My parents are visiting tonight. Join us!", "ko": "오늘 밤에 부모님 오셔. 너도 같이 먹자!", "audio": "audio/lessons/BEG1-U02-L03/dlg-05-a0123a25.m4a" },
+      { "no": 6, "speaker": "me", "en": "Really? Thanks! Can I help with anything?", "ko": "진짜? 고마워! 내가 도울 거 있어?", "audio": "audio/lessons/BEG1-U02-L03/dlg-06-2205235a.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "It smells good.", "ko": "'냄새 좋다.' 음식 냄새를 칭찬할 때 씁니다." },
+      { "en": "Can I help with anything?", "ko": "'뭐 도울 거 있어?' 누군가 일하고 있을 때 돕겠다고 하는 말입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "What are you cooking?",
+      "ko": "뭐 만들고 있어?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "룸메이트가 부엌에서 뭔가 만들고 있어요. 뭘 만드는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U02-L03/drill-01-40d3ad80.m4a", "slow": "audio/lessons/BEG1-U02-L03/drill-01-40d3ad80.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "Who are you cooking for?",
+      "ko": "누구 주려고 만드는 거야?",
+      "point": "단어 교체: What → Who ~ for",
+      "cue": { "lang": "ko", "text": "룸메이트가 음식을 아주 많이 만들고 있어요. 누구 주려고 만드는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U02-L03/drill-02-3cb03b92.m4a", "slow": "audio/lessons/BEG1-U02-L03/drill-02-3cb03b92.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "What is your mom cooking?",
+      "ko": "너희 엄마 뭐 만들고 계셔?",
+      "point": "주어 변경: you → your mom",
+      "cue": { "lang": "ko", "text": "친구 집에 놀러 왔는데 부엌에서 좋은 냄새가 나요. 친구 어머니가 뭘 만드시는지 친구에게 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U02-L03/drill-03-bdd99a82.m4a", "slow": "audio/lessons/BEG1-U02-L03/drill-03-bdd99a82.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "What did you cook last night?",
+      "ko": "어젯밤에 뭐 해 먹었어?",
+      "point": "시제: 과거 did you cook",
+      "cue": { "lang": "ko", "text": "어젯밤 부엌에서 좋은 냄새가 났어요. 룸메이트에게 어젯밤에 뭘 해 먹었는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U02-L03/drill-04-2b282a45.m4a", "slow": "audio/lessons/BEG1-U02-L03/drill-04-2b282a45.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Are you cooking dinner tonight?",
+      "ko": "오늘 저녁 네가 요리할 거야?",
+      "point": "질문형: 예/아니오 질문 Are you cooking ~?",
+      "cue": { "lang": "ko", "text": "퇴근길이에요. 룸메이트에게 오늘 저녁 요리할 건지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U02-L03/drill-05-722e7e41.m4a", "slow": "audio/lessons/BEG1-U02-L03/drill-05-722e7e41.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I'm not cooking tonight.",
+      "ko": "나 오늘 밤엔 요리 안 해.",
+      "point": "부정형: I'm not cooking",
+      "cue": { "lang": "en", "text": "What's for dinner tonight?", "audio": "audio/lessons/BEG1-U02-L03/cue-06-1627c29e.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U02-L03/drill-06-cd179e01.m4a", "slow": "audio/lessons/BEG1-U02-L03/drill-06-cd179e01.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Come to the kitchen! I'm trying a new recipe.", "ko": "부엌으로 와 봐! 새 요리법 해 보는 중이야.", "audio": "audio/lessons/BEG1-U02-L03/rp-01-d1fe2759.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What are you cooking?",
+        "exampleKo": "뭐 만들고 있어?",
+        "requiredKeywords": ["what are you", "cooking"]
+      },
+      { "no": 3, "speaker": "partner", "en": "I'm making a huge pot of soup today!", "ko": "나 오늘 수프 한 솥 가득 만들고 있어!", "audio": "audio/lessons/BEG1-U02-L03/rp-03-7fb114bd.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Who are you cooking for?",
+        "exampleKo": "누구 주려고 만드는 거야?",
+        "requiredKeywords": ["who are you", "cooking for"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Come in! My mom is in the kitchen right now.", "ko": "들어와! 우리 엄마 지금 부엌에 계셔.", "audio": "audio/lessons/BEG1-U02-L03/rp-05-797563ce.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What is your mom cooking?",
+        "exampleKo": "너희 엄마 뭐 만들고 계셔?",
+        "requiredKeywords": ["your mom", "cooking"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Sorry about the smoke in the kitchen last night!", "ko": "어젯밤에 부엌에 연기 나서 미안!", "audio": "audio/lessons/BEG1-U02-L03/rp-07-3402c41e.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "What did you cook last night?",
+        "exampleKo": "어젯밤에 뭐 해 먹었어?",
+        "requiredKeywords": ["did you cook", "last night"]
+      },
+      { "no": 9, "speaker": "partner", "en": "I'm on my way home. I bought some vegetables.", "ko": "나 집에 가는 중이야. 채소 좀 샀어.", "audio": "audio/lessons/BEG1-U02-L03/rp-09-0c99e564.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Are you cooking dinner tonight?",
+        "exampleKo": "오늘 저녁 네가 요리할 거야?",
+        "requiredKeywords": ["are you cooking", "tonight"]
+      },
+      { "no": 11, "speaker": "partner", "en": "I'm home! Is dinner ready yet?", "ko": "나 왔어! 저녁 다 됐어?", "audio": "audio/lessons/BEG1-U02-L03/rp-11-465cfd59.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm not cooking tonight.",
+        "exampleKo": "나 오늘 밤엔 요리 안 해.",
+        "requiredKeywords": ["not cooking", "tonight"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

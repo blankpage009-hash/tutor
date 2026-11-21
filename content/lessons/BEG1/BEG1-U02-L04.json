@@ -1,0 +1,191 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "BEG1-U02-L04",
+  "level": "초급 1",
+  "levelCode": "BEG1",
+  "unit": 2,
+  "unitTitle": "현재",
+  "lessonNo": 4,
+  "lessonTitle": "방금 전에 대해 말하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I just got home.",
+    "ko": "저 방금 집에 왔어요.",
+    "stress": "I JUST GOT HOME.",
+    "audio": { "normal": "audio/lessons/BEG1-U02-L04/key-de68b430.m4a", "slow": "audio/lessons/BEG1-U02-L04/key-de68b430.m4a" }
+  },
+  "explanation": {
+    "ko": ["just는 '방금, 막'이라는 뜻입니다. 조금 전에 끝난 일을 말할 때 씁니다.", "just 뒤에 과거형을 씁니다. got home = 집에 도착했다.", "'집에 오다'는 get home, come home입니다. home 앞에는 to를 쓰지 않습니다.", "'지금 막'이라고 할 때 now를 쓰지 않고 just를 씁니다."],
+    "en": "Use \"just\" with a past verb to talk about something that happened a moment ago. Say \"get home,\" not \"get to home.\"",
+    "enKo": "\"just\"와 과거형 동사를 함께 쓰면 조금 전에 있었던 일을 말할 수 있습니다. \"get to home\"이 아니라 \"get home\"이라고 합니다."
+  },
+  "pronunciation": [
+    { "focus": "약화", "tip": "just의 t는 거의 빠지고 got에 붙어 '저스갓'처럼 들립니다." },
+    { "focus": "연음", "tip": "got home은 got의 t에서 살짝 멈췄다가 '갓호움'처럼 이어 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "home의 o는 '홈'이 아니라 '호움'처럼 입을 오므리며 끝냅니다." },
+    { "focus": "강세", "tip": "JUST, GOT, HOME에 고르게 힘을 줍니다. just를 살짝 더 세게 하면 '막' 왔다는 느낌이 납니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I just got to home.", "right": "I just got home.", "note": "home 앞에는 to를 쓰지 않습니다." },
+    { "wrong": "I just get home.", "right": "I just got home.", "note": "방금 일어난 일이라 과거형 got을 씁니다." },
+    { "wrong": "Now I came home.", "right": "I just got home.", "note": "'지금 막'은 now가 아니라 just로 말합니다." }
+  ],
+  "dialogue": {
+    "situation": "밤늦게 아파트 엘리베이터에서 이웃을 만났습니다.",
+    "partnerRole": "이웃",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Oh, hi! Long day?", "ko": "어, 안녕하세요! 오늘 힘드셨어요?", "audio": "audio/lessons/BEG1-U02-L04/dlg-01-27f098ca.m4a" },
+      { "no": 2, "speaker": "me", "en": "Yes. I just got home.", "ko": "네. 저 방금 집에 왔어요.", "audio": "audio/lessons/BEG1-U02-L04/dlg-02-bf13d486.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Me too. I just finished my night class.", "ko": "저도요. 방금 야간 수업 끝났어요.", "audio": "audio/lessons/BEG1-U02-L04/dlg-03-b50f58bb.m4a" },
+      { "no": 4, "speaker": "me", "en": "Wow, you must be tired.", "ko": "와, 피곤하시겠어요.", "audio": "audio/lessons/BEG1-U02-L04/dlg-04-bc037eaa.m4a" },
+      { "no": 5, "speaker": "partner", "en": "A little. Did you eat dinner yet?", "ko": "조금요. 저녁은 드셨어요?", "audio": "audio/lessons/BEG1-U02-L04/dlg-05-55e84551.m4a" },
+      { "no": 6, "speaker": "me", "en": "Not yet. I'm going to order pizza.", "ko": "아직요. 피자 시켜 먹으려고요.", "audio": "audio/lessons/BEG1-U02-L04/dlg-06-e06ce533.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "You must be tired.", "ko": "'피곤하시겠어요.' 상대의 상황을 짐작해서 공감할 때 씁니다." },
+      { "en": "Not yet.", "ko": "'아직이요.' 아직 하지 않았다고 짧게 대답할 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I just got home.",
+      "ko": "저 방금 집에 왔어요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Where are you right now?", "audio": "audio/lessons/BEG1-U02-L04/cue-01-316dc614.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U02-L04/drill-01-de68b430.m4a", "slow": "audio/lessons/BEG1-U02-L04/drill-01-de68b430.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I just got to work.",
+      "ko": "저 방금 회사 도착했어요.",
+      "point": "단어 교체: home → to work (work 앞엔 to)",
+      "cue": { "lang": "en", "text": "Are you at the office yet?", "audio": "audio/lessons/BEG1-U02-L04/cue-02-6d25b7b8.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U02-L04/drill-02-7c23e7d6.m4a", "slow": "audio/lessons/BEG1-U02-L04/drill-02-7c23e7d6.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "My son just got home.",
+      "ko": "우리 아들 방금 집에 왔어요.",
+      "point": "주어 변경: I → My son",
+      "cue": { "lang": "en", "text": "Is your son still at school?", "audio": "audio/lessons/BEG1-U02-L04/cue-03-f0acc0cb.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U02-L04/drill-03-9c5b50d4.m4a", "slow": "audio/lessons/BEG1-U02-L04/drill-03-9c5b50d4.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Did you just get home?",
+      "ko": "방금 들어오신 거예요?",
+      "point": "질문형: Did you just get ~?",
+      "cue": { "lang": "ko", "text": "이웃이 가방을 든 채 막 현관문을 열고 있어요. 방금 집에 오신 건지 물어보세요." },
+      "audio": { "normal": "audio/lessons/BEG1-U02-L04/drill-04-54fbf6e8.m4a", "slow": "audio/lessons/BEG1-U02-L04/drill-04-54fbf6e8.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I'll get home around six.",
+      "ko": "저 6시쯤 집에 도착할 거예요.",
+      "point": "시제: 미래 I'll get",
+      "cue": { "lang": "en", "text": "What time will you be home?", "audio": "audio/lessons/BEG1-U02-L04/cue-05-003bd699.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U02-L04/drill-05-4a86293a.m4a", "slow": "audio/lessons/BEG1-U02-L04/drill-05-4a86293a.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I didn't get home until late.",
+      "ko": "저 늦게야 집에 왔어요.",
+      "point": "부정형: didn't get home until (~가 돼서야)",
+      "cue": { "lang": "en", "text": "Why didn't you answer my text last night?", "audio": "audio/lessons/BEG1-U02-L04/cue-06-fcac20ec.m4a" },
+      "audio": { "normal": "audio/lessons/BEG1-U02-L04/drill-06-d302d11b.m4a", "slow": "audio/lessons/BEG1-U02-L04/drill-06-d302d11b.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hi, it's me. Can I bring your package up now?", "ko": "안녕하세요, 저예요. 지금 택배 올려 드려도 될까요?", "audio": "audio/lessons/BEG1-U02-L04/rp-01-aa116a3d.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I just got home.",
+        "exampleKo": "저 방금 집에 왔어요.",
+        "requiredKeywords": ["just got", "home"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Your boss is looking for you. Where are you?", "ko": "팀장님이 찾으세요. 어디세요?", "audio": "audio/lessons/BEG1-U02-L04/rp-03-5eaf1d75.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I just got to work.",
+        "exampleKo": "저 방금 회사 도착했어요.",
+        "requiredKeywords": ["just got", "to work"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Is your son okay? It's raining so hard.", "ko": "아드님 괜찮아요? 비가 엄청 오는데.", "audio": "audio/lessons/BEG1-U02-L04/rp-05-0449b285.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My son just got home.",
+        "exampleKo": "우리 아들 방금 집에 왔어요.",
+        "requiredKeywords": ["my son", "got home"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Hi! Sorry, my suitcase is so heavy.", "ko": "안녕하세요! 죄송해요, 캐리어가 너무 무거워서요.", "audio": "audio/lessons/BEG1-U02-L04/rp-07-3201a955.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did you just get home?",
+        "exampleKo": "방금 들어오신 거예요?",
+        "requiredKeywords": ["did you just", "get home"]
+      },
+      { "no": 9, "speaker": "partner", "en": "The delivery guy can come this evening. Is that okay?", "ko": "택배 기사님이 오늘 저녁에 오실 수 있대요. 괜찮으세요?", "audio": "audio/lessons/BEG1-U02-L04/rp-09-72211b31.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'll get home around six.",
+        "exampleKo": "저 6시쯤 집에 도착할 거예요.",
+        "requiredKeywords": ["get home", "around six"]
+      },
+      { "no": 11, "speaker": "partner", "en": "I knocked on your door at eight last night.", "ko": "어젯밤 8시에 문 두드렸었어요.", "audio": "audio/lessons/BEG1-U02-L04/rp-11-5d0d9811.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I didn't get home until late.",
+        "exampleKo": "저 늦게야 집에 왔어요.",
+        "requiredKeywords": ["didn't get home", "until late"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
