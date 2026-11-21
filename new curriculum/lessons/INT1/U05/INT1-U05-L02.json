@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U05-L02",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 5,
+  "unitTitle": "집안일 & 볼일",
+  "lessonNo": 2,
+  "lessonTitle": "도움 요청하기",
+  "estimatedMinutes": 10,
+
+  "keySentence": {
+    "en": "Can you give me a hand with this?",
+    "ko": "이것 좀 같이 도와줄래?",
+    "stress": "Can you GIVE me a HAND with THIS?",
+    "audio": {
+      "normal": "int1-u05-l02_key.mp3",
+      "slow": "int1-u05-l02_key_slow.mp3"
+    }
+  },
+
+  "explanation": {
+    "ko": [
+      "give someone a hand는 '손을 빌려주다', 즉 '(잠깐) 거들어 주다'라는 뜻입니다. 무거운 걸 같이 들거나 일을 같이 할 때 씁니다.",
+      "Help me!보다 훨씬 부드럽고 가벼운 부탁입니다. 친구·가족·룸메이트에게 자주 씁니다.",
+      "무엇을 도와 달라는지는 with 뒤에 붙입니다. with this, with the groceries처럼 씁니다.",
+      "더 정중하게 말하고 싶으면 Can 대신 Could를 씁니다. Could you give me a hand?",
+      "a hand 앞에 a를 꼭 붙입니다. give me hand라고 하지 않습니다."
+    ],
+    "en": "\"Give me a hand\" means \"help me for a little while.\" It's a friendly way to ask for help with something physical, like carrying boxes. Put the thing after \"with.\"",
+    "enKo": "\"Give me a hand\"는 \"잠깐 좀 도와줘\"라는 뜻입니다. 상자 나르기처럼 몸을 쓰는 일을 도와 달라고 할 때 쓰는 친근한 표현입니다. 도와 달라는 대상은 \"with\" 뒤에 붙입니다."
+  },
+
+  "pronunciation": [
+    { "focus": "강세", "tip": "GIVE, HAND, THIS에 힘을 줍니다. Can you와 me a는 가볍게 지나갑니다." },
+    { "focus": "연음", "tip": "Can you는 '캔 유'가 아니라 '캐뉴'처럼 붙여 말합니다. give me는 '기미'에 가깝게 줄어듭니다." },
+    { "focus": "연음", "tip": "hand with에서 d가 거의 안 들립니다. '핸 위드'가 아니라 '핸윋'처럼 이어 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "this의 th는 혀끝을 윗니 아래에 살짝 대고 떨면서 냅니다. '디스'가 아니라 혀를 문 'ð' 소리입니다." }
+  ],
+
+  "commonMistakes": [
+    { "wrong": "Can you help me a hand?", "right": "Can you give me a hand?", "note": "hand는 help가 아니라 give와 함께 씁니다. help를 쓰려면 Can you help me?만 말합니다." },
+    { "wrong": "Help me, please.", "right": "Can you give me a hand with this?", "note": "Help me는 급한 상황처럼 들릴 수 있습니다. 일상 부탁은 질문 형태로 부드럽게 말합니다." },
+    { "wrong": "Can you help me carry?", "right": "Can you help me carry this?", "note": "carry, move 같은 동사 뒤에는 무엇을 옮기는지 꼭 붙입니다." }
+  ],
+
+  "dialogue": {
+    "situation": "책장을 내 방으로 옮기려는데, 룸메이트가 지나가다 봅니다.",
+    "partnerRole": "룸메이트",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hey, what are you doing with that bookshelf?", "ko": "야, 그 책장 가지고 뭐 해?", "audio": "int1-u05-l02_dlg_01.mp3" },
+      { "no": 2, "speaker": "me", "en": "I'm moving it to my room. Can you give me a hand with this?", "ko": "내 방으로 옮기려고. 이것 좀 같이 도와줄래?", "audio": "int1-u05-l02_dlg_02.mp3", "hasKeySentence": true },
+      { "no": 3, "speaker": "partner", "en": "Sure. Hold on, let me put my phone down.", "ko": "그래. 잠깐만, 폰 좀 내려놓고.", "audio": "int1-u05-l02_dlg_03.mp3" },
+      { "no": 4, "speaker": "me", "en": "Thanks. You lift that end, and I'll take this one.", "ko": "고마워. 네가 그쪽 들어, 내가 이쪽 들게.", "audio": "int1-u05-l02_dlg_04.mp3" },
+      { "no": 5, "speaker": "partner", "en": "Got it. Ready? One, two, three!", "ko": "알았어. 준비됐지? 하나, 둘, 셋!", "audio": "int1-u05-l02_dlg_05.mp3" },
+      { "no": 6, "speaker": "me", "en": "Careful, watch the door frame. Okay, almost there!", "ko": "조심, 문틀 조심해. 좋아, 거의 다 왔어!", "audio": "int1-u05-l02_dlg_06.mp3" }
+    ],
+    "expressionNotes": [
+      { "en": "Hold on.", "ko": "'잠깐만.' 하던 걸 잠시 멈추고 기다려 달라고 할 때 씁니다." },
+      { "en": "Watch the door frame.", "ko": "'문틀 조심해.' watch + 물건은 '~에 부딪히지 않게 조심해'라는 뜻입니다." }
+    ]
+  },
+
+  "drills": [
+    {
+      "id": 1,
+      "en": "Can you give me a hand with this?",
+      "ko": "이것 좀 같이 도와줄래?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "들고 있는 물건을 같이 좀 도와 달라고 룸메이트에게 부탁하세요." },
+      "audio": { "normal": "int1-u05-l02_drill_01.mp3", "slow": "int1-u05-l02_drill_01_slow.mp3" }
+    },
+    {
+      "id": 2,
+      "en": "Can you give me a hand with the groceries?",
+      "ko": "장 본 거 옮기는 것 좀 도와줄래?",
+      "point": "단어 교체: this → the groceries",
+      "cue": { "lang": "ko", "text": "장 본 봉지를 같이 옮겨 달라고 부탁하세요." },
+      "audio": { "normal": "int1-u05-l02_drill_02.mp3", "slow": "int1-u05-l02_drill_02_slow.mp3" }
+    },
+    {
+      "id": 3,
+      "en": "Can you guys give me a hand with the couch?",
+      "ko": "너희 소파 옮기는 것 좀 도와줄래?",
+      "point": "주어 변경: you → you guys (여러 명에게)",
+      "cue": { "lang": "ko", "text": "친구들 여러 명에게 소파 옮기는 걸 도와 달라고 하세요." },
+      "audio": { "normal": "int1-u05-l02_drill_03.mp3", "slow": "int1-u05-l02_drill_03_slow.mp3" }
+    },
+    {
+      "id": 4,
+      "en": "Could you give me a hand for a second?",
+      "ko": "잠깐만 좀 도와줄 수 있어?",
+      "point": "공손형: Can → Could",
+      "cue": { "lang": "ko", "text": "바빠 보이는 가족에게 잠깐만 도와줄 수 있는지 조심스럽게 물어보세요." },
+      "audio": { "normal": "int1-u05-l02_drill_04.mp3", "slow": "int1-u05-l02_drill_04_slow.mp3" }
+    },
+    {
+      "id": 5,
+      "en": "Thanks, but I don't need a hand.",
+      "ko": "고마워, 근데 안 도와줘도 돼.",
+      "point": "부정형: don't need a hand",
+      "cue": { "lang": "en", "text": "Do you want some help with that?" },
+      "audio": { "normal": "int1-u05-l02_drill_05.mp3", "slow": "int1-u05-l02_drill_05_slow.mp3" }
+    },
+    {
+      "id": 6,
+      "en": "My brother gave me a hand with the move.",
+      "ko": "이사할 때 남동생이 도와줬어.",
+      "point": "과거 시제: gave me a hand",
+      "cue": { "lang": "en", "text": "Who helped you move last weekend?" },
+      "audio": { "normal": "int1-u05-l02_drill_06.mp3", "slow": "int1-u05-l02_drill_06_slow.mp3" }
+    }
+  ],
+
+  "drillStages": [
+    { "reps": [1, 2, 3], "mode": "repeat",  "show": "en+ko", "playAudio": true,  "passScore": 80 },
+    { "reps": [4, 5, 6], "mode": "read",    "show": "en",    "playAudio": false, "passScore": 80 },
+    { "reps": [7, 8],    "mode": "recall",  "show": "ko",    "playAudio": false, "passScore": 80 },
+    { "reps": [9, 10],   "mode": "respond", "show": "cue",   "playAudio": false, "passScore": 80 }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Whoa, you're really struggling with that heavy box. You okay?", "ko": "와, 그 무거운 상자 들고 엄청 낑낑대네. 괜찮아?" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Can you give me a hand with this?",
+        "exampleKo": "이것 좀 같이 도와줄래?",
+        "requiredKeywords": ["give me a hand", "with this"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Hey, I'm home! Oh wow, your car is full of shopping bags.", "ko": "나 왔어! 와, 네 차에 장 본 봉지가 가득이네." },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Can you give me a hand with the groceries?",
+        "exampleKo": "장 본 거 옮기는 것 좀 도와줄래?",
+        "requiredKeywords": ["give me a hand", "groceries"]
+      },
+      { "no": 5, "speaker": "partner", "en": "We're just playing games in the living room. Why are you pushing the sofa?", "ko": "우리 거실에서 그냥 게임하고 있어. 근데 소파는 왜 밀고 있어?" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Can you guys give me a hand with the couch?",
+        "exampleKo": "너희 소파 옮기는 것 좀 도와줄래?",
+        "requiredKeywords": ["you guys", "couch"]
+      },
+      { "no": 7, "speaker": "partner", "en": "I'm in the middle of something, but I can stop if it's important.", "ko": "나 뭐 하던 중인데, 중요한 거면 잠깐 멈출 수 있어." },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Could you give me a hand for a second?",
+        "exampleKo": "잠깐만 좀 도와줄 수 있어?",
+        "requiredKeywords": ["could you", "for a second"]
+      },
+      { "no": 9, "speaker": "partner", "en": "You're folding all that laundry? I'm free, so I can jump in.", "ko": "그 빨래 다 개는 중이야? 나 한가하니까 같이 할 수 있어." },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Thanks, but I don't need a hand.",
+        "exampleKo": "고마워, 근데 안 도와줘도 돼.",
+        "requiredKeywords": ["don't need", "hand"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Your new place looks great! Did you carry all this furniture by yourself?", "ko": "새 집 진짜 좋다! 이 가구 다 혼자 옮긴 거야?" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My brother gave me a hand with the move.",
+        "exampleKo": "이사할 때 남동생이 도와줬어.",
+        "requiredKeywords": ["my brother", "gave me a hand", "move"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

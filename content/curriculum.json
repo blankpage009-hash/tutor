@@ -287,10 +287,10 @@
               "no": 5,
               "title": "집안일 & 볼일",
               "lessons": [
-                { "no": 1, "title": "집안일에 대해 이야기하기", "id": "INT1-U05-L01", "ready": false},
-                { "no": 2, "title": "도움 요청하기", "id": "INT1-U05-L02", "ready": false},
-                { "no": 3, "title": "볼일에 대해 이야기하기", "id": "INT1-U05-L03", "ready": false},
-                { "no": 4, "title": "부탁하기", "id": "INT1-U05-L04", "ready": false}
+                { "no": 1, "title": "집안일에 대해 이야기하기", "id": "INT1-U05-L01", "ready": true, "file": "lessons/INT1/INT1-U05-L01.json" },
+                { "no": 2, "title": "도움 요청하기", "id": "INT1-U05-L02", "ready": true, "file": "lessons/INT1/INT1-U05-L02.json" },
+                { "no": 3, "title": "볼일에 대해 이야기하기", "id": "INT1-U05-L03", "ready": true, "file": "lessons/INT1/INT1-U05-L03.json" },
+                { "no": 4, "title": "부탁하기", "id": "INT1-U05-L04", "ready": true, "file": "lessons/INT1/INT1-U05-L04.json" }
               ]
             },
             {

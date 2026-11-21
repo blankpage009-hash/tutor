@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U05-L01",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 5,
+  "unitTitle": "집안일 & 볼일",
+  "lessonNo": 1,
+  "lessonTitle": "집안일에 대해 이야기하기",
+  "estimatedMinutes": 10,
+
+  "keySentence": {
+    "en": "It's your turn to do the dishes.",
+    "ko": "이번엔 네가 설거지할 차례야.",
+    "stress": "It's YOUR TURN to do the DISHes.",
+    "audio": {
+      "normal": "int1-u05-l01_key.mp3",
+      "slow": "int1-u05-l01_key_slow.mp3"
+    }
+  },
+
+  "explanation": {
+    "ko": [
+      "It's your turn to ~는 '이번엔 네가 ~할 차례야'라는 뜻입니다. 집안일을 번갈아 할 때 가장 많이 씁니다.",
+      "turn 뒤에는 to + 동사원형이 옵니다. It's my turn to cook(내가 요리할 차례야)처럼 주어만 바꿔 쓸 수 있습니다.",
+      "'설거지하다'는 do the dishes, '빨래하다'는 do the laundry처럼 집안일에는 do를 자주 씁니다.",
+      "쓰레기는 do가 아니라 take out the trash(쓰레기를 내다 버리다)라고 말합니다.",
+      "Whose turn is it to ~?(누가 ~할 차례야?)라고 물어볼 수도 있습니다."
+    ],
+    "en": "When roommates share chores, they often say \"It's your turn to do the dishes.\" Just change the chore after \"to.\" Most chores use \"do,\" like do the dishes or do the laundry.",
+    "enKo": "룸메이트끼리 집안일을 나눌 때 \"It's your turn to do the dishes.\"라고 자주 말합니다. to 뒤의 집안일만 바꾸면 됩니다. 집안일은 대부분 do the dishes, do the laundry처럼 do를 씁니다."
+  },
+
+  "pronunciation": [
+    { "focus": "강세", "tip": "YOUR TURN과 DISHes에 힘을 줍니다. '누구' 차례인지가 중요하니 your를 또렷하게 말합니다." },
+    { "focus": "약화", "tip": "to는 '투'가 아니라 짧게 '터'로 약하게 지나갑니다. turn to do → '턴터두'." },
+    { "focus": "한국인이 어려운 소리", "tip": "turn의 ur은 혀를 뒤로 말고 내는 소리입니다. '턴'보다 '터r언'에 가깝게, 입을 크게 벌리지 않습니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "dishes의 sh는 입술을 앞으로 내밀고 '쉬' 하듯 바람을 냅니다. 끝의 es는 '이즈'로 살짝 붙입니다. '디쉬즈'." }
+  ],
+
+  "commonMistakes": [
+    { "wrong": "It's your order to wash the dishes.", "right": "It's your turn to do the dishes.", "note": "차례는 order가 아니라 turn입니다. 설거지는 do the dishes가 가장 자연스럽습니다." },
+    { "wrong": "Can you throw the garbage?", "right": "Can you take out the trash?", "note": "throw the garbage는 '쓰레기를 던지다'로 들립니다. 밖에 내다 버리는 건 take out the trash." },
+    { "wrong": "I will do the cleaning the room.", "right": "I'll clean my room.", "note": "do the cleaning 뒤에 목적어를 또 붙이지 않습니다. 방을 치울 때는 clean my room." }
+  ],
+
+  "dialogue": {
+    "situation": "저녁을 먹고 나서 룸메이트가 싱크대에 쌓인 그릇을 보고 말을 꺼냅니다.",
+    "partnerRole": "룸메이트",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Whoa, the sink is full again. Who's doing these?", "ko": "와, 싱크대 또 꽉 찼네. 이거 누가 해?", "audio": "int1-u05-l01_dlg_01.mp3" },
+      { "no": 2, "speaker": "me", "en": "Not me. I did them last night. It's your turn to do the dishes.", "ko": "나 아니야. 어젯밤에 내가 했어. 이번엔 네가 설거지할 차례야.", "audio": "int1-u05-l01_dlg_02.mp3", "hasKeySentence": true },
+      { "no": 3, "speaker": "partner", "en": "Fair enough. Can you take out the trash, then?", "ko": "그건 맞네. 그럼 너는 쓰레기 좀 내다 버려 줄래?", "audio": "int1-u05-l01_dlg_03.mp3" },
+      { "no": 4, "speaker": "me", "en": "Sure. Should we make a chore chart, so we don't forget?", "ko": "좋아. 안 까먹게 집안일 당번표 하나 만들까?", "audio": "int1-u05-l01_dlg_04.mp3" },
+      { "no": 5, "speaker": "partner", "en": "Good idea. Let's put it on the fridge.", "ko": "좋은 생각이다. 냉장고에 붙여 놓자.", "audio": "int1-u05-l01_dlg_05.mp3" },
+      { "no": 6, "speaker": "me", "en": "Perfect. I'll make one this weekend.", "ko": "좋아. 이번 주말에 내가 만들게.", "audio": "int1-u05-l01_dlg_06.mp3" }
+    ],
+    "expressionNotes": [
+      { "en": "Fair enough.", "ko": "'그건 맞네, 인정.' 상대 말이 일리 있을 때 가볍게 받아들이는 말입니다." },
+      { "en": "a chore chart", "ko": "'집안일 당번표.' chore는 설거지·청소 같은 매일 하는 집안일을 말합니다." }
+    ]
+  },
+
+  "drills": [
+    {
+      "id": 1,
+      "en": "It's your turn to do the dishes.",
+      "ko": "이번엔 네가 설거지할 차례야.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Ugh, look at all these dirty plates. Do I have to wash them?" },
+      "audio": { "normal": "int1-u05-l01_drill_01.mp3", "slow": "int1-u05-l01_drill_01_slow.mp3" }
+    },
+    {
+      "id": 2,
+      "en": "It's your turn to take out the trash.",
+      "ko": "이번엔 네가 쓰레기 버릴 차례야.",
+      "point": "단어 교체: do the dishes → take out the trash",
+      "cue": { "lang": "en", "text": "The trash can is full. Who's going to empty it?" },
+      "audio": { "normal": "int1-u05-l01_drill_02.mp3", "slow": "int1-u05-l01_drill_02_slow.mp3" }
+    },
+    {
+      "id": 3,
+      "en": "It's my turn to do the laundry.",
+      "ko": "이번엔 내가 빨래할 차례야.",
+      "point": "주어 변경: your → my",
+      "cue": { "lang": "en", "text": "Are you going down to the laundry room?" },
+      "audio": { "normal": "int1-u05-l01_drill_03.mp3", "slow": "int1-u05-l01_drill_03_slow.mp3" }
+    },
+    {
+      "id": 4,
+      "en": "Whose turn is it to vacuum?",
+      "ko": "청소기 돌릴 차례 누구야?",
+      "point": "질문형: Whose turn is it to ~?",
+      "cue": { "lang": "ko", "text": "청소기를 돌릴 차례가 누구인지 룸메이트에게 물어보세요." },
+      "audio": { "normal": "int1-u05-l01_drill_04.mp3", "slow": "int1-u05-l01_drill_04_slow.mp3" }
+    },
+    {
+      "id": 5,
+      "en": "It's not my turn to clean the bathroom.",
+      "ko": "화장실 청소는 내 차례 아니야.",
+      "point": "부정형: It's not my turn",
+      "cue": { "lang": "en", "text": "Hey, can you clean the bathroom today?" },
+      "audio": { "normal": "int1-u05-l01_drill_05.mp3", "slow": "int1-u05-l01_drill_05_slow.mp3" }
+    },
+    {
+      "id": 6,
+      "en": "It was your turn to cook last night.",
+      "ko": "어젯밤엔 네가 요리할 차례였잖아.",
+      "point": "과거 시제: It was your turn",
+      "cue": { "lang": "en", "text": "Why did we order takeout again last night?" },
+      "audio": { "normal": "int1-u05-l01_drill_06.mp3", "slow": "int1-u05-l01_drill_06_slow.mp3" }
+    }
+  ],
+
+  "drillStages": [
+    { "reps": [1, 2, 3], "mode": "repeat",  "show": "en+ko", "playAudio": true,  "passScore": 80 },
+    { "reps": [4, 5, 6], "mode": "read",    "show": "en",    "playAudio": false, "passScore": 80 },
+    { "reps": [7, 8],    "mode": "recall",  "show": "ko",    "playAudio": false, "passScore": 80 },
+    { "reps": [9, 10],   "mode": "respond", "show": "cue",   "playAudio": false, "passScore": 80 }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "I cooked dinner tonight, so I'm just going to relax on the couch now.", "ko": "오늘 저녁은 내가 했으니까, 이제 소파에서 좀 쉴게." },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It's your turn to do the dishes.",
+        "exampleKo": "이번엔 네가 설거지할 차례야.",
+        "requiredKeywords": ["your turn", "dishes"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Something in the kitchen really smells. I think it's the garbage.", "ko": "부엌에서 무슨 냄새가 진짜 심하게 나. 쓰레기인 것 같아." },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It's your turn to take out the trash.",
+        "exampleKo": "이번엔 네가 쓰레기 버릴 차례야.",
+        "requiredKeywords": ["your turn", "trash"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Hey, where are you going with that huge basket of clothes?", "ko": "야, 그 큰 빨래 바구니 들고 어디 가?" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It's my turn to do the laundry.",
+        "exampleKo": "이번엔 내가 빨래할 차례야.",
+        "requiredKeywords": ["my turn", "laundry"]
+      },
+      { "no": 7, "speaker": "partner", "en": "There's dog hair all over the living room carpet again.", "ko": "거실 카펫에 또 강아지 털이 잔뜩이야." },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Whose turn is it to vacuum?",
+        "exampleKo": "청소기 돌릴 차례 누구야?",
+        "requiredKeywords": ["whose turn", "vacuum"]
+      },
+      { "no": 9, "speaker": "partner", "en": "The shower is getting kind of gross. You should scrub it this weekend.", "ko": "샤워실이 좀 더러워지고 있어. 이번 주말에 네가 좀 박박 닦아." },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It's not my turn to clean the bathroom.",
+        "exampleKo": "화장실 청소는 내 차례 아니야.",
+        "requiredKeywords": ["not my turn", "bathroom"]
+      },
+      { "no": 11, "speaker": "partner", "en": "I'm so hungry. Why didn't we have a real dinner yesterday?", "ko": "배 너무 고파. 어제는 왜 저녁을 제대로 안 먹었지?" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "It was your turn to cook last night.",
+        "exampleKo": "어젯밤엔 네가 요리할 차례였잖아.",
+        "requiredKeywords": ["was your turn", "cook", "last night"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

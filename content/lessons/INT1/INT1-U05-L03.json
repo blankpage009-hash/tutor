@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U05-L03",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 5,
+  "unitTitle": "집안일 & 볼일",
+  "lessonNo": 3,
+  "lessonTitle": "볼일에 대해 이야기하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I have a few errands to run.",
+    "ko": "처리할 볼일이 좀 있어.",
+    "stress": "I have a FEW ERrands to RUN.",
+    "audio": { "normal": "audio/lessons/INT1-U05-L03/key-6e95bc9a.m4a", "slow": "audio/lessons/INT1-U05-L03/key-6e95bc9a.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "errand는 우체국 가기, 장보기, 세탁소 들르기처럼 밖에 나가서 처리하는 자잘한 일을 말합니다. 우리말 '볼일'과 가깝습니다.",
+      "'볼일을 보다'는 do an errand가 아니라 run an errand라고 말합니다. run과 짝으로 외워 두세요.",
+      "약속을 거절할 때 이유로 자주 씁니다. I'd love to, but I have a few errands to run.",
+      "a few는 '몇 개', a couple of는 '두어 개'라는 느낌입니다. 볼일은 보통 여러 개라 복수형 errands로 씁니다.",
+      "business는 '사업·업무' 느낌이 강해서 개인 볼일에는 잘 쓰지 않습니다."
+    ],
+    "en": "Errands are small jobs you do outside, like going to the post office or the grocery store. Americans say \"run errands,\" not \"do errands.\" It's also a polite reason to say no to plans.",
+    "enKo": "errand는 우체국이나 마트에 가는 것처럼 밖에서 하는 자잘한 일입니다. 미국 사람들은 \"do errands\"가 아니라 \"run errands\"라고 말합니다. 약속을 거절할 때 쓰기 좋은 이유이기도 합니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "FEW, ERrands, RUN에 힘을 줍니다. errands는 첫 음절 ER에 강세가 있습니다." },
+    { "focus": "연음", "tip": "have a는 '해버'처럼 이어 말합니다. I have a few → '아이해버퓨'." },
+    { "focus": "한국인이 어려운 소리", "tip": "errands는 '에런즈'에 가깝습니다. 가운데 r에서 혀를 말고, 끝 ds는 '즈'로 짧게 붙입니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "few의 f는 윗니를 아랫입술에 대고 바람을 냅니다. '퓨'의 ㅍ처럼 터뜨리지 않습니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I have some business to do.", "right": "I have a few errands to run.", "note": "business는 회사 업무처럼 들립니다. 개인 볼일은 errands." },
+    { "wrong": "I have to go to the laundry.", "right": "I have to pick up my dry cleaning.", "note": "laundry는 '빨랫감'이라는 뜻입니다. 세탁소에 맡긴 옷을 찾을 때는 pick up my dry cleaning." },
+    { "wrong": "I will send a package at the post office.", "right": "I need to drop off a package.", "note": "우체국에 택배를 맡기러 갈 때는 drop off a package라고 짧게 말합니다." }
+  ],
+  "dialogue": {
+    "situation": "토요일 오전, 친구가 전화해서 오후에 커피 마시자고 합니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hey, are you free this afternoon? Want to grab coffee?", "ko": "야, 오늘 오후에 시간 돼? 커피 마실래?", "audio": "audio/lessons/INT1-U05-L03/dlg-01-2bd5eacc.m4a" },
+      { "no": 2, "speaker": "me", "en": "I'd love to, but I have a few errands to run.", "ko": "그러고 싶은데, 처리할 볼일이 좀 있어.", "audio": "audio/lessons/INT1-U05-L03/dlg-02-9d7a6517.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Oh, like what?", "ko": "아, 뭔데?", "audio": "audio/lessons/INT1-U05-L03/dlg-03-3adaade3.m4a" },
+      { "no": 4, "speaker": "me", "en": "I need to drop off a package and pick up my dry cleaning.", "ko": "택배 하나 부치고 세탁소에서 옷도 찾아야 해.", "audio": "audio/lessons/INT1-U05-L03/dlg-04-0c457fcf.m4a" },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Bean Street Cafe is right by the post office. Want to meet there after?",
+        "ko": "우체국 바로 옆에 빈 스트리트 카페 있잖아. 끝나고 거기서 볼래?",
+        "audio": "audio/lessons/INT1-U05-L03/dlg-05-bd013628.m4a"
+      },
+      { "no": 6, "speaker": "me", "en": "Perfect. I'll text you when I'm done.", "ko": "좋아. 끝나면 문자할게.", "audio": "audio/lessons/INT1-U05-L03/dlg-06-b6473934.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "drop off a package", "ko": "'택배를 맡기다, 부치다.' drop off는 어딘가에 물건을 두고 오는 것을 말합니다." },
+      { "en": "pick up my dry cleaning", "ko": "'세탁소에서 옷을 찾아오다.' pick up은 맡겨 둔 것을 찾아올 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I have a few errands to run.",
+      "ko": "처리할 볼일이 좀 있어.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Want to hang out this afternoon?", "audio": "audio/lessons/INT1-U05-L03/cue-01-3762db8d.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U05-L03/drill-01-6e95bc9a.m4a", "slow": "audio/lessons/INT1-U05-L03/drill-01-6e95bc9a.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I have a couple of errands to run.",
+      "ko": "볼일이 두어 개 있어.",
+      "point": "단어 교체: a few → a couple of",
+      "cue": { "lang": "en", "text": "Why are you leaving so early?", "audio": "audio/lessons/INT1-U05-L03/cue-02-2f0d5d11.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U05-L03/drill-02-9b969775.m4a", "slow": "audio/lessons/INT1-U05-L03/drill-02-9b969775.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "My mom has some errands to run.",
+      "ko": "우리 엄마 볼일 좀 보셔야 해.",
+      "point": "주어 변경: I have → My mom has",
+      "cue": { "lang": "en", "text": "Is your mom coming to the party with you?", "audio": "audio/lessons/INT1-U05-L03/cue-03-b43d701d.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U05-L03/drill-03-6684bb88.m4a", "slow": "audio/lessons/INT1-U05-L03/drill-03-6684bb88.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Do you have any errands to run today?",
+      "ko": "오늘 처리할 볼일 있어?",
+      "point": "질문형: Do you have any ~?",
+      "cue": { "lang": "ko", "text": "오늘 처리할 볼일이 있는지 친구에게 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U05-L03/drill-04-d7dd6534.m4a", "slow": "audio/lessons/INT1-U05-L03/drill-04-d7dd6534.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I don't have any errands to run today.",
+      "ko": "오늘은 처리할 볼일 하나도 없어.",
+      "point": "부정형: don't have any",
+      "cue": { "lang": "en", "text": "Are you busy today?", "audio": "audio/lessons/INT1-U05-L03/cue-05-f4284a65.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U05-L03/drill-05-b15f82c4.m4a", "slow": "audio/lessons/INT1-U05-L03/drill-05-b15f82c4.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I ran a few errands this morning.",
+      "ko": "오늘 아침에 볼일 몇 개 보고 왔어.",
+      "point": "과거 시제: run → ran",
+      "cue": { "lang": "en", "text": "What did you do this morning?", "audio": "audio/lessons/INT1-U05-L03/cue-06-98522360.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U05-L03/drill-06-1207a894.m4a", "slow": "audio/lessons/INT1-U05-L03/drill-06-1207a894.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "My cousin is visiting. Want to come to the beach with us today?", "ko": "사촌이 놀러 왔어. 오늘 우리랑 바닷가 갈래?", "audio": "audio/lessons/INT1-U05-L03/rp-01-d31d0297.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I have a few errands to run.",
+        "exampleKo": "처리할 볼일이 좀 있어.",
+        "requiredKeywords": ["a few errands", "to run"]
+      },
+      { "no": 3, "speaker": "partner", "en": "You're putting on your jacket already? Where are you off to?", "ko": "벌써 재킷 입어? 어디 가?", "audio": "audio/lessons/INT1-U05-L03/rp-03-74ef36ac.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I have a couple of errands to run.",
+        "exampleKo": "볼일이 두어 개 있어.",
+        "requiredKeywords": ["a couple of", "to run"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Hey, do you think your mom could drive us to the mall today?", "ko": "야, 오늘 너희 엄마가 우리 쇼핑몰까지 태워 주실 수 있을까?", "audio": "audio/lessons/INT1-U05-L03/rp-05-8ff2bc75.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My mom has some errands to run.",
+        "exampleKo": "우리 엄마 볼일 좀 보셔야 해.",
+        "requiredKeywords": ["my mom", "errands to run"]
+      },
+      { "no": 7, "speaker": "partner", "en": "I'm stuck at home with my sick son, and I can't go out at all.", "ko": "아픈 아들 때문에 집에 꼼짝없이 있어. 밖에 아예 못 나가.", "audio": "audio/lessons/INT1-U05-L03/rp-07-5a0002d4.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you have any errands to run today?",
+        "exampleKo": "오늘 처리할 볼일 있어?",
+        "requiredKeywords": ["do you have", "errands", "today"]
+      },
+      { "no": 9, "speaker": "partner", "en": "You're always running around on Saturdays. Are you busy again this time?", "ko": "너 토요일마다 여기저기 다니잖아. 이번에도 바빠?", "audio": "audio/lessons/INT1-U05-L03/rp-09-6f3c43d2.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I don't have any errands to run today.",
+        "exampleKo": "오늘은 처리할 볼일 하나도 없어.",
+        "requiredKeywords": ["don't have", "today"]
+      },
+      { "no": 11, "speaker": "partner", "en": "I called you three times this morning. Where were you?", "ko": "오늘 아침에 세 번이나 전화했는데. 어디 있었어?", "audio": "audio/lessons/INT1-U05-L03/rp-11-0f3348f1.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I ran a few errands this morning.",
+        "exampleKo": "오늘 아침에 볼일 몇 개 보고 왔어.",
+        "requiredKeywords": ["ran", "errands", "this morning"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
