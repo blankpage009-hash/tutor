@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { IconList } from '../../components/icons/icons';
+import { IconClose } from '../../components/icons/icons';
 import { DRILL_MODE_LABEL, stageSegments, type DrillStep } from '../../drillPlan';
 import barStyles from '../newLesson/LessonStepBar.module.css';
 import styles from './DrillPlayer.module.css';
@@ -16,9 +16,9 @@ export function DrillModeBar({ plan, index, onClose }: Props) {
   const grid = { gridTemplateColumns: `repeat(${segs.length}, minmax(0, 1fr))` } as CSSProperties;
   return (
     <div className={barStyles.bar}>
-      {/* 앱 공통 X는 레슨을 나가는 버튼이라, 여기서는 목록 모양으로 구분한다 (사용자 요청 2026-11-19) */}
+      {/* 목록 아이콘 대신 X 아이콘 (사용자 요청 2026-11-21). 동작은 그대로 문장 목록으로 돌아간다 */}
       <button type="button" className={`${barStyles.close} ${styles.listBtn}`} onClick={onClose} aria-label="문장 목록으로">
-        <IconList />
+        <IconClose />
       </button>
       <div className={barStyles.steps} style={grid} aria-label="드릴 모드 진행">
         {segs.map((s) => (
