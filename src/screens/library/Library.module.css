@@ -18,6 +18,40 @@
 
 .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: calc(var(--space-2) * -1); }
 .pair svg { width: 18px; height: 18px; flex: none; }
+/* 반복 상자 자리만큼 두 버튼을 좁힌다. minmax(0, …)라야 좁은 폭에서 버튼 글자가 줄을 밀어내지 않는다 */
+.withRepeat { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; }
+.withRepeat > button { padding: 0 var(--space-2); white-space: nowrap; }
+
+/* 문장당 반복 횟수 상자: 기본 select 모양을 지우고 버튼과 같은 선 박스로, 오른쪽에 ▾ */
+.repeatWrap { position: relative; display: block; }
+.repeatWrap::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  border: 5px solid transparent;
+  border-top-color: var(--ink-muted);
+  border-bottom-width: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.repeat {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 64px;
+  height: 100%;
+  min-height: 54px;
+  padding: 0 22px 0 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--type-headline-family);
+  font-size: var(--type-headline-size);
+  font-weight: var(--type-headline-weight);
+  cursor: pointer;
+}
+.repeat:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
 
 .list {
   display: flex;

@@ -8,10 +8,11 @@ import { dueLabel } from '../dueLabel';
 import { savedExportFormats } from './library/exportFormats';
 import styles from './library/Library.module.css';
 import { LibraryRow } from './library/LibraryRow';
+import { loadPracticeOptions, REPEAT_CHOICES, savePracticeOptions, type PracticeOptions } from './library/practiceOptions';
 import { useLibrary } from './library/useLibrary';
 import { useSelection } from './library/useSelection';
 
-// 위 버튼 두 개: 평소 Shadow All · Random, 고르는 중 Shadow Selected · Cancel
+// 위 버튼 줄: 평소 Shadow All · 순서 전환 · 반복 상자, 고르는 중 Shadow Selected · Cancel
 function TopButtons({ sel }: { sel: ReturnType<typeof useSelection> }) {
   const nav = useNavigate();
   if (sel.selecting) {
@@ -23,10 +24,31 @@ function TopButtons({ sel }: { sel: ReturnType<typeof useSelection> }) {
     );
   }
   return (
-    <div className={styles.pair}>
+    <div className={`${styles.pair} ${styles.withRepeat}`}>
       <Button variant="primary" onClick={() => nav('/library/practice/all')}><IconHeadphones />Shadow All</Button>
-      <Button onClick={() => nav('/review?mode=random')}><IconShuffle />Random</Button>
+      <PracticeChoices />
     </div>
+  );
+}
+
+// 순서(Random ↔ In Order) 전환 버튼 + 문장당 반복 횟수 상자. 고른 값은 연습 화면이 기기에서 읽어 간다
+function PracticeChoices() {
+  const [opts, setOpts] = useState(loadPracticeOptions);
+  const change = (next: PracticeOptions) => { setOpts(next); savePracticeOptions(next); };
+  const random = opts.order === 'random';
+  return (
+    <>
+      <Button onClick={() => change({ ...opts, order: random ? 'inOrder' : 'random' })}>
+        {random ? <><IconShuffle />Random</> : 'In Order'}
+      </Button>
+      {/* 기본 select를 쓰면 아이폰에서 시스템 고르기 창이 떠서 손가락으로 고르기 쉽다 */}
+      <span className={styles.repeatWrap}>
+        <select className={styles.repeat} value={opts.reps} aria-label="문장마다 반복 횟수"
+          onChange={(e) => change({ ...opts, reps: Number(e.target.value) })}>
+          {REPEAT_CHOICES.map((n) => <option key={n} value={n}>{`${n}×`}</option>)}
+        </select>
+      </span>
+    </>
   );
 }
 

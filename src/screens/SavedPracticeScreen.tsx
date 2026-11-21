@@ -7,6 +7,7 @@ import { DrillPlayer } from './drill/DrillPlayer';
 import { useDrillSpeaking } from './drill/useDrillSpeaking';
 import { useDrillSteps } from './drill/useDrillSteps';
 import { fillMissing, loadRows } from './library/useLibrary';
+import { loadPracticeOptions } from './library/practiceOptions';
 import { SavedFinish } from './library/SavedFinish';
 import { toSavedPlan } from './library/savedPlan';
 import styles from './library/Library.module.css';
@@ -35,7 +36,9 @@ export function SavedPracticeScreen() {
     if (!rows) return undefined;
     const picked = new Set(pickedKey.split('\n'));
     const usable = startId === 'selected' ? rows.filter((r) => picked.has(r.id)) : rows;
-    return toSavedPlan(usable, startId, settings.passThreshold);
+    // 반복·순서는 보관함 화면에서 고른 값 (기기에 기억된 것)
+    const { reps, order } = loadPracticeOptions();
+    return toSavedPlan(usable, startId, settings.passThreshold, { reps, shuffle: order === 'random' });
   }, [rows, startId, pickedKey, settings.passThreshold]);
 
   if (error) return <p className={styles.note} lang="ko">{error}</p>;
@@ -52,10 +55,14 @@ function SavedDrill({ plan }: { plan: DrillStep[] }) {
   const { hf } = sp;
   // 재생 중에 넘기거나 닫으면 일시정지하고 옮긴다 (코스 드릴과 같은 규칙)
   const move = (go: () => void) => { hf.stop(); go(); };
-  if (steps.finished) return <SavedFinish total={plan.length} />;
+  // 반복하면 카드 수가 문장 수 × 반복이라, 위 표시는 문장 기준으로 보여 준다
+  const reps = plan[0].stage.reps.length;
+  const sentenceTotal = plan.length / reps;
+  const cur = plan[Math.min(steps.index, plan.length - 1)];
+  if (steps.finished) return <SavedFinish total={sentenceTotal} />;
   return (
-    <DrillPlayer plan={plan} index={steps.index} sentenceCount={plan.length}
-      where={{ left: 'Library', right: `${steps.index + 1} / ${plan.length}` }}
+    <DrillPlayer plan={plan} index={steps.index} sentenceCount={sentenceTotal}
+      where={{ left: reps > 1 ? `Library · ${cur.rep}/${reps}` : 'Library', right: `${cur.drill.id} / ${sentenceTotal}` }}
       attempt={sp.attempt} engineNote={sp.engineNote} micLocked={sp.micLocked}
       handsFree={{
         available: sp.voskReady, running: hf.running, step: hf.step, notice: hf.notice,
