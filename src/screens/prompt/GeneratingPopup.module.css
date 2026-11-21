@@ -2,8 +2,10 @@
   position: fixed;
   inset: 0;
   z-index: 60;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 18vh; /* 상황·상대 입력칸 근처, 화면 위쪽에 보이게 */
   background: rgba(0, 0, 0, 0.4); /* 화면을 어둡게 덮는 막: 라이트·다크 같은 값이라 토큰 없이 둔다 */
 }
 
