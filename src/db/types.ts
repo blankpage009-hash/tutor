@@ -95,7 +95,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   repeatCount: 1,
   autoAdvance: false, // PLAN 5.3: 기본 꺼짐 (Phase 4에서 바로잡음)
   failFeedback: true,
-  dailyGoal: 10,
+  dailyGoal: 20,
   startLevel: '',
   theme: 'system'
 };
