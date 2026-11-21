@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { loadGlossary, lookupWord } from '../../content/glossary';
-import { findWord, saveWord } from '../../db/vocab';
+import { findWord, removeWord, saveWord } from '../../db/vocab';
 import type { VocabWord } from '../../db/types';
 import { POS_OPTIONS, posLabel } from '../../posLabels';
 import { normalizeWord } from '../../wordTap';
@@ -13,13 +13,15 @@ type Props = { word: string; source: WordSource; onClose: () => void };
 type Loaded = { saved: VocabWord | null; fromGlossary: boolean };
 
 // 단어를 눌렀을 때 아래에서 올라오는 저장 창: 사전이 있으면 뜻·품사를 미리 채우고, 사용자가 고쳐서 저장한다.
-// 저장 취소는 단어장 화면에서만 한다(사용자 결정 2026-11-21)
+// 이미 저장된 단어는 뜻을 보여 주고 여기서 바로 뺄 수도 있다 (빼기 버튼 되살림, 사용자 요청 2026-11-21)
 export function WordSheet({ word, source, onClose }: Props) {
   const key = normalizeWord(word);
   const [loaded, setLoaded] = useState<Loaded | null>(null);
   const [meaning, setMeaning] = useState('');
   const [pos, setPos] = useState('noun');
+  const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const [confirming, setConfirming] = useState(false);
 
   useEffect(() => {
     let alive = true;
@@ -51,6 +53,22 @@ export function WordSheet({ word, source, onClose }: Props) {
     }
   };
 
+  const remove = async (id: number) => {
+    setError('');
+    try {
+      await removeWord(id);
+      // 저장돼 있던 단어는 처음에 사전을 안 찾았으니, 빼고 나서 다시 저장할 수 있게 사전 뜻을 채운다
+      const hit = lookupWord(await loadGlossary(), key);
+      setMeaning(hit?.ko ?? '');
+      setPos(hit?.pos ?? 'noun');
+      setLoaded({ saved: null, fromGlossary: Boolean(hit) });
+      setConfirming(false);
+      setMessage('단어장에서 뺐어요.');
+    } catch (e) {
+      setError(`지우지 못했어요: ${String(e)}`);
+    }
+  };
+
   const saved = loaded?.saved;
   return (
     <div className={styles.backdrop} onClick={onClose}>
@@ -61,15 +79,14 @@ export function WordSheet({ word, source, onClose }: Props) {
           {source.ko && <p className={styles.sourceKo} lang="ko">{source.ko}</p>}
         </div>
         {!loaded && !error && <p className={styles.hint} lang="ko">불러오는 중…</p>}
-        {saved && (
-          <>
-            <p className={styles.saved} lang="ko"><b>{posLabel(saved.pos)}</b> · {saved.meaning}</p>
-            <p className={styles.hint} lang="ko">이미 단어장에 있어요. 고치거나 빼기는 단어장 화면에서 할 수 있어요.</p>
-          </>
+        {saved?.id !== undefined && (
+          <SavedView saved={saved} confirming={confirming} onAskRemove={() => setConfirming(true)}
+            onRemove={() => remove(saved.id!)} onCancel={() => setConfirming(false)} />
         )}
         {loaded && !saved && (
           <EditView meaning={meaning} pos={pos} fromGlossary={loaded.fromGlossary} onMeaning={setMeaning} onPos={setPos} onSave={save} />
         )}
+        {message && <p className={styles.saved} lang="ko" role="status">{message}</p>}
         {error && <p className={styles.error} lang="ko">{error}</p>}
         <div className={styles.actions}>
           <Button onClick={onClose}>닫기</Button>
@@ -103,6 +120,26 @@ function EditView({ meaning, pos, fromGlossary, onMeaning, onPos, onSave }: Edit
       </label>
       <div className={styles.actions}>
         <Button variant="primary" onClick={onSave} disabled={!meaning.trim()}>단어장에 저장</Button>
+      </div>
+    </>
+  );
+}
+
+type SavedProps = { saved: VocabWord; confirming: boolean; onAskRemove: () => void; onRemove: () => void; onCancel: () => void };
+
+// 잘못 눌러 지워지지 않게 "빼기"는 한 번 더 확인한다
+function SavedView({ saved, confirming, onAskRemove, onRemove, onCancel }: SavedProps) {
+  return (
+    <>
+      <p className={styles.saved} lang="ko"><b>{posLabel(saved.pos)}</b> · {saved.meaning}</p>
+      <p className={styles.hint} lang="ko">이미 단어장에 있어요. 뜻은 단어장 화면에서 고칠 수 있어요.</p>
+      <div className={styles.actions}>
+        {confirming
+          ? <>
+            <Button variant="primary" onClick={onRemove}>빼기</Button>
+            <Button onClick={onCancel}>취소</Button>
+          </>
+          : <Button variant="ghost" onClick={onAskRemove}>단어장에서 빼기</Button>}
       </div>
     </>
   );
