@@ -1,0 +1,216 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U03-L02",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 3,
+  "unitTitle": "병원 & 약국",
+  "lessonNo": 2,
+  "lessonTitle": "가능한 시간 묻기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Do you have any openings this week?",
+    "ko": "이번 주에 빈 시간 있나요?",
+    "stress": "Do you have any OPenings this WEEK?",
+    "audio": { "normal": "audio/lessons/INT1-U03-L02/key-1133bfcb.m4a", "slow": "audio/lessons/INT1-U03-L02/key-1133bfcb.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "여기서 opening은 '열림'이 아니라 '비어 있는 예약 자리'라는 뜻입니다.",
+      "병원·치과·미용실처럼 예약을 받는 곳에 빈 시간을 물을 때 가장 자연스럽게 씁니다.",
+      "Are you free this week?는 친구처럼 사람의 일정을 물을 때, openings는 가게·병원의 예약 자리를 물을 때 씁니다.",
+      "물어볼 때는 some보다 any를 씁니다. Do you have any ~? = '혹시 ~ 있나요?'",
+      "this week 자리에 today, on Saturday, in the morning 등을 바꿔 넣으면 됩니다."
+    ],
+    "en": "In American English, an \"opening\" is an empty spot in someone's schedule. \"Do you have any openings this week?\" is the easiest way to ask a clinic or a salon when they can see you. You can change \"this week\" to any day or time.",
+    "enKo": "미국 영어에서 \"opening\"은 일정표의 빈자리를 말합니다. \"Do you have any openings this week?\"는 병원이나 미용실에 언제 갈 수 있는지 묻는 가장 쉬운 말입니다. \"this week\" 자리에 원하는 날이나 시간을 넣으면 됩니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "Do you have any OPenings this WEEK — openings는 첫 음절 O에 힘을 줍니다." },
+    { "focus": "연음", "tip": "have any는 끊지 않고 '해베니'처럼 이어 말합니다." },
+    { "focus": "약화", "tip": "Do you는 빠르게 '쥬'나 '두유'처럼 약하게 줄여 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "this의 th는 혀끝을 윗니 끝에 살짝 대고 냅니다. '디스'처럼 d가 되지 않게 합니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "Is there empty time this week?", "right": "Do you have any openings this week?", "note": "empty time은 직역이라 어색합니다. 예약 빈자리는 opening입니다." },
+    { "wrong": "When is the doctor possible?", "right": "When is the doctor available?", "note": "사람·일정이 '가능하다'는 possible이 아니라 available입니다." },
+    { "wrong": "Do you have some openings this week?", "right": "Do you have any openings this week?", "note": "빈자리가 있는지 모르고 물을 때는 보통 any를 씁니다." }
+  ],
+  "dialogue": {
+    "situation": "동네 치과에 전화해서 이번 주에 빈 시간이 있는지 묻습니다.",
+    "partnerRole": "접수원",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Bayside Dental, this is Amy. How can I help you?", "ko": "베이사이드 치과, 에이미입니다. 무엇을 도와드릴까요?", "audio": "audio/lessons/INT1-U03-L02/dlg-01-8fe63f0d.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "en": "Hi, I need a cleaning. Do you have any openings this week?",
+        "ko": "안녕하세요, 스케일링을 받아야 해서요. 이번 주에 빈 시간 있나요?",
+        "audio": "audio/lessons/INT1-U03-L02/dlg-02-32fb57f5.m4a",
+        "hasKeySentence": true
+      },
+      { "no": 3, "speaker": "partner", "en": "Let me see... We're pretty full, but I have Wednesday at 2.", "ko": "어디 보자... 예약이 꽤 찼는데, 수요일 2시가 있어요.", "audio": "audio/lessons/INT1-U03-L02/dlg-03-3f348aa6.m4a" },
+      { "no": 4, "speaker": "me", "en": "Hmm, I work until 5. Is there anything later in the day?", "ko": "음, 제가 5시까지 일해서요. 더 늦은 시간은 없나요?", "audio": "audio/lessons/INT1-U03-L02/dlg-04-c099cd10.m4a" },
+      { "no": 5, "speaker": "partner", "en": "I can do Friday at 5:30. Would that work?", "ko": "금요일 5시 반은 가능해요. 괜찮으세요?", "audio": "audio/lessons/INT1-U03-L02/dlg-05-e4f75a84.m4a" },
+      { "no": 6, "speaker": "me", "en": "That's great. Please put me down for Friday.", "ko": "좋아요. 금요일로 잡아 주세요.", "audio": "audio/lessons/INT1-U03-L02/dlg-06-67900a7d.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "We're pretty full.", "ko": "'예약이 꽤 찼어요.' 빈자리가 거의 없다는 뜻입니다." },
+      { "en": "Put me down for ~", "ko": "'~로 (이름 올려) 잡아 주세요.' 예약 시간을 확정할 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Do you have any openings this week?",
+      "ko": "이번 주에 빈 시간 있나요?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "이번 주에 빈 예약 시간이 있는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U03-L02/drill-01-1133bfcb.m4a", "slow": "audio/lessons/INT1-U03-L02/drill-01-1133bfcb.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "Do you have any openings on Saturday?",
+      "ko": "토요일에 빈 시간 있나요?",
+      "point": "단어 교체: this week → on Saturday",
+      "cue": { "lang": "ko", "text": "토요일에 빈 시간이 있는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U03-L02/drill-02-50f3e613.m4a", "slow": "audio/lessons/INT1-U03-L02/drill-02-50f3e613.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "Does Dr. Kim have any openings today?",
+      "ko": "김 선생님 오늘 빈 시간 있으세요?",
+      "point": "주어 변경: you → Dr. Kim (Does)",
+      "cue": { "lang": "ko", "text": "김 선생님이 오늘 빈 시간이 있는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U03-L02/drill-03-4f5e3f6c.m4a", "slow": "audio/lessons/INT1-U03-L02/drill-03-4f5e3f6c.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Would you have any openings tomorrow morning?",
+      "ko": "혹시 내일 오전에 빈 시간 있을까요?",
+      "point": "공손형: Do → Would",
+      "cue": { "lang": "ko", "text": "내일 오전에 빈 시간이 있을지 공손하게 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U03-L02/drill-04-84d2ab94.m4a", "slow": "audio/lessons/INT1-U03-L02/drill-04-84d2ab94.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "They don't have any openings this week.",
+      "ko": "거기 이번 주엔 빈 시간이 없대요.",
+      "point": "부정형 + 주어 They",
+      "cue": { "lang": "en", "text": "Did you get an appointment with the dentist?", "audio": "audio/lessons/INT1-U03-L02/cue-05-5657dac4.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L02/drill-05-d7fe768b.m4a", "slow": "audio/lessons/INT1-U03-L02/drill-05-d7fe768b.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "Do you have any earlier openings?",
+      "ko": "더 이른 시간은 없나요?",
+      "point": "비교: earlier",
+      "cue": { "lang": "ko", "text": "더 이른 시간은 없는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U03-L02/drill-06-80522aed.m4a", "slow": "audio/lessons/INT1-U03-L02/drill-06-80522aed.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Hillview Eye Care, this is Sam. Just so you know, we're pretty busy this month.",
+        "ko": "힐뷰 안과, 샘입니다. 미리 말씀드리면 이번 달은 꽤 바빠요.",
+        "audio": "audio/lessons/INT1-U03-L02/rp-01-bd01f865.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you have any openings this week?",
+        "exampleKo": "이번 주에 빈 시간 있나요?",
+        "requiredKeywords": ["any openings", "this week"]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Hi, this is Studio Nine Hair. We're booked solid on weekdays, I'm afraid.",
+        "ko": "안녕하세요, 스튜디오 나인 헤어예요. 죄송하지만 평일은 예약이 꽉 찼어요.",
+        "audio": "audio/lessons/INT1-U03-L02/rp-03-a9709000.m4a"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you have any openings on Saturday?",
+        "exampleKo": "토요일에 빈 시간 있나요?",
+        "requiredKeywords": ["openings", "on saturday"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Your usual doctor is off today, but Dr. Kim is working until 6.", "ko": "평소 보시던 선생님은 오늘 쉬세요. 그런데 김 선생님이 6시까지 진료하세요.", "audio": "audio/lessons/INT1-U03-L02/rp-05-0e8fcd0a.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Does Dr. Kim have any openings today?",
+        "exampleKo": "김 선생님 오늘 빈 시간 있으세요?",
+        "requiredKeywords": ["kim", "openings today"]
+      },
+      { "no": 7, "speaker": "partner", "en": "This is Bayview Physical Therapy. Let me pull up tomorrow's schedule for you.", "ko": "베이뷰 물리치료실입니다. 내일 일정을 열어 볼게요.", "audio": "audio/lessons/INT1-U03-L02/rp-07-7859d077.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Would you have any openings tomorrow morning?",
+        "exampleKo": "혹시 내일 오전에 빈 시간 있을까요?",
+        "requiredKeywords": ["would you", "tomorrow morning"]
+      },
+      { "no": 9, "speaker": "partner", "en": "I thought you were getting your teeth cleaned this week. What happened?", "ko": "이번 주에 스케일링 받는다고 하지 않았어요? 어떻게 됐어요?", "audio": "audio/lessons/INT1-U03-L02/rp-09-bcf76599.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "They don't have any openings this week.",
+        "exampleKo": "거기 이번 주엔 빈 시간이 없대요.",
+        "requiredKeywords": ["don't have", "this week"]
+      },
+      { "no": 11, "speaker": "partner", "en": "The first time we have is next Thursday at 4. Should I put you down?", "ko": "제일 빠른 게 다음 주 목요일 4시예요. 그걸로 잡아 드릴까요?", "audio": "audio/lessons/INT1-U03-L02/rp-11-21175dd3.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you have any earlier openings?",
+        "exampleKo": "더 이른 시간은 없나요?",
+        "requiredKeywords": ["earlier", "openings"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

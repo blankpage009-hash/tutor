@@ -266,11 +266,11 @@
               "no": 3,
               "title": "병원 & 약국",
               "lessons": [
-                { "no": 1, "title": "예약하기", "id": "INT1-U03-L01", "ready": false},
-                { "no": 2, "title": "가능한 시간 묻기", "id": "INT1-U03-L02", "ready": false},
+                { "no": 1, "title": "예약하기", "id": "INT1-U03-L01", "ready": true, "file": "lessons/INT1/INT1-U03-L01.json" },
+                { "no": 2, "title": "가능한 시간 묻기", "id": "INT1-U03-L02", "ready": true, "file": "lessons/INT1/INT1-U03-L02.json" },
                 { "no": 3, "title": "선호하는 시간 말하기", "id": "INT1-U03-L03", "ready": true, "file": "lessons/INT1/INT1-U03-L03.json" },
-                { "no": 4, "title": "처방약 찾아오기", "id": "INT1-U03-L04", "ready": false},
-                { "no": 5, "title": "약 요청하기", "id": "INT1-U03-L05", "ready": false}
+                { "no": 4, "title": "처방약 찾아오기", "id": "INT1-U03-L04", "ready": true, "file": "lessons/INT1/INT1-U03-L04.json" },
+                { "no": 5, "title": "약 요청하기", "id": "INT1-U03-L05", "ready": true, "file": "lessons/INT1/INT1-U03-L05.json" }
               ]
             },
             {

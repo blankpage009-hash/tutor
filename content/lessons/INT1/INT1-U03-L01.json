@@ -1,0 +1,209 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U03-L01",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 3,
+  "unitTitle": "병원 & 약국",
+  "lessonNo": 1,
+  "lessonTitle": "예약하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I'd like to make an appointment.",
+    "ko": "진료 예약하고 싶어요.",
+    "stress": "I'd LIKE to make an apPOINTment.",
+    "audio": { "normal": "audio/lessons/INT1-U03-L01/key-18873fd3.m4a", "slow": "audio/lessons/INT1-U03-L01/key-18873fd3.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "appointment는 의사·미용사·상담사처럼 '사람을 만나기로 정한 시간 약속'입니다. make an appointment = 예약하다.",
+      "I'd like to는 I want to보다 공손한 말이라, 전화나 접수 창구에서 부탁할 때 기본으로 씁니다.",
+      "식당·호텔 예약은 reservation, 병원·미용실 예약은 appointment입니다. 친구와의 약속은 plans라고 합니다.",
+      "book an appointment, schedule an appointment도 같은 뜻으로 자주 씁니다.",
+      "누구 예약인지, 무슨 진료인지는 뒤에 for를 붙여 말합니다. (예: for my son, for a checkup)"
+    ],
+    "en": "When you call a clinic or a salon, \"I'd like to make an appointment\" is the most common way to start. \"I'd like to\" sounds softer and more polite than \"I want to.\" Use \"appointment\" for meeting a person, like a doctor, and \"reservation\" for restaurants or hotels.",
+    "enKo": "병원이나 미용실에 전화할 때 \"I'd like to make an appointment\"가 가장 흔한 첫마디입니다. \"I'd like to\"는 \"I want to\"보다 부드럽고 공손하게 들립니다. 의사처럼 사람을 만나는 예약에는 \"appointment\", 식당이나 호텔에는 \"reservation\"을 씁니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "I'd LIKE to make an apPOINTment — appointment는 둘째 음절 POINT에 힘을 줍니다." },
+    { "focus": "연음", "tip": "make an은 끊지 않고 '메이컨'처럼 이어 말합니다." },
+    { "focus": "약화", "tip": "I'd의 d는 거의 들리지 않고, to는 '터'처럼 약하고 짧게 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "appointment의 nt에서 t는 거의 빼고 '어포인먼트'처럼 말해도 자연스럽습니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I want to reserve the doctor.", "right": "I'd like to make an appointment.", "note": "reserve는 식당·호텔에 씁니다. 사람(의사)을 '예약'하지는 않습니다." },
+    { "wrong": "I have a promise with the doctor.", "right": "I have an appointment with the doctor.", "note": "promise는 '다짐하다'에 가까운 말입니다. 시간 약속은 appointment입니다." },
+    { "wrong": "I made a reservation at the hospital.", "right": "I made an appointment at the clinic.", "note": "가벼운 진료는 보통 hospital이 아니라 clinic이나 doctor's office로 갑니다." }
+  ],
+  "dialogue": {
+    "situation": "샌프란시스코 동네 클리닉 접수 창구에 들러 처음으로 진료 예약을 합니다.",
+    "partnerRole": "접수원",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hi, welcome to Maple Family Clinic. Do you have an appointment?", "ko": "안녕하세요, 메이플 패밀리 클리닉입니다. 예약하셨어요?", "audio": "audio/lessons/INT1-U03-L01/dlg-01-6487ff49.m4a" },
+      { "no": 2, "speaker": "me", "en": "No, I don't. I'd like to make an appointment.", "ko": "아니요, 안 했어요. 진료 예약하고 싶어요.", "audio": "audio/lessons/INT1-U03-L01/dlg-02-225bc9a7.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Sure. Are you a new patient, or have you been here before?", "ko": "네. 처음 오셨어요, 아니면 전에 오신 적 있으세요?", "audio": "audio/lessons/INT1-U03-L01/dlg-03-033ca91c.m4a" },
+      { "no": 4, "speaker": "me", "en": "I'm a new patient. I just moved to the area.", "ko": "처음이에요. 이 동네로 막 이사 왔어요.", "audio": "audio/lessons/INT1-U03-L01/dlg-04-cdf04f1a.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Welcome! Can you fill out this form and show me your insurance card?", "ko": "환영해요! 이 서류 작성해 주시고 보험 카드 보여 주시겠어요?", "audio": "audio/lessons/INT1-U03-L01/dlg-05-c3f352fb.m4a" },
+      { "no": 6, "speaker": "me", "en": "Sure, here's my card. Thanks for your help.", "ko": "네, 여기 카드요. 도와주셔서 고마워요.", "audio": "audio/lessons/INT1-U03-L01/dlg-06-29e04f64.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "a new patient", "ko": "'처음 오는 환자'. 미국 병원은 처음 온 환자에게 서류를 따로 받습니다." },
+      { "en": "fill out this form", "ko": "'이 서류를 작성하다'. 빈칸을 채운다는 느낌으로 fill out을 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I'd like to make an appointment.",
+      "ko": "진료 예약하고 싶어요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Hi, what can I do for you today?", "audio": "audio/lessons/INT1-U03-L01/cue-01-8449982b.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L01/drill-01-18873fd3.m4a", "slow": "audio/lessons/INT1-U03-L01/drill-01-18873fd3.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I'd like to make an appointment for a checkup.",
+      "ko": "건강검진 예약하고 싶어요.",
+      "point": "단어 교체: for + 무슨 진료",
+      "cue": { "lang": "en", "text": "What kind of visit is this for?", "audio": "audio/lessons/INT1-U03-L01/cue-02-deb4d839.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L01/drill-02-c9df0798.m4a", "slow": "audio/lessons/INT1-U03-L01/drill-02-c9df0798.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "My wife would like to make an appointment.",
+      "ko": "제 아내가 진료 예약을 하고 싶어 해요.",
+      "point": "주어 변경: I → My wife",
+      "cue": { "lang": "en", "text": "You're all set for Friday. Anything else?", "audio": "audio/lessons/INT1-U03-L01/cue-03-94c9b911.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L01/drill-03-48b8d8b1.m4a", "slow": "audio/lessons/INT1-U03-L01/drill-03-48b8d8b1.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "I made an appointment for Monday.",
+      "ko": "월요일로 예약했어요.",
+      "point": "과거 시제: make → made",
+      "cue": { "lang": "en", "text": "Did you call the doctor's office yet?", "audio": "audio/lessons/INT1-U03-L01/cue-04-f24f0c99.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L01/drill-04-d0db1aa9.m4a", "slow": "audio/lessons/INT1-U03-L01/drill-04-d0db1aa9.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Can I make an appointment for tomorrow?",
+      "ko": "내일로 예약할 수 있을까요?",
+      "point": "질문형: Can I ~?",
+      "cue": { "lang": "ko", "text": "내일로 예약할 수 있는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U03-L01/drill-05-f9723e40.m4a", "slow": "audio/lessons/INT1-U03-L01/drill-05-f9723e40.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I don't have an appointment.",
+      "ko": "예약은 안 했어요.",
+      "point": "부정형: don't have",
+      "cue": { "lang": "en", "text": "Can I get your name for your appointment?", "audio": "audio/lessons/INT1-U03-L01/cue-06-c4883ff0.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L01/drill-06-a1464a6a.m4a", "slow": "audio/lessons/INT1-U03-L01/drill-06-a1464a6a.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Bright Smile Dental, this is Amy. How can I help you?", "ko": "브라이트 스마일 치과, 에이미입니다. 무엇을 도와드릴까요?", "audio": "audio/lessons/INT1-U03-L01/rp-01-81099bc0.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'd like to make an appointment.",
+        "exampleKo": "진료 예약하고 싶어요.",
+        "requiredKeywords": ["like to make", "appointment"]
+      },
+      {
+        "no": 3,
+        "speaker": "partner",
+        "en": "Thanks for calling Bayview Medical. Our doctors are booking yearly physicals now.",
+        "ko": "베이뷰 메디컬에 전화 주셔서 감사합니다. 요즘 연례 건강검진 예약을 받고 있어요.",
+        "audio": "audio/lessons/INT1-U03-L01/rp-03-a43e9e2d.m4a"
+      },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'd like to make an appointment for a checkup.",
+        "exampleKo": "건강검진 예약하고 싶어요.",
+        "requiredKeywords": ["appointment", "for a checkup"]
+      },
+      { "no": 5, "speaker": "partner", "en": "Okay, your visit is booked. Is there anything else I can do for you?", "ko": "네, 진료 예약됐어요. 더 도와드릴 일 있으세요?", "audio": "audio/lessons/INT1-U03-L01/rp-05-5ab7a61a.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My wife would like to make an appointment.",
+        "exampleKo": "제 아내가 진료 예약을 하고 싶어 해요.",
+        "requiredKeywords": ["my wife", "make an appointment"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Your tooth still hurts? You should really see a dentist soon.", "ko": "아직도 이가 아파요? 빨리 치과에 가 보는 게 좋겠어요.", "audio": "audio/lessons/INT1-U03-L01/rp-07-f6b8fe57.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I made an appointment for Monday.",
+        "exampleKo": "월요일로 예약했어요.",
+        "requiredKeywords": ["made", "for monday"]
+      },
+      {
+        "no": 9,
+        "speaker": "partner",
+        "en": "Sorry, the doctor is fully booked today. She's back tomorrow, though.",
+        "ko": "죄송해요, 오늘은 선생님 예약이 꽉 찼어요. 내일은 다시 나오세요.",
+        "audio": "audio/lessons/INT1-U03-L01/rp-09-293d966e.m4a"
+      },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Can I make an appointment for tomorrow?",
+        "exampleKo": "내일로 예약할 수 있을까요?",
+        "requiredKeywords": ["can i make", "for tomorrow"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Welcome to Studio Nine Hair! Which stylist are you here to see?", "ko": "스튜디오 나인 헤어에 오신 걸 환영해요! 어느 디자이너분께 오셨어요?", "audio": "audio/lessons/INT1-U03-L01/rp-11-32b37a73.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I don't have an appointment.",
+        "exampleKo": "예약은 안 했어요.",
+        "requiredKeywords": ["don't have", "appointment"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

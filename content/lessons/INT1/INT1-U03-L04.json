@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U03-L04",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 3,
+  "unitTitle": "병원 & 약국",
+  "lessonNo": 4,
+  "lessonTitle": "처방약 찾아오기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "I'm here to pick up a prescription.",
+    "ko": "처방약 찾으러 왔어요.",
+    "stress": "I'm HERE to pick UP a preSCRIPtion.",
+    "audio": { "normal": "audio/lessons/INT1-U03-L04/key-baf06c58.m4a", "slow": "audio/lessons/INT1-U03-L04/key-baf06c58.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "prescription은 '처방전'과 '처방약'을 모두 뜻합니다. 약국에서는 둘 다 이 말로 씁니다.",
+      "pick up은 '맡겨 둔 것을 찾아가다'라는 뜻입니다. 세탁물이나 주문한 음식을 찾을 때도 씁니다.",
+      "I'm here to ~는 '~하러 왔어요'. 창구에서 용건을 먼저 말할 때 가장 자연스럽습니다.",
+      "미국은 병원이 약국으로 처방을 바로 보내는 경우가 많아서, 약국에서는 이름과 생년월일만 말하면 됩니다.",
+      "반대로 종이 처방전을 약국에 맡길 때는 drop off를 씁니다."
+    ],
+    "en": "In the U.S., doctors often send prescriptions straight to the pharmacy. When you go to get your medicine, just say \"I'm here to pick up a prescription.\" The pharmacy staff will usually ask for your name and date of birth.",
+    "enKo": "미국에서는 의사가 처방을 약국으로 바로 보내는 경우가 많습니다. 약을 받으러 가면 \"I'm here to pick up a prescription.\"이라고만 말하면 됩니다. 약국 직원은 보통 이름과 생년월일을 물어봅니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "I'm HERE to pick UP a preSCRIPtion — pick up은 up 쪽에 힘을 줍니다." },
+    { "focus": "연음", "tip": "pick up a는 끊지 않고 '피커퍼'처럼 한 덩어리로 이어 말합니다." },
+    { "focus": "약화", "tip": "to는 '터', a는 '어'처럼 아주 약하고 짧게 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "prescription의 pr은 사이에 '으'를 넣지 않고 붙여서, 앞을 '프리'처럼 빠르게 말합니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I came to receive my medicine.", "right": "I'm here to pick up a prescription.", "note": "receive는 딱딱하게 들립니다. 맡겨 둔 것을 찾을 땐 pick up을 씁니다." },
+    { "wrong": "I want to find my medicine.", "right": "I'm here to pick up my medicine.", "note": "find는 '잃어버린 것을 찾다'라는 뜻입니다." },
+    { "wrong": "Is my medicine prepared?", "right": "Is my prescription ready?", "note": "준비가 다 됐는지 물을 때는 ready를 씁니다." }
+  ],
+  "dialogue": {
+    "situation": "동네 약국 카운터에서 병원이 보낸 처방약을 찾아옵니다.",
+    "partnerRole": "약국 직원",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hi there. Are you dropping off or picking up?", "ko": "안녕하세요. 맡기러 오셨어요, 찾으러 오셨어요?", "audio": "audio/lessons/INT1-U03-L04/dlg-01-0155fe5f.m4a" },
+      { "no": 2, "speaker": "me", "en": "Hi. I'm here to pick up a prescription.", "ko": "안녕하세요. 처방약 찾으러 왔어요.", "audio": "audio/lessons/INT1-U03-L04/dlg-02-104c06de.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Sure. Can I get your last name and date of birth?", "ko": "네. 성이랑 생년월일 말씀해 주시겠어요?", "audio": "audio/lessons/INT1-U03-L04/dlg-03-19f4adad.m4a" },
+      { "no": 4, "speaker": "me", "en": "It's Park. My date of birth is May 3rd, 1990.", "ko": "박이에요. 생년월일은 1990년 5월 3일이에요.", "audio": "audio/lessons/INT1-U03-L04/dlg-04-9dd88ecd.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Got it. Here you go. Any questions for the pharmacist?", "ko": "확인됐어요. 여기 있습니다. 약사님께 물어보실 거 있으세요?", "audio": "audio/lessons/INT1-U03-L04/dlg-05-5e667b37.m4a" },
+      { "no": 6, "speaker": "me", "en": "No, I'm good. Thank you!", "ko": "아니요, 괜찮아요. 고맙습니다!", "audio": "audio/lessons/INT1-U03-L04/dlg-06-9e6c4e66.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "Are you dropping off or picking up?", "ko": "'맡기러 오셨어요, 찾으러 오셨어요?' 미국 약국 카운터에서 가장 먼저 듣는 질문입니다." },
+      { "en": "I'm good.", "ko": "'괜찮아요(필요 없어요).' 무언가를 권할 때 부드럽게 사양하는 말입니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "I'm here to pick up a prescription.",
+      "ko": "처방약 찾으러 왔어요.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Hi, how can I help you today?", "audio": "audio/lessons/INT1-U03-L04/cue-01-62db5568.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L04/drill-01-baf06c58.m4a", "slow": "audio/lessons/INT1-U03-L04/drill-01-baf06c58.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "I'm here to pick up two prescriptions.",
+      "ko": "처방약 두 개 찾으러 왔어요.",
+      "point": "단수 → 복수",
+      "cue": { "lang": "en", "text": "Hi! What are you here for today?", "audio": "audio/lessons/INT1-U03-L04/cue-02-aac31eb2.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L04/drill-02-c08fd0fe.m4a", "slow": "audio/lessons/INT1-U03-L04/drill-02-c08fd0fe.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "I'll pick it up after work.",
+      "ko": "퇴근하고 찾으러 갈게요.",
+      "point": "미래 시제: I'll",
+      "cue": { "lang": "en", "text": "Your prescription is ready. Can you come by today?", "audio": "audio/lessons/INT1-U03-L04/cue-03-2ca4290c.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L04/drill-03-bb102a87.m4a", "slow": "audio/lessons/INT1-U03-L04/drill-03-bb102a87.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Is my prescription ready to pick up?",
+      "ko": "제 처방약 찾아갈 수 있나요?",
+      "point": "질문형: Is ~ ready?",
+      "cue": { "lang": "ko", "text": "처방약을 찾아갈 수 있는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U03-L04/drill-04-d7659a0a.m4a", "slow": "audio/lessons/INT1-U03-L04/drill-04-d7659a0a.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "I haven't picked it up yet.",
+      "ko": "아직 안 찾아왔어요.",
+      "point": "부정형 + 현재완료: haven't picked",
+      "cue": { "lang": "en", "text": "Do you have your medicine at home already?", "audio": "audio/lessons/INT1-U03-L04/cue-05-a31b8fcd.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L04/drill-05-7da6b3c5.m4a", "slow": "audio/lessons/INT1-U03-L04/drill-05-7da6b3c5.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I'm here to drop off a prescription.",
+      "ko": "처방전 맡기러 왔어요.",
+      "point": "단어 교체: pick up → drop off",
+      "cue": { "lang": "en", "text": "Do you have a new prescription from your doctor?", "audio": "audio/lessons/INT1-U03-L04/cue-06-07fb6de2.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L04/drill-06-597ad7ec.m4a", "slow": "audio/lessons/INT1-U03-L04/drill-06-597ad7ec.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Next in line, please! What brings you to the pharmacy counter?", "ko": "다음 분 오세요! 약국 카운터엔 무슨 일로 오셨어요?", "audio": "audio/lessons/INT1-U03-L04/rp-01-f80fddd6.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm here to pick up a prescription.",
+        "exampleKo": "처방약 찾으러 왔어요.",
+        "requiredKeywords": ["pick up", "prescription"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Okay, I found one under your name. Was that all?", "ko": "네, 성함으로 하나 찾았어요. 그게 다인가요?", "audio": "audio/lessons/INT1-U03-L04/rp-03-0cff94b1.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm here to pick up two prescriptions.",
+        "exampleKo": "처방약 두 개 찾으러 왔어요.",
+        "requiredKeywords": ["two", "prescriptions"]
+      },
+      {
+        "no": 5,
+        "speaker": "partner",
+        "en": "Hi, this is Corner Pharmacy calling. Your order is ready, and we're open until 9.",
+        "ko": "안녕하세요, 코너 약국입니다. 주문하신 약이 준비됐어요. 9시까지 열어요.",
+        "audio": "audio/lessons/INT1-U03-L04/rp-05-6ba73976.m4a"
+      },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'll pick it up after work.",
+        "exampleKo": "퇴근하고 찾으러 갈게요.",
+        "requiredKeywords": ["pick it up", "after work"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Corner Pharmacy, this is Sam. What can I do for you?", "ko": "코너 약국, 샘입니다. 무엇을 도와드릴까요?", "audio": "audio/lessons/INT1-U03-L04/rp-07-7a34ce2f.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Is my prescription ready to pick up?",
+        "exampleKo": "제 처방약 찾아갈 수 있나요?",
+        "requiredKeywords": ["ready", "to pick up"]
+      },
+      { "no": 9, "speaker": "partner", "en": "You said you had to stop by the pharmacy. Are you all set?", "ko": "약국에 들러야 한다고 했잖아요. 다 해결했어요?", "audio": "audio/lessons/INT1-U03-L04/rp-09-b7681f24.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I haven't picked it up yet.",
+        "exampleKo": "아직 안 찾아왔어요.",
+        "requiredKeywords": ["haven't picked", "yet"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Hmm, I don't see anything ready under your name today.", "ko": "음, 오늘 성함으로 준비된 약은 안 보이네요.", "audio": "audio/lessons/INT1-U03-L04/rp-11-edfef69b.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I'm here to drop off a prescription.",
+        "exampleKo": "처방전 맡기러 왔어요.",
+        "requiredKeywords": ["drop off", "prescription"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

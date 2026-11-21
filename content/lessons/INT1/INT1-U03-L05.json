@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT1-U03-L05",
+  "level": "중급 1",
+  "levelCode": "INT1",
+  "unit": 3,
+  "unitTitle": "병원 & 약국",
+  "lessonNo": 5,
+  "lessonTitle": "약 요청하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Do you have anything for a cough?",
+    "ko": "기침에 먹는 약 있나요?",
+    "stress": "Do you have ANYthing for a COUGH?",
+    "audio": { "normal": "audio/lessons/INT1-U03-L05/key-425d633e.m4a", "slow": "audio/lessons/INT1-U03-L05/key-425d633e.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "Do you have anything for ~?는 '~에 먹는(쓰는) 약 있나요?'라는 뜻입니다. medicine이라는 말이 없어도 약을 찾는다는 걸 알아듣습니다.",
+      "약 이름을 몰라도 증상만 말하면 되므로, 약국이나 마트 약 코너에서 가장 쓸모 있는 문장입니다.",
+      "a cough, a headache, a sore throat처럼 증상 앞에는 보통 a를 붙입니다.",
+      "Give me cough medicine.처럼 말하면 명령처럼 들립니다. 묻는 형태가 훨씬 부드럽습니다."
+    ],
+    "en": "At an American pharmacy, you don't need to know the name of a medicine. Just say \"Do you have anything for...\" and add how you feel, like a cough or a headache. The pharmacist will show you a few options.",
+    "enKo": "미국 약국에서는 약 이름을 몰라도 괜찮습니다. \"Do you have anything for...\" 뒤에 기침이나 두통처럼 증상을 붙여 말하면 됩니다. 약사가 몇 가지를 골라 보여 줍니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "Do you have ANYthing for a COUGH — anything과 증상 단어에 힘을 줍니다." },
+    { "focus": "연음", "tip": "have anything은 끊지 않고 '해베니띵'처럼 이어 말합니다." },
+    { "focus": "약화", "tip": "for a는 '퍼러'처럼 약하고 빠르게 붙여 말합니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "cough의 gh는 f 소리입니다. '코프'보다 입을 더 벌려 '커-프'에 가깝게 말합니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "Give me cough medicine.", "right": "Do you have anything for a cough?", "note": "명령문은 무례하게 들릴 수 있습니다. 묻는 형태가 공손합니다." },
+    { "wrong": "Do you have a medicine for headache?", "right": "Do you have anything for a headache?", "note": "medicine은 보통 a 없이 쓰고, headache 앞에는 a를 붙입니다." },
+    { "wrong": "My throat is sick.", "right": "I have a sore throat.", "note": "몸 한 부분이 아플 때는 sick이 아니라 sore를 씁니다." }
+  ],
+  "dialogue": {
+    "situation": "동네 약국에서 약사에게 기침에 먹을 약을 물어봅니다.",
+    "partnerRole": "약사",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hi, can I help you find something?", "ko": "안녕하세요, 찾으시는 거 도와드릴까요?", "audio": "audio/lessons/INT1-U03-L05/dlg-01-cf1f7c71.m4a" },
+      { "no": 2, "speaker": "me", "en": "Yes, please. Do you have anything for a cough?", "ko": "네, 부탁드려요. 기침에 먹는 약 있나요?", "audio": "audio/lessons/INT1-U03-L05/dlg-02-0b5f2c02.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Sure. Is it just a cough, or do you have a stuffy nose too?", "ko": "네. 기침만 하세요, 아니면 코도 막히세요?", "audio": "audio/lessons/INT1-U03-L05/dlg-03-2be0477e.m4a" },
+      { "no": 4, "speaker": "me", "en": "Just a cough. But I have to drive to work after this.", "ko": "기침만 해요. 그런데 이따 차로 출근해야 해요.", "audio": "audio/lessons/INT1-U03-L05/dlg-04-3f7bc1c9.m4a" },
+      { "no": 5, "speaker": "partner", "en": "Then try this one. It's for daytime, so it won't make you sleepy.", "ko": "그럼 이걸 써 보세요. 낮에 먹는 거라 졸리지 않아요.", "audio": "audio/lessons/INT1-U03-L05/dlg-05-9aa2a506.m4a" },
+      { "no": 6, "speaker": "me", "en": "Great, I'll take it. Thanks for your help.", "ko": "좋아요, 이걸로 할게요. 도와주셔서 고마워요.", "audio": "audio/lessons/INT1-U03-L05/dlg-06-919bf93e.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "a stuffy nose", "ko": "'막힌 코'. 코가 막혔다고 할 때 I have a stuffy nose라고 합니다." },
+      { "en": "I'll take it.", "ko": "'이걸로 할게요.' 가게에서 살 물건을 정할 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Do you have anything for a cough?",
+      "ko": "기침에 먹는 약 있나요?",
+      "point": "핵심 문장",
+      "cue": { "lang": "ko", "text": "기침에 먹는 약이 있는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U03-L05/drill-01-425d633e.m4a", "slow": "audio/lessons/INT1-U03-L05/drill-01-425d633e.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "Do you have anything for a headache?",
+      "ko": "두통에 먹는 약 있나요?",
+      "point": "단어 교체: cough → headache",
+      "cue": { "lang": "ko", "text": "두통에 먹는 약이 있는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U03-L05/drill-02-0706a83a.m4a", "slow": "audio/lessons/INT1-U03-L05/drill-02-0706a83a.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "Could you recommend something for a sore throat?",
+      "ko": "목 아플 때 먹을 만한 거 추천해 주실 수 있나요?",
+      "point": "공손형: Could you recommend ~?",
+      "cue": { "lang": "ko", "text": "목이 아플 때 먹을 약을 추천해 달라고 해 보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U03-L05/drill-03-c63173c0.m4a", "slow": "audio/lessons/INT1-U03-L05/drill-03-c63173c0.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "My son needs something for a fever.",
+      "ko": "아들이 열이 나서 약이 필요해요.",
+      "point": "주어 변경: My son needs",
+      "cue": { "lang": "en", "text": "Is the medicine for you?", "audio": "audio/lessons/INT1-U03-L05/cue-04-f1eabd10.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L05/drill-04-86e67e76.m4a", "slow": "audio/lessons/INT1-U03-L05/drill-04-86e67e76.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "Do you have anything stronger?",
+      "ko": "더 센 건 없나요?",
+      "point": "비교: stronger",
+      "cue": { "lang": "ko", "text": "더 센 약은 없는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT1-U03-L05/drill-05-66eaea07.m4a", "slow": "audio/lessons/INT1-U03-L05/drill-05-66eaea07.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I need something that won't make me sleepy.",
+      "ko": "졸리지 않은 걸로 주세요.",
+      "point": "부정형: won't",
+      "cue": { "lang": "en", "text": "This one works well, but it might make you drowsy.", "audio": "audio/lessons/INT1-U03-L05/cue-06-a5c02c9e.m4a" },
+      "audio": { "normal": "audio/lessons/INT1-U03-L05/drill-06-836c6c38.m4a", "slow": "audio/lessons/INT1-U03-L05/drill-06-836c6c38.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      {
+        "no": 1,
+        "speaker": "partner",
+        "en": "Hi, I heard you coughing over there. Can I help you find something?",
+        "ko": "안녕하세요, 저쪽에서 기침하시는 거 들었어요. 찾으시는 거 도와드릴까요?",
+        "audio": "audio/lessons/INT1-U03-L05/rp-01-cac38cf0.m4a"
+      },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you have anything for a cough?",
+        "exampleKo": "기침에 먹는 약 있나요?",
+        "requiredKeywords": ["anything", "for a cough"]
+      },
+      { "no": 3, "speaker": "partner", "en": "Front desk, this is Mia. Is everything okay with your room?", "ko": "프런트 데스크, 미아입니다. 객실에 문제는 없으세요?", "audio": "audio/lessons/INT1-U03-L05/rp-03-a464a2e0.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you have anything for a headache?",
+        "exampleKo": "두통에 먹는 약 있나요?",
+        "requiredKeywords": ["anything", "headache"]
+      },
+      { "no": 5, "speaker": "partner", "en": "There are so many throat sprays and drops here. It's hard to choose, right?", "ko": "목 스프레이랑 사탕이 정말 많죠. 고르기 어려우시죠?", "audio": "audio/lessons/INT1-U03-L05/rp-05-7301ac35.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Could you recommend something for a sore throat?",
+        "exampleKo": "목 아플 때 먹을 만한 거 추천해 주실 수 있나요?",
+        "requiredKeywords": ["recommend", "sore throat"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Hi there! Are you looking for something for yourself today?", "ko": "안녕하세요! 오늘 본인 드실 거 찾으세요?", "audio": "audio/lessons/INT1-U03-L05/rp-07-ea307917.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "My son needs something for a fever.",
+        "exampleKo": "아들이 열이 나서 약이 필요해요.",
+        "requiredKeywords": ["my son", "fever"]
+      },
+      { "no": 9, "speaker": "partner", "en": "This is the one most people take. It's pretty mild, though.", "ko": "이게 다들 제일 많이 사 가는 거예요. 좀 순한 편이긴 해요.", "audio": "audio/lessons/INT1-U03-L05/rp-09-8f177dc1.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Do you have anything stronger?",
+        "exampleKo": "더 센 건 없나요?",
+        "requiredKeywords": ["anything", "stronger"]
+      },
+      { "no": 11, "speaker": "partner", "en": "A lot of cold medicine helps you sleep. Is it for daytime?", "ko": "감기약은 잠이 오게 하는 게 많아요. 낮에 드실 건가요?", "audio": "audio/lessons/INT1-U03-L05/rp-11-fb6fed45.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I need something that won't make me sleepy.",
+        "exampleKo": "졸리지 않은 걸로 주세요.",
+        "requiredKeywords": ["won't", "sleepy"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}
