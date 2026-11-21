@@ -17,7 +17,22 @@
     <link rel="preload" href="/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin />
     <!-- 로딩화면(4A 시안) 스타일. 앱 CSS(tokens.css)가 읽히기 전에 그려져야 해서 토큰 변수를 못 쓰고 색을 직접 적는다.
          #1a3fbf = 라이트 테마 --accent -->
+    <script>
+      // 새 버전을 받으면 앱이 화면을 스스로 한 번 새로 고친다(main.tsx registerSW 자동 업데이트).
+      // 그때 로딩화면이 또 나오면 "로딩 → 본 화면 → 로딩"처럼 두 번 보이므로, 이번에 켠 동안 이미 보여 줬으면 건너뛴다.
+      // sessionStorage는 새로 고쳐도 남고 앱을 완전히 닫으면 지워진다 — 다시 켜면 로딩화면이 정상으로 나온다.
+      (function () {
+        try {
+          if (sessionStorage.getItem('natter-splash-shown')) {
+            document.documentElement.className = 'skip-splash';
+          } else {
+            sessionStorage.setItem('natter-splash-shown', '1');
+          }
+        } catch (e) { /* 저장이 막힌 환경이면 그냥 매번 보여 준다 */ }
+      })();
+    </script>
     <style>
+      html.skip-splash #splash { display: none; }
       html.splashing, html.splashing body { background: #1a3fbf; }
       #splash {
         position: fixed; inset: 0; z-index: 9999;
@@ -69,6 +84,7 @@
         var root = document.getElementById('root');
         var started = Date.now();
         var done = false;
+        if (document.documentElement.classList.contains('skip-splash')) { splash.remove(); return; }
 
         var showWords = function () { splash.classList.add('fonts-ready'); };
         if (document.fonts && document.fonts.ready) {
