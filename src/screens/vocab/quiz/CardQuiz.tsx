@@ -30,8 +30,8 @@ export function CardQuiz({ words, tabs, onContinue }: Props) {
       <CardFace key={word.id} word={word} flipped={state.flipped}
         onFlip={() => dispatch({ type: 'flip' })} onGrade={(grade) => dispatch({ type: 'grade', grade })} />
       <div className={reviewStyles.pair}>
-        <Button onClick={() => dispatch({ type: 'grade', grade: 'again' })}><IconClose />Didn&apos;t Know</Button>
-        <Button variant="primary" onClick={() => dispatch({ type: 'grade', grade: 'good' })}><IconCheck />Knew It</Button>
+        <Button onClick={() => dispatch({ type: 'grade', grade: 'again' })}><IconClose />Don&apos;t Know</Button>
+        <Button variant="primary" onClick={() => dispatch({ type: 'grade', grade: 'good' })}><IconCheck />Know</Button>
       </div>
     </div>
   );
