@@ -13,6 +13,7 @@ import { peekPracticeLaunch, takePracticeLaunch } from './library/practiceLaunch
 import { loadPracticeOptions } from './library/practiceOptions';
 import { toSavedPlan } from './library/savedPlan';
 import { useListenLoop } from './library/useListenLoop';
+import { useMissTracker } from './library/useMissTracker';
 import styles from './library/Library.module.css';
 
 // 보관함에서 "다시 쉐도잉": 저장한 문장을 코스 드릴과 같은 카드 화면(DrillPlayer)으로 한 바퀴 연습한다.
@@ -41,7 +42,9 @@ export function SavedPracticeScreen() {
     if (!rows) return undefined;
     const picked = new Set(pickedKey.split('\n'));
     const usable = startId === 'selected' ? rows.filter((r) => picked.has(r.id)) : rows;
-    return toSavedPlan(usable, startId, settings.passThreshold, { reps: opts.reps, shuffle: opts.order === 'random' });
+    // 한 번 더 끼우기는 말하기만: 듣기만은 듣는 시간이 길어지지 않게 순서만 앞으로 (사용자 결정 2026-11-21)
+    const shuffle = opts.order === 'random';
+    return toSavedPlan(usable, startId, settings.passThreshold, { reps: opts.reps, shuffle, extras: shuffle && !opts.listening });
   }, [rows, startId, pickedKey, settings.passThreshold, opts]);
 
   if (error) return <p className={styles.note} lang="ko">{error}</p>;
@@ -74,7 +77,9 @@ function useAutoStart(ready: boolean, begin: (ctx: AudioContext | null) => void)
 function SavedDrill({ plan, listening }: { plan: DrillStep[]; listening: boolean }) {
   const nav = useNavigate();
   const steps = useDrillSteps(plan.length);
-  const sp = useDrillSpeaking(plan, steps);
+  // 듣기만은 판정이 없어 기록될 것도 없다
+  const onHeard = useMissTracker(plan);
+  const sp = useDrillSpeaking(plan, steps, onHeard);
   const listen = useListenLoop(plan, steps, sp.handsFreeActive);
   const { hf } = sp;
   // 이어 말하기·듣기가 멈춘 뒤(마이크 반납 후)에 띄운다 — 마이크가 켜진 채 소리를 틀면 iOS 통화 모드 잡음 (코스 드릴과 같은 규칙)

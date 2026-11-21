@@ -12,6 +12,9 @@ export type SavedSentence = {
   en?: string;
   ko?: string;
   audio?: string; // content/ 기준 경로
+  // 틀림 점수: 보관함 연습에서 한 판에 한 번이라도 틀리면 +1, 한 번도 안 틀리면 반으로.
+  // Random에서 자주 틀리는 문장을 더 자주 내려고 둔다 (사용자 요청 2026-11-21). 칸만 늘려 DB 버전은 그대로
+  miss?: number;
 };
 
 export type VocabWord = {

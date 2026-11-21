@@ -37,6 +37,8 @@ export type HandsFreeInput = {
   micOffWhilePlaying?: boolean;
   // 통과/실패 효과음 (새 레슨 드릴만, 사용자 요청 2026-11-19). 소리 전에 마이크를 닫는다. 안 주면 소리 없음
   feedbackSound?: boolean;
+  // 판정이 날 때마다 알려 준다 (보관함 틀림 점수용, 2026-11-21). 안 주면 지금처럼 순서 안에서만 쓴다
+  onHeard?: (id: string, r: HearStatus) => void;
   log: (m: string) => void;
 } & Pick<HandsFreeDeps<Sentence>, 'shouldRead' | 'readFirst' | 'onTooManyFails'>; // 드릴용, 안 주면 기본 동작
 
@@ -112,6 +114,8 @@ function loopDeps(p: HandsFreeInput, slot: MicSlot, stopped: () => boolean, onSt
     },
     hear: async (s: Sentence) => {
       const r = await hearWithSlot(p, slot, s, stopped, onStep);
+      // 멈춤을 눌러 끊긴 듣기는 순서 쪽에서도 버리므로 기록하지 않는다
+      if (!stopped()) p.onHeard?.(s.id, r);
       if (p.feedbackSound && !stopped()) {
         // 틀리면 소리 동안 마이크를 닫으므로 바로 준비 중으로 (듣는 중으로 보이면 일찍 말해 첫 단어가 잘린다)
         if (r === 'failed') onStep('preparing');

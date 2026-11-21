@@ -5,6 +5,7 @@ import { promptAudio, toSentence, type DrillStep } from '../../drillPlan';
 import { playAudio } from '../../speech/audioPlayer';
 import { TUTOR_SAFE_MIC } from '../../speech/micSlot';
 import { SLOW_RATE, useNewSpeaking } from '../newLesson/useNewSpeaking';
+import type { HearStatus } from '../shadowing/handsFreeLoop';
 import { useHandsFree } from '../shadowing/useHandsFree';
 import type { useDrillSteps } from './useDrillSteps';
 
@@ -14,7 +15,8 @@ const LEAD_IN_MS = 1000;
 
 // 드릴 말하기는 재생 버튼(손 안 대고 이어 말하기) 하나로 한다 (사용자 요청 2026-11-17).
 // 1~2번 틀리면 소리 없이 다시, 3번 연속 틀리면 정답을 0.75배로 들려주고 멈추지 않고 계속 (handsFreeLoop)
-export function useDrillSpeaking(plan: DrillStep[], steps: Steps) {
+// onHeard: 판정마다 카드 id와 결과를 알려 준다 (보관함 틀림 점수만 씀, 코스 드릴은 넘기지 않음)
+export function useDrillSpeaking(plan: DrillStep[], steps: Steps, onHeard?: (stepId: string, r: HearStatus) => void) {
   const sentences = useMemo(() => plan.map(toSentence), [plan]);
   const byId = useMemo(() => new Map(plan.map((s) => [s.stepId, s])), [plan]);
   const step = plan[steps.index];
@@ -32,7 +34,7 @@ export function useDrillSpeaking(plan: DrillStep[], steps: Steps) {
   const hf = useHandsFree({
     lesson: { sentences }, index: steps.index, cleared: steps.cleared, recordPass: steps.recordPass, next: steps.next,
     attempt: sp.attempt, active: sp.handsFreeActive, slowRate: SLOW_RATE, failFeedback: false,
-    ...TUTOR_SAFE_MIC, feedbackSound: true, log, onTooManyFails: 'slow-and-continue',
+    ...TUTOR_SAFE_MIC, feedbackSound: true, log, onHeard, onTooManyFails: 'slow-and-continue',
     shouldRead: (s) => audioOf(s) !== null,
     readFirst: async (s) => {
       const a = audioOf(s);

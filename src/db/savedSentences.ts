@@ -1,3 +1,4 @@
+import { missOf } from '../missScore';
 import { db } from './db';
 import { ensureSentenceSrs, removeSrs } from './srs';
 import type { SavedSentence } from './types';
@@ -38,6 +39,15 @@ export async function ensureSrsForAllSaved(): Promise<SavedSentence[]> {
 export async function removeSaved(id: string): Promise<void> {
   await db.savedSentences.delete(id);
   await removeSrs('sentence', id);
+}
+
+export function bumpMiss(id: string): Promise<number> {
+  return db.savedSentences.where('id').equals(id).modify((r) => { r.miss = missOf(r) + 1; });
+}
+
+// 익숙해진 문장이 영원히 "어려운 문장"으로 남지 않게, 한 판을 깨끗이 통과하면 반으로 줄인다
+export function halveMiss(id: string): Promise<number> {
+  return db.savedSentences.where('id').equals(id).modify((r) => { r.miss = Math.floor(missOf(r) / 2); });
 }
 
 export function fillSavedText(id: string, text: Pick<SavedSentence, 'en' | 'ko' | 'audio'>): Promise<number> {

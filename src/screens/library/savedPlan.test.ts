@@ -44,6 +44,23 @@ describe('보관함 연습 드릴 계획', () => {
     expect(all.map((s) => s.saveId)).toEqual(['b', 'c', 'a']);
   });
 
+  it('한 번 더: 틀린 적 있는 문장을 3문장 뒤에 같은 반복으로 끼우고 id는 따로', () => {
+    const many = ['a', 'b', 'c', 'd', 'e'].map((id) => ({ ...row(id, id.toUpperCase()), miss: id === 'a' ? 2 : 0 }));
+    // 누른 문장(a)이 맨 앞에 고정되므로 a의 추가 묶음은 다섯 번째 문장 자리
+    const plan = toSavedPlan(many, 'a', 0.8, { shuffle: true, extras: true, reps: 3, random: () => 0.5 }) ?? [];
+    expect(plan).toHaveLength(18);
+    expect(plan.slice(12, 15).map((s) => s.saveId)).toEqual(['a', 'a', 'a']);
+    expect(plan.slice(12, 15).map((s) => s.show)).toEqual(['en+ko', 'masked', 'none']);
+    expect(new Set(plan.map((s) => s.stepId)).size).toBe(18);
+    expect(plan[17].drill.id).toBe(6);
+  });
+
+  it('extras가 없거나 차례대로면 끼우지 않는다', () => {
+    const many = rows.map((r) => ({ ...r, miss: 3 }));
+    expect(toSavedPlan(many, 'all', 0.8, { shuffle: true })).toHaveLength(3);
+    expect(toSavedPlan(many, 'all', 0.8, { extras: true })?.map((s) => s.saveId)).toEqual(['a', 'b', 'c']);
+  });
+
   it('반복 회차마다 카드 모양이 점점 가려진다', () => {
     const shows = (reps: number) => (toSavedPlan([rows[0]], 'all', 0.8, { reps }) ?? []).map((s) => s.show);
     expect(shows(1)).toEqual(['en+ko']);
