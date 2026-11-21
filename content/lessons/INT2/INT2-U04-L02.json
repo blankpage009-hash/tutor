@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "INT2-U04-L02",
+  "level": "중급 2",
+  "levelCode": "INT2",
+  "unit": 4,
+  "unitTitle": "항공편 변경하기",
+  "lessonNo": 2,
+  "lessonTitle": "변경 사유 설명하기",
+  "estimatedMinutes": 10,
+  "keySentence": {
+    "en": "Something came up at work.",
+    "ko": "회사에 일이 좀 생겼어.",
+    "stress": "SOMEthing CAME UP at WORK.",
+    "audio": { "normal": "audio/lessons/INT2-U04-L02/key-eaa9ff7a.m4a", "slow": "audio/lessons/INT2-U04-L02/key-eaa9ff7a.m4a" }
+  },
+  "explanation": {
+    "ko": [
+      "'회사에 갑자기 일이 생겼어'라는 뜻입니다. 약속이나 일정을 바꿀 때 이유를 짧게 말하는 가장 흔한 말입니다.",
+      "come up은 '(예상 못 한 일이) 생기다'입니다. 과거형은 came up이고, 뒤에 at work, at home처럼 어디서 생긴 일인지 붙입니다.",
+      "자세히 말하기 곤란할 때도 쓰고, 상대도 보통 더 캐묻지 않습니다. 이유를 이어 말하려면 Something came up at work, so I can't make it.처럼 so로 잇습니다.",
+      "아직 그 일이 계속되고 있으면 Something's come up at work.(현재완료)라고도 합니다. 뜻은 거의 같습니다."
+    ],
+    "en": "Say \"Something came up at work\" when a sudden work problem changes your plans. It is a short way to explain without giving every detail.",
+    "enKo": "회사에 갑자기 생긴 일 때문에 계획이 바뀌었을 때 \"Something came up at work\"라고 말합니다. 자세한 사정을 다 말하지 않고 짧게 설명하는 방법입니다."
+  },
+  "pronunciation": [
+    { "focus": "강세", "tip": "SOME, CAME, UP, WORK에 힘을 줍니다. at은 약하게 지나갑니다." },
+    { "focus": "연음", "tip": "came up은 m이 뒤로 넘어가 '케이멉'처럼 한 단어로 이어 말합니다." },
+    { "focus": "약화", "tip": "up at은 p가 at에 붙어 '어뺏'처럼 들리고, at의 t는 거의 소리 내지 않습니다." },
+    { "focus": "한국인이 어려운 소리", "tip": "work는 입술을 동그랗게 모으고 혀를 뒤로 말아 '워r크'로 말합니다. 입을 크게 벌리면 walk(걷다)처럼 들립니다." }
+  ],
+  "commonMistakes": [
+    { "wrong": "I had something at my company.", "right": "Something came up at work.", "note": "'회사에 일이 있었다'를 직역하면 어색합니다. 일하는 곳 이야기는 company보다 at work를 씁니다." },
+    { "wrong": "Some work happened suddenly.", "right": "Something came up at work.", "note": "happen을 직역하면 뜻이 흐려집니다. 계획을 바꾼 이유는 came up으로 말합니다." },
+    { "wrong": "Something came out at work.", "right": "Something came up at work.", "note": "come out은 '나오다·드러나다'라는 뜻입니다. 일이 생겼다는 말은 come up입니다." }
+  ],
+  "dialogue": {
+    "situation": "덴버 공항에 데리러 오기로 한 친구에게 비행기를 바꾼 이유를 전화로 설명합니다.",
+    "partnerRole": "친구",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "Hey! You're still landing Tuesday afternoon, right? I'll pick you up.", "ko": "야! 화요일 오후에 도착하는 거 맞지? 내가 데리러 갈게.", "audio": "audio/lessons/INT2-U04-L02/dlg-01-ed9248f9.m4a" },
+      { "no": 2, "speaker": "me", "en": "Actually, I had to push it back. Something came up at work.", "ko": "사실 날짜를 미뤘어. 회사에 일이 좀 생겼어.", "audio": "audio/lessons/INT2-U04-L02/dlg-02-6edd084d.m4a", "hasKeySentence": true},
+      { "no": 3, "speaker": "partner", "en": "Oh no. What happened?", "ko": "아이고. 무슨 일인데?", "audio": "audio/lessons/INT2-U04-L02/dlg-03-3a396f94.m4a" },
+      { "no": 4, "speaker": "me", "en": "My big presentation got moved to Wednesday, so I can't leave.", "ko": "중요한 발표가 수요일로 옮겨져서 못 떠나.", "audio": "audio/lessons/INT2-U04-L02/dlg-04-405858bd.m4a" },
+      { "no": 5, "speaker": "partner", "en": "That's okay. So when are you coming now?", "ko": "괜찮아. 그럼 이제 언제 와?", "audio": "audio/lessons/INT2-U04-L02/dlg-05-383917d5.m4a" },
+      { "no": 6, "speaker": "me", "en": "Thursday morning. I'll text you my new flight info.", "ko": "목요일 아침. 바뀐 비행기 정보 문자로 보낼게.", "audio": "audio/lessons/INT2-U04-L02/dlg-06-a882cb94.m4a" }
+    ],
+    "expressionNotes": [
+      { "en": "push it back", "ko": "'(날짜·시간을) 뒤로 미루다'. 일정을 늦출 때 씁니다. 앞당길 때는 move it up이라고 합니다." },
+      { "en": "got moved to ~", "ko": "'~로 옮겨졌다'. 회의·발표 같은 일정이 다른 날로 바뀌었을 때 씁니다." }
+    ]
+  },
+  "drills": [
+    {
+      "id": 1,
+      "en": "Something came up at work.",
+      "ko": "회사에 일이 좀 생겼어.",
+      "point": "핵심 문장",
+      "cue": { "lang": "en", "text": "Why did you change your flight to Denver?", "audio": "audio/lessons/INT2-U04-L02/cue-01-0fc2fcb3.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U04-L02/drill-01-eaa9ff7a.m4a", "slow": "audio/lessons/INT2-U04-L02/drill-01-eaa9ff7a.m4a" }
+    },
+    {
+      "id": 2,
+      "en": "Something came up at home.",
+      "ko": "집에 일이 좀 생겼어.",
+      "point": "단어 교체: at work → at home",
+      "cue": { "lang": "en", "text": "You can't come to the party tonight? What happened?", "audio": "audio/lessons/INT2-U04-L02/cue-02-03660e34.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U04-L02/drill-02-36c6b06c.m4a", "slow": "audio/lessons/INT2-U04-L02/drill-02-36c6b06c.m4a" }
+    },
+    {
+      "id": 3,
+      "en": "A few things came up at work.",
+      "ko": "회사에 일이 몇 가지 생겼어.",
+      "point": "단수 → 복수: a few things",
+      "cue": { "lang": "en", "text": "You look stressed. Was it just one problem at the office today?", "audio": "audio/lessons/INT2-U04-L02/cue-03-fc54a286.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U04-L02/drill-03-4952d301.m4a", "slow": "audio/lessons/INT2-U04-L02/drill-03-4952d301.m4a" }
+    },
+    {
+      "id": 4,
+      "en": "Did something come up at work?",
+      "ko": "회사에 무슨 일 생겼어?",
+      "point": "질문형: Did something ~?",
+      "cue": { "lang": "ko", "text": "친구가 갑자기 약속을 취소했습니다. 회사에 무슨 일이 생겼는지 물어보세요." },
+      "audio": { "normal": "audio/lessons/INT2-U04-L02/drill-04-460b4ad5.m4a", "slow": "audio/lessons/INT2-U04-L02/drill-04-460b4ad5.m4a" }
+    },
+    {
+      "id": 5,
+      "en": "If something comes up, I'll call you.",
+      "ko": "무슨 일 생기면 전화할게.",
+      "point": "시제: comes up(현재) + I'll",
+      "cue": { "lang": "en", "text": "So you'll definitely be there on Friday, right?", "audio": "audio/lessons/INT2-U04-L02/cue-05-f50f8d2a.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U04-L02/drill-05-3931dc89.m4a", "slow": "audio/lessons/INT2-U04-L02/drill-05-3931dc89.m4a" }
+    },
+    {
+      "id": 6,
+      "en": "I hope nothing comes up at work.",
+      "ko": "회사에 아무 일 안 생기면 좋겠다.",
+      "point": "부정형: nothing comes up",
+      "cue": { "lang": "en", "text": "Are you sure you can make it to my birthday dinner on Friday?", "audio": "audio/lessons/INT2-U04-L02/cue-06-1674d5a7.m4a" },
+      "audio": { "normal": "audio/lessons/INT2-U04-L02/drill-06-a1de7abc.m4a", "slow": "audio/lessons/INT2-U04-L02/drill-06-a1de7abc.m4a" }
+    }
+  ],
+  "drillStages": [
+    {
+      "reps": [1, 2, 3],
+      "mode": "repeat",
+      "show": "en+ko",
+      "playAudio": true,
+      "passScore": 80
+    },
+    {
+      "reps": [4, 5, 6],
+      "mode": "read",
+      "show": "en",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [7, 8],
+      "mode": "recall",
+      "show": "ko",
+      "playAudio": false,
+      "passScore": 80
+    },
+    {
+      "reps": [9, 10],
+      "mode": "respond",
+      "show": "cue",
+      "playAudio": false,
+      "passScore": 80
+    }
+  ],
+  "retryRule": { "maxRetriesPerRep": 3, "afterFailPlay": "slow" },
+  "rolePlay": {
+    "situation": "여러 상황에서 상대가 말을 겁니다. 드릴에서 연습한 문장으로 하나씩 대답합니다.",
+    "partnerRole": "상대",
+    "lines": [
+      { "no": 1, "speaker": "partner", "en": "You missed movie night with us yesterday. What happened?", "ko": "어제 우리 영화 보는 날 너 안 왔잖아. 무슨 일 있었어?", "audio": "audio/lessons/INT2-U04-L02/rp-01-59babf5c.m4a" },
+      {
+        "no": 2,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Something came up at work.",
+        "exampleKo": "회사에 일이 좀 생겼어.",
+        "requiredKeywords": ["came up", "at work"]
+      },
+      { "no": 3, "speaker": "partner", "en": "You left the office really early yesterday. Is everything okay?", "ko": "너 어제 사무실에서 엄청 일찍 나가던데. 괜찮아?", "audio": "audio/lessons/INT2-U04-L02/rp-03-49315b74.m4a" },
+      {
+        "no": 4,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Something came up at home.",
+        "exampleKo": "집에 일이 좀 생겼어.",
+        "requiredKeywords": ["came up", "home"]
+      },
+      { "no": 5, "speaker": "partner", "en": "You got home so late tonight. Long day at the office?", "ko": "오늘 밤 엄청 늦게 들어왔네. 회사에서 힘들었어?", "audio": "audio/lessons/INT2-U04-L02/rp-05-b7d12648.m4a" },
+      {
+        "no": 6,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "A few things came up at work.",
+        "exampleKo": "회사에 일이 몇 가지 생겼어.",
+        "requiredKeywords": ["a few things", "at work"]
+      },
+      { "no": 7, "speaker": "partner", "en": "Um, I'm really sorry, but I can't make it to dinner tonight.", "ko": "음, 진짜 미안한데 오늘 저녁 못 갈 것 같아.", "audio": "audio/lessons/INT2-U04-L02/rp-07-30cdb1c1.m4a" },
+      {
+        "no": 8,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "Did something come up at work?",
+        "exampleKo": "회사에 무슨 일 생겼어?",
+        "requiredKeywords": ["did something", "at work"]
+      },
+      { "no": 9, "speaker": "partner", "en": "You're coming to my soccer game on Saturday, right? I'm counting on you.", "ko": "토요일에 내 축구 경기 보러 오는 거 맞지? 너만 믿는다.", "audio": "audio/lessons/INT2-U04-L02/rp-09-5288adc8.m4a" },
+      {
+        "no": 10,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "If something comes up, I'll call you.",
+        "exampleKo": "무슨 일 생기면 전화할게.",
+        "requiredKeywords": ["if something", "call you"]
+      },
+      { "no": 11, "speaker": "partner", "en": "Mom's birthday dinner is next Friday. You can definitely come, right?", "ko": "엄마 생신 저녁이 다음 주 금요일이야. 너 꼭 올 수 있지?", "audio": "audio/lessons/INT2-U04-L02/rp-11-7b6fa5ef.m4a" },
+      {
+        "no": 12,
+        "speaker": "me",
+        "freeResponse": true,
+        "exampleEn": "I hope nothing comes up at work.",
+        "exampleKo": "회사에 아무 일 안 생기면 좋겠다.",
+        "requiredKeywords": ["hope nothing", "at work"]
+      }
+    ],
+    "passRule": "내 줄마다 requiredKeywords가 모두 들어가면 통과. 키워드가 다 나와도 말이 끝날 때까지(잠깐 조용할 때까지) 듣고 끝낸다."
+  }
+}

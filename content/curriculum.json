@@ -341,9 +341,9 @@
               "no": 4,
               "title": "항공편 변경하기",
               "lessons": [
-                { "no": 1, "title": "예약 변경하기", "id": "INT2-U04-L01", "ready": false},
-                { "no": 2, "title": "변경 사유 설명하기", "id": "INT2-U04-L02", "ready": false},
-                { "no": 3, "title": "환불 및 대안 문의하기", "id": "INT2-U04-L03", "ready": false}
+                { "no": 1, "title": "예약 변경하기", "id": "INT2-U04-L01", "ready": true, "file": "lessons/INT2/INT2-U04-L01.json" },
+                { "no": 2, "title": "변경 사유 설명하기", "id": "INT2-U04-L02", "ready": true, "file": "lessons/INT2/INT2-U04-L02.json" },
+                { "no": 3, "title": "환불 및 대안 문의하기", "id": "INT2-U04-L03", "ready": true, "file": "lessons/INT2/INT2-U04-L03.json" }
               ]
             }
           ]
