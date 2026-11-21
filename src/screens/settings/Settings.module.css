@@ -105,6 +105,9 @@
 .closeRow {
   display: flex;
   justify-content: flex-end;
+  /* X 줄이 자리를 차지하지 않게 해서 제목이 맨 위에 붙는다. 제목은 왼쪽, X는 오른쪽이라 겹치지 않는다 */
+  height: 0;
+  overflow: visible;
 }
 
 .closeBtn {
