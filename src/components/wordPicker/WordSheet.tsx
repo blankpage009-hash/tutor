@@ -29,7 +29,7 @@ const CLOSE_DISTANCE = 80;
 
 // 창 위쪽(손잡이 바·제목줄)을 잡고 아래로 끌면 창이 따라 내려가다 닫힌다.
 // 포인터 이벤트라 아이폰 터치와 데스크톱 마우스가 같이 된다. 버튼(X) 위에서 시작한 동작은 끌기로 치지 않는다
-function useSheetDrag(onClose: () => void) {
+export function useSheetDrag(onClose: () => void) {
   const start = useRef<number | null>(null);
   const [dy, setDy] = useState(0);
   const [dragging, setDragging] = useState(false);
