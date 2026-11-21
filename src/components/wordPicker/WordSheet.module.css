@@ -155,6 +155,28 @@
 
 .ipa { font-family: var(--font-mono); font-size: var(--type-body-size); color: var(--ink-muted); }
 
+/* 발음 듣기: 손가락으로 누르기 쉬운 크기(--tap-min)지만 줄 높이는 늘지 않게 위아래를 겹쳐 둔다 */
+.speak {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  margin: calc(var(--space-2) * -1) calc(var(--space-2) * -1) calc(var(--space-2) * -1) 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--accent-ink);
+  cursor: pointer;
+  align-self: center;
+}
+
+.speak:active { background: var(--accent-tint); }
+.speak:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
+
+.speakError { font-size: var(--type-caption-size); color: var(--ink-muted); align-self: center; }
+
 .formNote { font-size: var(--type-caption-size); color: var(--accent-ink); }
 
 /* 이 문장에 맞는 뜻: 사전 전체보다 먼저 눈에 들어오게 파란 띠로 */

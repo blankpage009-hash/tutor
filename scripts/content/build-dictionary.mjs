@@ -77,6 +77,16 @@ for (const [head, e] of Object.entries(entries)) {
   }
 }
 
+// 단어 발음 (scripts/audio/make_word_audio.py가 만든 목록). 파일이 없는 단어는 앱에서 🔊을 숨긴다
+const audioPath = content('dictionary-src', 'audio.json');
+const audio = fs.existsSync(audioPath) ? readJson(audioPath) : {};
+let noAudio = 0;
+for (const [head, e] of Object.entries(entries)) {
+  const rel = audio[head];
+  if (rel && fs.existsSync(content(rel))) e.audio = rel;
+  else noAudio++;
+}
+
 // ③ 옛 사전에만 있는 단어 (원고·변화형에 있으면 원고가 이김)
 const written = new Set(Object.keys(entries));
 let fromOld = 0;
@@ -170,4 +180,5 @@ const sorted = Object.fromEntries(Object.keys(entries).sort().map((k) => [k, ent
 fs.writeFileSync(content('dictionary.json'), JSON.stringify({ schemaVersion: 1, entries: sorted, forms, context }));
 if (warnings.length) console.warn(warnings.join('\n'));
 console.log(`dictionary.json: 표제어 ${Object.keys(sorted).length}개(옛 사전에서 ${fromOld}개), 변화형 ${Object.keys(forms).length}개, 문장 ${Object.keys(context).length}개`);
+console.log(`발음 음성: 원고 표제어 ${written.size}개 중 없는 단어 ${noAudio}개${noAudio ? ' → make_word_audio.py 실행' : ''}`);
 console.log(`레슨 단어 ${lessonWords.size}개 중 사전에 없는 단어 ${missing.length}개${missing.length ? `:\n${missing.join(' ')}` : ''}`);

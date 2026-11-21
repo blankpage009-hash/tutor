@@ -9,6 +9,7 @@ export type Pair = { en: string; ko: string };
 export type FormKey = '3s' | 'past' | 'pp' | 'ing' | 'pl' | 'er' | 'est';
 export type DictEntry = {
   ipa?: string;
+  audio?: string; // 표제어 발음 파일 (content/ 기준 경로). 없으면 🔊 버튼을 숨긴다
   forms?: Partial<Record<FormKey, string>>;
   senses: Sense[];
   examples?: Pair[];

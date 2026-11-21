@@ -1,5 +1,6 @@
 import { FORM_LABEL, meaningForSave, naverUrl, phraseLabel, type FormKey, type LookupHit, type Pair, type Sense } from '../../content/dictionary';
 import { posLabel } from '../../posLabels';
+import { WordAudioButton } from './WordAudioButton';
 import styles from './WordSheet.module.css';
 
 export type DictInfo = { hit: LookupHit | null; contextIndex: number | null; phrase: Pair | null };
@@ -40,11 +41,13 @@ function formNote(word: string, hit: LookupHit): string {
 
 function HeadLine({ word, hit }: { word: string; hit: LookupHit }) {
   const note = formNote(word, hit);
-  if (!hit.entry.ipa && !note) return null;
+  const { ipa, audio } = hit.entry;
+  if (!ipa && !note && !audio) return null;
   return (
     <p className={styles.headLine}>
-      {/* 발음기호는 표제어 것이라(has를 눌러도 have) 표제어가 다르면 이름을 붙여 헷갈리지 않게 한다 */}
-      {hit.entry.ipa && <span className={styles.ipa} lang="en">{hit.head !== word ? `${hit.head} ` : ''}/{hit.entry.ipa}/</span>}
+      {/* 발음기호·소리는 표제어 것이라(has를 눌러도 have) 표제어가 다르면 이름을 붙여 헷갈리지 않게 한다 */}
+      {ipa && <span className={styles.ipa} lang="en">{hit.head !== word ? `${hit.head} ` : ''}/{ipa}/</span>}
+      {audio && <WordAudioButton audio={audio} head={hit.head} />}
       {note && <span className={styles.formNote} lang="ko">{note}</span>}
     </p>
   );

@@ -7,6 +7,7 @@ const dict: Dictionary = {
   entries: {
     go: {
       ipa: 'ɡoʊ',
+      audio: 'audio/dict/go-test.m4a',
       forms: { '3s': 'goes', past: 'went', pp: 'gone', ing: 'going' },
       senses: [{ pos: 'verb', ko: '가다' }, { pos: 'verb', ko: '(일이) 진행되다' }],
       phrases: [{ en: 'go out', ko: '외출하다' }],
@@ -51,6 +52,12 @@ describe('lookupEntry', () => {
 
   it('없는 단어는 null', () => {
     expect(lookupEntry(dict, 'zebra')).toBeNull();
+  });
+});
+
+describe('발음 음성', () => {
+  it('변화형을 눌러도 표제어 발음 파일이 온다 (went → go 소리)', () => {
+    expect(lookupEntry(dict, 'went')?.entry.audio).toBe('audio/dict/go-test.m4a');
   });
 });
 

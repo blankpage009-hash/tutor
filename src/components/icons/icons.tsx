@@ -60,7 +60,11 @@ export const IconMic = () => (
 );
 // data-icon: 글자 붙은 버튼에서 삼각형의 빈 여백을 빼는 CSS(Button.module.css)가 이 표식으로 찾는다
 export const IconPlay = () => <Svg data-icon="play"><path d="M8 5l11 7-11 7z" fill="currentColor" /></Svg>;
-export const IconPause = () => <Svg><path d="M7 5h3v14H7zM14 5h3v14h-3z" fill="currentColor" /></Svg>;
+// 단어 발음 듣기 (단어 저장 창). 재생 ▶와 헷갈리지 않게 스피커 모양
+export const IconSpeaker = () => (
+  <Svg {...ROUND}><path d="M4 9h4l5-4v14l-5-4H4z" /><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11" /></Svg>
+);
+export const IconPause =() => <Svg><path d="M7 5h3v14H7zM14 5h3v14h-3z" fill="currentColor" /></Svg>;
 export const IconReplay = () => <Svg><path d="M4 12a8 8 0 1 0 3-6.2M4 4v5h5" /></Svg>;
 export const IconSkipNext = () => <Svg><path d="M6 5l9 7-9 7z" fill="currentColor" /><path d="M18 5v14" /></Svg>;
 export const IconBookmark = ({ filled = false }: { filled?: boolean }) => (

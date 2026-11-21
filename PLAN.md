@@ -579,6 +579,7 @@
       3. 앱: `DictEntry` 타입에 `audio?`, `DictEntryView` 머리줄(발음기호 옆)에 🔊 버튼 → `src/speech/audioPlayer.ts`의 `playAudio`(레슨 음성과 같은 길, `audioCache`로 기기에 보관). 음성은 서비스 워커로 미리 받지 않음(기존 규칙: iOS `<audio>` 조각 요청 때문).
     - 먼저 정할 것(다음 세션 시작 때 한 번에 질문): ① 누른 모양(went)이 아니라 **표제어(go)만** 읽을지, 불규칙 변화형도 따로 만들지(추천: 표제어만) ② 한 단어만 읽으면 억양이 어색할 수 있어 **몇 단어 먼저 시험 생성 → 사용자가 들어 보고 결정**(`audition.py` 방식) ③ 옛 Piper 단어 음성 `content/audio/words/`(1,017개, 7.4MB, 지금 앱이 안 씀) 지울지.
     - 확인 포인트: 고칠 파일이 3개 넘음 → Plan Mode. 아이폰 홈화면 앱에서 소리가 나는지(무음 스위치·드릴 중 마이크가 켜진 상태에서 저장 창을 열었을 때 포함)는 아이폰 확인 뒤에만 "동작함".
+    - **구현 결과 (2026-11-21, 아이폰 확인 전)**: 사용자 결정 — ① 표제어만 읽음(went를 눌러도 go 소리) ② 시험 녹음 10단어 × 2말투를 들어 보고 **끝에 마침표를 붙인 말투(`go.`, 내려가는 억양)**로 결정 ③ 옛 Piper 단어 음성 `content/audio/words/` 1,017개 삭제. 새 `scripts/audio/make_word_audio.py`(`--audition` = `.audio-tmp/word-audition/`에 시험 녹음): 표제어 393개 → `content/audio/dict/<단어>-<지문>.m4a`(1.6MB, 2,340자), 목록 `content/dictionary-src/audio.json`. 마침표를 붙이면 무음이 되는 단어(`a`·`er`)는 `PLAIN_WORDS`로 마침표 없이 — 실행 끝에 무음 검사(-45 LUFS 아래)가 새로 찾아 목록에서 빼고 알려 줌. `make_audio.py` 정리 단계는 `audio/dict/`를 건드리지 않게 함. `build-dictionary.mjs`가 표제어에 `audio` 칸을 붙이고 음성 없는 원고 단어 수를 알려 줌 → **새 단어를 원고에 더하면 `make_word_audio.py` → `build-dictionary.mjs` 순서로 실행**. 앱: `DictEntry.audio`, 발음기호 옆 스피커 버튼(`WordAudioButton`, `IconSpeaker`) → `playAudio`(미리 받기, 창 닫으면 멈춤, 실패 시 짧은 안내). 테스트 329개·타입·빌드 통과, 개발 서버(폰 폭)에서 between 저장 창 버튼·`audio/dict/between-….m4a` 200 확인. **아이폰 확인 필요**: 소리 남, 무음 스위치, 드릴 중 마이크가 켜진 상태에서 저장 창 🔊.
 
 ### Phase 8 — 마감 · 기기 검증 · 정리
 - **모델** Sonnet · **노력** medium · **예상** 1세션
