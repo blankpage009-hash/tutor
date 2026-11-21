@@ -12,6 +12,7 @@ import { useSettings } from '../settings/SettingsProvider';
 import styles from './dialogue/Dialogue.module.css';
 import { DialogueOverview } from './dialogue/DialogueOverview';
 import { DialoguePractice } from './dialogue/DialoguePractice';
+import { useDialogueSaved } from './dialogue/useDialogueSaved';
 import { useLinePlayer } from './dialogue/useLinePlayer';
 import { LessonStepBar } from './newLesson/LessonStepBar';
 import { useNewLesson } from './newLesson/useNewLesson';
@@ -49,8 +50,12 @@ function useDialoguePractice(lesson: NewLesson) {
   const nextRound = useRef(0);
   const curRef = useRef(cur);
   curRef.current = cur;
+  const meIdxRef = useRef(meIdx);
+  meIdxRef.current = meIdx;
 
   const go = useCallback((from: number) => {
+    // 화면이 다시 그려지기 전에 도착한 판정도 "지금 줄"을 바로 알게 (카드를 눌러 옮긴 직후)
+    curRef.current = from;
     setCur(from);
     playPartners(from).then((i) => {
       if (i === null) return;
@@ -66,8 +71,16 @@ function useDialoguePractice(lesson: NewLesson) {
     nextRound.current += 1; // 판 번호는 내 줄에 닿을 때 바꾼다 (지금 바꾸면 막 시작한 상대 줄 재생이 끊긴다)
     go(0);
   };
+  // 카드를 눌러 앞뒤 줄로 (사용자 요청 2026-11-21). 재생 중이던 소리를 먼저 끊고,
+  // 판 번호를 올려 이미 통과한 내 줄로 돌아가도 마이크가 잠기지 않고 다시 저절로 열리게 한다
+  const moveTo = useCallback((to: number) => {
+    unlockAudio(); // iOS: 탭한 순간 먼저 (옮긴 줄이 상대 줄이면 바로 재생하므로)
+    player.stop();
+    nextRound.current += 1;
+    go(Math.max(0, Math.min(to, lines.length)));
+  }, [player, go, lines.length]);
   const sentence = useMemo(() => (meIdx === null ? null : lineSentence(lesson.lessonId, lines[meIdx], round)), [meIdx, lines, lesson.lessonId, round]);
-  return { lines, player, phase, cur, curRef, meIdx, go, start, sentence };
+  return { lines, player, phase, cur, curRef, meIdx, meIdxRef, go, moveTo, start, sentence };
 }
 
 // 통과하면 잠깐 뒤 다음 줄로. 화면을 떠나면 기다리던 이동을 취소한다
@@ -91,6 +104,7 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
   // 대화문에는 기준 점수가 따로 없어 설정의 통과 기준을 쓴다
   const threshold = useSettings().settings.passThreshold;
   const pass = usePassTimer();
+  const save = useDialogueSaved(lesson);
   // 끝까지 가면(건너뛴 줄이 있어도) 대화문 단계를 끝낸 것으로 (사용자 결정 2026-11-18)
   useEffect(() => {
     if (d.phase === 'done') finishNewStep(lesson.lessonId, lesson.levelCode, 'dialogue').catch(() => undefined);
@@ -98,7 +112,8 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
   const speaking = useNewSpeaking(d.sentence, {
     threshold, failFeedback: false,
     onResult: (_id, status) => {
-      if (status !== 'passed') return;
+      // 듣는 중에 상대 줄로 옮겼으면 늦게 온 통과로 또 넘어가지 않게 (내 줄 문장은 그대로라 엔진이 못 거른다)
+      if (status !== 'passed' || d.curRef.current !== d.meIdxRef.current) return;
       logActivity('practice');
       pass.later(() => d.go(d.curRef.current + 1));
     }
@@ -114,8 +129,9 @@ function DialogueBody({ lesson }: { lesson: NewLesson }) {
       <LessonStepBar lessonId={lesson.lessonId} current="dialogue" fill={dialogueFill(d.phase, d.cur, d.lines.length)} />
       {d.phase === 'practice'
         ? <DialoguePractice lesson={lesson} d={d} speaking={speaking} myTurn={myTurn} busy={busy} threshold={threshold}
+          save={save} onMove={(to) => { pass.clear(); speaking.attempt.stop(); d.moveTo(to); }}
           onSkip={() => { pass.clear(); d.go(d.cur + 1); }} />
-        : <DialogueOverview lesson={lesson} phase={d.phase} player={d.player} onStart={d.start}
+        : <DialogueOverview lesson={lesson} phase={d.phase} player={d.player} onStart={d.start} save={save}
           onNext={() => nav(newStagePath(lesson.lessonId, nextNewStage('dialogue')))} />}
       {celebrate.show && <StepComplete title="Dialogue Complete!" onClose={celebrate.close} />}
     </div>

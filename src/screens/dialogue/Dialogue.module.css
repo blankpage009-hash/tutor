@@ -81,6 +81,9 @@
   background: var(--surface);
 }
 
+/* 전체 듣기 목록 줄 위: 이름표 + 북마크. 북마크 칸 때문에 줄이 너무 높아지지 않게 위아래를 조금 당긴다 */
+.lineTop { display: flex; justify-content: space-between; align-items: center; margin: -6px calc(var(--space-2) * -1) -6px 0; }
+
 /* 지금 재생 중인 줄 */
 .current { border-color: var(--accent); box-shadow: inset 0 0 0 0.5px var(--accent); }
 
@@ -131,6 +134,38 @@
 }
 
 .cardTop { display: flex; justify-content: space-between; align-items: center; min-height: 36px; }
+/* 오른쪽 위: ▶(상대 줄만) + 북마크 */
+.cardTools { display: flex; align-items: center; margin-right: calc(var(--space-2) * -1); }
+
+/* 카드를 눌러 앞뒤 줄로 옮긴다 (사용자 요청 2026-11-21). 누른 순간 살짝 눌린 느낌만 */
+.cardTap { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.cardTap:active { background: var(--surface-sunk); }
+
+/* 줄 저장 북마크 (드릴 카드와 같은 모양·색) */
+.save {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+.save svg { width: 20px; height: 20px; }
+.save:active { background: var(--accent-tint); }
+.save[aria-pressed='true'] { color: var(--accent-ink); }
+.save:focus-visible { outline: var(--rule-weight) solid var(--focus); outline-offset: 2px; }
+
+.saveError {
+  margin: 0;
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  text-align: center;
+  color: var(--danger);
+}
 
 .replay {
   display: grid;
